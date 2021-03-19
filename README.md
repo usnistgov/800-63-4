@@ -2,7 +2,7 @@
 
 This repository is the future home of NIST Special Publication 800-63 revision 4. 
 
-The [issue tracker](https://github.com/usnistgov/800-63-4/issues) contains several items that the NIST editorial team is seeking specific feedback on. Please join the discussion on these issues to provide feedback to the team.
+The [issue tracker](https://github.com/usnistgov/800-63-4/issues) contains several items that the NIST editorial team is seeking specific feedback on. Please join the discussion on these issues to provide feedback to the team. The team would appreciate getting this feedback prior to May 15, 2021.
 
 NOTE: The public comment period on revision 3 is closed and additional comments are not currently being accepted. Any other issues submitted to this repository at this time by a member of the public will be automatically closed without further comment or discussion.
 
