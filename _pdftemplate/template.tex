@@ -1,0 +1,283 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LaTeX source code to approximate a NIST Technical report
+%       Developed by J. Richer
+% 	Original SP template developed by K. Miller, kmm5@nist.gov 
+%	Last updated: 26-March-2019
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage{mathptmx}
+\usepackage{pifont}
+\usepackage{import}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amsfonts}   % if you want the fonts
+\usepackage{amssymb}    % if you want extra symbols
+\usepackage{graphicx}   % need for figures
+\graphicspath{\VAR{graphicspath}}
+\usepackage[table]{xcolor}
+\usepackage{bm}
+\usepackage{secdot}		
+%\usepackage{newtxtext,newtxmath}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[hang,flushmargin,bottom]{footmisc} % footnote format
+\usepackage{microtype}
+\usepackage{etoolbox} % for switching sections on and off
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage[raggedrightboxes]{ragged2e}
+\usepackage{adjustbox}
+\usepackage{babel}
+\usepackage[htt]{hyphenat}
+\usepackage{changepage}
+\usepackage[sf]{titlesec}
+\usepackage{tcolorbox}
+\usepackage[titletoc,title]{appendix}
+\usepackage{multicol}
+
+\DisableLigatures[f,l,i]{encoding = *, family = *}
+
+% Command for inverting the color on table and diagram headers
+\newcommand{\colorsection}[1]{%
+  \colorbox{black}{\noindent\parbox{\dimexpr\textwidth-2\fboxsep}{\color{white}\ #1}}}
+
+
+% Set up multi-page long tables, inclue with {:latex-longtable="true"} flag following table
+\makeatletter
+
+\def\ltabulary{%
+\def\endfirsthead{\\}%
+\def\endhead{\\}%
+\def\endfoot{\\}%
+\def\endlastfoot{\\}%
+\def\tabulary{%
+  \def\TY@final{%
+\def\endfirsthead{\LT@end@hd@ft\LT@firsthead}%
+\def\endhead{\LT@end@hd@ft\LT@head}%
+\def\endfoot{\LT@end@hd@ft\LT@foot}%
+\def\endlastfoot{\LT@end@hd@ft\LT@lastfoot}%
+\longtable}%
+  \let\endTY@final\endlongtable
+  \TY@tabular}%
+\dimen@\columnwidth
+\advance\dimen@-\LTleft
+\advance\dimen@-\LTright
+\tabulary\dimen@}
+
+\def\endltabulary{\endtabulary}
+
+\makeatother
+% End macros 
+
+%: if config.watermark
+
+% Turn on watermark overlay
+
+\usepackage{draftwatermark}
+\SetWatermarkText{\VAR{config.watermark}}
+\SetWatermarkScale{1}
+
+%: endif
+
+%: if config.boundingbox
+
+% Turn on visible bounding boxes
+\usepackage[
+  heightrounded,   % ensure an integer number of lines
+  showframe,       % show the main blocks
+  verbose,         % show the values of the parameters in the log file
+]{geometry}
+
+%: endif
+
+%: if config.lineno
+
+% Turn on line numbering
+\usepackage{lineno}
+\linenumbers
+
+%: endif
+
+
+
+\usepackage[titles]{tocloft}	% change typeset, titles, and format list of appendices/figures/tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% main contents - part, secs, subsec, paragraph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\contentsname}{\sffamily{Table of Contents}}
+\renewcommand{\cftsecpagefont}{\normalsize\sffamily}
+\renewcommand{\cftsecfont}{\normalsize\sffamily\bfseries}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand\cftbeforesecskip{\setlength{6pt}{}}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecfont}{\normalsize\sffamily}
+\renewcommand{\cftsubsecpagefont}{\normalsize\sffamily}
+\renewcommand\cftbeforesubsecskip{\setlength{6pt}{}}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsubsecfont}{\normalsize\sffamily}
+\renewcommand{\cftsubsubsecpagefont}{\normalsize\sffamily}
+\renewcommand\cftbeforesubsubsecskip{\setlength{6pt}{}}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+\renewcommand{\cftparafont}{\normalsize\sffamily}
+\renewcommand{\cftparapagefont}{\normalsize\sffamily}
+\renewcommand\cftbeforeparaskip{\setlength{6pt}{}}
+\renewcommand{\cftparaaftersnum}{.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% list of figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\listfigurename}{\sffamily{List of Figures}}
+\renewcommand{\cftfigpagefont}{\normalsize\sffamily}
+\renewcommand{\cftfigfont}{\normalsize\sffamily}
+\renewcommand{\cftfigindent}{0em}
+\addtolength{\cftfignumwidth}{1.5em}
+\renewcommand{\cftfigaftersnum}{.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% list of tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\listtablename}{\sffamily{List of Tables}}
+\renewcommand{\cfttabpagefont}{\normalsize\sffamily}
+\renewcommand{\cfttabfont}{\normalsize\sffamily}
+\renewcommand{\cfttabindent}{0em}
+\addtolength{\cfttabnumwidth}{1.5em}
+\renewcommand{\cfttabaftersnum}{.}
+
+\setcounter{secnumdepth}{4}
+
+\usepackage{enumitem}         % to control spacing between bullets/numbered lists
+\setlist{topsep=0pt, partopsep=0pt, itemsep=-0.2em}
+\setlist[description]{itemsep=0.6em, style=unboxed, leftmargin=1.5em}
+% \setlist[description]{style=nextline, itemsep=0.6em, parsep=0.0em, leftmargin=1em}
+% \setlist[description]{style=nextline, itemsep=0.5pt, labelsep=10.0pt, parsep=0.0cm, leftmargin=1em}
+
+\usepackage[numbers,sort&compress]{natbib} % format bibliography 
+\renewcommand{\bibsection}{}
+\setlength{\bibsep}{0.0pt}
+
+\definecolor{darkBlue}{rgb}{0,0,0.4} % dark blue for links
+
+\usepackage[hyphens]{url}
+\usepackage[hidelinks,hyperfootnotes=false]{hyperref}
+\hypersetup{
+colorlinks = true,
+breaklinks = true,
+urlcolor = {darkBlue},
+citecolor = {darkBlue},
+linkcolor = {darkBlue},
+anchorcolor = {.},
+filecolor = {.},
+menucolor = {.},
+runcolor = {.},
+pdftitle = {\VAR{config.title}},
+pdfsubject = {\VAR{site.abstract[config.collection].subject}},
+pdfauthor = {\VAR{config.authors | sort(attribute = "author_order") | map(attribute="name") | join("; ") }},
+pdfkeywords = {\VAR{site.abstract[config.collection].keywords}},
+pdflang = {\VAR{config.language}},
+pdfstartpage = 1,
+pdfstartview = {XYZ null null 1.00},
+pdfdisplaydoctitle = true
+}
+\urlstyle{same}
+
+\usepackage[outdir=./]{epstopdf} % converting EPS figure files to PDF
+
+\usepackage{fancyhdr, lastpage}	% formatting document, calculating number of pages, formatting headers
+\setlength{\topmargin}{-0.5in}
+\setlength{\headheight}{39pt}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+\setlength{\textwidth}{6.0in}
+\setlength{\textheight}{8.5in}
+
+% Set up headers
+\fancypagestyle{emptyHeaderFooterStyle}
+{
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+        \fancyhf{}
+}
+
+\fancypagestyle{body}
+{
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+
+        \fancyhead{}
+        \fancyhead[L]{\small \VAR{config.page_doc_number} \\ 
+            \small \VAR{config.issued_date}}
+        \fancyhead[R]{\small \VAR{config.page_title} \\
+            \small \VAR{config.page_title_2}}
+
+        \fancyfoot{}
+        \fancyfoot[C]{\small\thepage}
+}
+
+\fancypagestyle{plain}
+{
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+
+        \fancyhead{}
+        \fancyfoot{}
+        \fancyfoot[C]{\small\thepage}
+}
+
+% Set up paragraph indents and spacing
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm plus 2mm minus 1mm}
+
+\widowpenalty500
+\clubpenalty500
+
+% Set up hyphenation rules
+\pretolerance=5000
+\tolerance=9000
+\emergencystretch=0pt
+\righthyphenmin=4
+\lefthyphenmin=4
+
+\usepackage{caption} % required for Figure labels
+\DeclareCaptionFont{helvet}{\small\sffamily\selectfont}
+\captionsetup{labelfont=bf,labelsep=period,font=helvet,figurename=Fig.,justification=raggedright}
+
+\pdfminorversion=7
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   	BEGIN DOCUMENT 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+    \RaggedRight % left-justification universal
+
+\VAR{rendered.cover}
+
+%: if rendered.frontmatter
+
+\VAR{rendered.frontmatter}
+
+%: endif
+
+\VAR{rendered.toc}
+
+%: if rendered.preface
+
+\VAR{rendered.preface}
+
+%: endif
+
+\VAR{rendered.body}
+
+%: if rendered.references
+
+\VAR{rendered.references}
+
+%: endif
+
+%: if rendered.appendix
+
+\VAR{rendered.appendix}
+
+%: endif
+
+\end{document}

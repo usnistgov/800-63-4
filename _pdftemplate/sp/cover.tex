@@ -1,0 +1,232 @@
+\pagenumbering{Roman}
+
+\hypersetup{bookmarksdepth=-1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Cover Page 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\begin{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Automated based on metadata - delete if not applicable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\\
+\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\\
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Title 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Huge{\sffamily{\textbf{\VAR{config.title}}}}\\
+%: if config.subtitle
+\Large{\sffamily{\VAR{config.subtitle}}}\\
+%: endif
+\vspace{15pt}
+\vfill
+
+%: if config.draft_stage
+\Large{\VAR{config.draft_stage}}
+\vspace{15pt}
+\vfill
+%: endif
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Authors - add complete list of authors, affiliations will be 
+%   added on title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\large \VAR{config.authors | sort(attribute = "author_order") | map(attribute="name") | join("\\\\\n") }
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	The DOI is automated based on metadata.	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize This publication is available free of charge from:\\
+\url{\VAR{config.doi_url}}\\
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	This banner is optional - can also say "information security"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%: if config.banner
+\hrule \relax
+\vspace{-15pt}
+\begin{center}
+	\large{
+%: for l in config.banner
+	\VAR{l}\hspace{7pt}
+%: endfor
+	}
+\end{center}
+\vspace{-5pt}
+\hrule \relax
+%: endif
+\vfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	NIST LOGO - keep as-is
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\includegraphics[width=0.5\linewidth]{NIST-logo.eps}\\ 
+
+\end{flushright}
+\end{titlepage}
+
+
+
+
+
+\begin{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Title Page is REQUIRED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Publication Series & Number - automated
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\\
+\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\\
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Title 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Huge{\sffamily{\textbf{\VAR{config.title}}}}\\
+%: if config.subtitle
+\Large{\sffamily{\VAR{config.subtitle}}}\\
+%: endif
+\vfill
+
+%: if config.draft_stage
+\Large{\VAR{config.draft_stage}}
+\vspace{15pt}
+\vfill
+%: endif
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Author Order and Grouping. Always identify the primary author/creator first (s/he does not have to be a NIST author). For publications with multiple authors, group authors by their organizational affiliation. The organizational groupings and the names within each grouping should generally be ordered by decreasing level of contribution.
+%	For non-NIST authors, list their city and state below their organization name.
+%	For NIST authors, include the Division and Laboratory names (but do not include their city and state).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%: set f = namespace()
+%: for org in config.organizations | sort(attribute = "org_order")
+%:   set f.found = false
+%:   for author in config.authors | sort(attribute = "author_order")
+%:     if author.org == org.key
+%:       set f.found = true
+\normalsize \VAR{author.name}\\
+%:     endif
+%:   endfor
+%:   if org.div and f.found
+\textit{\VAR{org.div}}\\
+%:   endif
+%:   if org.ou and f.found
+\textit{\VAR{org.ou}}\\
+%:   endif
+%:   if org.org and f.found
+\textit{\VAR{org.org}}\\
+%:   endif
+\vfill
+%: endfor
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   DOI Statement - automated
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize This publication is available free of charge from:\\
+\url{\VAR{config.doi_url}}\\
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Date - Month and Year - automated
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize \VAR{config.issued_date}
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Department of Commerce LOGO - leave as-is
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+\includegraphics[width=0.18\linewidth]{DoC-logo.eps}\\ 
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Department of Commerce & NIST Leadership 
+%	will be updated as changes occur
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\footnotesize U.S. Department of Commerce\\ 
+\textit{Gina M. Raimondo, Secretary}\\
+\vspace{10pt}
+National Institute of Standards and Technology\\ 
+\hspace*{-3cm}\textit{Laurie E. Locascio, NIST Director and Under Secretary of Commerce for Standards and Technology}  
+\end{flushright}
+\end{titlepage}
+
+
+\pagestyle{empty}
+
+\addtocontents{toc}{\setcounter{tocdepth}{-5}} % hide from TOC
+
+% Set frontmatter sections all the same
+\titleformat{\section}{\normalsize\bfseries\sffamily}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\sffamily}{}{0em}{}
+\titleformat{\paragraph}{\normalsize\bfseries\sffamily}{}{0em}{}
+
+Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by the National Institute of Standards and Technology, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose. 
+
+There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.  
+
+Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at \url{https://csrc.nist.gov/publications}.
+
+
+\section*{Authority}
+
+This publication has been developed by NIST in accordance with its statutory responsibilities under the Federal Information Security Modernization Act (FISMA) of 2014, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283. NIST is responsible for developing information security standards and guidelines, including minimum requirements for federal information systems, but such standards and guidelines shall not apply to national security systems without the express approval of appropriate federal officials exercising policy authority over such systems. This guideline is consistent with the requirements of the Office of Management and Budget (OMB) Circular A-130.
+
+Nothing in this publication should be taken to contradict the standards and guidelines made mandatory and binding on federal agencies by the Secretary of Commerce under statutory authority. Nor should these guidelines be interpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the OMB, or any other federal official.  This publication may be used by nongovernmental organizations on a voluntary basis and is not subject to copyright in the United States. Attribution would, however, be appreciated by NIST. 
+
+
+\section*{NIST Technical Series Policies}
+
+\href{https://doi.org/10.6028/NIST-TECHPUBS.CROSSMARK-POLICY}{Copyright, Fair Use, and Licensing Statements} \\
+\href{https://www.nist.gov/nist-research-library/nist-technical-series-publications-author-instructions\#pubid}{NIST Technical Series Publication Identifier Syntax}
+
+
+%: if config.approved or config.supersedes
+\section*{Publication History}
+
+\VAR{config.approved}
+
+\VAR{config.supersedes}
+
+%: endif
+
+\section*{How to Cite this NIST Technical Series Publication}
+
+\VAR{config.citation} \url{\VAR{config.doi_url}}
+
+\section*{Author ORCID iDs}
+
+%: for author in config.authors | sort(attribute = "author_order")
+%:   if author.orcid
+\VAR{author.name}: {\VAR{author.orcid}}\\
+%:   endif
+%: endfor
+
+
+
+%: if config.draft
+
+\section*{Public Comment Period}
+
+\VAR{config.public_comment}
+
+\section*{Submit Comments}
+
+\url{mailto:\VAR{config.comment_email}}
+
+%: else
+
+\section*{Contact Information}
+
+\url{mailto:\VAR{config.contact}}
+
+%: endif
+
+
+\normalsize{\bfseries{\sffamily{All comments are subject to release under the Freedom of Information Act (FOIA).}}}
+
+\hypersetup{bookmarksdepth=4}

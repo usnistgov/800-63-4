@@ -1,0 +1,18 @@
+---
+layout: null
+---
+{% for c in site.collections %}
+{% assign posts = posts | concat: c.docs %}
+{% endfor %}
+[
+  {% for post in posts %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "category" : "{{ post.category }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date }}",
+	  "content"  : {{ post.content | strip_html | jsonify }}
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

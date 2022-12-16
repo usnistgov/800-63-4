@@ -1,0 +1,28 @@
+%%%
+% Section: \VAR{section.name}
+%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Start front matter - page number starts with "i"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+\pagestyle{body}
+
+\pagenumbering{roman}
+
+\addtocontents{toc}{\setcounter{tocdepth}{-5}} % hide from TOC
+
+\setcounter{secnumdepth}{-1}
+\hypersetup{bookmarksdepth=-1}
+
+\titleformat{\section}{\normalsize\bfseries\sffamily}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\sffamily}{}{0em}{}
+\titleformat{\paragraph}{\normalsize\bfseries\sffamily}{}{0em}{}
+
+\VAR{body}
+
+\setcounter{secnumdepth}{4}
+\hypersetup{bookmarksdepth=4}
