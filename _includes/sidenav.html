@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      {% for link in site.navigation %}
+        {% assign current = '' %}
+        {% if link.url == page.url or (link.collection and page.collection == link.collection) %}
+          {% assign current = 'active' %}
+        {% endif %}
+        
+        <li class="{{ current }}">
+          {% if page.collapsed and link.collection %}
+              <a href="{{ site.baseurl }}/{{ link.collection }}.html">{{ link.text }}</a>
+          {% else %}
+              <a href="{{ site.baseurl }}{{ link.url }}">{{ link.text }}</a>
+          {% endif %}
+          
+          {% if link.collection and (page.collection == link.collection) %}
+        
+            {% assign c = site.collections | where: "label", link.collection | first %}
+            {% assign pages = c.docs | sort: 'navOrder' %}
+            
+            <ul class="subnav">
+            {% for p in pages %}
+              
+              {% if p.navOrder >= 0 %}
+              
+                {% assign scurrent = '' %}
+                
+                {% if page.url == p.url %}
+                  {% assign scurrent = 'active' %}
+                {% endif %}
+                
+                {% if page.collapsed and p.anchor %}
+                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}/{{ page.collection }}.html#{{ p.anchor }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
+                {% else %}
+                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}{{ p.url }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
+                {% endif %}
+              
+              {% endif %}
+
+            {% endfor %}
+          
+            </ul>
+          {% endif %}
+          
+          
+        </li>
+      {% endfor %}
+      
+      
+  </ul>
+
+</nav>

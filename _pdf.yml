@@ -1,0 +1,484 @@
+pdf:
+  - basedir: ""
+    filename: SP-800-63-4
+    template: _pdftemplate/template.tex
+    workdir: _pdf
+    collection: sp800-63
+    graphics: 
+      - _sp800-63/media/
+      - _pdftemplate/images/
+    sections:
+        - name: cover
+          template: _pdftemplate/sp/cover.tex
+        - name: frontmatter
+          template: _pdftemplate/abstractwrapper.tex
+          parts:
+            - template: _pdftemplate/sp/abstract.tex
+            - content: _sp800-63/note-to-reviewers.md
+            - template: _pdftemplate/sp/patents.tex
+        - name: toc
+          template: _pdftemplate/sp/toc.tex
+        - name: preface
+          template: _pdftemplate/preface.tex
+          parts:
+              - _sp800-63/acknowledgements.md
+        - name: body
+          parts:
+              - _sp800-63/sec1_purpose.md
+              - _sp800-63/sec2_introduction.md
+              - _sp800-63/sec3_definitions.md
+              - _sp800-63/sec4_model.md
+              - _sp800-63/sec5_DIRM.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/body.tex
+        - name: references
+          parts:
+              - _sp800-63/sec8_references.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/references.tex
+        - name: appendix
+          parts:
+              - content: _sp800-63/definitions.md
+                template: _pdftemplate/sp/glossary.tex
+              - _sp800-63/changehistory.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/appendix.tex
+    doi_url: https://doi.org/10.6028/NIST.SP.800-63-4.ipd
+    issued_date: December 2022
+    pubseries: Special Publication
+    long_doc_number: NIST SP 800-63-4 ipd
+    revision: Revision 4
+    doc_short_title: SP 800-63-4
+    page_doc_number: NIST SP 800-63-4 ipd
+    page_title: Digital Identity Guidelines
+    display_title: Digital Identity Guidelines
+    title: Digital Identity Guidelines
+    language: 'en-US'
+    lineno: true
+    category: Information Security
+    subcategory: Identity
+    public_comment: December 16, 2022 - March 24, 2023
+    comment_email: dig-comments@nist.gov
+    contact: dig-comments@nist.gov
+    draft: true
+    draft_stage: Initial Public Draft
+    citation: Temoshok D, Proud-Madruga D, Choong YY, Galluzzo R, Gupta S, LaSalle C, Lefkovitz N, Regenscheid A (2022) Digital Identity Guidelines. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-63-4 ipd.
+    approved: Approved by the NIST Editorial Review Board on YYYY-MM-DD [will be added upon final publication]
+    organizations:
+      - key: acd
+        div: Applied Cybersecurity Division
+        ou: Information Technology Laboratory
+        org_order: 1
+      - key: csd
+        div: Computer Security Division
+        ou: Information Technology Laboratory
+        org_order: 2
+      - key: iad
+        div: Information Access Division
+        ou: Information Technology Laboratory
+        org_order: 3
+      - key: electrosoft
+        org: Electrosoft
+        org_order: 4
+      - key: cac
+        org: Cacapon Cyber Solutions
+        org_order: 5
+      - key: altmode
+        org: Altmode Networks
+        org_order: 6
+      - key: bspk
+        org: Bespoke Engineering
+        org_order: 7
+    authors:
+      - name: David Temoshok
+        org: acd
+        orcid: 0000-0001-6195-0331
+        author_order: 1
+      - name: Andrew Regenscheid
+        orcid: 0000-0002-3930-527X
+        org: csd
+        author_order: 8
+      - name: Connie LaSalle
+        orcid: 0000-0001-6031-7550
+        org: acd
+        author_order: 6
+      - name: Ryan Galluzzo
+        orcid: 0000-0003-0304-4239
+        org: acd
+        author_order: 4
+      - name: Diana Proud-Madruga
+        orcid: 0000-0002-8972-7809
+        org: electrosoft
+        author_order: 2
+      - name: Sarbari Gupta
+        orcid: 0000-0003-1101-0856
+        org: electrosoft
+        author_order: 5
+      - name: Naomi Lefkovitz
+        org: acd
+        orcid: 0000-0003-3777-3106
+        author_order: 7
+      - name: Yee-Yin Choong
+        org: iad
+        orcid: 0000-0002-3889-6047
+        author_order: 3
+  - basedir: ""
+    filename: SP-800-63A-4
+    template: _pdftemplate/template.tex
+    workdir: _pdf
+    collection: sp800-63a
+    graphics: 
+      - _sp800-63a/media/
+      - _pdftemplate/images/
+    sections:
+        - name: cover
+          template: _pdftemplate/sp/cover.tex
+        - name: frontmatter
+          template: _pdftemplate/abstractwrapper.tex
+          parts:
+            - template: _pdftemplate/sp/abstract.tex
+            - content: _sp800-63a/note-to-reviewers.md
+            - template: _pdftemplate/sp/patents.tex
+        - name: toc
+          template: _pdftemplate/sp/toc.tex
+        - name: preface
+          template: _pdftemplate/preface.tex
+          parts:
+              - _sp800-63a/acknowledgements.md
+        - name: body
+          parts:
+              - _sp800-63a/sec1_purpose.md
+              - _sp800-63a/sec2_introduction.md
+              - _sp800-63a/sec3_definitions.md
+              - _sp800-63a/sec4_proofing.md
+              - _sp800-63a/sec5_ial.md
+              - _sp800-63a/sec6_accounts.md
+              - _sp800-63a/sec7_security.md
+              - _sp800-63a/sec8_privacy.md
+              - _sp800-63a/sec9_usability.md
+              - _sp800-63a/sec10_equity.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/body.tex
+        - name: references
+          parts:
+              - _sp800-63a/sec11_references.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/references.tex
+        - name: appendix
+          parts:
+              - _sp800-63a/changehistory.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/appendix.tex
+    doi_url: https://doi.org/10.6028/NIST.SP.800-63a-4.ipd
+    issued_date: December 2022
+    pubseries: Special Publication
+    long_doc_number: NIST SP 800-63A-4 ipd
+    revision: Revision 4
+    doc_short_title: SP 800-63A-4
+    page_doc_number: NIST SP 800-63A-4 ipd
+    page_title: Digital Identity Guidelines
+    page_title_2: Enrollment and Identity Proofing
+    display_title: Digital Identity Guidelines\\Enrollment and Identity Proofing
+    title: Digital Identity Guidelines
+    subtitle: Enrollment and Identity Proofing
+    language: 'en-US'
+    lineno: true
+    category: Information Security
+    subcategory: Identity
+    public_comment: December 16, 2022 - March 24, 2023
+    comment_email: dig-comments@nist.gov
+    contact: dig-comments@nist.gov
+    draft: true
+    draft_stage: Initial Public Draft
+    citation: "Temoshok D, Abruzzi C, Fenton JL, Choong YY, Galluzzo R, LaSalle C, Lefkovitz N, Regenscheid A (2022) Digital Identity Guidelines: Enrollment and Identity Proofing. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-63A-4 ipd."
+    approved: Approved by the NIST Editorial Review Board on YYYY-MM-DD [will be added upon final publication]
+    organizations:
+      - key: acd
+        div: Applied Cybersecurity Division
+        ou: Information Technology Laboratory
+        org_order: 1
+      - key: csd
+        div: Computer Security Division
+        ou: Information Technology Laboratory
+        org_order: 3
+      - key: iad
+        div: Information Access Division
+        ou: Information Technology Laboratory
+        org_order: 2
+      - key: electrosoft
+        org: Electrosoft
+        org_order: 7
+      - key: cac
+        org: Cacapon Cyber Solutions
+        org_order: 4
+      - key: altmode
+        org: Altmode Networks
+        org_order: 5
+      - key: bspk
+        org: Bespoke Engineering
+        org_order: 6
+    authors:
+      - name: David Temoshok
+        org: acd
+        orcid: 0000-0001-6195-0331
+        author_order: 1
+      - name: Andrew Regenscheid
+        orcid: 0000-0002-3930-527X
+        org: csd
+        author_order: 8
+      - name: Connie LaSalle
+        orcid: 0000-0001-6031-7550
+        org: acd
+        author_order: 6
+      - name: Ryan Galluzzo
+        orcid: 0000-0003-0304-4239
+        org: acd
+        author_order: 5
+      - name: Christine Abruzzi
+        orcid: 0000-0001-8904-930X
+        org: cac
+        author_order: 2
+      - name: James L. Fenton
+        orcid: 0000-0002-2344-4291
+        org: altmode
+        author_order: 4
+      - name: Naomi Lefkovitz
+        org: acd
+        orcid: 0000-0003-3777-3106
+        author_order: 7
+      - name: Yee-Yin Choong
+        org: iad
+        orcid: 0000-0002-3889-6047
+        author_order: 3
+  - basedir: ""
+    filename: SP-800-63B-4
+    template: _pdftemplate/template.tex
+    workdir: _pdf
+    collection: sp800-63b
+    graphics: 
+      - _sp800-63b/media/
+      - _pdftemplate/images/
+    sections:
+        - name: cover
+          template: _pdftemplate/sp/cover.tex
+        - name: frontmatter
+          template: _pdftemplate/abstractwrapper.tex
+          parts:
+            - template: _pdftemplate/sp/abstract.tex
+            - content: _sp800-63b/note-to-reviewers.md
+            - template: _pdftemplate/sp/patents.tex
+        - name: toc
+          template: _pdftemplate/sp/toc.tex
+        - name: preface
+          template: _pdftemplate/preface.tex
+          parts:
+              - _sp800-63b/acknowledgements.md
+        - name: body
+          parts:
+              - _sp800-63b/sec1_purpose.md
+              - _sp800-63b/sec2_introduction.md
+              - _sp800-63b/sec3_definitions.md
+              - _sp800-63b/sec4_aal.md
+              - _sp800-63b/sec5_authenticators.md
+              - _sp800-63b/sec6_lifecycle.md
+              - _sp800-63b/sec7_session.md
+              - _sp800-63b/sec8_security.md
+              - _sp800-63b/sec9_privacy.md
+              - _sp800-63b/sec10_usability.md
+              - _sp800-63b/sec11_equity.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/body.tex
+        - name: references
+          parts:
+              - _sp800-63b/references.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/references.tex
+        - name: appendix
+          parts:
+              - _sp800-63b/appA_memorized.md
+              - _sp800-63b/appB_changelog.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/appendix.tex
+    doi_url: https://doi.org/10.6028/NIST.SP.800-63b-4.ipd
+    issued_date: December 2022
+    pubseries: Special Publication
+    long_doc_number: NIST SP 800-63B-4 ipd
+    revision: Revision 4
+    doc_short_title: SP 800-63B-4
+    page_doc_number: NIST SP 800-63B-4 ipd
+    page_title: Digital Identity Guidelines
+    page_title_2: Authentication and Lifecycle Management
+    display_title: Digital Identity Guidelines\\Authentication and Lifecycle Management
+    title: Digital Identity Guidelines
+    subtitle: Authentication and Lifecycle Management
+    language: 'en-US'
+    lineno: true
+    category: Information Security
+    subcategory: Identity
+    public_comment: December 16, 2022 - March 24, 2023
+    comment_email: dig-comments@nist.gov
+    contact: dig-comments@nist.gov
+    draft: true
+    draft_stage: Initial Public Draft
+    citation: "Temoshok D, Fenton JL, Choong YY, Lefkovitz N, Regenscheid A, Richer JP (2022) Digital Identity Guidelines: Authentication and Lifecycle Management. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-63B-4 ipd."
+    approved: Approved by the NIST Editorial Review Board on YYYY-MM-DD [will be added upon final publication]
+    organizations:
+      - key: acd
+        div: Applied Cybersecurity Division
+        ou: Information Technology Laboratory
+        org_order: 1
+      - key: csd
+        div: Computer Security Division
+        ou: Information Technology Laboratory
+        org_order: 3
+      - key: iad
+        div: Information Access Division
+        ou: Information Technology Laboratory
+        org_order: 2
+      - key: altmode
+        org: Altmode Networks
+        org_order: 4
+      - key: bspk
+        org: Bespoke Engineering
+        org_order: 5
+    authors:
+      - name: David Temoshok
+        org: acd
+        orcid: 0000-0001-6195-0331
+        author_order: 1
+      - name: Andrew Regenscheid
+        orcid: 0000-0002-3930-527X
+        org: csd
+        author_order: 5
+      - name: James L. Fenton
+        orcid: 0000-0002-2344-4291
+        org: altmode
+        author_order: 2
+      - name: Justin P. Richer
+        orcid: 0000-0003-2130-5180
+        org: bspk
+        author_order: 6
+      - name: Naomi Lefkovitz
+        org: acd
+        orcid: 0000-0003-3777-3106
+        author_order: 4
+      - name: Yee-Yin Choong
+        org: iad
+        orcid: 0000-0002-3889-6047
+        author_order: 3
+  - basedir: ""
+    filename: SP-800-63C-4
+    template: _pdftemplate/template.tex
+    workdir: _pdf
+    collection: sp800-63c
+    graphics: 
+      - _sp800-63c/media/
+      - _pdftemplate/images/
+    sections:
+        - name: cover
+          template: _pdftemplate/sp/cover.tex
+        - name: frontmatter
+          template: _pdftemplate/abstractwrapper.tex
+          parts:
+            - template: _pdftemplate/sp/abstract.tex
+            - content: _sp800-63c/note-to-reviewers.md
+            - template: _pdftemplate/sp/patents.tex
+        - name: toc
+          template: _pdftemplate/sp/toc.tex
+        - name: preface
+          template: _pdftemplate/preface.tex
+          parts:
+              - _sp800-63c/acknowledgements.md
+        - name: body
+          parts:
+              - _sp800-63c/sec1_purpose.md
+              - _sp800-63c/sec2_introduction.md
+              - _sp800-63c/sec3_definitions.md
+              - _sp800-63c/sec4_fal.md
+              - _sp800-63c/sec5_federation.md
+              - _sp800-63c/sec6_assertions.md
+              - _sp800-63c/sec7_presentation.md
+              - _sp800-63c/sec8_security.md
+              - _sp800-63c/sec9_privacy.md
+              - _sp800-63c/sec10_usability.md
+              - _sp800-63c/sec11_equity.md
+              - _sp800-63c/sec12_examples.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/body.tex
+        - name: references
+          parts:
+              - _sp800-63c/references.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/references.tex
+        - name: appendix
+          parts:
+              - _sp800-63c/changelog.md
+          part_template: _pdftemplate/sectionpart.tex
+          template: _pdftemplate/appendix.tex
+    doi_url: https://doi.org/10.6028/NIST.SP.800-63c-4.ipd
+    issued_date: December 2022
+    pubseries: Special Publication
+    long_doc_number: NIST 800-63C-4 ipd
+    revision: Revision 4
+    doc_short_title: SP 800-63C-4
+    page_doc_number: NIST SP 800-63C-4 ipd
+    page_title: Digital Identity Guidelines
+    page_title_2: Federation and Assertions
+    display_title: Digital Identity Guidelines\\Federation and Assertions
+    title: Digital Identity Guidelines
+    subtitle: Federation and Assertions
+    language: 'en-US'
+    lineno: true
+    category: Information Security
+    subcategory: Identity
+    public_comment: December 16, 2022 - March 24, 2023
+    comment_email: dig-comments@nist.gov
+    contact: dig-comments@nist.gov
+    draft: true
+    draft_stage: Initial Public Draft
+    citation: "Temoshok D, Richer JP, Choong YY, Fenton JL, Lefkovitz N, Regenscheid A (2022) Digital Identity Guidelines: Federation and Assertions. (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP) NIST SP 800-63C-4 ipd."
+    approved: Approved by the NIST Editorial Review Board on YYYY-MM-DD [will be added upon final publication]
+    organizations:
+      - key: acd
+        div: Applied Cybersecurity Division
+        ou: Information Technology Laboratory
+        org_order: 1
+      - key: csd
+        div: Computer Security Division
+        ou: Information Technology Laboratory
+        org_order: 3
+      - key: iad
+        div: Information Access Division
+        ou: Information Technology Laboratory
+        org_order: 2
+      - key: bspk
+        org: Bespoke Engineering
+        org_order: 4
+      - key: altmode
+        org: Altmode Networks
+        org_order: 5
+    authors:
+      - name: David Temoshok
+        org: acd
+        orcid: 0000-0001-6195-0331
+        author_order: 1
+      - name: Andrew Regenscheid
+        orcid: 0000-0002-3930-527X
+        org: csd
+        author_order: 6
+      - name: Justin P. Richer
+        orcid: 0000-0003-2130-5180
+        org: bspk
+        author_order: 2
+      - name: James L. Fenton
+        orcid: 0000-0002-2344-4291
+        org: altmode
+        author_order: 4
+      - name: Naomi Lefkovitz
+        org: acd
+        orcid: 0000-0003-3777-3106
+        author_order: 5
+      - name: Yee-Yin Choong
+        org: iad
+        orcid: 0000-0002-3889-6047
+        author_order: 3

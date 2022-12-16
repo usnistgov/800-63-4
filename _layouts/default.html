@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+{% include NISTPagesHeader.html %}
+
+<body>
+
+{% include sidenav.html %}
+
+<div class="page-switch">
+{% if page.collapsed %}
+View this document as: <b>a single page</b> | <a href="{{ site.baseurl }}/{% if page.collectionpath %}{{ page.collectionpath }}/{% endif %}{% if page.start %}{{ page.start }}/{% endif %}">multiple pages</a>.
+{% else %}
+View this document as: <a href="{{ site.baseurl }}/{{ page.collection}}.html">a single page</a> | <b>multiple pages</b>.
+{% endif %}
+</div>
+
+<div class="container">
+  <div class="row">
+
+{% comment %}
+
+For the collapsed page, we assume the assembler page has already run the anchor_headings filter
+on the individual parts, and so we don't want to double-encode everything. For the single pages,
+we need to run the filter ourselves.
+
+{% endcomment %}
+
+{% if page.collapsed %}
+
+{{content}}
+
+{% else %}
+
+  {% if page.section and page.section != "" and page.section != blank and page.section != nil %}
+
+  {% capture sectionAttr %}data-section="{{page.section}}"{% endcapture %}
+
+{% include anchor_headings.html html=content headerAttrs=sectionAttr anchorClass="header-link" anchorBody="<i class=\"fa fa-link\"></i>" %}
+
+  {% else %}
+
+{% include anchor_headings.html html=content anchorClass="header-link" anchorBody="<i class=\"fa fa-link\"></i>" %}
+
+  {% endif %}
+
+{% endif %}
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+{% include NISTPagesFooter.html %}
+
+</body>
+</html>

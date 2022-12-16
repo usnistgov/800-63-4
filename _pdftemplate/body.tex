@@ -1,0 +1,30 @@
+%%%
+% Section: \VAR{section.name}
+%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Page number starts with "1", sections start with '1'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{section}{0}
+\setcounter{secnumdepth}{4}
+
+\pagenumbering{arabic}
+\pagestyle{body}
+
+
+\titleformat{\section}{\normalsize\bfseries\sffamily}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\sffamily}{\thesubsubsection.}{1em}{}
+\titleformat{\paragraph}{\normalsize\bfseries\sffamily}{\theparagraph.}{1em}{}
+
+% Use tighter spacing than defaults
+\titlespacing{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
+\titlespacing{\subsection}{0pt}{3.5ex plus 1ex minus .2ex}{0.2ex plus .2ex}
+\titlespacing{\subsubsection}{0pt}{3.5ex plus 1ex minus .2ex}{0.2ex plus .2ex}
+\titlespacing{\paragraph}{0pt}{3.5ex plus 1ex minus .2ex}{0.2ex plus .2ex}
+
+\addtocontents{toc}{\setcounter{tocdepth}{3}} % Set TOC depth to 3 (subsubsection)
+\hypersetup{bookmarksdepth=4}
+
+\VAR{body}

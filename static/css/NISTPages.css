@@ -1,0 +1,477 @@
+.nist {
+  margin: 0;
+  padding: 0;
+}
+.nist-header {
+  box-sizing: border-box;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px 4px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: relative;
+  margin-bottom: 0px;
+}
+.nist-header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.nist-header * {
+  box-sizing: inherit;
+}
+.nist-header a, .nist-header a:link, .nist-header a:visited {
+  color: #EEE;
+  text-decoration: none;
+}
+.nist-header h1 {
+  margin: 0 10px 0 0;
+  float: left;
+  font-size: 0;
+}
+.nist-header h1 a {
+  font-weight: normal;
+  font-size: 20px;
+  height: 40px;
+  width: 280px;
+  background: url('nist_logo.png') no-repeat;
+  background-size: 280px auto;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: inline-block;
+}
+.nist-header-text {
+  position: absolute;
+  left: -9999px;
+  background: yellow;
+}
+.nist-links {
+  float: right;
+}
+a.nist-links-button {
+  display: inline-block;
+  padding: 6px;
+  margin: 0 2px;
+  border-radius: 3px;
+  border: 1px solid #666;
+  font-size: 14px;
+}
+.nist-header a.nist-links-button:hover,
+.nist-header a.nist-links-button:focus {
+  background: #ccc;
+  color: #333;
+}
+
+/* Custom styling */
+
+section.home {
+  text-align: left;
+}
+
+section.home ul, section.home ol {
+  text-align: left;
+}
+
+ul.audiences li {
+  text-align: center;
+}
+
+.navbar-fixed-left {
+  width: 160px;
+  position: fixed;
+  border-radius: 0;
+  height: calc(100% - 56px); /*56px for the header*/
+  overflow-y: scroll;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 155px;
+}
+
+.container {
+  padding-left: 160px;
+}
+
+#nistfootergoeshere {
+  padding-left: 160px;
+}
+
+.page-switch {
+  padding-left: 165px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #f8f8f8;
+}
+
+.nist-header + .container {
+    padding-left: 15px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.nav>li>a.icon {
+  display: inline-block;
+}
+
+.nav>li>a.icon.icon-fa {
+  padding: 0;
+}
+
+.navbar-fixed-left .navbar-nav .subnav {
+  font-size: smaller;
+  line-height: 1.1em;
+  padding-left: 20px;
+}
+
+.navbar-fixed-left .navbar-nav .subnav>li {
+  list-style: none;
+  padding-bottom: 4px;
+}
+
+.navbar-fixed-left .navbar-nav .subnav>li.active {
+  font-weight: bold;
+  list-style: disc;
+}
+
+.navbar-fixed-left .navbar-nav .subnav>li span.section {
+  font-size: 0.8em;
+}
+
+.navbar-fixed-left .navbar-nav .subnav a {
+  color: black;
+}
+
+/* Style default/base tables since we are using markdown */
+table{
+  width:100%;
+  margin-bottom:20px
+}
+
+table>thead>tr>th,table>tbody>tr>th,table>tfoot>tr>th,table>thead>tr>td,table>tbody>tr>td,table>tfoot>tr>td{
+  padding:8px;
+  line-height:1.42857143;
+  vertical-align:top;
+  border:1px solid #ddd
+}
+
+table>thead>tr>th{
+  vertical-align:bottom;
+  border-bottom:2px solid #ddd;
+}
+
+table>caption+thead>tr:first-child>th,table>colgroup+thead>tr:first-child>th,table>thead:first-child>tr:first-child>th,table>caption+thead>tr:first-child>td,table>colgroup+thead>tr:first-child>td,table>thead:first-child>tr:first-child>td{
+  border-top:1px solid #ddd;
+}
+
+table>tbody+tbody{
+  border-top:2px solid #ddd
+}
+
+table table{
+  background-color:#fff
+}
+
+table.authors{
+  border:hidden;
+}
+
+table.authors td{
+  border:hidden;
+}
+
+/* Footnote block */
+
+.footnotes {
+  background: #f8f8f8;
+  border-top: 2px solid #e7e7e7;
+  margin-top: 3em;
+}
+
+/* Ordered lists marked with a), b), etc */
+
+ol.letter-list > li:first-child {
+    counter-reset: letter-list;
+}
+
+ol.letter-list > li {
+    list-style: none;
+    position: relative;
+}
+
+ol.letter-list > li:before {
+    counter-increment: letter-list;
+    content: counter(letter-list, lower-alpha) ") ";
+    position: absolute;
+    left: -1.4em;
+}
+
+/* Ordered lists marked with i), ii), etc */
+
+ol.roman-list > li:first-child {
+    counter-reset: roman-list;
+}
+
+ol.roman-list > li {
+    list-style: none;
+    position: relative;
+}
+
+ol.roman-list > li:before {
+  counter-increment: roman-list;
+    content: counter(roman-list, lower-roman) ") ";
+    position: absolute;
+    left: -1.4em;
+}
+
+/* Direct commands to the PDF engine, don't display in HTML. */
+
+[latex-literal="true"] {
+  display: none !important;
+}
+
+/* Automatically-added links to section headers. */
+
+.header-link {
+  opacity: 0;
+
+  transition: opacity 0.2s ease-in-out 0.1s;
+  
+  padding-left: 1em;
+}
+
+
+h1:hover .header-link,
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+  opacity: 1;
+}
+
+/* Automated header numbering, when data-section attribute is set */
+
+h1 {
+    counter-reset: h2
+}
+
+h2 {
+    counter-reset: h3
+}
+
+h3 {
+    counter-reset: h4
+}
+
+h1[data-section]:before {
+    content: attr(data-section) ". "
+}
+
+h2[data-section]:before {
+    counter-increment: h2;
+    content: attr(data-section) "." counter(h2) ". "
+}
+
+h3[data-section]:before {
+    counter-increment: h3;
+    content: attr(data-section) "." counter(h2) "." counter(h3) ". "
+}
+
+h4[data-section]:before {
+    counter-increment: h4;
+    content: attr(data-section) "." counter(h2) "." counter(h3) "." counter(h4) ". "
+}
+
+/* Targeted section headers are highlighted. */
+
+.target {
+  background-color: #EEEFFF;
+}
+
+/* Normative statments marked in special block. */
+
+strong.normative {
+  font-size: 0.85em;
+  font-weight: bold;
+  background: #eeeeee;
+  padding: 1px 3px;
+}
+
+/* Side-set images for section callouts. */
+
+.callout-image {
+  width: 100%;
+  clear: both;
+  background: #eeeeee;
+  padding: 0.5em;
+  border-radius: 6px;
+}
+
+.callout-image img {
+  float: left;
+  max-width: 20%;
+  margin: 5px;
+  margin-right: 1.5em;
+}
+
+/* Search functionality. */
+
+.navbar #search-box {
+  width: 100%;
+  display: block;
+}
+
+.navbar #search-box input {
+  width: 100%;
+  display: block;
+}
+
+.navbar #results-container {
+  background-color: #EEEFFF;
+}
+
+/* Commands for mobile rendering. */
+
+@media screen and (max-width: 767px) {
+  /* Collapse the header and menu. */
+  .nist-header {
+    padding: 6px 10px;
+  }
+  .nist-header h1 a {
+    height: 26px;
+    width: 80px;
+    background: url('nist_logo_mark.png') 0 4px no-repeat;
+    background-size: 80px auto;
+  }
+  .mobile-hide {
+    display: none !important;
+  }
+  
+  .navbar-fixed-left {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+  
+  .navbar-nav {
+    margin: 0;
+  }
+  
+  .navbar-fixed-left .navbar-nav > li {
+    float: left;
+    width: auto;
+    font-size: smaller;
+    border-right: 1px #555555 solid;
+    border-bottom: 1px #333333 solid;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+  }
+  
+  .navbar-fixed-left .navbar-nav > li.active {
+    background-color: #e7e7e7;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .navbar-fixed-left .navbar-nav > li.active > a,
+  .navbar-fixed-left .navbar-nav .subnav > li.active > a  {
+    font-weight: bold;
+  }
+
+  .navbar-fixed-left .navbar-nav > li > a,
+  .navbar-fixed-left .navbar-nav .subnav > li > a {
+    margin: 2px;
+    padding: 2px;
+    font-weight: normal;
+  }
+
+  .navbar-fixed-left .navbar-nav .subnav {
+    padding: 0;
+  }
+  
+  .navbar-fixed-left .navbar-nav .subnav>li {
+    float: left;
+    width: auto;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+  }
+  
+  .navbar-fixed-left .navbar-nav .subnav>li > a {
+    font-size: larger; /* this undoes the "font-size: smaller" in the normal-width render */
+  }
+  
+  .navbar-fixed-left .navbar-nav .subnav>li.active {
+    font-weight: bold;
+    list-style: none;
+    background-color: #d6d6d6;
+  }
+  
+  .navbar-fixed-left .navbar-nav .subnav>li.active a {
+    background-color: #d6d6d6;
+  }
+
+  .navbar-fixed-left .navbar-nav > li#search-box {
+    float: none;
+    width: 100%;
+    font-size: smaller;
+    border-right: 1px #555555 solid;
+    border-bottom: 1px #333333 solid;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+  }
+
+  .navbar-fixed-left .navbar-nav > li#search-box input#search-input {
+    width: 100%;
+  }
+  
+  /* Containers and rows don't need the sidebar offset anymore. */
+
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  
+  .page-switch {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  #nistfootergoeshere {
+    padding-left: 0px;
+  }
+
+  /* All images shouldn't be larger than the page. */
+  
+  img {
+    max-width: 100% !important;
+    max-height: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Links shouldn't be longer than the page. Mostly important for bare URL links. */
+
+  a {
+    word-break: break-all;
+    text-overflow: ellipsis;
+  }
+
+}

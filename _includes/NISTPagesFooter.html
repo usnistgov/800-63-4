@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '{{ site.baseurl }}/search.json'
+        });
+    }
+    $(function() {
+      {% if page.collapsed %}
+      // Convert all links to on-page within document in collapsed view
+      $('.container a[href^="{{ site.baseurl }}/{% if page.collectionpath %}{{ page.collectionpath }}/{% endif %}"], .container a[href^="../"]').filter('a[href*="#"]').each(function(i, el) {
+          var $el = $(el);
+          var newPath = $el.attr('href').replace(/(.*)(\#.+)/, "$2");
+          //console.log('1: ' + $el.attr('href') + ' :: ' + newPath);
+          $el.attr('href', newPath);
+      });
+      // Convert all cross-document links when in collapsed view
+      $('.container a[href^="{{ site.baseurl }}/"]'){% if page.collectionpath %}.not('a[href*="{{ page.collectionpath }}/"]'){% endif %}.each(function(i, el) {
+          var $el = $(el);
+          var newPath = $el.attr('href').replace(new RegExp('({{ site.baseurl }})/([^/]+)(/.*)?/(#.*)?'), '$1/$2.html$4');
+          //console.log('2: ' + $el.attr('href') + ' :: ' + newPath);
+          $el.attr('href', newPath);
+      });
+      {% endif %}
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
