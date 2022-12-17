@@ -2,7 +2,6 @@
 layout: cover
 title: "NIST SP 800-63 Digital Identity Guidelines"
 description: "NIST Special Publication 800-63 Digital Identity Guidelines"
-permalink: /index.ja.html
 ---
 
 ## Call for Comments on Initial Public Draft of Revision 4
@@ -18,30 +17,30 @@ The online versions of the four volumes of draft SP 800-63-4 are available at:
 <ul class="audiences">
 <li>
   <div>
-    <a href="sp800-63.html"><img src="assets/63.png" alt="SP 800-63-4" width="150px" height="150px"></a>
+    <a href="sp800-63.ja.html"><img src="assets/63.png" alt="SP 800-63-4" width="150px" height="150px"></a>
   </div>
-  <h3><a href="sp800-63.html">SP 800-63-4</a></h3>
+  <h3><a href="sp800-63.ja.html">SP 800-63-4</a></h3>
   <h6>Digital Identity Guidelines</h6>
 </li>
 <li>
   <div>
-    <a href="sp800-63a.html"><img src="assets/63a.png" alt="SP 800-63A-4" width="150px" height="150px"></a>
+    <a href="sp800-63a.ja.html"><img src="assets/63a.png" alt="SP 800-63A-4" width="150px" height="150px"></a>
   </div>
-  <h3><a href="sp800-63a.html">SP 800-63A</a></h3>
+  <h3><a href="sp800-63a.ja.html">SP 800-63A</a></h3>
   <h6>Enrollment & Identity Proofing</h6>
 </li>
 <li>
   <div>
-    <a href="sp800-63b.html"><img src="assets/63b.png" alt="SP 800-63B-4" width="150px" height="150px"></a>
+    <a href="sp800-63b.ja.html"><img src="assets/63b.png" alt="SP 800-63B-4" width="150px" height="150px"></a>
   </div>
-  <h3><a href="sp800-63b.html">SP 800-63B</a></h3>
+  <h3><a href="sp800-63b.ja.html">SP 800-63B</a></h3>
   <h6>Authentication & Lifecycle Management</h6>
 </li>
 <li>
   <div>
-    <a href="sp800-63c.html"><img src="assets/63c.png" alt="SP 800-63C-4" width="150px" height="150px"></a>
+    <a href="sp800-63c.ja.html"><img src="assets/63c.png" alt="SP 800-63C-4" width="150px" height="150px"></a>
   </div>
-  <h3><a href="sp800-63c.html">SP 800-63C</a></h3>
+  <h3><a href="sp800-63c.ja.html">SP 800-63C</a></h3>
   <h6>Federation & Assertions</h6>
 </li>
 </ul>
