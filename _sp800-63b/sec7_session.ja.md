@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Session Management
 navOrder: 7
 navTitle: Session
@@ -89,6 +89,6 @@ When a session has been terminated, due to a time-out or other action, the subsc
 
 ### Reauthentication from a Federation or Assertion
 
-When using a federation protocol and Identity Provider (IdP) to authenticate at the RP as described in [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}, special considerations apply to session management and reauthentication. The federation protocol communicates an authentication event at the IdP to the RP using an assertion, and the RP then begins an authenticated session based on the successful validation of this assertion. Since the IdP and RP manage sessions separately from each other and the federation protocol does not connect the session management between the IdP and RP, the termination of the subscriber's sessions at an IdP and at an RP are independent of each other. Likewise, the subscriber's sessions at multiple different RPs are established and terminated independently of each other. 
+When using a federation protocol and Identity Provider (IdP) to authenticate at the RP as described in [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"}, special considerations apply to session management and reauthentication. The federation protocol communicates an authentication event at the IdP to the RP using an assertion, and the RP then begins an authenticated session based on the successful validation of this assertion. Since the IdP and RP manage sessions separately from each other and the federation protocol does not connect the session management between the IdP and RP, the termination of the subscriber's sessions at an IdP and at an RP are independent of each other. Likewise, the subscriber's sessions at multiple different RPs are established and terminated independently of each other.
 
 Consequently, when an RP session expires and the RP requires reauthentication, it is entirely possible that the session at the IdP has not expired and that a new assertion could be generated from this session at the IdP without explicitly reauthenticating the subscriber. The IdP can communicate the time and details of the authentication event to the RP, but it is up to the RP to determine if reauthentication requirements have been met. Section 5.3 of [[SP800-63C]](../_sp800-63c/sec5_federation.md#federation-session){:latex-href="#ref-SP800-63C"} provides additional details and requirements for session management within a federation context.

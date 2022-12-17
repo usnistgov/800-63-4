@@ -25,18 +25,22 @@
             <ul class="subnav">
             {% for p in pages %}
 
-              {% if p.navOrder >= 0 %}
+              {% if p.layout == 'default.ja' %}
 
-                {% assign scurrent = '' %}
+                {% if p.navOrder >= 0 %}
 
-                {% if page.url == p.url %}
-                  {% assign scurrent = 'active' %}
-                {% endif %}
+                  {% assign scurrent = '' %}
 
-                {% if page.collapsed and p.anchor %}
-                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}/{{ page.collection }}.ja.html#{{ p.anchor }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
-                {% else %}
-                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}{{ p.url }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
+                  {% if page.url == p.url %}
+                    {% assign scurrent = 'active' %}
+                  {% endif %}
+
+                  {% if page.collapsed and p.anchor %}
+                      <li class="{{ scurrent }}"><a href="{{ site.baseurl }}/{{ page.collection }}.ja.html#{{ p.anchor }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
+                  {% else %}
+                      <li class="{{ scurrent }}"><a href="{{ site.baseurl }}{{ p.url }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
+                  {% endif %}
+
                 {% endif %}
 
               {% endif %}

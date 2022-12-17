@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Introduction
 navOrder: 2
 navTitle: Introduction

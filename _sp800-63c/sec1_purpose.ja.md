@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Purpose
 navOrder: 1
 navTitle: Purpose

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: References
 navOrder: 12
 navTitle: References

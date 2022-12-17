@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Definitions and Abbreviations
 navOrder: 9
 navTitle: Definitions
@@ -273,7 +273,7 @@ Identity Provider (IdP)
 : When using federation, this is the party that manages the subscriber's primary authenticators and issues assertions derived from the subscriber account.
 
 Identity Resolution
-: The process of collecting information about an applicant in order to uniquely distinguish an individual within the context of the population the CSP serves.   
+: The process of collecting information about an applicant in order to uniquely distinguish an individual within the context of the population the CSP serves.
 
 Issuing Source
 : An authority responsible for the generation of data, digital evidence (such as assertions), or physical documents that can be used as identity evidence.

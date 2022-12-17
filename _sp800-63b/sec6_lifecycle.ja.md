@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Authenticator Lifecycle Management
 navOrder: 6
 navTitle: Lifecycle

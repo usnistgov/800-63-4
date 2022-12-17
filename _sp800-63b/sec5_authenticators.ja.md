@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Authenticators
 navOrder: 5
 navTitle: Authenticators

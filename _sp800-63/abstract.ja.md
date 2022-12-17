@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: "SP 800-63"
 description: "SP 800-63"
 navOrder: 0

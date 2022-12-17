@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Digital Identity Risk Management
 navOrder: 5
 navTitle: DIRM
@@ -17,7 +17,7 @@ This section provides details on the methodology for assessing digital identity 
 There are 4 steps to the digital identity risk management process:
 
 1.	**Conduct Initial Impact Assessment**: In this step, organizations evaluate their user population and assess the impact of a failure of each function in the identity system (i.e., proofing, authentication, and federation) for their protected application or service against a defined set of impact categories. The outcome of this step is a documented set of impact categories and associated impact levels.
-2.	**Select Initial Assurance Levels**: In this step, the impact categories and impact levels are evaluated to determine the appropriate assurance levels to protect the application. The outcome of this step is an identified initial level for each applicable xAL.  
+2.	**Select Initial Assurance Levels**: In this step, the impact categories and impact levels are evaluated to determine the appropriate assurance levels to protect the application. The outcome of this step is an identified initial level for each applicable xAL.
 3.	**Tailor and Document Assurance Level Determinations**: In this step, detailed privacy, equity, usability, and threat assessments are conducted to determine the potential impact of the initially selected assurance level on the specific user population and threat environment of the application. The initial assurance level is tailored, compensating or supplemental controls are identified, and all decisions are documented. The outcome is a Digital Identity Acceptance Statement (see [Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt)) with a defined implementable assurance level.
 4.	**Continuously Evaluate & Improve**: In this step, information is collected on performance of the identity system across a diverse set of factors based on organization needs and evolving threat vectors. This information is used to determine if the selected assurance level and controls are meeting mission, business, and security needs and to monitor for unintended harms that may have emerged. The outcomes of this step are performance metrics, documented and transparent processes for evaluation and redress, and ongoing improvements to the identity system as needed.
 
@@ -149,7 +149,7 @@ Each assurance level, IAL, AAL, and FAL (if accepting or asserting a federated i
 
 The impact analysis helps determine the extent to which risk must be mitigated by the identity proofing, authentication, and federation processes. These determinations drive the relevant choices of applicable technologies and mitigation strategies, rather than the desire for any given technology driving risk determinations.
 
-To determine the appropriate level of assurance of the user's asserted identity, organizations **SHALL** assess the potential risks and identify measures to minimize their impact. Organizations **SHALL** assess the risk of identity proofing, authentication, and federation failures separately to determine the required assurance level for each transaction. This process **SHALL** include consideration of potentially varying impacts of harms to different entities impacted by the digital identity system, as described in [Sec. 5.1.1](sec5_DIRM.md#impctEnt). Business processes, policies, and technologies may help reduce risk. Entities **SHOULD** consider the impact of specific modes of failures related to identity proofing, authentication, and federation this includes, but may not be limited to:  
+To determine the appropriate level of assurance of the user's asserted identity, organizations **SHALL** assess the potential risks and identify measures to minimize their impact. Organizations **SHALL** assess the risk of identity proofing, authentication, and federation failures separately to determine the required assurance level for each transaction. This process **SHALL** include consideration of potentially varying impacts of harms to different entities impacted by the digital identity system, as described in [Sec. 5.1.1](sec5_DIRM.md#impctEnt). Business processes, policies, and technologies may help reduce risk. Entities **SHOULD** consider the impact of specific modes of failures related to identity proofing, authentication, and federation this includes, but may not be limited to:
 
 **Identity Proofing:**
 
@@ -160,7 +160,7 @@ To determine the appropriate level of assurance of the user's asserted identity,
 **Authentication:**
 
 - The impact of authenticating the wrong subject (e.g., an attacker who compromises or steals an authenticator).
-- The impact of failing to authenticate the correct subject due to barriers, including biases, faced by the subject in presenting their authenticator.  
+- The impact of failing to authenticate the correct subject due to barriers, including biases, faced by the subject in presenting their authenticator.
 
 **Federation:**
 

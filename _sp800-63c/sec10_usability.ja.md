@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Usability
 navOrder: 10
 navTitle: Usability
@@ -28,7 +28,7 @@ Guidelines and considerations are described from the users' perspective.
 
 Accessibility differs from usability and is out of scope for this volume. [[Section508]](references.md#ref-Section508) was enacted to eliminate barriers in information technology and requires federal agencies to make their electronic and information technology public content accessible to people with disabilities. Refer to Section 508 law and standards for accessibility guidance.
 
-## General Usability Considerations 
+## General Usability Considerations
 
 Federated identity systems should:
 

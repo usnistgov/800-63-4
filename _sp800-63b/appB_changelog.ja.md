@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Change Log
 navOrder: 15
 navTitle: Change Log

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Change Log
 navOrder: 10
 navTitle: Change Log
@@ -44,4 +44,4 @@ NIST SP 800-63-4 has substantial updates and re-organization from SP 800-63-3. U
 - [Section 2.3](sec2_introduction.md#ERMreqs) expands security and privacy consideration content of previous revisions. It also adds equity and usability considerations.
 - [Section 4.1](sec4_model.md#s-4-1) includes updated non-federated and federated digital identity models and descriptions.
 - [Section 4.4](sec4_model.md#Federation) consolidates informative descriptions and considerations on the use of federated identity architectures and assertions into one section.
-- [Section 5](sec5_DIRM.md#sec5) expands upon the risk management content of previous revisions and specifically mandates that organizations take into account impacts to individuals and communities in addition to impacts to the organization. It also elevates risks to mission delivery, including challenges to the provisioning of services to all people who are eligible for and entitled to them, within the risk management process and when implementing digital identity systems. The xAL selection flowcharts, previously found in 800-63-3, section 6, have been replaced with text that elaborates the risk management process along with a sample risk assessment matrix that supports xAL selection. Additionally, the guidelines now mandate continuous evaluation of potential impacts to individuals, communities, and organizations. 
+- [Section 5](sec5_DIRM.md#sec5) expands upon the risk management content of previous revisions and specifically mandates that organizations take into account impacts to individuals and communities in addition to impacts to the organization. It also elevates risks to mission delivery, including challenges to the provisioning of services to all people who are eligible for and entitled to them, within the risk management process and when implementing digital identity systems. The xAL selection flowcharts, previously found in 800-63-3, section 6, have been replaced with text that elaborates the risk management process along with a sample risk assessment matrix that supports xAL selection. Additionally, the guidelines now mandate continuous evaluation of potential impacts to individuals, communities, and organizations.

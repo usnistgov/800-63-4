@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Usability
 navOrder: 9
 navTitle: Usability
@@ -56,7 +56,7 @@ Such preparation is only possible if users receive the necessary information (e.
 
 To ensure users are equipped to make informed decisions about whether to proceed with the enrollment process, and what will be needed for their session, provide users:
 
-* Information about the entire process, such as what to expect in each step.   
+* Information about the entire process, such as what to expect in each step.
   * Clear explanations of the expected timeframes to allow users to plan accordingly.
 
 * Explanation of the need for — and benefits of — identity proofing to allow users to understand the value proposition.
@@ -98,7 +98,7 @@ Usability considerations specific to the enrollment session include:
 
 * At the end of the enrollment session,
   * If enrollment is successful, send users confirmation regarding the successful enrollment and information on next steps (e.g., when and where to pick up their authenticator, when it will arrive in the mail).
-  * If enrollment is partially complete (due to users not having the complete set of identity evidence, users choosing to stop the process, or session timeouts), communicate to users:  
+  * If enrollment is partially complete (due to users not having the complete set of identity evidence, users choosing to stop the process, or session timeouts), communicate to users:
   	* what information will be destroyed;
   	* what, if any, information will be retained for future follow-up sessions;
   	* how long the information will be retained; and

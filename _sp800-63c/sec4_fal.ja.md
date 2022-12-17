@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Federation Assurance Level
 navOrder: 4
 navTitle: FAL

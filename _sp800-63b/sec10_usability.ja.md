@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Usability Considerations
 navOrder: 10
 navTitle: Usability

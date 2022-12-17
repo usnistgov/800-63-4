@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Equity Considerations
 navOrder: 11
 navTitle: Equity
@@ -12,7 +12,7 @@ section: 11
 
 _This section is informative._
 
-Accurate and equitable authentication service is an essential element of a digital identity system. While the accuracy aspects of authentication are largely the subject of the security requirements found elsewhere in this document, the ability for all subscribers to authenticate reliably is required to provide equitable access to government services as specified in Executive Order 13985, "Advancing Racial Equity and Support for Underserved Communities Through the Federal Government" [[EO13985]](references.md#ref-EO13985). In assessing equity risks, a CSP should consider the overall user population served by its authentication service. Additionally, the CSP further identifies groups of users within the population whose shared characteristic(s) can cause them to be subject to inequitable access, treatment, or outcomes when using that service. The usability considerations provided in [Sec. 10](sec10_usability.md#sec10) should also be considered to help ensure the overall usability and equity for all persons using authentication services. 
+Accurate and equitable authentication service is an essential element of a digital identity system. While the accuracy aspects of authentication are largely the subject of the security requirements found elsewhere in this document, the ability for all subscribers to authenticate reliably is required to provide equitable access to government services as specified in Executive Order 13985, "Advancing Racial Equity and Support for Underserved Communities Through the Federal Government" [[EO13985]](references.md#ref-EO13985). In assessing equity risks, a CSP should consider the overall user population served by its authentication service. Additionally, the CSP further identifies groups of users within the population whose shared characteristic(s) can cause them to be subject to inequitable access, treatment, or outcomes when using that service. The usability considerations provided in [Sec. 10](sec10_usability.md#sec10) should also be considered to help ensure the overall usability and equity for all persons using authentication services.
 
 A primary aspect of equity is that the CSP needs to anticipate the needs of its subscriber population and offer authenticator options that are suitable for that population. Some examples of authenticator suitability problems are as follows:
 

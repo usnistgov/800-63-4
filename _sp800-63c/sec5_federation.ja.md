@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Federation
 navOrder: 5
 navTitle: Federation
@@ -12,7 +12,7 @@ section: 5
 
 *This section is normative.*
 
-In a federation protocol, a three-party relationship is formed between the subscriber, the IdP, and the RP, as shown in [Figure 1](sec5_federation.md#fig-1). 
+In a federation protocol, a three-party relationship is formed between the subscriber, the IdP, and the RP, as shown in [Figure 1](sec5_federation.md#fig-1).
 
 [Figure 1. Federation Overview](sec5_federation.md#fig-1){:name="fig-1"}
 {:latex-ignore="true"}
@@ -33,7 +33,7 @@ In this transaction, the IdP acts as the verifier of the subscriber's authentica
 
 ## Trust Agreements {#trust-agreement}
 
-IdPs that provide authentication services and RPs that consume those services are known as members of a federation. From an IdP's perspective, the federation consists of the RPs that it serves. From an RP's perspective, the federation consists of the IdPs that it uses. This section provides an overview of and requirements for common identity federation models currently in use. In each model, relationships are established between members of the federation. These relationships are  established in either a bilateral or multilateral fashion, as described in the following sections. 
+IdPs that provide authentication services and RPs that consume those services are known as members of a federation. From an IdP's perspective, the federation consists of the RPs that it serves. From an RP's perspective, the federation consists of the IdPs that it uses. This section provides an overview of and requirements for common identity federation models currently in use. In each model, relationships are established between members of the federation. These relationships are  established in either a bilateral or multilateral fashion, as described in the following sections.
 
 Trust agreements **SHALL** establish the following parameters:
 
@@ -133,7 +133,7 @@ In the manual registration model, the operators of the IdP and RP manually provi
 
 ![Diagram of the steps involved in a manual registration process between an RP and IdP.]({{site.baseurl}}/{{page.collection}}/media/manual.png 'Manual Registration'){:style="width:630px;height:400px;;min-width: 630px;min-height:400px;" latex-src="manual.png" latex-fig="4" latex-place="h"}
 
-As shown in [Figure 4](sec5_federation.md#fig-4), manual registration involves three steps: 
+As shown in [Figure 4](sec5_federation.md#fig-4), manual registration involves three steps:
 
 1. The RP's system administrator shares the RP's attributes with the IdP's system administrator, who associates those attributes with the RP.
 
@@ -253,7 +253,7 @@ This is the most common form of provisioning in federation systems, as it requir
 {:latex-literal="true"}
 
 Pre-provisioning
-: An RP subscriber account is created by the IdP pushing the attributes to the RP or the RP pulling attributes from the IdP. Pre-provisioning of accounts generally occurs in bulk through a provisioning API as discussed in [Sec. 5.4.3](sec5_federation.md#provisioning-api), as the provisioning occurs prior to the represented subscribers authenticating through a federated transaction. Pre-provisioned accounts **SHALL** be bound to a federated identifier at the time of provisioning. Any time a particular federated identifier is seen by the RP, the associated account can be logged in as a result. 
+: An RP subscriber account is created by the IdP pushing the attributes to the RP or the RP pulling attributes from the IdP. Pre-provisioning of accounts generally occurs in bulk through a provisioning API as discussed in [Sec. 5.4.3](sec5_federation.md#provisioning-api), as the provisioning occurs prior to the represented subscribers authenticating through a federated transaction. Pre-provisioned accounts **SHALL** be bound to a federated identifier at the time of provisioning. Any time a particular federated identifier is seen by the RP, the associated account can be logged in as a result.
 This form of provisioning requires infrastructure and planning on the part of the IdP and RP, but these processes can be facilitated by automated protocols. The RP also collects attributes about users who have not interacted with the RP system yet, which can cause privacy issues. Additionally, the IdP and RP must keep the set of provisioned accounts synchronized over time as discussed in [Sec. 5.4.2](sec5_federation.md#attribute-sync).
 
 [Figure 7. Pre-Provisioning](sec5_federation.md#fig-7){:name="fig-7"}

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Security
 navOrder: 8
 navTitle: Security

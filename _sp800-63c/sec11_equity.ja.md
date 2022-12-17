@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Equity Considerations
 navOrder: 11
 navTitle: Equity

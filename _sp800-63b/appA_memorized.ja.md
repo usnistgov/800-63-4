@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Strength of Memorized Secrets
 navOrder: 13
 navTitle: Secrets

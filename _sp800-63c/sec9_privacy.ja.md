@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Privacy
 navOrder: 9
 navTitle: Privacy

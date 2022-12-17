@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: References
 navOrder: 13
 navTitle: References
@@ -24,7 +24,7 @@ anchor: references
 
 ## Standards
 
-[[ISO/IEC9241-11]](references.md#ref-ISO9241){:name="ref-ISO9241"} 
+[[ISO/IEC9241-11]](references.md#ref-ISO9241){:name="ref-ISO9241"}
 International Standards Organization, ISO/IEC 9241-11 Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts. ISO, Geneva, Switzerland, 2018, available at: <https://www.iso.org/standard/63500.html>.
 
 [[OIDC]](references.md#ref-OIDC){:name="ref-OIDC"} Sakimura, N., Bradley, J., Jones, M., de Medeiros, B., and C. Mortimore, *OpenID Connect Core 1.0 incorporating errata set 1*, November, 2014. Available at: <https://openid.net/specs/openid-connect-core-1_0.html>.

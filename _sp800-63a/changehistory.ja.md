@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Change Log
 navOrder: 12
 navTitle: Change Log
@@ -9,7 +9,7 @@ section: A
 ---
 # Change Log {#changelog}
 
-_This appendix is informative._ 
+_This appendix is informative._
 
 
 This appendix provides a high-level overview of the changes to SP 800-63A since its initial release.

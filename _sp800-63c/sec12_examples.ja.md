@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Examples
 navOrder: 12
 navTitle: Examples

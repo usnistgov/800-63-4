@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Definitions
 navOrder: 3
 navTitle: Definitions

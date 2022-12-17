@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.ja
 title: Digital Identity Model
 navOrder: 4
 navTitle: Model
@@ -40,18 +40,18 @@ The entities and interactions that comprise the non-federated digital identity m
 [Figure 1](sec4_model.md#fig-1) shows an example of a common sequence of interactions in the non-federated model. Other sequences could also achieve the same functional requirements. The usual sequence of interactions for identity proofing and enrollment activities is as follows:
 
 - Step 1: An applicant applies to a CSP through an enrollment process. The CSP identity proofs that applicant.
-- Step 2: Upon successful proofing, the applicant is enrolled in the identity service as a subscriber.  
+- Step 2: Upon successful proofing, the applicant is enrolled in the identity service as a subscriber.
     *	A subscriber account and corresponding authenticators are established between the CSP and the subscriber. The CSP maintains the subscriber account, its status, and the enrollment data. The subscriber maintains their authenticators.
 
  The usual sequence of interactions involved in using one or more authenticators to perform digital authentication in the non-federated model is as follows:
 
 - Step 3: The RP requests authentication from the claimant.
-- Step 4: The claimant proves possession and control of the authenticators to the verifier through an authentication process.  
+- Step 4: The claimant proves possession and control of the authenticators to the verifier through an authentication process.
     -	The verifier interacts with the CSP to verify the binding of the claimant's identity to their authenticators in the subscriber account and to optionally obtain additional subscriber attributes.
     -  The CSP or verifier functions of the service provider provide information about the subscriber. The RP requests the attributes it requires from the CSP. The RP, optionally, uses this information to make authorization decisions.
 - Step 5: An authenticated session is established between the subscriber and the RP.
 
-[Figure 2. Federated Digital Identity Model Example](sec4_model.md#fig-63Sec4-Figure2){:name="fig-2"}  
+[Figure 2. Federated Digital Identity Model Example](sec4_model.md#fig-63Sec4-Figure2){:name="fig-2"}
 {:latex-ignore="true"}
 
 ![High-level diagram of a federated digital identity model showing the entities and interactions between entities of the entire digital identity process, in which the CSP and verifier functions are done by the IdP.]({{site.baseurl}}/{{page.collection}}/media/Federated.png 'Federated Digital Identity Model Example'){:latex-src="Federated.png" latex-fig="2" latex-place="h"}
@@ -59,13 +59,13 @@ The entities and interactions that comprise the non-federated digital identity m
 [Figure 2](sec4_model.md#fig-2) shows an example of those same common interactions in a federated model.
 
 - Step 1: An applicant applies to an IdP through an enrollment process. Using its CSP function, the IdP identity proofs the applicant.
-- Step 2: Upon successful proofing, the applicant is enrolled in the identity service as a subscriber.  
+- Step 2: Upon successful proofing, the applicant is enrolled in the identity service as a subscriber.
     -	A subscriber account and corresponding authenticators are established between the IdP and the subscriber. The IdP maintains the subscriber account, its status, and the enrollment data collected for the lifetime of the subscriber account (at a minimum). The subscriber maintains their authenticators.
 
 The usual sequence of interactions involved in using one or more authenticators in the federated model to perform digital authentication is as follows:
 
 - Step 3: The RP requests authentication from the claimant. The IdP provides an assertion and optionally additional attributes to the RP through a federation protocol.
-- Step 4: The claimant proves possession and control of the authenticators to the verifier function of the IdP through an authentication process.  
+- Step 4: The claimant proves possession and control of the authenticators to the verifier function of the IdP through an authentication process.
     -	Within the IdP, the verifier and CSP functions interact to verify the binding of the claimant's authenticators with those bound to the claimed subscriber account and optionally to obtain additional subscriber attributes.
 - Step 5: All communication, including assertions, between the RP and the IdP happens through federation protocols.
 - Step 6: The IdP provides the RP with the authentication status of the subscriber and relevant attributes and an authenticated session is established between the subscriber and the RP.
@@ -88,7 +88,7 @@ The CSP then establishes a subscriber account to uniquely identify each subscrib
 
   - issue one or more authenticators to the subscriber at the time of enrollment,
   - bind authenticators provided by the subscriber, and/or
-  - bind authenticators to the subscriber account at a later time as needed.  
+  - bind authenticators to the subscriber account at a later time as needed.
 
 CSPs generally maintain subscriber accounts according to a documented lifecycle, which defines specific events, activities, and changes that affect the status of a subscriber account.  CSPs generally limit the lifetime of a subscriber account and any associated authenticators in order to ensure some level of accuracy and currency of attributes associated with a subscriber.  When there is a status change or when the authenticators near expiration and any renewal requirements are met, they may be renewed and/or re-issued.  Alternately, the authenticators may be invalidated and destroyed according to the CSPs written policy and procedures.
 
@@ -98,7 +98,7 @@ In order to request issuance of a new authenticator, typically the subscriber au
 
 [Figure 3](sec4_model.md#fig-3) shows a sample of interactions for identity proofing and enrollment.
 
-[Figure 3. Sample Identity Proofing and Enrollment Digital Identity Model](sec4_model.md#fig-3){:name="fig-3"}  
+[Figure 3. Sample Identity Proofing and Enrollment Digital Identity Model](sec4_model.md#fig-3){:name="fig-3"}
 {:latex-ignore="true"}
 
 ![Sequence diagram of identity proofing and enrollment showing parties involved and major steps in the process.]({{site.baseurl}}/{{page.collection}}/media/ID_Proofing.png 'Sample Identity Proofing and Enrollment Digital Identity Model'){:latex-src="ID_Proofing.png" latex-fig="3" latex-place="h"}
@@ -144,7 +144,7 @@ A digital authentication system may incorporate multiple factors in one of two w
 
 For example, item 1 can be satisfied by pairing a memorized secret (something you know) with an out-of-band device (something you have). Both authenticator outputs are presented to the verifier to authenticate the claimant. For item 2, the authenticator and authenticator secret could be a piece of hardware that contains a cryptographic key (something you have) that is controlled by the claimant where access is protected with a fingerprint (something you are). When used with the biometric factor, the cryptographic key produces an output that is used to authenticate the claimant.
 
-As noted above, biometrics do not constitute acceptable secrets for digital authentication and, therefore, cannot be used for single-factor authentication. However, biometrics authentication can be used as an authentication factor for multi-factor authentication when used in combination with a possession-based authenticator. Biometric characteristics are unique, personal attributes that can be used to verify the identity of a person who is physically present at the point of verification. This includes, but is not limited to, facial features, fingerprints, iris patterns, and voiceprints.  
+As noted above, biometrics do not constitute acceptable secrets for digital authentication and, therefore, cannot be used for single-factor authentication. However, biometrics authentication can be used as an authentication factor for multi-factor authentication when used in combination with a possession-based authenticator. Biometric characteristics are unique, personal attributes that can be used to verify the identity of a person who is physically present at the point of verification. This includes, but is not limited to, facial features, fingerprints, iris patterns, and voiceprints.
 
 ### Subscriber Accounts
 
