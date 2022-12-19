@@ -349,7 +349,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 
 ### Notification of Proofing Requirement
 
-Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotices). 
+Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotifs). 
 
 ## Identity Assurance Level 3 {#IAL3}
 
@@ -406,7 +406,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 
 ### Notification of Proofing Requirement
 
-Upon the successful completion of identity proofing at IAL3, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotices). 
+Upon the successful completion of identity proofing at IAL3, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotifs). 
 
 ### Biometric Collection
 
