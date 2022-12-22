@@ -12,9 +12,23 @@ section: 2
 
 *This section is informative.*
 
+<!--
 Federation is a process that allows for the conveyance of authentication attributes and subscriber attributes across networked systems. In a federation scenario, the CSP provides a service known as an identity provider, or IdP. The IdP acts as a verifier for authenticators issued by the CSP. The IdP sends a message, called an assertion, about this authentication event to the RP. The RP receives the assertion provided by the IdP and uses it for authentication and authorization decisions, but the RP does not verify the authenticator directly.
+-->
 
+Federation とは, Authentication イベントに関する Attribute および Subscriber に関する Attribute を Network 化されたシステム間で伝播することを可能とするプロセスである.
+Federation シナリオでは, CSP は Identity Provider (IdP) と呼ばれるサービスを提供する.
+IdP は CSP が発行する Authenticator に対する Verifier となる.
+IdP は Assertion と呼ばれる Authentication イベントに関するメッセージを RP に送信する.
+RP は IdP に提示された Assertion を受け取り自身の Authentication および Authorization の決定に用いるが, RP 自身が Authenticator を直接 Verify することはない.
+
+<!--
 Assertions are verifiable statements from an IdP to an RP that represent an authentication event for a subscriber. Federation is generally used when the RP and the IdP are not a single entity or are not under common administration, though federation can be applied within a single security domain for a variety of reasons. The RP uses the information in the assertion to identify the subscriber and make authorization decisions about their access to resources controlled by the RP.
+-->
+
+Assertion は IdP から RP に対して提示される Verify 可能なステートメントであり, Subscriber に対する Authentication イベントを表現している.
+一般的に Federation は RP と IdP が単一主体ではなく, 共通の主体の管理下にあるものでもない場合に用いられるが, さまざまな理由により同一セキュリティドメイン下のサービスに対して適用されることもある.
+RP は Assertion に含まれる情報を用いて Subscriber を識別し, RP の管理下にあるリソースへの当該 Subscriber の Access に対する Authorization 判断を下す.
 
 In a federated identity scenario, the subscriber does not authenticate directly to the RP. Instead, the federation protocol defines a mechanism for an IdP to generate an assertion associated with a subscriber, generally in response to an explicit request from the RP. The IdP is responsible for authenticating the subscriber (though it may use session management as described in [[SP800-63B]](../_sp800-63b/sec7_session.md#sec7){:latex-href="#ref-SP800-63B"}, Sec. 7). The federation process allows the subscriber to obtain services from multiple RPs without the need to hold or maintain separate authenticators at each RP, a process sometimes known as *single sign-on*.
 

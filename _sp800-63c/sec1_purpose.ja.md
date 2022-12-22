@@ -23,5 +23,5 @@ This document, SP 800-63C, provides requirements to identity providers (IdPs) an
 -->
 
 本ドキュメント SP 800-63C は Federated Identity System における Identity Provider (IdPs) および Relying Party (RP) に対する要件を定める.
-Federation を行うことで, IdP は個々に独立した多数の RP に対して, Federation Protocol および Assertion を介して, 認証イベントに関する Attribute および (オプションで) Subscriber に関する Attribute を提供することができる.
+Federation を行うことで, IdP は個々に独立した多数の RP に対して, Federation Protocol および Assertion を介して, Authentication イベントに関する Attribute および (オプションで) Subscriber に関する Attribute を提供することができる.
 同様に, RP は1つ以上の IdP を Identity の源泉として用いることも可能となる.
