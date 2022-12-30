@@ -36,7 +36,7 @@ In a federated identity scenario, the subscriber does not authenticate directly 
 
 Federated Identity シナリオにおいて, Subscriber は直接 RP に対して Authenticate を行うことはない.
 Federated Protocol が提供するメカニズムによって, IdP は Subscriber に関する Assertion を生成する. これは一般的には RP からの明示的なリクエストに応答する形で行われる.
-IdP は Subscriber を Authenticate する責務を担う. (ただし [[SP800-63B]](../_sp800-63b/sec7_session.ja.md#sec7) {:latex-href="#ref-SP800-63B"}, Sec. 7 にあるように Session Management を用いることもある)
+IdP は Subscriber を Authenticate する責務を担う. (ただし [[SP800-63B]](../_sp800-63b/sec7_session.ja.md#sec7){:latex-href="#ref-SP800-63B"}, Sec. 7 にあるように Session Management を用いることもある)
 Federation プロセスによって, Subscriber は複数の RP に対してそれぞれ独立した Authenticator を管理することなく各 RP のサービスを享受することができる. このプロセスは *Single Sign-on* と呼ばれることもある.
 
 <!--
