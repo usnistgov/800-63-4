@@ -83,7 +83,13 @@ Presentation
 Presentation
 : Assertion がそれ単体で RP に (Bearer Assertion として) 提示されたり, Subscriber が提示する Authenticator と紐づけた形で提示されたりすること.
 
+<!--
 [Table 1](sec4_fal.md#table-1) provides a non-normative summary of aspects for each FAL. Each successive level subsumes and fulfills all requirements of lower levels (e.g., a federation process at FAL3 can be accepted at FAL2 or FAL1 since FAL3 satisfies all the requirements of these lower levels). Combinations not found in the [Table 1](sec4_fal.md#table-1) are possible but outside the scope of this volume.
+-->
+
+[Table 1](sec4_fal.ja.md#table-1) は各 FAL を要約したものである (non-normative).
+各レベルは, それ以下のレベルの全要件を内包および満たす. (e.g., FAL3 で実施される Federation は FAL2 や FAL1 を満たすものとして許容可能である. FAL3 を満たしていれば, FAL2 や FAL1 の全ての要件を満たしている.)
+[Table 1](sec4_fal.ja.md#table-1) に存在しない組み合わせも可能であるが, そういった組み合わせに関しては本ドキュメントのスコープ外とする.
 
 [Table 1 Federation Assertion Levels](sec4_fal.md#table-1){:name="table-1"}
 {:latex-ignore="true"}
@@ -95,9 +101,20 @@ Presentation
 |3|Required|Static|Static|Assertion and Bound Authenticator|
 {:latex-table="1" latex-caption="Federation Assurance Levels" latex-columns="p@0.05\textwidth,p@0.16\textwidth,p@0.13\textwidth,p@0.15\textwidth,p@0.25\textwidth"}
 
+<!--
 At all FALs, all assertions **SHALL** be used with a federation protocol as described in [Sec. 5](sec5_federation.md#federation). All assertions **SHALL** comply with the detailed requirements in [Sec. 6](sec6_assertions.md#assertions). All assertions **SHALL** be presented using one of the methods described in [Sec. 7](sec7_presentation.md#presentation). Examples of assertions used in federated protocols include the ID Token in OpenID Connect [[OIDC]](references.md#ref-OIDC) and assertions written in the Security Assertion Markup Language [[SAML]](references.md#ref-SAML).
+-->
 
+いかなる FAL においても, 全ての Assertion は [Sec. 5](sec5_federation.ja.md#federation) にあるように Federation Protocol とともに利用せねばならない (**SHALL**).
+全ての Assertion は [Sec. 6](sec6_assertions.ja.md#assertions) に述べる要件を満たさねばならない (**SHALL**).
+全ての Assertion は [Sec. 7](sec7_presentation.ja.md#presentation) に述べるいずれかの方法で提示されなければならない (**SHALL**).
+Federation Protocol で利用される Assertion の例としては, OpenID Connect [[OIDC]](references.md#ref-OIDC) における ID Token や Security Assertion Markup Language [[SAML]](references.md#ref-SAML) に従って記述された Assertion などが挙げられる.
+
+<!--
 At all FALs, the IdP **SHALL** employ appropriately tailored security controls (to include control enhancements) from the moderate or high baseline of security controls defined in [[SP800-53]](references.md#ref-SP800-53) or equivalent federal (e.g., [[FEDRAMP]](references.md#ref-FEDRAMP)) or industry standard.
+-->
+
+いかなる FAL においても, IdP は, [[SP800-53]](references.ja.md#ref-SP800-53) や同等の連邦標準 (e.g., [[FEDRAMP]](references.ja.md#ref-FEDRAMP)) および業界標準において定義された中程度ないしは高度なベースラインを構成するセキュリティコントロールの中から, 適切に調整されたセキュリティコントロールを採用しなければならない (**SHALL**).
 
 ## Federation Assurance Level 1 (FAL1) {#fal1}
 
