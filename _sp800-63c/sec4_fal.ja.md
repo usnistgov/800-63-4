@@ -12,29 +12,76 @@ section: 4
 
 *This section is normative.*
 
+<!--
 This section defines allowable *federation assurance levels* (FALs). The FAL describes requirements for securing federation transactions, including requirements on how relationships between IdPs and RPs are established and how assertions are presented and protected. These levels can be requested by an RP at runtime or required by the configuration of both the RP and the IdP for a given transaction. The FAL provides assurances for the RP receiving the assertion as well as assurances for the IdP creating the assertion to be used by an RP.
+-->
 
+本セクションでは, *Federation Assurance Level (FAL)* を規定する.
+FAL は Federation Transaction に関するセキュリティ要件を定める. これには IdP と RP の関係確立方法や Assertion の提示・保護方法に関する要件を含む.
+このレベルは RP がランタイム毎に要求することもあり, RP と IdP が所与の Transaction に対して事前に設定することもある.
+FAL は, RP が Assertion を受け取る際の確度を示すとともに, IdP が RP に利用される Assertion を生成する際の確度を示す.
+
+<!--
 While many different federation implementation options are possible, the FAL is intended to provide clear guidance representing increasingly secure deployment options. See [[SP800-63]](../_sp800-63/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63"} for details on how to choose the most appropriate FAL.
+-->
 
+Federation 実装時の選択肢は幅広いが, FAL はよりセキュアなデプロイメントに関する明示的なガイダンスを提供することを意図している.
+最適な FAL の選択方法についての詳細は [[SP800-63]](../_sp800-63/sec1_purpose.ja.md#purpose){:latex-href="#ref-SP800-63"} を参照のこと.
+
+<!--
 Each FAL is characterized by a set of requirements that increase the security and complexity as the FAL increases. These requirements are listed here and expanded in other sections of this document:
+-->
 
+FAL は, レベルが上がるごとにセキュリティと複雑性が増すという特徴を持つ, 一連の要件の集合として表現される.
+これらの要件については, 本セクションでリスト化したのち, 本ドキュメント各セクションで詳細化する.
+
+<!--
 Cryptographic Verifiability
 : The assertion presented in the federation protocol is traceable back to a specific IdP that issued it, and that connection can be verified with a cryptographic mechanism such as a digital signature or MAC. This also allows the RP to verify that the assertion was not modified or forged. This is required at all FALs.
+-->
 
+Cryptographic Verifiability
+: Federation Protocol において提示された Assertion が, それを発行した特定の IdP を追跡可能であり, その関係性を Digital Signature や MAC などの暗号論的メカニズムにより検証可能であること. また RP によって当該 Assertion が改変されたり偽造されていないことを検証できること. これは全ての FAL において求められる要件である.
+
+<!--
 Audience Restriction
 : The assertion presented in the federation protocol is targeted to a specific RP and the RP can verify that it is the intended audience of the assertion. This is required at all FALs.
+-->
 
+Audience Restriction
+: Federation Protocol において提示された Assertion が, 特定の RP に向けたものであり, 当該 RP が当該 Assertion の Audience を検証可能であること. これは全ての FAL において求められる要件である.
+
+<!--
 Injection Protection
 : The RP is strongly protected from an attacker presenting an assertion in circumstances outside a current federation transaction request.
+-->
 
+Injection Protection
+: 攻撃者が当該 Federation Transaction リクエスト外で得た Assertion を提示してくるような攻撃に対して, RP が強固な保護策を持つこと.
+
+<!--
 Trust Agreement
 : The IdP and RP have agreed to participate in a federation transaction with each other for the purposes of logging in the subscriber to the RP. This can be traced back to a static agreement between the parties or occur implicitly from the connection itself.
+-->
 
+Trust Agreement
+: IdP と RP が, 双方ともに, 当該 Subscriber を当該 RP にログインさせるために当該 Federation Transaction に参加することに合意すること. これは両パーティー間の事前の静的な合意によることもあるし, 当該接続を持って暗黙的に合意したとみなされることもある.
+
+<!--
 Registration
 : The IdP and RP have exchanged identifiers and key material to allow for the verification of assertions and other artifacts during future federation transactions.
+-->
 
+Registration
+: IdP と RP が相互に自身の識別子とキーマテリアルを交換し, それ以降の Federation Transaction 内で Assertion や Artifact の Verification に用いることができるようにすること.
+
+<!--
 Presentation
 : The assertion can be presented to the RP either on its own (as a bearer assertion) or in concert with a bound authenticator presented by the subscriber.
+-->
+
+Presentation
+: Assertion がそれ単体で RP に (Bearer Assertion として) 提示されたり, Subscriber が提示する Authenticator と紐づけた形で提示されたりすること.
 
 [Table 1](sec4_fal.md#table-1) provides a non-normative summary of aspects for each FAL. Each successive level subsumes and fulfills all requirements of lower levels (e.g., a federation process at FAL3 can be accepted at FAL2 or FAL1 since FAL3 satisfies all the requirements of these lower levels). Combinations not found in the [Table 1](sec4_fal.md#table-1) are possible but outside the scope of this volume.
 

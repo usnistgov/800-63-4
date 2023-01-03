@@ -14,4 +14,4 @@ section: 3
 See [[SP800-63]](../_sp800-63/definitions.md#def-and-acr){:latex-href="#ref-SP800-63"}, Appendix A for a complete set of definitions and abbreviations.
 -->
 
-用語定義および略語については [[SP800-63]](../_sp800-63/definitions.md#def-and-acr){:latex-href="#ref-SP800-63"}, Appendix A を参照のこと.
+用語定義および略語については [[SP800-63]](../_sp800-63/definitions.ja.md#def-and-acr){:latex-href="#ref-SP800-63"}, Appendix A を参照のこと.
