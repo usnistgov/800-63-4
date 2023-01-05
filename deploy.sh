@@ -21,8 +21,8 @@ Options:
 
 Variables:
 
-  GIT_DEPLOY_DIR      Folder path containing the files to deploy.
-  GIT_DEPLOY_BRANCH   Commit deployable files to this branch.
+  GIT_DEPLOY_DIR      Folder path containing the files to deploy. (Default: current directory)
+  GIT_DEPLOY_BRANCH   Commit deployable files to this branch. (Default: nist-pages)
   GIT_DEPLOY_REPO     Push the deploy branch to this repository.
 
 These variables have default values defined in the script. The defaults can be
