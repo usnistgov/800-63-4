@@ -136,9 +136,22 @@ Assertion が Asymmetric Key を用いた Digital Signature により保護さ�
 IdP は, HTTPS で保護された well-known location を用いるなど, 検証可能な形で自身の Public Key を公開してもよい.
 Assertion が Shared Secret を用いた鍵付き Message Authentication Code (MAC) により保護されている場合は, IdP は RP 毎に異なる Shared Secret を用いなければならない (**SHALL**).
 
+<!--
 At FAL1, the trust agreement between the IdP and RP **MAY** be established entirely dynamically. For instance, the subscriber can identify their chosen IdP to the RP at runtime, allowing the RP to discover the IdP's parameters and register itself for use by the subscriber. The subscriber is prompted by the IdP to determine which attributes are released to the RP, and for what purposes. In this example, the trust between the IdP and RP is driven entirely by the desires and actions of the subscriber. Note that at FAL1, it is still possible for the trust agreement and registration to happen statically.
+-->
 
+FAL1 では IdP-RP 間の Trust Agreement は完全に Dynamic に確立しうる (**MAY**).
+例えば, Subscriber が RP に対して動的に IdP を選択・指定し, RP は IdP のパラメータを Discovery により取得し自身を IdP に登録することも可能である.
+IdP は Subscriber に対してどの Attributre を何の目的で RP に提示するかを選択させる.
+こういった例では, IdP-RP 間の信頼関係は完全に Subscriber の要求および行動により主導される.
+なお FAL1 でも Static な Trust Agreement および Registration が可能であることは留意.
+
+<!--
 In existing federation protocols, FAL1 can be implemented with the OpenID Connect Implicit Client profile [[OIDC-Implicit]](references.md#ref-OIDC-implicit), the OpenID Connect Hybrid Client profile in [[OIDC]](references.md#ref-OIDC), or the SAML Web SSO [[SAML-WebSSO]](references.md#ref-SAML-websso) profile with no additional features. In each of these profiles, the assertion is signed by the IdP and the RP is identified in a portion of the assertion covered by the signature.
+-->
+
+既存の Federation Protocol では, FAL1 は OpenID Connect Implicit Client プロファイル [[OIDC-Implicit]](references.ja.md#ref-OIDC-implicit), OpenID Connect Hybrid Client プロファイル [[OIDC]](references.ja.md#ref-OIDC), 追加機能なしの SAML Web SSO プロファイル [[SAML-WebSSO]](references.md#ref-SAML-websso) などにより実装可能である.
+これらのプロファイルでは, Assertion は IdP により署名され, RP は署名された Assertion の内容により指定される.
 
 ## Federation Assurance Level 2 (FAL2) {#fal2}
 
