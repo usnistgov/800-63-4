@@ -12,14 +12,22 @@ section: 5
 
 *This section is normative.*
 
+<!--
 In a federation protocol, a three-party relationship is formed between the subscriber, the IdP, and the RP, as shown in [Figure 1](sec5_federation.md#fig-1).
+-->
+
+Federation Protocol においては, [Figure 1](sec5_federation.ja.md#fig-1) に示されるように, Subscriber, IdP および RP の3者間の関係性が形成される.
 
 [Figure 1. Federation Overview](sec5_federation.md#fig-1){:name="fig-1"}
 {:latex-ignore="true"}
 
 ![Overview diagram of federated authentication systems showing parties involved and major steps in the process.]({{site.baseurl}}/{{page.collection}}/media/federation.png 'Federation Overview'){:style="width:628px;height:600px;;min-width: 628px;min-height: 600px;" latex-src="federation.png" latex-fig="1" latex-place="h"}
 
+<!--
 A federation relationship between an IdP and RP is established in a multi-stage process:
+-->
+
+IdP-RP 間の Federation の関係性は多段階のプロセスにより確立される.
 
 1. First, the IdP and RP agree to enter into a trust agreement. This agreement can be bilateral between the parties, multilateral at the behest of an authority, or proxied through a trusted party. This step represents initial permission for the two systems in question to connect. Parameters of what can be requested and released are established in this step, though the details of which attributes are released to a given RP for a given subscriber can be deferred until a later stage.
 
