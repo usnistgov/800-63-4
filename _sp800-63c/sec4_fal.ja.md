@@ -230,22 +230,73 @@ FAL3 での Authentication を提供する IdP は, Assertion の署名及び暗
 
 ## Requesting and Processing xALs {#request-xals}
 
+<!--
 Since an IdP is capable of asserting the identities of many different subscribers with a variety of authenticators using a variety of federation parameters, the IAL, AAL, and FAL could vary across different federated logins, even to the same RP.
+-->
 
+IdP は, 多様な Federation パラメータおよび Authenticator を用いて, 多数の Subscriber の Identity を主張することができる.
+従って同一の RP に対しても異なる Federation ログイン毎に IAL, AAL および FAL は変わりうる.
+
+<!--
 The RP **SHALL** be informed of the following information for each federated transaction:
+-->
 
+RP は各 Federation Transaction 毎に以下の情報を知らされなければならない (**SHALL**).
+
+<!--
 - The IAL of the subscriber account being presented to the RP, or an indication that no IAL claim is being made
 - The AAL of the currently active session of the subscriber at the IdP, or an indication that no AAL claim is being made
 - The FAL of the federated transaction
+-->
 
+- RP に提示される Subscriber Account の IAL. これがない場合は IAL に関する主張がないことを示唆するものとする.
+- IdP における当該 Subscriber の当該アクティブ Session の AAL. これがない場合は AAL に関する主張がないことを示唆するものとする.
+- 当該 Federation Transaction の FAL.
+
+<!--
 The RP gets this xAL information from a combination of parameters in the trust agreement as described in [Sec. 5.1](sec5_federation.md#trust-agreement#trust-agreement) and information included in the assertion as described in [Sec. 6](sec6_assertions.md#assertions). If the xAL is unchanging for all messages between the IdP and RP, the xAL information **SHALL** be included in the parameters of the trust agreement between the IdP and RP. If the xAL varies, the information **SHALL** be included as part of the assertion as discussed in [Sec. 6](sec6_assertions.md#assertions).
+-->
 
+RP は上記 xAL 情報を [Sec. 5.1](sec5_federation.ja.md#trust-agreement#trust-agreement) に述べる Trust Agreement のパラメータおよび [Sec. 6](sec6_assertions.ja.md#assertions) に述べる Assertion に含まれる情報の組み合わせにより取得する.
+IdP-RP 間の全メッセージで xAL が不変な場合は, xAL 情報は IdP-RP 間の Trust Agreement のパラメータに含まれることとする (**SHALL**).
+xAL が可変の場合は, [Sec. 6](sec6_assertions.ja.md#assertions) に述べる Assertion の一部として xAL 情報を含むものとする (**SHALL**).
+
+<!--
 The IdP **MAY** indicate that no claim is made to the IAL or AAL for a given federation transaction. In such cases, no default value is assigned to the resulting xAL. That is to say, a federation transaction without an IAL declaration in either the trust agreement or the assertion is functionally considered to have "no IAL" and the RP cannot assume the account meets "IAL1", the lowest numbered IAL described in this suite.
+-->
 
+IdP は所与の Federation Transaction に対していかなる IAL ないし AAL に関する主張もないことを示唆しても良い (**MAY**).
+この場合, 当該 Transaction の結果としての xAL には何のデフォルト値も割り当てられることはない.
+つまり, Trust Agreement にも Assertion にも IAL に関する宣言のない Federation Transaction は "IAL を持たない" ものとし, RP は当該アカウントが本ガイドライン群に規定する最低の IAL である "IAL1" を満たすものと仮定してはならない.
+
+<!--
 The RP **SHALL** determine the minimum IAL, AAL, and FAL it is willing to accept for access to any offered functionality. An RP **MAY** vary its functionality based on the IAL, AAL, and FAL of a specific federated authentication. For example, an RP can allow login at AAL2 for common functionality (e.g., viewing the status of a dam system) but require AAL3 be used for higher risk functionality (e.g., changing the flow rates of a dam system). Similarly, an RP could restrict management functionality to only certain subscriber accounts which have been identity proofed at IAL2, while allowing logins from all subscriber accounts regardless of IAL.
+-->
 
+RP は, 提供する機能に対する Access を受け入れるための最低限の IAL, AAL および FAL を規定しなければならない (**SHALL**).
+RP は, 特定の Federated Authentication における IAL, AAL および FAL に基づいて, 提供する機能を変更しても良い (**MAY**).
+例えば, AAL2 でのログインでは共通機能 (e.g., ダムシステムのステータス閲覧) へのアクセスのみとし, AAL3 ではよりハイリスクな機能 (e.g., ダムシステムの流量変更) へのアクセスを許可するなどが考えられる.
+同様に, RP は, IAL の如何を問わず全 Subscriber Account によるログインを許可しつつも, 管理機能を IAL2 による Identity Proofing を経た特定の Subscriber Account のみに制限する, といったことも可能である.
+
+<!--
 In a federation process, only the IdP has direct access to the details of the subscriber account, which determines the applicable IAL, and the authentication event at the IdP, which determines the applicable AAL. Consequently, the RP **SHALL** consider the IdP's declaration of the IAL and AAL as the sole source of these levels for a given federated transaction.
+-->
 
+Federation プロセスにおいては, IdP のみが Subscriber Account に対して適切な IAL を決定するための詳細情報への直接の Access を持つ. また適切な AAL を決定するための IdP における Authentication イベントに関しても同様である.
+従って, RP は所与の Federation Transaction における IdP による IAL および AAL の宣言を, それらのレベルの単一の情報源としなければならない (**SHALL**).
+
+<!--
 The RP **SHALL** ensure that the federation transaction meets the requirements of the FAL declared in the assertion. For example, the RP needs to ensure the presentation method meets the injection protection requirements at FAL2 and above, and that the appropriate bound authenticator is presented at FAL3.
+-->
 
-IdPs **SHALL** support a mechanism for RPs to specify a set of minimum acceptable xALs as part of the trust agreement and **SHOULD** support the RP specifying a more strict minimum set at runtime as part of the federation transaction. When an RP requests a particular xAL, the IdP **SHOULD** fulfill that request, if possible, and **SHALL** indicate the resulting xAL in the assertion. For example, if the subscriber has an active session that was authenticated at AAL1, but the RP has requested AAL2, the IdP needs to prompt the subscriber for AAL2 authentication to step up the security of the session at the IdP during the subscriber's interaction at the IdP, if possible. The IdP sends the resulting AAL as part of the returned assertion, whether it is AAL1 (the original session) or AAL2 (a stepped-up authentication).
+RP は Federation Transaction が Assertion に示される FAL 要件を満たすことを保証しなければならない (**SHALL**).
+例えば, RP は Presentation 方法が FAL2 以上で求められる Injection Protection を満たし, FAL3 を満たす適切な Bound Authenticator が提示されたことを保証する必要がある, といったことが考えられる.
+
+<!--
+IdPs **SHALL** support a mechanism for RPs to specify a set of minimum acceptable xALs as part of the trust agreement and **SHOULD** support the RP specifying a more strict minimum set at a as part of the federation transaction. When an RP requests a particular xAL, the IdP **SHOULD** fulfill that request, if possible, and **SHALL** indicate the resulting xAL in the assertion. For example, if the subscriber has an active session that was authenticated at AAL1, but the RP has requested AAL2, the IdP needs to prompt the subscriber for AAL2 authentication to step up the security of the session at the IdP during the subscriber's interaction at the IdP, if possible. The IdP sends the resulting AAL as part of the returned assertion, whether it is AAL1 (the original session) or AAL2 (a stepped-up authentication).
+-->
+
+IdP は RP が Trust Agreement において許容可能な最低限の xAL を指定する仕組みをサポートせねばならず (**SHALL**), Federation Transaction においてより厳格な最低限の xAL を指定する仕組みもサポートすべきである (**SHOULD**).
+RP が特定の xAL をリクエストした場合, IdP はそのリクエストを満たすべきであり (**SHOULD**), 可能であれば Assertion においてその結果の xAL を示すものとする (**SHALL**).
+例えば, Subscriber が AAL1 で Authenticate されたアクティブな Session を持つ一方で RP が AAL2 を要求している場合, IdP は可能であれば Subscriber に AAL2 での Authentication を促し, IdP とのインタラクションを通じて当該 Session のセキュリティを高める必要がある.
+IdP は, 結果として得られた AAL を, 返却する Assertion に含める. これは AAL1 (元の Session の AAL) ないし AAL2 (より強固な Authentication で得られた AAL) となるであろう.
