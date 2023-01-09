@@ -196,13 +196,37 @@ Government-operated IdPs asserting authentication at FAL2 **SHALL** protect keys
 
 ## Federation Assurance Level 3 (FAL3) {#fal3}
 
+<!--
 All the requirements at FAL1 and FAL2 apply at FAL3 except where overridden by more specific or stringent requirements here.
+-->
 
+FAL1 および FAL2 に対する要件は, ここでより明確ないし厳密にオーバーライトされない限り全て FAL3 でも求められる.
+
+<!--
 At FAL3, the subscriber **SHALL** authenticate to the RP by presenting an authenticator directly to the RP in addition to presenting an assertion. The authenticator presented is known as a _bound authenticator_, described in [Sec. 6.1.2](sec6_assertions.md#boundauth). For example, the subscriber goes through a federated login process at the IdP and RP, and the RP then prompts the subscriber for a bound authenticator that is associated with that RP subscriber account. The bound authenticator presented at FAL3 need not be the same authenticator used by the subscriber to authenticate to the IdP. The assertion is used to identify the subscriber to the RP while the bound authenticator gives very high assurance that the party attempting to log in is the subscriber identified in the assertion. FAL3 is not reached at the RP until the subscriber authenticates with the bound authenticator and the RP verifies that the authenticator presented is correctly bound to the RP subscriber account identified by the assertion.
+-->
 
+FAL3 ではm Subscriber は Assertion に加えて Authenticator を Direct に RP に提示することで Authenticate せねばならない (**SHALL**).
+ここで用いられる Authenticator は _Bound Authenticator_ とも呼ばれ, [Sec. 6.1.2](sec6_assertions.ja.md#boundauth) に後述される.
+例えば Subscriber が IdP と RP の間で Federation によるログインプロセスを実施する場合, RP は Subscriber に RP Subscriber Account に紐づく Bound Authenticator の提示を促す.
+FAL3 で提示される Bound Authenticator は Subscriber が IdP に Authenticate する際に用いられる Authenticator と同一である必要はない.
+Assertion は RP が Subscriber を識別する際に用いられるが, その際に Bound Authenticator はログインしようとしている当事者が Assertion により識別される Subscriber であるという高い確度を与える.
+なお, Subscriber が Bound Authenticator を用いて Authenticate し, RP が当該 Authenticator が正しく当該 Assertion が示す RP Subscriber Account に紐づいていることを検証するまで, FAL3 が達成されることはない.
+
+<!--
 At FAL3, the trust agreement and registration between the IdP and RP **SHALL** be established statically. All identifying key material and federation parameters for all parties  (including the list of attributes sent to the RP) **SHALL** be fixed ahead of time, before the federated authentication process can take place. Runtime decisions **MAY** be used to further limit what is sent between parties in the federated authentication process (e.g., a runtime decision could opt to not disclose an email address even though this attribute was included in the parameters of the trust agreement).
+-->
 
+FAL3 では, IdP-RP 間の Trust Agreement および Registrationは Static に確立されなければならない (**SHALL**).
+全当事者にとって, 識別に用いられるキーマテリアルおよび Federation パラメータ (RP に送信される Attribute リストを含む) は, Federation による Authentication プロセス実施前に固定されていなければならない (**SHALL**).
+Federation による Authentication プロセスの中で送信する項目をさらに制限する場合には, 動的に決定がなされてもよい (**MAY**).
+(e.g., Trust Agreement で合意されたパラメータには含まれているものの Email Address を開示したくない場合など)
+
+<!--
 IdPs asserting authentication at FAL3 **SHALL** protect keys used for signing or encrypting those assertions with mechanisms validated at [[FIPS140]](references.md#ref-FIPS140) Level 1 or higher.
+-->
+
+FAL3 での Authentication を提供する IdP は, Assertion の署名及び暗号化に用いる鍵を [[FIPS140]](references.ja.md#ref-FIPS140) Level 1 およびそれ以上の手法により保護しなければならない (**SHALL**).
 
 ## Requesting and Processing xALs {#request-xals}
 
