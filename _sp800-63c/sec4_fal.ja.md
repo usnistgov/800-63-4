@@ -91,7 +91,7 @@ Presentation
 各レベルは, それ以下のレベルの全要件を内包および満たす. (e.g., FAL3 で実施される Federation は FAL2 や FAL1 を満たすものとして許容可能である. FAL3 を満たしていれば, FAL2 や FAL1 の全ての要件を満たしている.)
 [Table 1](sec4_fal.ja.md#table-1) に存在しない組み合わせも可能であるが, そういった組み合わせに関しては本ドキュメントのスコープ外とする.
 
-[Table 1 Federation Assertion Levels](sec4_fal.md#table-1){:name="table-1"}
+[Table 1 Federation Assertion Levels](sec4_fal.ja.md#table-1){:name="table-1"}
 {:latex-ignore="true"}
 
 |FAL|Injection Protection|Trust Agreement|Registration|Presentation|
@@ -150,7 +150,7 @@ IdP は Subscriber に対してどの Attributre を何の目的で RP に提示
 In existing federation protocols, FAL1 can be implemented with the OpenID Connect Implicit Client profile [[OIDC-Implicit]](references.md#ref-OIDC-implicit), the OpenID Connect Hybrid Client profile in [[OIDC]](references.md#ref-OIDC), or the SAML Web SSO [[SAML-WebSSO]](references.md#ref-SAML-websso) profile with no additional features. In each of these profiles, the assertion is signed by the IdP and the RP is identified in a portion of the assertion covered by the signature.
 -->
 
-既存の Federation Protocol では, FAL1 は OpenID Connect Implicit Client プロファイル [[OIDC-Implicit]](references.ja.md#ref-OIDC-implicit), OpenID Connect Hybrid Client プロファイル [[OIDC]](references.ja.md#ref-OIDC), 追加機能なしの SAML Web SSO プロファイル [[SAML-WebSSO]](references.md#ref-SAML-websso) などにより実装可能である.
+既存の Federation Protocol では, FAL1 は OpenID Connect Implicit Client プロファイル [[OIDC-Implicit]](references.ja.md#ref-OIDC-implicit), OpenID Connect Hybrid Client プロファイル [[OIDC]](references.ja.md#ref-OIDC), 追加機能なしの SAML Web SSO プロファイル [[SAML-WebSSO]](references.ja.md#ref-SAML-websso) などにより実装可能である.
 これらのプロファイルでは, Assertion は IdP により署名され, RP は署名された Assertion の内容により指定される.
 
 ## Federation Assurance Level 2 (FAL2) {#fal2}
