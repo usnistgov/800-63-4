@@ -43,6 +43,8 @@ navigation:
 - text: SP 800-63C
   url: /sp800-63c/
   collection: sp800-63c
+- text: Ongoing Updates
+  url: /updates/
 
 host: 0.0.0.0
 

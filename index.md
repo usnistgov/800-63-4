@@ -50,6 +50,8 @@ The online versions of the four volumes of draft SP 800-63-4 are available at:
 
 PDF versions of these documents are available on the [NIST Computer Security Resource Center](https://csrc.nist.gov/publications/detail/sp/800-63/4/draft).
 
+Ongoing updates to the document suite are [cataloged on this site](updates/).
+
 ## Background {#background}
 The rapid proliferation of online services over the past few years has heightened the need for reliable, equitable, secure, and privacy-protective digital identity solutions. 
 
