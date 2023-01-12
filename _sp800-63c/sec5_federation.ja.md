@@ -108,11 +108,33 @@ Trust Agreement では, 以下のパラメータを確立することとする (
 - IdP が提供しうる xAL
 - RP が必要とする xAL
 
+<!--
 Trust agreements are able to be established either statically or dynamically. In a static establishment, there is often a legal or contractual agreement binding the parties to a set of expected behaviors, rights, and requirements. The parameters of static trust agreements **SHALL** be available to all parties in the agreement, including the operator of the IdP, the operator of the RP, and affected subscribers.
+-->
 
+Trust Agreement は Static に確立されることもあれば Dynamic に確立されることもある.
+Static Trust Agreement の確立においては, 双方に期待される挙動, 権利および要件について, 法的ないしは契約に基づいた合意がなされる.
+Static Trust Agreement のパラメータは, 当該合意に参加する全当事者 (IdP や RP のオペレーターや影響する Subscriber を含む) に開示されなければならない (**SHALL**).
+
+<!--
 In dynamic trust establishment, in contrast, the trust agreement is implicitly defined when the RP and IdP first contact each other for the purposes of a subscriber's login. The expression of the parameters of a dynamic trust agreement is driven by the federation protocol in place, and are not usually tied to a contractual agreement between the federating parties. The parameters of a dynamic trust agreement **SHALL** be disclosed to the subscriber by the RP and the IdP during the federation transaction.
+-->
 
+Dynamic Trust Agreement 確立においては, Static な場合とは裏腹に, Trust Agreement は RP と IdP が Subscriber をログインさせる目的でやり取りをする初回に暗黙的に確立される.
+Dynamic Trust Agreement のパラメータ表現は Federation Protocol によって定められ, 通常は Federation に参加する当事者間の契約等には紐づかない.
+Dynamic Trust Agreement のパラメータは, Federation Transaction 中に IdP および RP から Subscriber に開示されなければならない.
+
+<!--
 The _authorized party_ in a trust agreement is the organization, person, or entity that is responsible for the specific release decisions covered by the trust agreement, including the release of subscriber attributes. For a static trust agreement, the authorized party **MAY** be the organization responsible for the IdP. In this case, consent to release attributes is decided for all subscribers and established by an allowlist as described in [Sec. 5.3.1](sec5_federation.md#idp-allowlist), allowing for the disclosure of attribute information without direct decisions and involvement by the subscriber. A static trust agreement **MAY** stipulate that an individual, such as the subscriber, is to be prompted at runtime for consent to disclose attributes as discussed in [Sec. 5.3.3](sec5_federation.md#idp-runtime-decision). Since dynamic trust agreements are established by subscriber actions, the authorized party in a dynamic trust agreement is always the subscriber. Disclosure of attributes in dynamic trust agreements **SHALL** be subject to a runtime decision from the subscriber and **SHALL NOT** be subject to an allowlist at the IdP.
+-->
+
+Trust Agreemeent における Authorized Party は, Subscriber Attribute の開示を含む Trust Agreement がカバーする特定の開示決定に責務を負う組織, 個人ないしはなんらかの主体である.
+Static Trust Agreement では Authorized Party は IdP を管理する組織でありえる (**MAY**).
+そのようなケースでは, Attribute 開示の同意は全ての Subscriber に対して決定され, [Sec. 5.3.1](sec5_federation.ja.md#idp-allowlist) に述べるように Allowlist 形式で確立された上で, Subscriber の直接の意思決定や関与を必要としない.
+Static Trust Agreement では, [Sec. 5.3.3](sec5_federation.ja.md#idp-runtime-decision) に述べるように, Subscriber をはじめとする個人が Attribute 開示への同意を実行時に促されるように規定することもある (**MAY**).
+Dynamic Trust Agreement は Subscriber のアクションを起点に確立されるため, Dynamic Trust Agreement における Authorized Party は常に Subscriber である.
+Dynamic Trust Agreement における Attribute の開示は Subscriber による実行時の決定の対象とせねばならず (**SHALL**), IdP の Allowlist の対象としてはならない (**SHALL NOT**).
+
 
 For example, a static trust agreement is established for an organization (the IdP) connecting to an enterprise service (the RP) to be made available to all subscribers at the organization on an allowlist. The authorized party for this trust agreement is the organization. When a subscriber logs in to the enterprise service, they are not prompted with any runtime decisions regarding the service since the static trust agreement establishes this a priori. In a different scenario, another service is made available to all subscribers at the same organization, but the static trust agreement stipulates that the subscriber is the authorized party. When logging in to the service for the first time, each subscriber is prompted for their consent to release their attributes to the RP. In another scenario, a dynamic trust agreement is established implicitly when a subscriber goes to access an RP that is otherwise unknown by their IdP. The RP informs the subscriber about the uses of all attributes being requested from the IdP, and the IdP prompts the subscriber for consent to release their attributes to the RP.
 
