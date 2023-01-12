@@ -16,7 +16,7 @@ section: 5
 In a federation protocol, a three-party relationship is formed between the subscriber, the IdP, and the RP, as shown in [Figure 1](sec5_federation.md#fig-1).
 -->
 
-Federation Protocol においては, [Figure 1](sec5_federation.ja.md#fig-1) に示されるように, Subscriber, IdP および RP の3者間の関係性が形成される.
+Federation Protocol においては, [Figure 1](sec5_federation.ja.md#fig-1) に示されるように, Subscriber, IdP および RP の三者間の関係性が形成される.
 
 [Figure 1. Federation Overview](sec5_federation.md#fig-1){:name="fig-1"}
 {:latex-ignore="true"}
@@ -71,10 +71,24 @@ IdP は, Assertion の一部として, ないしは Authorize された Credenti
 
 ## Trust Agreements {#trust-agreement}
 
+<!--
 IdPs that provide authentication services and RPs that consume those services are known as members of a federation. From an IdP's perspective, the federation consists of the RPs that it serves. From an RP's perspective, the federation consists of the IdPs that it uses. This section provides an overview of and requirements for common identity federation models currently in use. In each model, relationships are established between members of the federation. These relationships are  established in either a bilateral or multilateral fashion, as described in the following sections.
+-->
 
+Authentication サービスを提供する IdP とそのサービスを利用する RP は Federation のメンバーとなる.
+IdP から見ると, Federation とは IdP がサービスを提供する相手である RP 群からなる.
+RP から見ると, Federation とは RP が利用する IdP 群からなる.
+本セクションでは, 現在利用されている Identity Federation モデルの概観について述べる.
+各モデルで Federation メンバー間の関係性が構築される.
+この関係性は後述のように二者間で確立されることもあるし多者間で確立されることもある.
+
+<!--
 Trust agreements **SHALL** establish the following parameters:
+-->
 
+Trust Agreement では, 以下のパラメータを確立することとする (**SHALL**).
+
+<!--
 - The set of attributes the IdP can make available to the RP
 - The population of subscriber accounts the IdP can create assertions for
 - The set of attributes the RP will request (a subset of the attributes made available)
@@ -83,6 +97,16 @@ Trust agreements **SHALL** establish the following parameters:
 - The means of informing subscribers about attribute release to the RP
 - The xALs available from the IdP
 - The xALs required by the RP
+-->
+
+- IdP が RP に対して開示できる Attribute のリスト
+- IdP が Assertion を生成できる Subscriber Account の母集団
+- RP がリクエストする Attribute のリスト (IdP が RP に対して開示できるリストのサブセット)
+- RP がリクエストする各 Attribute についてその利用目的
+- Subscriber Attribute の開示にかかる意思決定の責務を負う Authorized Party
+- Subscriber が RP に開示される Attriburte について知る手段
+- IdP が提供しうる xAL
+- RP が必要とする xAL
 
 Trust agreements are able to be established either statically or dynamically. In a static establishment, there is often a legal or contractual agreement binding the parties to a set of expected behaviors, rights, and requirements. The parameters of static trust agreements **SHALL** be available to all parties in the agreement, including the operator of the IdP, the operator of the RP, and affected subscribers.
 
