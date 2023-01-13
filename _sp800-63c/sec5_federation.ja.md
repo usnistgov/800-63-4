@@ -47,7 +47,7 @@ IdP-RP 間の Federation の関係性は多段階のプロセスにより確立�
 このステージは Subscriber が RP にログインしようとする前に実施することもあるし, Subscriber が RP に対して IdP を利用するよう試行した結果として実施されることもある.
 
 <!--
-3. Next, the IdP and RP determine that they want to engage in a federated authentication transaction to authenticate the subscriber. As part of this, they determine which attributes about the subscriber are to be passed from the IdP to the RP during this transaction. The decision made in this step builds on the trust agreement established in the first step and the identities of the RP and IdP established in the second step.
+3. Next, the IdP and RP determine that they want to engage in a a to authenticate the subscriber. As part of this, they determine which attributes about the subscriber are to be passed from the IdP to the RP during this transaction. The decision made in this step builds on the trust agreement established in the first step and the identities of the RP and IdP established in the second step.
 -->
 
 3. 次に, IdP と RP は Subscriber を Authenticate するため Federation Transaction を実施することを決定する.
@@ -135,14 +135,42 @@ Static Trust Agreement では, [Sec. 5.3.3](sec5_federation.ja.md#idp-runtime-de
 Dynamic Trust Agreement は Subscriber のアクションを起点に確立されるため, Dynamic Trust Agreement における Authorized Party は常に Subscriber である.
 Dynamic Trust Agreement における Attribute の開示は Subscriber による実行時の決定の対象とせねばならず (**SHALL**), IdP の Allowlist の対象としてはならない (**SHALL NOT**).
 
-
+<!--
 For example, a static trust agreement is established for an organization (the IdP) connecting to an enterprise service (the RP) to be made available to all subscribers at the organization on an allowlist. The authorized party for this trust agreement is the organization. When a subscriber logs in to the enterprise service, they are not prompted with any runtime decisions regarding the service since the static trust agreement establishes this a priori. In a different scenario, another service is made available to all subscribers at the same organization, but the static trust agreement stipulates that the subscriber is the authorized party. When logging in to the service for the first time, each subscriber is prompted for their consent to release their attributes to the RP. In another scenario, a dynamic trust agreement is established implicitly when a subscriber goes to access an RP that is otherwise unknown by their IdP. The RP informs the subscriber about the uses of all attributes being requested from the IdP, and the IdP prompts the subscriber for consent to release their attributes to the RP.
+-->
 
+例えば Static Trust Agreement は, エンタープライズサービス (RP) を Allowlist に基づき組織 (IdP) の全 Subscriber に提供するために確立されることもある.
+この場合 Trust Agreement の Authorized Party は組織である.
+Subscriber がエンタープライズサービスにログインする際は, 当該サービスに関してはなんら実行時決定は要求されない. これは Static Trust Agreement がそのように事前に確立されているからである.
+別の例として, 同じ組織において別のサービスが全 Subscriber に提供されているが, 当該 Static Trust Agreement においては Subscriber が Authorized Party となっていることもある.
+この場合, 当該サービスへの初回ログイン時には各 Subscriber が自身の Attribute を RP に開示する旨の同意を促される.
+また別の例としては, Subscriber が IdP にとって未知な RP にアクセスした時点で Dynamic Trust Agreement が暗黙的に確立されることもある.
+この場合, RP は Subscriber に対して IdP に対して当該 RP が要求する全 Attribute の利用について通知し, IdP はそれらの Attribute の開示について Subscriber に同意を促す.
+
+<!--
 Establishment of a trust agreement is required for all federation transactions, even those in which the IdP and RP have a shared security domain or shared legal ownership. In such cases, the establishment of the trust agreement is an internal process that can be completed quickly.
+-->
 
+Trust Agreement の確立は全ての Federation Transaction において必要となる.
+IdP と RP が同一セキュリティドメインにあったり同じ法的所有権のもとにあってもそれは同様である.
+そのような場合においては, Trust Agreement の確立は内部プロセスにより迅速に完了できるであろう.
+
+<!--
 During the course of a single federation transaction, it is important for the policies and expectations of the IdP and RP to be unambiguous for all parties involved. Therefore, there **SHOULD** be only one set of trust agreements in effect for a given transaction. This will usually be determined by the unique pair consisting of a single IdP and a single RP. However, these agreements could vary in other ways, such as an IdP and RP having different agreements for different populations of subscribers.
+-->
 
+単一の Federation Transaction の間, IdP と RP のポリシーおよび期待値が Transaction 参加者全員に対して明白であることが重要である.
+従って, ある Transaction に対しては単一セットの Trust Agreement のみが有効とされるべきである (**SHOULD**).
+これは通常単一の IdP および RP のペア毎に決定される.
+しかしながら, Trust Agreement の有り様は多様であり, 単一の IdP および RP のペアが異なる Subscriber の集団毎に対して異なる Agreement を持つこともありえる.
+
+<!--
 The existence of a trust agreement between two parties does not preclude the existence of other agreements for each party in the agreement to have with other parties. That is to say, an IdP can have (and generally does have) independent agreements with multiple RPs simultaneously, and an RP can likewise have independent agreements with multiple IdPs simultaneously.
+-->
+
+2当事者間の Trust Agreement が存在したからといって, 当該 Agreement の各当事者が他の当事者と別の Agreement を持つことは排除されない.
+つまり, IdP は同時に複数の RP に対してそれぞれ独立した Agreement を持つことができる (また, 一般的にはそうなっている).
+また RP も同様に, 同時に複数の RP に対してそれぞれ独立した Agreement を持つことができる.
 
 ### Bilateral Trust Agreements {#bilateral}
 
