@@ -290,7 +290,7 @@ Where proxies are used, they function as an IdP on one side and an RP on the oth
 -->
 
 Proxy を利用する場合, 当該 Proxy はある一方には IdP, またある一方には RP として動作する.
-従って IdP と RP に適用される全規範的用件が対応する役割を担う各 Proxy に適用されねばならない (**SHALL**).
+従って IdP と RP に適用される全規範的要件が対応する役割を担う各 Proxy に適用されねばならない (**SHALL**).
 
 [Figure 3. Federation Proxy](sec5_federation.ja.md#fig-3){:name="fig-3"}
 {:latex-ignore="true"}
@@ -461,55 +461,168 @@ Software Statement により, Federation の当事者は暗号論的に Dynamic 
 
 ## Authentication and Attribute Disclosure
 
+<!--
 Once the IdP and RP have entered into a trust agreement and have completed registration, the federation protocol can be used to pass subscriber attributes from the IdP to the RP. The decision of whether an authentication can occur or attributes may be passed **SHALL** be determined by the authorized party stipulated by the trust agreement, through use of an allowlist, a blocklist, or a runtime decision.
+-->
 
+IdP と RP が Trust Agreement を結び Registration を完了させると, Subscriber Attribute を IdP から RP に伝達するために Federation Protocol が利用可能となる.
+Authentication を要求するか Attribute を伝達可能とするかは, Allowlist や Blocklist, 実行時決定などにより, Trust Agreement に規定された Authorized Party によって決定されるものとする (**SHALL**).
+
+<!--
 A subscriber's attributes **SHALL** be transmitted between IdP and RP only for identity federation transactions or support functions such as identification of compromised subscriber accounts as discussed in [Sec. 5.5](sec5_federation.md#privacy-reqs). A subscriber's attributes are not to be transmitted for any other purposes, even when parties are allowlisted.
+-->
 
+Subscriber Attribute は, Identity Federation Transaction や [Sec. 5.5](sec5_federation.ja.md#privacy-reqs) に後述する Subscriber Account 危殆化検知機能のサポートの目的でのみ, IdP と RP の間を伝達されるものとする (**SHALL**).
+Allowlist に当事者が記載されているからといって, その他の目的で Subscriber Attribute を伝達してはならない.
+
+<!--
 A subscriber's attributes **SHALL NOT** be used by the RP for purposes other than those stipulated in the trust agreement.
+-->
 
+RP は Trust Agreement に規定される目的のほかには Subscriber Attribute を利用してはならない (**SHALL NOT**).
+
+<!--
 The subscriber **SHALL** be informed of the transmission of attributes to an RP. In the case where the authorized party is the organization, the organization **SHALL** make available to the subscriber the list of approved RPs and the associated sets of attributes sent to those RPs. In the case where the authorized party is the subscriber, the subscriber **SHALL** be prompted prior to release of attributes using a runtime decision at the IdP as described in [Sec. 5.3.3](sec5_federation.md#idp-runtime-decision).
+-->
 
+Subscriber は, RP への Attribute 送信について通知されるものとする (**SHALL**).
+Authorized Party が組織の場合, 当該組織は Subscriber に許可された RP のリストと各 RP に送信される Attribute のセットを開示するべきである (**SHALL**).
+Authorized Party が Subscriber 自身の場合, Subscriber は [Sec. 5.3.3](sec5_federation.ja.md#idp-runtime-decision) の通り IdP における実行時決定において, Attribute 開示前にそれを知らされるべきである (**SHALL**).
+
+<!--
 The IdP **SHALL** provide effective mechanisms for redress of subscriber complaints or problems (e.g., subscriber identifies an inaccurate attribute value). See [Sec. 10](sec10_usability.md#usability) on usability considerations for redress.
+-->
+
+IdP は Subscriber の苦情や問題 (Subscriber が誤った Attribute Value に気づいた, など) の是正のための効果的なメカニズムを提供すべきである (**SHALL**).
+是正のためのユーザビリティ上の検討事項については [Sec. 10](sec10_usability.ja.md#usability) を参照のこと.
 
 ### IdP Allowlists of RPs {#idp-allowlist}
 
+<!--
 In a static trust agreement, IdPs **MAY** establish allowlists of RPs authorized to receive authentication and attributes from the IdP without a runtime decision from the subscriber. When placing an RP on its allowlist, the IdP **SHALL** ensure that the RP abides by all applicable provisions and requirements in the SP 800-63 guidelines. The IdP **SHALL** determine which identity attributes are passed to the allowlisted RP upon authentication. IdPs **SHALL** make allowlists available to subscribers as described in [Sec. 9.2](sec9_privacy.md#notice).
+-->
 
+Static Trust Agreement において, IdP は RP の Allowhist をもうけ, そこに含まれる RP については当該 IdP から Subscriber による実行時決定無しに Authentication および Attribute を受け取ることを認可されたものとすることができる (**MAY**).
+RP を Allowlist に追加するには, IdP は RP が SP 800-63 ガイドライン群に規定される適切な規定及び要件に従うことを保証しなければならない (**SHALL**).
+IdP は Authentication 時にどの Identity Attribute が Allowlist 内の RP に開示されるかを決定せねばならない (**SHALL**).
+IdP は [Sec. 9.2](sec9_privacy.ja.md#notice) に後述の通り Allowlist を Subscriber に開示せねばならない (**SHALL**).
+
+<!--
 IdP allowlists **SHALL** uniquely identify RPs through the means of domain names, cryptographic keys, or other identifiers applicable to the federation protocol in use. Any entities that share an identifier **SHALL** be considered equivalent for the purposes of the allowlist. For example, a wildcard domain identifier of "*.example.com" would match the domains "www.example.com", "service.example.com", and "unknown.example.com" equally. All three of these sites would be treated as the same RP for disclosure decisions using the allowlist. Allowlists **SHOULD** be as specific as possible to avoid unintentional impersonation of an RP.
+-->
+
+IdP の Allowlist は, ドメイン名や Cryptographic Key, 利用している Federation Protocol が提供するその他の識別子などを用いて, 一意に RP を識別せねばならない (**SHALL**).
+ある識別子が示す全ての主体は, Allowlist の目的のもとで同等とみなされるべきである (**SHALL**).
+例えば "*.example.com" といったワイルドカードドメインは "www.example.com", "service.example.com" および "unknown.example.com" に等しくマッチする.
+これら3つのサイトは Allowlist を用いた開示決定において全て同じ RP として扱われる.
+Allowlist は予期せぬ RP のなりすましを防止するためできる限り RP を特定できるようにすべきである (**SHOULD**).
+
 
 ### IdP Blocklists of RPs
 
+<!--
 IdPs **MAY** establish blocklists of RPs not authorized to receive authentication assertions or attributes from the IdP, even if requested to do so by the subscriber. If an RP is on an IdP's blocklist, the IdP **SHALL NOT** produce an assertion targeting the RP in question under any circumstances.
+-->
 
+IdP は RP の Blocklist をもうけ, そこに含まれる RP については当該 IdP から Authentication Assertion や Attribute を受け取ることができないようにしても良い (**MAY**).
+この場合, Subscriber が当該 RP を利用するようリクエストしたとしても拒否される.
+RP が IdP の Blocklist に追加された場合, IdP はいかなる状況下でもその RP を対象とした Assertion を生成してはならない (**SHALL NOT**).
+
+<!--
 IdP blocklists **SHALL** uniquely identify RPs through the means of domain names, cryptographic keys, or other identifiers applicable to the federation protocol in use. Any entities that share an identifier **SHALL** be considered equivalent for the purposes of the blocklist. For example, a wildcard domain identifier of "*.example.com" would match the domains "www.example.com", "service.example.com", and "unknown.example.com" equally. All three of these sites would be treated as the same RP for decisions using the blocklist.
+-->
+
+IdP の Blocklist は, ドメイン名や Cryptographic Key, 利用している Federation Protocol が提供するその他の識別子などを用いて, 一意に RP を識別せねばならない (**SHALL**).
+ある識別子が示す全ての主体は, Blocklist の目的のもとで同等とみなされるべきである (**SHALL**).
+例えば "*.example.com" といったワイルドカードドメインは "www.example.com", "service.example.com" および "unknown.example.com" に等しくマッチする.
+これら3つのサイトは Blocklist を用いた決定において全て同じ RP として扱われる.
 
 ### IdP Runtime Decisions {#idp-runtime-decision}
 
+<!--
 Every RP that is in a trust agreement with an IdP but not on an allowlist or a blocklist with that IdP **SHALL** be governed by a default policy in which runtime authorization decisions will be made by an authorized party identified by the trust agreement. In most circumstances, and for practical purposes, the authorized party is the subscriber; however, it is possible for an administrator or other party to be prompted on behalf of the subscriber. Note that in a dynamic trust agreement, only a runtime decision can be used to authorize the release of attributes.
+-->
 
+Trust Agreement 内の RP のうち IdP の Allowlist にも Blocklist にも記載のない RP は, デフォルトのポリシーに従い Trust Agreement により定められる Authorized Party による実行時の Authorization 決定に従うものとする (**SHALL**).
+ほとんどの場合, 実用上, Authorized Party は Subscriber 自身である.
+しかしながら管理者やその他の当事者が Subscriber に代わって許可を求められることもある.
+Dynamic Trust Agreement においては, Attribute 開示の認可には実行時決定以外利用できないことに注意.
+
+<!--
 In this mode of operation, the authorized party is prompted by the IdP during the federation transaction for their consent to provide an authentication assertion and release specific attributes to the RP on behalf of the subscriber. The IdP **SHALL** provide the authorized party with explicit notice and prompt them for positive confirmation before any attributes about the subscriber are transmitted to the RP. At a minimum, the notice **SHOULD** be provided by the party in the position to provide the most effective notice and obtain confirmation, consistent with [Sec. 9.2](sec9_privacy.md#notice). The IdP **SHALL** disclose which attributes will be released to the RP if the transaction is approved. If the federation protocol in use allows for optional attribute disclosure at runtime, the authorized party **SHALL** be given the option to decide whether to transmit specific attributes to the RP without terminating the federation transaction entirely.
+-->
 
+実行時決定モードでは, Authorized Party は IdP から Authentication Assertion と特定の Attribute を Subscriber に代わって RP に開示する旨の同意を Federation Transaction 中に求められる.
+IdP は, Subscriber に関する Attribute が RP に送信する前に, Authorized Party に明示的な通知を行い同意を求める必要がある (**SHALL**).
+最低限, 通知は最も効果的に通知および同意取得を行える当事者から提供されるべきである (**SHOULD**).
+これについては [Sec. 9.2](sec9_privacy.ja.md#notice) に後述する.
+IdP は Transaction が許可された場合にどの Attribute が送信されるかを開示しなければならない (**SHALL**).
+利用する Federation Protocol により実行時にオプショナルな Attribute の開示が可能な場合, Authorized Party には Federation Transaction 自体を終了させることなく特定の Attribute を送信するか否か決定できるオプションが与えられねばならない (**SHALL**).
+
+<!--
 To mitigate the risk of unauthorized exposure of sensitive information (e.g., shoulder surfing), the IdP **SHALL**, by default, mask sensitive information displayed to the authorized party. If the authorized party is the subscriber, the IdP **SHALL** provide mechanisms for the subscriber to temporarily unmask such information in order for the subscriber to view full values before transmission. For more details on masking, see [Sec. 10](sec10_usability.md#usability) on usability considerations.
+-->
 
+センシティブな情報の無認可での開示リスク (ショルダーサーフィン等) を低減するため, IdP はデフォルトでは Authorized Party に開示されるセンシティブ情報をマスクすべきである (**SHALL**).
+Authorized Party が Subscriber 自身の場合, IdP は Subscriber が伝送前にその値を確認できるよう, 当該情報を一時的に閲覧可能とする仕組みを提供すべきである (**SHALL**).
+マスキングに関しては, ユーザビリティの検討事項について [Sec. 10](sec10_usability.ja.md#usability) を参照のこと.
+
+<!--
 An IdP **MAY** employ mechanisms to remember and re-transmit the exact attribute bundle to the same RP, remembering the authorized party's decision. This mechanism is associated with the subscriber account as managed by the IdP. If such a mechanism is provided, the IdP **SHALL** allow the authorized party to revoke such remembered access at a future time.
+-->
+
+IdP は, Authorized Party の決定を記憶し, 同じ RP に対して同じ Attribute の組み合わせを再送できるようにしてもよい (**MAY**).
+このメカニズムは IdP に管理される Subscriber Account に関連付けられる.
+このようなメカニズムを提供する場合, IdP は Authorized Party が将来記憶された Access を無効化できるようにすること (**SHALL**).
 
 ### RP Allowlists of IdPs
 
+<!--
 RPs **MAY** establish allowlists of IdPs from which the RP will accept authentication and attributes without a runtime decision from the subscriber. When placing an IdP in its allowlist, the RP **SHALL** ensure that the IdP abides by the provisions and requirements in these guidelines.
+-->
 
+RP は IdP の Allowlist をもうけて, そこに含まれる IdP からは Subscriber の実行時決定無しに Authentication や Attribute を受け入れてもよい (**MAY**).
+IdP を Allowlist に追加する場合, RP は IdP が本ガイドラインの規定及び要件に従うことを保証しなければならない (**SHALL**).
+
+<!--
 RP allowlists **SHALL** uniquely identify IdPs through the means of domain names, cryptographic keys, or other identifiers applicable to the federation protocol in use.
+-->
+
+RP の Allowlist は, ドメイン名や Cryptographic Key, 利用している Federation Protocol が提供するその他の識別子などを用いて, 一意に IdP を識別せねばならない (**SHALL**).
 
 ### RP Blocklists of IdPs
 
+<!--
 RPs **MAY** also establish blocklists of IdPs that the RP will not accept authentication or attributes from, even when requested by the subscriber. A blocklisted IdP can be otherwise in a valid trust agreement with the RP, for example if both are under the same federation authority.
+-->
 
+RP は IdP の Blocklist をもうけて, そこに含まれる IdP からは Subscriber の要求があったとしても Authentication や Attribute を受け入れないようにしてもよい (**MAY**).
+Blocklist に追加された IdP は, Blocklist がない限り RP との間に有効な Trust Agreement を持つ可能性もある. 例えば両者が同じ Federation Authority のもとにある場合などが考えられる.
+
+<!--
 RP blocklists **SHALL** uniquely identify IdPs through the means of domain names, cryptographic keys, or other identifiers applicable to the federation protocol in use.
+-->
+
+RP の Blocklist は, ドメイン名や Cryptographic Key, 利用している Federation Protocol が提供するその他の識別子などを用いて, 一意に IdP を識別せねばならない (**SHALL**).
 
 ### RP Runtime Decisions {#rp-runtime-decision}
 
+<!--
 Every IdP that is in a trust agreement with an RP but not on an allowlist or a blocklist with that RP **SHALL** be governed by a default policy in which runtime authorization decisions will be made by the authorized party indicated in the trust agreement. In this mode, the authorized party is prompted by the RP to select or enter which IdP to contact for authentication on behalf of the subscriber. This process can be facilitated through use of a discovery mechanism allowing the subscriber to enter a human-facing identifier such as an email address. This process allows the RP to programmatically select the appropriate IdP for that identifier.
+-->
 
+RP と Trust Agreement を結びながら, Allowlist や Blocklist に記載されていないすべての IdP は, デフォルトのポリシーに従い, Trust Agreement により定められる Authorized Party による実行時の Authorization 決定に従うものとする (**SHALL**).
+このモードでは, Authorized Party は RP から Subscriber に代わって Authentication に利用する IdP を選択/入力するよう促される.
+このプロセスは, Subscriber が Email アドレスなどの人が目にする識別子を入力できるような Discovery メカニズムを採用することにより, より使いやすくすることができる.
+このプロセスにより, RP は識別子が示す適切な IdP をプログラム的に IdP を選択できるようになる.
+
+<!--
 The RP **MAY** employ mechanisms to remember the authorized party's decision to use a given IdP. Since this mechanism is employed prior to authentication at the RP, the manner in which the RP provides this mechanism (e.g., a browser cookie outside the authenticated session) is separate from the RP subscriber account described in [Sec. 5.4](sec5_federation.md#rp-account). If such a mechanism is provided, the RP **SHALL** allow the authorized party to revoke such remembered options at a future time.
+-->
+
+RP は利用する IdP に関する Authorized Party の決定を記憶する仕組みを採用してもよい (**MAY**).
+このメカニズムは RP における Authentication の前に用いられるため, RP がこのメカニズムを提供する方法 (Authenticated Session 外のブラウザクッキー等) は [Sec. 5.4](sec5_federation.ja.md#rp-account) に述べる RP Subscriber Account とは紐づかない.
+このようなメカニズムを提供する場合, RP は Authorized Party が将来記憶されたオプションを無効化できるようにすること (**SHALL**).
 
 ## RP Subscriber Accounts {#rp-account}
 
