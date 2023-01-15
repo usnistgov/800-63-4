@@ -323,9 +323,22 @@ Proxy は, こういった側面を RP に伝えなければならない (**SHAL
 
 ## Registration
 
+<!--
 Within federation protocols, protocol-specific information such as cryptographic keys, system identifiers, service endpoint URLs, and required access rights need to be established between the IdPs and RPs, allowing them to communicate securely with each other. Furthermore, subscriber-facing information such as system display names and home pages can be established to facilitate trust in and usability of the system. All of this information is used to digitally and programmatically establish trust between the IdP and RP within the scope of the federation protocol.
+-->
 
+Federation Protocol においては, Protocol 特有の情報が IdP と RP の間で確立され, 相互にセキュア通信が可能となる必要がある.
+これらの情報としては, Cryptographic Key, システムの識別子, サービスエンドポイント URL, 必要な Access 権限などが挙げられる.
+さらに, Subscriber が目にするシステムの表示名やホームページなどの情報も, システムの信頼とユーザビリティの向上のため確立されうる.
+これらの全ての情報は, Federation Protocol のん範囲ないで IdP と RP がデジタルかつプログラム的に信頼を確立するために用いられる.
+
+<!--
 These exchanges of information happen in a pairwise fashion for each IdP and RP communicating within a federation transaction, regardless of the trust agreement underlying that transaction. The two phases of this process are commonly known as _discovery_ of the IdP by the RP and _registration_ of the RP at the IdP. These processes can happen in a manual, static fashion, where system administrators or developers enter the information into the target systems, or in an automated, dynamic fashion, where the systems themselves exchange information without direct human involvement.
+-->
+
+こういった情報は, Transaction の根底にある Trust Agreement に関係なく, Federation Transaction 内で通信を行う各 IdP-RP が対となる形でやり取りされる.
+このプロセスは2つのフェーズからなり, 一般的には RP による IdP の _Discovery_ と IdP における RP の _Registration_ と呼ばれる.
+このプロセスは, システム管理者や開発者が情報を大正システムに入力するといった形で手動 (Manual) かつ Static に行われることもあるし, 人間の直接的関与なしにシステム自身が情報を交換する形で自動的かつ Dynamic に行われることもある.
 
 ~~~
 \clearpage
@@ -334,26 +347,55 @@ These exchanges of information happen in a pairwise fashion for each IdP and RP 
 
 ### Manual Registration {#manual-registration}
 
+<!--
 In the manual registration model, the operators of the IdP and RP manually provision configuration information about parties with which they expect to interoperate, prior to involvement of the subscriber.
+-->
+
+Manual Regisrtration モデルでは, Subscriber が関与する前に, IdP と RP のオペレータが手動で相互運用が期待される当事者に関する設定情報をプロビジョニングする.
 
 [Figure 4. Manual Registration](sec5_federation.md#fig-4){:name="fig-4"}
 {:latex-ignore="true"}
 
 ![Diagram of the steps involved in a manual registration process between an RP and IdP.]({{site.baseurl}}/{{page.collection}}/media/manual.png 'Manual Registration'){:style="width:630px;height:400px;;min-width: 630px;min-height:400px;" latex-src="manual.png" latex-fig="4" latex-place="h"}
 
+<!--
 As shown in [Figure 4](sec5_federation.md#fig-4), manual registration involves three steps:
+-->
 
+[Figure 4](sec5_federation.ja.md#fig-4) にあるように, Manual Registration は3つのステップからなる.
+
+<!--
 1. The RP's system administrator shares the RP's attributes with the IdP's system administrator, who associates those attributes with the RP.
 
 2. The IdP's system administrator shares the IdP's attributes with the RP's system administrator, who associates those attributes with the IdP.
 
 3. The IdP and RP then communicate using a standard federation protocol.
+-->
 
+1. RP のシステム管理者が RP の Attribute を IdP のシステム管理者に共有し, IdP のシステム管理者はそれを RP に紐づける.
+
+2. IdP のシステム管理者が IdP の Attributre を RP のシステム管理者に共有し, RP のシステム管理者はそれを IdP に紐づける.
+
+3. IdP と RP は標準化された Federation Protocol を用いて通信する.
+
+<!--
 IdPs and RPs **MAY** act as their own authorities on who to federate with as in [Sec. 5.1.1](sec5_federation.md#bilateral) or **MAY** externalize those authority decisions to an external party as in [Sec. 5.1.2](sec5_federation.md#authorities).
+-->
 
+IdP と RP は [Sec. 5.1.1](sec5_federation.ja.md#bilateral) にあるように自ら Federation 相手に対する Authority となることもあれば (**MAY**), [Sec. 5.1.2](sec5_federation.ja.md#authorities) にあるように外部の当事者を Authority とすることもある (**MAY**).
+
+<!--
 Protocols requiring the transfer of keying information **SHALL** use a secure method during the registration process to exchange keying information needed to operate the federated relationship, including any shared secrets or public keys. Any symmetric keys used in this relationship **SHALL** be unique to a pair of federation participants.
+-->
 
+鍵情報の転送を必要とする Protocol では, Regisrtation プロセスにセキュアな手法を利用して Federation のために必要な鍵交換を行わねばならない (**SHALL**). これは Shared Secret の交換でも Public Key の交換でも同様である.
+ここで用いられる Symmetric Key は Federation 参加者のペアごとにユニークでなければならない (**SHALL**).
+
+<!--
 Federation relationships **SHALL** establish parameters regarding expected and acceptable IALs and AALs in connection with the federated relationship.
+-->
+
+Federation 関係確立においては, 期待され許容可能な IAL, AAL に関するパラメータを確立しなければならない (**SHALL**).
 
 ### Dynamic Registration {#dynamic-registration}
 
