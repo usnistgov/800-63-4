@@ -353,7 +353,7 @@ In the manual registration model, the operators of the IdP and RP manually provi
 
 Manual Regisrtration モデルでは, Subscriber が関与する前に, IdP と RP のオペレータが手動で相互運用が期待される当事者に関する設定情報をプロビジョニングする.
 
-[Figure 4. Manual Registration](sec5_federation.md#fig-4){:name="fig-4"}
+[Figure 4. Manual Registration](sec5_federation.ja.md#fig-4){:name="fig-4"}
 {:latex-ignore="true"}
 
 ![Diagram of the steps involved in a manual registration process between an RP and IdP.]({{site.baseurl}}/{{page.collection}}/media/manual.png 'Manual Registration'){:style="width:630px;height:400px;;min-width: 630px;min-height:400px;" latex-src="manual.png" latex-fig="4" latex-place="h"}
@@ -399,15 +399,26 @@ Federation 関係確立においては, 期待され許容可能な IAL, AAL に
 
 ### Dynamic Registration {#dynamic-registration}
 
+<!--
 In the dynamic registration model of federation, it is possible for relationships between members of the federation to be negotiated at the time of a transaction. This process allows IdPs and RPs to be connected together without manually establishing a connection between them using manual registration (See [Sec. 5.2.1](sec5_federation.md#manual-registration)). IdPs that support dynamic registration **SHALL** make their configuration information (such as dynamic registration endpoints) available in such a way as to minimize system administrator involvement.
+-->
 
-[Figure 5. Dynamic Registration](sec5_federation.md#fig-5){:name="fig-5"}
+Federation の Dynamic Registration モデルでは, Transaction 実行時に Federation メンバー間の関係取り決めが行われることもある.
+このプロセスのおかげで, IdP と RP は Manual Registration (See [Sec. 5.2.1](sec5_federation.ja.md#manual-registration)) により手動で関係を構築することなく相互接続することも可能である.
+Dynamic Registration をサポートする IdP は自身の設定情報 (Dynamic Registration Endpoint 等) 可能な限りシステム管理者の関与を必要としない形で公開すること (**SHALL**).
+
+[Figure 5. Dynamic Registration](sec5_federation.ja.md#fig-5){:name="fig-5"}
 {:latex-ignore="true"}
 
 ![Diagram of the steps in a dynamic registration process between an IdP and an RP.]({{site.baseurl}}/{{page.collection}}/media/dynamic.png 'Dynamic Registration'){:style="width:630px;height:338px;;min-width: 630px;min-height:338px;" latex-src="dynamic.png" latex-fig="5" latex-place="h"}
 
+<!--
 As shown in [Figure 5](sec5_federation.md#fig-5), dynamic registration involves four steps:
+-->
 
+[Figure 5](sec5_federation.ja.md#fig-5) にあるように, Dynamic Registration は4つのステップからなる.
+
+<!--
 1. Discover. The RP goes to a well-known location at the IdP to find the IdP's metadata.
 
 2. Validate. The RP and IdP determine each other's validity. This can be accomplished through keying information, metadata, software statements, or other means.
@@ -415,12 +426,38 @@ As shown in [Figure 5](sec5_federation.md#fig-5), dynamic registration involves 
 3. Register RP attributes. The RP sends its attributes to the IdP, and the IdP associates those attributes with the RP.
 
 4. Federation Protocol. The IdP and RP then communicate using a standard federation protocol.
+-->
 
+1. Discover. RP は IdP メタデータを見つけるため IdP の well-known location にアクセスする.
+
+2. Validate. RP と IdP はお互いの正当性を確認する. これには鍵情報, メタデータ, Software Statement もしくはその他の方法がある.
+
+3. Register RP Attribute. RP は自身の Attribute を IdP に送信し, IdP はそれを RP に紐づける.
+
+4. Federation Protocol. IdP と RP は標準化された Federation Protocol を用いて通信する.
+
+<!--
 Protocols requiring the transfer of keying information **SHALL** use a secure method during the registration process to establish such keying information needed to operate the federated relationship, including any shared secrets or public keys. Any symmetric keys used in this relationship **SHALL** be unique to a pair of federation participants.
+-->
 
+鍵情報の転送を必要とする Protocol では, Regisrtation プロセスにセキュアな手法を利用して Federation のために必要な鍵情報の確立を行わねばならない (**SHALL**). これは Shared Secret の交換でも Public Key の交換でも同様である.
+ここで用いられる Symmetric Key は Federation 参加者のペアごとにユニークでなければならない (**SHALL**).
+
+<!--
 IdPs **SHOULD** issue pairwise pseudonymous subject identifiers to dynamically registered RPs, as discussed in [Sec. 6.2.5](sec6_assertions.md#ppi).
+-->
 
+IdP は, [Sec. 6.2.5](sec6_assertions.ja.md#ppi) にあるように, Dynamic Registration により登録された RP に対しては Pairwise Pseudonymous Subject Identifier を発行すべきである (**SHOULD**).
+
+<!--
 Where possible, dynamic registration **SHOULD** be augmented by *software statements* anchored in their trust agreement. Software statements are lists of attributes describing the RP software, cryptographically signed by an authority (either the IdP itself, a federation authority as in [Sec. 5.1.2](sec5_federation.md#authorities), or another trusted party). Software statements allow federated parties to cryptographically verify some attributes of an RP being dynamically registered without necessarily having all of the identifying information for that RP ahead of time. This cryptographically verifiable statement allows the connection to be established or elevated between the federating parties without relying solely on self-asserted attributes. (See [[RFC7591]](references.md#ref-RFC7591) Sec. 2.3 for more information on one protocol's implementation of software statements.)
+-->
+
+可能な限り, Dynamic Registration は Trust Agreement を基とする *Software Statement* により増強されるべきである (**SHOULD**).
+Software Statement とは RP ソフトウェアについて記述する Attribute のリストであり, Authority (IdP 自身, [Sec. 5.1.2](sec5_federation.ja.md#authorities) で述べた Federation Authority ないしはその他の信頼できる当事者) により暗号論的に署名される.
+Software Statement により, Federation の当事者は暗号論的に Dynamic Registration を行う RP の Attribute を検証でき,  事前に全ての当該 RP の識別情報を入手しておく必要はなくなる.
+この暗号論的に検証可能な Statement により, Federation 当事者間の関係確立および構築において, 自己主張による Attribute にのみ依存せざるを得ない状況から脱することができる.
+ある Protocol における Software Statement の実装に関しては (See [[RFC7591]](references.ja.md#ref-RFC7591) Sec. 2.3 を参照のこと.
 
 ## Authentication and Attribute Disclosure
 
