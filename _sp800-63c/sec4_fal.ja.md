@@ -184,7 +184,7 @@ At FAL2, the trust agreement between the IdP and RP **SHALL** be established sta
 
 FAL2 では, IdP-RP 間の Trust Agreement は Static に確立されなければならない (**SHALL**).
 これには RP に提示可能な Attribute 及びその利用目的の制限の確立も含む.
-Trust Agreement は IdP-RP の二者間で確立することもできるし (**MAY**), 多者間での Federation パートナーシップを介して確立することもできる (**MAY**).
+Trust Agreement は IdP-RP の二者間 (Bilateral) で確立することもできるし (**MAY**), 多者間 (Multilateral) での Federation パートナーシップを介して確立することもできる (**MAY**).
 RPと IdP が実行時に確立済の Trust Agreement を証明可能であれば, Registration は Dynamic でもよい (**MAY**).
 そのような証明方法は Federation Protocol により多様であるが, Software Attestation の提示や Trusted Domain 上の URL の管理権限を証明することなどが例として挙げられる.
 
