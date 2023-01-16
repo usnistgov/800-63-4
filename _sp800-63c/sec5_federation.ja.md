@@ -980,7 +980,14 @@ RP Subscriber Account のライフサイクルプロセスにおいて RP が [S
 
 ##  Reauthentication and Session Requirements in Federated Environments {#federation-session}
 
+<!--
 In a federated environment, the RP manages its sessions separately from any sessions at the IdP. The assertion is related to both sessions but its validity period is ultimately independent of them. In order for the IdP to create an assertion for the subscriber, the subscriber needs to establish an authenticated session with the IdP. To create an authenticated session at the RP, the RP needs to process a valid assertion from the IdP.
+-->
+
+Federation 環境下では, RP は自身の Session を IdP のセッションとは独立して管理する.
+Assertion は両者の Session に関係づけられるが, 根本的にその有効期間はこれらの Session とは独立している.
+IdP が Subscriber に関する Assertion を生成する際, Subscriber は IdP との間に認証済 Session を確立する必要がある.
+RP において認証済 Session を生成する際は, RP が IdP から有効な Assertion を受け取り処理する必要がある.
 
 Due to the distributed nature of a federated system, the subscriber's sessions with the IdP and with the RP terminate independently of each other. The RP **SHALL NOT** assume that the subscriber has an active session at the IdP past the issuance time of the assertion. The IdP **SHALL NOT** assume that termination of the subscriber's session at the IdP will propagate to any sessions that subscriber would have at downstream RPs. The RP and IdP **MAY** communicate session termination requests to other parties in the federation network, if supported by the federation protocol.
 
