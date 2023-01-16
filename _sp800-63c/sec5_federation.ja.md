@@ -351,7 +351,7 @@ These exchanges of information happen in a pairwise fashion for each IdP and RP 
 In the manual registration model, the operators of the IdP and RP manually provision configuration information about parties with which they expect to interoperate, prior to involvement of the subscriber.
 -->
 
-Manual Regisrtration モデルでは, Subscriber が関与する前に, IdP と RP のオペレータが手動で相互運用が期待される当事者に関する設定情報をプロビジョニングする.
+Manual Regisrtration モデルでは, Subscriber が関与する前に, IdP と RP のオペレータが手動で相互運用が期待される当事者に関する設定情報を Provisioning する.
 
 [Figure 4. Manual Registration](sec5_federation.ja.md#fig-4){:name="fig-4"}
 {:latex-ignore="true"}
@@ -621,26 +621,68 @@ The RP **MAY** employ mechanisms to remember the authorized party's decision to 
 -->
 
 RP は利用する IdP に関する Authorized Party の決定を記憶する仕組みを採用してもよい (**MAY**).
-このメカニズムは RP における Authentication の前に用いられるため, RP がこのメカニズムを提供する方法 (Authenticated Session 外のブラウザクッキー等) は [Sec. 5.4](sec5_federation.ja.md#rp-account) に述べる RP Subscriber Account とは紐づかない.
+このメカニズムは RP における Authentication の前に用いられるため, RP がこのメカニズムを提供する方法 (認証済 Session 外のブラウザクッキー等) は [Sec. 5.4](sec5_federation.ja.md#rp-account) に述べる RP Subscriber Account とは紐づかない.
 このようなメカニズムを提供する場合, RP は Authorized Party が将来記憶されたオプションを無効化できるようにすること (**SHALL**).
 
 ## RP Subscriber Accounts {#rp-account}
 
+<!--
 It is common for an RP to keep a record representing a subscriber local to the RP itself, known as the *RP subscriber account*. The RP subscriber account can contain things like access rights at the RP as well as a cache of identity attributes for the subscriber. An active RP subscriber account is bound to one or more federated identifiers from the RP's trusted IdPs. Successful authentication of one of these federated identifiers through a federation protocol allows the subscriber to access the information and functionality protected by the RP subscriber account.
+-->
 
+RP が Subscriber レコードを RP 自身のローカルに保存するのは一般的なことで, これは *RP Subscriber Account* と呼ばれる.
+RP Subscriber Account には, RP において Subscriber が持つ Access 権限や, Subscriber の Identity Attribute のキャッシュなどが含まれる.
+アクティブな RP Subscriber Account は, RP が信頼する IdP の1つ以上の Federated Identifier と紐づいている.
+Federation Protocol を通じてそれらの Federated Identifier のいずれかの Authentication が成功すると, Subscriber は RP Subscriber Account により保護されている情報や機能への Access を得る.
+
+<!--
 An RP subscriber account is _provisioned_ when the RP has associated a set of attributes about the subscriber with a data record representing the subscriber account at the RP. The RP subscriber account **SHALL** be bound to at least one federated identifier, and a given federated identifier is bound to only one RP subscriber account at a given RP. The provisioning can happen prior to authentication or as a result of the federated authentication process, depending on the deployment patterns as discussed in [Sec. 5.4.1](sec5_federation.md#provisioning). Prior to being provisioned, the RP subscriber account does not exist and has no associated data record at the RP.
+-->
 
+RP Subscriber Account は RP が Subscriber に関する Attribute のセットを RP における Subscriber Account を示すレコードに関連づけることで _Provisioning_ される.
+RP Subscriber Account は最低限一つの Federated Identifier に紐づけられるものとし (**SHALL**), 当該 Federated Identifier は当該 RP において唯一の RP Subscriber Accout に紐づけられるものとする.
+Provisioning は Authentication の前に実行されることもあれば, Federated Authentication プロセスの結果として実行されることもある.
+どのような Provisioning が行われるかは, [Sec. 5.4.1](sec5_federation.ja.md#provisioning) に述べるように実装パターンに依存する.
+Provisioning が実行されるまでは, RP Subscriber Account は存在せず RP のいかなるデータレコードとも関連づけられていない.
+
+<!--
 An RP subscriber account is _terminated_ when the RP removes all access to the account at the RP. Termination **SHALL** include unbinding any federated identifiers and bound authenticators as well as removing attributes and information associated with the account except what is required for auditing and security purposes. An RP **MAY** terminate an RP subscriber account independently from the IdP for a variety of reasons, regardless of the current validity of the subscriber account from which it is derived.
+-->
 
+RP Subscriber Account は RP が RP における当該アカウントの全ての Access を削除した際に _Terminate_ される.
+Termination は Federated Identifier や紐づけられた Authennticator の紐付け解除を含み, 監査やセキュリティ目的で必要とされない限り当該 Account に紐づく Attribute および情報の削除も含むものとする (**SHALL**).
+RP は, さまざまな理由により, IdP とは独立して RP Subscriber Account を Terminate することができる (**MAY**).
+これは Subscriber Account がその源泉において現在も正当であったとしても関係がない.
+
+<!--
 An authenticated session **SHALL** be created by the RP only when the RP has processed and verified a valid assertion from the IdP that is the issuer of the federated identifier associated with the RP subscriber account. If the assertion also requires presentation of a bound authenticator at FAL3, the bound authenticator **SHALL** also be presented and processed before the RP subscriber account is associated with an authenticated session, as discussed in [Sec. 6.1.2](sec6_assertions.md#boundauth). Before the federated assertion is processed and after termination of the authenticated session, the RP subscriber account is unauthenticated though it could still be provisioned.
+-->
+
+認証済 Session は, RP が RP Subscriber Account に関連づけられた Federated Identifier の発行元である IdP からの有効な Assertion を処理・検証して初めて生成されるものとする (**SHALL**).
+Assertion が Bound Authenticator の提示を要求するものの場合, [Sec. 6.1.2](sec6_assertions.ja.md#boundauth) にあるように, RP Subscriber Account が認証済 Session に関連づけられる前に当該 Bound Authenticator が提示・処理されねばならない (**SHALL**).
+Federated Assertion が処理される前, かつ認証済 Session が終了した後は, RP Subscriber Account は Unauthenticated となる.
+ただし RP Subscriber Account は以前として Provisioning されうる.
 
 ### Provisioning Models {#provisioning}
 
+<!--
 The lifecycle of the provisioning process for an RP subscriber account varies depending on factors including the trust agreement discussed in [Sec. 5.1](sec5_federation.md#trust-agreement) and the deployment pattern of the IdP and RP. However, in all cases, the RP subscriber account **SHALL** be provisioned at the RP prior to the establishment of an authenticated session at the RP in one of the following ways:
+-->
 
+RP Subscriber Account の Provisioning プロセスのライフサイクルは [Sec. 5.1](sec5_federation.ja.md#trust-agreement) の Trust Agreement や IdP & RP の実装パターンなどの要因により多様である.
+しかしながら, いかなるケースにおいても, RP Subscriber Account は認証済 Session の確立前に以下のいずれかの方法により RP に Provisioning されていなければならない (**SHALL**).
+
+<!--
 Just-In-Time Provisioning
 : An RP subscriber account is created automatically the first time the RP receives an assertion with an unknown federated identifier from an IdP. Any identity attributes learned during the federation process, either within the assertion or through an identity API as discussed in [Sec. 6.3](sec6_assertions.md#s-identity-api), **MAY** be associated with the RP subscriber account. Accounts provisioned in this way are bound to the federated identifier in the assertion used to provision them.
 This is the most common form of provisioning in federation systems, as it requires the least coordination between the RP and IdP. However, in such systems, the RP **SHALL** be responsible for managing any cached attributes it might have.
+-->
+
+Just-In-Time Provisioning
+: RP Subscriber Account は RP が IdP から未知の Federated Identifier を含む Assertion を初めて受け取った際に自動的に生成される. Assertion に含まるか [Sec. 6.3](sec6_assertions.ja.md#s-identity-api) で述べる Identity API から取得するかのいずれかの方法で Federation Process 中に得られた Identity Attribute は, すべて RP Subscriber に関連づけることができる (**MAY**).
+この方法で Provisioning された Account は, Provisioning に用いられた Assertion に含まれる Federated Identifier に紐づけられる.
+これは Federation システムにおいて最も一般的な形であり, RP と IdP の間の協調動作が最も少なくて済む.
+しかしながらこのようなシステムでは RP は自身が持ちうる全ての Attribute のキャッシュ管理に責任を持たねばならない (**SHALL**).
 
 [Figure 6. Just-In-Time Provisioning](sec5_federation.md#fig-6){:name="fig-6"}
 {:latex-ignore="true"}
@@ -652,9 +694,21 @@ This is the most common form of provisioning in federation systems, as it requir
 ~~~
 {:latex-literal="true"}
 
+<!--
 Pre-provisioning
 : An RP subscriber account is created by the IdP pushing the attributes to the RP or the RP pulling attributes from the IdP. Pre-provisioning of accounts generally occurs in bulk through a provisioning API as discussed in [Sec. 5.4.3](sec5_federation.md#provisioning-api), as the provisioning occurs prior to the represented subscribers authenticating through a federated transaction. Pre-provisioned accounts **SHALL** be bound to a federated identifier at the time of provisioning. Any time a particular federated identifier is seen by the RP, the associated account can be logged in as a result.
 This form of provisioning requires infrastructure and planning on the part of the IdP and RP, but these processes can be facilitated by automated protocols. The RP also collects attributes about users who have not interacted with the RP system yet, which can cause privacy issues. Additionally, the IdP and RP must keep the set of provisioned accounts synchronized over time as discussed in [Sec. 5.4.2](sec5_federation.md#attribute-sync).
+-->
+
+Pre-provisioning
+: RP Subscriber Account は IdP が Attribute を RP に Push するか RP が IdP から Attribute を Pull ことで生成される.
+Account の Pre-provisioning は, [Sec. 5.4.3](sec5_federation.ja.md#provisioning-api) にあるように一般的に Provisioning API を介して Bulk で行われる.
+これは Provisioning が Federated Transaction を通じて Subscriber を Authenticate する前に発生するからである.
+Pre-provisioning された Account は Provisioning 時に Federated Identifier と紐づけられるものとする (**SHALL**).
+これにより, RP が特定の Federated Identifier を受け取ると, その結果として関連づけられた Account がログインできるようになる.
+この形態の Provisioning は, IdP と RP にインフラストラクチャと計画を必要とするが, このプロセス自体は自動化されたプロトコルにより実現可能である.
+RP は RP システムとインタラクションを行ったことのないユーザーの Attribute を収集するため, Privacy 上の問題も発生しうる.
+さらに [Sec. 5.4.2](sec5_federation.ja.md#attribute-sync) で述べるように, IdP と RP は Provisioning された Account の集合を長期にわたって同期しなければならない.
 
 [Figure 7. Pre-Provisioning](sec5_federation.md#fig-7){:name="fig-7"}
 {:latex-ignore="true"}
@@ -666,19 +720,39 @@ This form of provisioning requires infrastructure and planning on the part of th
 ~~~
 {:latex-literal="true"}
 
+<!--
 Ephemeral
 : An RP subscriber account is created when processing the assertion, but then the RP subscriber account is terminated when the authenticated session ends. This process is similar to a just-in-time provisioning, but the RP keeps no long-term record of the account when the session is complete, except what is required for audit and security purposes (such as access logs).
 This form of provisioning is useful for RPs that fully externalize access rights to the IdP, allowing the RP to be more simplified with less internal state. However, this pattern is not common because even the simplest RPs tend to have a need to track state within the application or at least keep a record of actions associated with the federated identifier.
+-->
+
+Ephemeral
+: RP Subscriber Account は Assertion を処理する際に生成されるが, 認証済 Session が終了する際に Terminate される.
+このプロセスは Just-in-time Provisioning と似ているが, RP は Session が終了したらそれ以上 Account のレコードを保持しない. ただし監査やセキュリティ目的で必要とされる場合は別である (アクセスログ等).
+この形態の Provisioning は IdP に Access 権限を完全に外部依存する RP にとっては使いやすい.
+RP は内部的なステート管理を低減させ, よりシンプルになる.
+しかしながらこのパターンは一般的ではない.
+最もシンプルな RP ですら, アプリケーション内でのステート追跡は必要としがちであり, 少なくとも Federated Identifier に関連したアクションのレコードは保持するからである.
 
 [Figure 8. Ephemeral Provisioning](sec5_federation.md#fig-8){:name="fig-8"}
 {:latex-ignore="true"}
 
 ![Diagram of the stages of an ephemeral RP subscriber account based on a subscriber account.]({{site.baseurl}}/{{page.collection}}/media/Ephemeral-provisioning.png 'Ephemeral Provisioning'){:latex-src="Ephemeral-provisioning.pdf" latex-fig="8" latex-place="h"}
 
+<!--
 Other
 : Other RP subscriber account provisioning models are possible but the details of such models are outside the scope of these guidelines. The details of any alternative provisioning model **SHALL** be included in the privacy risk assessments of the IdP and RP.
+-->
 
+Other
+: その他の RP Subscriber Account Provisioning モデルも可能であるが, その詳細は本ガイドライン群のスコープ外とする.
+いかなる代替の Provisioning モデルにおいても, IdP および RP において Privacy Risk Assessment を行うことが必要となる (**SHALL**).
+
+<!--
 All organizations **SHALL** document their provisioning model as part of their trust agreement.
+-->
+
+全組織は自身の Provisioning モデルを Trust Agreement の一部としてドキュメント化するべきである (**SHALL**).
 
 ### Attribute Synchronization {#attribute-sync}
 
