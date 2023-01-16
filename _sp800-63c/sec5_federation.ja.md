@@ -756,28 +756,85 @@ All organizations **SHALL** document their provisioning model as part of their t
 
 ### Attribute Synchronization {#attribute-sync}
 
+<!--
 In a federated process, the IdP and RP each have their own stores of identity attributes associated with the subscriber account. The IdP has a direct view of the subscriber account, but the RP subscriber account is derived from a subset of attributes from the subscriber account that are presented during the federation transaction. Therefore, it is possible for the IdP's and RP's attribute stores to diverge from with each other over time.
+-->
 
+Federation プロセスにおいて, IdP と RP は各々 Subscriber Account に関連づけられた Identity Attribute を保持する.
+IdP は Subscriber Account を直接閲覧できるのに対し, RP Subscriber Account は Federation Transaction 時に提示された Subscriber Account の Attribute のサブセットから導出される.
+したがって時間の経過に伴い IdP と RP がそれぞれ保持する Attribute が乖離する可能性がある.
+
+<!--
 From the RP's perspective, the IdP is the authoritative source for any attributes that the IdP asserts as being associated with the subscriber account at the IdP. However, the RP **MAY** additionally collect, and optionally verify, other attributes to associate with the RP subscriber account. Sometimes, these attributes can even override what's asserted by the IdP. For example, if an IdP asserts a full display name for the subscriber, the RP can allow the subscriber to provide an alternative preferred name for use at the RP.
+-->
 
+RP から見ると, IdP は IdP が当該 IdP において Subscriber Account と関連づけられていると主張する全ての Attribute の Authoritative Source である.
+しかしながら, RP は追加で RP Subscriber Accout に関連づけられるその他の Attribute を収集, および時には検証することもできる (**MAY**).
+ときにはこれらの Attribute は IdP が主張したものを上書くことすらありえる.
+例えば IdP が Subscriber の完全なる Display Name を主張したとして, RP が Subscriber に RP において代替となる好きな名前を指定できるようにすることなどが考えられる.
+
+<!--
 The IdP **SHOULD** signal downstream RPs when the attributes of a subscriber account available to the RP have been updated. This can be accomplished using shared signaling as described in [Sec. 5.7](sec5_federation.md#shared-signals), through a provisioning API as described in [Sec. 5.4.3](sec5_federation.md#provisioning-api), or by providing a signal in the assertion (e.g., a timestamp indicating when relevant attributes were last updated, allowing the RP to determine that its cache is out of date).
+-->
 
+IdP は RP に提供した Subscriber Account の Attribute に更新があった場合, RP にシグナルを送るべきである (**SHOULD**).
+これは, [Sec. 5.7](sec5_federation.ja.md#shared-signals) の Shared Signaling や [Sec. 5.4.3](sec5_federation.ja.md#provisioning-api) の Provisioning API を利用したり, Assertion にシグナルを含めて提供する (関連する Attribute の最終更新日時を含めたり, RP に自身のキャッシュが期限切れだと判断する手段を提供したり) などの方法で実現可能である.
+
+<!--
 The IdP **SHOULD** signal downstream RPs when a subscriber account is terminated, or when the subscriber account's access to an RP is revoked. This can be accomplished using shared signaling as described in [Sec. 5.7](sec5_federation.md#shared-signals) or through a provisioning API as described in [Sec. 5.4.3](sec5_federation.md#provisioning-api). Upon receiving such a signal, the RP **SHALL** terminate the RP subscriber account and remove all personal information associated with the RP subscriber account, except what is required for audit and security purposes.
+-->
+
+IdP は Subscriber Account が Terminate されたり Subscriber Account が持つ RP への Access が無効化された場合, RP にシグナルを送るべきである (**SHOULD**).
+これは, [Sec. 5.7](sec5_federation.ja.md#shared-signals) の Shared Signaling や [Sec. 5.4.3](sec5_federation.ja.md#provisioning-api) の Provisioning API などの方法で実現可能である.
+このシグナルを受け取った場合, RP は RP Subscriber Account を Terminate させ, RP Subscriber Account に関連する全ての personal information を削除せねばならない (**SHALL**).
+ただし監査やセキュリティ目的で必要とされる場合を除く.
 
 ### Provisioning APIs {#provisioning-api}
 
+<!--
 As part of some proactive forms of provisioning, the RP can be given access to subscriber attributes through a general-purpose attribute API known as a _provisioning API_. This type of API allows an IdP to push attributes for a range of subscriber accounts, and sometimes allows an RP to query the attributes of these subscriber accounts directly. Since access to the API is granted outside the context of a federated transaction, access to the provisioning API for a given subscriber does not indicate to the RP that a given subscriber has been authenticated. See [Sec. 6, Assertions](sec6_assertions.md#assertions) for more information on how the federated authentication process is accomplished using assertions.
+-->
 
+プロアクティブな Provisioning の一環として, RP は _Provisioning API_ と呼ばれる汎用 Attribute API を介して Subscriber Attribute への Access を与えられることもある.
+この種の API により, IdP は一定範囲の Subscriber Account の Attribute を Push できるようになり, ときには RP がこれら Subscriber Account の Attribute に直接クエリできるようにもなる.
+この API への Access は Federation Transaction のコンテキスト外で許可されるため, Provisioning API を介して Subscriber  に Access できるからといって Subscriber が Authenticate されたとは言えない.
+Federated Authentication プロセスが Assertion を用いてどのように実現されるかは [Sec. 6, Assertions](sec6_assertions.ja.md#assertions) を参照のこと.
+
+<!--
 The attributes in the provisioning API available to a given RP **SHALL** be limited to only those necessary for the RP to perform its functions. As part of establishing the trust agreement, the IdP **SHALL** document when an RP is given access to a provisioning API including at least the following:
+-->
 
+Provisioning API によって RP に提供される Attribute は, RP がその機能の実現に必要なものに限定されなければならない (**SHALL**).
+Trust Agreement 確立の一環として, IdP は RP がいつ Provisioning API への Access を与えらえるかドキュメント化せねばならない (**SHALL**).
+これには最低限以下のような項目を含む.
+
+<!--
 - the purpose for the access using the provisioning model;
 - the set of attributes made available to the RP;
 - whether the API functions as a push to the RP, a pull from the RP, or both; and
 - the population of subscribers whose attributes are made available to the RP.
+-->
 
+- その Provisioning モデルを利用した Access の目的
+- RP に開示される Attribute セット
+- API が RP への Push を行うのか, RP からの Pull によるのか, 両方なのか
+- RP に Attribute が開示される Subscriber の母集団
+
+<!--
 The IdP **SHALL** require authentication from the RP for any pull-based access to a provisioning API. The RP **SHALL** require authentication from the IdP for any push-based access to a provisioning API.
+-->
 
+IdP は Pull ベースの Provisioning API への Access 全てについて RP に Authentication を要求せねばならない (**SHALL**).
+RP は Push ベースの Provisioning API への Access 全てについて IdP に Authentication を要求せねばならない (**SHALL**).
+
+<!--
 A provisioning API **SHALL NOT** be made available under a dynamic or implicit trust agreement. The IdP **SHALL NOT** make a provisioning API available to any RP outside of an established trust agreement. The IdP **SHALL** provide access to a provisioning API only as part of a federated identity relationship with an RP to facilitate federated transactions with that RP and related functions such as signaling revocation of the subscriber account. The IdP **SHALL** revoke an RP's access to the provisioning API once access is no longer required by the RP for its functioning purposes or when the trust agreement is terminated.
+-->
+
+Dynamic ないし Implicit な Trust Agreement のもとでは Provisioning API は利用してはならない (**SHALL NOT**).
+IdP は Trust Agreement を確立していない RP に Provisioning API を提供してはならない (**SHALL NOT**).
+IdP は RP との Federated Identity 関係の一環でのみ Provisioning API への Access を提供し, 当該 RP との Federated Transaction や Subscriber Account 無効化の Signaling を含む関連する機能に役立てるものとする (**SHALL**).
+IdP は RP がもはやその機能を実現するのに必要としなくなった場合や Trust Agreement が Terminate した場合は, RP の Provisioning API への Access を無効化せねばならない (**SHALL**).
 
 Any provisioning API provided to the RP **SHALL** be under the control and jurisdiction of the IdP. External attribute providers **MAY** be used as information sources by the IdP to provide attributes through this provisioning API, but the IdP is responsible for the content and accuracy of the information provided by the referenced attribute providers.
 
