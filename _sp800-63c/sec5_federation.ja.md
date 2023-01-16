@@ -836,40 +836,122 @@ IdP は Trust Agreement を確立していない RP に Provisioning API を提�
 IdP は RP との Federated Identity 関係の一環でのみ Provisioning API への Access を提供し, 当該 RP との Federated Transaction や Subscriber Account 無効化の Signaling を含む関連する機能に役立てるものとする (**SHALL**).
 IdP は RP がもはやその機能を実現するのに必要としなくなった場合や Trust Agreement が Terminate した場合は, RP の Provisioning API への Access を無効化せねばならない (**SHALL**).
 
+<!--
 Any provisioning API provided to the RP **SHALL** be under the control and jurisdiction of the IdP. External attribute providers **MAY** be used as information sources by the IdP to provide attributes through this provisioning API, but the IdP is responsible for the content and accuracy of the information provided by the referenced attribute providers.
+-->
 
+RP に提供される全ての Provisioning API は IdP の制御および管轄下にあるものとする (**SHALL**).
+IdP はこの Provisioning API を通じて Attribute を提供するために, 外部の Attribute Provider を情報ソースとして利用することもできる (**MAY**).
+ただし IdP は参照する Attribute Provider から提供された情報の内容および正確性について責任を持つこと.
+
+<!--
 When a provisioning API is in use, the IdP **SHALL** signal to the RP when a subscriber account has been terminated. When receiving such a signal, the RP **SHALL** terminate the associated RP subscriber account.
+-->
+
+Provisioning API を利用する場合, IdP は Subscriber Account が Terminate された時点で RP にシグナルを送らねばならない (**SHALL**).
+そのようなシグナルを受け取った際, RP は関連する RP Subscriber Account を Terminate せねばならない (**SHALL**).
 
 ### Attribute Collection {#rp-attribute-collection}
 
+<!--
 The RP **MAY** collect and maintain additional attributes from the subscriber beyond those provided by the IdP. These attributes are governed separately from any federation agreement since they are collected directly by the RP. All attributes associated with an RP subscriber account, regardless of their source, **SHALL** be removed when the RP subscriber account is terminated.
+-->
 
+RP は IdP から提供されたものの他に Subscriber から追加の Attribute を収集し管理してもよい (**MAY**).
+これらの Attribute は RP が直接収集したものであるため, いかなる Federation Agreement の支配も受けない.
+RP Subscriber Account に関連した全ての Attribute は, そのソースにかかわらず, RP Subscriber Account が Terminate された時点で削除されねばならない (**SHALL**).
+
+<!--
 The RP **SHALL** disclose to the subscriber the purpose for collection of any additional attributes. These attributes **SHALL** be used solely for the stated purposes of the RP's functionality and **SHALL NOT** have any secondary use, including communication of said attributes to other parties.
+-->
 
+RP はいかなる追加の Attribute に関しても収集の目的を Subscriber に開示しなければならない (**SHALL**).
+これらの Attribute は RP がその機能を達成する目的にのみ用いるものとし (**SHALL**), 第三者にその Attribute を伝えることを含むいかなる二次利用もしてはならない (**SHALL NOT**).
+
+<!--
 An RP **SHALL** disclose any additional attributes collected, and their use, as part of its System of Records Notice (SORN). The RP **SHALL** provide an effective means of redress for the subscriber to update and remove these additionally-collected attributes from the RP subscriber account. See [Sec. 10](sec10_usability.md#usability) on usability considerations for redress.
+-->
+
+RP は収集した全ての追加の Attribute およびその利用を System of Records Notice (SORN) の一部として開示すること (**SHALL**).
+RP は RP Subscriber Account に対して追加収集された Attribute に関して Subscriber が更新および削除するための効果的な是正手段を提供すること (**SHALL**).
+是正に関するユーザビリティ上の考慮事項に関しては [Sec. 10](sec10_usability.md#usability) を参照のこと.
 
 ### Time-based Removal of RP Subscriber Accounts {#stale-account}
 
+<!--
 Over time, an RP could accumulate RP subscriber accounts that are no longer accessible from the IdP. This poses a risk to the RP for holding personal information in the RP subscriber accounts, especially when a just-in-time provisioning model is in use and no shared signaling is available from the IdP to signal subscriber account termination as discussed in [Sec. 5.7](sec5_federation.md#shared-signals). In such circumstances, the RP **SHOULD** employ a time-based mechanism to identify RP subscriber accounts for termination that have not been accessed after a period of time, for example, 120 days since last access.
+-->
 
+時間が経過するにつれ, IdP からアクセスできなくなった RP Subscriber Account が蓄積されていく可能性がある.
+これは RP Subscriber Account に Personal Information を保持するリスクを RP にもたらす.
+特に Just-in-time Provisioning モデルでは, [Sec. 5.7](sec5_federation.ja.md#shared-signals) の Shared Signaling により IdP から Subscriber Account が Terminate されたというシグナルを送ることができない.
+このような条件下では, RP は時間ベースのメカニズムをもちいて一定時間アクセスのない (例えば, 最終アクセスから120日など) RP Subscriber Account を特定し Terminate させるべきである (**SHOULD**).
+
+<!--
 When processing such an inactive account, the RP **SHALL** provide sufficient notice to the subscriber, if possible, about the pending termination of the account and provide the subscriber with an option to re-activate the account prior to its scheduled termination. Upon termination, the RP **SHALL** remove all personal information associated with the RP subscriber account, except what is required for audit and security purposes.
+-->
+
+このようなインアクティブな Account を処理する際, RP は可能であれば保留中の Account の Terminate について Subscriber に十分な通知をおこなうこととし, スケジュールされた Terminate の前に Subscriber に Account を再アクティベイトするオプションを提供することとする (**SHALL**).
+Terminate を行う際は, RP は RP Subscriber Account に関連する全ての Personal Information を削除することとする (**SHALL**).
+ただし監査やセキュリティ目的で必要とされる場合を除く.
 
 ## Privacy Requirements {#privacy-reqs}
 
+<!--
 The ultimate goal of a subscriber is to interact with and use the RP. Federation involves the transfer of personal attributes from a third party that is not otherwise involved in a transaction &mdash; the IdP. Federation also potentially gives the IdP broad visibility into subscriber activities and status. Accordingly, there are specific privacy requirements associated with federation.
+-->
 
+Subscriber の最終的な目的は RP とインタラクションしたり RP を利用することである.
+Federation は Transaction に関与しない 3rd party, つまり IdP, からの Personal Attribute の転送を伴う.
+Federation はさらに潜在的に IdP に Subscriber のアクティビティやステータスに関する広い可視性をもたらす.
+従って, Federation には関連する特定の Privacy 要件がある.
+
+<!--
 Communication between the RP and the IdP could reveal to the IdP where the subscriber is conducting a transaction. Communication with multiple RPs allows the IdP to build a profile of subscriber transactions that would not have existed without federation. This aggregation could enable new opportunities for subscriber tracking and use of profile information that do not always align with subscribers' privacy interests.
+-->
 
+RP と IdP のコミュニケーションは, IdP に Subscriber がどこと Transaction を進めようとしているかを暴露しうる.
+複数の RP とのコミュニケーションを通じて, IdP は Subscriber の Transaction に関するプロファイルを生成しうる. これは Federation なしでは生成不可能であろう.
+このアグリゲーションは, Subscriber のトラッキングおよび Subscriber の Privacy の利益に必ずしも一致しないプロファイル情報利用の機会をもたらす.
+
+<!--
 If an IdP discloses information on subscriber activities at an RP to any party, or processes the subscriber's attributes for any purpose other than identity proofing, authentication, or attribute assertions (collectively "identity service"), related fraud mitigation, to comply with law or legal process, or, in the case of a specific user request, to transmit the information, the IdP **SHALL** implement measures to maintain predictability and manageability commensurate with the privacy risk arising from the additional processing. Measures **MAY** include providing clear notice, obtaining subscriber consent, or enabling selective use or disclosure of attributes. When an IdP uses consent measures, the IdP **SHALL NOT** make consent for the additional processing a condition of the identity service.
+-->
 
+IdP が Subscriber の RP におけるアクティビティ情報を他社に開示したり, Subscriber Attribute を Identity Proofing, Authentication, Attribute Assertion (以上3つを総称して "Identity Service"), 関連する不正防止, 法律または法的手続きへの対応, 特定のユーザーからの要求以外の目的で処理する場合, 情報送信にあたって IdP は追加処理により生じる Privacy リスクに見合った Predictability および Manageability を維持するための対策を施す必要がある (**SHALL**).
+この対策には, 明確な通知の提供, Subscriber からの同意取得, Attribute の選択的利用及び開示などが含まれうる (**MAY**).
+IdP が同意による対策を用いる場合, IdP は追加処理に対する同意を Identity Service の利用条件としてはならない (**SHALL NOT**).
+
+<!--
 If the same subscriber account is asserted to multiple RPs, and those RPs communicate with each other, the colluding RPs could track a subscriber's activity across multiple applications and security domains. The IdP **SHOULD** employ technical measures, such as the use of pairwise pseudonymous identifiers described in [Sec. 6.2.5](sec6_assertions.md#ppi) or privacy-enhancing cryptographic protocols, to provide disassociability and discourage subscriber activity tracking and profiling between RPs.
+-->
 
+同一の Subscriber Account が複数の RP に開示され, かつこれらの RP が相互にコミュニケーションを行う場合, 共謀した RP が Subscriber のアクティビティを複数のアプリケーションおよびセキュリティドメインに渡って追跡することが可能となる.
+IdP は [Sec. 6.2.5](sec6_assertions.ja.md#ppi) にある Pairwise Pseudonymous Identifier や Privacy を向上させる暗号プロトコルなどの技術的対策を施し, Disassociability を提供して RP 間での Subscriber アクティビティのトラッキングやプロファイリングを抑止すべきである (**SHOULD**).
+
+<!--
 An IdP **MAY** disclose information on subscriber activities to RPs for security purposes, such as communication of suspicious activity or a compromised subscriber account as described in [Sec. 5.7](sec5_federation.md#shared-signals), if stated within the trust agreement. An RP **MAY** disclose information on subscriber activities to IdPs for security purposes, such as communication of suspicious activity or a compromised RP subscriber account, if stated within the trust agreement.
+-->
 
+IdP は, Trust Agreement で定義されていれば, セキュリティ目的で不審なアクティビティや [Sec. 5.7](sec5_federation.ja.md#shared-signals) にある侵害された Subscriber Account のアクティビティ情報を RP に開示してもよい (**MAY**).
+これには についての情報が含まれる.
+RP も同様に, Trust Agreement で定義されていれば, セキュリティ目的で不審なアクティビティや侵害された RP Subscriber Account のアクティビティ情報を IdP に開示してもよい (**MAY**).
+
+<!--
 An IdP **SHOULD** signal subscriber account termination to RPs that have been provisioned with federated identifiers bound to that subscriber account using shared signaling as discussed in [Sec. 5.7](sec5_federation.md#shared-signals). RPs that receive such a signal from the IdP **SHALL** terminate the RP subscriber account and remove all personal information associated with the RP subscriber account, except what is required for audit and security purposes.
+-->
 
+IdP は, [Sec. 5.7](sec5_federation.ja.md#shared-signals) にある Shared Signaling を用いて, Subscriber Account の Terminate シグナルを当該 Subscirber Account に紐づいた Federated Identifier の Provisioning を受けた RP に送るべきである (**SHOULD**).
+IdP からこのシグナルを受け取った RP は RP Subscriber Account を Terminate し, 当該 RP Subscriber Account に関連する全ての Personal Information を削除しなければならない (**SHALL**).
+ただし監査やセキュリティ目的で必要とされる場合を除く.
+
+<!--
 The following requirements apply specifically to federal agencies:
+-->
 
+以下の要件は特に連邦機関に適用される.
+
+<!--
 1. The agency **SHALL** consult with their Senior Agency Official for Privacy (SAOP) to conduct an analysis determining whether the requirements of the Privacy Act are triggered by the agency that is acting as an IdP, by the agency that is acting as an RP, or both (see [Sec. 9.4](sec9_privacy.md#agency-privacy)).
 
 2. The agency **SHALL** publish or identify coverage by a System of Records Notice (SORN) as applicable.
@@ -877,8 +959,24 @@ The following requirements apply specifically to federal agencies:
 3. The agency **SHALL** consult with their SAOP to conduct an analysis determining whether the requirements of the E-Government Act are triggered by the agency that is acting as an IdP, the agency that is acting as an RP, or both.
 
 4. The agency **SHALL** publish or identify coverage by a Privacy Impact Assessment (PIA) as applicable.
+-->
 
+1. 当該機関はそれぞれの Senior Agency Official for Privacy (SAOP) に助言を求め, IdP, RP もしくはその両方として動作する機関を起因として Privacy Act の要件が課せられることがないか判断するための分析を実施すること (**SHALL**). ([Sec. 9.4](sec9_privacy.ja.md#agency-privacy) 参照)
+
+2. 該当する場合, 当該機関は System of Records Notice (SORN) によりその適用範囲を公開・特定すること (**SHALL**).
+
+3. 当該機関はそれぞれの SOAP に助言を求め, IdP, RP もしくはその両方として動作する機関を起因として E-Government Act の要件が課せられることがないか判断するための分析を実施すること (**SHALL**).
+
+4. 該当する場合, 当該機関は Privacy Impact Assessment (PIA) によりその適用範囲を公開・特定すること (**SHALL**).
+
+<!--
 If the RP subscriber account lifecycle process gives the RP access to attributes through a provisioning API as discussed in [Sec. 5.4.3](sec5_federation.md#provisioning-api), additional privacy measures **SHALL** be implemented given the wide nature of information access. Specifically, it is possible for the attributes of a subscriber to be provided to an RP without the subscriber ever interacting with the RP in question. As a consequence, when a provisioning API is used, the IdP **SHALL** minimize the attributes made available to the RP. To prevent the transmission of attributes for users that will never use an RP, the IdP **SHALL** limit the population of subscriber accounts available via the provisioning API to the population of subscribers authorized to use the RP by the trust agreement.
+-->
+
+RP Subscriber Account のライフサイクルプロセスにおいて RP が [Sec. 5.4.3](sec5_federation.md#provisioning-api) で述べた Provisioning API を通じた Attribute への Access を得る場合, 広く情報アクセスの性質を考慮した追加の Privacy 対策を行うこと (**SHALL**).
+具体的には, Subscriber の Attribute が, Subscriber が一度も RP と対話することなく, RP に提供されうる.
+結果として, Provisioning API を利用する場合, IdP は RP に開示する Attribute を最小化しなければならない (**SHALL**).
+ユーザーが利用することのない RP への Attribute 転送を防止するため, IdP は Provisioning API を通じてやり取りされる Subscriber Account の母集団を Trust Agreement により当該 RP の利用を認可された Subscriber 群に制限しなければならない (**SHALL**).
 
 ##  Reauthentication and Session Requirements in Federated Environments {#federation-session}
 
