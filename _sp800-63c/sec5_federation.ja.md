@@ -989,15 +989,47 @@ Assertion は両者の Session に関係づけられるが, 根本的にその�
 IdP が Subscriber に関する Assertion を生成する際, Subscriber は IdP との間に認証済 Session を確立する必要がある.
 RP において認証済 Session を生成する際は, RP が IdP から有効な Assertion を受け取り処理する必要がある.
 
+<!--
 Due to the distributed nature of a federated system, the subscriber's sessions with the IdP and with the RP terminate independently of each other. The RP **SHALL NOT** assume that the subscriber has an active session at the IdP past the issuance time of the assertion. The IdP **SHALL NOT** assume that termination of the subscriber's session at the IdP will propagate to any sessions that subscriber would have at downstream RPs. The RP and IdP **MAY** communicate session termination requests to other parties in the federation network, if supported by the federation protocol.
+-->
 
+Federated System はその性質上分散しているので, IdP における Subscriber の Session と RP における Subscriber の Session は互いに独立に Terminate する.
+RP は Assertion 発行前に Subscriber が IdP にアクティブな Session を持っていると仮定してはならない (**SHALL NOT**).
+IdP は IdP において Subscriber の Session が Terminate したからと言って RP における Subscriber の Session にそれが伝播されると仮定してはならない (**SHALL NOT**).
+RP と RP は, Federation Protocol がそれをサポートしている場合は, Federation Network 内で相互に Session Termination リクエストをやりとりしてもよい (**MAY**).
+
+<!--
 At the time of a federated login request, the subscriber **MAY** have a pre-existing session at the IdP which **MAY** be used to generate an assertion to the RP. The IdP **SHALL** communicate any information it has regarding the time of the subscriber's latest authentication event at the IdP, and the RP **MAY** use this information in making authorization and access decisions. Depending on the capabilities of the federation protocol in use, the IdP **SHOULD** allow the RP to request that the subscriber repeat authentication at the IdP as part of a federation request.
+-->
 
+Federation においてログインリクエストを送る際, Subscriber は IdP に既存の Session を持つこともあり (**MAY**), それを使って RP 向けの Assertion を生成することもできる (**MAY**).
+IdP は Subscriber の IdP における最終 Authentication イベント時刻に関する情報を伝えるものとし (**SHALL**), RP はその情報を利用して Authorization および Access の決定を行うことができる (**MAY**).
+Federation Protocol がサポートしている場合, IdP は Federation リクエストの一環として RP が IdP において Subscriber を再度 Authenticate するようリクエストできるようにすべきである (**SHOULD**).
+
+<!--
 An RP requiring authentication through a federation protocol **SHALL** specify the maximum acceptable authentication age to the IdP, either through the federation protocol (if possible) or through the parameters of the trust agreement. The authentication age represents the time since the last authentication event in the subscriber's session at the IdP, and the IdP **SHALL** reauthenticate the subscriber if they have not been authenticated within that time period. The IdP **SHALL** communicate the authentication event time to the RP to allow the RP to decide if the assertion is sufficient for authentication at the RP and to determine the time for the next reauthentication event.
+-->
 
+Federation Protocol を通じて Authentication を要求する RP は, IdP に最大限許容できる Authentication 有効期間を指定すべきである (**SHALL**).
+これは可能であれば Federation Protocol を通じて指定してもよいし, Trust Agreement のパラメータとして指定してもよい.
+Authentication 有効期間は, IdP における Subscriber Session における最終 Authentication イベントからの経過時間を示し, その期間内に Authentication イベントが発生していない場合 IdP は Subscriber を Reauthenticate しなければならない (**SHALL**).
+IdP は Authentication イベント時刻を RP に伝えねばならず (**SHALL**), RP はそれにより Assertion が RP における Authentication に足りるかどうかを判断し, 次回の Reauthentication イベントのタイミングを決定することができる.
+
+<!--
 If an RP is granted access to an identity API along with the assertion, the lifetime of the access to the identity API is independent from the lifetime of the assertion itself. Since access to the identity API is often combined with access to additional APIs, it is common for this access to be valid long after the assertion has expired and possibly after the session with the RP has ended, allowing the RP to access APIs on the subscriber's behalf while the subscriber is no longer present. As a consequence, the RP's ability to successfully fetch additional attributes through an identity API **SHALL NOT** be used to establish a session at the RP. Likewise, inability to access an identity API **SHOULD NOT** be used to end the session at the RP.
+-->
 
+RP が Assertion に加えて Identity API への Access を許可されている場合, Identity API への Access の有効期間は Assertion 自体の有効期間とは独立している.
+Identity API への Access はしばしばその他の API への Access と統合されているため, Assertion が期限切れになった後も, そして場合によっては RP における Session が終了した後も, 長期間 Access が有効であることは一般的である.
+これにより RP は Subscriber がそこにいない時でも Subscriber の代理として API に Access することができる.
+以上のことから, RP が Identity API を通じて追加の Attribute の取得に成功したからといって, RP において Session を確立することはできない (**SHALL NOT**).
+同様に, Identity API に Access できないからと言って, RP の Session が終了されるべきではない (**SHOULD NOT**).
+
+<!--
 See [[SP800-63B]](../_sp800-63b/sec7_session.md#sec7){:latex-href="#ref-SP800-63B"}, Sec. 7 for more information about session management requirements for both IdPs and RPs.
+-->
+
+IdP および RP における Session Management 要件の詳細については [[SP800-63B]](../_sp800-63b/sec7_session.ja.md#sec7){:latex-href="#ref-SP800-63B"} Sec. 7 を参照のこと.
 
 ## Shared Signaling {#shared-signals}
 
