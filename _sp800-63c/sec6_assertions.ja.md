@@ -12,12 +12,29 @@ section: 6
 
 *This section is normative.*
 
+<!--
 An assertion used for authentication is a packaged set of attribute values or derived attribute values about or associated with an authenticated subscriber that is passed from the IdP to the RP in a federated identity system. Assertions contain a variety of information, including: assertion metadata, attribute values and derived attribute values about the subscriber, information about the subscriber's authentication at the IdP, and other information that the RP can leverage (e.g., restrictions and validity time window). While the assertion's primary function is to authenticate the user to an RP, the information conveyed in the assertion can be used by the RP for a number of use cases &mdash; for example, authorization or personalization of a website. These guidelines do not restrict RP use cases nor the type of protocol or data payload used to federate an identity, provided the chosen solution meets all mandatory requirements contained herein.
+-->
 
+Authentication に用いられる Assertion は, Authentication 対象の Subscriber に関する Attribute Value ないしは Derived Attribute Value のパッケージ化されたセットであり, Federated Identity システムにおいて IdP から RP に伝搬されるものである.
+Assertion メタデータ, Subscriber の Attribute Value ないしは Derived Attribute Value, IdP における Subscriber の Authentication に関する情報, および RP が活用可能なその他の情報など, Assertion は多様な情報を含んでいる.
+Assertion の第一の機能は RP に対してユーザーを Authenticate することだが, Assertion によって伝達される情報は RP がもつ多くのユースケースにおいて利用可能である.
+例としては, Authorization や Web サイトのパーソナライゼーションなどが挙げられる.
+本ガイドライン群は, ここに指定する必須要件を全て満たしている限り, Identity Federation における RP のユースケースや Protocol やデータペイロードのタイプを制限しない.
+
+<!--
 Assertions **SHALL** represent a discrete authentication event of the subscriber at the IdP and **SHALL** be processed as a discrete authentication event at the RP.
+-->
 
+Assertion は IdP における Subscriber の個別の Authentication イベントを表現するものとし (**SHALL**), RP はそれを個別の Authentication イベントとして処理するものとする (**SHALL**).
+
+<!--
 All assertions **SHALL** include the following attributes:
+-->
 
+全ての Assertion には以下の Attribute を含めるものとする (**SHALL**):
+
+<!--
 1. Subject identifier: An identifier for the party to which the assertion applies (i.e., the subscriber).
 2. Issuer identifier: An identifier for the issuer of the assertion (i.e., the IdP).
 3. Audience identifier: An identifier for the party intended to consume the assertion (i.e., the RP).
@@ -29,6 +46,19 @@ All assertions **SHALL** include the following attributes:
 9. IAL: Indicator of the IAL of the subscriber account being represented in the assertion, or an indication that no IAL is asserted.
 10. AAL: Indicator of the AAL used when the subscriber authenticated to the IdP, or an indication that no AAL is asserted.
 11. FAL: An indicator of the IdP's intended FAL of the federation process represented by the assertion.
+-->
+
+1. Subject Identifier: Assertion が指し示す当事者 (i.e., Subscriber) の識別子
+2. Issuer Identifier: Assertion 発行者 (i.e., IdP) の識別子
+3. Audience Identifier: Assertion を利用することが想定された当事者 (i.e., RP) の識別子
+4. Issuance Time: IdP が Assertion を発行した時刻を示すタイムスタンプ
+5. Validity Time Window: その期間を超えて RP が Subscriber を Authentication する目的で Assertion を有効なものとして受け入れることのない (**SHALL NOT**) よう示す期間. これは通常 Assertion の有効期限タイムスタンプという形で Issuance タイムスタンプとともに伝えられる.
+6. Assertion Identifier: 当該 Assertion を一意に識別する値で, 攻撃者が以前の Assertion を Replay することを防止する目的で利用される.
+7. Signature: Digital Signature ないしは Message Authentication Code (MAC). IdP に紐づいた鍵の識別子や Public Key を含み, Assertion 全体をカバーするもの.
+8. Authentication Time: IdP が最後に (可能であれば) 直接 Authentication イベントを通じて Subscriber の存在確認を行った時刻を示すタイムスタンプ.
+9. IAL: Assertion が指し示す Subscriber Account の IAL を示す値, ないしはいかなる IAL も明言されないことを示す値.
+10. AAL: IdP が Subscriber を Authenticate した際の AAL を示す値, ないしはいかなる AAL も明言されないことを示す値.
+11. FAL: Assertion が指し示す Federation プロセスにおいて IdP が意図する FAL を示す値.
 
 If the assertion is used at FAL3 with a bound authenticator as described in [Sec. 6.1.2](sec6_assertions.md#boundauth), the assertion **SHALL** include the following:
 
