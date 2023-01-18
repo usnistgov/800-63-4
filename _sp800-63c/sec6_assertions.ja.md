@@ -179,12 +179,32 @@ Bearer Assertion ないしは Bearer Assertion Referende を保持するだけ�
 
 ### Bound Authenticators {#boundauth}
 
+<!--
 A bound authenticator is an authenticator presented to the RP by the subscriber alongside the assertion. In proving possession of the bound authenticator to the RP, the subscriber also proves with a certain degree of assurance that they are the rightful subject of the assertion. It is more difficult for an attacker to use a stolen assertion issued to a subscriber since the attacker would need to steal the bound authenticator as well as the assertion and be able to present them together. Furthermore, use of a bound authenticator protects the RP against malicious or compromised IdPs through the use of independent authentication.
+-->
 
+Bound Authenticator とは Subscriber が Assertion とともに RP に提示する Authenticator である.
+RP に Bound Authenticator を保持していることを証明するため, Subscriber は Assertion の正当な Subject であるということを一定の確度を持って証明する.
+これにより, Attacker は Assertion に加え Bound Authenticator も詐取・提示することが必要になるため, Attacker が Subscriber 向けに発行された Assertion を詐取して利用することはより困難になる.
+さらに Bound Authenticator は独立した Authentication により RP を不正もしくは侵害された IdP から保護する.
+
+<!--
 A bound authenticator **SHALL** be unique per subscriber at the RP such that two subscribers cannot present the same authenticator for their separate RP subscriber accounts. All bound authenticators **SHALL** be phishing resistant. Consequently, subscriber-chosen values such as a memorized secret cannot be used as bound authenticators.
 The RP **SHALL** accept authentication from a bound authenticator only in the context of processing an assertion. Consequently, the subscriber can not use a bound authenticator to log into the RP directly, bypassing the IdP in the process.
+-->
 
+Bound Authenticator は RP において Subscriber 毎に一意であるものとし (**SHALL**), 異なる Subscriber は同じ Authenticator をそれぞれの RP Subscriber Account に対して提示することができないようにすること.
+全ての Bound Authenticator は Phishing 耐性を持つこと (**SHALL**).
+従って, Memorized Secret のような Subscriber が選択した値は Bound Authenticator としては利用できない.
+RP は Assertion を保持したコンテキストでのみ Bound Authenticator による Authentication を受け入れること (**SHALL**).
+従って, Subscriber は Bound Authenticator を使って IdP におけるプロセスをバイパスして直接 RP にログインすることはできない.
+
+<!--
 A bound authenticator can be managed by either the IdP or the RP under different circumstances, as detailed in the sections below. An FAL3 assertion contains an indication of whether the IdP expects the subscriber to present a specific IdP-managed bound authenticator or an RP-managed bound authenticator at the RP to reach FAL3.
+-->
+
+次節で詳述の通り, Bound Authenticator はさまざまな条件のもと IdP ないし RP のいずれかによって管理されうる.
+FAL3 の Assertion は, IdP が Subscriber に特定の IdP 管理の Bound Authenticator を提示することを期待するか, RP において FAL3 に足りる RP 管理の Bound Authenticator を提示することを期待するかを指定する値を含む.
 
 #### IdP-Managed Bound Authenticators
 
