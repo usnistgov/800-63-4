@@ -17,7 +17,7 @@ An assertion used for authentication is a packaged set of attribute values or de
 -->
 
 Authentication に用いられる Assertion は, Authentication 対象の Subscriber に関する Attribute Value ないしは Derived Attribute Value のパッケージ化されたセットであり, Federated Identity システムにおいて IdP から RP に伝搬されるものである.
-Assertion メタデータ, Subscriber の Attribute Value ないしは Derived Attribute Value, IdP における Subscriber の Authentication に関する情報, および RP が活用可能なその他の情報など, Assertion は多様な情報を含んでいる.
+Assertion Metadata, Subscriber の Attribute Value ないしは Derived Attribute Value, IdP における Subscriber の Authentication に関する情報, および RP が活用可能なその他の情報など, Assertion は多様な情報を含んでいる.
 Assertion の第一の機能は RP に対してユーザーを Authenticate することだが, Assertion によって伝達される情報は RP がもつ多くのユースケースにおいて利用可能である.
 例としては, Authorization や Web サイトのパーソナライゼーションなどが挙げられる.
 本ガイドライン群は, ここに指定する必須要件を全て満たしている限り, Identity Federation における RP のユースケースや Protocol やデータペイロードのタイプを制限しない.
@@ -32,7 +32,7 @@ Assertion は IdP における Subscriber の個別の Authentication イベン�
 All assertions **SHALL** include the following attributes:
 -->
 
-全ての Assertion には以下の Attribute を含めるものとする (**SHALL**):
+全ての Assertion には以下の Attribute を含めるものとする (**SHALL**).
 
 <!--
 1. Subject identifier: An identifier for the party to which the assertion applies (i.e., the subscriber).
@@ -60,41 +60,122 @@ All assertions **SHALL** include the following attributes:
 10. AAL: IdP が Subscriber を Authenticate した際の AAL を示す値, ないしはいかなる AAL も明言されないことを示す値.
 11. FAL: Assertion が指し示す Federation プロセスにおいて IdP が意図する FAL を示す値.
 
+<!--
 If the assertion is used at FAL3 with a bound authenticator as described in [Sec. 6.1.2](sec6_assertions.md#boundauth), the assertion **SHALL** include the following:
+-->
 
+[Sec. 6.1.2](sec6_assertions.ja.md#boundauth) に後述のように Assertion が FAL3 で Bound Authenticator とともに用いられる場合, Assertion は以下を含むものとする (**SHALL**).
+
+<!--
 1. Authenticator binding: The public key, key identifier, or other identifier of subscriber-held bound authenticator (for IdP-managed bound authenticators) or indicator that an RP-managed bound authenticator is required for verification of this assertion.
+-->
 
+1. Authenticator Binding: Public Key, 鍵の識別子, その他の Subscriber が保持する Bound Authenticator (IdP が管理するもの) の識別子, ないしは RP が管理する Bound Authenticator が Assertion 検証に要求されることを示す値.
+
+<!--
 Assertions **MAY** also include additional items, including the following information:
+-->
 
+Assertion は以下に示すような追加の項目を含んでもよい (**MAY**).
+
+<!--
 1. Attribute values and derived attribute values: Information about the subscriber.
 2. Attribute metadata: Additional information about one or more subscriber attributes, such as those described in NIST Internal Report 8112 [[NISTIR8112]](references.md#ref-nistir8112).
+-->
 
+1. Attribute Value および Derived Attribute Value: Subscriber に関する情報.
+2. Attribute Metadata: Subscriber Attribute に関する1つ以上の追加情報. NIST Internal Report 8112 [[NISTIR8112]](references.ja.md#ref-nistir8112) 例示あり.
+
+<!--
 Assertions **SHOULD** specify the AAL when an authentication event is being asserted and IAL when identity proofed attributes (or values derived from those attributes) are being asserted.
+-->
 
+Assertion は, Authentication Event を示す場合は AAL を, Identity Proofing を経た Attribute を示す場合は IAL を指定すべきである (**SHOULD**).
+
+<!--
 All metadata within the assertion **SHALL** be validated by the RP upon receipt:
+-->
 
- - *Issuer verification*: ensuring the assertion was issued by the IdP the RP expects it to be from.
- - *Signature validation*: ensuring the signature of the assertion is valid and corresponds to a key belonging to the IdP sending the assertion.
- - *Time validation*: ensuring the expiration and issue times are within acceptable limits of the current timestamp.
- - *Audience restriction*: ensuring this RP is the intended recipient of the assertion.
+RP は Assertion を受け取ったらそこに含まれる全てのメタデータを検証すること (**SHALL**).
 
+<!--
+- *Issuer verification*: ensuring the assertion was issued by the IdP the RP expects it to be from.
+- *Signature validation*: ensuring the signature of the assertion is valid and corresponds to a key belonging to the IdP sending the assertion.
+- *Time validation*: ensuring the expiration and issue times are within acceptable limits of the current timestamp.
+- *Audience restriction*: ensuring this RP is the intended recipient of the assertion.
+-->
+
+- *Issuer Verification*: Assertion が RP の期待する IdP により発行されたものであることを保証すること.
+- *Signature Verification*: Assertion の署名が有効かつ Assertion を送信した IdP の鍵によるものであることを保証すること.
+- *Time Validation*: 現在時刻と照らし合わせて有効期限と発行日時が許容範囲に収まっていることを保証すること.
+- *Audience Restriction*: Assertion の受け取り先として当該 RP が意図されていることを保証すること.
+
+<!--
 An RP **SHALL** treat subject identifiers as not inherently globally unique. Instead, the value of the assertion's subject identifier is usually in a namespace under the assertion issuer's control. This allows an RP to talk to multiple IdPs without incorrectly conflating subjects from different IdPs.
+-->
 
+RP は Subject Identifier を本質的にグローバルにユニークではないものとして扱うこと (**SHALL**).
+Assertion 内の Subject Identifier は通常 Assertion 発行者の管理下にあるネームスペース内の値である.
+これにより, RP は異なる IdP から受け取った Subject を誤って混同することなく複数の IdP と対話可能になる.
+
+<!--
 Assertions **MAY** include additional attributes about the subscriber. [Section 6.2.3](sec6_assertions.md#encrypted-assertion) contains privacy requirements for presenting attributes in assertions. The RP **MAY** be given limited access to an identity API as discussed in [Sec. 6.3](#s-identity-api) along with the assertion, which the RP can use to fetch additional identity attributes for the subscriber.
+-->
 
+Assertion は Subscriber のその他の Attribute を含んでもよい (**MAY**).
+Assertion に含めて Attribute を提示するためのプライバシー要件については [Section 6.2.3](sec6_assertions.ja.md#encrypted-assertion) で述べる.
+RP には Assertion に加えて [Sec. 6.3](#s-identity-api) で述べた Identity API への限定的 Access が与えられることもあり (**MAY**), RP はこの API を利用して Subscriber に関する追加の Identity Attribute を取得可能となる.
+
+<!--
 Although details vary based on the exact federation protocol in use, an assertion represents a discrete login event to the RP. The validity time window of an assertion is related to but separate from any session management at the IdP or RP. Specifically, an assertion is created during an authenticated session at the IdP, and processing an assertion creates an authenticated session at the RP. After the IdP creates the assertion, the validity of the IdP's session is independent of the validity of the assertion. If a request comes to the IdP for a repeated authentication while the session is still valid at the IdP, this results in a new and separate assertion being created with its own validity time window. Similarly, after the RP consumes the assertion, the validity of the RP's session is independent of the validity of the assertion. Access granted to an identity API is likewise independent of the validity of the assertion or the lifetime of the authenticated session at the RP. See [Sec. 5.3](sec5_federation.md#federation-session) for more information on session management.
+-->
 
+Federation Protocol によって詳細はさまざまであるが, Assertion は個々の RP へのログインイベントを表現する.
+Assertion の Validity Time Window は IdP ないし RP の Session 管理に関連はするが分離したものである.
+特に Assertion は IdP における認証済 Session 中に生成され, Assertion を処理することで RP における認証済 Session が生成される.
+IdP が Assertion を生成した後は, IdP の Session の有効性と Assertion の有効性は独立したものとなる.
+IdP における Session が有効なうちに再度 IdP が Authentication 要求を受け取った場合, その結果として新たな独立した Assertion が独自の Validity Time Window のもと生成される.
+同様に, RP が Assertion を消費した後は, RP の Session と Assertion の有効性は独立したものとなる.
+Identity API に対して付与された Access もまた, Assertion の有効性や RP の認証済 Session の有効期間とは独立したものである.
+Session 管理についての詳細は [Sec. 5.3](sec5_federation.ja.md#federation-session) を参照のこと.
+
+<!--
 The assertion's validity time window is the time between its issuance and its expiration. This window needs to be large enough to allow the RP to process the assertion and create a local application session for the subscriber, but should not be longer than necessary for such establishment. Long-lived assertions have a greater risk of being stolen or replayed; a short assertion validity time window mitigates this risk. Assertion validity time windows **SHALL NOT** be used to limit the session at the RP. See [Sec. 5.3](sec5_federation.md#federation-session) for more information.
+-->
+
+Assertion の Validity Time Window はその発行日時と有効期限の間の期間である.
+この値は RP が Assertion を処理して Subscriber に対して ローカルのアプリケーション Session を生成するに足りるものである必要がある一方, 必要以上に長くあるべきではない.
+長期間有効な Assertion は詐取されたり Replay されるリスクを高め, Validity Time Window を短くするとそのリスクは低減される.
+Assertion の Validity Time Window は RP における Session を制限するために用いてはならない (**SHALL NOT**).
+詳細は [Sec. 5.3](sec5_federation.ja.md#federation-session) を参照のこと.
 
 ## Assertion Binding  {#assertion-binding}
 
+<!--
 Assertion binding can be classified based on whether presentation by a claimant of an assertion is sufficient for binding to the party currently in session with the RP as the subscriber, or if the RP requires additional proof through the successful presentation of an authenticator bound to the subscriber.
+-->
+
+Assertion Binding は, Claimant による Assertion の提示が Subscriber として RP に Session を保持している当事者と紐づけるに足りるかどうかや, RP が Subscriber に紐づけられた Authenticator の提示を通じた追加の証明を必要とするかどうかに基づいて分類できる.
 
 ### Bearer Assertions  {#bearer}
 
+<!--
 A bearer assertion can be presented by any party as proof of the bearer's identity. Similarly, a bearer assertion reference can be presented by any party to the RP and used by the RP to fetch an assertion; the assertion in this instance is also considered a bearer assertion. If an attacker can capture or manufacture a valid assertion or assertion reference representing a subscriber and can successfully present that assertion or reference to the RP, then the attacker could be able to impersonate the subscriber at that RP.
+-->
 
+Bearer Assertion は, いかなる当事者であれ自身の Identity の証明として提示することが可能なものである.
+Bearer Assertion Reference も同様に, いかなる当事者でも RP に提示し RP に Assertion を取得させることができる.
+そうやって取得された Assertion も Bearer Assertion として扱われる.
+Attacker が Subscriber に関する有効な Assertion ないし Assertion Reference を詐取ないし偽造して成功裡に RP に提示できる場合, Attacker は RP に対して Subscriber になりすますことが可能となる.
+
+<!--
 Note that mere possession of a bearer assertion or reference is not always enough to impersonate a subscriber. For example, if an assertion is presented in the back-channel federation model (described in [Sec. 7.1](sec7_presentation.md#back-channel)), additional controls **MAY** be placed on the transaction (such as identification of the RP and assertion injection protections) that help further protect the RP from fraudulent activity.
+-->
+
+Bearer Assertion ないしは Bearer Assertion Referende を保持するだけでは, 常に Subscriber になりすますのに十分であるとは限らないことに注意すること.
+例えば, Assertion が Back-channel Federation Model ([Sec. 7.1](sec7_presentation.ja.md#back-channel) に後述) によって提示される場合, Transaction に追加の統制が課されることもある (**MAY**).
+例としては RP の識別や Assertion インジェクションにたいする保護策などが考えられる.
+これらは RP を不正なアクティビティから保護する追加の対策となる.
 
 ### Bound Authenticators {#boundauth}
 
