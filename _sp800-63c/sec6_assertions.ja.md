@@ -208,19 +208,41 @@ FAL3 の Assertion は, IdP が Subscriber に特定の IdP 管理の Bound Auth
 
 #### IdP-Managed Bound Authenticators
 
+<!--
 When the bound authenticator is managed by the IdP as in [Fig. 9](sec6_assertions.md#fig-9), a unique identifier for the authenticator (such as its public key) **SHALL** be included in the assertion presented to the RP. The RP **SHALL** prompt the subscriber to prove possession of the identified bound authenticator.
+-->
+
+[Fig. 9](sec6_assertions.ja.md#fig-9) のように Bound Authenticator が IdP によって管理されている場合, RP に提示される Assertion には Authenticator を一意に示す識別子 (Authenticator の Public Key など) を含めることとする (**SHALL**).
+また RP は Subscriber に指定された Bound Authenticator の保持証明を求めることとする (**SHALL**).
 
 [Figure 9. IdP-Managed Bound Authenticators](sec6_assertions.md#fig-9){:name="fig-9"}
 {:latex-ignore="true"}
 
 ![Diagram illustrating the use of bound authenticators managed at the IdP.]({{site.baseurl}}/{{page.collection}}/media/IdP-Managed-Bound-Auth.png 'IdP-Managed Bound Authenticators'){:latex-src="IdP-Managed-Bound-Auth.pdf" latex-fig="9" latex-place="h"}
 
+<!--
 An IdP-managed bound authenticator **MAY** be distinct from the primary authenticator the subscriber uses to authenticate to the IdP. Bound authenticators managed at the IdP **SHALL** be phishing resistant and **SHALL** be independently dereferenceable by the RP based on a mutually-trusted security framework, such as a public-key infrastructure. When processing an IdP-managed bound authenticator for the first time, the RP **SHOULD** verify whether the authenticator being presented is appropriate to be associated with the subscriber account, such as through account resolution from the attributes in the authenticator's presented information.
+-->
 
+IdP が管理する Bound Authenticator は Subscriber が IdP に対して Authenticate する際に用いるプライマリな Authenticator とは異なるものでよい (**MAY**).
+IdP が管理する Bound Authenticator は Phishing 耐性を持ち (**SHALL**), Public Key Infrastructure などの相互信頼セキュリティフレームワークに基づいて RP により個別に参照解除可能でなければならない (**SHALL**).
+初めて IdP 管理の Bound Authenticator を処理する際, RP は Authenticator が提示する情報に含まれる Attribute を用いて Account 解決を行うなどして, 提示された Authenticator が Subscriber Account に関連づけられるに適切かどうかを検証するべきである (**SHOULD**).
 
+<!--
 For example, a subscriber could have a smart card loaded with a certificate, which is a multi-factor cryptographic device. Since the certificate can be presented to both the IdP and the RP, the IdP can include an identifier for the certificate in the FAL3 assertion to the RP. The RP would then prompt the subscriber to present the certificate from their smart card in order to reach FAL3.
+-->
 
+例えば, Subscriber が Certificate が読み込まれた Smart Card を持っているとする.
+この Smart Card は Multi-factor Cryptographic Device である.
+Certificate は IdP にも RP にも提示可能であるため, IdP は RP に向けた FAL3 の Assertion に Certificate の識別子を含めることができる.
+すると RP は Subscriber に Smart Card 内の Certificate の提示を求め, FAL3 を満たすことができる.
+
+<!--
 "Holder of Key" (HoK) assertions are one example of IdP-managed bound authenticators, since the IdP knows the subscriber's key to be used at the RP and includes the key information in the assertion presented to the RP.
+-->
+
+"Holder of Key" (HoK) Assertion は IdP 管理の Bound Authenticator の一例である.
+この例では IdP は RP で使用される Subscriber の鍵を知っており, RP に提示する Assertion に鍵情報を含める.
 
 ~~~
 \clearpage
