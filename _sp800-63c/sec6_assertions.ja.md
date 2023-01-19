@@ -213,7 +213,7 @@ When the bound authenticator is managed by the IdP as in [Fig. 9](sec6_assertion
 -->
 
 [Fig. 9](sec6_assertions.ja.md#fig-9) のように Bound Authenticator が IdP によって管理されている場合, RP に提示される Assertion には Authenticator を一意に示す識別子 (Authenticator の Public Key など) を含めることとする (**SHALL**).
-また RP は Subscriber に指定された Bound Authenticator の保持証明を求めることとする (**SHALL**).
+また RP は Subscriber に指定された Bound Authenticator の保持証明を求めること (**SHALL**).
 
 [Figure 9. IdP-Managed Bound Authenticators](sec6_assertions.md#fig-9){:name="fig-9"}
 {:latex-ignore="true"}
@@ -251,40 +251,98 @@ Certificate は IdP にも RP にも提示可能であるため, IdP は RP に�
 
 #### RP-Managed Bound Authenticators
 
+<!--
 When the bound authenticator is managed by the RP as in [Fig. 10](sec6_assertions.md#fig-10), the IdP **SHALL** include an indicator in the assertion that the assertion is to be used with a bound authenticator at FAL3. The unique identifier for the authenticator (such as its public key) **SHALL** be stored in the RP subscriber account.
+-->
+
+[Fig. 10](sec6_assertions.ja.md#fig-10) のように Bound Authenticator が RP によって管理されている場合, IdP は Assertion に当該 Assertion が FAL3 で Bound Authenticator とともに利用されることを示す値を含めることとする (**SHALL**).
+Authenticator を一意に示す識別子 (Authenticator の Public Key など) は RP Subscriber Account 内に保存すること (**SHALL**).
 
 [Figure 10. RP-Managed Bound Authenticators](sec6_assertions.md#fig-10){:name="fig-10"}
 {:latex-ignore="true"}
 
 ![Diagram illustrating the use of bound authenticators managed at the RP.]({{site.baseurl}}/{{page.collection}}/media/RP-Managed-Bound-Auth.png 'RP-Managed Bound Authenticators'){:latex-src="RP-Managed-Bound-Auth.pdf" latex-fig="10" latex-place="h"}
 
+<!--
 Before an RP can successfully accept an FAL3 assertion, the RP subscriber account must include a bound authenticator. These authenticators can be provided by either the RP or the subscriber, with slightly different requirements applying to the initial binding of the authenticator to the RP subscriber account in each case.
+-->
 
+RP は FAL3 Assertion を成功裡に受け入れるには, 事前に RP Subscriber Account に Bound Authenticator が保存されていなければならない.
+これらの Authenticator は RP ないしは Subscriber のどちらかにより提示されうる.
+どちらが提示するかによって, 初回の RP Subscriber Account への Authenticator 紐付け処理にかかる要件は微妙に異なる.
+
+<!--
 For RP-provided authenticators, the administrator of the RP **SHALL** issue the authenticator to the subscriber directly for use with an FAL3 login. The administrator of the RP **SHALL** store a unique identifier for the bound authenticator in the RP subscriber account. The administrator of the RP **SHALL** determine through independent means that the party to which the authenticator is issued is the identified subject of the RP subscriber account.
+-->
 
+RP が提示する Authenticator に関しては, RP の管理者が FAL3 で Subscriber をログインさせた状態で Subscriber に直接 Authenticator を発行しなければならない (**SHALL**).
+RP の管理者は, RP Subscriber Account に Bound Authenticator の一意な識別子を保存しなければならない (**SHALL**).
+さらに, RP の管理者は, 独自に Authenticator を発行する相手が RP Subscriber Account の Subject であることを確認しなければならない (**SHALL**).
+
+<!--
 For subscriber-provided authenticators, if no bound authenticators are associated with the RP subscriber account, the RP **SHALL** perform a binding ceremony to establish the connection between the authenticator, the subscriber, and the RP subscriber account as shown in [Fig. 11](sec6_assertions.md#fig-11). The RP **SHALL** first establish an authenticated session using federation with an assertion that meets all the other requirements of FAL3, including an indication that the assertion is intended for use at FAL3 with an RP-managed bound authenticator. The subscriber **SHALL** immediately be prompted to present and authenticate with the proposed authenticator. Upon successful presentation of the authenticator, the RP **SHALL** store a unique identifier for the authenticator (such as its public key) and associate this with the RP subscriber account associated with the federated identifier. If the subscriber fails to successfully present an appropriate authenticator, the binding ceremony fails. The binding ceremony session **SHALL** have a timeout of five minutes or less. The session used during the ceremony is not an authenticated session for the purposes of logging in. Upon successful completion of the binding ceremony, the RP **SHALL** immediately request a new assertion from the IdP at FAL3, including prompting the subscriber for the newly-bound authenticator.
+-->
+
+Subscriber が提示する Authenticator に関しては, RP Subscriber にひとつも Bound Authenticator が紐づいていない場合, RP は [Fig. 11](sec6_assertions.ja.md#fig-11) のように Authenticator, Subscriber および RP Subscriber Account の間の紐付け確立のために Binding セレモニーを実施しなければならない (**SHALL**).
+RP はまず FAL3 の Bound Authenticator に関するもの以外の要件を満たす Assertion を用いた Federation により認証済 Session を確立する. 当該 Assertion には RP 管理の Bound Authenticator により FAL3 で利用されることが期待されることを示す値が含まれる.
+次に Subscriber はその直後に提案された Authenticator を提示し Authenticate する.
+Authenticator の提示が成功すると, RP は Authenticator の一意な識別子 (Public Key 等) を保存し, それを Federated Identifier が指し示す RP Subscriber Account に紐づける (**SHALL**).
+Subscriber が適切な Authenticator を提示することができない場合, Binding セレモニーは失敗する.
+Binding セレモニーの Session は5分以内にタイムアウトさせなければならない (**SHALL**).
+セレモニー中の Session はログイン目的の認証済 Session とはならない.
+Binding セレモニーが成功すると, RP は直後に IdP に対して FAL3 の新たな Assertion を要求すること (**SHALL**).
+その際 Subscriber には新たに登録した Bound Authenticator の提示が求められる.
 
 [Figure 11. Binding Ceremony](sec6_assertions.md#fig-11){:name="fig-11"}
 {:latex-ignore="true"}
 
 ![Sequence diagram of the steps involved in the binding ceremony used for bound authenticators managed at the RP and provided by the subscriber.]({{site.baseurl}}/{{page.collection}}/media/Binding-Ceremony.png 'Binding Ceremony'){:latex-src="Binding-Ceremony.pdf" latex-fig="11" latex-place="h"}
 
+<!--
 An RP **MAY** allow a subscriber to bind multiple subscriber-provided authenticators at FAL3. If this is the case, and the RP subscriber account has one or more existing bound authenticators, the binding ceremony makes use of the existing ability to reach FAL3. The subscriber **SHALL** first be prompted to present an existing bound authenticator to reach FAL3. Upon successful authentication, the RP **SHALL** immediately prompt the subscriber for the newly-bound authenticator.
+-->
 
+RP は Subscriber に複数の FAL3 の Subscriber 提示の Authenticator 紐付けを許可してもよい (**MAY**).
+その場合、RP Subscriber Account は一つ以上の既存の Bound Authenticator を持ち, Binding セレモニーは既存のものを使い FAL3 で行うことができる.
+Subscriber はまず最初に既存の Bound Authenticator を提示して FAL3 に到達する.
+Authentication 成功直後に RP は Subscriber に新たな Bound Authenticator を要求する.
 
+<!--
 An RP **MAY** allow a subscriber to unbind a bound subscriber-provided authenticator from their RP subscriber account, thereby removing the ability to use that authenticator for FAL3. When a bound authenticator is unbound, the RP **SHALL** terminate all current FAL3 sessions for the subscriber and **SHALL** require reauthentication of the subscriber from the IdP. Note that in many cases, a subscriber will need to unbind a bound authenticator to account for a lost or compromised authenticator, and the subscriber will therefore not have access to the authenticator during the unbinding process.
+-->
+
+RP は Subscriber に RP Subscriber Account からの Subscriber 提示の Authenticator 紐付け解除を許可してもよい (**MAY**).
+紐付けを解除すると当該 Authenticator を用いて FAL3 を達成することはできなくなる.
+Bound Authenticator の紐付けが解除された際, RP は Subscriber の全ての既存 FAL3 Session を Terminate し (**SHALL**), Subscriber に IdP での Reauthentication を要求すること (**SHALL**).
+多くの場合, Subscriber は, Authenticator を紛失したり Authenticator が侵害された際に Bound Authenticator を Account から紐付け解除する必要があることに注意すること. 従って, Subscriber は紐付け解除プロセス中には当該 Authenticator への Access を持たないことにも注意.
 
 ~~~
 \clearpage
 ~~~
 {:latex-literal="true"}
 
+<!--
 The RP **SHALL** notify the subscriber through an out-of-band mechanism, and **SHOULD** notify the IdP using a shared signaling system (see [Sec. 5.7](sec5_federation.md#shared-signals)), if any of the following events occur:
+-->
 
+RP は, 以下のようなイベントが発生した際は, Out-of-band な手段で Subscriber に通知し (**SHALL**), IdP にも Shared Signaling システム ([Sec. 5.7](sec5_federation.ja.md#shared-signals) 参照) を通じて通知を行うべきである (**SHALL**).
+
+<!--
 - A new authenticator is bound to the RP subscriber account.
 - An existing bound authenticator is unbound from the RP subscriber account.
+-->
 
+- 新たな Authenticator が RP Subscriber Account に紐づけられた.
+- 既存の Bound Authenticator が RP Subscriber Account から紐付け解除された.
+
+<!--
 For example, a subscriber could have a single factor cryptographic device as an authenticator. This authenticator uses name-based phishing resistance so the IdP and RP would see different keys when used in each location. The RP can use a binding ceremony as described here to allow the subscriber to use this device as a bound authenticator at FAL3. The RP will prompt the subscriber for this authenticator whenever it sees an assertion for this subscriber at FAL3 from the IdP.
+-->
+
+例えば, Subscriber は Single Factor Cryotographic Device を Authenticator として保持しうる.
+この Authenticator は名前ベースの Phishing 耐性を持ち, IdP と RP はそれぞれ異なる鍵を受け取る.
+RP は, ここで述べた Binding セレモニーを用いて, Subscriber がこのデバイスを FAL3 の Bound Authenticator として使うことを許可することができる.
+RP は IdP から Subscriber に関する FAL3 の Assertion を受け取るたびに, Subscriber にこの Authenticator の提示を求めることになろう.
 
 #### Processing Bound Authenticators
 
