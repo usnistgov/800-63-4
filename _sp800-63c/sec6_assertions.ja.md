@@ -376,43 +376,118 @@ The following requirements apply to all assertions associated with a bound authe
 
 ## Assertion Protection
 
+<!--
 Independent of the binding mechanism (discussed in [Sec. 6.1](sec6_assertions.md#assertion-binding)) or the federation model used to obtain them (described in [Sec. 5.1](sec5_federation.md#trust-agreement)), assertions **SHALL** include a set of protections to prevent attackers from manufacturing valid assertions or reusing captured assertions at disparate RPs. The protections required are dependent on the details of the use case being considered, and specific protections are listed here.
+-->
+
+Binding メカニズム ([Sec. 6.1](sec6_assertions.md#assertion-binding)) やその取得に用いる Federation モデル ([Sec. 5.1](sec5_federation.md#trust-agreement)) とは別に, Assertion は有効な Assertion を偽装したり取得した Assertion を他の RP に対して再利用する攻撃に対する保護策を持たねばならない (**SHALL**).
+必要な保護策は考慮されるユースケースの詳細に依存する. 具体的な保護策を以下に示す.
 
 ### Assertion Identifier {#assertion-id}
 
+<!--
 Assertions **SHALL** be sufficiently unique to permit unique identification by the target RP. Assertions **MAY** accomplish this by use of an embedded nonce, issuance timestamp, assertion identifier, or a combination of these or other techniques.
+-->
+
+Assertion は対象の RP が一意に区別可能である必要がある (**SHALL**).
+これは Nonce, Issuance Timestamp, Assertion Identifier ないしこれらおよびその他のテクニックの組み合わせにより実現可能である (**MAY**).
 
 ### Signed Assertion {#signed-assertion}
 
+<!--
 Assertions **SHALL** be cryptographically signed by the issuer (IdP). The RP **SHALL** validate the digital signature or MAC of each such assertion based on the issuer's key. This signature **SHALL** cover the entire assertion, including its identifier, issuer, audience, subject, and expiration.
+-->
 
+Assertion は Issuer (IdP) に暗号論的に署名されなければならない (**SHALL**).
+RP は Issuer の鍵にもとづいて各 Assertion の Digital Signature ないし MAC を検証しなければならない.
+この署名は Assertion Identifier, Issuer, Audience, Subject および Expiration を含む Assertion 全体をカバーすること (**SHALL**).
+
+<!--
 The assertion signature **SHALL** either be a digital signature using asymmetric keys or a MAC using a symmetric key shared between the RP and issuer. Shared symmetric keys used for this purpose by the IdP **SHALL** be independent for each RP to which they send assertions, and are normally established during registration of the RP. Public keys for verifying digital signatures **SHALL** be transferred to the RP in a secure manner, and **MAY** be fetched by the RP in a secure fashion at runtime, such as through an HTTPS URL hosted by the IdP. Approved cryptography **SHALL** be used.
+-->
+
+Assertion の署名は Asymmetric Key を用いた Digital Signature か Symmetric Key を用いた MAC のどちらかでなければならない (**SHALL**).
+この目的のために IdP が用いる Shared Symmetric Key は, Assertion 送信先の RP 毎に固有でなければならなず (**SHALL**), 通常は RP の Registration 時に確立される.
+Digital Signature を検証するための Public Key はセキュアな手段により RP に送信されなければならず (**SHALL**), RP が実行時に IdP のホストする HTTPS URL を介するなどセキュアな方法で取得することも可能である (**MAY**).
+また Approved Cryptography を利用せねばならない (**SHALL**).
 
 ### Encrypted Assertion {#encrypted-assertion}
 
+<!--
 Encrypted assertions protect the contents of the assertion from being read by unintended parties, ensuring that only the targeted RP is able to read the assertion. Encrypting assertions provides two primary benefits: the assertion contents cannot be seen by any party other than the intended RP, and the assertion cannot be used by any RP other than the targeted one.
+-->
 
+Encrypted Assertion は Assertion のコンテンツを想定外の当事者に閲覧されることを防止し, 対象の RP のみが Assertion を閲覧できることを保証する.
+Assertion の暗号化には, 主に2つの利点がある.
+1つめは Assertion コンテンツが対象 RP 以外から閲覧できないということ, 2つめは対象の RP 以外の RP は当該 Assertion を利用できないということである.
+
+<!--
 When encrypting assertions, the IdP **SHALL** encrypt the contents of the assertion using either the RP's public key or a shared symmetric key. Shared symmetric keys used for this purpose by the IdP **SHALL** be independent for each RP to which they send assertions, and are normally established during registration of the RP. Public keys for encryption **SHALL** be securely transferred to the IdP and **MAY** be fetched by the IdP in a secure fashion at runtime, such as through an HTTPS URL hosted by the RP.
+-->
 
+Assertion を暗号化する際, IdP は RP の Public Key ないしは Shared Symmetric Key を用いて Assertion コンテンツを暗号化しなければならない (**SHALL**).
+この目的のために IdP が用いる Shared Symmetric Key は, Assertion 送信先の RP 毎に固有でなければならなず (**SHALL**), 通常は RP の Registration 時に確立される.
+暗号化に用いる Public Key はセキュアな手段により IdP に送信されなければならず (**SHALL**), IdP が実行時に RP のホストする HTTPS URL を介するなどセキュアな方法で取得することも可能である (**MAY**).
+
+<!--
 All encryption of assertions **SHALL** use approved cryptography.
+-->
 
+全ての Assertion 暗号化には Approved Cryptography を利用すること (**SHALL**).
+
+<!--
 When personally-identifiable information is included in the assertion and the assertion is handled by intermediaries such as a browser, the federation protocol **SHALL** encrypt assertions to protect the sensitive information in the assertion from leaking to unintended parties. For example, a SAML assertion can be encrypted using XML-Encryption, or an OpenID Connect ID Token can be encrypted using JSON Web Encryption (JWE).
+-->
+
+Assertion に Personally Identifiable Information が含まれかつ Assertion がブラウザなどの中間者に取り扱われる場合, Federation Protocol は Assertion を暗号化し Assertion に含まれるセンシティブな情報を予期せぬ当事者に漏洩しないよう保護しなければならない (**SHALL**).
+例えば SAML Assertion は XML-Encryption を用いて暗号化することができるし, OpenID Connect ID Token は JSON Web Encryption (JWE) を用いて暗号化することができる.
 
 ### Audience Restriction
 
+<!--
 Assertions **SHALL** use audience restriction techniques to allow an RP to recognize whether or not it is the intended target of an issued assertion. All RPs **SHALL** check that the audience of an assertion contains an identifier for their RP to prevent the injection and replay of an assertion generated for one RP at another RP.
+-->
+
+Assertion には Audience Restriction 技術を適用し, RP に自信がその Assertion の発行対象として想定されているか認識できるようにしなければならない (**SHALL**).
+全ての RP は, ある RP が別の RP に Assertion をインジェクトしたり Replay したりすることを防止するため, Assertion の Audience が自身の識別子を含んでいることをチェックしなければならない (**SHALL**).
 
 ### Pairwise Pseudonymous Identifiers {#ppi}
 
+<!--
 In some circumstances, it is desirable to prevent the subscriber account from being easily linked at multiple RPs through use of a common identifier. A pairwise pseudonymous identifier (PPI) allows an IdP to provide multiple distinct federated identifiers to different RPs for a single subscriber account. This prevents different RPs from colluding together to track the subscriber using the federated identifier.
+-->
+
+状況によっては, 共通の識別子を用いて複数の RP にまたがって Subscriber Account をリンクすることを防ぎたい場合がある.
+Pairwise Pseudonymous Identifier (PPI) は, IdP が単一の Subscriber Account に関して異なる RP に異なる Federated Identifier を提供することを可能にする.
+これにより異なる RP が共謀して Federated Identifier を用いて Subscriber をトラックすることを防止できる.
 
 #### General Requirements
 
+<!--
 When using pairwise pseudonymous identifiers within the assertions generated by the IdP for the RP, the IdP **SHALL** generate a different federated identifier for each RP as described in [Sec. 6.2.5.2](sec6_assertions.md#ppi-gen) below.
+-->
 
+IdP が RP に対して生成する Assertion 内で Pairwise Pseudonymous Identifier を用いる際, IdP は [Sec. 6.2.5.2](sec6_assertions.ja.md#ppi-gen) に後述の通り各 RP に異なる Federated Identifier を生成しなければならない (**SHALL**).
+
+<!--
 When PPIs are used with RPs alongside attributes, it may still be possible for multiple colluding RPs to re-identify a subscriber by correlation across systems using these identity attributes. For example, if two independent RPs each see the same subscriber identified with different pairwise pseudonymous identifiers, they could still determine that the subscriber is the same person by comparing the name, email address, physical address, or other identifying attributes carried alongside the pairwise pseudonymous identifier in the respective assertions. Privacy policies **SHOULD** prohibit such correlation, and pairwise pseudonymous identifiers can increase effectiveness of these policies by increasing the administrative effort in managing the attribute correlation.
+-->
 
+RP に対して Attribute とともに PPI を用いる場合, 共謀する複数の RP が Identity Attribute に基づいて複数のシステムにまたがって名寄せを行うことで, Subscriber を再識別することは依然起こりうる.
+例えば2つの独立した RP が各々異なる Pairwise Pseudonymous Identifier が指し示す同一の Subscriber を見ている場合, これらの RP は依然として, 各自の Assertion 内に Pairwise Pseudonymous Identifier と共に伝搬される Subscriber の氏名, Email Address, 住所やその他の識別可能な Attribute により, 当該 Subscriber が同一人物であると特定することもありうる.
+このような名寄せはプライバシーポリシーで禁止すべきであり (**SHOULD**), Pairwise Pseudonymous Identifier は Attribute の名寄せに関する管理作業を増大させることによってこういったポリシーの効果を高めることも可能である.
+
+<!--
 Note that in a proxied federation model, the initial IdP may be unable to generate a pairwise pseudonymous identifier for the ultimate RP, since the proxy could blind the IdP from knowing which RP is being accessed by the subscriber. In such situations, the pairwise pseudonymous identifier is generally established between the IdP and the federation proxy itself. The proxy, acting as an IdP, can itself provide pairwise pseudonymous identifiers to downstream RPs. Depending on the protocol, the federation proxy may need to map the pairwise pseudonymous identifiers back to the associated identifiers from upstream IdPs in order to allow the identity protocol to function. In such cases, the proxy will be able to track and determine which pairwise pseudonymous identifiers represent the same subscriber at different RPs. The proxy **SHALL NOT** disclose the mapping between the pairwise pseudonymous identifier and any other identifiers to a third party or use the information for any purpose other than federated authentication, related fraud mitigation, to comply with law or legal process, or in the case of a specific user request for the information.
+-->
+
+Proxied Federation モデルでは, 最初の IdP が末端の RP に対して Pairwise Pseudonymous Identifier を生成することは不可能な場合もあることに注意すること.
+Proxy は IdP に対して Subscriber が Access しようとしている RP を隠すこともある.
+このような状況下では, Pairwise Pseudonymous Identifier は通常 IdP と Federation Proxy 自身の間で確立される.
+Proxy は IdP として動作することで自身の Pairwise Pseudonymous Identifier を下流の RP に提供することができる.
+プロトコルによっては, Identity Protocol が機能するために, Federation Proxy が Pairwise Pseudonymous Identifier から上流の IdP が発行したそれに紐づく識別子を逆引きすることが必要な場合もある.
+そのような場合, Proxy はどの Pairwise Pseudonymous Identifier が異なる RP のどの同一の Subscriber を示しているか特定, 追跡が可能となる.
+Proxy は, Pairwise Pseudonymous Identifier とその他のいかなる識別子との間のマッピングについても 3rd-party に開示してはならず, 当該情報を Federated Authentication, それに関連する不正防止, 法律ないし法的プロセスへの準拠, 当該情報に対する特別なユーザー要求への応答を除き, その他の目的で利用してはならない (**SHALL NOT**).
 
 #### Pairwise Pseudonymous Identifier Generation {#ppi-gen}
 
