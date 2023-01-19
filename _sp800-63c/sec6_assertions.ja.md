@@ -346,15 +346,33 @@ RP は IdP から Subscriber に関する FAL3 の Assertion を受け取るた�
 
 #### Processing Bound Authenticators
 
+<!--
 When the RP receives an assertion associated with a bound authenticator, the subscriber proves possession of the bound authenticator directly to the RP. The primary authentication at the IdP and the federated authentication at the RP are processed separately. While the subscriber could use the same authenticator during the primary authentication at the IdP and as the bound authenticator at the RP, there is no assumption that these will be the same.
+-->
 
+RP が Boud Authenticator とともに Assertion を受け取る際, Subscriber は RP に直接 Bound Authenticator の保持証明を行う.
+IdP におけるプライマリ Authentication および RP における Federated Authentication は別々に処理される.
+Subscriber は IdP におけるプライマリ Authentication でも RP における Bound Authenticator と同じ Authenticator を使うことができるが, それぞれが同じものであるということはなんら想定されない.
+
+<!--
 The following requirements apply to all assertions associated with a bound authenticator:
+-->
 
+以下の要件は Bound Authenticator と関連づけられた全ての Assertion に適用される.
+
+<!--
 1. The subscriber **SHALL** prove possession of the bound authenticator to the RP, in addition to presentation of the assertion itself.
 2. If the authenticator is managed at the IdP, reference to a given authenticator found within an assertion **SHALL** be trusted at the same level as all other information within the assertion.
 3. If the authenticator is managed at the IdP, the assertion **SHALL NOT** include an unencrypted private or symmetric key to be used as an authenticator with the presentation.
 4. The RP **SHALL** process and validate the assertion in addition to the bound authenticator.
 5. Failure to authenticate with the bound authenticator **SHALL** result in an error at the RP.
+-->
+
+1. Subscriber は RP に対して Assertion そのものの提示に加え Bound Authenticator の保持証明を行うこと (**SHALL**).
+2. Authenticator が IdP で管理されている場合, Assertion 内に含まれる当該 Authenticator の参照は Assertion 内のその他の全ての情報を同じレベルで信頼すること (**SHALL**).
+3. Authenticator が IdP で管理されている場合, Assertion は提示時に Authenticator として使われる Private Key ないし Symmetric Key を暗号化せずに含んではならない (**SHALL NOT**).
+4. RP は Bound Authenticator に加えて Assertion も処理, 検証すること (**SHALL**).
+5. Bound Authenticator を用いた Authentication が失敗した場合, RP 側でエラーになること (**SHALL**).
 
 ## Assertion Protection
 
