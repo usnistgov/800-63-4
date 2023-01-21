@@ -14,15 +14,45 @@ section: 9
 
 ## Minimizing Tracking and Profiling
 
+<!--
 Federation offers numerous benefits to RPs and subscribers, but requires subscribers to have trust in the federation participants. [Sec. 5](sec5_federation.md#federation) and [Sec. 6.2.5](sec6_assertions.md#ppi) cover a number of technical requirements, the objective of which is to minimize privacy risks arising from increased capabilities to track and profile subscribers. For example, a subscriber using the same IdP to authenticate to multiple RPs allows the IdP to build a profile of subscriber transactions that would not have existed absent federation. The availability of such data makes it vulnerable to uses that may not be anticipated or desired by the subscriber and may inhibit subscriber adoption of federated services.
+-->
 
+Federation は RP と Subscriber に多くの恩恵をもたらすが, Subscriber による Federation 参加者への信頼を必要とする.
+[Sec. 5](sec5_federation.md#federation) および [Sec. 6.2.5](sec6_assertions.md#ppi) は, Subscriber の追跡およびプロファイリング可能性の向上により増大するプライバシーリスクの最小化を目的とした, 多数の技術要件をカバーしている.
+例えば同じ IdP を複数の RP に対する Authentication のために用いる Subscriber は, IdP によって Federation がなければ起こり得なかったであろう Subscriber Transaction のプロファイリングを行われる可能性がある.
+このようなデータが利用可能になると, Subscriber が予期または希望しない利用のされかたが行われる恐れにつながり, Subscriber が Federated サービスの採用を躊躇うことにもつながりうる.
+
+<!--
 [Sec. 5.5](sec5_federation.md#privacy-reqs) requires IdPs to use measures to maintain the objectives of predictability (enabling reliable assumptions by individuals, owners, and operators about PII and its processing by an information system) and manageability (providing the capability for granular administration of PII, including alteration, deletion, and selective disclosure) commensurate with privacy risks that can arise from the processing of attributes for purposes other than identity proofing, authentication, authorization, or attribute assertions, related fraud mitigation, or to comply with law or legal process [[NISTIR8062](references.md#ref-NISTIR8062)].
+-->
 
+[Sec. 5.5](sec5_federation.md#privacy-reqs) では, IdP に Predictability (PII および情報システムによる PII の処理に関して, 個人, 所有者およびオペレーターによる確実な予測可能性) および Manageability (変更, 削除および選択的開示を含む PII の細やかな管理機能の提供) を維持するための手段を要求している.
+この Predictability および Manageability は, Identity Proofing, Authentication, Authorization のほか, Attribute Assesion, 関連する不正防止ないしは法律や法的プロセスへの準拠以外の目的での Attribute の処理により生じるプライバシーリスクに相応するものである必要がある [[NISTIR8062](references.md#ref-NISTIR8062)].
+
+<!--
 IdPs may have various business purposes for processing attributes, including providing non-identity services to subscribers. However, processing attributes for different purposes from the original collection purpose can create privacy risks when individuals are not expecting or comfortable with the additional processing. IdPs can determine appropriate measures commensurate with the privacy risk arising from the additional processing. For example, absent applicable law, regulation or policy, it may not be necessary to get consent when processing attributes to provide non-identity services requested by subscribers, although notices may help subscribers maintain reliable assumptions about the processing (predictability). Other processing of attributes may carry different privacy risks that call for obtaining consent or allowing subscribers more control over the use or disclosure of specific attributes (manageability). Subscriber consent needs to be meaningful; therefore, when IdPs do use consent measures, they cannot make acceptance by the subscriber of additional uses a condition of providing the identity service.
+-->
 
+IdP は Attribute を処理する際に多様なビジネス上の目的を持ちうる.
+これには Subscriber への Identity Service 以外のサービス提供を含む.
+しかしながら, Attribute をその収集の本来の目的とは異なる目的で処理することは, 個人が追加処理に対して期待ないし満足していない場合にはプライバシーリスクにつながりうる.
+例えば, 適用される法律, 規制ないしポリシーが存在しなければ, Identity Service 以外のサービスを提供する際に Subscriber の同意は不要かもしれないが, Subscriber が確実な予測を行えるようにする (Predictability) には, その処理に関する通知が役に立つこともある.
+また別の Attribute の処理により異なるプライバシーリスクが生じる可能性もあり, Subscriber による同意や Subscriber による特定の Attribute の利用ないし開示に関するより詳細なコントロール (Manageability) が求めれることもある.
+Subscriber の同意は意味のあるのでなければならず, IdP が同意による手段をとる場合は, Subscriber による追加利用に関する同意を Identity Servicee の提供条件にしてはならない.
+
+<!--
 Consult the SAOP if there are questions about whether the proposed processing falls outside the scope of the permitted processing or the appropriate privacy risk mitigation measures.
+-->
 
+検討中の処理が許可された処理や適切なプライバシーリスク軽減措置の範囲を超えるかどうかに疑念がある場合は SOAP に相談すること.
+
+<!--
 [Sec. 5.5](sec5_federation.md#privacy-reqs) also encourages the use of technical measures to provide disassociability (enabling the processing of PII or events without association to individuals or devices beyond the operational requirements of the system) and prevent subscriber activity tracking and profiling [[NISTIR8062]](references.md#ref-NISTIR8062). Technical measures, such as those outlined in [Sec. 5.1.3](sec5_federation.md#proxied) for proxied federation and [Sec. 6.2.5](sec6_assertions.md#ppi) for pairwise pseudonymous identifiers, can increase the effectiveness of policies by making it more difficult to track or profile subscribers beyond operational requirements.
+-->
+
+[Sec. 5.5](sec5_federation.md#privacy-reqs) では, Disassociability (システム運用上の要件を超えて個人またはデバイスに関連付けることなく, PII またはイベントの処理を可能にすること) を提供する技術的手段の採用も推奨しており, Subscriber のアクティビティがトラキングされたりプロファイリングされることを防止している [[NISTIR8062]](references.md#ref-NISTIR8062).
+[Sec. 6.2.5](sec6_assertions.md#ppi) で述べた Proxied Federation や [Sec. 6.2.5](sec6_assertions.md#ppi) で述べた Pairwise Pseudonymous Identifier  [Sec. 5.1.3](sec5_federation.md#proxied) のような技術的手段は, Subscriber を運用上の要件を超えて Subscriber をトラッキングないしプロファイリングすることをより困難にし, ポリシー適用の効率化に寄与しうる.
 
 ## Notice and Consent {#notice}
 
