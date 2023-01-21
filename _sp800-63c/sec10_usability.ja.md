@@ -12,49 +12,137 @@ section: 10
 
 *This section is informative.*
 
+<!--
 _Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts_ [[ISO/IEC9241-11]](references.md#ref-ISO9241) defines usability as the "extent to which a system, product or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use." This definition focuses on users, goals, and context of use as key elements necessary for achieving effectiveness, efficiency and satisfaction. A holistic approach considering these key elements is necessary to achieve usability.
+-->
 
+_Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts_ [[ISO/IEC9241-11]](references.md#ref-ISO9241) は Usability を "特定の利用コンテキストにおいて, 特定のユーザーが, あるシステム, プロダクトないしはサービスを利用して, 特定の目的を, どの程度有効的, 効率的かつ満足のいくレベルで達成できるかの度合い" と定義される.
+この定義はユーザー, 目的および利用コンテキストを, 有効性, 効率性および満足度の達成に必要な重要要素として捉えている.
+ユーザビリティを実現するには, これらの重要要素を考慮した総合的なアプローチが必要となる.
+
+<!--
 From the usability perspective, one of the major potential benefits of federated identity systems is to address the problem of user fatigue associated with managing multiple authenticators. While this has historically been a problem with usernames and passwords, the increasing need for users to manage many authenticators — whether physical or digital — presents a usability challenge.
+-->
 
+Usability の観点からは, Federated Identity システムの主な潜在的利点の1つとして, 複数の Authenticator 管理に関するユーザーの苦役に対処できることが挙げられる.
+歴史的にこれはユーザー名とパスワードに関して問題となってきたが, ユーザーが多くの Authenticator (物理的なものも Digital なものも) を管理するニーズが高まるについて, Usability の課題が生じている.
+
+<!--
 While many other approaches to authentication have been researched extensively and have well-established usability guidelines, federated identity is more nascent and, therefore, lacks the depth and conclusiveness of research findings. As ongoing usability research matures, usability guidelines for federated identity systems will have stronger supporting data. For example, additional data is needed to support guidance on the translation of technical attribute names and values into user-friendly language.
+-->
 
+Authentication に対する多くの他のアプローチが広く研究されており, 十分に確立された Usability ガイドラインも存在するが, Federated Identity はまだ初期段階であり, 従って研究結果の深さや決定性に欠けている.
+Usability 研究が進展するにつれ, Federated Identity システムに対する Usability ガイドラインを発展させるより強力なデータを得ることとなろう.
+例えば, 技術的な Attribute 名およびその値をユーザーフレンドリーな言語に翻訳するためのガイドラインの発展には, 追加のデータが必要となる.
+
+<!--
 As stated in the usability sections in 800-63A and 800-63B, overall user experience is critical to the success of any authentication method. This is especially true for federated identity systems as federation is a less familiar user interaction paradigm for many users. Users' prior authentication experiences may influence their expectations.
+-->
 
+800-63A および 800-63B の Usability の章で述べたように, 全体的なユーザーエクスペリエンスはあらゆる Authentication 方法の成功に不可欠である.
+Federation は多くのユーザーにとってあまり馴染みのないユーザーインタラクションの形態であるため, これは特に Federated Identity システムに当てはまることである.
+ユーザーが過去に経験した Authentication のエクスペリエンスは, 彼らの期待に影響を与える可能性もある.
+
+<!--
 The overall user experience with federated identity systems should be as smooth and easy as possible. This can be accomplished by following usability standards (such as the ISO 25060 series of standards) and established best practices for user interaction design.
+-->
 
+Federated Identity システムにおける全体のユーザーエクスペリエンスは可能な限りスムースかつ容易であるべきである.
+これは Usability 標準 (ISO 25060 シリーズの標準など) と確立されたユーザーインタラクションデザインのベストプラクティスに従うことで実現可能である.
+
+<!--
 > Note: In this section, the term "users" means "claimants" or "subscribers." The terms "entity" and "entities" refer to the parties of federated systems.
+-->
 
+> Note: 本章では "ユーザー" という用語は "Claimant" ないし "Subscriber" を意味し, "主体" という用語は Federated System 内の当事者を表す.
+
+<!--
 Guidelines and considerations are described from the users' perspective.
+-->
 
+ガイドラインと考慮事項はユーザーの観点から記述されている.
+
+<!--
 Accessibility differs from usability and is out of scope for this volume. [[Section508]](references.md#ref-Section508) was enacted to eliminate barriers in information technology and requires federal agencies to make their electronic and information technology public content accessible to people with disabilities. Refer to Section 508 law and standards for accessibility guidance.
+-->
+
+Usability とは異なり, アクセスビリティに関しては本書のスコープ外とする.
+[[Section508]](references.md#ref-Section508) は情報技術の障壁を取り除くために制定され, 連邦政府機関に対して電子および情報技術の公開コンテンツを障害を持つ人にもアクセスできるように要求している.
+アクセスビリティガイドラインに関しては Section 508 の法律および標準を参照のこと.
 
 ## General Usability Considerations
 
+<!--
 Federated identity systems should:
+-->
 
+Federated Identity System は以下を満たすべきである.
+
+<!--
 * Minimize user burden (e.g., frustration, learning curve)
   * Minimize the number of user actions required.
   * Allow users to quickly and easily select among multiple subscriber accounts with a single IdP. For example, approaches such as [Account Chooser](https://openid.net/wg/ac/) allow users to select from a list of subscriber accounts they have accessed in the recent past, rather than start the federation process by selecting their IdP from a list of potential IdPs.
   * Balance minimizing user burden with the need to provide sufficient information to enable users to make informed decisions.
+-->
 
+* ユーザー障壁 (e.g., フラストレーションや学習カーブ) の最小化
+  * 必要なユーザーアクションを最小化すること.
+  * ユーザーが単一の IdP において複数の Subscriber Account のなかから素早く簡単に目的の Account を選択可能とすること. 例えば [Account Chooser](https://openid.net/wg/ac/) のようなアプローチは, ユーザーが直近にアクセスした Subscriber Account のリストから Account を選択することを可能にし, 利用可能な IdP のリストから目的の IdP を選ぶところから Federation プロセスをスタートさせる必要性をなくすことができる.
+  * ユーザー障壁の最小化とユーザーが情報に基づいた決定を行うに足りる情報の提供のバランスを取ること.
+
+<!--
 * Minimize the use of unfamiliar technical jargon and details (e.g., users do not need to know the terms IdP and RP if the basic concepts are clearly explained).
+-->
 
+* なじみのない専門用語や詳細の使用を最小限に抑えること. (e.g., 基本的な概念が明確に説明されている場合, ユーザーは IdP や RP という用語を知る必要はない)
+
+<!--
 * Strive for a consistent and integrated user experience across the IdP and RP.
+-->
 
+* IdP, RP を通じて一貫性のある統合されたユーザーエクスペリエンスを目指すこと.
+
+<!--
 * Help users establish an understanding of identity by providing resources to users such as graphics, illustrations, FAQs, tutorials and examples. Resources  should explain how users' information is treated and how transacting parties (e.g., RPs, IdPs, and brokers) relate to each other.
+-->
 
+* 図表, イラスト, FAQ, チュートリアルや例示などを提供し, ユーザーが Identity に対する理解を確立できるよう手助けすること. こういったリソースは, ユーザーの情報がどのように取り扱われ, どのように当事者 (e.g., RP, IdP, Broker) が相互にやりとりを行うかを説明すべきである.
+
+<!--
 * Provide clear, honest, and meaningful communications to users (i.e., communications should be explicit and easy to understand).
+-->
 
+* ユーザーに対して, 明確, 正直かつ意味のあるコミュニケーションを行うこと. (i.e., コミュニケーションは明確で理解しやすいものであるべきである)
+
+<!--
 * Provide users online services independent of location and device.
+-->
 
+* 位置やデバイスに依存しないオンラインサービスをユーザーに提供すること.
+
+<!--
 * Make trust relationships explicit to users to facilitate informed trust decisions. Trust relationships are often dynamic and context dependent. Users may be more likely to trust some IdPs and RPs with certain attributes or transactions more than others. For example, users may be more hesitant to use federated identity systems on websites that contain valuable personal information (such as financial or health). Depending on the perceived sensitivity of users' personal data, users may be less comfortable with social network providers as IdPs since people are often concerned with the broadcasting nature of social networking implementations.
+-->
 
+* 信頼関係をユーザーに明示して, 情報に基づいた信頼の決定を容易にすること. 信頼関係はしばしば動的かつコンテキスト依存である. ユーザーは特定の Attribute ないし Transaction に関わる IdP および RP を他より信頼しやすくなることもある. 例えばユーザーは (財務や健康など) 価値の高い Personal Information を持つ Web サイトにおいて Federated Identity を使うことをより躊躇うかもしれない. ユーザーが Personal Data をセンシティブだと認識している度合いによっては, ユーザーはソーシャルネットワークプロバイダーを IdP として使用することを快適に思わないかもしれない. 人々はしばしばソーシャルネットワーク実装がもつブロードキャストの性質を気にしがちである.
+
+<!--
 * Follow the usability considerations specified in [[SP800-63A]](../_sp800-63a/sec9_usability.md#sec9){:latex-href="#ref-SP800-63A"}, Sec. 9 for any user-facing information.
+-->
 
+* ユーザーの目に留まる情報に関して, [[SP800-63A]](../_sp800-63a/sec9_usability.md#sec9){:latex-href="#ref-SP800-63A"}, Sec. 9 が規定する Usability の考慮事項に従うこと.
+
+<!--
 * Clearly communicate how and where to acquire technical assistance. For example, provide users with information such as a link to an online self-service feature, chat sessions or a phone number for help desk support. Avoid redirecting users back and forth among transacting parties (e.g., RPs, IdPs, and brokers) to receive technical assistance.
+-->
 
+* 技術的な支援を受ける方法とその場所を明確に伝えること. 例えばオンラインのせフルサービス機能へのリンク, チャット, ヘルプデスクサポートの電話番号などを提供することなどが考えられる. ユーザーが技術的な支援を受けるために関与する当事者間 (e.g., RP, IdP および Broker) をたらい回しにされる事態は避けること.
+
+<!--
 * Perform integrative and continuous usability evaluations with representative users and realistic tasks in an appropriate context to ensure success of federated identity systems from the users' perspectives.
+-->
 
+* 適切なコンテキストにおける代表的なユーザーと現実的なタスクを前提に, 統合的かつ継続的な Usalibity 評価を実施し, ユーザーの観点から Federated Identity システムの成功を保証すること.
 
 ## Specific Usability Considerations
 
