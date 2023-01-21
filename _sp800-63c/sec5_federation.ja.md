@@ -965,7 +965,7 @@ The following requirements apply specifically to federal agencies:
 
 2. 該当する場合, 当該機関は System of Records Notice (SORN) によりその適用範囲を公開・特定すること (**SHALL**).
 
-3. 当該機関はそれぞれの SOAP に助言を求め, IdP, RP もしくはその両方として動作する機関を起因として E-Government Act の要件が課せられることがないか判断するための分析を実施すること (**SHALL**).
+3. 当該機関はそれぞれの SAOP に助言を求め, IdP, RP もしくはその両方として動作する機関を起因として E-Government Act の要件が課せられることがないか判断するための分析を実施すること (**SHALL**).
 
 4. 該当する場合, 当該機関は Privacy Impact Assessment (PIA) によりその適用範囲を公開・特定すること (**SHALL**).
 

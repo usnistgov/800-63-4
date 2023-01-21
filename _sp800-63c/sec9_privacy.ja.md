@@ -45,7 +45,7 @@ Subscriber の同意は意味のあるのでなければならず, IdP が同意
 Consult the SAOP if there are questions about whether the proposed processing falls outside the scope of the permitted processing or the appropriate privacy risk mitigation measures.
 -->
 
-検討中の処理が許可された処理や適切なプライバシーリスク軽減措置の範囲を超えるかどうかに疑念がある場合は SOAP に相談すること.
+検討中の処理が許可された処理や適切なプライバシーリスク軽減措置の範囲を超えるかどうかに疑念がある場合は SAOP に相談すること.
 
 <!--
 [Sec. 5.5](sec5_federation.md#privacy-reqs) also encourages the use of technical measures to provide disassociability (enabling the processing of PII or events without association to individuals or devices beyond the operational requirements of the system) and prevent subscriber activity tracking and profiling [[NISTIR8062]](references.md#ref-NISTIR8062). Technical measures, such as those outlined in [Sec. 5.1.3](sec5_federation.md#proxied) for proxied federation and [Sec. 6.2.5](sec6_assertions.md#ppi) for pairwise pseudonymous identifiers, can increase the effectiveness of policies by making it more difficult to track or profile subscribers beyond operational requirements.
@@ -95,26 +95,83 @@ IdP が将来の Transaction を円滑にするため Subscriber の IdP にお�
 
 ## Data Minimization {#minimization}
 
+<!--
 Federation enables the data exposed to an RP to be minimized, which can yield privacy protections for subscribers. Although an IdP may collect additional attributes beyond what the RP requires for its use case, only those attributes that were explicitly requested by the RP are to be transmitted by the IdP. In some instances, an RP does not require a full value of an attribute. For example, an RP may need to know whether the subscriber is over 13 years old, but has no need for the full date of birth. To minimize collection of potentially sensitive PII, the RP may request a derived attribute value (e.g., Question: Is the subscriber over 13 years old? Response: Y/N or Pass/Fail). This minimizes the RP's collection of potentially sensitive and unnecessary PII. Accordingly, [Sec. 7.3](sec7_presentation.md#protecting-information) requires the RP to, where feasible, request derived attribute values rather than full attribute values. To support this RP requirement IdPs are, in turn, required to support a derived attribute value.
+-->
+
+Federation は RP に開示されるデータを最小化することを可能にする.
+これは Subscriber のプライバシー保護につながる.
+IdP は RP がそのユースケースに応じて要求する範囲を超えて追加の Attribute を収集することもあるが, RP が明治的に要求した Attribute のみを送信する.
+場合によっては RP が Attribute の完全な値を要求しないこともある.
+例えば RP は Subscriber が13歳以上かどうかを知りたいが, 完全な生年月日を知る必要はないとする.
+潜在的にセンシティブな PII の収集を最小化するため, RP は Derived Attribute Value (e.g., 質問: この Subscriber は13歳以上ですか? 回答: Y/N or Pass/Fail) を要求することもできる.
+これにより RP による潜在的にセンシティブかつ不必要な PII の収集を最小化できる.
+従って [Sec. 7.3](sec7_presentation.md#protecting-information) は RP に可能な限り完全な Attribute Value ではなく Derived Attribute Value を要求するよう求めている.
+この RP の要件をサポートするため, IdP は逆に Derived Attribute Value をサポートすることが要求される.
 
 ## Agency-Specific Privacy Compliance  {#agency-privacy}
 
+<!--
 [Section 5.5](sec5_federation.md#privacy-reqs) identifies agency requirements to consult their SAOP to determine privacy compliance requirements. It is critical to involve the agency's SAOP in the earliest stages of digital authentication system development to assess and mitigate privacy risks and advise the agency on compliance obligations such as whether the federation triggers the Privacy Act of 1974 or the E-Government Act of 2002 requirement to conduct a PIA. For example, if the agency is serving as an IdP in a federation, it is likely that the Privacy Act requirements will be triggered and require coverage by either a new or existing Privacy Act system of records since credentials would be maintained at the IdP on behalf of any RP it federates with. If, however, the agency is an RP and using a third-party IdP, digital authentication may not trigger the requirements of the Privacy Act, depending on what data passed from the RP is maintained by the agency at the RP (in such instances the agency may have a broader programmatic SORN that covers such data).
+-->
 
+[Section 5.5](sec5_federation.md#privacy-reqs) は各機関がプライバシーコンプライアンス要件の決定のために SAOP に相談する際の要件を定めている.
+当該機関の SAOP が Digital Authentication システムの開発の初期段階で関与し, プライバシーリスクを評価および軽減し, 当該 Federation に Privacy Act of 1974 や E-Government Act of 2002 による PIA 実施要件が適用されるかどうかなどのコンプライアンス上の義務についてアドバイスすることは, 非常に重要である.
+例えば, 機関が Federation において IdP を提供している場合, Privacy Act の要件が適用されて新旧いずれかの Privacy Act の記録システムにカバーされる必要が生じるであろう. これは IdP が Federation をおこなう RP に代わって Credential を管理することになるからである.
+しかしながら, もし機関が 3rd-party の IdP を利用する RP の場合, RP が送信したデータが RP 機関でどのように監査されているかによっては, Digital Authentication に Privacy Act 要件は適用されないかもしれない.
+(この場合, 当該機関はそのようなデータをカバーするより広範な計画に沿った SORN を持っているかもしれない)
+
+<!--
 The SAOP can similarly assist the agency in determining whether a PIA is required. These considerations should not be read as a requirement to develop a Privacy Act SORN or PIA for use of a federated credential alone. In many cases it will make the most sense to draft a PIA and SORN that encompasses the entire digital authentication process or includes the digital authentication process as part of a larger programmatic PIA that discusses the program or benefit the agency is establishing online access.
+-->
 
+同様に, SAOP は機関による PIA が必要かどうかの判断を手助けすることもできる.
+こういった考慮事項は, Federated Credential の利用のみを目的とした Privacy Act SORN や PIA の実施要件として受け取るべきではない.
+多くの場合, Digital Authentication プロセス全体を網羅した PIA および SORN を起草したり, Digital Authentication プロセスを当該機関がオンラインアクセスを確立するプログラムやメリットについて議論するためのより大きな計画に沿った PIA の一部として取り扱うことは理にかなっている.
+
+<!--
 Due to the many components of digital authentication, it is important for the SAOP to have an awareness and understanding of each individual component. For example, other privacy artifacts may be applicable to an agency offering or using federated IdP or RP services, such as Data Use Agreements, Computer Matching Agreements, etc. The SAOP can assist the agency in determining what additional requirements apply. Moreover, a thorough understanding of the individual components of digital authentication will enable the SAOP to thoroughly assess and mitigate privacy risks either through compliance processes or by other means.
+-->
 
+Digital Authentication には多くのコンポーネントが存在するため, SAOP が個々のコンポーネントを認識して理解することは重要である.
+例えば, IdP や RP のサービスを提供ないし利用している機関に適用されうる, Data Use Agreements や Computer Matching Agreements などのプライバシー要件が存在するかもしれない.
+SAOP はどのような追加要件が適用されうるかという当該機関の判断を手助けすうことができる.
+さらに, Digital Authentication の個々のコンポーネントの完全な理解を通じて, SAOP はコンプライアンスプロセスやその他の手段を通じてプライバシーリスクを徹底的に評価・軽減することができるようになる.
 
 ## Blinding in Proxied Federation {#blinding}
 
+<!--
 While some proxy structures — typically those that exist primarily to simplify integration — may not offer additional subscriber privacy protection, others offer varying levels of privacy to the subscriber through a range of blinding technologies. Privacy policies may dictate appropriate use of the subscriber attributes and authentication transaction data (e.g., identities of the ultimate IdP and RP) by the IdP, RP, and the federation proxy.
+-->
 
+Proxy 構造によっては (典型的にはインテグレーションを単純化することを主目的とするものなど) Subscriber に対する追加のプライバシー保護を提供しないこともあるが, 多くは Blinding テクノロジーにより Subscriber に多様なレベルでのプライバシーを提供する.
+IdP, RP および Federation Proxy は Privacy Policy によって Subscriber Attribute および Authentication Transaction データ (e.g., 末端の IdP および RP の識別子) の適切な利用を指示することもできる.
+
+<!--
 Technical means such as blinding can increase effectiveness of these policies by making the data more difficult to obtain. A proxy-based system has three parties, and the proxy can be used to hide information from one or more of the parties, including itself. In a double-blind proxy, the IdP and RP do not know each other's identities, and their relationship is only with the proxy. In a triple-blind proxy, the proxy additionally does not have insight into the data being passed through it. As the level of blinding increases, the technical and operational implementation complexity may increase. Since proxies need to map transactions to the appropriate parties on either side as well as manage the keys for all parties in the transaction, fully triple-blind proxies are very difficult to implement in practice.
+-->
 
+Blinding などの技術的対策はデータ取得をより困難にすることでこういったポリシーの効果を高めることができる.
+Proxy ベースのシステムは3つの当事者から成り, Proxy は自身を含む1つ以上の当事者から得られる情報を秘匿するために利用可能である.
+Double Blind Proxy では, IdP と RP はお互いの Identity を知ることがなく, その関係性は Proxy を介したもに限定される.
+Triple Blind Proxy では, Proxy は自身を通過するデータを見ることもできなくなる.
+Blinding のレベルが上がるにつれ, 技術的および運用上の実装複雑度も上昇しうる.
+Proxy は Transaction をいずれかの側の適切な当事者にマッピングし, Transaction 内の全ての当事者の鍵を管理する必要があるため, 完全な Triple Blind Proxy の実装は実際には非常に困難である.
+
+<!--
 Even with the use of blinding technologies, a blinded party may still infer protected subscriber information through released attribute data or metadata, such as by analysis of timestamps, attribute bundle sizes, or attribute signer information. The IdP could consider additional privacy-enhancing approaches to reduce the risk of revealing identifying information of the entities participating in the federation.
+-->
 
+Blinding 技術を採用しても, Blind された当事者は依然として保護された Subscriber 情報を開示された Attribute データやメタデータから推測しうる.
+例としては, タイムスタンプや Attribute Bundle　のサイズ, Attribute 署名者情報などの解析により, そのようなことが起こりうる.
+IdP は Federation に参加している主体の識別情報が暴露されるリスクを軽減するため, 追加のプライバシー強化アプローチを検討してもよい.
+
+<!--
 The following table illustrates a spectrum of blinding implementations used in proxied federation. This table is intended to be illustrative, and is neither comprehensive nor technology-specific.
+-->
+
+以下の表は Proxied Federation で利用される Blinding 実装の種類を示している.
+この表は説明目的で記載されたものであり, 包括的でもなく技術的に固有のものでもないことに注意.
 
 [Table 4 Federation Proxies](sec9_privacy.md#table-4){:name="table-4"}
 {:latex-ignore="true"}
