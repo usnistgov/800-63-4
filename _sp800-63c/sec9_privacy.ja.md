@@ -56,13 +56,42 @@ Consult the SAOP if there are questions about whether the proposed processing fa
 
 ## Notice and Consent {#notice}
 
+<!--
 To build subscriber trust in federation, subscribers need to be able to develop reliable assumptions about how their information is being processed. For instance, it can be helpful for subscribers to understand what information will be transmitted, which attributes for the transaction are required versus optional, and to have the ability to decide whether to transmit optional attributes to the RP. Accordingly, [Sec. 5.1](sec5_federation.md#trust-agreement) requires that positive confirmation be obtained from the authorized party before any attributes about the subscriber are transmitted to any RP. In determining when a set of RPs should share a common pairwise pseudonymous identifier as in [Sec. 6.2.5.2](sec6_assertions.md#ppi-gen), the IdP considers the subscriber's understanding of such a grouping of RPs and the role of notice in assisting such understanding. An effective notice will take into account user experience design standards and research, as well as an assessment of privacy risks that may arise from the information processing. There are various factors to be considered, including the reliability of the assumptions subscribers may have about the processing and the role of different entities involved in federation. However, a link to a complex, legalistic privacy policy or general terms and conditions that a substantial number of subscribers do not read or understand is never an effective notice.
+-->
 
+Federation において Subscriber の信頼を確立するには, Subscriber が自身の情報の処理に関して確実性のある予測可能性を保つことが必要である.
+例えば Subscriber が, どのような情報が送信され, 当該 Transaction においてどの Attribute が必須でどれが任意かを理解し, 任意の Attribute を RP に送信するかどうか決定可能であることは, Subscriber にとって有用である.
+従って [Sec. 5.1](sec5_federation.md#trust-agreement) は Subscriber に関する Attribute が RP に送信される前に Authorized Party による明示的な確認を得ることを要求している.
+[Sec. 6.2.5.2](sec6_assertions.md#ppi-gen) にあるように, 一連の RP 群が共通の Pairwise Pseudonymous Identifier を共有すべきかどうかを決定する際, IdP は Subscriber が当該 RP 群のグルーピングを理解しているかを考慮し, その理解を促すための通知役を担うことを検討すべきである.
+効果的な通知を行うには, 情報処理により生じる可能性のあるプライバシーリスクの評価にくわえ, ユーザーエクスペリエンスの設計基準および研究が重要となる.
+Subscriber による当該処理や Federation に関与するその他の主体に対する想定の確度など, 考慮する要素は多岐にわたる.
+しかしながら, 相当数の Subscriber が読みもせず理解もしない, 複雑かつ法律主義的なプライバシーポリシーや一般的な規約条件へのリンクは, 全く効果的な通知にはならない.
+
+<!--
 [Sec. 5.1](sec5_federation.md#trust-agreement) does not specify which party should provide the notice. In some cases, a party in a federation may not have a direct connection to the subscriber in order to provide notice and obtain consent. Although multiple parties may elect to provide notice, it is permissible for parties to determine in advance, either contractually or through trust framework policies, which party will provide the notice and obtain confirmation, as long as the determination is being based upon factors that center on enabling the subscriber to pay attention to the notice and make an informed choice.
+-->
 
+[Sec. 5.1](sec5_federation.md#trust-agreement) はどの当事者が通知を提供すべきかは規定していない.
+場合によっては, Federation 中のある当事者が Subscriber との間に通知および同意取得を行うための直接のつながりを持っていないこともある.
+複数の当事者が通知を提供するとも可能だが, Subscriber が通知に注目して情報に基づいた選択を行えることに主眼を置いて決定がなされる限り, 契約上またはトラストフレームワークのポリシーを通じて事前に通知および同意取得を行う当事者を決定することも許容される.
+
+<!--
 If an IdP is using an allowlist of RPs as described in [Sec. 5.3](sec5_federation.md#idp-runtime-decisions), any RPs on that list are not presented to the subscriber during an authentication transaction. Since the IdP does not provide notice to the subscriber at runtime, the IdP makes its list of allowlisted RPs available to the subscriber so that the subscriber can see which RPs on the allowlist have access to which of the subscriber's attributes in an authentication transaction. Since IdPs can not share a subscriber's authentication information or attributes with an allowlisted RP outside of an authentication transaction involving the subscriber (see [Sec. 5.5](sec5_federation.md#privacy-reqs)), the existence of an RP on a list of IdPs does not indicate that the subscriber's information will be shared. However, if the subscriber logs into any of the allowlisted RPs using the IdP, the attributes indicated will be shared as part of the authentication transaction.
+-->
 
+IdP が [Sec. 5.3](sec5_federation.md#idp-runtime-decisions) で述べた RP の Allowlist を採用している場合, Authentication Transaction 中 Subscriber に当該リスト上の RP が提示されることはない.
+IdP は実行時には Subscriber に通知を提供しないため, IdP は Allowlist 上の RP を Subscriber に開示して, Subscriber がどの RP が Allowlist に存在し Authentication Transaction 中にどの Subscriber Attribute にアクセスするのか確認できるようにすべきである.
+IdP は Subscriber が関与する Authentication Transaction の外では Allowlist 中の RP に Subscriber の Authentication 情報や Attribute を共有することはできない ([Sec. 5.5](sec5_federation.md#privacy-reqs) 参照) ため, RP が当該リストに記載されているからといって IdP が Subscriber の情報を当該 RP に共有するとは限らない.
+しかしながら, Subscriber が IdP を利用して Allowlist に記載されたいずれかの RP にログインする際, 記載された Attribute が Authentication Transaction の一環として共有されることになる.
+
+<!--
 If a subscriber's runtime decisions at the IdP were stored in the subscriber account by the IdP to facilitate future transactions, the IdP also needs to allow the subscriber to view and revoke any RPs that were previously approved during a runtime decision. This list includes information on which attributes were approved. Similarly, if a subscriber's runtime decisions at the RP are stored in some fashion, the RP also needs to allow the subscriber to view and revoke any IdPs that were approved during a runtime decision.
+-->
+
+IdP が将来の Transaction を円滑にするため Subscriber の IdP における実行時決定を Subscriber Account に保存する場合, IdP は Subscriber が過去に実行時決定において許可した RP のリストを確認し, その許可を取り消すことができるようにする必要がある.
+このリストにはどの Attribute が許可されたかの情報も含む.
+同様に, Subscriber の RP における実行時決定が何らかの形式で保存される場合, RP は Subscriber が過去の実行時決定において許可した IdP を確認し, その許可を取り消すことができるようにする必要がある.
 
 ## Data Minimization {#minimization}
 
