@@ -491,37 +491,123 @@ Proxy は, Pairwise Pseudonymous Identifier とその他のいかなる識別子
 
 #### Pairwise Pseudonymous Identifier Generation {#ppi-gen}
 
+<!--
 Pairwise pseudonymous identifiers **SHALL** contain no identifying information about the subscriber. They **SHALL** also be unguessable by a party having access to some information identifying the subscriber. Pairwise pseudonymous identifiers **MAY** be generated randomly and assigned to subscribers by the IdP or **MAY** be derived from other subscriber information if the derivation is done in an irreversible, unguessable manner (e.g., using a keyed hash function with a secret key).
+-->
 
+Pairwise Pseudonymous Identifier にはいかなる Subscriber の識別情報をも含めないこと (**SHALL**).
+さらに Pairwise Pseudonymous Identifier はなんらかの Subscriber の識別情報を持つ当事者により推測可能でもないこと (**SHALL**).
+Pairwise Pseudonymous Identifier は IdP によってランダムに生成され Subscriber に割り当てることもできるし (**MAY**), 不可逆かつ推測不可能な方法で導出可能 (e.g., Secret Key を用いた鍵付きハッシュなど) であれば Subscriber に関するその他の情報から導出することもできる (**MAY**).
+
+<!--
 Normally, the identifiers **SHALL** only be known by and used by one pair of endpoints (e.g., IdP-RP). An IdP **MAY** generate the same identifier for a subscriber at multiple RPs at the request of those RPs, provided:
+-->
 
+通常は, この識別子は1組のエンドポイントにのみ知られ, 使われうるものとする (**SHALL**).
+IdP は以下の条件を満たす複数の RP により要求された場合は, 同じ Subscriber に同じ識別子を生成してもよい (**MAY**).
+
+<!--
 * The trust agreement stipulates a shared pseudonymous identifier for a specific family of RPs;
 * The authorized party consents to and is notified of the use of a shared pseudonymous identifier;
 * Those RPs have a demonstrable relationship that justifies an operational need for the correlation, such as a shared security domain or shared legal ownership; and
 * All RPs sharing an identifier consent to being correlated in such a manner (i.e., one RP cannot request to have another RP's PPI without that other RP's knowledge and consent).
+-->
 
+* 特定の RP 群に対して Pseudonymous Identifier を共有可能であることが Trust Agreement に規定されている.
+* Authorized Party が Pseudonymous Identifier の共有について同意し, かつその利用に関して通知されている.
+* これらの RP 群が, 互いにセキュリティドメインを共有していたり同一の法的所有権のもとにあるなど, 運用上の名寄せの必要性を正当化するような関係性にある.
+* 識別子を共有するすべての RP がこのような方法で名寄せ可能な関係性になることに同意する. (i.g., ある RP が他の RP の認知および同意なしに他の RP の PPI を要求することはできない.)
+
+<!--
 The RPs **SHALL** conduct a privacy risk assessment to consider the privacy risks associated with requesting a common identifier. See [Sec. 9.2](sec9_privacy.md#notice) for further privacy considerations.
+-->
 
+RP は Privacy Risk Assessment を行い共有識別子の要求に関するプライバシーリスクについて検討すること (**SHALL**).
+さらなるプライバシー上の考慮事項は [Sec. 9.2](sec9_privacy.ja.md#notice) を参照.
+
+<!--
 The IdP **SHALL** ensure that only intended RPs are correlated; otherwise, a rogue RP could learn of the pseudonymous identifier for a set of correlated RPs by fraudulently posing as part of that set.
+-->
+
+IdP は意図した RP だけが名寄せ可能な状態になることを保証すること (**SHALL**).
+さもなくば, 不正な RP が, 名寄せ可能な状態にある RP 群に向けた Pseudonymous Identifier を, その RP 群の一員を装い知り得ることになる.
 
 ## Identity APIs {#s-identity-api}
 
+<!--
 Attributes about the subscriber, including profile information, **MAY** be provided to the RP through a protected _attribute API_ known as the _identity API_. The RP is granted limited access to the identity API during the federation transaction, in concert with the assertion. For example, in OpenID Connect, the UserInfo Endpoint provides a standardized identity API for fetching attributes about the subscriber. This API is protected by an OAuth 2.0 Access Token, which is issued to the RP along with OpenID Connect's assertion, the ID Token. The use of identity APIs along with federation assertions has several advantages for the overall security, privacy, and efficiency of the federation system.
+-->
 
+プロフィール情報を含む Subscriber に関する Attribute は, _Identity API_ とも呼ばれる保護された _Attribute API_ から提供されうる (**MAY**).
+RP は Federation Transaction 中に Assertion と合わせて Identity API への限定 Access を許可される.
+例えば OpenID Connect では UserInfo Endpoint が標準の Identity API として Subscriber Attribute の取得に用いられる.
+この API は OAuth 2.0 Access Token により保護され, この Access Token は OpenID Connect の Assertion である ID Token と共に RP に発行される.
+Federation Assertion に加えて Identity API の利用することには, 全体のセキュリティ, プライバシーおよび Federation システムの効率性において幾つかの利点がある.
+
+<!--
 By making attributes available at an identity API, the IdP no longer has to use the assertion to convey as much information to the RP. This not only means that sensitive attributes do not have to be carried in the assertion itself, it also makes the assertion smaller and easier to process by the RP. The contents of the assertion can then be limited to essential fields (e.g., unique subject identifiers) and information about the immediate authentication event being asserted.
+-->
 
+Attribute を Identity API から取得可能とすることで, IdP は Assertion に大量の情報を含めて RP に送信する必要はなくなる.
+これはセンシティブな Attribute を Assertion 自身に含めなくてよくなるというだけでなく, Assertion をより小さく RP に処理しやすいものにするという意味もある.
+それにより, Assertion のコンテンツは, 必須項目 (e.g., Subject Identifier) と当該 Authentication イベントを示す情報に限定されうる.
+
+<!--
 The RP often caches attributes provided by the IdP in an RP subscriber account, discussed in [Sec. 5.4](../sec5_federation.md#rp-account). Attributes provided in the assertion are passed on every login, and since the RP does not know the identity of the subscriber before the attribute is requested, the IdP is incentivized to include as much information as possible in the assertion itself. However, most of a subscriber's attributes will not change in between subsequent logins, making this information redundant. As a consequence, most of these more-stable attributes can instead be made available through an identity API that is called by the RP only when necessary. The IdP can indicate in the assertion when the last time the subscriber's attributes have been updated in the subscriber account, allowing the RP to decide if it needs to fetch the attributes anew or if those in the RP subscriber account are sufficient.
+-->
 
+[Sec. 5.4](../sec5_federation.ja.md#rp-account) で述べたように, RP はしばしば RP Subscriber Account に IdP から提供された Attribute をキャッシュする.
+Assertion 内の Attribute は全てのログイン時に伝搬され, RP は Attribute を要求する前段階では Subscriber の Identity を知らないため, IdP は Assertion 自身に可能な限り多くの情報を含めるインセンティブを持つことになる.
+しかしながら大抵の Subscriber Attribute は連続するログイン間で不変であり, この情報は冗長となる.
+結果として, これらの変化の少ない属性のほとんどは, Assertion に含める代わりに必要に応じて RP が Identity API を介して取得すれば十分となる.
+IdP は Assertion 内で当該 Subscriber Account に関する Subscriber Attribute の最終更新時間を示すことも可能で, そうすることで RP は Attribute を新たに取得する必要があるか RP Subscriber Account に保存されている情報で足りるかを判断することができる.
+
+<!--
 Access to the identity API **SHALL** be time limited. The time limitation is separate from the validity time window of the assertion and the lifetime of the authenticated session at the RP. Access to an identity API by the RP without an associated valid assertion **SHALL NOT** be sufficient for the establishment of an authenticated session at the RP.
+-->
 
+Identity API への Access には有効期限がある.
+この有効期限は Assertion の Validity Time Window とは独立しており, RP の認証済 Session の有効期限からも独立している.
+RP が Identity API に Access できるからといって, 関連する有効な Assertion がない場合は, RP での認証済 Session の確立に必要な条件を満たしたものとしてはならない (**SHALL NOT**).
+
+<!--
 A given identity API deployment is expected to be capable of providing attributes for all subscribers for whom the IdP can create assertions. However, when access to the identity API is granted within the context of a federation transaction, the attributes provided by an identity API **SHALL** be associated with only the single subscriber identified in the associated assertion. If the identity API is hosted by the IdP, the returned attributes **SHALL** include the subject identifier for the subscriber. This allows the RP to positively correlate the assertion's subject to the returned attributes. Note that when access to an attribute API is provided as part of pre-provisioning of RP subscriber accounts as discussed in [Sec. 5.4.1](sec5_federation.md#provisioning), the RP is usually granted blanket access to the identity API outside the context of the federated transaction and these requirements do not apply.
+-->
+
+Identity API 実装は, IdP が Assertion を生成できる全ての Subscriber に関する Attribute を提供できることが期待される.
+しかしながら, Federation Transaction のコンテキス内で Identity API への Access が許可された場合, その Identity API が提供する Attribute は当該 Assertion が指し示す Subscriber のもののみとすること (**SHALL**).
+IdP が Identity API をホストする場合, 返却される Attribute には Subscriber の Subject Identifier を含めること (**SHALL**).
+これにより RP は Assertion Subject を返却された Attribute に確実に紐づけることができる.
+なお, [Sec. 5.4.1](sec5_federation.ja.md#provisioning) で述べたように, Attribute API への Access が RP Subscriber Account の Pre-provisioning の一環として提供される場合, RP は通常 Federation Transaction コンテキスト外で Identity API への全面的な Access を許可され, 上記要件は適用されないことに注意.
 
 ### Attribute Providers {#s-attribute-providers}
 
+<!--
 While most attribute APIs used in federation are hosted as part of the IdP, it is also possible for the IdP to grant access to identity APIs hosted by external attribute providers. These services provide attributes about the subscriber in addition to those made available directly from the IdP.
+-->
 
+Federation において, 大抵の Attribute API は IdP の一部としてホストされるが, IdP が外部の Attribute Provider にホストされる Identity API への Access を許可することも可能である.
+こういったサービスは, IdP が直接提供できるもの以外にも Subscriber に関する Attribute を提供することができる.
+
+<!--
 When the IdP grants access to an attribute provider, the IdP is making an explicit statement that the information returned from the attribute provider is associated with the subscriber identified in the associated assertion. For the purposes of the trust agreement, the IdP is the responsible party for the accuracy and content of the attribute API.
+-->
 
+IdP が Attribute Provider への Access を許可する場合, IdP は Attribute Provider から返却された情報が, 関連づけられた Assertion により識別される Subscriber に紐づいたものであることを明示する.
+Trust Agreement においては, IdP が Attribute API から返却されるコンテンツの正確性に責任を負う当事者となる.
+
+<!--
 The attributes returned by the attribute provider are assumed to be independent of those returned directly from the IdP, and as such **MAY** use different identifiers, formats, or schemas. The RP **SHALL** verify that the identified attribute provider is capable of providing the kinds of attributes that are present, under the auspices of the applicable trust agreement.
+-->
 
+Attribute Provider に返却された Attribute は IdP が直接返却する Attribute とは独立したものと想定される.
+従って異なる識別子, フォーマットおよびスキーマを利用することも可能である (**MAY**).
+RP は当該 Attribute Provider が適切な Trust Agreement の保護のもとでそういった類の実在する Attribute を提供するに足りることを検証すること (**SHALL**).
+
+<!--
 For example, an IdP could provide access to a subscriber's medical license information as part of the federation process. Instead of the IdP asserting the license status directly, the IdP provides the RP access to a record for the subscriber at a medical licensure agency. The RP can make a strong association between the current subscriber and the license record, even though the license record will not likely use the same subject identifier that the IdP does in this case.
+-->
+
+例えば, IdP が Federation プロセスの一環で Subscriber の医師免許情報への Access を提供しうるとする.
+この時 IdP は, 当該ライセンスのステータスを直接示す代わりに, RP に医師免許機関における Subscriber のレコードへの Access を許可するとする.
+この場合, ライセンスレコードは IdP が使用する Subject Identifier を使用していないこともあり得るが, RP は当該 Subscriber とライセンスレコードとの間に強力な関連付けを行うことができる.
