@@ -12,29 +12,73 @@ section: 12
 
 *This section is informative.*
 
+<!--
 Three types of assertion technologies are discussed below: SAML assertions, Kerberos tickets, and OpenID Connect tokens. This list is not inclusive of all possible assertion technologies, but does represent those commonly used in federated identity systems.
+-->
+
+以下では, SAML Assertion, Kerberos Ticket, OpenID Connect Token という3種類の Assertion 技術について述べる.
+このリストは考えうる全ての Assertion 技術を含むものではないが, Federated Identity System において一般的に使用されているものを示している.
 
 ## Security Assertion Markup Language (SAML)
 
+<!--
 SAML is an XML-based framework for creating and exchanging authentication and attribute information between trusted entities over the internet. As of this writing, the latest specification for [SAML](references.md#ref-SAML) is SAML v2.0, issued 15 March 2005.
+-->
 
+SAML はインターネットを介して信頼された主体間で Authentication および Attribute 情報を生成・交換するための, XML ベースのフレームワークである.
+本稿執筆段階での [SAML](references.md#ref-SAML) の最新仕様は2005年3月15日に発行された SAML 2.0 である.
+
+<!--
 The building blocks of SAML include:
+-->
 
+SAML の構成要素は以下の通りである.
+
+<!--
 - The Assertions XML schema, which defines the structure of the assertion.
 - The SAML Protocols, which are used to request assertions and artifacts (the assertion references used in the indirect model described in [Sec. 7.1](sec7_presentation.md#back-channel)).
 - The Bindings, which define the underlying communication protocols (such as HTTP or SOAP), and can be used to transport the SAML assertions.
+-->
 
+- Assertion XML Schema: Assertion の構造を定義する.
+- SAML Protocol: Assertion および Artifact ([Sec. 7.1](sec7_presentation.md#back-channel) で述べた間接モデルで用いる Assertion Reference) を要求するために用いる.
+- Binding: その下で用いるコミュニケーションプロトコル (HTTP や SOAP など) を定義し, SAML Assertion の転送に用いる.
+
+<!--
 The three components above define a SAML profile that corresponds to a particular use case such as "Web Browser SSO".
+-->
 
+上記3つの構成要素により SAML プロファイルが定義され, これらのプロファイルが "Web Browser SSO" などの特定のユースケースに対応する.
+
+<!--
 SAML Assertions are encoded in an XML schema and can carry up to three types of statements:
+-->
 
+SAML Assertion は XML Schema でエンコードされ, 最大3つの Statement を伝搬可能である.
+
+<!--
 -   *Authentication statements* include information about the assertion issuer, the authenticated subscriber, validity period, and other authentication information. For example, an Authentication Assertion would state the subscriber "John" was authenticated using a password at 10:32pm on 06-06-2004.
+-->
 
+- *Authentication Statement*: Asseriton Issuer, Authenticated Subscriber, 有効期間およびその他の Authentication に関する情報を含む. 例えば, ある Authentication Assertion は Subscriber "John" が 2024-06-06 10:32pm に Password を用いて Authenticate されたことを表現できる.
+
+<!--
 -   *Attribute statements* contain specific additional characteristics related to the subscriber. For example, subject "John" is associated with attribute "Role" with value "Manager".
+-->
 
+- *Attribute Statement*: Subscriber に関する追加の特徴を含む. 例えば, Subject "John" に "Manager" という "Role" Attribute が関連づけられているなど.
+
+<!--
 -   *Authorization statements* identify the resources the subscriber has permission to access. These resources may include specific devices, files, and information on specific web servers. For example, subject "John" for action "Read" on "Webserver1002" given evidence "Role".
+-->
 
+- *Authorization Statement*: Subscriber が Access する権限を持つリソースを識別する. こういったリソースには特定のデバイス, ファイル, 特定の Web サーバー上の情報などが含まれうる. 例えば, Subject "John" が "Role" を証拠として "Webserver1002" 上の "Read" というアクションに対して権限を持つなど.
+
+<!--
 Authorization statements are beyond the scope of this document and will not be discussed.
+-->
+
+Authorization Statement は本ドキュメントのスコープ外であり, ここでは議論しない.
 
 ## Kerberos Tickets  {#kerberos}
 

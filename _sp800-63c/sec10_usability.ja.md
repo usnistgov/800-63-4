@@ -25,7 +25,7 @@ From the usability perspective, one of the major potential benefits of federated
 -->
 
 Usability の観点からは, Federated Identity Systemの主な潜在的利点の1つとして, 複数の Authenticator 管理に関するユーザーの苦役に対処できることが挙げられる.
-歴史的にこれはユーザー名とパスワードに関して問題となってきたが, ユーザーが多くの Authenticator (物理的なものも Digital なものも) を管理するニーズが高まるについて, Usability の課題が生じている.
+歴史的にこれはユーザー名と Password に関して問題となってきたが, ユーザーが多くの Authenticator (物理的なものも Digital なものも) を管理するニーズが高まるについて, Usability の課題が生じている.
 
 <!--
 While many other approaches to authentication have been researched extensively and have well-established usability guidelines, federated identity is more nascent and, therefore, lacks the depth and conclusiveness of research findings. As ongoing usability research matures, usability guidelines for federated identity systems will have stronger supporting data. For example, additional data is needed to support guidance on the translation of technical attribute names and values into user-friendly language.
@@ -297,7 +297,7 @@ To encourage user adoption, IdPs and RPs need to establish and build trust with 
 * Clearly and honestly communicate potential benefits and risks of using federated identity to users. Benefits that users value include time savings, ease of use, reduced number of passwords to manage, and increased convenience.
 -->
 
-* Federated Identity を利用する際の潜在的なメリットおよびリスクについて, 明確かつ誠意を持ってユーザーに伝える. ユーザーが重視するメリットとしては, 時間の節約, 使いやすさ, 管理するパスワードの数の削減, 利便性の向上などがあろう.
+* Federated Identity を利用する際の潜在的なメリットおよびリスクについて, 明確かつ誠意を持ってユーザーに伝える. ユーザーが重視するメリットとしては, 時間の節約, 使いやすさ, 管理する Password の数の削減, 利便性の向上などがあろう.
 
 <!--
 User concern over risk can negatively influence willingness to adopt federated identity systems. Users may have trust concerns, privacy concerns, security concerns, and single-point-of-failure concerns. For example, users may be fearful of losing access to multiple RPs if a single IdP is unavailable, either temporarily or permanently. Additionally, users may be concerned or confused about learning a new authentication process. In order to foster the adoption of federated identity systems, the perceived benefits must outweigh the perceived risks.
