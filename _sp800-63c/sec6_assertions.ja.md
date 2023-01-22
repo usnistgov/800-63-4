@@ -16,7 +16,7 @@ section: 6
 An assertion used for authentication is a packaged set of attribute values or derived attribute values about or associated with an authenticated subscriber that is passed from the IdP to the RP in a federated identity system. Assertions contain a variety of information, including: assertion metadata, attribute values and derived attribute values about the subscriber, information about the subscriber's authentication at the IdP, and other information that the RP can leverage (e.g., restrictions and validity time window). While the assertion's primary function is to authenticate the user to an RP, the information conveyed in the assertion can be used by the RP for a number of use cases &mdash; for example, authorization or personalization of a website. These guidelines do not restrict RP use cases nor the type of protocol or data payload used to federate an identity, provided the chosen solution meets all mandatory requirements contained herein.
 -->
 
-Authentication に用いられる Assertion は, Authentication 対象の Subscriber に関する Attribute Value ないしは Derived Attribute Value のパッケージ化されたセットであり, Federated Identity システムにおいて IdP から RP に伝搬されるものである.
+Authentication に用いられる Assertion は, Authentication 対象の Subscriber に関する Attribute Value ないしは Derived Attribute Value のパッケージ化されたセットであり, Federated Identity Systemにおいて IdP から RP に伝搬されるものである.
 Assertion Metadata, Subscriber の Attribute Value ないしは Derived Attribute Value, IdP における Subscriber の Authentication に関する情報, および RP が活用可能なその他の情報など, Assertion は多様な情報を含んでいる.
 Assertion の第一の機能は RP に対してユーザーを Authenticate することだが, Assertion によって伝達される情報は RP がもつ多くのユースケースにおいて利用可能である.
 例としては, Authorization や Web サイトのパーソナライゼーションなどが挙げられる.

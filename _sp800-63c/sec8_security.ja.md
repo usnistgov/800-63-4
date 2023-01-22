@@ -17,7 +17,7 @@ Since the federated authentication process involves coordination between multipl
 -->
 
 Federated Authentication プロセスでは, IdP として動作する CSP を含む複数のコンポーネント間の協調動作が行われるため, Attacker が Federated Identity Transaction を侵害する機会は増大する.
-本章では, Federation において起こりうる Attack およびその対応策についてまとめる.
+本セクションでは, Federation において起こりうる Attack およびその対応策についてまとめる.
 
 ## Federation Threats
 

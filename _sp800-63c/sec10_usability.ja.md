@@ -24,7 +24,7 @@ _Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and C
 From the usability perspective, one of the major potential benefits of federated identity systems is to address the problem of user fatigue associated with managing multiple authenticators. While this has historically been a problem with usernames and passwords, the increasing need for users to manage many authenticators — whether physical or digital — presents a usability challenge.
 -->
 
-Usability の観点からは, Federated Identity システムの主な潜在的利点の1つとして, 複数の Authenticator 管理に関するユーザーの苦役に対処できることが挙げられる.
+Usability の観点からは, Federated Identity Systemの主な潜在的利点の1つとして, 複数の Authenticator 管理に関するユーザーの苦役に対処できることが挙げられる.
 歴史的にこれはユーザー名とパスワードに関して問題となってきたが, ユーザーが多くの Authenticator (物理的なものも Digital なものも) を管理するニーズが高まるについて, Usability の課題が生じている.
 
 <!--
@@ -32,7 +32,7 @@ While many other approaches to authentication have been researched extensively a
 -->
 
 Authentication に対する多くの他のアプローチが広く研究されており, 十分に確立された Usability ガイドラインも存在するが, Federated Identity はまだ初期段階であり, 従って研究結果の深さや決定性に欠けている.
-Usability 研究が進展するにつれ, Federated Identity システムに対する Usability ガイドラインを発展させるより強力なデータを得ることとなろう.
+Usability 研究が進展するにつれ, Federated Identity Systemに対する Usability ガイドラインを発展させるより強力なデータを得ることとなろう.
 例えば, 技術的な Attribute 名およびその値をユーザーフレンドリーな言語に翻訳するためのガイドラインの発展には, 追加のデータが必要となる.
 
 <!--
@@ -40,14 +40,14 @@ As stated in the usability sections in 800-63A and 800-63B, overall user experie
 -->
 
 800-63A および 800-63B の Usability の章で述べたように, 全体的なユーザーエクスペリエンスはあらゆる Authentication 方法の成功に不可欠である.
-Federation は多くのユーザーにとってあまり馴染みのないユーザーインタラクションの形態であるため, これは特に Federated Identity システムに当てはまることである.
+Federation は多くのユーザーにとってあまり馴染みのないユーザーインタラクションの形態であるため, これは特に Federated Identity Systemに当てはまることである.
 ユーザーが過去に経験した Authentication のエクスペリエンスは, 彼らの期待に影響を与える可能性もある.
 
 <!--
 The overall user experience with federated identity systems should be as smooth and easy as possible. This can be accomplished by following usability standards (such as the ISO 25060 series of standards) and established best practices for user interaction design.
 -->
 
-Federated Identity システムにおける全体のユーザーエクスペリエンスは可能な限りスムースかつ容易であるべきである.
+Federated Identity Systemにおける全体のユーザーエクスペリエンスは可能な限りスムースかつ容易であるべきである.
 これは Usability 標準 (ISO 25060 シリーズの標準など) と確立されたユーザーインタラクションデザインのベストプラクティスに従うことで実現可能である.
 
 <!--
@@ -142,35 +142,98 @@ Federated Identity System は以下を満たすべきである.
 * Perform integrative and continuous usability evaluations with representative users and realistic tasks in an appropriate context to ensure success of federated identity systems from the users' perspectives.
 -->
 
-* 適切なコンテキストにおける代表的なユーザーと現実的なタスクを前提に, 統合的かつ継続的な Usalibity 評価を実施し, ユーザーの観点から Federated Identity システムの成功を保証すること.
+* 適切なコンテキストにおける代表的なユーザーと現実的なタスクを前提に, 統合的かつ継続的な Usalibity 評価を実施し, ユーザーの観点から Federated Identity Systemの成功を保証すること.
 
 ## Specific Usability Considerations
 
+<!--
 This section addresses the specific usability considerations that have been identified with federated identity systems. This section does not attempt to present exhaustive coverage of all usability factors related to federated identity systems. Rather it is focused on the larger, more pervasive themes in the usability literature, primarily users' perspectives on identity, user adoption, trust, and perceptions of federated identity space. In some cases, implementation examples are provided. However, specific solutions are not prescribed. The implementations mentioned are examples to encourage innovative technological approaches to address specific usability needs. See standards for system design and coding, specifications, APIs, and current best practices (such as OpenID and OAuth) for additional examples. Implementations are sensitive to many factors that prevent a one-size-fits-all solution.
+-->
+
+本セクションでは Federated Identity System 固有の Usalibity に関する考慮事項に述べる.
+本セクションは Federated Identity System に関する全ての Usability 要素を網羅しようとしているわけではない.
+むしろ, Usablity 文献におけるより大きく普遍的なテーマである, Federated Identity System に関連する Identity, ユーザーによる採用, 信頼および理解に対する, 主としてユーザー視点のテーマに焦点を当てている.
+場合によっては実装例が示されることもある.
+しかしながら, 具体的な解決策が規定されるわけではない.
+言及される実装は, 特定の Usability ニーズに対応するための革新的技術アプローチを促すための例に過ぎない.
+その他の例については, システム設計とコーディングの標準, 標準仕様, API 標準および現在のベストプラクティス (OpenID や OAuth など) を参照のこと.
+実装例は, 1つで全てを解決する万能なソリューションを妨げるような, 多くの要因を含みがちであることに注意.
 
 ### User Perspectives on Online Identity
 
+<!--
 Even when users are familiar with federated identity systems, there are different approaches to federated identity (especially in terms of privacy and the sharing of information) that make it necessary to establish reliable expectations for how users' data are treated. Users and implementers have different concepts of identity. Users think of identity as logging in and gaining access to their own private space. Implementers think of identity in terms of authenticators and assertions, assurance levels, and the necessary set of identity attributes to provide a service. Given this disconnect between users' and implementers' concepts of identity, it is essential to help users form an accurate concept of identity as it applies to federated identity systems. A good model of identity provides users a foundation for understanding the benefits and risks of federated systems and encourage user adoption and trust of these systems.
+-->
 
+ユーザーが Federated Identity System に慣れている場合でも, Federated Identity に対するアプローチは (特にブライバシーや情報共有という面で) さまざまであり, ユーザーのデータがどのように取り扱われるかについての確度の高い期待を確立する必要がある.
+ユーザーと実装者では Identity についての概念が異なる.
+ユーザーは Identity をログインして自身のプライベートスペースへの Access を得るものだと考えている.
+実装者は Identity を Authenticator と Assertion, Assurance Level, およびサービス提供のための必須な Identity Attribute のセットの観点から考える.
+このユーザーと実装者の間の Identity に関する概念の違いを考慮すると, Federated Identity System における Identity の正確な概念をユーザーが理解できるようにすることが不可欠である.
+良い Identity モデルは Federated System の利点とリスクを理解するための基盤をユーザーに提供し, ユーザーがこういったシステムを採用し信頼することを促すであろう.
+
+<!--
 Many properties of identity have implications for how users manage identities, both within and among federations. Just as users manage multiple identities based on context outside of cyberspace, users must learn to manage their identity in a federated environment. Therefore, it must be clear to users how identity and context are used. The following factors should be considered:
+-->
 
+Identity の多くの特性は, ユーザーが1つの Federation 内および複数の Federation 間でどのように Identity を管理するかに影響を与える.
+ユーザーは, サイバースペース外のコンテキストに基づき複数の Identity を管理しているように, Federated 環境でも自身の Identity を管理する術を学ばなければならない.
+従って, Identity とコンテキストがどのように使われるのかがユーザーにとって明確である必要がある.
+それには以下のような項目を考慮するべきである.
+
+<!--
 * Provide users the requisite context and scope in order to distinguish among different user roles. For example, whether the user is acting on their own behalf or on behalf of another, such as their employer.
+-->
 
+* ユーザーに, 異なるユーザーロールを区別するために不可欠なコンテキストとスコープを提供する. 例えばユーザーが自信を代表して行動しているのか, 雇用主など別の誰かのの代理として行動しているのかなど.
+
+<!--
 * Provide users unique, meaningful, and descriptive identifiers to distinguish among entities such as IdPs, RPs, and accounts. Any such user-facing identifiers are likely to be in addition to identifiers used by the underlying protocols, which are not normally exposed to the user.
+-->
 
+* ユーザーに, 一意で意味のあるわかりやすい識別子を提供し, IdP, RP, Account などの主体を区別できるようにする. ユーザーが目にする識別子は, その下で動くプロトコル内で使用される通常ユーザーの目に触れることのない識別子に加え, 使用される可能性がある.
+
+<!--
 * Provide users with information on data ownership and those authorized to make changes. Identities, and the data associated with them, can sometimes be updated and changed by multiple actors. For example, some healthcare data is updated and owned by the patient, while some data is only updated by a hospital or doctor's practice.
+-->
 
+* ユーザーに, データの所有権および変更を行う権限のある人に関する情報を提供する. Identity およびそれに紐づくデータは, 時には複数の関係者に更新, 変更されることがある. 例えば, 医療データは患者によって更新・所有されるものもあれば, 病院または医者によってのみ更新されるものもある.
+
+<!--
 * Provide users with the ability to easily verify, view, and update attributes. Identities and user roles are dynamic and not static; they change over time (e.g., age, health, and financial data). The ability to update attributes or make attribute release decisions may or may not be offered at the same time. Ensure the process for how users can change attributes is well known, documented, and easy to perform.
+-->
 
+* ユーザーに, Attribute を簡単に検証, 閲覧, 更新するすべを提供する. Identity およびユーザーロールは静的ではなく動的であるため, 時間経過によって変化しうる (e.g., 年齢, 医療情報, 財務情報). Attribute を更新したりその公開を決定する機能は同時に提供されることもあればされないこともある. ユーザーが Attribute を変更可能なプロセスが, 既知でドキュメント化されており容易に実行可能であることを保証すること.
+
+<!--
 * Provide users means for updating data, even if the associated entity no longer exists.
+-->
 
+* ユーザーに, データを更新するすべを提供する. 関連する主体がもはや存在しない場合においても.
+
+<!--
 * Provide users means to delete their identities completely, removing all information about themselves, including transaction history. Consider applicable audit, legal, or policy constraints that may preclude such action. In certain cases, full deactivation is more appropriate than deletion.
+-->
 
+* ユーザーに, 自信の Identity を完全に削除たり, 自身に関する情報を全て削除したりするすべを提供する. これには Transaction 履歴も含む. なお, このようなアクションを妨げる可能性のある監査, 法律ないしポリシー上の制約がないか考慮すること. 場合によっては削除よりも完全な非アクティブ化が適切である.
+
+<!--
 * Provide users with clear, easy-to-find, site/application data retention policy information.
+-->
 
+* ユーザーに, 明確で容易に発見可能なサイトデータ/アプリケーションデータ保持ポリシーに関する情報を提供すること.
+
+<!--
 * Provide users with appropriate anonymity and pseudonymity options, and the ability to switch among such identity options as desired, in accordance with an organization's data access policies.
+-->
 
+* ユーザーに, 組織のデータアクセスポリシーに従って, 適切な匿名性および仮名性のオプション, および必要に応じてそのような Identity オプションを切り替えるすべを提供する.
+
+<!--
 * Provide means for users to manage each IdP to RP connection, including complete separation as well as the removal of RP access to one or more attributes.
+-->
+
+* ユーザーに, IdP から RP への接続を管理するすべを提供する. これには完全な分離や1つ以上の Attribute への RP の Access の削除などが含まれる.
 
 ### User Perspectives of Trust and Benefits
 
