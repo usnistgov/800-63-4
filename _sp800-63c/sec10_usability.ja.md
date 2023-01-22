@@ -237,15 +237,37 @@ Identity の多くの特性は, ユーザーが1つの Federation 内および�
 
 ### User Perspectives of Trust and Benefits
 
-
+<!--
 Many factors can influence user adoption of federated identity systems. As with any technology, users may value some factors more than others. Users often weigh perceived benefits versus risks before making technology adoption decisions. It is critical that IdPs and RPs provide users with sufficient information to enable them to make informed decisions. The concepts of trust and tiers of trust — fundamental principles in federated identity systems — can drive user adoption. Finally, a positive user experience may also result in increased user demand for federation, triggering increased adoption by RPs.
+-->
 
+多くの要因が, ユーザーによる Federated Identity System の採用に影響を与える可能性がある.
+あらゆるテクノロジーに対する場合と同じように, ユーザーはある要素を他より重視する可能性がある.
+ユーザーはしばしばテクノロジーの採用を決定する前に, 目に見えるメリットとリスクを比較検討する.
+IdP と RP がユーザーに十分な情報提供を行い, ユーザーが情報に基づいた決定を行えるようにすることが重要である.
+信頼および信頼の層 (Federated Identity System の基本原則) はユーザーによる採用を促進しうる.
+最後に, プジティブなユーザーエクスペリエンスは Federation に対するユーザーの要求を増大させ, RP による採用増加も引き起こす可能性がある.
+
+<!--
 This sub-section is focused primarily on user trust and user perceptions of benefits versus risks.
+-->
 
+本セクションでは主にユーザーの信頼およびユーザー視点でのメリットとリスクについて述べる.
+
+<!--
 To encourage user adoption, IdPs and RPs need to establish and build trust with users and provide them with an understanding of the benefits and risks of adoption. The following factors should be considered:
+-->
 
+ユーザーによる採用を促進するため, IdP と RP はユーザーとの間に信頼を確立し, ユーザーがその採用にかかるメリットとデメリットを理解するように促す必要がある.
+それには以下のような項目を考慮するべきである.
+
+<!--
 * Allow users to control their information disclosure and provide explicit consent through the appropriate use of notifications (see [Sec. 9.2](sec9_privacy.md#notice-and-consent)). Balancing the content, size, and frequency of notifications is necessary to avoid thoughtless user click-through.
+-->
 
+* 適切な情報利用通知により, ユーザーが自身の情報開示を制御し明示的な同意提供を行えるようにする ([Sec. 9.2](sec9_privacy.md#notice-and-consent) 参照). ユーザーが無意識にクリックしてしまうことを防ぐため, 通知の内容, サイズ, 頻度のバランスを取ること.
+
+<!--
 * For attribute sharing, consider the following:
   * Provide a means for users to verify those attributes and attribute values that will be shared. Follow good security practices (see [Sec. 7.3](sec7_presentation.md#protecting-information) and [Sec. 8](sec8_security.md#security)).
   * Enable users to consent to a partial list of attributes, rather than an all-or-nothing approach. Allow users some degree of online access, even if the user does not consent to share all information.
@@ -254,12 +276,38 @@ To encourage user adoption, IdPs and RPs need to establish and build trust with 
   * Minimize user steps and navigation. For example, build attribute consent into the protocols so they're not a feature external to the federated transaction. Examples can be found in standards such as OAuth or OpenID Connect.
   * Provide effective and efficient redress methods such that a user can recover from invalid attribute information claimed by the IdP or collected by the RP.
   * Minimize the number of times a user is required to consent to attribute sharing. Limiting the frequency of consent requests avoids user frustration from multiple requests to share the same attribute.
+-->
 
+* Attribute 共有に関しては以下を考慮すること.
+  * ユーザーに, 共有される自身の Attribute および Attribute Value を検証するすべを提供する. 優れたセキュリティプラクティスに従うこと ([Sec. 7.3](sec7_presentation.md#protecting-information) および [Sec. 8](sec8_security.md#security) 参照).
+  * ユーザーが All-or-nothing ではなく Attribute リストの一部分にのみ同意できるようにすること. ユーザーが全ての情報共有に同意できない場合でも, ある程度のオンラインアクセスを可能にすること.
+  * ユーザーが共有されている Attribute リストへの同意を更新できるようにすること.
+  * ユーザーに提示される不必要な情報を最小化する. 例えば, たとえそれが RP に Authentication レスポンスの一環として共有されるとしても, システムによって生成された Attribute (Pairwise Pseudonymous Identifier など) は提示しないなど.
+  * ユーザのステップとナビゲーションを最小化する. 例えば, Attribute への同意をプロトコルに組み込み, Federated Transaction の外で実現される機能とはしないなど. そういった例は OAuth や OpenID Connect などの標準の中で見られる.
+  * 効果的かつ効率的な是正方法を提供し, IdP が提供したり RP が収集した誤った Attribute 情報を是正できるようにすること.
+  * ユーザーが Attribute 共有の際に要求される同意回数を最小化する. 同意要求の頻度を制限することで, 同じ Attribute を共有するための複数の要求に対するユーザーのフラストレーションを避けることができる.
+
+<!--
 * Collect information for constrained usage only, and minimize information disclosure (see [Sec. 9.3](sec9_privacy.md#minimization)). User trust is eroded by unnecessary and superfluous information collection and disclosure or user tracking without explicit user consent. For example, only request attributes from the user that are relevant to the current transaction, not for all possible transactions a user may or may not access at the RP.
+-->
 
+* 限定された用途にのみ情報を収集し, 情報開示を最小化する ([Sec. 9.3](sec9_privacy.md#minimization) 参照). ユーザーの信頼は, 不必要で余分な情報収集や開示, 明示的なユーザー同意なしに行われるトラッキングなどにより損なわれる. 例えば, 現在の Transaction に関連する Attribute のみをユーザーに要求し, ユーザーが RP で取るか取らないかわからないような全ての Transaction で必要な Attribute に関しては要求しないなど.
+
+<!--
 * Clearly and honestly communicate potential benefits and risks of using federated identity to users. Benefits that users value include time savings, ease of use, reduced number of passwords to manage, and increased convenience.
+-->
 
+* Federated Identity を利用する際の潜在的なメリットおよびリスクについて, 明確かつ誠意を持ってユーザーに伝える. ユーザーが重視するメリットとしては, 時間の節約, 使いやすさ, 管理するパスワードの数の削減, 利便性の向上などがあろう.
+
+<!--
 User concern over risk can negatively influence willingness to adopt federated identity systems. Users may have trust concerns, privacy concerns, security concerns, and single-point-of-failure concerns. For example, users may be fearful of losing access to multiple RPs if a single IdP is unavailable, either temporarily or permanently. Additionally, users may be concerned or confused about learning a new authentication process. In order to foster the adoption of federated identity systems, the perceived benefits must outweigh the perceived risks.
+-->
+
+リスクに対するユーザーの懸念は, Federated Identity System の採用に係る意欲に悪影響を与える可能性がある.
+ユーザーは, 信頼に関する懸念, プライバシーに関する懸念, セキュリティに関する懸念, および単一障害点に関する懸念を持つ可能性がある.
+例えば, ある1つの IdP が一時的または永続的に利用できない場合, ユーザーは複数の RP への Access を失うことを恐れるかもしれない.
+さらに, ユーザーは新しい Authentication プロセスを学ぶことに懸念を感じたり混乱する可能性もある.
+Federated Identity System の採用を促進するには, ユーザーの目に見えるメリットがユーザーの目に見えるリスクを上回る必要がある.
 
 ### User Mental Models and Beliefs
 
