@@ -138,16 +138,51 @@ Kerberos Authentication が Password に基づいている場合, このプロ�
 
 ## OpenID Connect
 
+<!--
 OpenID Connect \[[OIDC](references.md#ref-OIDC)\] is an internet-scale federated identity and authentication protocol built on top of the OAuth 2.0 authorization framework and the JSON Object Signing and Encryption (JOSE) cryptographic system.
+-->
 
+OpenID Connect は, OAuth 2.0 Authorization Framework および JSON Object Signing and Encryption (JOSE) Cryptographic System に基づいた, インターネットスケールの Federated Identity & Authentication Protocol である.
+
+<!--
 OpenID Connect builds on top of the OAuth 2.0 authorization protocol to enable the subscriber to authorize the RP to access the subscriber's identity and authentication information. The RP in both OpenID Connect and OAuth 2.0 is known as the client.
+-->
 
+OpenID Connect は OAuth 2.0 Authorization Protocol の上に構築され, Subscriber が RP に対して Subscriber Identity および Authentication 情報に Access することを Authorize 可能にする.
+OpenID Connect および OAuth 2.0 における RP は Client とも呼ばれる.
+
+<!--
 In a successful OpenID Connect transaction, the IdP issues an ID Token, which is a signed assertion in JSON Web Token (JWT) format. The client parses the ID Token to learn about the subscriber and primary authentication event at the IdP. This token contains at minimum the following information about the subscriber and authentication event:
+-->
 
+OpenID Connect Transaction 成功時, IdP は ID Token を発行する. これは JSON Web Token (JWT) 形式の署名付き Assertion である.
+Client は ID Token をパースし, Subscriber および IdP におけるプライマリな Authentication Event についての情報を得る.
+このトークンは最低限以下のような Subscriber および Authentication Event に関する情報を含む.
+
+<!--
  - `iss` - An HTTPS URL identifying the IdP that issued the assertion.
  - `sub` - An IdP-specific subject identifier representing the subscriber.
  - `aud` - An IdP-specific audience identifier, equal to the OAuth 2.0 client identifier of the client at the IdP.
  - `exp` - The timestamp at which the ID Token expires and after which **SHALL NOT** be accepted the client.
  - `iat` - The timestamp at which the ID Token was issued and before which **SHALL NOT** be accepted by the client.
+-->
 
+- `iss` - Assertion を発行した IdP を識別する HTTPS URL.
+- `sub` - Subscriber を示す, IdP 固有の Subject Identifier.
+- `aud` - IdP 固有の Audience Identifier. 当該 Client の IdP における OAuth 2.0 Client Identifier と等しい.
+- `exp` - ID Token が期限切れになるタイムスタンプ. Client はこれ以降にこの ID Token を受け入れてはならない (**SHALL NOT**).
+- `iat` - ID Token が発行されたタイムスタンプ. Client はこれ以前にこの ID Token を受け入れてはならない (**SHALL NOT**).
+
+<!--
 In addition to the ID Token, the IdP also issues the client an OAuth 2.0 access token which can be used to access the UserInfo Endpoint at the IdP. This endpoint returns a JSON object representing a set of attributes about the subscriber, including but not limited to their name, email address, physical address, phone number, and other profile information. While the information inside the ID Token is reflective of the authentication event, the information in the UserInfo Endpoint is generally more stable and could be more general purpose. Access to different attributes from the UserInfo Endpoint is governed by the use of a specially-defined set of OAuth scopes, `openid`, `profile`, `email`, `phone`, and `address`. An additional scope, `offline_access`, is used to govern the issuance of refresh tokens, which allow the RP to access the UserInfo Endpoint when the subscriber is not present. Access to the UserInfo Endpoint is structured as an API and may be available when the subscriber is not present. Therefore, access to the UserInfo Endpoint is not sufficient for proving a subscriber's presence and establishing an authenticated session at the RP.
+-->
+
+ID Token に加え, IdP は Client に OAuth 2.0 Access Token を発行することもできる. これは IdP の UserInfo Endpoint への Access に利用できる.
+この Endpoint は Subscriber に関する Attribute セットを表現する JSON Object を返す.
+返される Attribute には, 氏名, Email Address, 住所, 電話番号およびその他のプロフィール情報が含まれるが, それに限るものでもない.
+ID Token に含まれる情報は Authentication Event を反映している一方, UserInfo Endpoint から返される情報は一般的にはより永続的でより一般的な目的で利用される.
+UserInfo Endpoint から返される Attribute への Access は, Attribute 毎に特別に定義された `openid`, `profile`, `email`, `phone` および `address` といった OAuth Scope のセットにより決定される.
+`offline_access` という追加の Scope もあり, これは Refresh Token の発行を制御するために用いられる.
+RP は Subscriber が介在しない時でも Refresh Token を使って UserInfo Endpoint への Access を行うことができる.
+UserInfo Endpoint への API として実現されており, Subscriber が介在しない場合でも利用できる可能性がある.
+従って UserInfo Endpoint への Access を持つからといって, Subscriber の存在証明や RP における認証済 Session の確立には不十分である.
