@@ -82,17 +82,59 @@ Authorization Statement は本ドキュメントのスコープ外であり, こ
 
 ## Kerberos Tickets  {#kerberos}
 
+<!--
 The Kerberos Network Authentication Service [[RFC4120]](references.md#ref-RFC4120) was designed to provide strong authentication for client/server applications using symmetric-key cryptography on a local, shared network. Extensions to Kerberos can support the use of public key cryptography for selected steps of the protocol. Kerberos also supports confidentiality and integrity protection of session data between the subscriber and the RP. Even though Kerberos uses assertions, it was designed for use on shared networks and, therefore, is not truly a federation protocol.
+-->
 
+Kerberos Network Authentication Service [[RFC4120]](references.md#ref-RFC4120) は, ローカルの共有 Network 上で, Symmetric Key Cryptography を用いて, Client/Server 形アプリケーションに対して強固な Authentication を提供するために設計されている.
+拡張機能によって, Kerberos はプロトコル上の指定されたステップで Public Key Cryptography をサポートすることもできる.
+Kerberos は Subscriber と RP の間の Session データに関して Confidentiality 保護および Integrity 保護をサポートすることもできる.
+Kerberos は Assertion を利用するが, これは共有 Network 上での利用を想定して設計されたものであり, 真の Federation Protocol ではない.
+
+<!--
 Kerberos supports authentication of a subscriber over a network using one or more IdPs. The subscriber implicitly authenticates to the IdP by demonstrating the ability to decrypt a random session key encrypted for the subscriber by the IdP. (Some Kerberos variants also require the subscriber to explicitly authenticate to the IdP, but this is not universal.) In addition to the encrypted session key, the IdP also generates another encrypted object called a Kerberos ticket. The ticket contains the same session key, the identity of the subscriber to whom the session key was issued, and an expiration time after which the session key is no longer valid. The ticket is confidentiality and integrity protected by a pre-established key that is shared between the IdP and the RP during an explicit setup phase.
+-->
 
+Kerberos は1つ以上の IdP を用いた Network 経由の Subscriber Authentication をサポートする.
+Subscriber は, IdP が Subscriber に対して暗号化したランダムな Session Key を復号できることを示すことで, 暗黙的に IdP に Authenticate される.
+(一部の Kerberos 派生系は Subscriber が IdP に対して明示的に Authenticate することを要求するが, これは一般的ではない)
+暗号化された Session Key に加え, IdP はその他の暗号化されたオブジェクトも生成する. これは Kerberos Ticket と呼ばれる.
+この Ticket は同じ Session Key, Session Key を発行された Subscriber の Identity, Session Key の有効期限を含む.
+この Ticket は, 明示的なセットアップフェーズ中に IdP-RP 間で共有される事前確立鍵により Confidentiality 保護および Integrity 保護を施される.
+
+<!--
 To authenticate using the session key, the subscriber sends the ticket to the RP along with encrypted data that proves that the subscriber possesses the session key embedded within the Kerberos ticket. Session keys are either used to generate new tickets or to encrypt and authenticate communications between the subscriber and the RP.
+-->
 
+Session Key を利用して Authenticate するには, Subscriber は Ticket を RP に送り, それに Subscriber が Kerberos Ticket 内に含まれた Session Key を保持することを証明する暗号化されたデータを添える.
+Session Key は新しい Ticket の生成に用いられることもあれば, Subscriber と RP の間の通信を暗号化および Authenticate するために用いられることもある.
+
+<!--
 To begin the process, the subscriber sends an authentication request to the Authentication Server (AS). The AS encrypts a session key for the subscriber using the subscriber's long-term credential. The long-term credential may either be a secret key shared between the AS and the subscriber, or in the PKINIT variant of Kerberos, a public key certificate. Most variants of Kerberos based on a shared secret key between the subscriber and IdP derive this key from a user-generated password. As such, they are vulnerable to offline dictionary attacks by passive eavesdroppers, unless Flexible Authentication Secure Tunneling (FAST) \[[RFC6113](references.md#ref-RFC6113)\] or some other tunneling and armoring mechanism is used.
+-->
 
+このプロセスを開始するにあたり, Subscriber は Authentication リクエストを Authentication Server (AS) に送る.
+AS は Subscriber の長時間有効な Credential を用いて Subscriber の Session Key を暗号化する.
+この長期間有効な Credential は AS と Subscriber 間で共有された Secret Key であることもあれば, Kerberos の PKINIT 相当のものに含まれる Public Key Certificate であることもある.
+Subscriber と IdP の間の Shared Secret Key に基づいている大抵の Kerberos 派生系は, ユーザーが生成した Password からこの Key を導出する.
+そのため, Flexible Authentication Secure Tunneling (FAST) \[[RFC6113](references.md#ref-RFC6113)\] やその他のトンネリングおよび防御メカニズムが採用されていない限り, パッシブな盗聴者によるオフライン辞書攻撃に対して脆弱である.
+
+<!--
 In addition to delivering the session key to the subscriber, the AS also issues a ticket using a key it shares with the Ticket Granting Server (TGS). This ticket is referred to as a Ticket Granting Ticket (TGT), since the verifier uses the session key in the TGT to issue tickets rather than to explicitly authenticate the verifier. The TGS uses the session key in the TGT to encrypt a new session key for the subscriber and uses a key it shares with the RP to generate a ticket corresponding to the new session key. The subscriber decrypts the session key and uses the ticket and the new session key together to authenticate to the RP.
+-->
 
+Session Key の Subscriber への配送に加え, AS は Ticket Granting Server (TGS) と共有する鍵を使って Ticket を発行する.
+この Ticket は Ticket Granting Ticket (TGT) と呼ばれる. これは, Verifier が TGT 内の Session Key を用いて Authenticate するかわりに Ticket を発行するからである.
+TGS は TGT 内の Session Key を用いて新たな Session Key を Subscriber に対して暗号化し, RP と共有する鍵を用いて新たな Session Key に対応する Ticket を生成する.
+Subscriber は Session Key を復号し, Ticket と新たな Session Key を使って RP に対して Authenticate を行う.
+
+<!--
 When Kerberos authentication is based on passwords, the protocol is known to be vulnerable to offline dictionary attacks by eavesdroppers who capture the initial user-to-KDC exchange. Longer password length and complexity provide some mitigation to this vulnerability, although sufficiently long passwords tend to be cumbersome for users. However, when Kerberos password-based authentication is used in a FAST (or similar) tunnel, a successful attacker-in-the-middle attack is additionally required in order to perform the dictionary attack.
+-->
+
+Kerberos Authentication が Password に基づいている場合, このプロトコルは最初のユーザーと KDC の交換を盗聴する盗聴者によるオフライン辞書 Attack に脆弱であることが知られている.
+この脆弱性は長く複雑な Password により軽減されるが, 十分に長い Password はユーザーにとって扱いにくい傾向がある.
+ただし, Password ベースの Kerberos Authentication が FAST (または類似の) トンネル内で用いられている場合, 自書攻撃を実行するには中間者攻撃を成功させることも必要になる.
 
 ## OpenID Connect
 
