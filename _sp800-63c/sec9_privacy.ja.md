@@ -101,7 +101,7 @@ Federation enables the data exposed to an RP to be minimized, which can yield pr
 
 Federation は RP に開示されるデータを最小化することを可能にする.
 これは Subscriber のプライバシー保護につながる.
-IdP は RP がそのユースケースに応じて要求する範囲を超えて追加の Attribute を収集することもあるが, RP が明治的に要求した Attribute のみを送信する.
+IdP は RP がそのユースケースに応じて要求する範囲を超えて追加の Attribute を収集することもあるが, RP が明示的に要求した Attribute のみを送信する.
 場合によっては RP が Attribute の完全な値を要求しないこともある.
 例えば RP は Subscriber が13歳以上かどうかを知りたいが, 完全な生年月日を知る必要はないとする.
 潜在的にセンシティブな PII の収集を最小化するため, RP は Derived Attribute Value (e.g., 質問: この Subscriber は13歳以上ですか? 回答: Y/N or Pass/Fail) を要求することもできる.

@@ -179,7 +179,7 @@ Many properties of identity have implications for how users manage identities, b
 Identity の多くの特性は, ユーザーが1つの Federation 内および複数の Federation 間でどのように Identity を管理するかに影響を与える.
 ユーザーは, サイバースペース外のコンテキストに基づき複数の Identity を管理しているように, Federated 環境でも自身の Identity を管理する術を学ばなければならない.
 従って, Identity とコンテキストがどのように使われるのかがユーザーにとって明確である必要がある.
-それには以下のような項目を考慮するべきである.
+ここでは以下のような項目を考慮するべきである.
 
 <!--
 * Provide users the requisite context and scope in order to distinguish among different user roles. For example, whether the user is acting on their own behalf or on behalf of another, such as their employer.
@@ -259,7 +259,7 @@ To encourage user adoption, IdPs and RPs need to establish and build trust with 
 -->
 
 ユーザーによる採用を促進するため, IdP と RP はユーザーとの間に信頼を確立し, ユーザーがその採用にかかるメリットとデメリットを理解するように促す必要がある.
-それには以下のような項目を考慮するべきである.
+ここでは以下のような項目を考慮するべきである.
 
 <!--
 * Allow users to control their information disclosure and provide explicit consent through the appropriate use of notifications (see [Sec. 9.2](sec9_privacy.md#notice-and-consent)). Balancing the content, size, and frequency of notifications is necessary to avoid thoughtless user click-through.
@@ -311,14 +311,41 @@ Federated Identity System の採用を促進するには, ユーザーの目に�
 
 ### User Mental Models and Beliefs
 
+<!--
 Users' beliefs and perceptions predispose them to expect certain results and to behave in certain ways. Such beliefs, perceptions, and predispositions are referred to in the social sciences as mental models. For example, people have a mental model of dining out which guides their behavior and expectations at each establishment, such as fast food restaurants, cafeterias, and more formal restaurants. Thus, it is not necessary to be familiar with every establishment to understand how to interact appropriately at each one.
+-->
 
+ユーザーの信念と認識により, ユーザーは特定の結果を期待し, 特定の方法で行動する傾向がある.
+このような信念, 認識, 傾向は, 社会科学ではメンタルモデルと呼ばれる.
+例えば, ファーストフードレストラン, カフェテリア, よりフォーマルなレストランなど, 人々は施設によって異なる外食のメンタルモデルを持ち, それにより彼らのふるまいや期待が導かれる.
+従って, ある施設で適切にやりとりする方法を理解するために, 全ての個別の施設に精通している必要はない.
+
+<!--
 Assisting users in establishing good and complete mental models of federation allows users to generalize beyond a single specific implementation. If federated identity systems are not designed from users' perspectives, users may form incorrect or incomplete mental models that impact their willingness to adopt these systems. The following factors should be considered:
+-->
 
+ユーザーが Federation に関する優れた完全なメンタルモデルを確立することで, ユーザーは単一かつ特定の実装を超えて一般化することができる.
+Federated Identity System がユーザー視点で設計されていなければ, ユーザーは不正確かつ不完全なメンタルモデルを形成し, それがユーザーによるシステムの採用意欲に影響を与えるかもしれない.
+ここでは以下のような項目を考慮するべきである.
+
+<!--
 * Clearly explain the working relationship and information flow among the transacting parties (e.g., RPs, IdPs, and brokers) to avoid user misconceptions. Use the actual names of the entities in the explanation rather than using the generic terms IdPs and RPs.
   * Provide prominent visual cues and information so that users understand why seemingly unrelated entities have a working relationship. For example, users may be concerned with mixing online personal activities with government services due to a lack of understanding of the information flow in federated identity systems.
   * Provide prominent visual cues and information to users about redirection when an RP needs to redirect control from their site to an IdP. For example, display RP branding within the IdP user interface to inform users when they are logging in with their IdP for access to the destination RP.
+-->
 
+* ユーザーの誤解を避けるため, やり取りを行う当事者間 (e.g., RP, IdP および Broker) の関係性や情報の流れを明確に説明する. その際は IdP や RP という一般的な用語ではなく, 当該主体の実際の名称を使用すること.
+  * 一見無関係に見える主体がなぜ関係性を持っているのかをユーザーが理解できるように, 明確かつ視覚的なヒントや情報を提供する. 例えば, ユーザーは Federated Identity System における情報の流れを理解していないがために, オンラインでの個人的活動と政府のサービスが混ざることに懸念を抱く可能性がある.
+  * RP がユーザーを自身のサイトから IdP にリダイレクトさせる必要がある場合, リダイレクトに関する明確かつ視覚的なヒントや情報を提供する. 例えば, IdP ユーザーインターフェース内に RP ブランドを表示し, ユーザーに当該 RP への Access のため IdP にログインしようとしていることを伝えるなど.
+
+<!--
 * Provide users with clear and usable ways (e.g., visual assurance) to determine the authenticity of the transacting  parties (e.g., RPs, IdPs, and brokers). This will also help to alleviate user concern over leaving one domain for another, especially if the root domain changes (e.g., .gov to .com). For example, display the URL of the IdP so that the user can verify that they are not being phished by a malicious site.
+-->
 
+* ユーザーに, やり取りを行う当事者 (e.g., RP, IdP および Broker) の Authenticity を判断するための明確で利用しやすい手段 (e.g., 視覚的保証など) を提供する. これは, 特にルートドメインが変わる場合 (e.g., .gov から .com へ) など, あるドメインから別のドメインに移動する際のユーザーの懸念を軽減する際にも役に立つものであろう. 例えば, IdP の URL を表示して, ユーザーが悪意あるサイトに Phishing されていないことを検証できるようにするなど.
+
+<!--
 * Provide users with clear information, including visual cues, regarding implicit logins and explicit logouts. Depending on the implementation, logging into an RP with a federated account may authenticate users to both the IdP and RP. Users may not realize that ending their session with the RP will not necessarily end their session with the IdP; users will need to explicitly "log out" of the IdP. Users require clear information to remind them if explicit logouts are required to end their IdP sessions.
+-->
+
+* ユーザに, 暗黙的なログインと明示的なログアウトに関して, 視覚的なヒントを含む明確な情報を提供する. 実装によっては, Federated Account を用いて RP にログインすると, ユーザーは IdP と RP 双方に Authenticate される可能性がある. ユーザーは RP で Session を終了しても IdP の Session が終了するとは限らないことに気づいていない場合がある. この場合, ユーザーは IdP から明示的に "ログアウト" する必要がある. ユーザーは IdP Session を終了するために明示的なログアウトが必要かどうか確認するための明確な情報を必要とする.
