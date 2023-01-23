@@ -53,7 +53,7 @@ Federation を用いない Authentication と同様に, Attacker のモチベー
 |---------------------------------|------------------|--------------|
 | Assertion Manufacture or Modification | Attacker が Assertion を偽造する. | 侵害された IdP が, 正しく Authenticate されていない Claimant の Identity を主張する. |
 | | Attacker が既存 Assertion を改ざんする. | 侵害された Proxy が Authentication Assertion の AAL を変更する. |
-| Assertion Disclosure | Assertion が3rd-partyに漏洩する. | Network 監視を通じて Subscriber の登録住所が部外者に漏洩する. |
+| Assertion Disclosure | Assertion が3rd-partyに漏洩する. | Network 監視を通じて Subscriber の Address of Record が部外者に漏洩する. |
 | Assertion Repudiation by the IdP | IdP が事後になって Transaction に署名していないと主張する. | ユーザーが RP において不正なクレジットカード取引を行った際, IdP が自身はユーザーをログインさせていないと主張する. |
 | Assertion Repudiation by the Subscriber | Subscriber が Transaction を実行していないと主張する. | ユーザー同意 (e.g., 契約) が履行不能になる. |
 | Assertion Redirect | Assertion が想定されていないコンテキストで利用される. | 侵害されたユーザーエージェントが Assertion を Attacker に送信し, Attacker がそれを別の場所で利用する. |
