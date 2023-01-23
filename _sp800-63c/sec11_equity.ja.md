@@ -19,22 +19,22 @@ Equitable access to the functions of IdPs and RPs is an essential element of a f
 IdP と RP の機能への公平な Access は, Federated Identity System において不可欠な要素である.
 Federation 技術を使用する際も, Executive Order 13985, _Advancing Racial Equity and Support for Underserved Communities Through the Federal Government_ [[EO13985]](references.md#ref-EO13985) に定められている通り, 政府サービスへの公平なアクセスを提供するには, 全ての Subscriber が確実に Authenticate できることが必要である.
 はこれを定めている.
-公平性に関するリスクを評価する際, IdP と RP は Federated Identity Service の対象となるユーザー母集団全体を考慮する必要がある.
+Equity に関するリスクを評価する際, IdP と RP は Federated Identity Service の対象となるユーザー母集団全体を考慮する必要がある.
 さらに, IdP と RP はそれらのサービスを使用する際に, 共有される特性により不公平な Access, 取り扱い, 結果の対象となりうる母集団中の特定のユーザーグループをより一層認識することとなる.
-[Sec. 10](../sec10_usability.md#usability) で述べた Usability 上の考慮事項は, Federated Identity Service を使用する全ての人の全体的な使いやすさと公平性を担保するためにも考慮されるべきである.
+[Sec. 10](../sec10_usability.md#usability) で述べた Usability 上の考慮事項は, Federated Identity Service を使用する全ての人の全体的な使いやすさと Equity を担保するためにも考慮されるべきである.
 
 <!--
 In its role as the verifier, the IdP needs to be aware of equity considerations related to identity proofing, attribute validation, and enrollment as enumerated in [[SP800-63A]](../_sp800-63a/sec11_equity.md#sec11){:latex-href="#ref-SP800-63A"} Sec. 11 and equity considerations concerning authenticators as enumerated in [[SP800-63B]](../_sp800-63b/sec11_equity.md#sec11){:latex-href="#ref-SP800-63B"} Sec. 11. An RP offering FAL3 will also need to be aware of these same authenticator considerations when processing bound authenticators, whether the authenticators are managed at the IdP or RP.
 -->
 
-Verifier としての役割を果たす中で, IdP は Identity Proofing, Attribute Validation および Enrollment に対する公平性に関する考慮事項 ([[SP800-63A]](../_sp800-63a/sec11_equity.md#sec11){:latex-href="#ref-SP800-63A"} Sec. 11 参照) および Authenticator に対する公平性に関する考慮事項 ([[SP800-63B]](../_sp800-63b/sec11_equity.md#sec11){:latex-href="#ref-SP800-63B"} Sec. 11 参照) を認識する必要がある.
+Verifier としての役割を果たす中で, IdP は Identity Proofing, Attribute Validation および Enrollment に対する Equity に関する考慮事項 ([[SP800-63A]](../_sp800-63a/sec11_equity.md#sec11){:latex-href="#ref-SP800-63A"} Sec. 11 参照) および Authenticator に対する Equity に関する考慮事項 ([[SP800-63B]](../_sp800-63b/sec11_equity.md#sec11){:latex-href="#ref-SP800-63B"} Sec. 11 参照) を認識する必要がある.
 FAL3 を提供する RP は, Authenticator が IdP に管理されているか RP に管理されているかに関わらず, Bound Authenticator を処理する際にはこれと同じ Authenticator に関する考慮事項を認識する必要がある.
 
 <!--
 Since the federation process takes place over a network protocol between multiple active parties, the experience of authenticating using the federation system may present equity problems, such as the following examples:
 -->
 
-Federation プロセスは複数のアクティブな当事者間で Network プロトコルを介して行われるため, Federation System を利用した Authentication のエクスペリエンスには公平性の問題が生じ得る. 以下に例を示す.
+Federation プロセスは複数のアクティブな当事者間で Network プロトコルを介して行われるため, Federation System を利用した Authentication のエクスペリエンスには Equity の問題が生じ得る. 以下に例を示す.
 
 <!--
 * Completing the entire federated transaction without timing out may be difficult for subscribers without a reliable network connection, such as those in rural areas.
@@ -55,8 +55,8 @@ Normative requirements have been established requiring IdPs and RPs to mitigate 
 -->
 
 最も一般的であると予想されるこの分野の問題を軽減するため, IdP と RP には規範的要件が確立されている.
-しかし規範的要件が全ての潜在的な公平性の問題を想定済であるとは言いづらい.
-潜在的な公平性の問題は, アプリケーション毎にも異なる.
+しかし規範的要件が全ての潜在的な Equity の問題を想定済であるとは言いづらい.
+潜在的な Equity の問題は, アプリケーション毎にも異なる.
 従って, IdP と RP は Subscriber が不公平な Authentication 要件を報告し, 潜在的な代替の Authentication 戦略についてアドバイスを行えるようなメカニズムを提供する必要がある.
 
 <!--
