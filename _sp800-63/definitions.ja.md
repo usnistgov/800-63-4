@@ -51,7 +51,7 @@ Allowlist
 Applicant
 <!-- : A subject undergoing the processes of enrollment and identity proofing. -->
 
-: Enrollment および Identity Proofing のプロセスを受けている主体.
+: Enrollment および Identity Proofing のプロセスを受けている Subject.
 
 Approved Cryptography [](#approved){:name="approved"}
 <!-- : Federal Information Processing Standard (FIPS)-approved or NIST recommended. An algorithm or technique that is either 1) specified in a FIPS or NIST Recommendation, or 2) adopted in a FIPS or NIST Recommendation. -->
