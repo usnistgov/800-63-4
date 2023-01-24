@@ -106,7 +106,7 @@ Attribute Bundle
 Attribute Provider
 <!-- : A service that provides a subscriber's attributes without asserting that the subscriber is present to the RP. An _Identity Provider (IdP)_ is one type of attribute provider used in federated scenarios. Attribute providers often make these attributes available by means of an _attribute API_. -->
 
-: Subscriberが RP に存在することを表明することなく, Subscriber の Attribute を提供するサービス. _Identity Provider (IdP)_ は, Federation のシナリオで使用される Attribute Provider の一種である. Attribute Provider は, 多くの場合, _Attribute API_ によってこれらの Attribute を利用できる.
+: Subscriberが RP に存在することを表明することなく, Subscriber の Attribute を提供するサービス. _Identity Provider (IdP)_ は, Federation のシナリオで使用される Attribute Provider の一種である. Attribute Provider は, しばしば, _Attribute API_ を通じてこれらの Attribute を提供する.
 
 Attribute Value
 <!-- : A complete statement asserting a property of a subscriber, independent of format. For example, for the attribute "birthday," a value could be "12/1/1980" or "December 1, 1980." -->
