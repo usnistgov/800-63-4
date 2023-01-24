@@ -96,7 +96,7 @@ Attribute
 Attribute API
 <!-- : An API that provides _attribute values_, _derived attribute values_, and related information about one or more subscribers. Access to these APIs are often granted to RPs in the context of an _identity API_ (for a single subscriber) or a _provisioning API_ (for multiple subscribers). This is distinct from an _attribute verification API_ which is used to verify attribute values for a CSP during the identity proofing process. -->
 
-: 1つ以上の Subscriber に関する _Attribute Value_ , _Derived Attribute Value_ および関連する情報を提供する API. これらの API へのアクセスは, (単一 Subscriber のための)_Identity API_ または (複数の Subscriber のための) _Provisioning API_ のコンテキストで RP に付与されることが多い. これは, Identity Proofing プロセス中に CSP の Attribute Value を検証するために使用される _Attribute Verification API_ とは異なる. 
+: 1つ以上の Subscriber に関する _Attribute Value_ , _Derived Attribute Value_ および関連する情報を提供する API. これらの API への Access は, (単一 Subscriber のための)_Identity API_ または (複数の Subscriber のための) _Provisioning API_ のコンテキストで RP に付与されることが多い. これは, Identity Proofing プロセス中に CSP の Attribute Value を検証するために使用される _Attribute Verification API_ とは異なる. 
 
 Attribute Bundle
 <!-- : A packaged set of attributes, usually contained within an assertion. Attribute bundles offer RPs a simple way to retrieve the most relevant attributes they need from IdPs. OpenID Connect scopes [[OIDC]](sec8_references.md#ref-OIDC) are an implementation of attribute bundles. -->
