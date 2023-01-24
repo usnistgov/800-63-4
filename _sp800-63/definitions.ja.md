@@ -26,7 +26,7 @@ Access [](#access){:name="access"}
 Activation
 <!-- : The process of inputting an _activation factor_ into a _multi-factor authenticator_ to enable its use for _authentication_. -->
 
-: _Multi-factor Authenticator_ に _Activation Factor_ を入力し, _Authentication_ として使用できるようにするプロセス.
+: _Multi-factor Authenticator_ に _Activation Factor_ を入力し, _Authentication_ に使用できるようにするプロセス.
 
 Activation factor
 <!-- : An additional _authentication factor_ that is used to enable successful _authentication_ with a _multi-factor authenticator_. Since all multi-factor authenticators are physical authenticators, activation factors are either _memorized secrets_ or _biometric_ factors. -->
