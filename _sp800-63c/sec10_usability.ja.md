@@ -18,7 +18,7 @@ _Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and C
 
 _Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts_ [[ISO/IEC9241-11]](references.md#ref-ISO9241) は Usability を "特定の利用コンテキストにおいて, 特定のユーザーが, あるシステム, プロダクトないしはサービスを利用して, 特定の目的を, どの程度有効的, 効率的かつ満足のいくレベルで達成できるかの度合い" と定義される.
 この定義はユーザー, 目的および利用コンテキストを, 有効性, 効率性および満足度の達成に必要な重要要素として捉えている.
-ユーザビリティを実現するには, これらの重要要素を考慮した総合的なアプローチが必要となる.
+Usability を実現するには, これらの重要要素を考慮した総合的なアプローチが必要となる.
 
 <!--
 From the usability perspective, one of the major potential benefits of federated identity systems is to address the problem of user fatigue associated with managing multiple authenticators. While this has historically been a problem with usernames and passwords, the increasing need for users to manage many authenticators — whether physical or digital — presents a usability challenge.

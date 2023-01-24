@@ -329,7 +329,7 @@ Within federation protocols, protocol-specific information such as cryptographic
 
 Federation Protocol においては, Protocol 特有の情報が IdP と RP の間で確立され, 相互にセキュア通信が可能となる必要がある.
 これらの情報としては, Cryptographic Key, システムの識別子, サービスエンドポイント URL, 必要な Access 権限などが挙げられる.
-さらに, Subscriber が目にするシステムの表示名やホームページなどの情報も, システムの信頼とユーザビリティの向上のため確立されうる.
+さらに, Subscriber が目にするシステムの表示名やホームページなどの情報も, システムの信頼と Usability の向上のため確立されうる.
 これらの全ての情報は, Federation Protocol のん範囲ないで IdP と RP がデジタルかつプログラム的に信頼を確立するために用いられる.
 
 <!--
@@ -494,7 +494,7 @@ The IdP **SHALL** provide effective mechanisms for redress of subscriber complai
 -->
 
 IdP は Subscriber の苦情や問題 (Subscriber が誤った Attribute Value に気づいた, など) の是正のための効果的なメカニズムを提供すべきである (**SHALL**).
-是正のためのユーザビリティ上の検討事項については [Sec. 10](sec10_usability.ja.md#usability) を参照のこと.
+是正のための Usability 上の検討事項については [Sec. 10](sec10_usability.ja.md#usability) を参照のこと.
 
 ### IdP Allowlists of RPs {#idp-allowlist}
 
@@ -565,7 +565,7 @@ To mitigate the risk of unauthorized exposure of sensitive information (e.g., sh
 
 センシティブな情報の無認可での開示リスク (ショルダーサーフィン等) を低減するため, IdP はデフォルトでは Authorized Party に開示されるセンシティブ情報をマスクすべきである (**SHALL**).
 Authorized Party が Subscriber 自身の場合, IdP は Subscriber が伝送前にその値を確認できるよう, 当該情報を一時的に閲覧可能とする仕組みを提供すべきである (**SHALL**).
-マスキングに関しては, ユーザビリティの検討事項について [Sec. 10](sec10_usability.ja.md#usability) を参照のこと.
+マスキングに関しては, Usability の検討事項について [Sec. 10](sec10_usability.ja.md#usability) を参照のこと.
 
 <!--
 An IdP **MAY** employ mechanisms to remember and re-transmit the exact attribute bundle to the same RP, remembering the authorized party's decision. This mechanism is associated with the subscriber account as managed by the IdP. If such a mechanism is provided, the IdP **SHALL** allow the authorized party to revoke such remembered access at a future time.
@@ -874,7 +874,7 @@ An RP **SHALL** disclose any additional attributes collected, and their use, as 
 
 RP は収集した全ての追加の Attribute およびその利用を System of Records Notice (SORN) の一部として開示すること (**SHALL**).
 RP は RP Subscriber Account に対して追加収集された Attribute に関して Subscriber が更新および削除するための効果的な是正手段を提供すること (**SHALL**).
-是正に関するユーザビリティ上の考慮事項に関しては [Sec. 10](sec10_usability.md#usability) を参照のこと.
+是正に関する Usability 上の考慮事項に関しては [Sec. 10](sec10_usability.md#usability) を参照のこと.
 
 ### Time-based Removal of RP Subscriber Accounts {#stale-account}
 
