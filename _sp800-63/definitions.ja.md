@@ -61,7 +61,7 @@ Approved Cryptography [](#approved){:name="approved"}
 Assertion
 <!-- : A statement from a verifier to an RP that contains information about a subscriber. Assertions may also contain verified attributes. -->
 
-: Verifier から Relying Party (RP) に対して送られる, Subscriber の Identity 情報を含んだ Statement. Assertion は検証済属性情報を含むこともある.
+: Verifier から Relying Party (RP) に対して送られる, Subscriber の Identity 情報を含んだ Statement. Assertion は検証済 Attribute を含むこともある.
 
 Assertion Reference
 <!-- : A data object, created in conjunction with an assertion, that identifies the verifier and includes a pointer to the full assertion held by the verifier. -->
