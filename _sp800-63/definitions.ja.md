@@ -287,7 +287,7 @@ Credential
 Credential Service Provider (CSP)
 <!-- : A trusted entity whose functions include identity proofing applicants to the identity service and the registration of authenticators to subscriber accounts. A CSP may be an independent third party. -->
 
-: 信頼されたエンティティで, Identity サービスへの Applicant の Identity Proofing や, Subscriber アカウントへの Authenticator の登録などの機能を持つ. CSP は独立した第三者となることがある.
+: 信頼されたエンティティで, Identity サービスへの Applicant の Identity Proofing や, Subscriber Account への Authenticator の登録などの機能を持つ. CSP は独立した第三者となることがある.
 
 Cross-site Request Forgery (CSRF)
 <!-- : An attack in which a subscriber currently authenticated to an RP and connected through a secure session browses to an attacker's website, causing the subscriber to unknowingly invoke unwanted actions at the RP. -->
@@ -460,7 +460,7 @@ Identity Proofing
 Identity Provider (IdP)
 <!-- : When using federation, this is the party that manages the subscriber's primary authenticators and issues assertions derived from the subscriber account. -->
 
-: Federation を使用するとき, Subscriber の一次 Authenticator を管理し, Subscriber アカウントから派生する Assertion を発行する主体.
+: Federation を使用するとき, Subscriber の一次 Authenticator を管理し, Subscriber Account から派生する Assertion を発行する主体.
 
 Identity Resolution
 <!-- : The process of collecting information about an applicant in order to uniquely distinguish an individual within the context of the population the CSP serves. -->
@@ -669,7 +669,7 @@ Protected Session
 Provisioning API
 <!-- : An _attribute API_ that allows an RP to access to attributes for multiple subscribers for the purposes of provisioning RP subscriber accounts. Access to a provisioning API is generally granted to the RP outside of a specific federated authentication transaction. -->
 
-: RP Subscriber アカウントのプロビジョニングを目的として, RP が複数の SubscriberのAttribute にアクセスすることを可能にする _Attribute API_ . Provisioning API へのアクセスは, 通常, 特定の Federated Authentication Transaction の外部で RP に付与される. 
+: RP Subscriber Account のプロビジョニングを目的として, RP が複数の SubscriberのAttribute にアクセスすることを可能にする _Attribute API_ . Provisioning API へのアクセスは, 通常, 特定の Federated Authentication Transaction の外部で RP に付与される. 
 
 Pseudonym
 <!-- : A name other than a legal name. -->
@@ -794,7 +794,7 @@ Social Engineering
 Software Statement
 <!-- : A list of attributes describing a piece of software that is cryptographically signed by an authority. Software statements are used most commonly with RPs in a federated scenario. -->
 
-: ソフトウェアの一部を記述する Attribute のリストで Authority によって暗号的に署名されている. Software Statement は, フェデレーションシナリオの RP で最も一般的に使用される.
+: ソフトウェアの一部を記述する Attribute のリストで Authority によって暗号的に署名されている. Software Statement は, Federation シナリオの RP で最も一般的に使用される.
 
 Special Publication (SP)
 <!-- : A type of publication issued by NIST. Specifically, the SP 800-series reports on the Information Technology Laboratory's research, guidelines, and outreach efforts in computer security, and its collaborative activities with industry, government, and academic organizations. -->
@@ -859,12 +859,12 @@ Usability
 Validation
 <!-- : The process or act of checking and confirming that the evidence and attributes supplied by an applicant are authentic, accurate and associated with a real-life identity. Specifically, evidence validation is the process or act of checking that presented evidence is authentic, current, and issued from an acceptable source; attribute validation is the process or act of confirming the a set of attributes are accurate and associated with a real-life identity. -->
 
-: 申請者から提供された証拠および Attribute が本物であり, 正確であり, 現実の Identity と関連していることをチェックし確認するプロセスまたは行為. 具体的には,  Evidence Validation とは, 提示された証拠が本物であり, 最新で許容されるソースから発行されたものであることを確認するプロセスまたは行為であり, Attribute Validation とは, 一連の Attribute が正確で, 現実の身元に関連していることを確認するプロセスまたは行為.
+: Applicant から提供された証拠および Attribute が本物であり, 正確であり, 現実の Identity と関連していることをチェックし確認するプロセスまたは行為. 具体的には,  Evidence Validation とは, 提示された証拠が本物であり, 最新で許容されるソースから発行されたものであることを確認するプロセスまたは行為であり, Attribute Validation とは, 一連の Attribute が正確で, 現実の身元に関連していることを確認するプロセスまたは行為.
 
 Verification
 <!-- : The process or act of confirming that the applicant holds the claimed identity represented by the validated identity attributes and associated evidence. In NIST SP 800-63, the term "verification" is synonymous with "identity verification." -->
 
-: 申請者が, 検証された Identity Attribute および関連する証拠によって表される Claimed Identity を保持していることを確認するプロセスまたは行為. NIST SP 800-63 では, "Verification" という用語は "Identity Verification" と同義である. 
+: Applicant が, 検証された Identity Attribute および関連する証拠によって表される Claimed Identity を保持していることを確認するプロセスまたは行為. NIST SP 800-63 では, "Verification" という用語は "Identity Verification" と同義である. 
 
 Verifier
 <!-- : An entity that verifies the claimant's identity by verifying the claimant's possession and control of one or more authenticators using an authentication protocol. To do this, the verifier needs to confirm the binding of the authenticators with the subscriber account and check that the subscriber account is active. -->
