@@ -633,7 +633,7 @@ Practice Statement
 Predictability
 <!-- : Per [[NISTIR8062]](sec8_references.md#ref-NISTIR8062): Enabling reliable assumptions by individuals, owners, and operators about PII and its processing by an information system. -->
 
-: [NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: 個人, 所有者, 事業者によるPIIに関する信頼性の高い仮定と, それを情報システムで処理することを可能とすること.
+: [NISTIR8062]](sec8_references.md#ref-NISTIR8062)より: 個人, 所有者, 事業者に対して, PII および PII に対して情報システムが行う処理に関する信頼性の高い仮定を可能とすること.
 
 Private Key
 <!-- : The secret part of an asymmetric key pair that is used to digitally sign or decrypt data. -->
