@@ -16,7 +16,7 @@ section: 4
 
 <!-- The SP 800-63 guidelines use digital identity models that reflect technologies and architectures currently available in the market. These models have a variety of entities and functions and vary in complexity. Simple models group functions, such as creating subscriber accounts and providing attributes, under a single entity. More complex models separate these functions among a larger number of entities. The entities and their associated functions found in digital identity models include: -->
 
-SP 800-63 ガイドラインでは, 現在市場で入手可能な技術およびアーキテクチャを反映した Digital Identity モデルが使用されている. これらのモデルにはさまざまな主体および機能があり, 複雑さもさまざまである. 単純なモデルは, Subscriber アカウントの作成および Attribute の提供などの機能を 1 つの主体の下にグループ化する. より複雑なモデルでは, これらの機能をより多くの主体に分割している. Digital Identity モデルに見られる主体およびその関連機能には, 以下のものがある. 
+SP 800-63 ガイドラインでは, 現在市場で入手可能な技術およびアーキテクチャを反映した Digital Identity モデルが使用されている. これらのモデルにはさまざまな主体および機能があり, 複雑さもさまざまである. 単純なモデルは, Subscriber Account の作成および Attribute の提供などの機能を 1 つの主体の下にグループ化する. より複雑なモデルでは, これらの機能をより多くの主体に分割している. Digital Identity モデルに見られる主体およびその関連機能には, 以下のものがある. 
 
 **Subject** (represented by one of three roles):
 
@@ -30,15 +30,15 @@ SP 800-63 ガイドラインでは, 現在市場で入手可能な技術およ�
 
 <!-- **Credential Service Provider (CSP)**: A trusted entity whose functions include identity proofing applicants to the identity service and the registration of authenticators to subscriber accounts. A _subscriber account_ is the CSP's established record of the subscriber, the subscriber's attributes, and associated authenticators. A CSP may be an independent third party. -->
 
-**Credential Service Provider (CSP)**: Identity サービスへの申請者の Identity Proofing ,および Subscriber アカウントへの Authenticator の登録を含む機能を持つ, 信頼された主体. _Subscriber アカウント_ は, Subscriber, Subscriber の Attribute , および関連する Authenticator に関する CSP の確立された記録である. CSP は, 独立したサード・パーティである場合もある. 
+**Credential Service Provider (CSP)**: Identity サービスへの申請者の Identity Proofing ,および Subscriber Account への Authenticator の登録を含む機能を持つ, 信頼された主体. _Subscriber Account_ は, Subscriber, Subscriber の Attribute , および関連する Authenticator に関する CSP の確立された記録である. CSP は, 独立したサード・パーティである場合もある. 
 
 <!-- **Relying Party (RP)**: An entity that relies upon the information in the subscriber account, or an identity provider (IdP) assertion when using federation, typically to process a transaction or grant access to information or a system. -->
 
-**Relying Party (RP)**: 通常, Transaction を処理し, 情報またはシステムへのアクセスを許可するために, Subscriber アカウントの情報, または Federation を使用する場合の Identity Provider (IdP) Assertion に従属する主体.
+**Relying Party (RP)**: 通常, Transaction を処理し, 情報またはシステムへの Access を許可するために, Subscriber Account の情報, または Federation を使用する場合の Identity Provider (IdP) Assertion に依存する主体.
 
 <!-- **Verifier**: An entity whose function is to verify the claimant's identity by verifying the claimant's possession and control of one or more authenticators using an authentication protocol. To do this, the verifier needs to confirm the binding of the authenticators with the subscriber account and check that the subscriber account is active. -->
 
-**Verifier**: Authentication Protocol を使用して, Claimant が1 つまたは複数の Authenticator を所有および管理していることを検証することにより, Claimant の身元を確認する機能を有する主体. これを行うには, Verifier は Authenticator と Subscriber アカウントの紐づきを確認し, Subscriber アカウントがアクティブであることを確認する必要がある. 
+**Verifier**: Authentication Protocol を使用して, Claimant が1 つまたは複数の Authenticator を所有および管理していることを検証することにより, Claimant の身元を確認する機能を有する主体. これを行うには, Verifier は Authenticator と Subscriber Account の紐づきを確認し, Subscriber Account がアクティブであることを確認する必要がある. 
 
 <!-- **Identity Provider (IdP)**: An entity in a federated model that performs both the CSP and Verifier functions. The IdP is responsible for authenticating the subscriber and issuing assertions to communicate with one or more RPs. -->
 
@@ -69,7 +69,7 @@ Non-federated Digital Identity モデルを構成する主体および相互作�
      *	A subscriber account and corresponding authenticators are established between the CSP and the subscriber. The CSP maintains the subscriber account, its status, and the enrollment data. The subscriber maintains their authenticators.
 -->
 
-     * Subscriber アカウントおよび対応する Authenticator は, CSP と Subscriber の間で確立される. CSP は Subscriber アカウント, そのステータス, および Enrollment データを維持する. Subscriber は自分の Authenticator を保持する. 
+     * Subscriber Account および対応する Authenticator は, CSP と Subscriber の間で確立される. CSP は Subscriber Account, そのステータス, および Enrollment データを維持する. Subscriber は自分の Authenticator を保持する. 
 
  <!-- The usual sequence of interactions involved in using one or more authenticators to perform digital authentication in the non-federated model is as follows: -->
 
@@ -88,12 +88,12 @@ Non-federated モデルにおいて, 1つまたは複数の Authenticator を使
     -  The CSP or verifier functions of the service provider provide information about the subscriber. The RP requests the attributes it requires from the CSP. The RP, optionally, uses this information to make authorization decisions.
 -->
 
-    - Verifier は CSP とやり取りして, Claimant の身元と Subscriber アカウントの Authenticator の結びつきを検証し, オプションで追加の Subscriber Attribute を取得する. 
+    - Verifier は CSP とやり取りして, Claimant の身元と Subscriber Account の Authenticator の結びつきを検証し, オプションで追加の Subscriber Attribute を取得する. 
     - サービスプロバイダの CSP または Verifier の機能は, Subscriberに関する情報を提供する. RP は, 必要とする Attribute を CSP に要求する. RPは, オプションとして, この情報を使用して Authorization の決定を行う. 
 
 <!-- - Step 5: An authenticated session is established between the subscriber and the RP. -->
 
-- Step 5: Subscriber と RP の間に Authentication されたセッションが確立される. 
+- Step 5: Subscriber と RP の間に Authentication された Session が確立される. 
 
 [Figure 2. Federated Digital Identity Model Example](sec4_model.md#fig-63Sec4-Figure2){:name="fig-2"}
 {:latex-ignore="true"}
@@ -110,13 +110,13 @@ Non-federated モデルにおいて, 1つまたは複数の Authenticator を使
 
 <!-- - Step 2: Upon successful proofing, the applicant is enrolled in the identity service as a subscriber. -->
 
-- Step 2: Proofing に成功すると, Applicant はIDサービスに Subscriber として Enrollment される. 
+- Step 2: Proofing に成功すると, Applicant は Identity サービスに Subscriber として Enrollment される. 
 
 <!--
     -	A subscriber account and corresponding authenticators are established between the IdP and the subscriber. The IdP maintains the subscriber account, its status, and the enrollment data collected for the lifetime of the subscriber account (at a minimum). The subscriber maintains their authenticators.
 -->
 
-    -	Subscriber アカウントと対応する Authenticator は, IdP と Subscriber の間で確立される. IdP は, Subscriber アカウントとその状態, および収集した Enrollment データを Subscriber アカウントの存続期間中（最低限）保持する. Subscriber は Authenticator を保持する. 
+    -	Subscriber Account と対応する Authenticator は, IdP と Subscriber の間で確立される. IdP は, Subscriber Account とその状態, および収集した Enrollment データを Subscriber Account の存続期間中（最低限）保持する. Subscriber は Authenticator を保持する. 
 
 <!-- The usual sequence of interactions involved in using one or more authenticators in the federated model to perform digital authentication is as follows: -->
 
@@ -134,7 +134,7 @@ Federated モデルで1つ以上の Authenticator を使用してデジタル Au
     -	Within the IdP, the verifier and CSP functions interact to verify the binding of the claimant's authenticators with those bound to the claimed subscriber account and optionally to obtain additional subscriber attributes.
 -->
 
-    -	IdP 内では, Verifier と CSP の機能が相互に作用し, Claimant の Authenticator と Claimed Subscriber アカウントにバインドされている Authenticator のバインドを検証し, オプションとして追加の Subscriber Attribute を取得する. 
+    -	IdP 内では, Verifier と CSP の機能が相互に作用し, Claimant の Authenticator と Claimed Subscriber Account にバインドされている Authenticator のバインドを検証し, オプションとして追加の Subscriber Attribute を取得する. 
 
 <!-- - Step 5: All communication, including assertions, between the RP and the IdP happens through federation protocols. -->
 
@@ -142,7 +142,7 @@ Federated モデルで1つ以上の Authenticator を使用してデジタル Au
 
 <!-- - Step 6: The IdP provides the RP with the authentication status of the subscriber and relevant attributes and an authenticated session is established between the subscriber and the RP. -->
 
-- Step 6: IdP は RP に Subscriber の Authentication の状況と, 関連する Attribute を提供し, Subscriber と RP の間で Authentication されたセッションが確立される. 
+- Step 6: IdP は RP に Subscriber の Authentication の状況と, 関連する Attribute を提供し, Subscriber と RP の間で Authentication された Session が確立される. 
 
 <!-- For both models, the verifier does not always need to communicate in real time with the CSP to complete the authentication activity (e.g., some uses of digital certificates). Therefore, the line between the verifier and the CSP represents a logical link between the two entities. In some implementations, the verifier, RP, and CSP functions may be distributed and separated. However, if these functions reside on the same platform, the interactions between the functions are signals between applications or application modules running on the same system rather than using network protocols. -->
 
@@ -172,7 +172,7 @@ Federated モデルで1つ以上の Authenticator を使用してデジタル Au
 
 <!-- The CSP then establishes a subscriber account to uniquely identify each subscriber and record any authenticators registered (bound) to that subscriber account. The CSP may: -->
 
-次に, CSP は, 各 Subscriber を一意に識別する Subscriber アカウントを確立し, その Subscriber アカウントに登録（バインド）されたすべての Authenticator を記録する. CSP は, 以下を行うことができる. 
+次に, CSP は, 各 Subscriber を一意に識別する Subscriber Account を確立し, その Subscriber Account に登録（バインド）されたすべての Authenticator を記録する. CSP は, 以下を行うことができる. 
 
 <!--
   - issue one or more authenticators to the subscriber at the time of enrollment,
@@ -182,11 +182,11 @@ Federated モデルで1つ以上の Authenticator を使用してデジタル Au
 
   - Enrollment 時に, 1つ以上の Authenticator を Subscriber に発行する. 
   - Subscriber より提供された Authenticator をバインドする, および／または
-  - 必要に応じて, 後日, Subscriber アカウントに Authenticator をバインドする. 
+  - 必要に応じて, 後日, Subscriber Account に Authenticator をバインドする. 
 
 <!-- CSPs generally maintain subscriber accounts according to a documented lifecycle, which defines specific events, activities, and changes that affect the status of a subscriber account.  CSPs generally limit the lifetime of a subscriber account and any associated authenticators in order to ensure some level of accuracy and currency of attributes associated with a subscriber.  When there is a status change or when the authenticators near expiration and any renewal requirements are met, they may be renewed and/or re-issued.  Alternately, the authenticators may be invalidated and destroyed according to the CSPs written policy and procedures. -->
 
-CSP は一般に, 文書化されたライフサイクルに従って Subscriber アカウントを維持する. このライフサイクルでは, Subscriber アカウントの状態に影響する特定のイベント, 活動, および変更が定義される. CSP は一般に, Subscriber に関連する Attribute の正確性と最新性をある程度保証するために, Subscriber アカウントおよび関連する Authenticator の有効期間を定める. ステータスに変更があった場合, または Authenticator の有効期限が近づいた場合, および更新要件が満たされた場合, Authenticator は更新および/または再発行されることがある. あるいは, CSP の文書化されたポリシーおよび手続きに従って, Authenticator が無効化され, 破棄されることもある. 
+CSP は一般に, 文書化されたライフサイクルに従って Subscriber Account を維持する. このライフサイクルでは, Subscriber Account の状態に影響する特定のイベント, 活動, および変更が定義される. CSP は一般に, Subscriber に関連する Attribute の正確性と最新性をある程度保証するために, Subscriber Account および関連する Authenticator の有効期間を定める. ステータスに変更があった場合, または Authenticator の有効期限が近づいた場合, および更新要件が満たされた場合, Authenticator は更新および/または再発行されることがある. あるいは, CSP の文書化されたポリシーおよび手続きに従って, Authenticator が無効化され, 破棄されることもある. 
 
 <!-- Subscribers have a duty to maintain control of their authenticators and comply with CSP policies in order to remain in good standing with the CSP. -->
 
@@ -226,8 +226,8 @@ Authentication システムの古典的パラダイムでは, 3つの要素を A
 * Something you have (e.g., an ID badge or a cryptographic key)
 * Something you are (e.g., a fingerprint or other biometric characteristic data) -->
 
-* Something you know (例: パスワード)
-* Something you have (例: IDカード, 暗号鍵)
+* Something you know (例: Password)
+* Something you have (例: IDカード, Cryptographic Key)
 * Something you are (例: 指紋またはその他の Biometric 特有のデータ)
 
 <!-- Single-factor authentication requires only one of the above factors, most often "something you know". Multiple instances of the same factor still constitute single-factor authentication. For example, a user generated PIN and a password do not constitute two factors as they are both "something you know." Multi-factor authentication (MFA) refers to the use of more than one distinct factor. For the purposes of these guidelines, using two factors is adequate to meet the highest security requirements. Other types of information, such as location data or device identity, may also be used by a verifier to evaluate the risk in a claimed identity but they are not considered authentication factors. -->
@@ -236,32 +236,32 @@ Single-factor Authentication は, 上記の要素のうち1つだけを必要と
 
 <!-- In digital authentication, the claimant possesses and controls one or more authenticators. The authenticators will have been bound with the subscriber account. The authenticators contain secrets the claimant can use to prove they are a legitimate subscriber. The claimant authenticates to a system or application over a network by demonstrating they have possession and control of the authenticator. Once authenticated, the claimant is referred to as a subscriber. -->
 
-Digital Authentication では, Claimant は1つまたは複数の Authenticator を保持, 管理する. Authenticator は Subscriber アカウントにバインドされている. Authenticator には, Claimant が正当な Subscriber であることを証明するために使用できる Secret が含まれている. Claimantは, Authenticator を所有し管理していることを証明することにより, ネットワーク上のシステムまたはアプリケーションに対して Authenticate を行う. Authenticate されると, Claimantは Subscriber と呼ばれる. 
+Digital Authentication では, Claimant は1つまたは複数の Authenticator を保持, 管理する. Authenticator は Subscriber Account にバインドされている. Authenticator には, Claimant が正当な Subscriber であることを証明するために使用できる Secret が含まれている. Claimantは, Authenticator を所有し管理していることを証明することにより, ネットワーク上のシステムまたはアプリケーションに対して Authenticate を行う. Authenticate されると, Claimantは Subscriber と呼ばれる. 
 
 <!-- The secrets contained in an authenticator are based on either key pairs (asymmetric cryptographic keys) or shared secrets (including symmetric cryptographic keys and memorized secrets). Asymmetric key pairs are comprised of a public key and a related private key. The private key is stored on the authenticator and is only available for use by the claimant who possesses and controls the authenticators. A verifier that has the subscriber's public key, for example through a public key certificate, can use an authentication protocol to verify the claimant has possession and control of the associated private key contained in the authenticators and, therefore, is a subscriber. -->
 
-Authenticator に含まれる Secret は, Key Pair（asymmetric cryptographic keys）または Shared Secret（ Symmetric Cryptographic Keys, Memorized Secret を含む）のいずれかに基づいている. Asymmetric key pair は, Public Key と関連する Private Key で構成される. Private Key は Authenticator 内に保存され, Authenticator を所有し管理する Claimant のみが使用できる. Public Key Certificate などを通じて Subscriber の Public Key を持つ Verifier は, Authentication プロトコルを使用して Claimant が Authenticator に含まれる関連する Private Key を所有し管理していること, すなわち Subscriber であることを Verify する. 
+Authenticator に含まれる Secret は, Key Pair（Asymmetric Cryptographic Key）または Shared Secret（ Symmetric Cryptographic Keys, Memorized Secret を含む）のいずれかに基づいている. Asymmetric Key Pair は, Public Key と関連する Private Key で構成される. Private Key は Authenticator 内に保存され, Authenticator を所有し管理する Claimant のみが使用できる. Public Key Certificate などを通じて Subscriber の Public Key を持つ Verifier は, Authentication プロトコルを使用して Claimant が Authenticator に含まれる関連する Private Key を所有し管理していること, すなわち Subscriber であることを Verify する. 
 
 <!-- As mentioned above, shared secrets stored on an authenticator may be either symmetric keys or memorized secrets (e.g., passwords and PINs). While both keys and memorized secrets can be used in similar protocols, one important difference between the two is how they relate to the claimant. Symmetric keys are generally chosen at random and are complex and long enough to thwart network-based guessing attacks, and stored in hardware or software that the subscriber controls. Memorized secrets typically have fewer characters and less complexity than cryptographic keys to facilitate memorization and ease of entry. The result is that memorized secrets have increased vulnerabilities that require additional defenses to mitigate. -->
 
-上述したように, Authenticator に格納される Shared secret は, Symmetric Key または Memorized Secret (例えば, パスワードやPIN)のいずれかである可能性がある. Key も Memorized Secret も同様のプロトコルで使用することができるが, 両者の重要な違いの1つは, それらが Claimant にどのように関係するかということである. Symmetric key は一般にランダムに選択され, ネットワークベースの Guessing Attack を阻止するのに十分な複雑さと長さを持ち, Subscriber が管理するハードウェアまたはソフトウェアに格納される. Memorized Secret は, 一般に, 暗記と入力を容易にするために, Cryptographic Key よりも文字数が少なく, 複雑でない. その結果, Memorized Secret は脆弱性が増加し, それを軽減するために追加の防御を必要とする. 
+上述したように, Authenticator に格納される Shared Secret は, Symmetric Key または Memorized Secret (例えば, パスワードやPIN)のいずれかである可能性がある. Symmetric Key も Memorized Secret も同様のプロトコルで使用することができるが, 両者の重要な違いの1つは, それらが Claimant にどのように関係するかということである. Symmetric key は一般にランダムに選択され, ネットワークベースの Guessing Attack を阻止するのに十分な複雑さと長さを持ち, Subscriber が管理するハードウェアまたはソフトウェアに格納される. Memorized Secret は, 一般に, 暗記と入力を容易にするために, Cryptographic Key よりも文字数が少なく, 複雑でない. その結果, Memorized Secret は脆弱性が増加し, それを軽減するために追加の防御を必要とする. 
 
 <!-- There is another type of memorized secret used as an activation factor for a multi-factor authenticator. These are referred to as activation secrets. An activation secret is used to decrypt a stored key used for authentication or is compared against a locally held stored verifier to provide access to the authentication key. In either of these cases, the activation secret remains within the authenticator and its associated user endpoint. An example of an activation secret would be the PIN used to activate a PIV card. -->
 
-Memorized Secret の Activation factor として使用される Memorized Secret には, もう一つのタイプがある. これらは Activation Secret と呼ばれる. Activation Secret は Authentication に使用される保存された Key を復号するために使用されるか, または Authentication Key へのアクセスを提供するためにローカルに保存された Verifier と比較される. いずれの場合も, Activation Secret は, Authenticator とそれに関連するユーザーエンドポイント内に留まる. Activation Secretの例は, PIV カードを Activate するために使用される PIN である. 
+Memorized Secret の Activation Factor として使用される Memorized Secret には, もう一つのタイプがある. これらは Activation Secret と呼ばれる. Activation Secret は Authentication に使用される保存された Key を復号するために使用されるか, または Authentication Key へのアクセスを提供するためにローカルに保存された Verifier と比較される. いずれの場合も, Activation Secret は, Authenticator とそれに関連するユーザーエンドポイント内に留まる. Activation Secretの例は, PIV カードを Activate するために使用される PIN である. 
 
 <!-- As used in these guidelines, authenticators always contain or comprise a secret; however, some authentication methods used for in-person interactions do not apply directly to digital authentication. For example, a physical driver's license is something you have and may be useful when authenticating to a human (e.g., a security guard) but it is not an authenticator for online services. -->
 
-このガイドラインで使用されているように, Authenticator は常に Secret を含むか構成されている. しかし, 対面での対話に使用される Authentication 方法の中には, Digital Authentication に直接適用されないものがある. たとえば, 物理的な運転免許証は, あなたが持っているもの(something you have)であり, 人間（例：警備員）に対して Authentication する場合には有用かもしれないが, オンライン・サービス用の Authenticator とはならない. 
+このガイドラインで使用されているように, Authenticator は常に Secret を含むか Secret を構成している. しかし, 対面での対話に使用される Authentication 方法の中には, Digital Authentication に直接適用されないものがある. たとえば, 物理的な運転免許証は, あなたが持っているもの(something you have)であり, 人間（例：警備員）に対して Authentication する場合には有用かもしれないが, オンライン・サービス用の Authenticator とはならない. 
 
 <!-- Some commonly used authentication methods do not contain or comprise secrets, and are therefore not acceptable for use under these guidelines. For example: -->
 
-一般的に使用されている Authentication 方法の中には, Secret を含まない, あるいは Secret を構成するものがあり, そのため本ガイドラインのもとでは使用できない. 例えば, 以下のようなものである.
+一般的に使用されている Authentication 方法の中には, Secret を含まない, あるいは Secret を構成しないものがあり, そのため本ガイドラインのもとでは使用できない. 例えば, 以下のようなものである.
 
 <!-- -  Knowledge-based authentication, where the claimant is prompted to answer questions that are presumably known only by the claimant, does not constitute an acceptable secret for digital authentication.
 -  A biometric also does not constitute a secret and can not be used as a single-factor authenticator. -->
 
--  Claimant だけが知っていると思われる質問に回答するよう Claimant に促す知識ベース認証は, Digital Authentication の Secret として認められない.
+-  Claimant だけが知っていると思われる質問に回答するよう Claimant に促す知識ベース認証 (Knowledge-Based Authentication) は, Digital Authentication の Secret として認められない.
 -  また, Biometrics は Secret を構成しないため, Single-factor Authenticator として使用することはできない. 
 
 <!-- A digital authentication system may incorporate multiple factors in one of two ways: -->
@@ -276,23 +276,23 @@ Digital Authentication システムは, 以下の2つの方法のどちらかで
 
 <!-- For example, item 1 can be satisfied by pairing a memorized secret (something you know) with an out-of-band device (something you have). Both authenticator outputs are presented to the verifier to authenticate the claimant. For item 2, the authenticator and authenticator secret could be a piece of hardware that contains a cryptographic key (something you have) that is controlled by the claimant where access is protected with a fingerprint (something you are). When used with the biometric factor, the cryptographic key produces an output that is used to authenticate the claimant. -->
 
-例えば, 上記1は Memorized Secret (something you know) を Out-of-band Device (something you have) と組み合わせることで実現可能である. 両方の Authenticator Output が Verifier に提示され, Claimant の Authentication に使われる. 上記2は, Authenticator と Authenticator secret は, Claimant が管理する Cryptographic Key（something you have） を含むハードウェアの一部で, アクセスが指紋（something you are）で保護されているものである. Biometric Factor と共に使用される場合, Cryptographic Key を使って Claimant を Authenticate するための Output が出力される.
+例えば, 上記1は Memorized Secret (something you know) を Out-of-band Device (something you have) と組み合わせることで実現可能である. 両方の Authenticator Output が Verifier に提示され, Claimant の Authentication に使われる. 上記2は, Authenticator と Authenticator Secret は, Claimant が管理する Cryptographic Key（something you have） を含むハードウェアの一部で, Access が指紋（something you are）で保護されているものである. Biometric Factor と共に使用される場合, Cryptographic Key を使って Claimant を Authenticate するための Output が出力される.
 
 <!-- As noted above, biometrics do not constitute acceptable secrets for digital authentication and, therefore, cannot be used for single-factor authentication. However, biometrics authentication can be used as an authentication factor for multi-factor authentication when used in combination with a possession-based authenticator. Biometric characteristics are unique, personal attributes that can be used to verify the identity of a person who is physically present at the point of verification. This includes, but is not limited to, facial features, fingerprints, iris patterns, and voiceprints. -->
 
-上述のとおり, Biometricsは, Digital Authentication で利用可能なシークレットとはならないため, Single-factor Authentication に使用することはできない. しかし, Biometrics Authentication は, 所持ベースの Authenticator と組み合わせて使用する場合, Multi-factor Authentication の Authentication factor として使用することができる. Biometric 特性は, verification の時点で物理的に存在する人の Identity を確認するために使用できる, 固有の個人の Attribute である. これには, 顔の特徴, 指紋, 虹彩パターン, および声紋が含まれるが, これらに限定されない. 
+上述のとおり, Biometricsは, Digital Authentication で利用可能なシークレットとはならないため, Single-factor Authentication に使用することはできない. しかし, Biometrics Authentication は, 所持ベースの Authenticator と組み合わせて使用する場合, Multi-factor Authentication の Authentication Factor として使用することができる. Biometric 特性は, Verification の時点で物理的に存在する人の Identity を確認するために使用できる, 固有の個人の Attribute である. これには, 顔の特徴, 指紋, 虹彩パターン, および声紋が含まれるが, これらに限定されない. 
 
 ### Subscriber Accounts
 
 <!-- As described in the preceding sections, a subscriber account binds one or more authenticators to the subscriber via an identifier as part of the registration process. A subscriber account is created, stored, and maintained by the CSP. The subscriber account records all identity attributes validated during the identity proofing process. -->
 
-前節で説明したように, Subscriber アカウントは, 登録プロセスの一部として, Identifier を介して, 1つ以上の Authenticator を Subscriber にバインドする. Subscriber アカウントは, CSP によって作成, 保存, および維持される. Subscriber アカウントは, Identity Proofing プロセス中に検証されたすべての Identity Attribute を記録する. 
+前節で説明したように, Subscriber Account は, 登録プロセスの一部として, Identifier を介して, 1つ以上の Authenticator を Subscriber にバインドする. Subscriber Account は, CSP によって作成, 保存, および維持される. Subscriber Account は, Identity Proofing プロセス中に検証されたすべての Identity Attribute を記録する. 
 
 ### Authentication Process
 
 <!-- The authentication process enables an RP to trust that a claimant is who they say they are. [Figure 4](sec4_model.md#fig-4) shows a sample authentication process. Other approaches are described in [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}, *Authentication and Lifecycle Management*. This sample authentication process shows interactions between the RP, a claimant, and a verifier/CSP. The verifier is a functional role and is frequently implemented in combination with the CSP, as shown in [Fig. 4](sec4_model.md#fig-4), the RP, or both. -->
 
-Authentication プロセスにより, RPは Claimant が本人であることを信頼することができる. [Figure 4](sec4_model.md#fig-4)は Authentication プロセスの例を示している. その他のアプローチについては, [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}, *Authentication and Lifecycle Management* で説明されてる. このサンプル Authentication プロセスは, RP, Claimant,および Verifier / CSPの間のインタラクションを示す. Verifier は機能的な役割であり, [Fig. 4](sec4_model.md#fig-4) に示すように, CSP と組み合わせて実装されることが多いが, RP と組み合わせてもよい. 
+Authentication プロセスにより, RPは Claimant による自分こそ本人であるという主張を信頼することができる. [Figure 4](sec4_model.md#fig-4)は Authentication プロセスの例を示している. その他のアプローチについては, [[SP800-63B]](../_sp800-63b/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63B"}, *Authentication and Lifecycle Management* で説明されてる. このサンプル Authentication プロセスは, RP, Claimant,および Verifier / CSPの間のインタラクションを示す. Verifier は機能的な役割であり, [Fig. 4](sec4_model.md#fig-4) に示すように, CSP と組み合わせて実装されることが多いが, RP と組み合わせてもよい. 
 
 [Figure 4. Sample Authentication Process](sec4_model.md#fig-4){:name="fig-4"}
 {:latex-ignore="true"}
@@ -347,7 +347,7 @@ SP 800-63 ガイドラインは, 組織が選択する Identity Proofing, Authen
 
 1. 想定される利用者が, 要求されたAAL以上の Authenticator をすでに持っている. 
 2. 想定されるすべてのユーザーコミュニティをカバーするためには複数のタイプの Authenticator が必要. 
-3. 組織に, Subscriber アカウントの管理をサポートするための必要なインフラがない（例：アカウントの回復, Authenticator の発行, ヘルプデスクなど）. 
+3. 組織に, Subscriber Account の管理をサポートするための必要なインフラがない（例：アカウントの回復, Authenticator の発行, ヘルプデスクなど）. 
 4. RP の実装を変更することなく, プライマリ Authenticator の追加やアップグレードが可能であることが望まれる. 
 5. Federation Protocol がネットワークベースであり, 様々なプラットフォームや言語での実装が可能であるため, サポートすべき環境が異なる. 
 6. 想定される利用者は複数のコミュニティから集まっており, それぞれが既存の Identity インフラを持っている. 
@@ -363,11 +363,11 @@ SP 800-63 ガイドラインは, 組織が選択する Identity Proofing, Authen
 4. The organization is not the authoritative source or issuing source for required attributes.
 5. Attributes are only required temporarily during use (such as to make an access decision), and the organization does not need to retain the data. -->
 
-1. Pseudonymity が, サービスにアクセスする利害関係者に要求される, 必要である, 実行可能である, または重要である. 
-2. サービスへのアクセスには, 一部の Attribute リストが必要. 
-3. サービスにアクセスするためには, 少なくとも1つの Derived Attribute Value が必要. 
+1. Pseudonymity が, サービスに Access する利害関係者に要求される, 必要である, 実行可能である, または重要である. 
+2. サービスへの Access には, 一部の Attribute リストが必要. 
+3. サービスに Access するためには, 少なくとも1つの Derived Attribute Value が必要. 
 4. 組織は, 要求された Attribute の Authoritative Source または Issuing Source ではない. 
-5. Attribute は使用時（アクセス判断など）に一時的に必要となるだけで, 組織がデータを保持する必要はない. 
+5. Attribute は使用時（Access 判断など）に一時的に必要となるだけで, 組織がデータを保持する必要はない. 
 
 ### Federation Benefits
 
@@ -381,10 +381,10 @@ Federated アーキテクチャには, 以下のような多くの重要な利�
 * Minimizing data exposed to applications, using pseudonymous identifiers and derived attribute values instead of copying account values to each application.
 * Mission enablement: Organizations can focus on their mission without worrying about expending resources on identity management. -->
 
-* ユーザーエクスペリエンスの向上. 例えば, ある個人が一度 Identity proofing すれば, 複数の RP でその Subscriber アカウントを再利用することができる. 
+* ユーザーエクスペリエンスの向上. 例えば, ある個人が一度 Identity proofing すれば, 複数の RP でその Subscriber Account を再利用することができる. 
 * ユーザー（ Authenticator の削減）と組織（情報技術インフラの削減）双方にとってのコスト削減. 
 * 組織が Personal Information を収集, 保管, 廃棄する必要がないため, アプリケーションのデータを最小化できる. 
-* アカウントの Value を各アプリケーションにコピーするのではなく, Pseudonymous Identifier や Derived Attribute Value を使用することで, アプリケーションに公開するデータを最小化できる. 
+* アカウントに保存されたそのものの値を各アプリケーションにコピーするのではなく, Pseudonymous Identifier や Derived Attribute Value を使用することで, アプリケーションに公開するデータを最小化できる. 
 * ミッションの実現: 組織は, Identity Management へのリソースの拡大を気にすることなく, ミッションに集中することができる. 
 
 <!-- The following sections discuss the components of a federated identity architecture should an organization elect this type of model. -->
@@ -399,7 +399,7 @@ Federation プロトコルでは, ネットワークシステム間で Assertion
 
 <!-- Federation is generally used when the RP and the IdP are not a single entity or are not under common administration, though this technology can be applied within a single security domain for a variety of reasons. The RP uses the information in the assertion to identify the subscriber and make authorization decisions about their access to resources controlled by the RP. -->
 
-Federation は, 一般に RP と IdP が単一のエンティティでない場合, または共通の管理下にない場合に使用されるが, さまざまな理由から単一のセキュリティドメイン内でこの技術を適用することができる. RP は, Assertion 内の情報を使用して Subscriber を識別し, RP が管理するリソースへのアクセスに関する Authorization の決定を行う. 
+Federation は, 一般に RP と IdP が単一のエンティティでない場合, または共通の管理下にない場合に使用されるが, さまざまな理由から単一のセキュリティドメイン内でこの技術を適用することができる. RP は, Assertion 内の情報を使用して Subscriber を識別し, RP が管理するリソースへの Access に関する Authorization の決定を行う. 
 
 <!-- Examples of assertions include: -->
 
@@ -410,7 +410,7 @@ Assertion の例を以下に挙げる.
 * Kerberos tickets allow a ticket-granting authority to issue session keys to two authenticated parties using symmetric or asymmetric key establishment schemes. -->
 
 * Security Assertion Markup Language (SAML) Assertion はセキュリティー Assertion を記述するためのマークアップランゲージによって規定される. SAML Assertion は Verifier が RP に対して Claimant の Identity に関するステートメントを生成するために利用される. SAML Assertion にはデジタル署名が施されることもある.
-* OpenID Connect Claim は, JavaScript Object Notation (JSON) を使ってセキュリティー Claim および任意でユーザー Claim を記述するために規定される. JSON User information Claims にはデジタル署名が施されることもある.
+* OpenID Connect Claim は, JavaScript Object Notation (JSON) を使ってセキュリティー Claim および任意でユーザー Claim を記述するために規定される. JSON User Information Claims にはデジタル署名が施されることもある.
 * Kerberos Ticket は, Ticket-granting Authority が Symmetric または Asymmetric Key ベースの Key Establishment Schemes を利用し, 2つの Authenticated な主体 にSession Key を発行することを可能にする.
 
 ### Relying Parties
@@ -421,4 +421,4 @@ RP は, オンライン Transaction を行うために, Authentication Protocol 
 
 <!-- When using federation, the verifier is not a function of the RP. A federated RP receives an assertion from the IdP, which provides the verifier function, and the RP ensures that the assertion came from an IdP that is trusted by the RP. The RP also processes any additional information in the assertion, such as personal attributes or expiration times. The RP is the final arbiter concerning whether a specific assertion presented by a verifier meets the RP's established criteria for system access regardless of IAL, AAL, or FAL. -->
 
-Federation を使用する場合, Verifierは RP の機能ではない. Federation を利用する RP は, Verifierを提供する IdP から Assertion を受け取り, RP が信頼する IdP からアサーションが来たことを確認する. RP は, Assertion に含まれる Personal Attribute や有効期限などの追加情報も処理する. RP は Verifier から提示された特定の Assertion が, IAL, AAL, FAL にかかわらず, RP の確立したシステムアクセスの基準を満たしているかどうかを最終的に判断する.
+Federation を使用する場合, Verifierは RP の機能ではない. Federation を利用する RP は, Verifier 機能を提供する IdP から Assertion を受け取り, その Assertion が RP の信頼する IdP から来たことを確認する. RP は, Assertion に含まれる Personal Attribute や有効期限などの追加情報も処理する. RP は, Verifier から提示された特定の Assertion が, IAL, AAL, FAL にかかわらず, RP の確立したシステム Access の基準を満たしているかどうかを判断する最終裁定者となる.
