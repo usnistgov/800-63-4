@@ -694,7 +694,7 @@ Public Key
 Public Key Certificate
 <!-- : A digital document issued and digitally signed by the private key of a certificate authority that binds an identifier to a subscriber to a public key. The certificate indicates that the subscriber identified in the certificate has sole control and access to the private key. See also [[RFC5280]](sec8_references.md#ref-RFC5280). -->
 
-: Certificate Authority によって発行され, Certificate Authority の秘密鍵でデジタル署名された電子文書. Public Key Certificate により Subscriber の識別子が Public Key と紐づけられる. 当該 Certificate により識別される Subscriber のみが Private Key の管理および Access を持っていることが暗示される. [[RFC5280]](sec8_references.md#ref-RFC5280) も参照のこと.
+: Certificate Authority によって発行され, Certificate Authority の Private Key でデジタル署名された電子文書. Public Key Certificate により Subscriber の識別子が Public Key と紐づけられる. 当該 Certificate により識別される Subscriber のみが Private Key の管理および Access を持っていることが暗示される. [[RFC5280]](sec8_references.md#ref-RFC5280) も参照のこと.
 
 Public Key Infrastructure (PKI)
 <!-- : A set of policies, processes, server platforms, software, and workstations used for the purpose of administering certificates and public-private key pairs, including the ability to issue, maintain, and revoke public key certificates. -->
