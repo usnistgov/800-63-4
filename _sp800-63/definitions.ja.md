@@ -200,7 +200,7 @@ Authorize
 Authorized Party
 <!-- : In federation, the organization, person, or entity that is responsible for making decisions regarding the release of information within the federation transaction, most notably subscriber attributes. This is often the subscriber (when runtime decisions are used) or the party operating the IdP (when allowlists are used). -->
 
-: Federation において, Federation トランザクション内で情報（特に Subscriber Attribute ）の公開に関する決定を行う責任を負う組織, 人, または実体. これは, 多くの場合, Subscriber（実行時決定が使用される場合）または IdP を操作する当事者（ Allowlist が使用される場合）.
+: Federation において, Federation Transaction 内で情報（特に Subscriber Attribute ）の公開に関する決定を行う責任を負う組織, 人, または実体. これは, 多くの場合, Subscriber（実行時決定が使用される場合）または IdP を運営する当事者（ Allowlist が使用される場合）.
 
 Back-Channel Communication
 <!-- : Communication between two systems that relies on a direct connection (allowing for standard protocol-level proxies), without using redirects through an intermediary such as a browser. This can be accomplished using HTTP requests and responses. -->
