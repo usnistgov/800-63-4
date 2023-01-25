@@ -129,7 +129,7 @@ Authenticated Protected Channel
 Authentication [](#authentication){:name="authentication"}
 <!-- : The process of determining the validity of one or more authenticators used to claim a digital identity. Authentication establishes that a subject attempting to access a digital service is in control of the technologies used to authenticate. -->
 
-: デジタル ID を表明するために使用される 1 つまたは複数の Authenticator の妥当性を判断するプロセス. Authentication は, デジタル・サービスにアクセスしようとする対象が, 認証に使用される技術の管理下にあることを証明する. 
+: Digital Identity を表明するために使用される 1 つまたは複数の Authenticator の妥当性を判断するプロセス. Authentication は, デジタル・サービスにアクセスしようとする Subject が, Authenticate に使用される技術の管理下にあることを証明する. 
 
 Authentication Factor [](#af){:name="af"}
 <!-- : The three types of authentication factors are *something you know*, *something you have*, and *something you are*. Every authenticator has one or more authentication factors. -->
