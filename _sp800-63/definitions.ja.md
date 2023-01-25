@@ -548,7 +548,7 @@ Nonce
 Offline Attack
 <!-- : An attack where the attacker obtains some data (typically by eavesdropping on an authentication transaction or by penetrating a system and stealing security files) that the attacker is able to analyze in a system of their own choosing. -->
 
-: Attacker が何らかの情報を得る (典型的には Authentication Protocol 中のやりとりを盗聴したり, システムに侵入してセキュリティファイルを盗む) ことで, 対象となるシステムを解析する Attack.
+: Attacker が自身で選択したシステムにおいて解析できるような何らかの情報を得る Attack. (典型的には Authentication Protocol 中のやりとりを盗聴したり, システムに侵入してセキュリティファイルを盗む)
 
 One-to-one (1:1) Comparison
 <!-- : The process in which a biometric sample from an individual is compared to a biometric reference to produce a comparison score. -->
