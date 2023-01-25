@@ -491,7 +491,7 @@ Knowledge-Based Verification (KBV)
 Manageability
 <!-- : Per NISTIR 8062: Providing the capability for granular administration of personally identifiable information, including alteration, deletion, and selective disclosure. -->
 
-: NISTIR 8062より: 個人を特定できる情報の改ざん, 削除, 選択的な開示を含む, きめ細かい管理機能を提供すること. 
+: NISTIR 8062より: 個人を特定できる情報の変更, 削除, 選択的な開示を含む, きめ細かい管理機能を提供すること. 
 
 Memorized Secret
 <!-- : A type of authenticator comprised of a character string intended to be memorized or memorable by the subscriber, permitting the subscriber to demonstrate *something they know* as part of an authentication process. -->
