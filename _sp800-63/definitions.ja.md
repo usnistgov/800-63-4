@@ -475,7 +475,7 @@ Issuing Source
 Kerberos
 <!-- : A widely used authentication protocol developed at MIT. In "classic" Kerberos, users share a secret password with a Key Distribution Center (KDC). The user (Alice) who wishes to communicate with another user (Bob) authenticates to the KDC and the KDC furnishes a "ticket" to use to authenticate with Bob.-->
 
-: MIT で開発された, 幅広く利用されている Authentication Protocol. "classic" な Kerberos では, ユーザは秘密のパスワードを Key Distribution Center (KDC) に共有する. ユーザ Alice は他のユーザ Bob と通信するため KDC に対して Authenticate し, KDC は "ticket" を発行する. 当該チケットは Alice が Bob に対して Authenticate する為に利用する.
+: MIT で開発された, 幅広く利用されている Authentication Protocol. "classic" な Kerberos では, ユーザは秘密の Password を Key Distribution Center (KDC) に共有する. ユーザ Alice は他のユーザ Bob と通信するため KDC に対して Authenticate し, KDC は "ticket" を発行する. 当該チケットは Alice が Bob に対して Authenticate する為に利用する.
 
 <!--
     See [[SP800-63C]](../_sp800-63c/sec1_purpose.md#purpose){:latex-href="#ref-SP800-63C"} Sec. 11.2 for more information.
