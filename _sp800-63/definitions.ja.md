@@ -440,7 +440,7 @@ Identity
 Identity API
 <!-- : An _attribute API_ accessed by an RP for accessing attributes of a specific subscriber. Access to the identity API is generally granted as part of a federation authentication process and limited to the information for a single, specific subscriber. -->
 
-: 特定のSubscriberのAttributeにアクセスするために RP がアクセスする _attribute API_ . Identity API へのアクセスは, 通常, Federation Authenticationプロセスの一部として付与され, 単一の特定のSubscriberの情報に限定される. 
+: 特定のSubscriberのAttributeにアクセスするために RP がアクセスする _Attribute API_ . Identity API へのアクセスは, 通常, Federation Authenticationプロセスの一部として付与され, 単一の特定のSubscriberの情報に限定される. 
 
 Identity Assurance Level (IAL)
 <!-- : A category that conveys the degree of confidence that the applicant's claimed identity is their real identity. -->
