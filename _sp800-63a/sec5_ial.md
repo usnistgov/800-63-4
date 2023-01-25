@@ -256,7 +256,7 @@ For remote or in-person identity proofing, the CSP **SHALL** collect _one_ of th
 2. One piece of STRONG evidence and one piece of FAIR evidence 
 
 
-#### Collection of Additional Attributes
+#### Collection of Attributes
 
 Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all the attributes the CSP considers core attributes, it **MAY** collect attributes that are self-asserted by the applicant. 
 
@@ -323,6 +323,8 @@ The CSP **SHALL** validate the genuineness of each piece of SUPERIOR and STRONG 
 2. The use of technologies that can confirm the integrity of physical security features or detect if the evidence is fraudulent or has been inappropriately modified
 3. If present, confirming the integrity of digital security features
 
+The CSP **SHALL** validate the genuineness of each piece of FAIR evidence by visual inspection by trained personnel.
+
 The CSP **SHALL** validate all core attributes by:
 
 1. Validating the accuracy of attributes (such as account or reference number, name, and date of birth) obtained from pieces of evidence by comparison with authoritative or credible sources, and
@@ -349,7 +351,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 
 ### Notification of Proofing Requirement
 
-Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotices). 
+Upon the successful completion of identity proofing at IAL2, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotifs). 
 
 ## Identity Assurance Level 3 {#IAL3}
 
@@ -406,7 +408,7 @@ The CSP **SHALL** verify the binding of the applicant to the claimed identity by
 
 ### Notification of Proofing Requirement
 
-Upon the successful completion of identity proofing at IAL3, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotices). 
+Upon the successful completion of identity proofing at IAL3, the CSP **SHALL** send a notification of proofing to a validated address for the applicant, as specified in [Sec. 5.1.7](sec5_ial.md#ProofingNotifs). 
 
 ### Biometric Collection
 
