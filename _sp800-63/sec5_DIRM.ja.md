@@ -22,19 +22,19 @@ Digital Identity の Risk Management には4つのステップが存在する.
 
 <!-- 1.	**Conduct Initial Impact Assessment**: In this step, organizations evaluate their user population and assess the impact of a failure of each function in the identity system (i.e., proofing, authentication, and federation) for their protected application or service against a defined set of impact categories. The outcome of this step is a documented set of impact categories and associated impact levels. -->
 
-1.	**初期 Impact Assessment の実施**. このステップでは, 組織はユーザを評価し, 定義された影響カテゴリーのセットに対して, 保護対象のアプリケーションまたはサービスに対する Identity システムの各機能（例えば Proofing, Authentication, Federation）の障害がもたらす影響を評価する. このステップの結果は, 文書化された一連の影響カテゴリーと関連する影響レベルである. 
+1.	**初期 Impact Assessment の実施**. このステップでは, 組織はユーザ母集団を評価し, 定義された影響カテゴリーのセットに対して, 保護対象のアプリケーションまたはサービスに対する Identity システムの各機能（例えば Proofing, Authentication, Federation）の障害がもたらす影響を評価する. このステップの成果は, 文書化された一連の影響カテゴリーと関連する影響レベルである. 
 
 <!-- 2.	**Select Initial Assurance Levels**: In this step, the impact categories and impact levels are evaluated to determine the appropriate assurance levels to protect the application. The outcome of this step is an identified initial level for each applicable xAL. -->
 
-2.	**初期 Assurance Levels の選択**: このステップでは, アプリケーションを保護するための適切な Assurance Level を決定するために, 影響カテゴリーと影響度の評価を行う. このステップの結果は, 該当する各 xAL の特定された初期レベルである. 
+2.	**初期 Assurance Levels の選択**: このステップでは, アプリケーションを保護するための適切な Assurance Level を決定するために, 影響カテゴリーと影響度の評価を行う. このステップの成果は, 該当する各 xAL の特定された初期レベルである. 
 
 <!-- 3.	**Tailor and Document Assurance Level Determinations**: In this step, detailed privacy, equity, usability, and threat assessments are conducted to determine the potential impact of the initially selected assurance level on the specific user population and threat environment of the application. The initial assurance level is tailored, compensating or supplemental controls are identified, and all decisions are documented. The outcome is a Digital Identity Acceptance Statement (see [Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt)) with a defined implementable assurance level. -->
 
-3.	**Assurance Level の決定の調整と文書化**: このステップでは, Privacy, Equity, Usability, 及び脅威に関する詳細なアセスメントを実施し, 最初に選択した Assurance Level が, アプリケーションの特定のユーザ及び脅威環境に与えうる影響を判断する. 最初の Assurance Level は調整され, 補償または補足のコントロールが特定され, すべての決定が文書化される. 成果は, 実装可能な Assurance Level を定義した Digital Identity Acceptance Statement ([Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt) 参照) となる. 
+3.	**Assurance Level の決定の調整と文書化**: このステップでは, Privacy, Equity, Usability, 及び脅威に関する詳細なアセスメントを実施し, 最初に選択した Assurance Level が, アプリケーションの特定のユーザ母集団及び脅威環境に与えうる影響を判断する. 最初の Assurance Level は調整され, 補償または補足のコントロールが特定され, すべての決定が文書化される. 成果は, 実装可能な Assurance Level を定義した Digital Identity Acceptance Statement ([Sec. 5.3.4](sec5_DIRM.md#IDacceptStmt) 参照) となる. 
 
 <!-- 4.	**Continuously Evaluate & Improve**: In this step, information is collected on performance of the identity system across a diverse set of factors based on organization needs and evolving threat vectors. This information is used to determine if the selected assurance level and controls are meeting mission, business, and security needs and to monitor for unintended harms that may have emerged. The outcomes of this step are performance metrics, documented and transparent processes for evaluation and redress, and ongoing improvements to the identity system as needed. -->
 
-4.	**継続的な評価と改善**: このステップでは, 組織のニーズと進化する脅威ベクトルに基づく, 多様な事実に基づく Identity システムのパフォーマンスに関する情報が収集される. この情報は, 選択した Assurance Level およびコントロールがミッション, ビジネス, およびセキュリティのニーズを満たしているかどうかを判断し, 出現した可能性のある意図しない被害を監視するために使用される. このステップの成果は, パフォーマンス指標, 評価および救済のための文書化された透明性のあるプロセス, および必要に応じた Identity システムの継続的な改善である. 
+4.	**継続的な評価と改善**: このステップでは, 組織のニーズと進化する脅威ベクトルに基づく, 多様な事実に基づく Identity システムのパフォーマンスに関する情報が収集される. この情報は, 選択した Assurance Level およびコントロールがミッション, ビジネス, およびセキュリティのニーズを満たしているかどうかを判断し, 生じている可能性のある意図しない被害を監視するために使用される. このステップの成果は, パフォーマンス指標, 評価および救済のための文書化された透明性のあるプロセス, および必要に応じた Identity システムの継続的な改善である. 
 
 <!-- While presented as a “stepwise” approach, there can be many points in the process that require divergence from the sequential order, including the need for iterative cycles between initial task execution and revisiting tasks. For example, the introduction of new regulations or requirements while an assessment is ongoing may require organizations to revisit a step in the process. Additionally new functionality, changes in data usage, and changes to the threat environment may at any point require an organization to revisit steps in the digital identity risk management process. -->
 
@@ -61,7 +61,7 @@ Digital Identity の Risk Management には4つのステップが存在する.
 - Assessing the impact of each type of failure (proofing, authentication, and federation) and the resulting impact level to all affected entities. -->
 
 - 影響を受ける主体の特定,
-- 被害を評価するための一連の影響カテゴリーの特定,
+- 被害を評価する対象となる一連の影響カテゴリーの特定,
 - 影響カテゴリーのそれぞれについて, 潜在的な被害を特定,
 - 障害が発生した場合に, それらの潜在的な被害が与える影響のレベルの特定, ならびに
 - 各タイプの障害（ Proofing, Authentication, Federation ）の影響の評価と, 影響を受けるすべての主体への影響レベルの評価. 
@@ -74,7 +74,7 @@ Digital Identity の Risk Management には4つのステップが存在する.
 
 <!-- When assessing impacts, an organization needs to determine the entities that will be impacted by the application or transaction under consideration. As mentioned earlier in this guideline, it is imperative to consider the impact on different entities resulting from a failure of the digital identity system. Of particular importance is ensuring that the potential impacts to individuals are considered alongside those of the enterprise. -->
 
-影響を評価するとき, 組織は検討中のアプリケーションまたはトランザクションによって影響を受ける主体を決定する必要がある. このガイドラインで前述したように, Digital Identity システムの障害によって生じる異なる主体への影響を考慮することが不可欠である. 特に重要なのは, 個人に対する潜在的な影響が, 企業の影響と並んで考慮することである. 
+影響を評価するとき, 組織は検討中のアプリケーションまたは Transaction によって影響を受ける主体を決定する必要がある. このガイドラインで前述したように, Digital Identity システムの障害によって生じる異なる主体への影響を考慮することが不可欠である. 特に重要なのは, 個人に対する潜在的な影響を, 企業の影響と並んで考慮することである. 
 
 <!-- Accordingly, impact assessments **SHALL** include individuals using the system or application in addition to the organization itself. Additionally, organizations **SHOULD** identify other entities, such as mission partners, communities, and those identified in [[SP800-30]](sec8_references.md#ref-SP800-30), that need to be specifically included based on mission and business needs. At a minimum, agencies **SHALL** document all entities to which impacts will be assessed when conducting their impact analysis. -->
 
@@ -210,7 +210,7 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 
 <!-- > Note: If a failure in the identity system causes no measurable consequences for a category, there is no impact. -->
 
-> 注: Identity システムの障害がカテゴリに測定可能な結果もたらさない場合は影響はない. 
+> 注: Identity システムの障害がカテゴリに測定可能な結果をもたらさない場合は影響はない. 
 
 <!-- Each assurance level, IAL, AAL, and FAL (if accepting or asserting a federated identity) **SHALL** be evaluated separately. Ideally, any evaluation will include different viewpoints such as harm to individuals, the organization, other organizations, and the nation as applicable to successful delivery of the organization's mission. Examples of potential impacts in each of the categories include: -->
 
@@ -248,15 +248,15 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 
 <!-- - **Low**: at worst, a limited release of personal, U.S. government sensitive, or commercially sensitive information to unauthorized parties resulting in a loss of confidentiality with a low impact as defined in [[FIPS199]](sec8_references.md#ref-FIPS199). -->
 
-- **Low**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, 個人情報, 米国政府の機密情報, 商業上の機密情報が権限のない者に限定的に開示され, 影響が少なく機密性が損なわれる場合.
+- **Low**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, Personal Information, 米国政府の機密情報, 商業上の機密情報が権限のない者に限定的に開示され, 影響が少なく機密性が損なわれる場合.
 
 <!-- - **Moderate**: at worst, a release of personal, U.S. government sensitive, or commercially sensitive information to unauthorized parties resulting in loss of confidentiality with a moderate impact as defined in [[FIPS199]](sec8_references.md#ref-FIPS199). -->
 
-- **Moderate**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, 個人情報, 米国政府の機密情報, 商業上の機密情報が不正な者に漏洩し, 機密性が失われ中程度の影響を与える場合.
+- **Moderate**: 最悪の場合で, [[FIPS199]](sec8_references.md#ref-FIPS199) で定義されているように, Personal Information, 米国政府の機密情報, 商業上の機密情報が不正な者に漏洩し, 機密性が失われ中程度の影響を与える場合.
 
 <!-- - **High**: a release of personal, U.S. government sensitive, or commercially sensitive information to unauthorized parties resulting in loss of confidentiality with a high impact as defined in [[FIPS199]](sec8_references.md#ref-FIPS199). -->
 
-- **High**: 個人情報, 米国政府の機密情報, 商業上の機密情報が不正に流出し, [[FIPS199]](sec8_references.md#ref-FIPS199) に定義されているように, 高い影響を与える機密性の喪失をもたらす場合.
+- **High**: Personal Information, 米国政府の機密情報, 商業上の機密情報が不正に流出し, [[FIPS199]](sec8_references.md#ref-FIPS199) に定義されているように, 高い影響を与える機密性の喪失をもたらす場合.
 
 **Damage to or loss of economic stability:**
 
@@ -322,7 +322,7 @@ Digital Transaction の Assurance Level は, [Sec. 5.1.2](sec5_DIRM.md#impactCat
 - The impact of releasing subscriber attributes to the wrong application or system. -->
 
 - 誤った Subject がアプリケーション, システム, またはデータへのアクセスに成功した場合の影響（例: Assertionの侵害や Replay など）. 
-- Subscriber Attribute を誤ったアプリケーションやシステムにリリースした場合の影響. 
+- Subscriber Attribute を誤ったアプリケーションやシステムに開示した場合の影響. 
 
 <!-- Using a worksheet similar to [Table 1](sec5_DIRM.md#table-1) can assist organizations with compiling the information gathered in order to complete the analysis. This kind of analysis would be done for each type of potential failure for identity proofing, authentication, and federation to determine the overall risks to entities interacting with the digital identity system. -->
 
@@ -400,7 +400,7 @@ IAL2 requires identifying attributes to be supported by strong evidence and vali
 -->
 
 **IAL2**:
-IAL2 は, 識別に用いられる属性が強力な証拠によって裏付けられ, Authoritative または信用できる Source によって検証され, Applicant の Claimed Identity を検証するプロセスの使用を必要とする. 
+IAL2 は, 識別に用いられる Attribute が強力な証拠によって裏付けられ, Authoritative または信用できる Source によって検証され, Applicant の Claimed Identity を検証するプロセスの使用を必要とする. 
 
 <!--
 **IAL3**:
@@ -408,7 +408,7 @@ IAL3 requires identifying attributes to be verified by an authorized CSP represe
 -->
 
 **IAL3**:
-IAL3 は, 認定された CSP 担当者が, CSP 担当者との対話型プロセスを使用した物理的な文書の検査を通じて, 識別に用いられる属性を検証することを必要とする. 
+IAL3 は, 認定された CSP 担当者が, CSP 担当者との対話型プロセスを使用した物理的な文書の検査を通じて, 識別に用いられる Attribute を検証することを必要とする. 
 
 #### Authentication Assurance Level
 
@@ -444,7 +444,7 @@ FAL1 allows for the subscriber to log into the RP using an assertion from the Id
 -->
 
 **FAL1**:
-FAL1 は, Subscriber が IdP からの Assertion を使用して RP にログインすることを可能にし, RP はそれが IdP からのものであり, 特定の RP を対象としていることを検証することができる. Assertion は, Attacker による変更や作成から保護されている. IdP と RP の間の信頼関係の合意および登録は, 動的に行うことができる. 
+FAL1 は, Subscriber が IdP からの Assertion を使用して RP にログインすることを可能にし, RP はそれが IdP からのものであり, 特定の RP を対象としていることを検証することができる. Assertion は, Attacker による変更や作成から保護されている. IdP と RP の間の信頼関係の合意 (Trust Agreement) および登録 (Registration) は, 動的に行うことができる. 
 
 <!-- 
 **FAL2**:
@@ -452,7 +452,7 @@ FAL2 adds the requirement that the assertion be robust against injection at the 
 -->
 
 **FAL2**:
-FAL2 では, Assertion が RP でのインジェクションに対して頑強であるという要件が追加される. 一つの手段としては, ブラウザのような仲介者を通さずに, IdP から RP に直接 Assertion を提示することが挙げられる. IdP と RP の間の信頼関係の合意を動的に行うことはできないが, 特定の IdP と RP の動的な登録は実行時に行うことができる. 
+FAL2 では, Assertion が RP でのインジェクションに対して頑強であるという要件が追加される. 一つの手段としては, ブラウザのような仲介者を通さずに, IdP から RP に直接 Assertion を提示することが挙げられる. IdP と RP の間の信頼関係の合意 (Trust Agreement) を動的に行うことはできないが, 特定の IdP と RP の動的な登録 (Dynamic Registration) は実行時に行うことができる. 
 
 <!-- 
 **FAL3**:
@@ -460,7 +460,7 @@ FAL3 adds the requirement that the subscriber authenticate directly to the RP us
 -->
 
 **FAL3**:
-FAL3は, Authentication Assertion の提示とともに, Subscriber にバインドされた Authenticator を使用して RP に直接 Authenticate させるという要件を追加している. この追加 Authenticator の存在により, RPにアクセスする主体が Assertion で識別された主体であることが, RPに対して非常に強く保証される. 信頼関係の合意および登録は, 動的に行うことはできない. 
+FAL3は, Authentication Assertion の提示とともに, Subscriber にバインドされた Authenticator を使用して RP に直接 Authenticate させるという要件を追加している. この追加 Authenticator の存在により, RPにアクセスする主体が Assertion で識別された主体であることが, RPに対して非常に強く保証される. 信頼関係の合意 (Trust Agreement) および登録 (Registration) は, 動的に行うことはできない. 
 
 ### Initial Assurance Level Selection
 
@@ -491,7 +491,7 @@ Identity Proofing は CSP の機能であるため, IALの選択では RP アプ
 
 <!-- When assessing the overall impact level of the RP application, the organization **SHOULD** consider impacts to mission delivery separately from other impact categories. Potential failures in the identity proofing process that could lead to harms in mission delivery should be assessed by the organization to determine if the associated impacts would be mitigated or exacerbated by the implementation of more rigorous identity proofing processes. As such, the organization **MAY** exclude the mission delivery category when initially identifying the overall impact level of the RP application, as these impacts will need to be considered in the tailoring process. -->
 
-RP アプリケーションの全体的な影響レベルを評価する場合, 組織は任務遂行への影響を他の影響カテゴリーとは別に検討するべきである(**SHOULD**). ミッション遂行で被害につながる可能性のある Identity Proofing プロセスの潜在的な失敗は, より厳密な Identity Proofing　プロセスの実装によって関連する影響が緩和または悪化するかどうかを判断するために, 組織で評価する必要がある. そのため, 組織は, RP アプリケーションの全体的な影響レベルを最初に特定する際に, ミッション遂行のカテゴリを除外してもよい(**MAY**).
+RP アプリケーションの全体的な影響レベルを評価する場合, 組織はミッション遂行への影響を他の影響カテゴリーとは別に検討するべきである(**SHOULD**). ミッション遂行で被害につながる可能性のある Identity Proofing プロセスの潜在的な失敗は, より厳密な Identity Proofing　プロセスの実装によって関連する影響が緩和または悪化するかどうかを判断するために, 組織で評価する必要がある. そのため, 組織は, RP アプリケーションの全体的な影響レベルを最初に特定する際に, ミッション遂行のカテゴリを除外してもよい(**MAY**).
 
 <!-- The overall impact level assessed by the organization leads to a preliminary selection of the IAL from which further tailoring may be done: -->
 
@@ -528,7 +528,7 @@ AALを選択することは, RP アプリケーションのオーナーが自ら
 
 <!-- When assessing the overall impact level of the RP application, the organization **SHOULD** consider impacts to mission delivery separately from other impact categories. Potential failures in the authentication process that could lead to harms in mission delivery should be assessed by the organization to determine if the associated impacts would be mitigated or exacerbated by the implementation of more rigorous authentication controls. As such, the organization **MAY** exclude the mission delivery category when initially identifying the overall impact level of the RP application, as these impacts will need to be considered in the tailoring process. -->
 
-RP アプリケーションの全体的な影響レベルを評価する場合, 組織は, ミッションデリバリへの影響を他の影響カテゴリとは別に検討するべきである(**SHOULD**). Authentication プロセスにおける潜在的な失敗がミッション遂行に害を及ぼす可能性がある場合, 組織は, より厳格な Authentication 管理の実施により, 関連する影響が緩和または悪化するかどうかを判断するために評価する必要がある. このため, 組織は, RP アプリケーションの全体的な影響レベルを最初に特定する際に, ミッションデリバリカテゴリーを除外してもよい(**MAY**). 
+RP アプリケーションの全体的な影響レベルを評価する場合, 組織は, ミッション遂行への影響を他の影響カテゴリとは別に検討するべきである(**SHOULD**). Authentication プロセスにおける潜在的な失敗がミッション遂行に害を及ぼす可能性がある場合, 組織は, より厳格な Authentication 管理の実施により, 関連する影響が緩和または悪化するかどうかを判断するために評価する必要がある. このため, 組織は, RP アプリケーションの全体的な影響レベルを最初に特定する際に, ミッション遂行カテゴリーを除外してもよい(**MAY**). 
 
 <!-- The overall impact level assessed by the organization leads to a preliminary selection of the AAL from which further tailoring may be done: -->
 
@@ -557,11 +557,11 @@ FAL は, Authentication プロセスの結果および関連する Identity 情�
 
 <!-- The initial FAL **SHALL** be assessed based on the potential impacts of failures in the presentation or acceptance of assertions in federated identity architectures. Examples of compromise include use of assertion replay to impersonate a valid user or leakage of assertion information through the browser. As described in [Sec. 5.1](sec5_DIRM.md#intlAssess), potential impacts **SHALL** be considered from the perspective of the organization, individuals, other organizations, and the nation, for harms incurred through the use or operation of the RP application, as the level of harm from a failure could vary significantly across these entities. Organizations **SHOULD** consider the worst-case when identifying the overall impact level of the RP application, but may use risk management processes to tailor their initial selection when there are differing impacts. -->
 
-初期の FAL は Federated Identity アーキテクチャにおける Assertion の提示または受け入れにおける失敗の潜在的な影響に基づいて評価されなければならない(**SHALL**). 侵害の例としては, 有効なユーザになりすますための Assertion Replay の使用や, ブラウザを介した Assertion 情報の漏洩がある. [Sec. 5.1](sec5_DIRM.md#intlAssess) に記載されているように, RP アプリケーションの使用または操作によって発生する被害について, 組織, 個人, 他の組織, 国の観点から潜在的な影響を検討しなくてはいけない(**SHALL**). これは, 障害による被害レベルがこれらの主体間で大幅に異なる可能性があるためである. 組織は, RPアプリケーションの全体的な影響レベルを特定する際に, 最悪のケースを考慮すべきであるが, 影響が異なる場合には, Risk Management プロセスを使用して最初の選択を調整することができる. 
+初期の FAL は Federated Identity アーキテクチャにおける Assertion の提示または受け入れにおける失敗の潜在的な影響に基づいて評価されなければならない(**SHALL**). 侵害の例としては, Assertion Replay による有効なユーザへのなりすましや, ブラウザを介した Assertion 情報の漏洩がある. [Sec. 5.1](sec5_DIRM.md#intlAssess) に記載されているように, RP アプリケーションの使用または操作によって発生する被害について, 組織, 個人, 他の組織, 国の観点から潜在的な影響を検討しなくてはいけない(**SHALL**). これは, 障害による被害レベルがこれらの主体間で大幅に異なる可能性があるためである. 組織は, RPアプリケーションの全体的な影響レベルを特定する際に, 最悪のケースを考慮すべきであるが, 影響が異なる場合には, Risk Management プロセスを使用して最初の選択を調整することができる. 
 
 <!-- When assessing the overall impact level of the RP application, the organization **SHOULD** consider impacts to mission delivery separately from other impact categories. Potential failures in federated architectures that could lead to harms in mission delivery **MAY** be assessed by the organization to determine if the associated impacts would be mitigated or exacerbated by the implementation of more rigorous controls by identity providers. As such, the organization may exclude the mission delivery impact category when initially identifying the overall impact level of the RP application, as these impacts will need to be considered in the tailoring process. -->
 
-RP アプリケーションの全体的な影響度を評価する場合, 組織は, ミッションデリバリへの影響を他の影響カテゴリーとは別に検討すべきである(**SHOULD**). ミッションの遂行に害を及ぼす可能性のある Federated アーキテクチャの潜在的な障害は, 組織が評価し, ID プロバイダによるより厳格な管理の実施によって関連する影響が緩和または悪化するかどうかを判断してもよい(**MAY**). このため, 組織は, RP アプリケーションの全体的な影響レベルを最初に特定する際に, ミッション遂行の影響カテゴリーを除外することができる. これらの影響は, 調整プロセスで考慮する必要があるためである. 
+RP アプリケーションの全体的な影響度を評価する場合, 組織は, ミッション遂行への影響を他の影響カテゴリーとは別に検討すべきである(**SHOULD**). ミッションの遂行に害を及ぼす可能性のある Federated アーキテクチャの潜在的な障害は, 組織が評価し, ID プロバイダによるより厳格な管理の実施によって関連する影響が緩和または悪化するかどうかを判断してもよい(**MAY**). このため, 組織は, RP アプリケーションの全体的な影響レベルを最初に特定する際に, ミッション遂行の影響カテゴリーを除外することができる. これらの影響は, 調整プロセスで考慮する必要があるためである. 
 
 <!-- The overall impact level assessed by the organization leads to a preliminary selection of the FAL from which further tailoring may be done: -->
 
@@ -639,7 +639,7 @@ RP アプリケーションの全体的な影響度を評価する場合, 組織
 -	An organization could choose to implement stricter auditing and transactional review processes on a payment application where verification processes using weaker forms of identity evidence were accepted due to availability of evidence in the end-user population. -->
 
 -	連邦機関は, このガイドラインに基づく Authoritative Sources による Identity Evidence の検証要件を補うために,  _Personal Identity Verification_ [[FIPS201]](sec8_references.md#ref-FIPS201) で参照される連邦バックグラウンド調査およびチェックを使用することを選ぶことができる. 
--	組織は, エンドユーザ集団の Evidence が利用可能であるため, 弱い形式の Identity Evidence を使用した検証プロセスが受け入れられた支払アプリケーションについて, より厳しい監査およびトランザクション審査プロセスを実施することを選択できる. 
+-	組織は, エンドユーザ母集団にとって利用可能な Evidence の制約により, より弱い形式の Identity Evidence を使用した検証プロセスを許容している支払アプリケーションについて, より厳しい監査および Transaction 審査プロセスを実施することを選択できる. 
 
 <!-- Where compensating controls are implemented, organizations **SHALL** demonstrate comparability of a chosen alternative or document residual risk incurred by deviating from normative requirements. Organizations **SHALL** implement procedures to document both the justification for any departure from normative requirements and detail the compensating controls employed. The inclusion of compensating controls does not imply that an organization must tailor to a lower xAL. The process of tailoring allows for agencies and service providers to make risk-based decisions in how they implement their xALs and provides a mechanism for documenting and communicating decisions through the Digital Identity Acceptance Statement described in [Sec. 5.3.4](sec5_DIRM.md#IDSupCntrls). -->
 
@@ -693,15 +693,15 @@ Statement には, 最低限, 以下を含めること:
 
 <!-- Threat actors adapt, user expectations and needs shift, and missions evolve. As such, risk assessments and identity solutions are not to be set and forgotten. To maintain pace with the constantly shifting environment in which they operate, organizations **SHOULD** implement a continuous evaluation and improvement program that leverages input from people interacting with the identity system. These programs **SHOULD** consider feedback from application performance metrics, threat intelligence, fraud analytics, assessments of equity impacts, privacy impact analysis, and user inputs. -->
 
-脅威の主体は適応し, ユーザーの期待とニーズは変化し, ミッションは進化する. このように Risk Assessment と Identity ソリューションは, 定められたあとに忘れ去られるものではない. 常に変化する環境に対応するために, 組織は Identity システムとインタラクションする人々からのインプットを活用する継続的な評価および改善プログラムを実施するべきである(**SHOULD**). これらのプログラムは, アプリケーション・パフォーマンス測定基準, 脅威インテリジェンス, 不正分析, Equityへの影響の評価, Privacy 影響分析, およびユーザの入力からのフィードバックを考慮すべきである(**SHOULD**).
+脅威をもたらす主体は適応し, ユーザーの期待とニーズは変化し, ミッションは進化する. このように Risk Assessment と Identity ソリューションは, 定められたあとに忘れ去られるものではない. 常に変化する環境に対応するために, 組織は Identity システムとインタラクションする人々からのインプットを活用する継続的な評価および改善プログラムを実施するべきである(**SHOULD**). これらのプログラムは, アプリケーション・パフォーマンス測定基準, 脅威インテリジェンス, 不正分析, Equityへの影響の評価, Privacy 影響分析, およびユーザの入力からのフィードバックを考慮すべきである(**SHOULD**).
 
 ## Cyber, Fraud, and Identity Program Integrity
 
 <!-- Typically, identity solutions are the front door for a critical business or service function. Accordingly, they should not operate in a vacuum. Close coordination of identity functions with cybersecurity teams, threat intelligence teams, and program integrity teams can enable a more complete protection of business capabilities, while constantly improving identity solution capabilities. For example, payment fraud data collected by program integrity teams could provide indicators of compromised subscriber accounts and potential weaknesses in identity proofing implementations. Similarly, threat intelligence teams may receive indication of new TTPs that may impact identity proofing, authentication, and federation processes. Organizations **SHOULD** establish consistent mechanisms for the exchange of information between critical security and fraud stakeholders. -->
 
-通常, Identity ソリューションは, 重要なビジネスまたはサービス機能のフロントドアである. したがって, 孤立した状態で運用するべきではない. Identity 機能をサイバーセキュリティ・チーム, 脅威インテリジェンス・チーム, およびプログラム・インテグリティ・チームと緊密に連携させることにより, ビジネス機能をより完全に保護し Identity ソリューション機能を常に向上させることができる. たとえば, プログラム・インテグリティ・チームが収集した不正支払のデータは, 漏洩した Subscriber アカウントおよび Identity Proofing の実装における潜在的な弱点の指標を提供することができる. 同様に, 脅威インテリジェンス・チームは, Identity Proofing, Authentication, および Federationプロセスに影響を与える可能性のある新しい TTP の兆候を受け取ることができる. 組織は, 重要なセキュリティおよび不正行為の関係者間で情報を交換するための一貫したメカニズムを確立するべきである(**SHOULD**). 
+通常, Identity ソリューションは, 重要なビジネスまたはサービス機能のフロントドアである. したがって, 孤立した状態で運用するべきではない. Identity 機能をサイバーセキュリティ・チーム, 脅威インテリジェンス・チーム, およびプログラム・インテグリティ・チームと緊密に連携させることにより, ビジネス機能をより完全に保護し Identity ソリューション機能を常に向上させることができる. たとえば, プログラム・インテグリティ・チームが収集した不正支払のデータは, 漏洩した Subscriber Account および Identity Proofing の実装における潜在的な弱点の指標を提供することができる. 同様に, 脅威インテリジェンス・チームは, Identity Proofing, Authentication, および Federationプロセスに影響を与える可能性のある新しい TTP の兆候を受け取ることができる. 組織は, 重要なセキュリティおよび不正行為の関係者間で情報を交換するための一貫したメカニズムを確立するべきである(**SHOULD**). 
 
 <!-- Where supporting service providers, such as CSPs, are external, this may be complicated, but **SHOULD** be considered in contractual and legal mechanisms. All data collected, transmitted, or shared **SHALL** be minimized and subject to a detailed privacy and legal
 assessment. -->
 
-CSP などの支援サービス・プロバイダーが外部にある場合, 複雑になる可能性があるが, 契約上および法的な仕組みで考慮されるべきである(**SHOULD**). 収集, 送信, または共有するすべてのデータは, 最小化し, 詳細な Privacy および法的な評価を受けなければならない(**SHALL**). 
+CSP などの支援サービス・プロバイダーが外部にある場合, 複雑になる可能性があるが, 上記のような項目は契約上および法的な仕組みの中で考慮されるべきである(**SHOULD**). 収集, 送信, または共有するすべてのデータは, 最小化し, 詳細な Privacy および法的な評価を受けなければならない(**SHALL**). 
