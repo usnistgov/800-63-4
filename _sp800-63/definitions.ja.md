@@ -160,7 +160,7 @@ Authentication Secret
 Authenticator [](#authenticator){:name="authenticator"}
 <!-- : Something the claimant possesses and controls (typically a cryptographic module or password) that is used to authenticate the claimant's identity. In some previous editions of SP 800-63, this was referred to as a *token*. -->
 
-: Claimant が所有および管理するもので, 典型的な例としては暗号モジュールやパスワード等がある. Authenticator は Claimant の Identity を Authenticate するために用いられる. SP 800-63 の前エディションまでは *token* と呼ばれていたものと同等である.
+: Claimant が所有および管理するもので, 典型的な例としては暗号モジュールや Password 等がある. Authenticator は Claimant の Identity を Authenticate するために用いられる. SP 800-63 の前エディションまでは *token* と呼ばれていたものと同等である.
 
 Authentication Assurance Level (AAL)
 <!-- : A category describing the strength of the authentication process. -->
