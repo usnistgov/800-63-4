@@ -16,7 +16,7 @@ section: 10
 _Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts_ [[ISO/IEC9241-11]](references.md#ref-ISO9241) defines usability as the "extent to which a system, product or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use." This definition focuses on users, goals, and context of use as key elements necessary for achieving effectiveness, efficiency and satisfaction. A holistic approach considering these key elements is necessary to achieve usability.
 -->
 
-_Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts_ [[ISO/IEC9241-11]](references.md#ref-ISO9241) は Usability を "特定の利用コンテキストにおいて, 特定のユーザーが, あるシステム, プロダクトないしはサービスを利用して, 特定の目的を, どの程度有効的, 効率的かつ満足のいくレベルで達成できるかの度合い" と定義される.
+_Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts_ [[ISO/IEC9241-11]](references.md#ref-ISO9241) は Usability を "特定の利用コンテキストにおいて, 特定のユーザーが, あるシステム, プロダクトないしはサービスを利用して, 特定の目的を, どの程度有効的, 効率的かつ満足のいくレベルで達成できるかの度合い" と定義している.
 この定義はユーザー, 目的および利用コンテキストを, 有効性, 効率性および満足度の達成に必要な重要要素として捉えている.
 Usability を実現するには, これらの重要要素を考慮した総合的なアプローチが必要となる.
 
