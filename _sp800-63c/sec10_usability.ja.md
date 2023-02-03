@@ -215,7 +215,7 @@ Identity の多くの特性は, ユーザーが1つの Federation 内および�
 * Provide users means to delete their identities completely, removing all information about themselves, including transaction history. Consider applicable audit, legal, or policy constraints that may preclude such action. In certain cases, full deactivation is more appropriate than deletion.
 -->
 
-* ユーザーに, 自信の Identity を完全に削除たり, 自身に関する情報を全て削除したりするすべを提供する. これには Transaction 履歴も含む. なお, このようなアクションを妨げる可能性のある監査, 法律ないしポリシー上の制約がないか考慮すること. 場合によっては削除よりも完全な非アクティブ化が適切である.
+* ユーザーに, 自身の Identity を完全に削除したり, 自身に関する情報を全て削除したりするすべを提供する. これには Transaction 履歴も含む. なお, このようなアクションを妨げる可能性のある監査, 法律ないしポリシー上の制約がないか考慮すること. 場合によっては削除よりも完全な非アクティブ化が適切である.
 
 <!--
 * Provide users with clear, easy-to-find, site/application data retention policy information.
