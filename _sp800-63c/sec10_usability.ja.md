@@ -209,7 +209,7 @@ Identity の多くの特性は, ユーザーが1つの Federation 内および�
 * Provide users means for updating data, even if the associated entity no longer exists.
 -->
 
-* ユーザーに, データを更新するすべを提供する. 関連する主体がもはや存在しない場合においても.
+* 関連する主体がもはや存在しない場合においても, ユーザーにデータを更新するすべを提供する. 
 
 <!--
 * Provide users means to delete their identities completely, removing all information about themselves, including transaction history. Consider applicable audit, legal, or policy constraints that may preclude such action. In certain cases, full deactivation is more appropriate than deletion.
