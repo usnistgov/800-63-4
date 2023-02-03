@@ -142,7 +142,7 @@ Federated Identity System は以下を満たすべきである.
 * Perform integrative and continuous usability evaluations with representative users and realistic tasks in an appropriate context to ensure success of federated identity systems from the users' perspectives.
 -->
 
-* 適切なコンテキストにおける代表的なユーザーと現実的なタスクを前提に, 統合的かつ継続的な Usalibity 評価を実施し, ユーザーの観点から Federated Identity Systemの成功を保証すること.
+* 適切なコンテキストにおける代表的なユーザーと現実的なタスクを前提に, 統合的かつ継続的な Usalibity 評価を実施し, ユーザーの観点から Federated Identity System の成功を保証すること.
 
 ## Specific Usability Considerations
 
