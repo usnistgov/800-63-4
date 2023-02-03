@@ -227,7 +227,7 @@ Identity の多くの特性は, ユーザーが1つの Federation 内および�
 * Provide users with appropriate anonymity and pseudonymity options, and the ability to switch among such identity options as desired, in accordance with an organization's data access policies.
 -->
 
-* ユーザーに, 組織のデータアクセスポリシーに従って, 適切な匿名性および仮名性のオプション, および必要に応じてそのような Identity オプションを切り替えるすべを提供する.
+* ユーザーに, 組織のデータアクセスポリシーに従って, 適切な匿名性および Pseudonymity のオプション, および必要に応じてそのような Identity オプションを切り替えるすべを提供する.
 
 <!--
 * Provide means for users to manage each IdP to RP connection, including complete separation as well as the removal of RP access to one or more attributes.
