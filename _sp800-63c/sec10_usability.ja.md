@@ -40,7 +40,7 @@ As stated in the usability sections in 800-63A and 800-63B, overall user experie
 -->
 
 800-63A および 800-63B の Usability の章で述べたように, 全体的なユーザーエクスペリエンスはあらゆる Authentication 方法の成功に不可欠である.
-Federation は多くのユーザーにとってあまり馴染みのないユーザーインタラクションの形態であるため, これは特に Federated Identity Systemに当てはまることである.
+Federation は多くのユーザーにとってあまり馴染みのないユーザーインタラクションの形態であるため, これは特に Federated Identity System に当てはまることである.
 ユーザーが過去に経験した Authentication のエクスペリエンスは, 彼らの期待に影響を与える可能性もある.
 
 <!--
