@@ -136,7 +136,7 @@ Federated Identity System は以下を満たすべきである.
 * Clearly communicate how and where to acquire technical assistance. For example, provide users with information such as a link to an online self-service feature, chat sessions or a phone number for help desk support. Avoid redirecting users back and forth among transacting parties (e.g., RPs, IdPs, and brokers) to receive technical assistance.
 -->
 
-* 技術的な支援を受ける方法とその場所を明確に伝えること. 例えばオンラインのせフルサービス機能へのリンク, チャット, ヘルプデスクサポートの電話番号などを提供することなどが考えられる. ユーザーが技術的な支援を受けるために関与する当事者間 (e.g., RP, IdP および Broker) をたらい回しにされる事態は避けること.
+* 技術的な支援を受ける方法とその場所を明確に伝えること. 例えばオンラインのセルフサービス機能へのリンク, チャット, ヘルプデスクサポートの電話番号などを提供することなどが考えられる. ユーザーが技術的な支援を受けるために関与する当事者間 (e.g., RP, IdP および Broker) をたらい回しにされる事態は避けること.
 
 <!--
 * Perform integrative and continuous usability evaluations with representative users and realistic tasks in an appropriate context to ensure success of federated identity systems from the users' perspectives.
