@@ -246,7 +246,7 @@ Many factors can influence user adoption of federated identity systems. As with 
 ユーザーはしばしばテクノロジーの採用を決定する前に, 目に見えるメリットとリスクを比較検討する.
 IdP と RP がユーザーに十分な情報提供を行い, ユーザーが情報に基づいた決定を行えるようにすることが重要である.
 信頼および信頼の層 (Federated Identity System の基本原則) はユーザーによる採用を促進しうる.
-最後に, プジティブなユーザーエクスペリエンスは Federation に対するユーザーの要求を増大させ, RP による採用増加も引き起こす可能性がある.
+最後に, ポジティブなユーザーエクスペリエンスは Federation に対するユーザーの要求を増大させ, RP による採用増加も引き起こす可能性がある.
 
 <!--
 This sub-section is focused primarily on user trust and user perceptions of benefits versus risks.
