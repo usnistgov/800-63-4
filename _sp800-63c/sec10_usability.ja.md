@@ -191,7 +191,7 @@ Identity の多くの特性は, ユーザーが1つの Federation 内および�
 * Provide users unique, meaningful, and descriptive identifiers to distinguish among entities such as IdPs, RPs, and accounts. Any such user-facing identifiers are likely to be in addition to identifiers used by the underlying protocols, which are not normally exposed to the user.
 -->
 
-* ユーザーに, 一意で意味のあるわかりやすい識別子を提供し, IdP, RP, Account などの主体を区別できるようにする. ユーザーが目にする識別子は, その下で動くプロトコル内で使用される通常ユーザーの目に触れることのない識別子に加え, 使用される可能性がある.
+* ユーザーに, 一意で意味のあるわかりやすい識別子を提供し, IdP, RP, Account などの主体を区別できるようにする. ユーザーが目にする識別子は, その下で動くプロトコル内で使用される通常ユーザーの目に触れることのない識別子に加えて使用される可能性がある.
 
 <!--
 * Provide users with information on data ownership and those authorized to make changes. Identities, and the data associated with them, can sometimes be updated and changed by multiple actors. For example, some healthcare data is updated and owned by the patient, while some data is only updated by a hospital or doctor's practice.
