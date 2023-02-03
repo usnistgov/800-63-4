@@ -47,7 +47,7 @@ Federation は多くのユーザーにとってあまり馴染みのないユー
 The overall user experience with federated identity systems should be as smooth and easy as possible. This can be accomplished by following usability standards (such as the ISO 25060 series of standards) and established best practices for user interaction design.
 -->
 
-Federated Identity Systemにおける全体のユーザーエクスペリエンスは可能な限りスムースかつ容易であるべきである.
+Federated Identity System における全体のユーザーエクスペリエンスは可能な限りスムースかつ容易であるべきである.
 これは Usability 標準 (ISO 25060 シリーズの標準など) と確立されたユーザーインタラクションデザインのベストプラクティスに従うことで実現可能である.
 
 <!--
