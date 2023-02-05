@@ -134,7 +134,7 @@ When Kerberos authentication is based on passwords, the protocol is known to be 
 
 Kerberos Authentication が Password に基づいている場合, このプロトコルは最初のユーザーと KDC の交換を盗聴する盗聴者によるオフライン辞書 Attack に脆弱であることが知られている.
 この脆弱性は長く複雑な Password により軽減されるが, 十分に長い Password はユーザーにとって扱いにくい傾向がある.
-ただし, Password ベースの Kerberos Authentication が FAST (または類似の) トンネル内で用いられている場合, 自書攻撃を実行するには中間者攻撃を成功させることも必要になる.
+ただし, Password ベースの Kerberos Authentication が FAST (または類似の) トンネル内で用いられている場合, 辞書攻撃を実行するには中間者攻撃を成功させることも必要になる.
 
 ## OpenID Connect
 
