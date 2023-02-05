@@ -43,7 +43,7 @@ Federation プロセスは複数のアクティブな当事者間で Network プ
 * It could be prohibitively difficult to re-establish an account at the RP for subscribers who lose access to their IdP for any of a variety of reasons.
 -->
 
-* 田舎に住んでいるなど, 信頼できる Network 接続を持たない Subscriber にとっては, タイムアウトせずに全体の Federated Transaction を完了させるのは困難かもしれない.
+* 地方に住んでいるなど, 信頼できる Network 接続を持たない Subscriber にとっては, タイムアウトせずに全体の Federated Transaction を完了させるのは困難かもしれない.
 * 知的障害, 発達障害, 学習障害または神経認知障害のある Subscriber は, Attribute 開示に関する実行時決定の際に情報に基づく同意を行うことが困難な可能性もある.
 * 十分な処理能力, Network Access および IdP と RP の両方と同時に対話するために必要なその他の機能を備えたシステムは, 一部の Subscriber にとっては購入が難しいかもしれない.
 * デバイスを共有している Subscriber は, Allowlist ベースのシステムをセキュアに管理するのが難しいと感じる可能性もある. これは当該デバイスの他のユーザーが IdP でまだアクティブな Session を用いて RP への意図しない Access を黙って取得する可能性があるためである.
