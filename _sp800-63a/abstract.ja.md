@@ -17,3 +17,7 @@ anchor: abstract
 # Keywords
 
 {{site.abstract[page.collection].keywords}}
+
+# 翻訳者
+
+* Tatsuya Katsuhara
