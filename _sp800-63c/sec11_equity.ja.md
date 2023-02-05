@@ -18,7 +18,6 @@ Equitable access to the functions of IdPs and RPs is an essential element of a f
 
 IdP と RP の機能への公平な Access は, Federated Identity System において不可欠な要素である.
 Federation 技術を使用する際も, Executive Order 13985, _Advancing Racial Equity and Support for Underserved Communities Through the Federal Government_ [[EO13985]](references.md#ref-EO13985) に定められている通り, 政府サービスへの公平なアクセスを提供するには, 全ての Subscriber が確実に Authenticate できることが必要である.
-はこれを定めている.
 Equity に関するリスクを評価する際, IdP と RP は Federated Identity Service の対象となるユーザー母集団全体を考慮する必要がある.
 さらに, IdP と RP はそれらのサービスを使用する際に, 共有される特性により不公平な Access, 取り扱い, 結果の対象となりうる母集団中の特定のユーザーグループをより一層認識することとなる.
 [Sec. 10](../sec10_usability.md#usability) で述べた Usability 上の考慮事項は, Federated Identity Service を使用する全ての人の全体的な使いやすさと Equity を担保するためにも考慮されるべきである.
