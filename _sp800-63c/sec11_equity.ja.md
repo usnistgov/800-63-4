@@ -71,4 +71,4 @@ RPs need to be aware that not all subscribers will necessarily have access to th
 -->
 
 RP は全ての Subscriber が必ずしも同じ IdP への Access を持つとは限らないことを認識する必要がある.
-RP はそのような Subscriber に対してローカルで認証された Account を作成し, 後でそれらの Account を Federated Identifier に紐づけることを可能にすることもできる.
+RP はそのような Subscriber に対してローカルで Authenticate された Account を作成し, 後でそれらの Account を Federated Identifier に紐づけることを可能にすることもできる.
