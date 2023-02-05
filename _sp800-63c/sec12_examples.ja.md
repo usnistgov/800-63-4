@@ -88,7 +88,7 @@ The Kerberos Network Authentication Service [[RFC4120]](references.md#ref-RFC412
 
 Kerberos Network Authentication Service [[RFC4120]](references.md#ref-RFC4120) は, ローカルの共有 Network 上で, Symmetric Key Cryptography を用いて, Client/Server 形アプリケーションに対して強固な Authentication を提供するために設計されている.
 拡張機能によって, Kerberos はプロトコル上の指定されたステップで Public Key Cryptography をサポートすることもできる.
-Kerberos は Subscriber と RP の間の Session データに関して Confidentiality 保護および Integrity 保護をサポートすることもできる.
+Kerberos は Subscriber と RP の間の Session データに関して Confidentiality (機密性) 保護および Integrity (完全性) 保護をサポートすることもできる.
 Kerberos は Assertion を利用するが, これは共有 Network 上での利用を想定して設計されたものであり, 真の Federation Protocol ではない.
 
 <!--
@@ -100,7 +100,7 @@ Subscriber は, IdP が Subscriber に対して暗号化したランダムな Se
 (一部の Kerberos 派生系は Subscriber が IdP に対して明示的に Authenticate することを要求するが, これは一般的ではない)
 暗号化された Session Key に加え, IdP はその他の暗号化されたオブジェクトも生成する. これは Kerberos Ticket と呼ばれる.
 この Ticket は同じ Session Key, Session Key を発行された Subscriber の Identity, Session Key の有効期限を含む.
-この Ticket は, 明示的なセットアップフェーズ中に IdP-RP 間で共有される事前確立鍵により Confidentiality 保護および Integrity 保護を施される.
+この Ticket は, 明示的なセットアップフェーズ中に IdP-RP 間で共有される事前確立鍵により Confidentiality (機密性) 保護および Integrity (完全性) 保護を施される.
 
 <!--
 To authenticate using the session key, the subscriber sends the ticket to the RP along with encrypted data that proves that the subscriber possesses the session key embedded within the Kerberos ticket. Session keys are either used to generate new tickets or to encrypt and authenticate communications between the subscriber and the RP.

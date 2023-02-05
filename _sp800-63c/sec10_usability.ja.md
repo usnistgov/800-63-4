@@ -342,7 +342,7 @@ Federated Identity System がユーザー視点で設計されていなければ
 * Provide users with clear and usable ways (e.g., visual assurance) to determine the authenticity of the transacting  parties (e.g., RPs, IdPs, and brokers). This will also help to alleviate user concern over leaving one domain for another, especially if the root domain changes (e.g., .gov to .com). For example, display the URL of the IdP so that the user can verify that they are not being phished by a malicious site.
 -->
 
-* ユーザーに, やり取りを行う当事者 (e.g., RP, IdP および Broker) の Authenticity を判断するための明確で利用しやすい手段 (e.g., 視覚的保証など) を提供する. これは, 特にルートドメインが変わる場合 (e.g., .gov から .com へ) など, あるドメインから別のドメインに移動する際のユーザーの懸念を軽減する際にも役に立つものであろう. 例えば, IdP の URL を表示して, ユーザーが悪意あるサイトに Phishing されていないことを検証できるようにするなど.
+* ユーザーに, やり取りを行う当事者 (e.g., RP, IdP および Broker) の Authenticity (真正性) を判断するための明確で利用しやすい手段 (e.g., 視覚的保証など) を提供する. これは, 特にルートドメインが変わる場合 (e.g., .gov から .com へ) など, あるドメインから別のドメインに移動する際のユーザーの懸念を軽減する際にも役に立つものであろう. 例えば, IdP の URL を表示して, ユーザーが悪意あるサイトに Phishing されていないことを検証できるようにするなど.
 
 <!--
 * Provide users with clear information, including visual cues, regarding implicit logins and explicit logouts. Depending on the implementation, logging into an RP with a federated account may authenticate users to both the IdP and RP. Users may not realize that ending their session with the RP will not necessarily end their session with the IdP; users will need to explicitly "log out" of the IdP. Users require clear information to remind them if explicit logouts are required to end their IdP sessions.

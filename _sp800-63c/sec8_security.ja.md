@@ -29,7 +29,7 @@ Federation を用いない Authentication と同様に, Attacker のモチベー
 また Attacker は Subscriber になりすまそうとする可能性もある.
 不正または侵害された IdP, RP, ユーザーエージェント (e.g., ブラウザ) および典型的 Federation Transaction 外の関係者は, 潜在的に Attacker たりえる.
 こういった Attack を成功させるため, Attacker は Assertion や Assertion Rerefernce を傍受または改ざんする可能性もある.
-さらには, 2つ以上の主体が Federation Protocol 自体を転覆させるべく, Assertion データの Integrity および Confidentiality を侵害しようとすることもあろう.
+さらには, 2つ以上の主体が Federation Protocol 自体を転覆させるべく, Assertion データの Integrity (完全性) および Confidentiality (機密性) を侵害しようとすることもあろう.
 こういったタイプの脅威を目的とする場合, その権限を超えて行動しようと試みるいかなる Authorized Party もが Attacker とみなされる.
 
 [Table 2 Federation Threats](sec8_security.md#table-2){:name="table-2"}
@@ -98,7 +98,7 @@ Mechanisms that assist in mitigating the above threats are identified in [Table 
 | | Assertion に推測不可能でランダムな識別子を含める. | [6.2.1](sec6_assertions.md#assertion-id) |
 | Assertion Disclosure | Assertion の送信に RP を Authenticate する Authenticated Protected Channel を利用する. | [7.1](sec7_presentation.md#back-channel), [7.2](sec7_presentation.md#front-channel) |
 | | Assertion を特定の RP に向けて暗号化する. (双方向の Authenticated Protected Channel を用いて達成可能) | [6.2.3](sec6_assertions.md#encrypted-assertion) |
-| Assertion Repudiation by the IdP | IdP が否認防止可能な鍵を用いて暗号論的に Assertion に署名し, RP がそれを検証する. | [6.2.2](sec6_assertions.md#signed-assertion) |
+| Assertion Repudiation by the IdP | IdP が Non-repudiation (否認防止) をサポートする鍵を用いて暗号論的に Assertion に署名し, RP がそれを検証する. | [6.2.2](sec6_assertions.md#signed-assertion) |
 | Assertion Repudiation by the Subscriber | Bound Authenticator に紐づく Assertion を発行し, Bound Authenticator の保持証明により Subscriber が RP に関与していることを検証する. | [6.1.2](sec6_assertions.md#boundauth) |
 | Assertion Redirect | Assertion 発行先の RP ("Audience") の Identity を Assertion に含め, RP がそれを検証する. | [6](sec6_assertions.md#assertions), [7.1](sec7_presentation.md#back-channel), [7.2](sec7_presentation.md#front-channel) |
 | Assertion Reuse | 短い有効期間と共に発行日時を Assertion の署名対象コンテンツとして含め, RP がそれを検証する. | [6](sec6_assertions.md#assertions), [7.1](sec7_presentation.md#back-channel), [7.2](sec7_presentation.md#front-channel) |

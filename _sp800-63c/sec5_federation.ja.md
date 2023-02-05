@@ -303,7 +303,7 @@ A proxied federation model can provide several benefits. Federation proxies can 
 
 Proxyed Federation モデルにはいくつかの利点がある.
 Federation Proxy は, インテグレーション用の共通インタフェースを提供することで, RP と IdP の間の技術的なインテグレーションを単純化することができる.
-さらに, Proxy が効果的に RP と IdP を相互にブラインドすることで, 自身の Subscriber リストを相互に保護したい組織に対してある種のビジネス上の Confidentiality をもたらす.
+さらに, Proxy が効果的に RP と IdP を相互にブラインドすることで, 自身の Subscriber リストを相互に保護したい組織に対してある種のビジネス上の Confidentiality (機密性) をもたらす.
 Proxy は [Sec. 5.5](sec5_federation.ja.md#privacy-reqs) で後述するプライバシーリスクを低減することもできる.
 
 <!--
