@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+
+<script>
+  const redirectToJa = function () {
+    ja_location = window.location.href.replace('.html', '.ja.html')
+    window.location = ja_location;
+  }
+  window.onload = redirectToJa;
+</script>
+
 {% include NISTPagesHeader.html %}
 
 <body>
