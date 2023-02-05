@@ -88,7 +88,7 @@ Presentation
 -->
 
 [Table 1](sec4_fal.ja.md#table-1) は各 FAL を要約したものである (non-normative).
-各レベルは, それ以下のレベルの全要件を内包および満たす. (e.g., FAL3 で実施される Federation は FAL2 や FAL1 を満たすものとして許容可能である. FAL3 を満たしていれば, FAL2 や FAL1 の全ての要件を満たしている.)
+各レベルは, それ以下のレベルの全要件を内包および満たす. (e.g., FAL3 は下位レベルの要件をすべて満たしているため, FAL3 を満たしていれば, FAL2 や FAL1 の全ての要件を満たしている.)
 [Table 1](sec4_fal.ja.md#table-1) に存在しない組み合わせも可能であるが, そういった組み合わせに関しては本ドキュメントのスコープ外とする.
 
 [Table 1 Federation Assertion Levels](sec4_fal.ja.md#table-1){:name="table-1"}
@@ -130,10 +130,10 @@ RP は, [Sec. 6](sec6_assertions.ja.md#assertions) にあるように, Assertion
 All assertions at FAL1 **SHALL** be audience-restricted to a specific RP or set of RPs, and the RP **SHALL** validate that it is one of the targeted RPs for the given assertion. The IdP **SHALL** ensure that any party holding the assertion, including the RP, is unable to impersonate the IdP at a non-targeted RP by protecting the assertion with a signature and key using approved cryptography. If the assertion is protected by a digital signature using an asymmetric key, the IdP **MAY** use the same public and private key pair to sign assertions to multiple RPs. The IdP **MAY** publish its public key in a verifiable fashion, such as at an HTTPS-protected URL at a well-known location. If the assertion is protected by a keyed message authentication code (MAC) using a shared key, the IdP **SHALL** use a different shared key for each RP.
 -->
 
-FAL1 における Assertion は全て, 特定の RP (群) に対する Audience Restriction が施されなければならず (**SHALL**), RP が当該 Assertion の Audience に自身が含まれていることを確認せねばならない.
+FAL1 における Assertion は全て, 特定の RP (群) に対する Audience Restriction が施されなければならず (**SHALL**), RP が当該 Assertion の Audience に自身が含まれていることを確認せねばならない (**SHALL**).
 IdP は, Approved Cryptography による署名及び鍵を用いて当該 Assertion を保護し, 当該 RP を含む全ての Assertion 所有者が IdP になりすますことができないようにせねばならない (**SHALL**).
 Assertion が Asymmetric Key を用いた Digital Signature により保護されている場合は, IdP は同じ Public & Private Key ペアを用いて複数の RP に向けて Assertion に署名を行っても良い (**MAY**).
-IdP は, HTTPS で保護された well-known location を用いるなど, 検証可能な形で自身の Public Key を公開してもよい.
+IdP は, HTTPS で保護された well-known location を用いるなど, 検証可能な形で自身の Public Key を公開してもよい (**MAY**).
 Assertion が Shared Secret を用いた鍵付き Message Authentication Code (MAC) により保護されている場合は, IdP は RP 毎に異なる Shared Secret を用いなければならない (**SHALL**).
 
 <!--
@@ -206,7 +206,7 @@ FAL1 および FAL2 に対する要件は, ここでより明確ないし厳密�
 At FAL3, the subscriber **SHALL** authenticate to the RP by presenting an authenticator directly to the RP in addition to presenting an assertion. The authenticator presented is known as a _bound authenticator_, described in [Sec. 6.1.2](sec6_assertions.md#boundauth). For example, the subscriber goes through a federated login process at the IdP and RP, and the RP then prompts the subscriber for a bound authenticator that is associated with that RP subscriber account. The bound authenticator presented at FAL3 need not be the same authenticator used by the subscriber to authenticate to the IdP. The assertion is used to identify the subscriber to the RP while the bound authenticator gives very high assurance that the party attempting to log in is the subscriber identified in the assertion. FAL3 is not reached at the RP until the subscriber authenticates with the bound authenticator and the RP verifies that the authenticator presented is correctly bound to the RP subscriber account identified by the assertion.
 -->
 
-FAL3 ではm Subscriber は Assertion に加えて Authenticator を Direct に RP に提示することで Authenticate せねばならない (**SHALL**).
+FAL3 では Subscriber は Assertion に加えて Authenticator を Direct に RP に提示することで Authenticate せねばならない (**SHALL**).
 ここで用いられる Authenticator は _Bound Authenticator_ とも呼ばれ, [Sec. 6.1.2](sec6_assertions.ja.md#boundauth) に後述される.
 例えば Subscriber が IdP と RP の間で Federation によるログインプロセスを実施する場合, RP は Subscriber に RP Subscriber Account に紐づく Bound Authenticator の提示を促す.
 FAL3 で提示される Bound Authenticator は Subscriber が IdP に Authenticate する際に用いられる Authenticator と同一である必要はない.
@@ -217,7 +217,7 @@ Assertion は RP が Subscriber を識別する際に用いられるが, その�
 At FAL3, the trust agreement and registration between the IdP and RP **SHALL** be established statically. All identifying key material and federation parameters for all parties  (including the list of attributes sent to the RP) **SHALL** be fixed ahead of time, before the federated authentication process can take place. Runtime decisions **MAY** be used to further limit what is sent between parties in the federated authentication process (e.g., a runtime decision could opt to not disclose an email address even though this attribute was included in the parameters of the trust agreement).
 -->
 
-FAL3 では, IdP-RP 間の Trust Agreement および Registrationは Static に確立されなければならない (**SHALL**).
+FAL3 では, IdP-RP 間の Trust Agreement および Registration は Static に確立されなければならない (**SHALL**).
 全当事者にとって, 識別に用いられるキーマテリアルおよび Federation パラメータ (RP に送信される Attribute リストを含む) は, Federation による Authentication プロセス実施前に固定されていなければならない (**SHALL**).
 Federation による Authentication プロセスの中で送信する項目をさらに制限する場合には, 動的に決定がなされてもよい (**MAY**).
 (e.g., Trust Agreement で合意されたパラメータには含まれているものの Email Address を開示したくない場合など)

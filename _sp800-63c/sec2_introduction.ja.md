@@ -54,7 +54,7 @@ An assertion includes a federated identifier for the subscriber, allowing associ
 Assertion とは, Subscriber の Federated Identifier を含み, 複数の Authenticated Session にまたがって RP とインタラクションを行った Subscriber を紐づけることを可能とするものである.
 Assertion には Attribute Value や Derived Attribute Value が含まれることもあり, それらは Subscriber の更なる特徴を示して RP による Authorization 判断の材料となる.
 追加の Attribute はより大きな Federation Protocol の一部として Assertion 外で提供されることもある.
-これらの Attribute Value や Derived Attribute Value はしばしば Attribute-based Access Control (ABAC) における Access 権限の決定やトランザクション (e.g., 配送先住所の提供) を促進するために用いられる.
+これらの Attribute Value や Derived Attribute Value はしばしば Attribute-based Access Control (ABAC) における Access 権限の決定や Transaction の促進 (e.g., 配送先住所の提供) に用いられる.
 
 <!--
 Federation requires relatively complex multiparty protocols that have subtle security and privacy requirements. When evaluating a particular federation structure, it may be instructive to break it down into its component interactions: the subscriber to the IdP, the IdP to the RP, and the subscriber to the RP. Each party in a federation protocol bears specific responsibilities and expectations that must be fulfilled in order for the federated system to function as intended.
