@@ -20,4 +20,5 @@ anchor: abstract
 
 # 翻訳者
 
-* Noboru Kurumai
+* 車井 登
+  * Transmit Security
