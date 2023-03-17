@@ -9,7 +9,7 @@ permalink: /
 
 NIST requests comments on the draft fourth revision to the four-volume suite of Special Publication 800-63, *Digital Identity Guidelines*.  This publication presents the process and technical requirements for meeting the digital identity management assurance levels specified in each volume. They also provide considerations for enhancing privacy, equity, and usability of digital identity solutions and technology. 
 
-NIST requests that all comments be submitted by __11:59pm Eastern Time on March 24, 2023__. Please submit your comments to <dig-comments@nist.gov>. See the [Note to Reviewers](#ntr) section below for specific topics about which NIST is seeking your feedback. NIST will review all comments and make them available at the [NIST Identity and Access Management website](https://www.nist.gov/identity-access-management). Commenters are encouraged to use the comment template provided on the [NIST Computer Security Resource Center website](https://csrc.nist.gov/publications/detail/sp/800-63/4/draft).
+NIST requests that all comments be submitted by __11:59pm Eastern Time on April 14, 2023__. Please submit your comments to <dig-comments@nist.gov>. See the [Note to Reviewers](#ntr) section below for specific topics about which NIST is seeking your feedback. NIST will review all comments and make them available at the [NIST Identity and Access Management website](https://www.nist.gov/identity-access-management). Commenters are encouraged to use the comment template provided on the [NIST Computer Security Resource Center website](https://csrc.nist.gov/publications/detail/sp/800-63/4/draft).
 
 ## Available Online {#online-versions}
 
