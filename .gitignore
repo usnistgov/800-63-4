@@ -9,3 +9,4 @@ Gemfile.lock
 _pdf/
 .DS_Store
 _template_workspace/
+_published
