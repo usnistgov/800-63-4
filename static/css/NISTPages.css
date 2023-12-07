@@ -92,7 +92,7 @@ ul.audiences li {
   padding-left: 160px;
 }
 
-#nistfootergoeshere {
+.navbar-fixed-left ~ #nistfootergoeshere {
   padding-left: 160px;
 }
 
@@ -140,6 +140,12 @@ ul.audiences li {
 
 .navbar-fixed-left .navbar-nav .subnav>li span.section {
   font-size: 0.8em;
+  color: white;
+  background: #8f8f8f;
+  border-radius: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-right: 2px;
 }
 
 .navbar-fixed-left .navbar-nav .subnav a {
@@ -452,7 +458,7 @@ strong.normative {
     padding-right: 5px;
   }
   
-  #nistfootergoeshere {
+  .navbar-fixed-left ~ #nistfootergoeshere {
     padding-left: 0px;
   }
 

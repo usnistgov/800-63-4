@@ -34,9 +34,9 @@
                 {% endif %}
                 
                 {% if page.collapsed and p.anchor %}
-                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}/{{ page.collection }}.html#{{ p.anchor }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
+                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}/{{ page.collection }}.html#{{ p.anchor }}">{% if p.section %}<span class="section">{{ p.section }}</span>{% endif %}{{ p.navTitle }}</a></li>
                 {% else %}
-                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}{{ p.url }}"><span class="section">{{ p.section }} </span>{{ p.navTitle }}</a></li>
+                    <li class="{{ scurrent }}"><a href="{{ site.baseurl }}{{ p.url }}">{% if p.section %}<span class="section">{{ p.section }}</span>{% endif %}{{ p.navTitle }}</a></li>
                 {% endif %}
               
               {% endif %}
