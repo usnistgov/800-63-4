@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Cover Page 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\pagenumbering{Roman}
+
+\sffamily
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Title Page is REQUIRED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LARGE{\textbf{\VAR{config.doc_short_title}}}
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+\large{\textbf{\textsc{Federal Information Processing Standards Publication}}}\\
+%: if config.supersedes
+\small{\textbf{(Supersedes \VAR{config.supersedes})}}
+%: else
+
+%: endif
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Title 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\huge{\textbf{\VAR{config.display_title}}}
+\vfill
+\normalsize{\textbf{\textsc{Category: \VAR{config.category}
+%: if config.subcategory
+\hfill Subcategory: \VAR{config.subcategory}
+%: endif
+}}}
+\vspace{8pt}
+\hrule
+\vfill
+
+% Address
+Information Technology Laboratory\\
+National Institute of Standards and Technology\\
+Gaithersburg, MD 20899-8900
+\vfill
+%   DOI Statement - automated
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize This publication is available free of charge from:\\
+\url{\VAR{config.doi_url}}\\
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Date - Month and Year - automated
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize Issued \VAR{config.issued_date}
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Department of Commerce LOGO - leave as-is
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+\includegraphics[width=0.33\linewidth]{DoC-logo.eps}\\ 
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Department of Commerce & NIST Leadership 
+%	will be updated as changes occur
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\footnotesize \textbf{U.S. Department of Commerce}\\ 
+\textit{Gina M. Raimondo, Secretary}\\
+\vspace{10pt}
+\textbf{National Institute of Standards and Technology}\\ 
+\textit{James K. Olthoff, Performing the Non-Exclusive Functions and Duties of the Under Secretary of Commerce for Standards and Technology \& Director, National Institute of Standards and Technology}  
+%\end{flushright}
+\end{titlepage}

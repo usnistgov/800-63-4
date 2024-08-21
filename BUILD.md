@@ -32,8 +32,8 @@ PDFTARGET='SP800-63B-4' docker-compose -f docker-compose-pdf.yml up
 The source of each document is in a different source directory:
 
 * `_sp800-63` contains SP 800-63-4, Digital Identity Guidelines
-* `_sp800-63a` contains SP 800-63A-4, Enrollment and Identity Proofing Requirements
-* `_sp800-63b` contains SP 800-63B-4, Authentication and Lifecycle Management
+* `_sp800-63a` contains SP 800-63A-4, Identity Proofing and Enrollment Requirements
+* `_sp800-63b` contains SP 800-63B-4, Authentication and Authenticator Management
 * `_sp800-63c` contains SP 800-63C-4, Federation and Assertions
 
 Within these directories, each section of the document has its own source file.

@@ -4,6 +4,16 @@
 % 	Original SP template developed by K. Miller, kmm5@nist.gov 
 %	Last updated: 26-March-2019
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% pdfmanagement is required for tagpdf
+%: if not config.use_pdflatex
+\RequirePackage{pdfmanagement-testphase}
+\DocumentMetadata
+{
+ testphase = phase-I, % tagging without paragraph tagging
+ testphase = phase-II % tagging with paragraph tagging and other new stuff.
+}
+%: endif
+
 \documentclass[12pt]{article}
 \usepackage{mathptmx}
 \usepackage{pifont}
@@ -21,8 +31,14 @@
 \usepackage{float}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
-\usepackage[hang,flushmargin,bottom]{footmisc} % footnote format
-\usepackage{microtype}
+
+%: if not config.use_pdflatex
+  \usepackage[flushmargin,bottom]{footmisc} % hang option breaks tagpdf with lualatex
+%: else
+  \usepackage[hang,flushmargin, bottom]{footmisc} % footnote format
+  \usepackage{microtype} % not needed since Lualatex can disable ligatures through fontspec
+%: endif
+
 \usepackage{etoolbox} % for switching sections on and off
 \usepackage{longtable}
 \usepackage{tabularx}
@@ -37,11 +53,38 @@
 \usepackage[titletoc,title]{appendix}
 \usepackage{multicol}
 
-\DisableLigatures[f,l,i]{encoding = *, family = *}
+%: if not config.use_pdflatex
+  \usepackage{tagpdf}
+  \usepackage{fontspec} %for fonts with lualatex fonts
+  \usepackage{carlito}
+  \usepackage{polyglossia}
+  \tagpdfsetup{uncompress,activate-all,paratagging,log=v}
+  \defaultfontfeatures{Ligatures=NoCommon}
+%: else
+  % disabling ligatures in pdflatex
+  \DisableLigatures[f,l,i]{encoding = *, family = *} 
+%: endif
+
 
 % Command for inverting the color on table and diagram headers
 \newcommand{\colorsection}[1]{%
   \colorbox{black}{\noindent\parbox{\dimexpr\textwidth-2\fboxsep}{\color{white}\ #1}}}
+  
+ 
+%: if not config.use_pdflatex
+  % Define language and fonts
+  % Use the Carlito families
+  \setdefaultlanguage{english}
+  \setmainlanguage[]{english}
+  \setmainfont{Carlito}
+  % Optionally set \sffamily and \ttfamily font families
+  \setsansfont{Carlito}
+  \setmonofont{TeX Gyre Cursor}
+
+  % may need to separately \setmathfont 
+
+%: endif
+
 
 
 % Set up multi-page long tables, inclue with {:latex-longtable="true"} flag following table
@@ -69,6 +112,97 @@
 \def\endltabulary{\endtabulary}
 
 \makeatother
+
+
+%: if not config.use_pdflatex
+  % for section struct tagging
+  % From Ulrike Fischer
+  %    -Creator of tagpdf- https://github.com/u-fischer/tagpdf
+  % https://tex.stackexchange.com/a/614050
+  % Note: This will likely become unncessary in future updates to LaTeX 
+  \NewCommandCopy\oldsection\section
+  \RenewDocumentCommand\section{som}
+   {%
+     \par%ensure that you are in vmode
+     \tagpdfparaOff\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}%
+     \IfBooleanTF {#1}%test the star
+     {%
+      \IfValueTF{#2}% test the optional argument
+       {\oldsection*[#2]{#3}}
+       {\oldsection*{#3}}%
+     }  
+     {%
+      \IfValueTF{#2}% test the optional argument
+       {\oldsection[#2]{#3}}
+       {\oldsection{#3}}%
+     }%
+    \tagmcend\tagstructend\tagpdfparaOn 
+  }
+
+  % for section struct tagging
+  \NewCommandCopy\oldsubsection\subsection
+  \RenewDocumentCommand\subsection{som}
+   {%
+     \par%ensure that you are in vmode
+     \tagpdfparaOff\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}%
+     \IfBooleanTF {#1}%test the star
+     {%
+      \IfValueTF{#2}% test the optional argument
+       {\oldsubsection*[#2]{#3}}
+       {\oldsubsection*{#3}}%
+     }  
+     {%
+      \IfValueTF{#2}% test the optional argument
+       {\oldsubsection[#2]{#3}}
+       {\oldsubsection{#3}}%
+     }%
+    \tagmcend\tagstructend\tagpdfparaOn 
+  }
+
+  % for subsubsection struct tagging
+  \NewCommandCopy\oldsubsubsection\subsubsection
+  \RenewDocumentCommand\subsubsection{som}
+   {%
+     \par%ensure that you are in vmode
+     \tagpdfparaOff\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}%
+     \IfBooleanTF {#1}%test the star
+     {%
+      \IfValueTF{#2}% test the optional argument
+       {\oldsubsubsection*[#2]{#3}}
+       {\oldsubsubsection*{#3}}%
+     }  
+     {%
+      \IfValueTF{#2}% test the optional argument
+       {\oldsubsubsection[#2]{#3}}
+       {\oldsubsubsection{#3}}%
+     }%
+    \tagmcend\tagstructend\tagpdfparaOn 
+  }
+
+  % for paragraph struct tagging
+  \NewCommandCopy\oldparagraph\paragraph
+  \RenewDocumentCommand\paragraph{som}
+  {%
+    \par%ensure that you are in vmode
+    \tagpdfparaOff\tagstructbegin{tag=H4}\tagmcbegin{tag=H4}%
+    \IfBooleanTF {#1}%test the star
+    {%
+      \IfValueTF{#2}% test the optional argument
+      {\oldparagraph*[#2]{#3}}
+      {\oldparagraph*{#3}}%
+    }  
+    {%
+      \IfValueTF{#2}% test the optional argument
+      {\oldparagraph[#2]{#3}}
+      {\oldparagraph{#3}}%
+    }%
+    \tagmcend\tagstructend\tagpdfparaOn 
+  }
+
+%: endif
+
+
+
 % End macros 
 
 %: if config.watermark
@@ -96,6 +230,17 @@
 
 % Turn on line numbering
 \usepackage{lineno}
+ 
+%: if not config.use_pdflatex
+   % tag page numbers as artifacts
+   % use actualtext attribute on line numbers to make them logical blanks
+   % actualtext currently only works in span tags, so this doesn't work
+  \renewcommand{\makeLineNumber}{
+    \tagmcbegin{artifact=pagination}\hss\linenumberfont\LineNumber\hskip\linenumbersep\tagmcend
+  }
+%: endif
+
+
 \linenumbers
 
 %: endif
@@ -242,13 +387,37 @@ pdfdisplaydoctitle = true
 \DeclareCaptionFont{helvet}{\small\sffamily\selectfont}
 \captionsetup{labelfont=bf,labelsep=period,font=helvet,figurename=Fig.,justification=raggedright}
 
+% Override the normal quote environment to put quotes in grey boxes
+
+\tcbset{colframe=black!10!white,colback=white}
+\usepackage{framed}
+\NewEnvironmentCopy{oldquote}{quote}
+\renewenvironment{quote}
+    {\begin{minipage}{\linewidth}\begin{tcolorbox}[leftrule=2mm,rightrule=0mm,toprule=0mm,bottomrule=0mm,sharp corners]\begin{oldquote}}
+    {\end{oldquote}\end{tcolorbox}\end{minipage}}
+
+
+%: if config.use_pdflatex
 \pdfminorversion=7
+%: endif
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   	BEGIN DOCUMENT 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
     \RaggedRight % left-justification universal
+
+%: if not config.use_pdflatex
+  %lualatex uses pdfvariable instead
+  % set pdf version using new commands for Lualatex
+  % keep this after begin document  
+  \pdfvariable majorversion 1
+  \pdfvariable minorversion 7
+%: endif
+
+% pdflatex sets the pdf version above the "begin{document}"
+
+
 
 \VAR{rendered.cover}
 
@@ -279,5 +448,7 @@ pdfdisplaydoctitle = true
 \VAR{rendered.appendix}
 
 %: endif
+
+% tagpdf automatically adds \tagstructend  for end document
 
 \end{document}

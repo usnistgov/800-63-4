@@ -3,6 +3,100 @@
 % 	List of Tables & Figures required if more than 5 tables/figures
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\setcounter{tocdepth}{4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % for table of contents formatting
+    % Copied from NIST template, updated to accomodate 2-digit section/subsection numbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % main contents - part, secs, subsec, paragraph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \renewcommand{\contentsname}{{Table of Contents}}
+    \renewcommand{\cftsecpagefont}{\normalsize}
+    \renewcommand{\cftsecfont}{\normalsize\bfseries} % Override NIST template and bold top-level sections
+    \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+    \renewcommand\cftbeforesecskip{6pt}
+    \renewcommand{\cftsecaftersnum}{.}
+    \setlength{\cftsecnumwidth}{18pt}  % increased from NIST template
+    \renewcommand{\cftsubsecfont}{\normalsize}
+    \renewcommand{\cftsubsecpagefont}{\normalsize}
+    \renewcommand\cftbeforesubsecskip{6pt}
+    \renewcommand{\cftsubsecaftersnum}{.}
+    \setlength{\cftsubsecnumwidth}{32pt} % increased from NIST template
+    \setlength{\cftsubsecindent}{18pt}   % align identation with sec heading title
+    \renewcommand{\cftsubsubsecfont}{\normalsize}
+    \renewcommand{\cftsubsubsecpagefont}{\normalsize}
+    \renewcommand\cftbeforesubsubsecskip{6pt}
+    \renewcommand{\cftsubsubsecaftersnum}{.}  % increased from NIST template
+    \setlength{\cftsubsubsecnumwidth}{37pt}   % align identation with subsec heading title
+    \setlength{\cftsubsubsecindent}{50pt}
+     \renewcommand{\cftparafont}{\normalsize}
+    \renewcommand{\cftparapagefont}{\normalsize}
+    \renewcommand\cftbeforeparaskip{6pt}
+    \renewcommand{\cftparaaftersnum}{.}
+    \setlength{\cftparanumwidth}{40pt}     % increased from NIST template
+    \setlength{\cftparaindent}{87pt}       % align identation with subsubsec heading title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % list of figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \renewcommand{\listfigurename}{{List of Figures}}
+    \renewcommand{\cftfigpagefont}{\normalsize}
+    \renewcommand{\cftfigfont}{\normalsize}
+    \renewcommand{\cftfigindent}{0em}
+    \addtolength{\cftfignumwidth}{0.3em}
+    \renewcommand{\cftfigpresnum}{\figurename\ }
+    \renewcommand{\cftfigaftersnum}{.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % list of tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \renewcommand{\listtablename}{{List of Tables}}
+    \renewcommand{\cfttabpagefont}{\normalsize}
+    \renewcommand{\cfttabfont}{\normalsize}
+    \renewcommand{\cfttabindent}{0em}
+    \addtolength{\cfttabnumwidth}{1em}
+    \renewcommand{\cfttabpresnum}{\tablename\ }
+    \renewcommand{\cfttabaftersnum}{.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%: if not config.use_pdflatex
+
+\clearpage
+
+\tagstructbegin{tag=Sect}
+
+\begin{center}
+
+\titleformat{\section}{\large\bfseries\sffamily}{}{1em}{}
+
+\hypersetup{linkcolor=black}
+
+%%%%% Main TOC 
+\tagstructbegin{tag=TOC}
+\tableofcontents
+\tagstructend % end main toc
+
+\appendixtitleon
+\appendixtitletocon
+
+%%%%% Tables TOC  
+\tagstructbegin{tag=TOC}
+\listoftables
+\tagstructend % end tables toc
+
+%%%%% Figures TOC
+  \tagstructbegin{tag=TOC}
+  \listoffigures
+  \tagstructend % end figures toc
+
+\end{center}
+\clearpage
+\tagstructend % end toc section
+
+%: else
+
+% pdflatex version of ToC
 \clearpage
 
 \begin{center}
@@ -14,8 +108,19 @@
     \tableofcontents
 	\appendixtitleon
     \appendixtitletocon
+%: if not config.skiptabletoc
     \listoftables
+%: endif
+%: if not config.skipfiguretoc
     \listoffigures
+%: endif
 
 \end{center}
 \clearpage
+
+
+%: endif
+
+
+
+

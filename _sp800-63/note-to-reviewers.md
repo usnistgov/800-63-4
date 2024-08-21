@@ -11,59 +11,51 @@ anchor: reviewers
 # Note to Reviewers {#reviewers}
 {: .no_toc}
 
-The rapid proliferation of online services over the past few years has heightened the need for reliable, equitable, secure, and privacy-protective digital identity solutions. 
+In December 2022, NIST released the Initial Public Draft (IPD) of SP 800-63, Revision 4. Over the course of a 119-day public comment period, the authors received exceptional feedback from a broad community of interested entities and individuals. The input from nearly 4,000 specific comments has helped advance the improvement of these Digital Identity Guidelines in a manner that supports NIST's critical goals of providing foundational risk management processes and requirements that enable the implementation of secure, private, equitable, and accessible identity systems. Based on this initial wave of feedback, several substantive changes have been made across all of the volumes. These changes include but are not limited to the following:
 
-Revision 4 of NIST Special Publication 800-63, Digital Identity Guidelines, intends to respond to the changing digital landscape that has emerged since the last major revision of this suite was published in 2017 &mdash; including the real-world implications of online risks. The guidelines present the process and technical requirements for meeting digital identity management assurance levels for identity proofing, authentication, and federation, including requirements for security and privacy as well as considerations for fostering equity and the usability of digital identity solutions and technology.
+1.  Updated text and context setting for risk management. Specifically, the authors have modified the process defined in the IPD to include a context-setting step of defining and understanding the online service that the organization is offering and intending to potentially protect with identity systems.
+2.  Added recommended continuous evaluation metrics. The continuous improvement section introduced by the IPD has been expanded to include a set of recommended metrics for holistically evaluating identity solution performance. These are recommended due to the complexities of data streams and variances in solution deployments.
+3.  Expanded fraud requirements and recommendations. Programmatic fraud management requirements for credential service providers and relying parties now address issues and challenges that may result from the implementation of fraud checks.
+4.  Restructured the identity proofing controls. There is a new taxonomy and structure for the requirements at each assurance level based on the means of providing the proofing: Remote Unattended, Remote Attended (e.g., video session), Onsite Unattended (e.g., kiosk), and Onsite Attended (e.g., in-person).
+5.  Integrated syncable authenticators. In April 2024, NIST published interim guidance for syncable authenticators. This guidance has been integrated into SP 800-63B as normative text and is provided for public feedback as part of the Revision 4 volume set.
+6.  Added user-controlled wallets to the federation model. Digital wallets and credentials (called "attribute bundles" in SP 800-63C) are seeing increased attention and adoption. At their core, they function like a federated IdP, generating signed assertions about a subject. Specific requirements for this presentation and the emerging context are presented in SP 800-63C-4.
 
-Taking into account feedback provided in response to our [June 2020 Pre-Draft Call for Comments](https://csrc.nist.gov/publications/detail/sp/800-63/4/archive/2020-06-08), as well as research conducted into real-world implementations of the guidelines, market innovation, and the current threat environment, this draft seeks to: 
+The rapid proliferation of online services over the past few years has heightened the need for reliable, equitable, secure, and privacy-protective digital identity solutions.
+Revision 4 of NIST Special Publication SP 800-63, *Digital Identity Guidelines*, intends to respond to the changing digital landscape that has emerged since the last major revision of this suite was published in 2017, including the real-world implications of online risks. The guidelines present the process and technical requirements for meeting digital identity management assurance levels for identity proofing, authentication, and federation, including requirements for security and privacy as well as considerations for fostering equity and the usability of digital identity solutions and technology.
 
-1. **Advance Equity:** This draft seeks to expand upon the risk management content of previous revisions and specifically mandates that agencies account for impacts to individuals and communities in addition to impacts to the organization. It also elevates risks to mission delivery – including challenges to providing services to all people who are eligible for and entitled to them – within the risk management process and when implementing digital identity systems. Additionally, the guidance now mandates continuous evaluation of potential impacts across demographics, provides biometric performance requirements, and additional parameters for the responsible use of biometric-based technologies, such as those that utilize face recognition. 
-2. **Emphasize Optionality and Choice for Consumers:** In the interest of promoting and investigating additional scalable, equitable, and convenient identify verification options, including those that do and do not leverage face recognition technologies, this draft expands the list of acceptable identity proofing alternatives to provide new mechanisms to securely deliver services to individuals with differing means, motivations, and backgrounds. The revision also emphasizes the need for digital identity services to support multiple authenticator options to address diverse consumer needs and secure account recovery.
-3. **Deter Fraud and Advanced Threats:** This draft enhances fraud prevention measures from the third revision by updating risk and threat models to account for new attacks, providing new options for phishing resistant authentication, and introducing requirements to prevent automated attacks against enrollment processes. It also opens the door to new technology such as mobile driver’s licenses and verifiable credentials. 
-4. **Address Implementation Lessons Learned:** This draft addresses areas where implementation experience has indicated that additional clarity or detail was required to effectively operationalize the guidelines. This includes re-working the federation assurance levels, providing greater detail on Trusted Referees, clarifying guidelines on identity attribute validation sources, and improving address confirmation requirements. 
+Based on the feedback provided in response to the June 2020 Pre-Draft Call for Comments, research into real-world implementations of the guidelines, market innovation, and the current threat environment, this draft seeks to:
 
-NIST is specifically interested in comments on and recommendations for the following topics:
+- Address comments received in response to the IPD of Revision 4 of SP 800-63
+- Clarify the text to address the questions and issues raised in the public comments
+- Update all four volumes of SP 800-63 based on current technology and market developments, the changing digital identity threat landscape, and organizational needs for digital identity solutions to address online security, privacy, usability, and equity
 
-**Identity Proofing and Enrollment**
+NIST is specifically interested in comments and recommendations on the following topics:
 
-- NIST sees a need for inclusion of an unattended, fully remote Identity Assurance Level (IAL) 2 identity proofing workflow that provides security and convenience, but does not require face recognition. Accordingly, NIST seeks input on the following questions: 
-    - What technologies or methods can be applied to develop a remote, unattended IAL2 identity proofing process that demonstrably mitigates the same risks as the current IAL2 process?
-    - Are these technologies supported by existing or emerging technical standards?
-    - Do these technologies have established metrics and testing methodologies to allow for assessment of performance and understanding of impacts across user populations (e.g., bias in artificial intelligence)?
-- What methods exist for integrating digital evidence (e.g., Mobile Driver’s Licenses, Verifiable Credentials) into identity proofing at various identity assurance levels?
-- What are the impacts, benefits, and risks of specifying a set of requirements for CSPs to establish and maintain fraud detection, response, and notification capabilities? 
-    - Are there existing fraud checks (e.g., date of death) or fraud prevention techniques (e.g., device fingerprinting) that should be incorporated as baseline normative requirements? If so, at what assurance levels could these be applied?
-    - How might emerging methods such as fraud analytics and risk scoring be further researched, standardized, measured, and integrated into the guidance in the future? 
-    - What accompanying privacy and equity considerations should be addressed alongside these methods?
-- Are current testing programs for liveness detection and presentation attack detection sufficient for evaluating the performance of implementations and technologies?  
-- What impacts would the proposed biometric performance requirements for identity proofing have on real-world implementations of biometric technologies? 
+1.	Risk Management and Identity Models
 
-**Risk Management**
+    - Is the "user controlled" wallet model sufficiently described to allow entities to understand its alignment to real-world implementations of wallet-based solutions such as mobile driver's licenses and verifiable credentials?
+    - Is the updated risk management process sufficiently well-defined to support an effective, repeatable, real-world process for organizations seeking to implement digital identity system solutions to protect online services and systems?
 
-- What additional guidance or direction can be provided to integrate digital identity risk with enterprise risk management?
-- How might equity, privacy, and usability impacts be integrated into the assurance level selection process and digital identity risk management model?
-- How might risk analytics and fraud mitigation techniques be integrated into the selection of different identity assurance levels? How can we qualify or quantify their ability to mitigate overall identity risk?
+2.  Identity Proofing and Enrollment
 
-**Authentication and Lifecycle Management**
+    - Is the updated structure of the requirements around defined types of proofing sufficiently clear? Are the types sufficiently described?
+    - Are there additional fraud program requirements that need to be introduced as a common baseline for CSPs and other organizations?
+    - Are the fraud requirements sufficiently described to allow for appropriate balancing of fraud, privacy, and usability trade-offs?
+    - Are the added identity evidence validation and authenticity requirements and performance metrics realistic and achievable with existing technology capabilities?
 
-- Are emerging authentication models and techniques – such as FIDO passkey, Verifiable Credentials, and mobile driver’s licenses – sufficiently addressed and accommodated, as appropriate, by the guidelines? What are the potential associated security, privacy, and usability benefits and risks?
-- Are the controls for phishing resistance as defined in the guidelines for AAL2 and AAL3 authentication clear and sufficient?
-- How are session management thresholds and reauthentication requirements implemented by agencies and organizations? Should NIST provide thresholds or leave session lengths to agencies based on applications, users, and mission needs? 
-- What impacts would the proposed biometric performance requirements for this volume have on real-world implementations of biometric technologies? 
+3.  Authentication and Authenticator Management
 
-**Federation and Assertions**
+    - Are the syncable authenticator requirements sufficiently defined to allow for reasonable risk-based acceptance of syncable authenticators for public and enterprise-facing uses?
+    - Are there additional recommended controls that should be applied? Are there specific implementation recommendations or considerations that should be captured?
+    - Are wallet-based authentication mechanisms and "attribute bundles" sufficiently described as authenticators? Are there additional requirements that need to be added or clarified?
 
-- What additional privacy considerations (e.g., revocation of consent, limitations of use) may be required to account for the use of identity and provisioning APIs that had not previously been discussed in the guidelines?
-- Is the updated text and introduction of “bound authenticators” sufficiently clear to allow for practical implementations of federation assurance level (FAL) 3 transactions? What complications or challenges are anticipated based on the updated guidance?
+5.	Federation and Assertions
 
-**General**
+    - Is the concept of user-controlled wallets and attribute bundles sufficiently and clearly described to support real-world implementations? Are there additional requirements or considerations that should be added to improve the security, usability, and privacy of these technologies?
 
-- Is there an element of this guidance that you think is missing or could be expanded?
-- Is any language in the guidance confusing or hard to understand? Should we add definitions or additional context to any language?
-- Does the guidance sufficiently address privacy? 
-- Does the guidance sufficiently address equity? 
-    - What equity assessment methods, impact evaluation models, or metrics could we reference to better support organizations in preventing or detecting disparate impacts that could arise as a result of identity verification technologies or processes?
-- What specific implementation guidance, reference architectures, metrics, or other supporting resources may enable more rapid adoption and implementation of this and future iterations of the Digital Identity Guidelines?
-- What applied research and measurement efforts would provide the greatest impact on the identity market and advancement of these guidelines?
+6.  General
 
-Reviewers are encouraged to comment and suggest changes to the text of all four draft volumes of of the NIST SP 800-63-4 suite. NIST requests that all comments be submitted by 11:59pm Eastern Time on April 14, 2023. Please submit your comments to <mailto:dig-comments@nist.gov>. NIST will review all comments and make them available at the [NIST Identity and Access Management website](https://www.nist.gov/identity-access-management). Commenters are encouraged to use the comment template provided on the [NIST Computer Security Resource Center website](https://csrc.nist.gov/publications/detail/sp/800-63/4/draft).
+    - What specific implementation guidance, reference architectures, metrics, or other supporting resources could enable more rapid adoption and implementation of this and future iterations of the Digital Identity Guidelines?
+    - What applied research and measurement efforts would provide the greatest impacts on the identity market and advancement of these guidelines?
+  
+Reviewers are encouraged to comment and suggest changes to the text of all four draft volumes of the SP 800-63-4 suite. NIST requests that all comments be submitted by 11:59pm Eastern Time on October 7th, 2024. Please submit your comments to <mailto:dig-comments@nist.gov>. NIST will review all comments and make them available on the [NIST Identity and Access Management website](https://www.nist.gov/identity-access-management). Commenters are encouraged to use the comment template provided on the NIST Computer Security Resource Center website for responses to these notes to reviewers and for specific comments on the text of the four-volume suite.

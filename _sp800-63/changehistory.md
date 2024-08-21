@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Change Log
-navOrder: 10
+navOrder: 8
 navTitle: Change Log
 permalink: /sp800-63/changelog/
 anchor: changelog
-section: B
+section: C
 ---
 
 # Change Log {#changelog}
@@ -41,7 +41,12 @@ Other areas updated in 800-63-3 include:
 
 NIST SP 800-63-4 has substantial updates and re-organization from SP 800-63-3. Updates to 800-63-4 include:
 
-- [Section 2.3](sec2_introduction.md#ERMreqs) expands security and privacy consideration content of previous revisions. It also adds equity and usability considerations.
-- [Section 4.1](sec4_model.md#s-4-1) includes updated non-federated and federated digital identity models and descriptions.
-- [Section 4.4](sec4_model.md#Federation) consolidates informative descriptions and considerations on the use of federated identity architectures and assertions into one section.
-- [Section 5](sec5_DIRM.md#sec5) expands upon the risk management content of previous revisions and specifically mandates that organizations take into account impacts to individuals and communities in addition to impacts to the organization. It also elevates risks to mission delivery, including challenges to the provisioning of services to all people who are eligible for and entitled to them, within the risk management process and when implementing digital identity systems. The xAL selection flowcharts, previously found in 800-63-3, section 6, have been replaced with text that elaborates the risk management process along with a sample risk assessment matrix that supports xAL selection. Additionally, the guidelines now mandate continuous evaluation of potential impacts to individuals, communities, and organizations. 
+- Expanded security and privacy considerations and added equity and usability considerations.
+- Updated digital identity models and added a user-controlled wallet federation model that addresses the increased attention and adoption of digital wallets and attribute bundles.
+- Expanded digital identity risk management process to include definition of the protected online services, user groups, and impacted entities.
+- A more descriptive introduction to establish the context of the DIRM process, the two dimensions of risk it addresses, and the intended outcomes. This context-setting step includes defining and understanding the online service that the organization is offering and intending to protect with identity systems.
+- Expanded digital identity risk management process to include definition of the protected online services, user groups, and impacted entities.
+- Updated digital identity risk management process for additional assessments for tailoring initial baseline control selections.
+- Added performance metrics for the continuous evaluation of digital identity systems.
+- Added a new subsection on redress processes and requirements.
+- Added a new Artificial Intelligence subsection to address the use of Artificial Intelligence in digital identity services.

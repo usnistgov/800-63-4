@@ -325,6 +325,13 @@ strong.normative {
   margin-right: 1.5em;
 }
 
+/* figures should be roughly page-width */
+
+img[latex-fig] {
+  width: 1000px;
+  max-width: 100%;
+}
+
 /* Search functionality. */
 
 .navbar #search-box {

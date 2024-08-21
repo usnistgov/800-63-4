@@ -8,7 +8,7 @@ version: '3'
 
 services:
   pdfrender:
-    image: jricher/nistpages-pdf
+    image: csd773/csd773-nistpages-docker:newtexlive
     volumes:
         - .:/opt/source
     environment:

@@ -5,6 +5,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   References - Unnumbered section
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%: if not config.use_pdflatex
+\tagstructbegin{tag=Sect}
+%: endif
+
 
 \titleformat{\section}{\normalsize\bfseries\sffamily}{}{0em}{}
 \titleformat{\subsection}{\normalsize\bfseries\sffamily}{}{0em}{}
@@ -14,5 +18,10 @@
 \setcounter{secnumdepth}{-1}
 
 \VAR{body}
+
+%: if not config.use_pdflatex
+\tagstructend % end references section
+%: endif
+
 
 \setcounter{secnumdepth}{4}

@@ -2,6 +2,10 @@
 
 \hypersetup{bookmarksdepth=-1}
 
+%: if not config.use_pdflatex 
+	\tagstructbegin{tag=Sect}
+%: endif
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Cover Page 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11,23 +15,59 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 	Automated based on metadata - delete if not applicable
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\\
-\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\\
-\vfill
+%: if not config.use_pdflatex
+	\tagpdfparaOff
+	\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}%
+	\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\tagmcend\tagstructend \\ \tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+	\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\tagmcend\tagstructend \\
+	\vfill
+%: else
+	\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\\
+	\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\\
+	\vfill
+%: endif
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Title 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Huge{\sffamily{\textbf{\VAR{config.title}}}}\\
+
+%: if not config.use_pdflatex
+	\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}%
+	\Huge{\sffamily{\textbf{\VAR{config.title}}}}\tagmcend\tagstructend\\
+%: else
+	\Huge{\sffamily{\textbf{\VAR{config.title}}}}\\
+%: endif
+
 %: if config.subtitle
-\Large{\sffamily{\VAR{config.subtitle}}}\\
+
+%: if not config.use_pdflatex  
+	\tagstructbegin{tag=H1}\tagmcbegin{tag=H2}%
+	\Large{\sffamily{\VAR{config.subtitle}}}\tagmcend\tagstructend\\
+%: else
+	\Large{\sffamily{\VAR{config.subtitle}}}\\
+%: endif
+
 %: endif
 \vspace{15pt}
 \vfill
 
 %: if config.draft_stage
-\Large{\VAR{config.draft_stage}}
-\vspace{15pt}
-\vfill
+
+%: if not config.use_pdflatex
+	\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}%
+	\Large{\VAR{config.draft_stage}}\tagmcend\tagstructend
+	\vspace{15pt}
+	\vfill
+%: else
+	\Large{\VAR{config.draft_stage}}
+	\vspace{15pt}
+	\vfill
+%: endif
+
+%: endif
+
+%: if not config.use_pdflatex
+	\tagpdfparaOn
 %: endif
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,8 +103,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	NIST LOGO - keep as-is
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%: if not config.use_pdflatex
+	\tagstructbegin{tag=Figure,alttext=NIST logo}%
+	\tagmcbegin{tag=Figure}%
+	\includegraphics[width=0.5\linewidth]{NIST-logo.eps}\\
+	\tagmcend\tagstructend
 
-\includegraphics[width=0.5\linewidth]{NIST-logo.eps}\\ 
+%: else
+	\includegraphics[width=0.5\linewidth]{NIST-logo.eps}\\
+
+%: endif
+
 
 \end{flushright}
 \end{titlepage}
@@ -81,22 +130,58 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Publication Series & Number - automated
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\\
-\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\\
-\vfill
+
+%: if not config.use_pdflatex
+	\tagpdfparaOff
+	\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}%
+	\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\tagmcend\tagstructend \\ \tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+	\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\tagmcend\tagstructend \\
+	\vfill
+%: else
+	\LARGE{\sffamily{\textbf{NIST \VAR{config.pubseries}}}}\\
+	\LARGE{\sffamily{\textbf{\VAR{config.long_doc_number}}}}\\
+	\vfill
+%: endif
+	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Title 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Huge{\sffamily{\textbf{\VAR{config.title}}}}\\
+%: if not config.use_pdflatex
+	\tagstructbegin{tag=H1}\tagmcbegin{tag=H2}%
+	\Huge{\sffamily{\textbf{\VAR{config.title}}}}\tagmcend\tagstructend\\
+%: else
+	\Huge{\sffamily{\textbf{\VAR{config.title}}}}\\
+%: endif
+
 %: if config.subtitle
-\Large{\sffamily{\VAR{config.subtitle}}}\\
+
+%: if not config.use_pdflatex
+	\tagstructbegin{tag=H1}\tagmcbegin{tag=H2}%
+	\Large{\sffamily{\VAR{config.subtitle}}}\tagmcend\tagstructend\\
+%: else
+	\Large{\sffamily{\VAR{config.subtitle}}}\\
+%: endif
+
 %: endif
 \vfill
 
 %: if config.draft_stage
-\Large{\VAR{config.draft_stage}}
-\vspace{15pt}
-\vfill
+%: if not config.use_pdflatex
+	\tagstructbegin{tag=H1}\tagmcbegin{tag=H2}%
+	\Large{\VAR{config.draft_stage}} \tagmcend\tagstructend
+	\vspace{15pt}
+	\vfill
+%: else
+
+	\Large{\VAR{config.draft_stage}}
+	\vspace{15pt}
+	\vfill
+%: endif
+
+%: endif
+
+%: if not config.use_pdflatex
+	\tagpdfparaOn
 %: endif
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,8 +224,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Department of Commerce LOGO - leave as-is
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%: if not config.use_pdflatex
+	\tagstructbegin{tag=Figure,alttext=Department of Commerce logo}%
+	\tagmcbegin{tag=Figure}%
+	\includegraphics[width=0.18\linewidth]{DoC-logo.eps} 
+	\tagmcend\tagstructend
+%: else
+	\includegraphics[width=0.18\linewidth]{DoC-logo.eps} 
+%: endif
 
-\includegraphics[width=0.18\linewidth]{DoC-logo.eps}\\ 
+\\
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Department of Commerce & NIST Leadership 
@@ -156,6 +249,12 @@ National Institute of Standards and Technology\\
 
 
 \pagestyle{empty}
+
+%: if not config.use_pdflatex
+	\tagstructend % end cover section
+
+	\tagstructbegin{tag=Sect}
+%: endif
 
 \addtocontents{toc}{\setcounter{tocdepth}{-5}} % hide from TOC
 
@@ -186,17 +285,20 @@ Nothing in this publication should be taken to contradict the standards and guid
 
 
 %: if config.approved or config.supersedes
-\section*{Publication History}
+\section*{Publication History} %
 
-\VAR{config.approved}
+\VAR{config.approved} 
 
-\VAR{config.supersedes}
+\VAR{config.supersedes} 
+\par %
 
 %: endif
 
 \section*{How to Cite this NIST Technical Series Publication}
 
+\par %
 \VAR{config.citation} \url{\VAR{config.doi_url}}
+\par %
 
 \section*{Author ORCID iDs}
 
@@ -207,10 +309,9 @@ Nothing in this publication should be taken to contradict the standards and guid
 %: endfor
 
 
-
 %: if config.draft
 
-\section*{Public Comment Period}
+\section*{Public Comment Period} %
 
 \VAR{config.public_comment}
 
@@ -226,7 +327,15 @@ Nothing in this publication should be taken to contradict the standards and guid
 
 %: endif
 
+\section*{Additional Information}
+
+Additional information about this publication is available at \url{\VAR{config.info_url}},
+including related content, potential updates, and document history.
 
 \normalsize{\bfseries{\sffamily{All comments are subject to release under the Freedom of Information Act (FOIA).}}}
+
+%: if not config.use_pdflatex
+	\tagstructend %  end authority section
+%: endif
 
 \hypersetup{bookmarksdepth=4}

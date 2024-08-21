@@ -1,12 +1,11 @@
 _site/
 Gemfile
 Gemfile.lock
-*.pdf
 .sass-cache/
 .jekyll-metadata
 *.css.map
 *~
 _pdf/
 .DS_Store
-_template_workspace/
-_published
+_published/
+_template_workspace

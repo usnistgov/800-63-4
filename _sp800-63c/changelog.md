@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Changelog
-navOrder: 14
+navOrder: 15
 navTitle: Changelog
 permalink: /sp800-63c/changelog/
 anchor: changelog
-section: A
+section: C
 ---
 
 # Changelog {#changelog}
@@ -14,7 +14,7 @@ _This appendix is informative._ It provides an overview of the changes to SP 800
 
 * Added discussion of equity considerations and requirements.
 
-* Established trust agreements and registration as discrete steps in the federation process.
+* Established trust agreements and registration/discovery (key establishment) as discrete steps in the federation process.
 
 * All FALs have requirements around establishment of trust agreements and registration.
 
@@ -22,7 +22,7 @@ _This appendix is informative._ It provides an overview of the changes to SP 800
 
 * FAL2 requires injection protection.
 
-* FAL3 allows more general bound authenticators including RP-managed authenticators, in addition to classical holder-of-key.
+* FAL3 allows more general bound authenticators including RP-managed authenticators, in addition to classical holder-of-key assertions.
 
 * Communication of IAL/AAL/FAL required.
 
@@ -31,3 +31,11 @@ _This appendix is informative._ It provides an overview of the changes to SP 800
 * Added definition and discussion of RP subscriber accounts.
 
 * Added attribute provisioning models and discussion.
+
+* Subscriber-controlled wallet model added, with specific requirements separated from general-purpose IdPs.
+
+* Restructured core document sections to address common, general-purpose, and subscriber-controlled wallet requirements in separate sections.
+
+* Redress requirements for IdPs and RPs added.
+
+* Enterprise and dynamic use cases added throughout, with explicit examples.
