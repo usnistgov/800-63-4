@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63c/security/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Security</title>
+    <meta property="og:title" content="Security"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/fal/"><span class="section">2</span>FAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/Federation/"><span class="section">3</span>Federation</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/GenIdP/"><span class="section">4</span>General-Purpose IdP</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/Wallets/"><span class="section">5</span>Wallets</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63c/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">10</span>Examples</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abbreviations/"><span class="section">A</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/glossary/"><span class="section">B</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/changelog/"><span class="section">C</span>Changelog</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="security" data-section="6">
+  
+  
+    Security <a href="#security" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is informative.</em></p>
+
+<p>Since the federated authentication process involves coordination between multiple components, including the CSP, IdP, and RP, there are additional opportunities for attackers to compromise federated identity transactions and additional ramifications for successful attacks. This section summarizes many of the attacks and mitigations applicable to federation.</p>
+<h2 id="federation-threats" data-section="6">
+  
+  
+    Federation Threats <a href="#federation-threats" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>As in non-federated authentication, attackers’ motivations are typically to gain access (or a greater level of access) to a resource or service provided by an RP. Attackers may also attempt to impersonate a subscriber. Rogue or compromised IdPs, RPs, user agents (e.g., browsers), and parties outside of a typical federation transaction are potential attackers. To accomplish their attack, they might intercept or modify assertions and assertion references. Furthermore, two or more entities may attempt to subvert federation protocols by directly compromising the integrity or confidentiality of the assertion data. For the purpose of these types of threats, any authorized parties who attempt to exceed their privileges are considered attackers.</p>
+
+<p>In federated systems, successful attacks on the IdP can propagate through to the RPs that rely on that IdP for identity and security information. As a consequence, an attack against the IdP targeting one agency’s RP could potentially proliferate to another agency’s RP. Additionally, since a single subscriber account is made available to multiple RPs in a federated system, there are potential limitations on the tailoring to proofing strategies and the visibility into the proofing process that an IdP can offer to different RPs. However, these terms can vary in the trust agreements with each RP, if the IdP is able to support different use cases for different subscriber account populations. Furthermore, while the IdP can disclose different attributes to each RP, the subscriber account will need to contain the union of all attributes available to all RPs. This practice limits the damage of attacks against RPs but in turn makes the IdP a more compelling target for attackers.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63c/security/#table-2" name="table-2">Table 2. Federation Threats</a></p>
+
+<table latex-table="2" latex-caption="Federation Threats" latex-columns="p@0.20\textwidth,p@0.35\textwidth,p@0.35\textwidth">
+  <thead>
+    <tr>
+      <th>Federation Threats/Attacks</th>
+      <th>Description</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Assertion Manufacture or Modification</td>
+      <td>The attacker generates a false assertion</td>
+      <td>Compromised IdP asserts identity of a claimant who has not properly authenticated</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>The attacker modifies an existing assertion</td>
+      <td>Compromised proxy that changes AAL of an authentication assertion</td>
+    </tr>
+    <tr>
+      <td>Assertion Disclosure</td>
+      <td>Assertion visible to third party</td>
+      <td>Network monitoring reveals subscriber address of record to an outside party</td>
+    </tr>
+    <tr>
+      <td>Assertion Repudiation by the IdP</td>
+      <td>IdP later claims not to have signed transaction</td>
+      <td>User engages in fraudulent credit card transaction at RP, IdP claims not to have logged them in</td>
+    </tr>
+    <tr>
+      <td>Assertion Repudiation by the Subscriber</td>
+      <td>Subscriber claims not to have performed transaction</td>
+      <td>User agreement (e.g., contract) cannot be enforced</td>
+    </tr>
+    <tr>
+      <td>Assertion Redirect</td>
+      <td>Assertion can be used in unintended context</td>
+      <td>Compromised user agent passes assertion to attacker who uses it elsewhere</td>
+    </tr>
+    <tr>
+      <td>Assertion Reuse</td>
+      <td>Assertion can be used more than once with same RP</td>
+      <td>Intercepted assertion used by attacker to authenticate their own session</td>
+    </tr>
+    <tr>
+      <td>Assertion Substitution</td>
+      <td>Attacker uses an assertion intended for a different subscriber</td>
+      <td>Session hijacking attack between IdP and RP</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="federation-threat-mitigation-strategies" data-section="6">
+  
+  
+    Federation Threat Mitigation Strategies <a href="#federation-threat-mitigation-strategies" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Mechanisms that assist in mitigating the above threats are identified in <a href="/800-63-4/sp800-63c/security/#table-3">Table 3</a>.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63c/security/#table-3" name="table-3">Table 3. Mitigating Federation Threats</a></p>
+
+<table latex-table="3" latex-caption="Mitigating Federation Threats" latex-columns="p@0.20\textwidth,p@0.55\textwidth,p@0.15\textwidth">
+  <thead>
+    <tr>
+      <th>Federation Threat/Attack</th>
+      <th>Threat Mitigation Mechanisms</th>
+      <th>Normative Reference(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Assertion Manufacture or Modification</td>
+      <td>Cryptographically sign the assertion at IdP and verify at RP</td>
+      <td><a href="/800-63-4/sp800-63c/Federation/#identifiers-keys">3.5</a>, <a href="/800-63-4/sp800-63c/Federation/#signed-assertion">3.12.2</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Send assertion over an authenticated protected channel authenticating the IdP</td>
+      <td><a href="/800-63-4/sp800-63c/GenIdP/#presentation">4.11</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Include a non-guessable random identifier in the assertion</td>
+      <td><a href="/800-63-4/sp800-63c/Federation/#assertion-id">3.12.1</a></td>
+    </tr>
+    <tr>
+      <td>Assertion Disclosure</td>
+      <td>Send assertion over an authenticated protected channel authenticating the RP</td>
+      <td><a href="/800-63-4/sp800-63c/GenIdP/#assertions">4.9</a>, <a href="/800-63-4/sp800-63c/Wallets/#assertion-contents">5.8</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Encrypt assertion for a specific RP (may be accomplished by use of a mutually authenticated protected channel)</td>
+      <td><a href="/800-63-4/sp800-63c/Federation/#encrypted-assertion">3.12.3</a></td>
+    </tr>
+    <tr>
+      <td>Assertion Repudiation by the IdP</td>
+      <td>Cryptographically sign the assertion at the IdP with a key that supports non-repudiation; verify signature at RP</td>
+      <td><a href="/800-63-4/sp800-63c/Federation/#signed-assertion">3.12.2</a></td>
+    </tr>
+    <tr>
+      <td>Assertion Repudiation by the Subscriber</td>
+      <td>Issue holder-of-key assertions or assertions with bound authenticators; proof of possession of authenticator verifies subscriber’s participation to the RP</td>
+      <td><a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">3.14</a> <a href="/800-63-4/sp800-63c/Federation/#bound-authn">3.15</a></td>
+    </tr>
+    <tr>
+      <td>Assertion Redirect</td>
+      <td>Include identity of the RP (“audience”) for which the assertion is issued in its signed content; RP verifies that they are intended recipient</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Assertion Reuse</td>
+      <td>Include an issuance timestamp with short validity period in the signed content of the assertion; RP verifies validity</td>
+      <td><a href="/800-63-4/sp800-63c/GenIdP/#assertions">4.9</a>, <a href="/800-63-4/sp800-63c/Wallets/#assertion-contents">5.8</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>RP keeps track of assertions consumed within a configurable time window to ensure that a given assertion is not used more than once.</td>
+      <td><a href="/800-63-4/sp800-63c/Federation/#assertion-id">3.12.1</a></td>
+    </tr>
+    <tr>
+      <td>Assertion Substitution</td>
+      <td>Ensure that assertions contain a reference to the assertion request or some other nonce that was cryptographically bound to the request by the RP</td>
+      <td><a href="/800-63-4/sp800-63c/GenIdP/#assertions">4.9</a>, <a href="/800-63-4/sp800-63c/Wallets/#assertion-contents">5.8</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Send assertions in the same authenticated protected channel as the request, such as in the back-channel model</td>
+      <td><a href="/800-63-4/sp800-63c/GenIdP/#back-channel">4.11.1</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

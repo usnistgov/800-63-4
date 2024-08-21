@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63b/security/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Threats and Security Considerations</title>
+    <meta property="og:title" content="Threats and Security Considerations"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/aal/"><span class="section">2</span>AAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/authenticators/"><span class="section">3</span>Authenticators</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/events/"><span class="section">4</span>Events</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/session/"><span class="section">5</span>Session</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63b/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/passwords/"><span class="section">A</span>Passwords</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/syncable/"><span class="section">B</span>Syncable</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/abbreviations/"><span class="section">C</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/glossary/"><span class="section">D</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/changelog/"><span class="section">E</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="sec8" data-section="6">
+  
+  
+    Threats and Security Considerations <a href="#sec8" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is informative.</em></p>
+<h2 id="authenticator-threats" data-section="6">
+  
+  
+    Authenticator Threats <a href="#authenticator-threats" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>An attacker who can gain control of an authenticator will often be able to masquerade as the authenticator’s owner. Threats to authenticators can be categorized based on attacks on the types of authentication factors that comprise the authenticator:</p>
+
+<ul>
+  <li>
+    <p>“Something you know” may be disclosed to an attacker. For example, the attacker may guess a password. If the authenticator is a shared secret, the attacker could access the CSP or verifier and obtain the secret value or perform a dictionary attack on a hash of that value. An attacker may observe the entry of a PIN or passcode, find a written record or journal entry of a PIN or passcode, or install malicious software (e.g., a keyboard logger) to capture the secret. Additionally, an attacker may determine the secret through offline attacks on a password database maintained by the verifier.</p>
+  </li>
+  <li>
+    <p>“Something you have” may be lost, damaged, stolen from the owner, or cloned by an attacker. For example, an attacker who gains access to the owner’s computer may copy a software authenticator. A hardware authenticator may be stolen, tampered with, or duplicated. Out-of-band secrets may be intercepted by an attacker and used to authenticate their own session. A subscriber may be socially engineered to provide access to secrets without intentional collusion.</p>
+  </li>
+  <li>
+    <p>“Something you are” may be replicated. For example, an attacker may obtain a copy of the subscriber’s fingerprint and construct a replica.</p>
+  </li>
+</ul>
+
+<p>Subscribers sometimes collude with attackers, and virtually nothing can be done from an authentication perspective to prevent these attacks. With this caveat in mind, threats to the authenticators used for digital authentication are listed in <a href="/800-63-4/sp800-63b/security/#table-2">Table 2</a> along with some examples.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63b/security/#table-2" name="table-2">Table 2. Authenticator threats</a></p>
+
+<table latex-table="2" latex-caption="Authenticator Threats" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.35\textwidth,p@0.35\textwidth">
+  <thead>
+    <tr>
+      <th>Authenticator Threat/Attack</th>
+      <th>Description</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Theft</strong></td>
+      <td>An attacker steals a physical authenticator.</td>
+      <td>A hardware cryptographic authenticator is stolen.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>An OTP authenticator is stolen.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A look-up secret authenticator is stolen.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A cell phone is stolen.</td>
+    </tr>
+    <tr>
+      <td><strong>Duplication</strong></td>
+      <td>The subscriber’s authenticator has been copied with or without their knowledge.</td>
+      <td>Passwords written on paper are disclosed.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Passwords stored in an electronic file are copied.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A vulnerability in an insufficiently secure password manager is exploited.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A software PKI authenticator (i.e., private key) is copied.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A Look-up secret authenticator is copied.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A counterfeit biometric authenticator is manufactured.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Exportable cryptographic keys are obtained from a device or cloud-based sync fabric.</td>
+    </tr>
+    <tr>
+      <td><strong>Eavesdropping</strong></td>
+      <td>The attacker observes the authenticator secret or authenticator output as the subscriber is authenticating.</td>
+      <td>Passwords are obtained by watching keyboard entries.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Passwords or authenticator outputs are intercepted by keystroke logging software.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A PIN is captured from a PIN pad device.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A hashed password is obtained and used by an attacker for another authentication (i.e., <em>pass-the-hash attack</em>).</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>The attacker intercepts an out-of-band secret by compromising the communication channel.</td>
+      <td>An out-of-band secret is transmitted via unencrypted Wi-Fi and received by the attacker.</td>
+    </tr>
+    <tr>
+      <td><strong>Offline Cracking</strong></td>
+      <td>The authenticator is exposed using analytical methods outside of the authentication mechanism.</td>
+      <td>A software PKI authenticator is subjected to a dictionary attack to identify the correct password to decrypt the private key.</td>
+    </tr>
+    <tr>
+      <td><strong>Side-Channel Attack</strong></td>
+      <td>The authenticator’s secret is exposed using the physical characteristics of the authenticator.</td>
+      <td>A key is extracted by differential power analysis on a hardware cryptographic authenticator.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A cryptographic authenticator secret is extracted by analysis of the authenticator’s response time over several attempts.</td>
+    </tr>
+    <tr>
+      <td><strong>Phishing or Pharming</strong></td>
+      <td>The authenticator output is captured by fooling the claimant into thinking that the attacker is a verifier or RP.</td>
+      <td>A claimant reveals a password to a website impersonating the verifier.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A password is revealed by a bank subscriber in response to an email inquiry from a phisher pretending to represent the bank.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A password is revealed by the claimant at a bogus verifier website reached through DNS spoofing.</td>
+    </tr>
+    <tr>
+      <td><strong>Social Engineering</strong></td>
+      <td>The attacker establishes a level of trust with a subscriber to convince them to reveal their authenticator secret or authenticator output.</td>
+      <td>A password is revealed by the subscriber to an officemate asking for the password on behalf of the subscriber’s boss.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A password is revealed by a subscriber in a telephone inquiry from an attacker masquerading as a system administrator.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>An attacker who has convinced the mobile operator to redirect the victim’s mobile phone to them receives an out-of-band secret sent via SMS.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A subscriber erroneously approves a push-based authentication request coming from a repeated “fatigue” attack.</td>
+    </tr>
+    <tr>
+      <td><strong>Online Guessing</strong></td>
+      <td>The attacker connects to the verifier online and attempts to guess a valid authenticator output in the context of that verifier.</td>
+      <td>Online dictionary attacks are used to guess passwords.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Online guessing is used to guess authenticator outputs for an OTP authenticator that is registered to a legitimate subscriber.</td>
+    </tr>
+    <tr>
+      <td><strong>Endpoint Compromise</strong></td>
+      <td>Malicious code on the endpoint proxies allow remote access to a connected authenticator without the subscriber’s consent.</td>
+      <td>A cryptographic authenticator connected to the endpoint is used to authenticate remote attackers.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Malicious code on the endpoint causes authentication to other than the intended verifier.</td>
+      <td>Authentication is performed on behalf of an attacker rather than the subscriber.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>A malicious app on the endpoint reads an out-of-band secret sent via SMS, and the attacker uses the secret to authenticate.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Malicious code on the endpoint compromises a multi-factor software cryptographic authenticator.</td>
+      <td>Malicious code proxies authenticate or export authenticator keys from the endpoint.</td>
+    </tr>
+    <tr>
+      <td><strong>Unauthorized Binding</strong></td>
+      <td>An attacker causes an authenticator under their control to be bound to a subscriber account.</td>
+      <td>An attacker intercepts an authenticator or provisioning key en route to the subscriber.</td>
+    </tr>
+    <tr>
+      <td><strong>Latent Keys</strong></td>
+      <td>A decommissioned device retains authentication keys</td>
+      <td>A device (e.g., laptop computer) is sold without recognition that device-based authentication keys are present and could be used by a new owner.</td>
+    </tr>
+    <tr>
+      <td><strong>Proliferation of Keys</strong></td>
+      <td>Transferring device-based authentication keys between devices increases the attack surface</td>
+      <td>A subscriber copies authentication keys to many devices, possibly some that are not under their direct control, and loses track of where the keys are stored</td>
+    </tr>
+    <tr>
+      <td><strong>Key Transfer Security</strong></td>
+      <td>Authentication keys are transferred between devices through an insufficiently secure cloud service</td>
+      <td>Access to a cloud service that stores authentication keys requires only single-factor authentication</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Keys are made available to others through a URL sent via email</td>
+    </tr>
+    <tr>
+      <td><strong>Insider Threats</strong></td>
+      <td>An insider with access to the CSP (e.g., customer support representative) colludes with an attacker to give access to subscriber accounts.</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="threat-mitigation-strategies" data-section="6">
+  
+  
+    Threat Mitigation Strategies <a href="#threat-mitigation-strategies" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+<p><a href="/800-63-4/sp800-63b/security/#table-3">Table 3</a> summarizes related mechanisms that assist in mitigating the threats described in <a href="/800-63-4/sp800-63b/security/#table-2">Table 2</a>.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63b/security/#table-3" name="table-3">Table 3. Mitigating authenticator threats</a></p>
+
+<table latex-table="3" latex-caption="Mitigating Authenticator Threats" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.35\textwidth,p@0.35\textwidth">
+  <thead>
+    <tr>
+      <th>Authenticator Threat/Attack</th>
+      <th>Threat Mitigation Mechanisms</th>
+      <th>Normative Reference Sections</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Theft</strong></td>
+      <td>Use multi-factor authenticators that must be activated through a password or biometric.</td>
+      <td><a href="/800-63-4/sp800-63b/aal/#aal2types">2.2.1</a>, <a href="/800-63-4/sp800-63b/aal/#aal3types">2.3.1</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Use a combination of authenticators that includes a password or biometric.</td>
+      <td><a href="/800-63-4/sp800-63b/aal/#aal2types">2.2.1</a>, <a href="/800-63-4/sp800-63b/aal/#aal3types">2.3.1</a></td>
+    </tr>
+    <tr>
+      <td><strong>Duplication</strong></td>
+      <td>Use authenticators from which it is difficult to extract and duplicate long-term authentication secrets.</td>
+      <td><a href="/800-63-4/sp800-63b/aal/#aal2req">2.2.2</a>, <a href="/800-63-4/sp800-63b/aal/#aal3req">2.3.2</a>, <a href="/800-63-4/sp800-63b/authenticators/#sfca">3.1.6.1</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Enforce AAL2 requirements for access to sync fabrics that contain exported authentication keys, and only allow them to be imported into trusted devices.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#mfca">3.1.7.1</a></td>
+    </tr>
+    <tr>
+      <td><strong>Eavesdropping</strong></td>
+      <td>Ensure the endpoint’s security before use, especially with respect to freedom from malware (e.g., such as key loggers).</td>
+      <td><a href="/800-63-4/sp800-63b/aal/#aal2req">2.2.2</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Avoid using unauthenticated and unencrypted communication channels to send out-of-band authenticator secrets.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#ooba">3.1.3.1</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Authenticate over authenticated protected channels (e.g., observe the lock icon in the browser window).</td>
+      <td><a href="/800-63-4/sp800-63b/aal/#aal1req">2.1.2</a>, <a href="/800-63-4/sp800-63b/aal/#aal2req">2.2.2</a>, <a href="/800-63-4/sp800-63b/aal/#aal3req">2.3.2</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Use authentication protocols that are resistant to replay attacks (e.g., <em>pass-the-hash</em>).</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#replay">3.2.7</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Use authentication endpoints that employ trusted input and display capabilities.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#sfca">3.1.6.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#mfca">3.1.7.1</a></td>
+    </tr>
+    <tr>
+      <td><strong>Offline Cracking</strong></td>
+      <td>Use an authenticator with a high entropy authenticator secret.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#lusa">3.1.2.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#sfotpa">3.1.4.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#mfotpa">3.1.5.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#sfca">3.1.6.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#mfca">3.1.7.1</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Store centrally verified passwords in a salted, hashed form, including a keyed hash.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#passwordver">3.1.1.1.2</a></td>
+    </tr>
+    <tr>
+      <td><strong>Side-Channel Attack</strong></td>
+      <td>Use authenticator algorithms that maintain constant power consumption and timing regardless of secret values.</td>
+      <td><a href="/800-63-4/sp800-63b/aal/#aal3req">2.3.2</a></td>
+    </tr>
+    <tr>
+      <td><strong>Phishing or Pharming</strong></td>
+      <td>Use authenticators that provide phishing resistance.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#verifimpers">3.2.5</a></td>
+    </tr>
+    <tr>
+      <td><strong>Social Engineering</strong></td>
+      <td>Avoid using authenticators that present a social engineering risk to third parties (e.g., customer service agents).</td>
+      <td><a href="/800-63-4/sp800-63b/events/#bindexisting">4.1.2.1</a>, <a href="/800-63-4/sp800-63b/events/#recovery">4.2</a></td>
+    </tr>
+    <tr>
+      <td><strong>Online Guessing</strong></td>
+      <td>Use authenticators that generate high entropy output.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#lusa">3.1.2.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#sfca">3.1.6.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#mfca">3.1.7.1</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Use an authenticator that locks after repeated failed activation attempts.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#throttle">3.2.2</a></td>
+    </tr>
+    <tr>
+      <td><strong>Endpoint Compromise</strong></td>
+      <td>Use hardware authenticators that require physical action by the claimant.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#intent">3.2.8</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Maintain software-based keys in restricted-access storage.</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#ooba">3.1.3.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#sfca">3.1.6.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#mfca">3.1.7.1</a>, <a href="/800-63-4/sp800-63b/authenticators/#export">3.2.13</a></td>
+    </tr>
+    <tr>
+      <td><strong>Unauthorized Binding</strong></td>
+      <td>Provision authenticators and associated keys using authenticated protected channels or in person.</td>
+      <td><a href="/800-63-4/sp800-63b/events/#binding">4.1</a></td>
+    </tr>
+    <tr>
+      <td><strong>Latent Keys</strong></td>
+      <td>Ensure the secure disposal of equipment that contains device-based authentication keys</td>
+      <td><a href="/800-63-4/sp800-63b/events/#expiration">4.4</a>, <a href="4_events#invalidation">4.5</a></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>In enterprise applications, limit the transfer of keys to organizationally managed or trusted devices</td>
+      <td><a href="/800-63-4/sp800-63b/syncable/#cloning">B.2</a></td>
+    </tr>
+    <tr>
+      <td><strong>Key Transfer Security</strong></td>
+      <td>Encourage or require subscribers to use cloud services that have been approved for key storage and transfer</td>
+      <td><a href="/800-63-4/sp800-63b/syncable/#cloning">B.2</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Several other strategies may be applied to mitigate the threats described in <a href="/800-63-4/sp800-63b/security/#table-3">Table 3</a>:</p>
+
+<ul>
+  <li>
+    <p><em>Multiple factors</em> make successful attacks more difficult to accomplish. If an attacker must steal a cryptographic authenticator and guess a password, then the work to discover both factors may be too high.</p>
+  </li>
+  <li>
+    <p><em>Physical security mechanisms</em> may be employed to protect a stolen authenticator from duplication. Physical security mechanisms can provide tamper evidence, detection, and response.</p>
+  </li>
+  <li>
+    <p><em>Requiring long passwords</em> that do not appear in common dictionaries may force attackers to try every possible value.</p>
+  </li>
+  <li>
+    <p><em>System and network security controls</em> may be employed to prevent an attacker from gaining access to a system or installing malicious software.</p>
+  </li>
+  <li>
+    <p><em>Periodic training</em> may be performed to ensure that subscribers understand when and how to report a compromise or a suspicion of compromise and to recognize patterns of behavior that may signify that an attacker is attempting to compromise the authentication process.</p>
+  </li>
+  <li>
+    <p><em>Out-of-band techniques</em> may be employed to verify the proof of possession of registered devices (e.g., cell phones).</p>
+  </li>
+</ul>
+<h2 id="authenticator-recovery" data-section="6">
+  
+  
+    Authenticator Recovery <a href="#authenticator-recovery" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The weak point in many authentication mechanisms is the process followed when a subscriber loses control of one or more authenticators and needs to replace them. In many cases, the options for authenticating the subscriber are limited, and economic concerns (e.g., the cost of maintaining call centers) motivate the use of inexpensive and often less secure backup authentication methods. To the extent that authenticator recovery is human-assisted, social engineering attacks are also risky.</p>
+
+<p>To maintain the integrity of the authentication factors, it is essential that one authentication factor cannot be leveraged to obtain an authenticator of a different factor. For example, a password must not be usable to obtain a new list of look-up secrets.</p>
+<h2 id="session-attacks" data-section="6">
+  
+  
+    Session Attacks <a href="#session-attacks" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Hijacking attacks on the session following an authentication event can have similar security impacts. The session management guidelines in <a href="/800-63-4/sp800-63b/session/#sec7">Sec. 5</a> are essential to maintaining session integrity against attacks (e.g., XSS). It is also important to sanitize all information to be displayed <a href="/800-63-4/sp800-63b/references/#ref-OWASP-XSS-prevention">[OWASP-XSS-prevention]</a> to ensure that it does not contain executable content. These guidelines recommend that session secrets be made inaccessible to mobile code to provide extra protection against the exfiltration of session secrets.</p>
+
+<p>Another post-authentication threat is cross-site request forgery (CSRF), which takes advantage of users’ tendency to have multiple sessions active simultaneously. It is essential to embed and verify a session identifier for web requests to prevent a valid URL or request from being unintentionally or maliciously activated.</p>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

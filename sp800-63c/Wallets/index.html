@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63c/Wallets/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Subscriber-Controlled Wallets</title>
+    <meta property="og:title" content="Subscriber-Controlled Wallets"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/fal/"><span class="section">2</span>FAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/Federation/"><span class="section">3</span>Federation</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/GenIdP/"><span class="section">4</span>General-Purpose IdP</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63c/Wallets/"><span class="section">5</span>Wallets</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">10</span>Examples</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abbreviations/"><span class="section">A</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/glossary/"><span class="section">B</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/changelog/"><span class="section">C</span>Changelog</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="wallet" data-section="5">
+  
+  
+    Subscriber-Controlled Wallets <a href="#wallet" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is normative.</em></p>
+
+<p>When the IdP runs on a device controlled by the subscriber, whether as a digital wallet or as a self-issued identity provider, the IdP is known as a <em>subscriber-controlled wallet</em> and the following requirements apply.</p>
+
+<p>Subscriber-controlled wallets <strong>SHALL</strong> require the presentation of an activation factor in order to perform any actions requiring the use of the wallet’s signing key, including onboarding of the wallet and release of attributes to an RP.</p>
+<h2 id="wallet-activation" data-section="5">
+  
+  
+    Wallet Activation <a href="#wallet-activation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The subscriber-controlled wallet <strong>SHALL</strong> require presentation of an activation factor from the subscriber for the following actions:</p>
+
+<ul>
+  <li>Providing proof of the signing key to the CSP during the provisioning process</li>
+  <li>Signing the assertion for presentation to the RP</li>
+</ul>
+
+<p>The subscriber-controlled wallet <strong>SHOULD</strong> require presentation of an activation factor before any other operations that involve use of the wallet’s signing keys. The wallet <strong>MAY</strong> request reissuance of previously-issued attribute bundles without requiring subscriber involvement.</p>
+
+<p>Submission of the activation factor <strong>SHALL</strong> be a separate operation from the unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device <strong>MAY</strong> be used in the activation operation. Agencies <strong>MAY</strong> relax this requirement for subscriber-controlled wallets managed by or on behalf of the CSP (e.g., via mobile device management) that are constrained to have short (agency-determined) inactivity timeouts and device activation factors meeting the above requirements. Additional discussion of activation factors for authenticators is found in <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10" latex-href="#ref-SP800-63B">Sec. 3.2.10 of [SP800-63B]</a>.</p>
+<h2 id="federation-transaction" data-section="5">
+  
+  
+    Federation Transaction <a href="#federation-transaction" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>A federation transaction with a subscriber-controlled wallet establishes the subscriber’s device as an IdP for the subscriber account and creates an authenticated session for the subscriber at the RP. The process is shown in <a href="/800-63-4/sp800-63c/Wallets/#fig-13">Fig. 13</a>.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63c/Wallets/#fig-1" name="fig-13">Fig. 13. Federation with a Subscriber-Controlled Wallet</a></p>
+
+<p><img src="/800-63-4/sp800-63c/images/subscriberidp.png" alt="Overview diagram of federated authentication process using a subscriber-controlled wallet." title="Subscriber-Controlled Wallet" latex-src="subscriberidp.pdf" latex-fig="13" latex-place="p" /></p>
+
+<p>A federation transaction with a subscriber-controlled wallet takes place over several steps:</p>
+
+<ol>
+  <li>The CSP identity proofs the subscriber and creates a subscriber account.</li>
+  <li>The CSP provisions the wallet to the subscriber account, which includes the subscriber verifying an authenticator in their subscriber account.</li>
+  <li>The wallet receives a signed attribute bundle from the CSP, allowing the wallet to act as an IdP.</li>
+  <li>The RP requests a federated authentication from the wallet, usually through subscriber action.</li>
+  <li>The subscriber activates the wallet through an authentication factor.</li>
+  <li>The wallet creates an assertion based on the attribute bundles available to the wallet.</li>
+  <li>The wallet presents the assertion to the RP.</li>
+  <li>The RP validates the assertion.</li>
+  <li>The RP creates an authenticated session for the subscriber.</li>
+</ol>
+<h2 id="trust-agreements" data-section="5">
+  
+  
+    Trust Agreements <a href="#trust-agreements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The trust agreement for a transaction involving a subscriber-controlled wallet <strong>SHALL</strong> be established between the RP and the CSP. The trust agreement <strong>MAY</strong> be facilitated through use of a federation authority, as described in <a href="/800-63-4/sp800-63c/Federation/#authorities">Sec. 3.4.2</a>.</p>
+
+<p>In most cases, the RP does not have a direct trust relationship with the wallet (acting as IdP), but instead trusts the wallet transitively through the wallet’s established relationship with the CSP. This relationship can be verified by the means of attribute bundles, as described in <a href="/800-63-4/sp800-63c/Federation/#attribute-bundles">Sec. 3.11.1</a>. Even though the wallet is not usually involved in the process of establishing the trust agreement, the trust agreement between the RP and CSP can still be accomplished in either an a priori or subscriber-driven fashion.</p>
+
+<p>The trust agreement <strong>SHALL</strong> include the following</p>
+
+<ul>
+  <li>The set of subscriber attributes the CSP makes available to wallets in attribute bundles</li>
+  <li>The set of subscriber attributes the wallet can make available to the RP</li>
+  <li>The population of subscriber accounts that the CSP can represent</li>
+  <li>The xALs available from the wallet</li>
+</ul>
+
+<p>The release of subscriber attributes <strong>SHALL</strong> be managed using a runtime decision managed by the wallet, as described in <a href="/800-63-4/sp800-63c/GenIdP/#idp-runtime-decision">Sec. 4.6.1.3</a>. The authorized party <strong>SHALL</strong> be the subscriber.</p>
+
+<p>The following terms <strong>SHALL</strong> be disclosed to the subscriber during the runtime decision:</p>
+
+<ul>
+  <li>The set of subscriber attributes that the RP will request (a subset of the attributes made available)</li>
+  <li>The purpose for each attribute requested by the RP</li>
+  <li>The xALs required by the RP</li>
+</ul>
+
+<p>Note that all information disclosed to the subscriber needs to be conveyed in a manner that is understandable and actionable, as discussed in <a href="/800-63-4/sp800-63c/usability/#usability">Sec. 8</a>.</p>
+
+<p>If FAL3 is allowed within the trust agreement and authenticators other than the wallet itself are allowed for use at FAL3, the trust agreement <strong>SHALL</strong> stipulate the following terms regarding holder-of-key assertions and bound authenticators (see <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec. 3.14</a> and <a href="/800-63-4/sp800-63c/Federation/#bound-authn">Sec. 3.15</a>):</p>
+
+<ul>
+  <li>Whether the wallet’s presentation is considered sufficient for holder-of-key assertion requirements</li>
+  <li>The means by which non-wallet holder-of-key assertions can be verified by the RP (such as a common trusted PKI system)</li>
+  <li>The means by which the RP can associate non-wallet holder-of-key assertions with specific RP subscriber accounts (such as attribute-based account resolution or pre-provisioning)</li>
+  <li>Whether bound authenticators are supplied by the RP or by the subscriber</li>
+  <li>Documentation of the binding ceremony used for any subscriber-provided bound authenticators</li>
+</ul>
+<h2 id="scidp-provisioning" data-section="5">
+  
+  
+    Provisioning the Subscriber-Controlled Wallet <a href="#scidp-provisioning" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>When the CSP provisions the subscriber-controlled wallet, the process <strong>SHALL</strong> include the following steps:</p>
+
+<ol>
+  <li>The subscriber authenticates to the CSP’s provisioning system using one or more authenticators bound to the subscriber account.</li>
+  <li>The subscriber activates the wallet using an activation factor.</li>
+  <li>The wallet proves possession of its signing key to the CSP.</li>
+  <li>The CSP creates one or more attribute bundles that include subscriber attributes and the wallet’s signing key (or a reference to that key).</li>
+  <li>The wallet stores the attribute bundle for later presentation to RPs.</li>
+</ol>
+
+<p>The subscriber-controlled wallet <strong>MAY</strong> generate and use a different signing key for each provisioning request with the CSP.</p>
+
+<p>The CSP <strong>SHALL</strong> create a unique attribute bundle for each requesting wallet.</p>
+<h3 id="deprovisioning-the-subscriber-controlled-wallet" data-section="5">
+  
+  
+    Deprovisioning the Subscriber-Controlled Wallet <a href="#deprovisioning-the-subscriber-controlled-wallet" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The CSP <strong>SHALL</strong> provide a means of deprovisioning a subscriber-controlled wallet. The deprovisioning process is used when the subscriber account is terminated, thereby rendering downstream federation actions invalid, or when the wallet needs to be terminated due to the device being lost, stolen, or compromised.</p>
+
+<p>To accomplish this, the CSP <strong>SHALL</strong> issue attribute bundles with a limited time validity window, <strong>SHALL</strong> issue attribute bundles specific to each wallet. The CSP <strong>SHOULD</strong> provide a means to independently verify the status of attribute bundles (i.e., whether a specific bundle has been revoked by the CSP). If such a service is offered, the service <strong>SHALL</strong> be deployed in a privacy-preserving way such that the CSP is not alerted to the use of a specific attribute bundle at a specific RP.</p>
+<h2 id="discovery-and-registration" data-section="5">
+  
+  
+    Discovery and Registration <a href="#discovery-and-registration" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>To perform a federation transaction with a subscriber-controlled wallet, the RP <strong>SHALL</strong> first determine the attribute bundle singing public key of the CSP through a secure process as stated by the trust agreement. In some systems, this is accomplished by retrieving the CSP’s attribute bundle signing public keys from a URL known to be controlled by the CSP. In other systems, the RP is configured manually with the public key of the CSP before being deployed.</p>
+
+<p>The RP learns the identifier and assertion signing public keys of the subscriber-controlled wallet as part of the attribute bundle signed by the CSP, presented in the federation transaction. The RP trusts the CSP’s onboarding process of the wallet to provide assurance that the public key being presented can be trusted to present the attribute bundle in question.</p>
+
+<p>The RP also needs to register with the subscriber-controlled wallet. In most cases, this is expected to be a dynamic process in which the RP introduces its properties during the federation transaction. The nature of a subscriber-controlled wallet makes it difficult for any specific RP to pre-register with an instance of the wallet, but this use case can be facilitated through the use of a trusted third party stipulated in the trust agreement. For example, an ecosystem has a centralized service for managing discovery and registration. When an RP joins the ecosystem, it registers itself with the trusted service, downloads the CSP’s public keys, and receives an identifier to use with wallets. When the wallet is onboarded by the CSP, the wallet is informed where it can find the list of valid RP identifiers within the ecosystem. When the RP connects to the wallet, the wallet can verify the RP’s identifier without the RP having to register itself directly with the wallet. Likewise, the RP can verify the wallet’s signing keys by the fact they are presented in an attribute bundle signed by the CSP’s public key, which had in turn been retrieved from the trusted third party.</p>
+<h2 id="authentication-and-attribute-disclosure" data-section="5">
+  
+  
+    Authentication and Attribute Disclosure <a href="#authentication-and-attribute-disclosure" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The decision of whether a federated authentication can occur or attributes may be passed <strong>SHALL</strong> be determined by the subscriber, acting in the role of the authorized party.</p>
+
+<p>The subscriber-controlled wallet <strong>SHOULD</strong> provide a means to selectively disclose a subset of the attributes in the attribute bundle from the CSP.</p>
+
+<p>The CSP <strong>SHALL</strong> provide effective mechanisms for redress of subscriber complaints or problems (e.g., subscriber identifies an inaccurate attribute value, or the need to deprovision a subscriber-controlled wallet). See <a href="/800-63-4/sp800-63c/Federation/#redress">Sec. 3.4.3</a> for additional requirements and considerations for redress mechanisms.</p>
+<h2 id="assertion-requests" data-section="5">
+  
+  
+    Assertion Requests <a href="#assertion-requests" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>When the federation transactions are initiated by the RP, the RP’s request for an assertion <strong>SHALL</strong> contain:</p>
+
+<ol>
+  <li>An identifier for the RP</li>
+  <li>A cryptographic nonce</li>
+  <li>The set of identity attributes requested by the RP and their purpose of use at the RP</li>
+</ol>
+
+<p>Note that federation transactions are always initiated by the RP at FAL2 or higher.</p>
+<h2 id="assertion-contents" data-section="5">
+  
+  
+    Assertion Contents <a href="#assertion-contents" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Assertions from a subscriber-controlled wallet <strong>SHALL</strong> contain:</p>
+
+<ol>
+  <li>A signed attribute bundle from the CSP.</li>
+  <li>Subject identifier: An identifier for the party to which the assertion applies (i.e., the subscriber).</li>
+  <li>Issuer identifier: An identifier for the issuer of the assertion (i.e., the subscriber-controlled wallet).</li>
+  <li>Audience identifier: An identifier for the party intended to consume the assertion (i.e., the RP).</li>
+  <li>Issuance time: A timestamp indicating when the wallet issued the assertion.</li>
+  <li>Validity time window: A period of time outside of which the assertion <strong>SHALL NOT</strong> be accepted as valid by the RP for the purposes of authenticating the subscriber and starting an authenticated session at the RP. This is usually communicated by means of an expiration timestamp for the assertion in addition to the issuance timestamp.</li>
+  <li>Assertion identifier: A value uniquely identifying this assertion, used to prevent attackers from replaying prior assertions.</li>
+  <li>Authentication time: A timestamp indicating when the subscriber last used the wallet’s activation factor.</li>
+  <li>Nonce: A cryptographic nonce, if one is provided by the RP.</li>
+  <li>Signature: Digital signature using asymmetric cryptography, covering the entire assertion.</li>
+</ol>
+
+<p>All assertions <strong>SHALL</strong> contain sufficient information to determine the following aspects of the federation transaction:</p>
+
+<ol>
+  <li>The IAL of the subscriber account being represented in the assertion, or an indication that no IAL is asserted.</li>
+  <li>The wallet’s intended FAL of the federation process represented by the assertion.</li>
+</ol>
+
+<p>At FAL3, the assertion <strong>SHALL</strong> include one of the following:</p>
+
+<ul>
+  <li>The public key, key identifier, or other identifier for a holder-of-key assertion. This <strong>MAY</strong> be the same key that the subscriber-controlled wallet uses to sign the assertion.</li>
+  <li>An indicator that verification of a bound authenticator is required to process this assertion.</li>
+</ul>
+
+<p>The signed attribute bundle from the CSP <strong>SHALL</strong> contain:</p>
+
+<ol>
+  <li>A public key or key identifier for the key used by the subscriber-controlled wallet to sign the assertion</li>
+  <li>Issuance time: A timestamp indicating when the CSP issued the attribute bundle.</li>
+  <li>Validity time window: A period of time outside of which the attribute bundle <strong>SHALL NOT</strong> be accepted as valid by the RP for the purposes of authenticating the subscriber and starting an authenticated session at the RP. This is usually communicated by means of an expiration timestamp for the assertion in addition to the issuance timestamp.</li>
+  <li>IAL: Indicator of the IAL of the subscriber account being represented in the attribute bundle, or an indication that no IAL is asserted.</li>
+  <li>Signature: Digital signature using asymmetric cryptography, covering the entire attribute bundle.</li>
+</ol>
+
+<p>Additional identity attributes and derived attribute values <strong>MAY</strong> be included in the attribute bundle. These attributes <strong>SHOULD</strong> be made available using a selective disclosure method, whereby the subscriber can, through their wallet software, determine which parts of the bundle to disclose to the RP.</p>
+
+<p>Identity attributes in the assertion but outside of a signed attribute bundle <strong>SHALL</strong> be considered self-asserted. The RP <strong>MAY</strong> validate these additional attributes out of band.</p>
+
+<p>Subscriber-controlled wallets <strong>SHOULD</strong> use non-exportable key storage as discussed in <a href="/800-63-4/sp800-63c/Federation/#key-storage">Sec. 3.5.2</a>.</p>
+<h2 id="assertion-presentation" data-section="5">
+  
+  
+    Assertion Presentation <a href="#assertion-presentation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Assertions <strong>SHALL</strong> be presented to the RP through an authenticated protected channel.</p>
+
+<p>The presentation <strong>SHALL</strong> include the cryptographic nonce from the RP’s request, if present. The RP <strong>SHALL</strong> verify the nonce in accordance with the federation protocol.</p>
+
+<p>If the assertion contains PII, and the presentation mechanism passes the assertion through a component other than the wallet or RP, the assertion <strong>SHOULD</strong> be encrypted.</p>
+
+<p>The RP <strong>SHALL</strong> protect itself against injection of manufactured or captured assertions by the use of cross-site scripting protection, rejecting assertions outside of the correct stage of a federation transaction, or other accepted techniques discussed in <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.10.1</a>. When possible, the IdP <strong>SHOULD</strong> use platform APIs instead of HTTP redirects when delivering an assertion to the RP.</p>
+
+<p>Since assertions from a subscriber-controlled wallet always contain a reference to the wallet’s signing key inside the signed attribute bundle from the CSP, assertions from subscriber-controlled wallets <strong>MAY</strong> be used as holder-of-key assertions to reach FAL3, as long as all other requirements in these guidelines are met. For additional requirements for holder-of-key assertions, see <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec. 3.14</a>.</p>
+<h2 id="assertion-validation" data-section="5">
+  
+  
+    Assertion Validation <a href="#assertion-validation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The RP <strong>SHALL</strong> validate the signature on all signed attribute bundles in the assertion, using the cryptographic key from the CSP issuing the signed attribute bundle. The RP <strong>SHALL</strong> validate the signature of the assertion using the identified cryptographic key in the signed attribute bundle.</p>
+
+<p>The RP <strong>SHALL</strong> validate the assertion by checking that all the following are true:</p>
+
+<ul>
+  <li><em>Issuer verification</em>: ensuring that the assertion was issued by the wallet the RP expects it to be from.</li>
+  <li><em>Time validation</em>: ensuring that the expiration and issue times are within acceptable limits of the current timestamp.</li>
+  <li><em>Audience restriction</em>: ensuring that this RP is the intended recipient of the assertion.</li>
+  <li><em>Nonce</em>: ensuring that the cryptographic nonce included in the RP’s request is included in the presentation.</li>
+  <li><em>Transaction terms</em>: ensuring that the IAL, AAL, and FAL represented by the assertion are allowable under the applicable trust agreement.</li>
+</ul>
+
+<p>Additionally, the issuer <strong>MAY</strong> make available an online mechanism to determine the validity of a given attribute bundle, such as a status list queryable by the RP.</p>
+<h2 id="rp-subscriber-accounts" data-section="5">
+  
+  
+    RP Subscriber Accounts <a href="#rp-subscriber-accounts" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>RP subscriber accounts <strong>SHALL</strong> be managed using a just-in-time or ephemeral provisioning model only (see <a href="/800-63-4/sp800-63c/GenIdP/#provisioning">Sec. 4.6.3</a>). In each of these cases, the RP creates the RP subscriber account and associates it with the federated identifier only after successful validation of the assertion from the wallet.</p>
+
+<p>The RP <strong>SHALL</strong> disclose its practices for management of subscriber information as part of the trust agreement. The RP <strong>SHALL</strong> provide effective means of redress to the subscriber for correcting and removing information from the RP subscriber account. See <a href="/800-63-4/sp800-63c/Federation/#redress">Sec. 3.4.3</a> for additional requirements and considerations for redress mechanisms.</p>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63/model/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Digital Identity Model</title>
+    <meta property="og:title" content="Digital Identity Model"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63/model/"><span class="section">2</span>Model</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/dirm/"><span class="section">3</span>DIRM</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/abbreviations/"><span class="section">A</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/glossary/"><span class="section">B</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63/changelog/"><span class="section">C</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="sec4" data-section="2">
+  
+  
+    Digital Identity Model <a href="#sec4" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is informative.</em></p>
+<h2 id="s-4-1" data-section="2">
+  
+  
+    Overview <a href="#s-4-1" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The SP 800-63 guidelines use digital identity models that reflect technologies and architectures that already currently available in the market. These models have a variety of entities and functions and vary in complexity. Simple models group functions, such as creating subscriber accounts and providing attributes, under a single entity. More complex models separate these functions among a larger number of entities. The entities, and their associated functions, found in digital identity models include:</p>
+
+<p><strong>Subject</strong>: In these guidelines, a subject is a person and is represented by one of three roles, depending on where they are in the digital identity process.</p>
+
+<ul>
+  <li>Applicant — The subject to be identity-proofed and enrolled.</li>
+  <li>Subscriber — - The subject who has successfully completed the identity proofing and enrollment process or authentication (i.e., when the subject is in an active on-line session).</li>
+  <li>Claimant — The subject “making a claim” to be eligible for authentication.</li>
+</ul>
+
+<p><strong>Service provider</strong>: Service providers can perform any combination of functions involved in granting access to and delivering online services, such as a credential service provider, relyin party, verifier, and Identity provider.</p>
+
+<p><strong>Credential service provider (CSP)</strong>: CSP functions include identity proofing applicants to the identity service and registering authenticators to subscriber accounts. A <em>subscriber account</em> is the CSP’s established record of the subscriber, the subscriber’s attributes, and associated authenticators. CSP functions may be performed by an independent third party.</p>
+
+<p><strong>Relying party (RP)</strong>: RP functions rely on the information in the subscriber account from the CSP, typically to process a digital transaction or grant access to information or a system. When using federation, the RP accesses the information in the subscriber account through assertions from an identity provider.</p>
+
+<p><strong>Verifier</strong>: The function of a verifier is to verify the claimant’s identity by verifying the claimant’s possession and control of one or more authenticators using an authentication protocol. To do this, the verifier needs to confirm the binding of the authenticators with the subscriber account and check that the subscriber account is active.</p>
+
+<p><strong>Identity provider (IdP)</strong>: When using federation, the IdP manages the subscriber’s primary authenticators and issues assertions derived from the subscriber account.</p>
+<h2 id="identity-proofing-and-enrollment" data-section="2">
+  
+  
+    Identity Proofing and Enrollment <a href="#identity-proofing-and-enrollment" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Normative requirements can be found in <a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a>, <em>Identity Proofing and Enrollment</em>.</p>
+
+<p><a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a> provides general information and normative requirements for the identity proofing and enrollment processes as well as requirements that are specific to IALs.</p>
+
+<p><a href="/800-63-4/sp800-63/model/#fig-1">Figure 1</a> shows a sample of interactions for identity proofing and enrollment.</p>
+
+<p>To start, an <em>applicant</em> opts to enroll with a CSP by requesting access. The CSP or the entity fulfilling CSP functions requests identity evidence and attributes, which the applicant provides. If the applicant is successfully identity-proofed, they are enrolled in the identity service as a <em>subscriber</em> of that CSP. A unique subscriber account is then created and one or more authenticators are registered to the subscriber account.</p>
+
+<p>Subscribers have a responsibility to maintain control of their authenticators (e.g., guard against theft) and comply with CSP policies to remain in good standing with the CSP.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63/model/#fig-1" name="fig-1">Fig. 1. Sample Identity Proofing and Enrollment Digital Identity Model</a></p>
+
+<p><img src="/800-63-4/sp800-63/images/ID_Proofing.png" alt="Sequence diagram of identity proofing and enrollment showing the parties involved and the major steps in the process." title="Sample Identity Proofing and Enrollment Digital Identity Model" latex-src="ID_Proofing.pdf" latex-fig="1" latex-place="h" /></p>
+<h3 id="subscriber-accounts" data-section="2">
+  
+  
+    Subscriber Accounts <a href="#subscriber-accounts" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>At the time of enrollment, the CSP establishes a subscriber account to uniquely identify each subscriber and record any authenticators registered (bound) to that subscriber account. The CSP may:</p>
+
+<ul>
+  <li>Issue and register one or more authenticators to the subscriber at the time of enrollment,</li>
+  <li>Register authenticators provided by the subscriber to the subscriber account,</li>
+  <li>Register additional authenticators to the subscriber account at a later time as needed, or</li>
+  <li>Provision the subscriber account to one or more general-purpose or subscriber-controlled wallets, for use in a federated protocol system.</li>
+</ul>
+
+<p>See <a href="/800-63-4/sp800-63a/accounts/#accounts" latex-href="#ref-SP800-63A">Sec. 5 of [SP800-63A]</a>, <em>Subscriber-Accounts</em>, for more information and normative requirements.</p>
+<h2 id="authentication-and-authenticator-management" data-section="2">
+  
+  
+    Authentication and Authenticator Management <a href="#authentication-and-authenticator-management" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Normative requirements can be found in <a href="/800-63-4/sp800-63b/introduction/#introduction" latex-href="#ref-SP800-63B">[SP800-63B]</a>, <em>Authentication and Authenticator Management</em>.</p>
+<h3 id="authenticators" data-section="2">
+  
+  
+    Authenticators <a href="#authenticators" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p><a href="/800-63-4/sp800-63b/introduction/#introduction" latex-href="#ref-SP800-63B">[SP800-63B]</a> provides normative descriptions of permitted authenticator types, their characteristics (e.g.,  phishing resistance), and authentication processes appropriate for each AAL.</p>
+
+<p>This guidance defines three types of authentication factors used for authentication:</p>
+
+<ul>
+  <li>Something you know (e.g., a password)</li>
+  <li>Something you have (e.g., a device containing a cryptographic key)</li>
+  <li>Something you are (e.g., a fingerprint or other biometric characteristic data)</li>
+</ul>
+
+<p>Single-factor authentication requires only one of the above factors, most often “something you know”. Multiple instances of the same factor still constitute single-factor authentication. For example, a user-generated PIN and a password do not constitute two factors as they are both “something you know.” Multi-factor authentication (MFA) refers to the use of more than one distinct factor.</p>
+
+<p>This guidance specifies that authenticators always contain or comprise a secret. The secrets contained in an authenticator are based on either key pairs (i.e., asymmetric cryptographic keys) or shared secrets (including symmetric cryptographic keys, seeds for generating one-time passwords (OTP), and passwords). Asymmetric key pairs are comprised of a public key and a related private key. The private key is stored on the authenticator and is only available for use by the claimant who possesses and controls the authenticators. A verifier that has the subscriber’s public key (e.g., through a public key certificate) can use an authentication protocol to verify that the claimant is a subscriber who has possession and control of the associated private key contained in the authenticator. Symmetric keys are generally chosen at random, complex and long enough to thwart network-based guessing attacks, and stored in hardware or software that the subscriber controls. Passwords typically have fewer characters and less complexity than cryptographic keys resulting in increased vulnerabilities that require additional defenses to mitigate.</p>
+
+<p>Passwords used as activation factors for multi-factor authenticators are referred to as <em>activation secrets</em>. An activation secret is used to decrypt a stored key used for authentication or is compared against a locally held and stored verifier to provide access to the authentication key. In either of these cases, the activation secret remains within the authenticator and its associated user endpoint. An example of an activation secret would be the PIN used to activate a PIV card.</p>
+
+<p>Biometric characteristics are unique, personal attributes that can be used to verify the identity of a person who is physically present at the point of authentication. This includes, but is not limited to, facial features, fingerprints, and iris patterns. While biometric characteristics cannot be used for single-factor authentication, they can be used as an authentication factor for multi-factor authentication when used in combination with a physical authenticator (i.e., something you have).</p>
+
+<p>Some authentication methods used for in-person interactions do not apply directly to digital authentication. For example, a physical driver’s license is something you have and may be useful when authenticating to a human (e.g., a security guard), but it is not an authenticator for online services.</p>
+
+<p>Some commonly used authentication methods do not contain or comprise secrets and are therefore not acceptable for use under these guidelines. For example:</p>
+
+<ul>
+  <li>Knowledge-based authentication, where the claimant is prompted to answer questions that are presumably known only by the claimant, does not constitute an acceptable secret for digital authentication.</li>
+  <li>A biometric characteristic does not constitute a secret and cannot be used as a single-factor authenticator.</li>
+</ul>
+<h3 id="authentication-process" data-section="2">
+  
+  
+    Authentication Process <a href="#authentication-process" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The authentication process enables an RP to trust that a claimant is who they say they are.  Some approaches are described in <a href="/800-63-4/sp800-63b/introduction/#introduction" latex-href="#ref-SP800-63B">[SP800-63B]</a>, <em>Authentication and Authenticator Management</em>. The sample authentication process in <a href="/800-63-4/sp800-63/model/#fig-2">Fig. 2</a> shows interactions between the RP, a claimant, and a verifier/CSP. The verifier is a functional role and is frequently implemented in combination with the CSP, the RP, or both (as shown in <a href="/800-63-4/sp800-63/model/#fig-4">Fig. 4</a>).</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63/model/#fig-2" name="fig-2">Fig. 2. Sample Authentication Process</a></p>
+
+<p><img src="/800-63-4/sp800-63/images/Sample_Authn_Process.png" alt="Sequence diagram of a sample authentication process showing parties involved and major steps in the process." title="Sample Authentication Process" latex-src="Sample_Authn_Process.pdf" latex-fig="2" latex-place="h" /></p>
+
+<p>A successful authentication process demonstrates that the claimant has possession and control of one or more valid authenticators that are bound to the subscriber’s identity. In general, this is done using an authentication protocol that involves an interaction between the verifier and the claimant. The exact nature of the interaction is extremely important in determining the overall security of the system. Well-designed protocols can protect the integrity and confidentiality of communication between the claimant and the verifier both during and after the authentication and can help limit the damage done by an attacker masquerading as a legitimate verifier.</p>
+
+<p>Additionally, mechanisms located at the verifier can mitigate online guessing attacks against lower entropy secrets (e.g., passwords and PINs) by limiting the rate at which an attacker can make authentication attempts, or otherwise delaying incorrect attempts. Generally, this is done by keeping track of and limiting the number of unsuccessful attempts, since the premise of an online guessing attack is that most attempts will fail.</p>
+<h2 id="Federation" data-section="2">
+  
+  
+    Federation and Assertions <a href="#Federation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Normative requirements can be found in <a href="/800-63-4/sp800-63c/introduction/#introduction" latex-href="#ref-SP800-63C">[SP800-63C]</a>, <em>Federation and Assertions</em>.</p>
+
+<p>Section III of OMB <a href="/800-63-4/sp800-63/references/#ref-M-19-17">[M-19-17]</a> <em>Enabling Mission Delivery through Improved Identity, Credential, and Access Management</em> directs agencies to support cross-government identity federation and interoperability. The term <em>federation</em> can be applied to several different approaches that involve the sharing of information between different trust domains. These approaches differ based on the kind of information that is being shared between the domains. These guidelines address the federation processes that allow for the conveyance of identity and authentication information based on trust agreements across a set of networked systems through federation assertions.</p>
+
+<p>There are many benefits to using federated architectures including, but not limited to:</p>
+
+<ul>
+  <li>Enhanced user experience (e.g., a subject can be identity proofed once but their subscriber account used at multiple RPs).</li>
+  <li>Cost reduction to both the subscriber (e.g., reduction in authenticators) and the organization (e.g., reduction in information technology infrastructure and a streamlined architecture).</li>
+  <li>Minimizing data in RPs that do not need to collect, store, or dispose of personal information.</li>
+  <li>Minimizing data exposed to RPs by using pseudonymous identifiers and derived attribute values instead of copying account values to each application.</li>
+  <li>Mission enablement, since organizations will need to focus fewer resources on complex identity management processes.</li>
+</ul>
+
+<p>While the federation process is generally the preferred approach to authentication when the RP and IdP are not administered together under a common security domain, federation can also be applied within a single security domain for a variety of benefits including centralized account management and technical integration.</p>
+
+<p>The SP 800-63 guidelines are agnostic to the identity proofing, authentication, and federation architectures that an organization selects, and they allow organizations to deploy a digital identity scheme according to their own requirements. However, there are scenarios that an organization may encounter that make federation potentially more efficient and effective than establishing identity services that are local to the organization or individual applications. The following lists detailed potential scenarios in which the organization may consider federation to be a viable option:</p>
+
+<ul>
+  <li>Potential users already have an authenticator at or above the required AAL.</li>
+  <li>Multiple types of authenticators are required to cover all possible user communities.</li>
+  <li>An organization does not have the necessary infrastructure to support management of subscriber accounts (e.g., account recovery, authenticator issuance, help desk).</li>
+  <li>There is a desire to allow primary authenticators to be added and upgraded over time without changing the RP’s implementation.</li>
+  <li>There are different environments to be supported, since federation protocols are network-based and allow for implementation on a wide variety of platforms and languages.</li>
+  <li>Potential users come from multiple communities, each with its own existing identity infrastructure.</li>
+  <li>The organization needs the ability to centrally manage account lifecycles, including account revocation and the binding of new authenticators.</li>
+</ul>
+
+<p>An organization may want to consider accepting federated identity attributes if any of the following apply:</p>
+
+<ul>
+  <li>Pseudonymity is required, necessary, feasible, or important to stakeholders accessing the service.</li>
+  <li>Access to the service requires a defined list of attributes.</li>
+  <li>Access to the service requires at least one derived attribute value.</li>
+  <li>The organization is not the authoritative source or issuing source for required attributes.</li>
+  <li>Attributes are only required temporarily during use (e.g., to make an access decision), and the organization does not need to retain the data.</li>
+</ul>
+<h2 id="examples-of-digital-identity-models" data-section="2">
+  
+  
+    Examples of Digital Identity Models <a href="#examples-of-digital-identity-models" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The entities and interactions that comprise the non-federated digital identity model are illustrated in <a href="/800-63-4/sp800-63/model/#fig-3">Fig. 3</a>. The general-purpose federated digital identity model is illustrated in <a href="/800-63-4/sp800-63/model/#fig-4">Fig. 4</a>, and a federated digital identity model with a subscriber-controlled wallet is illustrated in <a href="/800-63-4/sp800-63/model/#fig-5">Fig. 5</a>.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63/model/#fig-3" name="fig-3">Fig. 3. Non-Federated Digital Identity Model Example</a></p>
+
+<p><img src="/800-63-4/sp800-63/images/Non-Federated.png" alt="High-level diagram of a non-federated digital identity model showing the entities and interactions between entities of the entire digital identity process, in which the verifier function is done by the RP." title="Non-Federated Digital Identity Model Example" latex-src="Non-Federated.pdf" latex-fig="3" latex-place="h" /></p>
+
+<p><a href="/800-63-4/sp800-63/model/#fig-3">Figure 3</a> shows an example of a common sequence of interactions in the non-federated model. Other sequences could also achieve the same functional requirements. One common sequence of interactions for identity proofing and enrollment activities is as follows:</p>
+
+<ul>
+  <li>Step 1: An applicant applies to a CSP through an identity proofing and enrollment process. The CSP identity proofs that applicant.</li>
+  <li>Step 2: Upon successful identity proofing, the applicant is enrolled in the identity service as a subscriber.
+    <ul>
+      <li>A subscriber account and corresponding authenticators are established between the CSP and the subscriber. The CSP maintains the subscriber account, its status, and the enrollment data. The subscriber maintains their authenticators.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Steps 3 through 5 may immediately follow steps 1 and 2 or they may be done at a later time. The usual sequence of interactions involved in using one or more authenticators to perform digital authentication in the non-federated model is as follows:</p>
+
+<ul>
+  <li>Step 3: The claimant initiates an online interaction with the RP and the RP requests that the claimant authenticate.</li>
+  <li>Step 4: The claimant proves possession and control of the authenticators to the verifier through an authentication process:
+    <ul>
+      <li>The verifier interacts with the CSP to verify the binding of the claimant’s identity to their authenticators in the subscriber account and to optionally obtain additional subscriber attributes.</li>
+      <li>The CSP or verifier functions of the service provider give information about the subscriber. The RP requests the attributes it requires from the CSP. The RP optionally uses this information to make authorization decisions.</li>
+    </ul>
+  </li>
+  <li>Step 5: An authenticated session is established between the subscriber and the RP.</li>
+</ul>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63/model/#fig-4" name="fig-4">Fig. 4. Federated Digital Identity Model Example</a></p>
+
+<p><img src="/800-63-4/sp800-63/images/Federated.png" alt="High-level diagram of a federated digital identity model showing the entities and interactions between entities of the entire digital identity process, in which the CSP and verifier functions are done by the IdP." title="Federated Digital Identity Model Example" latex-src="Federated.pdf" latex-fig="4" latex-place="h" /></p>
+
+<p><a href="/800-63-4/sp800-63/model/#fig-4">Figure 4</a> shows an example of those same common interactions in a federated model.</p>
+
+<ul>
+  <li>Step 1: An applicant applies to a CSP through an identity proofing and enrollment process. The CSP identity proofs that applicant.</li>
+  <li>Step 2: Upon successful identity proofing, the applicant is enrolled in the identity service as a subscriber.
+    <ul>
+      <li>A subscriber account and corresponding authenticators are established between the CSP and the subscriber.</li>
+      <li>Unlike in <a href="/800-63-4/sp800-63/model/#fig-3">Fig. 3</a>, the IdP is provisioned either directly by the CSP or indirectly through access to attributes of the subscriber account. The CSP maintains the subscriber account, its status, and the enrollment data collected in accordance with the record retention and disposal requirements described in <a href="/800-63-4/sp800-63a/ial-general/#DocRecReqs" latex-href="#ref-SP800-63A">Sec. 3.1.1 of [SP800-63A]</a>. The subscriber maintains their authenticators. The IdP maintains its view of the subscriber account, any federated identifiers assigned to the subscriber account, and authorizations to RPs.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The usual sequence of interactions involved in using one or more authenticators in the federated model to perform digital authentication is as follows:</p>
+
+<ul>
+  <li>Step 3: The RP requests that the claimant authenticate. This triggers a request for federated authentication to the IdP.</li>
+  <li>Step 4: The claimant proves possession and control of the authenticators to the verifier function of the IdP through an authentication process.
+    <ul>
+      <li>Within the IdP, the verifier and CSP functions interact to verify the binding of the claimant’s authenticators with those bound to the claimed subscriber account and optionally to obtain additional subscriber attributes.</li>
+    </ul>
+  </li>
+  <li>Step 5: The RP and the IdP communicate through a federation protocol. The IdP provides an assertion and optionally additional attributes to the RP through a federation protocol. The RP verifies the assertion to establish confidence in the identity and attributes of a subscriber for an online service at the RP. RPs may use a subscriber’s federated identity (pseudonymous or non-pseudonymous), IAL, AAL, FAL, and other factors to make authorization decisions.</li>
+  <li>Step 6: An authenticated session is established between the subscriber and the RP.</li>
+</ul>
+
+<p>In the two cases described in <a href="/800-63-4/sp800-63/model/#fig-3">Fig. 3</a> and <a href="/800-63-4/sp800-63/model/#fig-4">Fig. 4</a>, the verifier does not always need to communicate in real time with the CSP to complete the authentication activity (e.g., digital certificates can be used). Therefore, the line between the verifier and the CSP represents a logical link between the two entities. In some implementations, the verifier, RP, and CSP functions may be distributed and separated. However, if these functions reside on the same platform, the interactions between the functions are signals between applications or application modules that run on the same system rather than using network protocols.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63/model/#fig-5" name="fig-5">Fig. 5. Federated Digital Identity Model With Subscriber-Controlled Wallet Example</a></p>
+
+<p><img src="/800-63-4/sp800-63/images/Wallet.png" alt="High-level diagram of a federated digital identity model with a subscriber-controlled wallet showing the entities and interactions between entities of the entire digital identity process in which the subscriber controls a device with software (commonly known as a digital wallet) that acts as the IdP." title="Federated Digital Identity Model with Subscriber-Controlled Wallet Example" latex-src="Wallet.pdf" latex-fig="5" latex-place="h" /></p>
+
+<p><a href="/800-63-4/sp800-63/model/#fig-5">Figure 5</a> shows an example of the interactions in a federated digital identity model in which the subscriber controls a device with software (i.e., a digital wallet) that acts as the IdP. In the terminology of the “three-party model”, the CSP is the issuer, the IdP is the holder, and the RP is the verifier. In this model, it is common for the RP to establish a trust agreement with the CSP through the use of a federation authority as defined in <a href="/800-63-4/sp800-63c/Federation/#trust-agreement" latex-href="#ref-SP800-63C">[SP800-63C]</a>. This arrangement allows the RP to accept assertions from the subscriber-controlled wallet without needing a direct trust relationship with the wallet.</p>
+
+<ul>
+  <li>Step 1: An applicant applies to a CSP identity proofing and enrollment process.</li>
+  <li>Step 2: Upon successful identity proofing, the applicant goes through an onboarding process and is enrolled in the identity service as a subscriber.</li>
+  <li>Step 3: The subscriber-controlled wallet is onboarded by the CSP.
+    <ul>
+      <li>The subscriber authenticates to the CSP’s onboarding function.</li>
+      <li>The subscriber activates the subscriber-controlled wallet using an activation factor.</li>
+      <li>The wallet sends a request to the CSP, including proof of a key held by the wallet.</li>
+      <li>The CSP creates an attribute bundle that contains a reference for the key of the wallet and any additional attributes.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The usual sequence of interactions involved in providing an assertion to the RP from a subscriber-controlled wallet is as follows:</p>
+
+<ul>
+  <li>Step 4: The RP requests that the claimant authenticate. This triggers a request for federated authentication to the wallet.</li>
+  <li>Step 5: The claimant proves possession and control of the subscriber-controlled wallet.
+    <ul>
+      <li>The subscriber activates the wallet using an activation factor.</li>
+      <li>The wallet prepares an assertion including the attribute bundle provided by the CSP for the subscriber account.</li>
+    </ul>
+  </li>
+  <li>Step 6: The RP and the wallet communicate through a federation protocol. The wallet provides an assertion and optionally additional attributes to the RP through a federation protocol. The RP verifies the assertion to establish confidence in the identity and attributes of a subscriber for an online service at the RP. RPs may use a subscriber’s federated identity (pseudonymous or non-pseudonymous), IAL, AAL, FAL, and other factors to make authorization decisions.</li>
+  <li>Step 7: An authenticated session is established between the subscriber and the RP.</li>
+</ul>
+
+<blockquote>
+  <p>Note: Other protocols and specifications often refer to attribute bundles as <em>credentials</em>. These guidelines use the term <em>credentials</em> for a different concept. To avoid a conflict, the term <em>attribute bundle</em> is used within these guidelines. Normative requirements for attribute bundles can be found including <a href="/800-63-4/sp800-63c/Federation/#attribute-bundles" latex-href="#ref-SP800-63C">Sec. 3.11.1 of [SP800-63C]</a>.</p>
+</blockquote>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

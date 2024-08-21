@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63a/ial-general/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Identity Proofing Requirements</title>
+    <meta property="og:title" content="Identity Proofing Requirements"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/proofing/"><span class="section">2</span>Proofing</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63a/ial-general/"><span class="section">3</span>General IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial/"><span class="section">4</span>IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/accounts/"><span class="section">5</span>Accounts</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abbreviations/"><span class="section">B</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/glossary/"><span class="section">C</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/changelog/"><span class="section">D</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="ial-general" data-section="3">
+  
+  
+    Identity Proofing Requirements <a href="#ial-general" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is normative.</em></p>
+
+<p>This section provides requirements for CSPs that operate identity proofing and enrollment services, including requirements for identity proofing at each of the IALs. This section also includes additional requirements for federal agencies regardless of whether they operate their own identity service or use an external CSP.</p>
+
+<p>Sections <a href="/800-63-4/sp800-63a/ial/#IAL1">4.1</a>, <a href="/800-63-4/sp800-63a/ial/#IAL2">4.2</a>, and <a href="/800-63-4/sp800-63a/ial/#IAL3">4.3</a> provide the requirements and guidelines for identity proofing at a specific IAL. <a href="/800-63-4/sp800-63a/ial/#summary">Section 4.4</a> includes a summarized list of these requirements by IAL in <a href="/800-63-4/sp800-63a/ial-general/#table-1">Table 1</a>.</p>
+<h2 id="genProofReqs" data-section="3">
+  
+  
+    General Requirements <a href="#genProofReqs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The requirements in this section apply to all CSPs performing identity proofing at any IAL.</p>
+<h3 id="DocRecReqs" data-section="3">
+  
+  
+    Identity Service Documentation and Records <a href="#DocRecReqs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The CSP <strong>SHALL</strong> conduct its operations according to a practice statement that details all identity proofing processes as they are implemented to achieve the defined IAL. The practice statement <strong>SHALL</strong> include, at a minimum:</p>
+
+<ol>
+  <li>A complete service description including the particular steps the CSP follows to identity proof applicants at each offered assurance level;</li>
+  <li>The CSP’s policy for providing notice to applicants about the types of identity proofing processes available, the evidence and attribute collection requirements for the specified IAL, the purpose of PII collection (per <a href="/800-63-4/sp800-63a/ial-general/#AddlPrivacy">Sec. 3.1.3.2</a>), and for the collection, use, and retention of biometrics (see <a href="/800-63-4/sp800-63a/ial-general/#ProofBios">Sec. 3.1.11</a>);</li>
+  <li>The CSP’s policy for ensuring the identity proofing process is concluded in a timely manner, once the applicant has met all of the requirements;</li>
+  <li>Types of identity evidence the CSP accepts to meet the evidence strength requirements;</li>
+  <li>The CSP’s policy and process for validating and verifying identity evidence, including training and qualification requirements for personnel who have validation and verification responsibilities, as well as specific technologies the CSP employs for evidence validation and verification;</li>
+  <li>Alternative processes for the CSP to complete identity proofing for an individual applicant who does not possess the required identity evidence to complete the identity proofing process<sup id="fnref:alternatives" role="doc-noteref"><a href="#fn:alternatives" class="footnote">1</a></sup>;</li>
+  <li>The attributes that the CSP considers to be core attributes, and the authoritative and credible sources it uses for validating those attributes. Core attributes include the minimum set of attributes that the CSP needs to perform identity resolution as well as any additional attributes that the CSP collects and validates for the purposes of identity proofing, fraud mitigation, complying with laws or legal process, or conveying to relying parties (RPs) through attribute assertions;</li>
+  <li>The CSP’s policy and process for addressing identity proofing errors;</li>
+  <li>The CSP’s policy and process for identifying and remediating suspected or confirmed fraudulent accounts, including communicating with RPs and affected individuals;</li>
+  <li>The CSP’s policy for managing and communicating service changes (e.g., changes in data sources, integrated vendors, or biometric algorithms) to RPs;</li>
+  <li>The CSP’s policy for any conditions that would require re-verification of the user (e.g., account recovery, account abandonment, regulatory “recertification” requirements);</li>
+  <li>The CSP’s policy for conducting privacy risk assessments, including the timing of its periodic reviews and specific conditions that will trigger an updated privacy risk assessment (see <a href="/800-63-4/sp800-63a/ial-general/#PrivRiskAssess">Sec. 3.1.3.1</a>);</li>
+  <li>The CSP’s policy for conducting assessments to determine potential equity impacts, including the timing of its periodic reviews and any specific conditions that will trigger an out-of-cycle review (see <a href="/800-63-4/sp800-63a/ial-general/#EquityReqs">Sec. 3.1.4</a>); and,</li>
+  <li>The CSP’s policy for the collection, purpose, retention, protection, and deletion of all personal and sensitive data, including the treatment of all personal information if the CSP ceases operation or merges or transfers operations to another CSP.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Note:</strong> 800-63C references the use of trust agreements to define requirements between an IdP, CSP, and RP in a federated relationship. CSP practice statements <strong>MAY</strong> be included directly in these agreements.</p>
+</blockquote>
+<h3 id="FraudMgmt" data-section="3">
+  
+  
+    Fraud Management <a href="#FraudMgmt" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>A critical aspect of the identity proofing process is to mitigate fraudulent attempts to gain access to benefits, services, data, or assets protected by identity management systems. Resolution, Validation, and Verification processes in many instances can mitigate many attacks. However, with the constantly changing threat environment, the layering of additional checks and controls can provide increased confidence in proofed identities and additional protections against attacks intended to defeat other controls. The ability to identify, detect, and resolve instances of potential fraud is a critical functionality for CSPs and RPs alike.</p>
+<h4 id="csp-fraud-management" data-section="3">
+  
+  
+    CSP Fraud Management <a href="#csp-fraud-management" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<ol>
+  <li>CSPs <strong>SHALL</strong> establish and maintain a fraud management program that provides fraud identification, detection, investigation, reporting, and resolution capabilities. The specific capabilities and details of this program <strong>SHALL</strong> be documented within their CSP practice statement.</li>
+  <li>CSPs <strong>SHALL</strong> conduct a Privacy Risk Assessment of all fraud checks and fraud mitigation technologies prior to implementation.</li>
+  <li>The CSP <strong>SHALL</strong> establish a self-reporting mechanism and investigation capability for subjects who believe they have been the victim of fraud or an attempt to compromise their involvement in the identity proofing processes.</li>
+  <li>The CSP <strong>SHALL</strong> take measures to prevent unsuccessful applicants from inferring the accuracy of any self-asserted information with that confirmed by authoritative or credible sources.
+ NOTE: This is often called “data washing” and can be prevented through a number of methods, depending on the interfaces deployed by a CSP. As such, these guidelines do not dictate specific mechanisms to prevent this practice.</li>
+  <li>CSPs <strong>SHALL</strong> implement the following fraud check for all identity proofing processes:
+    <ul>
+      <li><strong>Date of Death Check</strong> – Confirm with a credible, authoritative, or issuing source that the applicant is not deceased. Such checks can aid in preventing synthetic identity fraud, the use of stolen identity information, and exploitation by a close associate or relative.</li>
+    </ul>
+  </li>
+  <li>CSPs <strong>SHOULD</strong> implement - but are not limited to - the following fraud checks for their identity proofing processes based on their available identity proofing types, selected technologies, evidence, and user base:
+    <ul>
+      <li><strong>SIM Swap Detection</strong> – Confirm that the phone number used in an identity proofing process has not been recently ported to a new user or device. Such checks can provide an indication that a phone or device was compromised by a targeted attack.</li>
+      <li><strong>Device or Account Tenure Check</strong> – Evaluate the length of time a phone or other account has existed without substantial modifications or changes. Such checks can provide additional confidence in the reliability of a device or piece of evidence used in the identity proofing process.</li>
+      <li><strong>Transaction Analytics</strong> – Evaluate anticipated transaction characteristics – such as IP Addresses, geolocations, and transaction velocities – to identify anomalous behaviors or activities that can indicate a higher risk or a potentially fraudulent event. Such checks can provide protections against scaled and automated attacks, as well as give indications of specific attack patterns being executed on identity systems.</li>
+      <li><strong>Fraud Indicator Check</strong> – Evaluate records, such as reported, confirmed, or historical fraud events to determine if there is an elevated risk related to a specific applicant, applicant’s data, or device. Such checks can give an indication of identity theft or compromise. Where such information is collected, aggregated, or exchanged across commercial platforms and made available for use to RPs and other CSPs, users <strong>SHALL</strong> be made aware of this practice. This also applies to all websites that report user activity to Federal RPs.</li>
+    </ul>
+  </li>
+  <li>CSPs <strong>MAY</strong> employ knowledge-based verification (KBV) as part of its fraud management program.</li>
+  <li>CSPs <strong>SHOULD</strong> consider the recency of fraud-related data when factoring it into fraud prevention capabilities and decisions.</li>
+  <li>For attended proofing processes, CSPs <strong>SHALL</strong> train proofing agents to detect indicators of fraud and <strong>SHALL</strong> provide proofing agents and trusted referees with tools to flag suspected fraudulent events for further treatment and investigation.</li>
+  <li>CSPs <strong>SHALL</strong> continuously monitor the performance of their fraud checks and fraud mitigation technologies to identify and remediate issues related to disparate performance across their platforms or between the demographic groups served by their identity service.</li>
+  <li>CSPs <strong>SHALL</strong> establish a technical or process-based mechanism to communicate suspected and confirmed fraudulent events to RPs.</li>
+  <li>CSPs <strong>SHOULD</strong> implement shared signaling, as described in NIST SP 800-63C-4, to communicate fraud events in real time to RPs.</li>
+  <li>CSPs <strong>MAY</strong> implement fraud mitigation measures as compensating controls. When this is done, these <strong>SHALL</strong> be documented as deviations from the normative guidance of these guidelines and <strong>SHALL</strong> be conveyed to all RPs through a Digital Identity Acceptance Statement prior to integration.</li>
+</ol>
+<h4 id="rp-fraud-management" data-section="3">
+  
+  
+    RP Fraud Management <a href="#rp-fraud-management" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<ol>
+  <li>RPs <strong>SHALL</strong> establish a point of contact with whom CSPs interact and communicate fraud data.</li>
+  <li>Pursuant to a privacy risk assessment, the RP <strong>MAY</strong> also request additional attributes beyond what a CSP provides as its core attributes to combat fraud or to support other business processes.</li>
+  <li>Pursuant to applicable laws and regulations, RPs <strong>SHOULD</strong> establish a mechanism to communicate the outcomes of fraud reports and investigations, including both positive and negative results, to CSPs and other partners in order to allow them to improve their own fraud identification, mitigation, and reporting capabilities.</li>
+  <li>RPs <strong>SHOULD</strong> establish a fraud management program consistent with their mission, regulatory environment, systems, applications, data, and resources.</li>
+  <li>RPs <strong>SHALL</strong> conduct a privacy risk assessment of any CSP fraud checks and mitigation technologies to identify potential privacy risks or unintended harms. Federal agency RPs <strong>SHALL</strong> implement this consistent with the requirements contained in <a href="/800-63-4/sp800-63a/ial-general/#Feds">Sec. 3.1.7</a>.</li>
+  <li>RPs <strong>SHALL</strong> include any requirements for fraud checks and fraud mitigation technologies in trust agreements with their CSPs.</li>
+  <li>RPs <strong>SHALL</strong> conduct periodic reviews of their CSP’s fraud management program, fraud checks, and fraud technologies to adjust thresholds, review investigations into fraud events, and make determinations about the effectiveness and efficacy of fraud controls.</li>
+  <li>RPs <strong>SHALL</strong> review all fraud mitigation measures that have been deployed as compensating or supplemental controls by CSPs for alignment to their internal risk tolerance and acceptance. The RP <strong>SHALL</strong> record the CSPs compensating controls in their own Digital Identity Acceptance Statement prior to integration.</li>
+</ol>
+<h4 id="treatment-of-fraud-check-failures" data-section="3">
+  
+  
+    Treatment of Fraud Check Failures <a href="#treatment-of-fraud-check-failures" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+<p>The effectiveness of fraud checks and mitigation technologies will vary based on numerous contributing factors including the data sources used, the technologies used, and – perhaps most importantly – the applicant population. It is therefore critical to have well-structured and documented processes for how to handle failures arising from the fraud management measures. The following requirements apply to handling these failures:</p>
+
+<ol>
+  <li>CSPs <strong>SHALL</strong> establish and document thresholds and actions related to each of the fraud checks they implement and provide these thresholds to RPs.</li>
+  <li>CSPs <strong>SHALL</strong> establish procedures for redress to allow applicants to resolve issues associated with fraud checks and mitigation technologies. See (see <a href="/800-63-4/sp800-63/dirm/#redress" latex-href="#ref-SP800-63">Sec. 3.6 of [SP800-63]</a>) for a more information about redress.</li>
+  <li>The CSP <strong>SHALL</strong> offer trusted referee services to those who fail fraud checks in unattended remote processes. Trusted referees <strong>SHALL</strong> be provided with a summary of the results of the fraud failures to inform their risk-based decisioning processes.</li>
+</ol>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+<h3 id="PrivacyReqs" data-section="3">
+  
+  
+    General Privacy Requirements <a href="#PrivacyReqs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The following privacy requirements apply to all CSPs providing identity services at any IAL.</p>
+<h4 id="PrivRiskAssess" data-section="3">
+  
+  
+    Privacy Risk Assessment <a href="#PrivRiskAssess" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> conduct and document a privacy risk assessment for the processes used for identity proofing and enrollment.<sup id="fnref:privacyframework" role="doc-noteref"><a href="#fn:privacyframework" class="footnote">2</a></sup>  At a minimum, the privacy risk assessment <strong>SHALL</strong> assess the risks associated with:
+    <ol class="letter-list">
+      <li>Any processing of PII - including identity attributes, biometrics, images, video, scans, or copies of identity evidence - for the purposes of identity proofing, enrollment, or fraud management;</li>
+      <li>Any additional steps that the CSP takes to verify the identity of an applicant beyond the mandatory requirements specified herein;</li>
+      <li>Any processing of PII for purposes outside the scope of identity proofing and enrollment, except to comply with law or legal processes;</li>
+      <li>The retention schedule for identity records and PII;</li>
+      <li>Any non-PII that, when aggregated or processed by an algorithm ( e.g., artificial intelligence or machine learning tools), could be used to identify a person; and,</li>
+      <li>Any PII that is processed by a third-party service on behalf of the CSP.</li>
+    </ol>
+  </li>
+  <li>Based on the results of its privacy risk assessment, the CSP <strong>SHALL</strong> document the measures it takes to maintain the disassociability, predictability, manageability, confidentiality, integrity, and availability of the PII it processes. <sup id="fnref:NISTIR8062" role="doc-noteref"><a href="#fn:NISTIR8062" class="footnote">3</a></sup> In determining such measures, the CSP <strong>SHOULD</strong> apply relevant guidance and standards, such as the <em>NIST Privacy Framework</em> <a href="/800-63-4/sp800-63a/references/#ref-NIST-Privacy">[NIST-Privacy]</a> and NIST Special Publication <a href="/800-63-4/sp800-63a/references/#ref-SP800-53">[SP800-53]</a>.</li>
+  <li>The CSP <strong>SHALL</strong> re-assess privacy risks and update its privacy risk assessment any time it makes changes to its identity service that affect the processing of PII.</li>
+  <li>The CSP <strong>SHALL</strong> review its privacy risk assessment periodically, as documented in its practice statement, to ensure that it accurately reflects the current risks associated with the processing of PII.</li>
+  <li>The CSP <strong>SHALL</strong> make a summary of its privacy risk assessment available to any organizations that use its services. The summary <strong>SHALL</strong> be in sufficient detail to enable such organizations to do a due diligence investigation.</li>
+  <li>The CSP <strong>SHALL</strong> perform a privacy risk assessment for the processing of any personal information maintained in the subscriber account <a href="/800-63-4/sp800-63a/accounts/#accounts">Sec. 5</a>.</li>
+</ol>
+<h4 id="AddlPrivacy" data-section="3">
+  
+  
+    Additional Privacy Protective Measures <a href="#AddlPrivacy" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<ol>
+  <li>The processing of PII <strong>SHALL</strong> be limited to the minimum necessary to validate the existence of the claimed identity, associate the claimed identity with the applicant, mitigate fraud, and provide RPs with attributes that they may use to make authorization decisions.</li>
+  <li>The CSP <strong>SHALL</strong> provide privacy training to all personnel and any third-party service providers who have access to sensitive information associated with the CSP’s identity service.</li>
+  <li>The CSP <strong>MAY</strong> collect the Social Security Number (SSN) as an attribute when necessary for identity resolution, in accordance with the privacy requirements in <a href="/800-63-4/sp800-63a/ial-general/#PrivacyReqs">Sec. 3.1.3</a>. If SSNs are collected, CSPs <strong>SHOULD</strong> implement privacy protective techniques (e.g., transmitting and accepting derived attribute values rather than full attribute values) to limit the proliferation and retention of SSN data. Knowledge of an SSN is not sufficient to act as evidence of identity nor is it considered an acceptable method of verifying possession of the Social Security Card when used as evidence. If the SSN is collected on behalf of a federal, state, or local government agency, the CSP <strong>SHALL</strong> provide notice to the applicant for the collection in accordance with applicable laws.</li>
+  <li>At the time of collection, the CSP <strong>SHALL</strong> provide explicit notice to the applicant regarding the purpose for collecting the PII and attributes necessary for identity proofing, enrollment, and fraud mitigation, including whether such PII and attributes are voluntary or mandatory to complete the identity proofing process, the specific attributes and other sensitive data that the CSP intends to store in the applicant’s subsequent subscriber account, the consequences for not providing the attributes, and the details of any records retention requirement if one is in place.</li>
+</ol>
+<h3 id="EquityReqs" data-section="3">
+  
+  
+    General Equity Requirements <a href="#EquityReqs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>In support of the goal of improved equity, and as part of its overall risk assessment process, CSPs assess the elements of their identity services to identify processes and technologies that may result in inequitable access, treatment, or outcomes for members of one group as compared to others. Where risks to equity are identified, CSPs proactively employ mitigations that will reduce or eliminate these discrepancies between demographic groups. <a href="/800-63-4/sp800-63a/equity/#equity">Sec. 9</a> of this document provides a non-exhaustive list of identity proofing processes and technologies that may be subject to inequitable access or outcomes, as well as possible mitigations.</p>
+
+<p>Executive order <a href="/800-63-4/sp800-63a/references/#ref-EO13985">[EO13985]</a>, <em>Advancing Racial Equity and Support for Underserved Communities Through the Federal Government</em>, requires each federal agency to assess whether, and to what extent, its programs and policies perpetuate systemic barriers to opportunities and benefits for people of color and other underserved groups. Additionally, executive order <a href="/800-63-4/sp800-63a/references/#ref-EO13988">[EO13988]</a>, <em>Preventing and Combating Discrimination on the Basis of Gender Identity or Sexual Orientation</em>, sets policy that all persons are be treated with respect, regardless of gender identity or sexual orientation, and requires agencies to enforce this prohibition on sex discrimination.</p>
+
+<p>CSPs <strong>SHOULD</strong> review the methods of assessment, data collection, and redress outlined in OMB Report, <em>A Vision for Equitable Data: Recommendations from the Equitable Data Working Group</em> <a href="/800-63-4/sp800-63a/references/#ref-EO13985-vision">[EO13985-vision]</a> for the development of its equity assessment policy and practices.</p>
+
+<p>The following requirements apply to all CSPs providing identity services at any IAL:</p>
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> assess the elements of its identity proofing process(es) to identify processes or technologies that can result in inequitable access, treatment, or outcomes for members of one group as compared to others.</li>
+  <li>Based on the results of its assessment, the CSP <strong>SHALL</strong> document the measures it takes to mitigate the possibility of inequitable access, treatment, or outcomes.</li>
+  <li>The CSP <strong>SHALL</strong> re-assess the risks to equitable access, treatment, or outcomes periodically and any time the CSP makes changes to its identity service that affect the processes or technologies.</li>
+  <li>The CSP <strong>SHALL NOT</strong> make applicant participation in these risk assessments mandatory.</li>
+  <li>The CSP <strong>SHALL</strong> make the results of its equity assessment, including any associated mitigations, publicly available.</li>
+</ol>
+<h3 id="SecurityReqs" data-section="3">
+  
+  
+    General Security Requirements <a href="#SecurityReqs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<ol>
+  <li>Each online transaction within the identity proofing process, including transactions that involve third parties, <strong>SHALL</strong> occur over an authenticated protected channel.</li>
+  <li>The CSP <strong>SHALL</strong> implement a means to prevent automated attacks on the identity proofing process. Acceptable means include, but are not limited to: bot detection, mitigation, and management solutions; behavioral analytics<sup id="fnref:behavioral" role="doc-noteref"><a href="#fn:behavioral" class="footnote">4</a></sup>; web application firewall settings; and network traffic analysis.</li>
+  <li>All PII collected as part of the identity proofing process <strong>SHALL</strong> be protected to maintain the confidentiality and integrity of the information, including the encryption of data at rest and the exchange of information using authenticated protected channels.</li>
+  <li>The CSP <strong>SHALL</strong> assess the risks associated with operating its identity service, according to the NIST <em>Risk Management Framework</em> <a href="/800-63-4/sp800-63a/references/#ref-NIST-RMF">[NIST-RMF]</a> or equivalent risk management guidelines. At a minimum, the CSP <strong>SHALL</strong> apply appropriate controls consistent with <a href="/800-63-4/sp800-63a/references/#ref-SP800-53">[SP800-53]</a> moderate baseline, regardless of IAL.</li>
+  <li>The CSP <strong>SHOULD</strong> assess risks associated with its use of third-party services and apply appropriate controls, as provided in the <a href="/800-63-4/sp800-63a/references/#ref-SP800-161">[SP800-161]</a> <em>Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations</em>.</li>
+</ol>
+<h3 id="redress" data-section="3">
+  
+  
+    Redress Requirements <a href="#redress" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> provide mechanisms for the redress of applicant complaints and for problems arising from the identity proofing process, including but not limited to: proofing failures, delays, and difficulties.</li>
+  <li>These mechanisms <strong>SHALL</strong> be easy for applicants to find and use.</li>
+  <li>The CSP <strong>SHALL</strong> assess the mechanisms for their efficacy in achieving a resolution of complaints or problems.</li>
+</ol>
+
+<p>See <a href="/800-63-4/sp800-63/dirm/#redress" latex-href="#ref-SP800-63">Sec. 3.6 of [SP800-63]</a> for more information about redress.</p>
+<h3 id="Feds" data-section="3">
+  
+  
+    Additional Requirements for Federal Agencies <a href="#Feds" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The following requirements apply to federal agencies, regardless of whether they operate their own identity service or use an external CSP as part of their identity service:</p>
+
+<ol>
+  <li>The agency <strong>SHALL</strong> consult with their Senior Agency Official for Privacy (SAOP) to conduct an analysis determining whether the collection of PII, including biometrics, to conduct identity proofing triggers Privacy Act requirements.</li>
+  <li>The agency <strong>SHALL</strong> consult with their SAOP to conduct an analysis determining whether the collection of PII, including biometrics, to conduct identity proofing triggers E-Government Act of 2002 <a href="/800-63-4/sp800-63a/references/#ref-E-Gov">[E-Gov]</a> requirements.</li>
+  <li>The agency <strong>SHALL</strong> publish a System of Records Notice (SORN) to cover such collection, as applicable.<sup id="fnref:SORN" role="doc-noteref"><a href="#fn:SORN" class="footnote">5</a></sup></li>
+  <li>The agency <strong>SHALL</strong> publish a Privacy Impact Assessment (PIA) to cover such collection, as applicable.</li>
+  <li>The agency <strong>SHALL</strong> consult with the senior official, office, or governance body responsible for diversity, equity, inclusion, and accessibility (DEIA) for their agency to determine how the identity proofing service can meet the needs of all served populations.</li>
+  <li>The agency <strong>SHOULD</strong> consult with public affairs and communications professionals within their organization to determine if a communications or public awareness strategy should be developed to accompany the roll-out of any new process, or an update to an existing process, including requirements associated with identity proofing. This may include materials detailing information about how to use the technology associated with the service, a Frequently Asked Questions (FAQs) page, prerequisites to participate in the identity proofing process (such as required evidence), webinars or other live or pre-recorded information sessions, or other media to support adoption of the identity service and provide applicants with a mechanism to communicate questions, issues, and feedback.</li>
+  <li>If the agency uses a third-party CSP, the agency SHALL conduct its own privacy risk assessment as part of its PIA process, using the CSP’s privacy risk assessment as input to the agency’s assessment.</li>
+  <li>If the agency uses a third-party CSP, the agency <strong>SHALL</strong> incorporate the CSP’s assessment of equity risks into its own assessment of equity risks.</li>
+</ol>
+<h3 id="ConfirmCodes" data-section="3">
+  
+  
+    Requirements for Confirmation Codes <a href="#ConfirmCodes" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>This section includes requirements for CSPs that support the use of confirmation codes.</p>
+
+<p>Confirmation codes are used to confirm that an applicant has access to a postal address, email address, or phone number, for the purposes of future communications. They are also used as an identity verification option at IALs 1 and 2, as described in <a href="/800-63-4/sp800-63a/proofing/#verification">Sec. 2.5.1</a>.</p>
+
+<p>Confirmation codes used for these purposes <strong>SHALL</strong> include at least 6 decimal digits (or equivalent) from an approved random bit generator (see <a href="/800-63-4/sp800-63b/authenticators/#randomness" latex-href="#ref-SP800-63B">Sec. 3.2.12 of [SP800-63B]</a>). The confirmation code may be presented as numeric or alphanumeric (e.g., Base64) for manual entry; a secure (e.g., https) link containing a representation of the confirmation code; or a machine-readable optical label, such as a QR code, containing the confirmation code.</p>
+
+<p>Confirmation codes <strong>SHALL</strong> be valid for at most:</p>
+
+<ul>
+  <li>21 days, when sent to a validated postal address within the contiguous United States;</li>
+  <li>30 days, when sent to a validated postal address outside the contiguous United States;</li>
+  <li>10 minutes, when sent to a validated telephone number (SMS or voice); or</li>
+  <li>24 hours, when sent to a validated email address.</li>
+</ul>
+
+<p>Upon its use, the CSP <strong>SHALL</strong> invalidate the confirmation code.</p>
+<h3 id="ContinueCodes" data-section="3">
+  
+  
+    Requirements for Continuation Codes <a href="#ContinueCodes" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>This section includes requirements for CSPs that support the use of continuation codes.</p>
+
+<p>Continuation codes are used to re-establish an applicant’s linkage to an incomplete identity proofing or enrollment process. CSPs <strong>MAY</strong> use continuation codes when an applicant is unable to complete all the steps necessary to be successfully identity proofed and enrolled into the CSP’s identity service in a single session, or when switching between different identity proofing types (such as from remote unattended to remote attended). Continuation codes are intended to be maintained offline (e.g., printed or written down) and stored in a secure location by the applicant for use in re-establishing linkage to a previous, incomplete session.</p>
+
+<p>In order to facilitate the authentication of the applicant to a subsequent session, the CSP <strong>SHALL</strong> first bind an authenticator to a record or account established for the applicant prior to the cessation of the initial session. Continuation codes <strong>SHALL</strong> include at least 64 bits from an approved random bit generator (see <a href="/800-63-4/sp800-63b/authenticators/#randomness" latex-href="#ref-SP800-63B">Sec. 3.2.12 of [SP800-63B]</a>). The continuation code <strong>MAY</strong> be presented as numeric or alphanumeric (e.g., Base64) for manual entry, or as a machine-readable optical label, such as a QR code containing the continuation code.</p>
+
+<p>Verification of continuation codes <strong>SHALL</strong> be subject to throttling requirements, as provided in <a href="/800-63-4/sp800-63b/authenticators/#throttle" latex-href="#ref-SP800-63B">Sec. 3.2.2 of [SP800-63B]</a>. Continuation codes <strong>SHALL</strong> be stored in hashed form, using a FIPS-approved or NIST recommended one-way function. Upon its use, the CSP <strong>SHALL</strong> invalidate the continuation code.</p>
+<h3 id="ProofingNotifs" data-section="3">
+  
+  
+    Requirements for Notifications of Identity Proofing <a href="#ProofingNotifs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Notifications of proofing are sent to the applicant’s validated address notifying them that they have been successfully identity proofed and provide information about the identity proofing event and subsequent enrollment, including how the recipient can repudiate they were the subject of the identity proofing.</p>
+
+<p>The following requirements apply to CSPs and RPs that send notifications of proofing at any IAL.</p>
+
+<p>Notifications of proofing:</p>
+
+<ol>
+  <li><strong>SHALL</strong> be sent to a validated postal address, email address, or phone number.</li>
+  <li><strong>SHALL</strong> include details about the identity proofing event, including the name of the identity service and the date the identity proofing was completed.</li>
+  <li><strong>SHALL</strong> provide clear instructions, including contact information, on actions for the recipient to take in the case that they repudiate the identity proofing event.</li>
+  <li><strong>SHALL</strong> provide additional information, such as how the organization or CSP protects the security and privacy of the information it collects and any responsibilities that the recipient has as a subscriber of the identity service.</li>
+  <li><strong>SHOULD</strong> provide instructions on how to access their subscriber account or information about how the subscriber can update the information contained in that account.</li>
+</ol>
+
+<p>In the event a subscriber repudiates having been identity proofed by the identity service, the CSP or RP <strong>SHALL</strong> respond in accordance to its fraud management program (<a href="/800-63-4/sp800-63a/ial-general/#FraudMgmt">Sec. 3.1.2</a>).</p>
+<h3 id="ProofBios" data-section="3">
+  
+  
+    Requirements for the Use of Biometrics <a href="#ProofBios" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Biometrics is the automated recognition of individuals based on their biological and behavioral characteristics such as, but not limited to, fingerprints, voice patterns, or facial features (biological characteristics), and keystroke patterns, angle of holding a smart phone, screen pressure, typing speed, mouse movements, or gait (behavioral characteristics).  As used in these guidelines, biometric data refers to any analog or digital representation of biological and behavioral characteristics at any stage of their capture, storage, or processing. This includes live biometric samples from applicants (e.g., facial images, fingerprint), as well as biometric references obtained from evidence (e.g., facial image on a driver’s license, fingerprint minutiae template on identification cards). As applied to the identity proofing process, CSPs can use biometrics to verify that an individual is the rightful subject of identity evidence, to bind an individual to a new piece of identity evidence or credential, or for the purposes of fraud detection.</p>
+
+<p>The following requirements apply to CSPs that employ biometrics as part of their identity proofing process:</p>
+
+<ol>
+  <li>CSPs <strong>SHALL</strong> provide clear, publicly available information about all uses of biometrics, what biometric data is collected, how it is stored, how it is protected, and information on how to remove biometric information consistent with applicable laws and regulations.</li>
+  <li>CSPs <strong>SHALL</strong> collect an explicit biometric consent from all applicants before collecting biometric information.</li>
+  <li>CSPs <strong>SHALL</strong> store a record of subscriber’s consent for biometric use and associate it with subscriber’s account.</li>
+  <li>CSPs <strong>SHALL</strong> have a documented, and publicly available, deletion process and default retention period for all biometric information.</li>
+  <li>CSPs <strong>SHALL</strong> support the deletion of all of a subscriber’s biometric information upon the subscriber’s request at any time, except where otherwise restricted by regulation, law, or statute.</li>
+  <li>CSPs <strong>SHALL</strong> have their biometric algorithms periodically tested by independent entities (e.g., accredited laboratories or research institutions) for their performance characteristics, including performance across demographic groups. At a minimum, the CSP <strong>SHALL</strong> have an algorithm retested after it has been updated.</li>
+  <li>CSPs <strong>SHALL</strong> assess the performance and demographic impacts of employed biometric technologies in conditions that are substantially similar to the operational environment and user base of the system. The user base is defined by both the demographic characteristics of the expected users as well as the devices they are expected to use. When such assessments include real-world users, participation by users <strong>SHALL</strong> be voluntary.</li>
+  <li>CSPs <strong>SHALL</strong> meet the following minimum performance thresholds for biometric usage in verification scenarios:
+    <ul>
+      <li>False match rate: 1:10,000 or better; and</li>
+      <li>False non-match rate: 1:100 or better</li>
+    </ul>
+  </li>
+  <li>CSPs <strong>MAY</strong> use 1:N matching in support of resolution or fraud detection, pursuant to a privacy risk assessment. In 1:N scenarios, CSPs <strong>SHALL</strong> meet a minimum performance threshold for false positive identifications of 1:1,000. This applies to, and <strong>SHALL</strong> be tested for, each demographic group. Tests demonstrating this requirement <strong>SHALL</strong> employ a gallery no smaller than 90% of the current or intended operational size (N).</li>
+  <li>CSPs that make use of 1:N biometric matching for either resolution or fraud prevention purposes <strong>SHALL NOT</strong> decline a user’s enrollment without a manual review by a trained proofing agent or trusted referee to confirm the automated matching results and confirm the results are not a false positive identification (for example, twins submitting for different accounts with the same CSP).</li>
+  <li>CSPs <strong>SHALL</strong> employ biometric technologies that provide similar performance characteristics for applicants of different demographic groups (age, race, sex, etc.). If significant performance differences across demographic groups are discovered, CSPs <strong>SHALL</strong> act expeditiously to provide redress options to affected individuals and to close performance gaps.</li>
+  <li>All biometric performance tests <strong>SHALL</strong> be conformant to ISO/IEC 19795-1:2021 and ISO/IEC 19795-10:2024, including demographics testing.</li>
+  <li>CSPs <strong>SHALL</strong> make performance and operational test results publicly available.</li>
+</ol>
+
+<p>The following requirements apply to CSPs who collect biometric characteristics from applicants:</p>
+
+<ol>
+  <li>CSP <strong>SHALL</strong> collect biometrics in such a way that provides reasonable assurance that the biometric is collected from the applicant, and not another subject.</li>
+  <li>When collecting and comparing biometrics remotely, the CSP <strong>SHALL</strong> implement presentation attack detection (PAD) capabilities, which meet IAPAR performance metric &lt;0.15, to confirm the genuine presence of a live human being and to mitigate spoofing and impersonation attempts.</li>
+  <li>When collecting biometrics onsite, the CSP <strong>SHALL</strong> have the operator view the biometric source (e.g., fingers, face) for the presence of non-natural materials and perform such inspections as part of the proofing process. All biometric presentation attack detection tests <strong>SHALL</strong> be conformant to ISO/IEC 30107-3:2023</li>
+</ol>
+<h3 id="requirements-for-evidence-validation-processes-authenticity-checks" data-section="3">
+  
+  
+    Requirements for Evidence Validation Processes (Authenticity Checks) <a href="#requirements-for-evidence-validation-processes-authenticity-checks" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+<p>Evidence validation can be conducted by remote optical capture and inspection (often called document authentication or doc auth) or conducted by visual inspection of a trained proofing agent or trusted referee. CSPs may employ either or both processes for evaluating the authenticity of identity evidence.</p>
+
+<p>The following requirements apply to CSPs that employ optical capture and inspection for the purposes of determining document authenticity:</p>
+
+<ol>
+  <li>Automated evidence validation technology <strong>SHALL</strong> meet the following performance measures:
+    <ul>
+      <li>Document false acceptance rate (DFAR) of .10 or less. <sup id="fnref:Note_DFAR" role="doc-noteref"><a href="#fn:Note_DFAR" class="footnote">6</a></sup></li>
+      <li>Document false rejection rate (DFRR) of .10 or less. <sup id="fnref:Note_DFRR" role="doc-noteref"><a href="#fn:Note_DFRR" class="footnote">7</a></sup></li>
+    </ul>
+  </li>
+  <li>If a Machine Readable Zone (MRZ) or barcode is present on the evidence, the optical capture and inspection <strong>SHALL</strong> compare the MRZ data to the printed data on the evidence for consistency.</li>
+  <li>CSPs <strong>SHALL</strong> implement live capture of documents during the validation process. CSPs <strong>SHOULD</strong> deploy technology controls to prevent the injection of document images, for example using document presence checks (also called document liveness) or inspecting device characteristics to determine the presence of a virtual camera or device emulator.</li>
+  <li>CSPs <strong>SHALL</strong> assess the performance of employed optical capture and inspection technologies in conditions that are substantially similar to the operational environment and user base of the system. These tests <strong>SHALL</strong> account for all available identity evidence types that the CSPs allow to be validated using optical capture and inspection technology. Where subscribers’ documents, PII, or images are used as part of the testing, it <strong>SHALL</strong> be on a voluntary basis and with subscriber notification and consent.</li>
+  <li>CSPs <strong>SHOULD</strong> have their evidence validation technology periodically tested by independent entities (e.g., accredited laboratories or research institutions) for their performance characteristics.</li>
+  <li>CSPs <strong>SHALL</strong> make the results of their testing available publicly.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Note:</strong> These requirements apply to technologies that capture and validate images of physical identity evidence. They do not apply to validation techniques that rely on PKI or other cryptographic technologies that are embedded in the evidence themselves.</p>
+</blockquote>
+
+<p>The following requirements apply to CSPs that employ visual inspection of evidence by trained proofing agents or trusted referees for the purposes of determining document authenticity:</p>
+
+<ol>
+  <li>Proofing agents and trusted referees <strong>SHALL</strong> be trained and provided resources to visually inspect all forms of evidence supported by the CSP. This training <strong>SHALL</strong> include:
+    <ul>
+      <li>Authentic layouts and topography of evidence types</li>
+      <li>Physical security features (e.g., raised letters, holographic features, microprinting)</li>
+      <li>Techniques for assessing features (e.g., tools to be used, where tactile inspection is needed, manipulation to view specific features)</li>
+      <li>Common indications of tampering (e.g., damage to the lamination, image modification)</li>
+    </ul>
+  </li>
+  <li>When the setting allows for it (e.g., onsite attended proofing events), proofing agents and trusted referees <strong>SHALL</strong> be provided with specialized tools and equipment to support the visual inspection of evidence (e.g., magnifiers, ultraviolet lights, barcode readers).</li>
+  <li>Proofing agents and trusted referees who conduct visual inspection via remote means <strong>SHALL</strong> be provided with devices and internet connections that support sufficiently high-quality imagery to be able to effectively inspect presented evidence. In these instances, the visual validation <strong>SHOULD</strong> be supported by automated document validation technologies that provide additional confidence in the authenticity of the evidence (e.g., submitting and validating evidence in advance of an attended remote session)</li>
+  <li>Proofing agents and trusted referees <strong>SHALL</strong> be reviewed regarding their ability to visually inspect evidence on an ongoing basis, and be assessed and certified with at least annual evaluations.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Note:</strong> Due to the potential number and permutations of identity evidence, these guidelines do not attempt to provide a comprehensive list of security features. CSPs need to provide evidence validation training specific to the types of identity evidence they accept.</p>
+</blockquote>
+<h3 id="TRs-ARs" data-section="3">
+  
+  
+    Exception and Error Handling <a href="#TRs-ARs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Throughout the identity proofing process there are many points where errors or failures may occur. Such exceptions to a standard identity proofing workflow include: process failures, such as when a user does not possess the required evidence; technical failures, such as when an integrated service is not available; and failures due to user error, such as when an applicant is unable to capture a clear image of their identity evidence when using remote validation tools.</p>
+
+<p>In order to increase the accessibility, usability, and equity of their identity proofing services, CSPs <strong>SHALL</strong> document their operational processes for dealing with errors and handling exceptions. These documented processes <strong>SHALL</strong> include providing trusted referees to support those applicants who are otherwise unable to meet the requirements of IALs 1 and 2. Additionally, CSPs <strong>SHOULD</strong> support the use of applicant references who can vouch for an applicant’s attributes, conditions, or identity.</p>
+<h4 id="TRs" data-section="3">
+  
+  
+    Trusted Referees Requirements <a href="#TRs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>To increase accessibility and promote equal access to online government services, CSPs provide trusted referees. Trusted referees are used to facilitate the identity proofing and enrollment of individuals who are otherwise unable to meet the requirements for identity proofing to a specific IAL. A non-exhaustive list of examples of such individuals and demographic groups includes: individuals who do not possess and cannot obtain the required identity evidence; persons with disabilities; older individuals; persons experiencing homelessness; individuals with little or no access to online services or computing devices; persons without a bank account or with limited credit history; victims of identity theft; individuals displaced or affected by natural disasters; and children under 18. The following requirements apply to the use of trusted referees:</p>
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> provide notification to the public of the availability of trusted referee services and how such services are obtained.</li>
+  <li>The CSP <strong>SHALL</strong> establish written policies and procedures for the use of trusted referees as part of its practice statement, as specified in <a href="/800-63-4/sp800-63a/ial-general/#DocRecReqs">Sec. 3.1.1</a>.</li>
+  <li>The CSP <strong>SHALL</strong> train and certify its trusted referees to make risk-based decisions that allow applicants to be successfully identity proofed based on their unique circumstances. At a minimum such training <strong>SHALL</strong> include:
+    <ol>
+      <li>Document identification and validation, such as common templates, security features, layouts, and topography.</li>
+      <li>Indicators of fraudulent documents, such as damage, tampering, modification, and material types</li>
+      <li>Facial and image comparisons to conduct verification of applicants against presented documents</li>
+      <li>Indicators of social engineering - such as distress, confusion, or coercion - exhibited by an applicant</li>
+      <li>Annual recertification of the trusted referee’s capabilities</li>
+    </ol>
+  </li>
+  <li>The CSP <strong>SHALL</strong> establish a record of any identity proofing session that involves a trusted referee, to include: what evidence was presented; which processes were completed (e.g., validation or verification); and, the reason(s) why a trusted referee was used (e.g., automated process failure, applicant request, established exception policy).</li>
+  <li>The CSP <strong>MAY</strong> offer trusted referee services for either onsite-attended or remote-attended sessions. These sessions <strong>SHALL</strong> be consistent with the requirements of these proofing types based on the IAL of the proofing event.</li>
+</ol>
+<h4 id="trusted-referee-uses" data-section="3">
+  
+  
+    Trusted Referee Uses <a href="#trusted-referee-uses" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Trusted referees offer a critical path for those who are unable to complete identity proofing by other means. However, given the number of possible failures that may occur within the proofing process, it is essential for CSPs to define the uses for which a trusted referee can be applied within their own service offerings. The following requirements apply to defining the integration of trusted referees into the identity proofing process:</p>
+
+<ol>
+  <li>CSPs <strong>SHALL</strong> document which types of exceptions and failures are eligible for the use of a trusted referee.</li>
+  <li>CSPs <strong>SHALL</strong> offer trusted referee services for failures of automated verification processes (e.g., biometric comparisons).</li>
+  <li>CSPs <strong>SHOULD</strong> offer trusted referee services for failures in completing automated validation processes, such as in cases of mismatched core attributes or the absence of the applicant in a record source.
+    <ol>
+      <li>CSPs <strong>SHALL</strong> provide a policy for additional evidence types that may be used to corroborate core attributes or changes in core attributes.</li>
+      <li>Trusted referees <strong>SHALL</strong> review additional evidence types for authenticity to the greatest degree allowed by the evidence.</li>
+      <li>If no authoritative or credible records are available to support validation, the trusted referee <strong>MAY</strong> compare the attributes on additional pieces of evidence with the strongest piece of evidence available to corroborate the consistency of core attributes.</li>
+      <li>If there is a partial mismatch of core attributes to authoritative records, the trusted referee <strong>SHALL</strong> review evidence that supports the legitimacy of the asserted attribute value (e.g., recent move or change of name).</li>
+    </ol>
+  </li>
+</ol>
+<h4 id="ARs" data-section="3">
+  
+  
+    Applicant Reference Requirements <a href="#ARs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Applicant references are individuals who participate in the identity proofing of an applicant in order to vouch for the applicant’s identity, attributes, or circumstances related to the applicant’s ability to complete identity proofing. Applicant representatives are not agents of the CSP, but instead are representatives of the applicant who have sufficient knowledge to aide in the completion of identity proofing when other forms of evidence, validation, and verification are not available.</p>
+
+<p>The following requirements apply to the use of applicant references at IAL1 or IAL2:</p>
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> provide notification to the public of the allowability of applicant references and any requirements for the relationship between the reference and an applicant.</li>
+  <li>The CSP <strong>SHALL</strong> establish written policies and procedures for the use of applicant references as part of its practice statement, as specified in <a href="/800-63-4/sp800-63a/ial-general/#DocRecReqs">Sec. 3.1.1</a>.</li>
+  <li>The CSP <strong>SHALL</strong> identity proof an applicant reference to the same or higher IAL intended for the applicant. The CSP <strong>SHALL</strong> include the information collected, recorded, and retained for identity proofing the applicant references in its privacy risk assessment for identity proofing applicants, as required in section <a href="/800-63-4/sp800-63a/ial-general/#PrivacyReqs">Sec. 3.1.3</a>.</li>
+  <li>The CSP <strong>SHALL</strong> record the use of an applicant reference in the subscriber account as well as maintain a record of the applicant reference and their relationship to the applicant.</li>
+  <li>The RP <strong>SHALL</strong> conduct a risk assessment to determine the applicability, business requirements, and potential risks associated with excluding or including applicant references for proofing events.</li>
+</ol>
+<h4 id="uses-of-applicant-references" data-section="3">
+  
+  
+    Uses of Applicant References <a href="#uses-of-applicant-references" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Applicant references may take several different actions to support an applicant in the identity proofing process. CSPs and RPs <strong>SHALL</strong> establish all acceptable uses for applicant references in their Trust Agreements. These <strong>MAY</strong> include the following:</p>
+
+<ol>
+  <li>The applicant reference <strong>MAY</strong> vouch for one or more claimed core attributes relative to the applicant as part of evidence and attribute validation process.</li>
+  <li>The applicant reference <strong>MAY</strong> vouch for a specific condition or status of an applicant relative to the identity proofing process (e.g., homelessness, disaster scenarios)
+    <blockquote>
+      <p><strong>Note:</strong> This information is intended to support risk determinations relative to the identity proofing event. Use of applicant reference statements relative to eligibility for status or benefits is outside the scope of these guidelines.</p>
+    </blockquote>
+  </li>
+  <li>The applicant reference <strong>MAY</strong> vouch for the identity of the applicant in the absence of sufficient identity evidence.</li>
+</ol>
+
+<p>In all instances, the CSP <strong>SHALL</strong> establish a record of the role the applicant reference played in the process and document these actions sufficient to support any applicable legal and regulatory requirements. This <strong>MAY</strong> include:</p>
+
+<ol>
+  <li>Capturing and recording the statements and assertions made by the applicant reference;</li>
+  <li>Capturing an electronic, digital signature, or physical signature of the applicant reference; or,</li>
+  <li>Capturing consent and acknowledgement relative to the legal and liability impacts of the applicant reference’s statements.</li>
+</ol>
+
+<p>CSPs <strong>SHALL</strong> make available to the applicant reference clear and understandable information relative to the legal and liability impacts that may result from their participation as an applicant reference.</p>
+<h4 id="establishing-applicant-reference-relationships" data-section="3">
+  
+  
+    Establishing Applicant Reference Relationships <a href="#establishing-applicant-reference-relationships" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>In many cases, there will be business, legal, or fraud prevention reasons to confirm the relationship between the applicant and an applicant reference. Where such steps are deemed necessary by a risk assessment, the following requirements <strong>SHALL</strong> apply:</p>
+
+<ol>
+  <li>The CSP and RP <strong>SHALL</strong> establish requirements for applicant reference relationship confirmation processes and document this in any Trust Agreements.</li>
+  <li>The CSP <strong>SHALL</strong> make a list of acceptable evidence of relationship available to the applicant reference prior to initiating the relationship confirmation process</li>
+  <li>The CSP <strong>SHALL</strong> request evidence of the applicant’s relationship (e.g., notarized power of attorney, a professional certification)</li>
+  <li>Upon successfully identity proofing an applicant, the CSP <strong>SHALL</strong> record the evidence used to confirm the applicant reference’s relationship to the applicant in the subscriber account.</li>
+</ol>
+<h4 id="Minors" data-section="3">
+  
+  
+    Requirements for Interacting with Minors <a href="#Minors" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>The following requirements apply to all CSPs providing identity proofing services to minors at any IAL.</p>
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> establish written policy and procedures as part of its practice statement for identity proofing minors who may not be able to meet the evidence requirements for a given IAL.</li>
+  <li>When interacting with persons under the age of 13, the CSP <strong>SHALL</strong> ensure compliance with the Children’s Online Privacy Protection Act of 1998 <a href="/800-63-4/sp800-63a/references/#ref-COPPA">[COPPA]</a>, or other laws and regulations dealing with the protection of minors, as applicable.</li>
+  <li>CSPs <strong>SHALL</strong> support the use of applicant references when interacting with individuals under the age of 18.</li>
+</ol>
+<h2 id="upgradeIAL" data-section="3">
+  
+  
+    Elevating Subscriber IALs <a href="#upgradeIAL" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>CSPs <strong>SHOULD</strong> allow subscribers to elevate identity assurance levels related to their subscriber accounts to support higher assurance transactions with RPs. For CSPs supporting these functions the following apply:</p>
+
+<ol>
+  <li>CSPs <strong>SHALL</strong> document their approved approaches for elevating assurance levels in their practice statements.</li>
+  <li>CSPs <strong>SHALL</strong> require subscribers to authenticate at the highest AAL available on their account prior to initiating the upgrade process.</li>
+  <li>CSPs <strong>SHALL</strong> collect, validate, and verify additional evidence, as mandated to achieve the higher IAL.</li>
+  <li>CSPs <strong>SHOULD</strong> avoid collecting, validating, and verifying previously processed evidence, though they <strong>MAY</strong> do so based on the age of the account, indicators of fraud, or if evidence has become invalidated since the original proofing event.</li>
+</ol>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:alternatives" role="doc-endnote">
+      <p>Options include using a trusted referee, with or without an applicant representative. <a href="#fnref:alternatives" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:privacyframework" role="doc-endnote">
+      <p>For more information about privacy risk assessments, refer to the NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management at <a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.01162020.pdf">https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.01162020.pdf</a>. <a href="#fnref:privacyframework" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:NISTIR8062" role="doc-endnote">
+      <p><a href="references.md#ref-NISTIR8062">[NISTIR8062]</a> provides an overview of predictability and manageability including examples of how these objectives can be met. <a href="#fnref:NISTIR8062" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:behavioral" role="doc-endnote">
+      <p>Behavioral analytics in this context are used to determine if an interaction is indicative of an automated attack and not an effort to identify or authenticate a specific user based on a captured reference template for that user. <a href="#fnref:behavioral" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:SORN" role="doc-endnote">
+      <p>For more information about SORNs, see OPM’s <em>System of Records Notice (SORN) Guide</em> (https://www.opm.gov/information-management/privacy-policy/privacy-references/sornguide.pdf). <a href="#fnref:SORN" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:Note_DFAR" role="doc-endnote">
+      <p>For the purposes of this document, the DFAR is the proportion of processed, fraudulent documents that the document validation system determined to be valid divided by the number of processed fraudulent documents. DFAR is defined as the number of fraudulent documents processed that were deemed valid by a document validation system divided by the number of processed fraudulent documents. <a href="#fnref:Note_DFAR" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:Note_DFRR" role="doc-endnote">
+      <p>For the purposes of this document, DFRR is the proportion of processed, genuine documents which the document validation system determined to be invalid. DFRR is defined as the number of genuine documents processed that were deemed invalid by a document validation system divided by the number of processed genuine documents. <a href="#fnref:Note_DFRR" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

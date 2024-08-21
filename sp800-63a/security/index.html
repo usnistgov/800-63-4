@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63a/security/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Security</title>
+    <meta property="og:title" content="Security"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/proofing/"><span class="section">2</span>Proofing</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial-general/"><span class="section">3</span>General IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial/"><span class="section">4</span>IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/accounts/"><span class="section">5</span>Accounts</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63a/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abbreviations/"><span class="section">B</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/glossary/"><span class="section">C</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/changelog/"><span class="section">D</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="security" data-section="6">
+  
+  
+    Threats and Security Considerations <a href="#security" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is informative.</em></p>
+
+<p>Effective protection of identity proofing processes requires the layering of security controls and processes throughout a transaction with a given applicant. To achieve this, it is necessary to understand where and how threats can arise and compromise enrollments. There are three general categories of threats to the identity proofing process:</p>
+
+<ul>
+  <li>
+    <p><strong>Impersonation</strong>: where an attacker attempts to pose as another, legitimate, individual (e.g., identity theft)</p>
+  </li>
+  <li>
+    <p><strong>False or Fraudulent Representation</strong>: where an attacker may create a false identity or false claims about an identity (e.g., synthetic identity fraud)</p>
+  </li>
+  <li>
+    <p><strong>Infrastructure</strong>: where attackers may seek to compromise confidentiality, availability, and integrity of the infrastructure, data, software, or people supporting the CSP’s identity proofing process (e.g., distributed denial of service, insider threats)</p>
+  </li>
+</ul>
+
+<p>This section focuses on impersonation and false or fraudulent representation threats, as infrastructure threats are addressed by traditional computer security controls (e.g., intrusion protection, record keeping, independent audits) and are outside the scope of this document. For more information on security controls, see <a href="/800-63-4/sp800-63a/references/#ref-SP800-53">[SP800-53]</a>, <em>Recommended Security and Privacy Controls for Federal Information Systems and Organizations</em>.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/security/#table-2" name="table-2">Table 2. Identity Proofing and Enrollment Threats</a></p>
+
+<table latex-table="2" latex-caption="Identity Proofing and Enrollment Threats" latex-columns="p@0.25\textwidth,p@0.35\textwidth,p@0.25\textwidth">
+  <thead>
+    <tr>
+      <th>Attack/Threat</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Automated Enrollment Attempts</td>
+      <td>Attackers leverage scripts and automated processes to rapidly generate large volumes of enrollments</td>
+      <td>Bots leverage stolen data to submit benefits claims.</td>
+    </tr>
+    <tr>
+      <td>Evidence Falsification</td>
+      <td>Attacker creates or modifies evidence in order to claim an identity</td>
+      <td>A fake driver’s license is used as evidence.</td>
+    </tr>
+    <tr>
+      <td>Synthetic Identity fraud</td>
+      <td>Attacker fabricates evidence of identity that is not associated with a real person</td>
+      <td>Opening a credit card in a fake name to create a credit file.</td>
+    </tr>
+    <tr>
+      <td>Fraudulent Use of Identity (Identity Theft)</td>
+      <td>Attacker fraudulently uses another individual’s identity or identity evidence</td>
+      <td>An individual uses a stolen passport.</td>
+    </tr>
+    <tr>
+      <td>Social Engineering</td>
+      <td>Attacker convinces a legitimate applicant to provide identity evidence or complete the identity proofing process under false pretenses</td>
+      <td>An individual submits their identity evidence to an attacker posing as a potential employer.</td>
+    </tr>
+    <tr>
+      <td>False Claims</td>
+      <td>Attacker associates false attributes or information with a legitimate identity</td>
+      <td>An individual falsely claims residence in a state in order to obtain a benefit that is available only to state residents.</td>
+    </tr>
+    <tr>
+      <td>Video or Image Injection Attack</td>
+      <td>Attacker creates a fake video feed of an individual associated with a real person</td>
+      <td>A deepfake video is used to impersonate an individual portrayed on a stolen driver’s license.</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="threat-mitigation-strategies" data-section="6">
+  
+  
+    Threat Mitigation Strategies <a href="#threat-mitigation-strategies" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Threats to the enrollment and identity proofing process are summarized in <a href="/800-63-4/sp800-63a/security/#table-2">Table 2</a>. Related mechanisms that assist in mitigating the threats identified above are summarized in <a href="/800-63-4/sp800-63a/security/#table-3">Table 3</a>. These mitigations should not be considered comprehensive but a summary of mitigations detailed more thoroughly at each Identity Assurance Level and applied based on the risk assessment processes detailed in <a href="/800-63-4/sp800-63/dirm/#sec5" latex-href="#ref-SP800-63">Sec. 3 of [SP800-63]</a>.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/security/#table-3" name="table-3">Table 3. Identity Proofing and Enrollment Threat Mitigation Strategies</a></p>
+
+<p></p>
+
+<table latex-table="3" latex-caption="Identity Proofing and Enrollment Threat Mitigation Strategies" latex-columns="p@0.15\textwidth,p@0.55\textwidth,p@0.20\textwidth">
+  <thead>
+    <tr>
+      <th>Threat/Attack</th>
+      <th>Mitigation Strategies</th>
+      <th>Normative Reference(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Automated Enrollment Attempts</td>
+      <td>Web Application Firewall (WAF) controls and bot detection technology. Out-of-band engagement (e.g., confirmation codes). Biometric verification and liveness detection mechanisms. Traffic and network analysis capabilities to identify indications or malicious traffic.</td>
+      <td>3.1.5, 3.1.8, 3.1.11</td>
+    </tr>
+    <tr>
+      <td>Evidence Falsification</td>
+      <td>Validation of core attributes with authoritative or credible sources. Validation of physical or digital security features of the presented evidence.</td>
+      <td>4.1.4 &amp; 4.1.5 (IAL1), 4.2.4 &amp; 4.2.5 (IAL2), 4.3.4 &amp; 4.3.5 (IAL3)</td>
+    </tr>
+    <tr>
+      <td>Synthetic Identity Fraud</td>
+      <td>Collection of identity evidence. Validation of core attributes with authoritative or credible sources. Biometric comparison of the applicant to validated identity evidence or biometric data. Checks against vital statistics repositories (e.g., Death Master File).</td>
+      <td>3.1.2.1, 4.1.2, 4.1.5, &amp; 4.1.6 (IAL1), 4.2.2, 4.2.5, &amp; 4.2.6 (IAL2), 4.3.2, 4.3.5, &amp; 4.3.6 (IAL3)</td>
+    </tr>
+    <tr>
+      <td>Fraudulent Use of Identity (Identity Theft)</td>
+      <td>Biometric comparison of the applicant to validated identity evidence or biometric data. Presentation attack detection measures to confirm the genuine presence of applicant. Out-of-band engagement (e.g., confirmation codes) and notice of proofing. Checks against vital statistics repositories (e.g., Death Master File). Fraud, transaction, and behavioral analysis capabilities to identify indicators of potentially malicious account establishment.</td>
+      <td>3.1.2.1, 3.1.8, 3.1.10, 3.1.11, 4.1.6 (IAL1), 4.2.6 (IAL2), 4.3.6 (IAL3)</td>
+    </tr>
+    <tr>
+      <td>Social Engineering</td>
+      <td>Training of trusted referees to identify indications of coercion or distress. Out-of-band engagement and notice of proofing to validated address. Provide information and communication to end users on common threats and schemes. Offer onsite in-person attended identity proofing option.</td>
+      <td>2.1.3, 3.1.8, 3.1.110, 3.1.13.1, 8.4</td>
+    </tr>
+    <tr>
+      <td>False Claims</td>
+      <td>Geographic restrictions on traffic. Validation of core attributes with authoritative or credible sources.</td>
+      <td>3.1.2.1, 4.1.5 (IAL1), 4.2.5 (IAL2), 4.3.5 (IAL3)</td>
+    </tr>
+    <tr>
+      <td>Video or Image Injection Attack</td>
+      <td>Use of a combination of active and passive PAD. Use of authenticated protected channels for communications between devices and servers running matching. Authentication of biometric sensors where feasible. Monitoring and analysis of incoming video and image files to detect signs of injection.</td>
+      <td>3.1.8</td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+<h2 id="collaboration-with-adjacent-programs" data-section="6">
+  
+  
+    Collaboration with Adjacent Programs <a href="#collaboration-with-adjacent-programs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Identity proofing services typically serve as the front door for critical business or service functions. Accordingly, these services should not operate in a vacuum. A close coordination of identity proofing and CSP functions with cybersecurity teams, threat intelligence teams, and program integrity teams can enable a more complete protection of business capabilities while constantly improving identity proofing capabilities. For example, payment fraud data collected by program integrity teams could provide indicators of compromised subscriber accounts and potential weaknesses in identity proofing implementations. Similarly, threat intelligence teams may receive indications of new tactics, techniques, and procedures that may impact identity proofing processes. CSPs and RPs should seek to establish consistent mechanisms for the exchange of information between critical security and fraud stakeholders. Where the CSP is external, this may be complicated, but should be addressed through contractual and legal mechanisms, to include technical and interoperability considerations. All data collected, transmitted, or shared should be minimized and subject to a detailed privacy and legal assessment.</p>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

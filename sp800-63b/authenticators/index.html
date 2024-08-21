@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63b/authenticators/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Authenticators</title>
+    <meta property="og:title" content="Authenticators"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/aal/"><span class="section">2</span>AAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63b/authenticators/"><span class="section">3</span>Authenticators</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/events/"><span class="section">4</span>Events</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/session/"><span class="section">5</span>Session</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/passwords/"><span class="section">A</span>Passwords</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/syncable/"><span class="section">B</span>Syncable</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/abbreviations/"><span class="section">C</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/glossary/"><span class="section">D</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63b/changelog/"><span class="section">E</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="AAL_SEC5" data-section="3">
+  
+  
+    Authenticator and Verifier Requirements <a href="#AAL_SEC5" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is normative.</em></p>
+
+<p>This section provides detailed requirements that are specific to each type of authenticator. With the exception of the reauthentication requirements specified in <a href="/800-63-4/sp800-63b/aal/#AAL_SEC4">Sec. 2</a> and the requirement for phishing resistance at AAL3 described in <a href="/800-63-4/sp800-63b/authenticators/#verifimpers">Sec. 3.2.5</a>, the technical requirements for each authenticator type are the same regardless of the AAL at which the authenticator is used.</p>
+
+<p>In many circumstances, users need to share devices that are used in authentication processes, such as a family phone that receives OTPs. In public-facing applications, CSPs <strong>SHOULD NOT</strong> prevent a device from being registered as an authenticator by multiple subscribers. However, they <strong>MAY</strong> establish appropriate restrictions to prevent large-scale fraud or misuse.</p>
+
+<p>Authentication, authenticator binding (see in <a href="/800-63-4/sp800-63b/events/#sec6">Sec. 4</a>), and session maintenance (see in <a href="/800-63-4/sp800-63b/session/#sec7">Sec. 5</a>) are based on proof of possession of one or more types of secrets, as shown in <a href="/800-63-4/sp800-63b/authenticators/#table-1">Table 1</a>.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63b/authenticators/#table-1" name="table-1">Table 1. Summary of secrets (non-normative)</a></p>
+
+<table latex-table="1" latex-caption="Summary of Secrets (non-normative)" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.35\textwidth,p@0.35\textwidth">
+  <thead>
+    <tr>
+      <th>Type of Secret</th>
+      <th>Purpose</th>
+      <th>Reference Section</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Password</td>
+      <td>A subscriber-chosen secret used as an authentication factor</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#password">3.1.1</a></td>
+    </tr>
+    <tr>
+      <td>Look-up secret</td>
+      <td>A secret issued by a verifier and used only once to prove possession of the secret</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#lookupsecrets">3.1.2</a></td>
+    </tr>
+    <tr>
+      <td>Out-of-band secret</td>
+      <td>A short-lived secret generated by a verifier and independently sent to a subscriber’s device to verify its possession</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#out-of-band">3.1.3</a></td>
+    </tr>
+    <tr>
+      <td>One-time passcodes (OTP)</td>
+      <td>A secret generated by an authenticator and used only once to prove possession of the authenticator</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#singlefactorOTP">3.1.4</a>, <a href="/800-63-4/sp800-63b/authenticators/#multifactorOTP">3.1.5</a></td>
+    </tr>
+    <tr>
+      <td>Activation secret</td>
+      <td>A password that is used locally as an activation factor for a multi-factor authenticator</td>
+      <td><a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10">3.2.10</a></td>
+    </tr>
+    <tr>
+      <td>Long-term authenticator secret</td>
+      <td>A secret embedded in a physical authenticator to allow it to function for authentication</td>
+      <td><a href="/800-63-4/sp800-63b/events/#binding">4.1</a></td>
+    </tr>
+    <tr>
+      <td>Recovery code</td>
+      <td>A secret issued to the subscriber to allow them to recover an account at which they are no longer able to authenticate</td>
+      <td><a href="/800-63-4/sp800-63b/events/#recovery">4.2</a></td>
+    </tr>
+    <tr>
+      <td>Session secret</td>
+      <td>A secret issued by the verifier at authentication and used to establish the continuity of authenticated sessions</td>
+      <td><a href="/800-63-4/sp800-63b/session/#session-bindings">5.1</a></td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="reqauthtype" data-section="3">
+  
+  
+    Requirements by Authenticator Type <a href="#reqauthtype" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The following requirements apply to specific authenticator types.</p>
+<h3 id="password" data-section="3">
+  
+  
+    Passwords <a href="#password" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p class="authenticator-image">A password (sometimes referred to as a <em>passphrase</em> or, if numeric, a <em>PIN</em>) is a secret value intended to be chosen and either memorized or recorded by the subscriber. Passwords must be of sufficient complexity and secrecy that it would be impractical for an attacker to guess or otherwise discover the correct secret value. A password is “something you know”.</p>
+
+<p>The requirements in this section apply to centrally verified passwords that are used as independent authentication factors and sent over an authenticated protected channel to the verifier of a CSP. Passwords used locally as an activation factor for a multi-factor authenticator are referred to as <em>activation secrets</em> and discussed in <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10">Sec. 3.2.10</a>.</p>
+
+<p>Passwords are not phishing-resistant.</p>
+<h4 id="password-authenticators" data-section="3">
+  
+  
+    Password Authenticators <a href="#password-authenticators" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Passwords <strong>SHALL</strong> either be chosen by the subscriber or assigned randomly by the CSP.</p>
+
+<p>If the CSP disallows a chosen password because it is on a blocklist of commonly used, expected, or compromised values (see <a href="/800-63-4/sp800-63b/authenticators/#passwordver">Sec. 3.1.1.2</a>), the subscriber <strong>SHALL</strong> be required to choose a different password. Other complexity requirements for passwords <strong>SHALL NOT</strong> be imposed. A rationale for this is presented in <a href="/800-63-4/sp800-63b/passwords/#appA">Appendix A</a>, <em>Strength of Passwords</em>.</p>
+<h4 id="passwordver" data-section="3">
+  
+  
+    Password Verifiers <a href="#passwordver" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>The following requirements apply to passwords:</p>
+
+<ol>
+  <li>Verifiers and CSPs <strong>SHALL</strong> require passwords to be a minimum of eight characters in length and <strong>SHOULD</strong> require passwords to be a minimum of 15 characters in length.</li>
+  <li>Verifiers and CSPs <strong>SHOULD</strong> permit a maximum password length of at least 64 characters.</li>
+  <li>Verifiers and CSPs <strong>SHOULD</strong> accept all printing ASCII <a href="/800-63-4/sp800-63b/references/#ref-RFC20">[RFC20]</a> characters and the space character in passwords.</li>
+  <li>Verifiers and CSPs <strong>SHOULD</strong> accept Unicode <a href="/800-63-4/sp800-63b/references/#ref-ISOIEC10646">[ISO/ISC 10646]</a> characters in passwords. Each Unicode code point <strong>SHALL</strong> be counted as a single character when evaluating password length.</li>
+  <li>Verifiers and CSPs <strong>SHALL NOT</strong> impose other composition rules (e.g., requiring mixtures of different character types) for passwords.</li>
+  <li>Verifiers and CSPs <strong>SHALL NOT</strong> require users to change passwords periodically. However, verifiers <strong>SHALL</strong> force a change if there is evidence of compromise of the authenticator.</li>
+  <li>Verifiers and CSPs <strong>SHALL NOT</strong> permit the subscriber to store a hint that is accessible to an unauthenticated claimant.</li>
+  <li>Verifiers and CSPs <strong>SHALL NOT</strong> prompt subscribers to use knowledge-based authentication (KBA) (e.g., “What was the name of your first pet?”) or security questions when choosing passwords.</li>
+  <li>Verifiers <strong>SHALL</strong> verify the entire submitted password (i.e., not truncate it).</li>
+</ol>
+
+<p>If Unicode characters are accepted in passwords, the verifier <strong>SHOULD</strong> apply the normalization process for stabilized strings using either the NFKC or NFKD normalization defined in Sec. 12.1 of <em>Unicode Normalization Forms</em> <a href="/800-63-4/sp800-63b/references/#ref-UAX15">[UAX15]</a>. This process is applied before hashing the byte string that represents the password. Subscribers choosing passwords that contain Unicode characters <strong>SHOULD</strong> be advised that some endpoints may represent some characters differently, which would affect their ability to authenticate successfully.</p>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+
+<p>When processing a request to establish or change a password, verifiers <strong>SHALL</strong> compare the prospective secret against a blocklist that contains known commonly used, expected, or compromised passwords. The entire password <strong>SHALL</strong> be subject to comparison, not substrings or words that might be contained therein. For example, the list <strong>MAY</strong> include but is not limited to:</p>
+
+<ul>
+  <li>Passwords obtained from previous breach corpuses</li>
+  <li>Dictionary words</li>
+  <li>Context-specific words, such as the name of the service, the username, and derivatives thereof</li>
+</ul>
+
+<p>If the chosen password is found on the blocklist, the CSP or verifier <strong>SHALL</strong> require the subscriber to select a different secret and <strong>SHALL</strong> provide the reason for rejection. Since the blocklist is used to defend against brute-force attacks and unsuccessful attempts are rate-limited, as described below, the blocklist <strong>SHOULD</strong> be of sufficient size to prevent subscribers from choosing passwords that attackers are likely to guess before reaching the attempt limit.</p>
+
+<blockquote>
+  <p>Excessively large blocklists are of little incremental security benefit because the blocklist is used to defend against online attacks, which are already limited by the throttling requirements described in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a>.</p>
+</blockquote>
+
+<p>Verifiers <strong>SHALL</strong> offer guidance to the subscriber to assist the user in choosing a strong password. This is particularly important following the rejection of a password on the blocklist as it discourages trivial modification of listed weak passwords <a href="/800-63-4/sp800-63b/references/#ref-blocklists">[Blocklists]</a>.</p>
+
+<p>Verifiers <strong>SHALL</strong> implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account, as described in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a>.</p>
+
+<p>Verifiers <strong>SHALL</strong> allow the use of password managers. Verifiers <strong>SHOULD</strong> permit claimants to use the “paste” functionality when entering a password to facilitate their use. Password managers have been shown to increase the likelihood that users will choose stronger passwords, particularly if the password managers include password generators <a href="/800-63-4/sp800-63b/references/#ref-managers">[Managers]</a>.</p>
+
+<p>To assist the claimant in successfully entering a password, the verifier <strong>SHOULD</strong> offer an option to display the secret — rather than a series of dots or asterisks — while it is entered and until it is submitted to the verifier. This allows the claimant to confirm their entry if they are in a location where their screen is unlikely to be observed. The verifier <strong>MAY</strong> also permit the claimant’s device to display individual entered characters for a short time after each character is typed to verify the correct entry. This is common on mobile devices.</p>
+
+<p>Verifiers <strong>MAY</strong> make allowances for mistyping, such as removing leading and trailing whitespace characters before verification or allowing the verification of passwords with differing cases for the leading character, provided that passwords remain at least the required minimum length after such processing.</p>
+
+<p>Verifiers and CSPs <strong>SHALL</strong> use approved encryption and an authenticated protected channel when requesting passwords.</p>
+
+<p>Verifiers <strong>SHALL</strong> store passwords in a form that is resistant to offline attacks. Passwords <strong>SHALL</strong> be salted and hashed using a suitable password hashing scheme. Password hashing schemes take a password, a salt, and a cost factor as inputs and generate a password hash. Their purpose is to make each password guess more expensive for an attacker who has obtained a hashed password file, thereby making the cost of a guessing attack high or prohibitive. The chosen cost factor <strong>SHOULD</strong> be as high as practical without negatively impacting verifier performance. It <strong>SHOULD</strong> be increased over time to account for increases in computing performance. An approved password hashing scheme published in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-132">[SP800-132]</a> or updated NIST guidelines on password hashing schemes <strong>SHOULD</strong> be used. The chosen output length of the password verifier, excluding the salt and versioning information, <strong>SHOULD</strong> be the same as the length of the underlying password hashing scheme output.</p>
+
+<p>The salt <strong>SHALL</strong> be at least 32 bits in length and chosen to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash <strong>SHALL</strong> be stored for each password. A reference to the password hashing scheme used, including the work factor, <strong>SHOULD</strong> be stored for each password to allow migration to new algorithms and work factors. For example, for the Password-Based Key Derivation Function 2 (PBKDF2) <a href="/800-63-4/sp800-63b/references/#ref-SP800-132">[SP800-132]</a>, the cost factor is an iteration count: the more times that the PBKDF2 function is iterated, the longer it takes to compute the password hash.</p>
+
+<p>In addition, verifiers <strong>SHOULD</strong> perform an additional iteration of a keyed hashing or encryption operation using a secret key known only to the verifier. If used, this key value <strong>SHALL</strong> be generated by an approved random bit generator, as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a>. The secret key value <strong>SHALL</strong> be stored separately from the hashed passwords. It <strong>SHOULD</strong> be stored and used within a hardware-protected area, such as a hardware security module or trusted execution environment (TEE). With this additional iteration, brute-force attacks on the hashed passwords are impractical as long as the secret key value remains secret.</p>
+<h3 id="lookupsecrets" data-section="3">
+  
+  
+    Look-Up Secrets <a href="#lookupsecrets" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p class="authenticator-image">A look-up secret authenticator is a physical or electronic record that stores a set of secrets shared between the claimant and the CSP. The claimant uses the authenticator to look up the appropriate secrets needed to respond to a prompt from the verifier. For example, the verifier could ask a claimant to provide a specific subset of the numeric or character strings printed on a card in table format. A typical application of look-up secrets is for one-time saved recovery codes (see <a href="/800-63-4/sp800-63b/events/#savedrecovery">Sec. 4.2.1.1</a>) that the subscriber stores for use if another authenticator is lost or malfunctions. A look-up secret is “something you have.”</p>
+
+<p>Look-up secrets are not phishing-resistant.</p>
+<h4 id="lusa" data-section="3">
+  
+  
+    Look-Up Secret Authenticators <a href="#lusa" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+<p>CSPs that create look-up secret authenticators <strong>SHALL</strong> use an approved random bit generator, as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a>, to generate the list of secrets and <strong>SHALL</strong> deliver the authenticator list securely to the subscriber (e.g., in an in-person session, via a session authenticated by the subscriber at AAL2 or higher, or through the postal mail to a contact address). Look-up secrets <strong>SHALL</strong> be at least six decimal digits (or equivalent) in length. Additional requirements described in <a href="/800-63-4/sp800-63b/authenticators/#lookupver">Sec. 3.1.2.2</a> may also apply, depending on their length.</p>
+
+<p>Look-up secrets <strong>MAY</strong> be distributed by the CSP in person, by postal mail to a contact address for the subscriber, or by online distribution. If distributed online, look-up secrets <strong>SHALL</strong> be distributed over a secure channel in accordance with the post-enrollment binding requirements in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>.</p>
+<h4 id="lookupver" data-section="3">
+  
+  
+    Look-Up Secret Verifiers <a href="#lookupver" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Verifiers of look-up secrets <strong>SHALL</strong> prompt the claimant for the next secret from their authenticator or a specific (e.g., numbered) secret. A secret from a look-up secret authenticator <strong>SHALL</strong> be used successfully only once. If the look-up secret is derived from a grid card, each grid cell <strong>SHOULD</strong> be used only once, which limits the number of authentications that can be accomplished using look-up secrets. Otherwise, a very long list of secrets is required.</p>
+
+<p>Verifiers <strong>SHALL</strong> store look-up secrets in a form that is resistant to offline attacks. All look-up secrets <strong>SHALL</strong> be stored in a hashed form using an approved hashing function.</p>
+
+<p>Look-up secrets <strong>SHALL</strong> be at least six decimal digits (or equivalent) in length, as specified in <a href="/800-63-4/sp800-63b/authenticators/#lusa">Sec. 3.1.2.1</a>. Look-up secrets that are shorter than specified lengths have additional verification requirements as follows:</p>
+
+<ul>
+  <li>
+    <p>Look-up secrets that are shorter than the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (112 bits as of the date of this publication) <strong>SHALL</strong> be stored in a salted and hashed form using a suitable password hashing scheme, as described in <a href="/800-63-4/sp800-63b/authenticators/#passwordver">Sec. 3.1.1.2</a>. The salt value <strong>SHALL</strong> be at least 32 bits in length and arbitrarily chosen to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash <strong>SHALL</strong> be stored for each look-up secret. Because look-up secrets are generated using a random bit generator, the work factor for the password hashing scheme <strong>MAY</strong> be small.</p>
+  </li>
+  <li>
+    <p>The verifier <strong>SHALL</strong> implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account, as described in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a>.</p>
+  </li>
+</ul>
+
+<p>The verifier <strong>SHALL</strong> use approved encryption and an authenticated protected channel when requesting look-up secrets.</p>
+<h3 id="out-of-band" data-section="3">
+  
+  
+    Out-of-Band Devices <a href="#out-of-band" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p class="authenticator-image">An out-of-band authenticator is a physical device that is uniquely addressable and can communicate securely with the verifier over a distinct communications channel, referred to as the secondary channel. The device is possessed and controlled by the claimant and supports private communication over this secondary channel, which is separate from the primary channel for authentication. An out-of-band authenticator is “something you have.”</p>
+
+<p>Out-of-band authentication uses a short-term secret generated by the verifier. The secret securely binds the authentication operation on the primary and secondary channels and establishes the claimant’s control of the out-of-band device.</p>
+
+<p>Out-of-band authentication is not phishing-resistant.</p>
+
+<p>The out-of-band authenticator can operate in one of the following ways:</p>
+
+<ul>
+  <li>The claimant transfers a secret received by the out-of-band device via the secondary channel to the verifier using the primary channel. For example, the claimant may receive the secret (typically a 6-digit code) on their mobile device and type it into their authentication session. This method is shown in <a href="/800-63-4/sp800-63b/authenticators/#fig-2">Fig. 2</a>.</li>
+</ul>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63b/authenticators/#fig-2" name="fig-2">Fig. 2. Transfer of secret to primary device</a></p>
+
+<p><img src="/800-63-4/sp800-63b/images/OOB-example1.png" alt="Diagram showing authentication secret being transferred from out-of-band device to session being authenticated" title="Transfer of Secret to Primary Device" latex-src="OOB-example1.pdf" latex-fig="2" latex-place="pt" /></p>
+
+<ul>
+  <li>The claimant transfers a secret received via the primary channel to the out-of-band device for transmission to the verifier via the secondary channel. For example, the claimant may view the secret on their authentication session and either type it into an app on their mobile device or use a technology such as a barcode or QR code to effect the transfer. This method is shown in <a href="/800-63-4/sp800-63b/authenticators/#fig-3">Fig. 3</a>.</li>
+</ul>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63b/authenticators/#fig-3" name="fig-3">Fig. 3. Transfer of secret to out-of-band device</a></p>
+
+<p><img src="/800-63-4/sp800-63b/images/OOB-example2.png" alt="Diagram showing authentication secret being transferred from session being authenticated to out-of-band device" title="Transfer of Secret to Out-of-band Device" latex-src="OOB-example2.pdf" latex-fig="3" latex-place="pb" /></p>
+
+<blockquote>
+  <p>A third method of out-of-band authentication compares secrets received from the primary and secondary channels and requests approval on the secondary channel. This method is no longer considered acceptable because it increased the likelihood that the subscriber would approve an authentication request without actually comparing the secrets as required. This has been observed with “authentication fatigue” attacks where an attacker (claimant) would generate many out-of-band authentication requests to the subscriber, who might approve one to eliminate the annoyance. For this reason, an authenticator that receives a push notification from the verifier and simply asks the claimant to approve the transaction (even if they provide some additional information about the authentication) does not meet the requirements of this section.</p>
+</blockquote>
+<h4 id="ooba" data-section="3">
+  
+  
+    Out-of-Band Authenticators <a href="#ooba" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>The out-of-band authenticator <strong>SHALL</strong> establish a separate channel with the verifier to retrieve the out-of-band secret or authentication request. This channel is considered to be out-of-band with respect to the primary communication channel (even if it terminates on the same device), provided that the device does not leak information from one channel to the other without the claimant’s authorization.</p>
+
+<p>The out-of-band device <strong>SHOULD</strong> be uniquely addressable by the verifier. Communication over the secondary channel <strong>SHALL</strong> use approved encryption unless sent via the public switched telephone network (PSTN). For additional authenticator requirements that are specific to using the PSTN for out-of-band authentication, see <a href="/800-63-4/sp800-63b/authenticators/#pstnOOB">Sec. 3.1.3.3</a>.</p>
+
+<p>Email <strong>SHALL NOT</strong> be used for out-of-band authentication because it may be vulnerable to:</p>
+
+<ul>
+  <li>Accessibility using only a password</li>
+  <li>Interception in transit or at intermediate mail servers</li>
+  <li>Rerouting attacks, such as those caused by DNS spoofing</li>
+</ul>
+
+<p>The out-of-band authenticator <strong>SHALL</strong> uniquely authenticate itself in one of the following ways when communicating with the verifier:</p>
+
+<ul>
+  <li>
+    <p>Using approved cryptography, establish a mutually authenticated protected channel (e.g., client-authenticated TLS) to the verifier. Communication between the out-of-band authenticator and the verifier <strong>MAY</strong> use a trusted intermediary service to which each authenticates. The key <strong>SHALL</strong> be provisioned in a mutually authenticated session during authenticator binding, as described in <a href="/800-63-4/sp800-63b/events/#binding">Sec. 4.1</a>.</p>
+  </li>
+  <li>
+    <p>Authenticate to a public mobile telephone network using a SIM card or equivalent secret that uniquely identifies the subscriber. This method <strong>SHALL</strong> only be used if a secret is sent from the verifier to the out-of-band device via the PSTN (SMS or voice) or an encrypted instant messaging service.</p>
+  </li>
+  <li>
+    <p>Use a wired connection to the PSTN that the verifier can call and dictate the out-of-band secret. For purposes of this definition, “wired connection” includes services such as cable providers that offer PSTN services through other wired media and fiber via analog telephone adapters.</p>
+  </li>
+</ul>
+
+<p>For single-factor out-of-band authenticators, if a secret is sent by the verifier to the out-of-band device, the device <strong>SHOULD NOT</strong> display the authentication secret while it is locked by the owner (i.e., the device <strong>SHOULD</strong> require the presentation and verification of a PIN, passcode, or biometric characteristic to view). However, authenticators <strong>SHOULD</strong> indicate the receipt of an authentication secret on a locked device.</p>
+
+<p>If the out-of-band authenticator requests approval over the secondary communication channel rather than by presenting a secret that the claimant transfers to the primary communication channel, it <strong>SHALL</strong> accept a transfer of the secret from the primary channel and send it to the verifier over the secondary channel to associate the approval with the authentication transaction. The claimant <strong>MAY</strong> perform the transfer manually and with the assistance of a representation, such as a barcode or QR code.</p>
+<h4 id="out-of-band-verifiers" data-section="3">
+  
+  
+    Out-of-Band Verifiers <a href="#out-of-band-verifiers" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>For additional verification requirements that are specific to the PSTN, see <a href="/800-63-4/sp800-63b/authenticators/#pstnOOB">Sec. 3.1.3.3</a>.</p>
+
+<p>The verifier waits for an authenticated protected channel to be established with the out-of-band authenticator and verifies its identifying key. The verifier <strong>SHALL NOT</strong> store the identifying key itself but <strong>SHALL</strong> use a verification method (e.g., an approved hash function or proof of possession of the identifying key) to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator. The connection with the out-of-band authenticator <strong>MAY</strong> be either manually initiated or prompted by a mechanism such as a push notification.</p>
+
+<p>Depending on the type of out-of-band authenticator, one of the following <strong>SHALL</strong> take place:</p>
+
+<dl>
+  <dt>Transfer of the secret from the secondary to the primary channel</dt>
+  <dd>As shown in <a href="/800-63-4/sp800-63b/authenticators/#fig-2">Fig. 2</a>, the verifier <strong>MAY</strong> signal the device that contains the subscriber’s authenticator to indicate a readiness to authenticate. It <strong>SHALL</strong> then transmit a random secret to the out-of-band authenticator and wait for the secret to be returned via the primary communication channel.</dd>
+</dl>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+
+<dl>
+  <dt>Transfer of the secret from the primary to the secondary channel</dt>
+  <dd>As shown in <a href="/800-63-4/sp800-63b/authenticators/#fig-3">Fig. 3</a>, the verifier <strong>SHALL</strong> display a random authentication secret to the claimant via the primary channel. It <strong>SHALL</strong> then wait for the secret to be returned via the secondary channel from the claimant’s out-of-band authenticator. The verifier <strong>MAY</strong> additionally display an address, such as a phone number or VoIP address, for the claimant to use in addressing its response to the verifier.</dd>
+</dl>
+
+<p>In all cases, the authentication <strong>SHALL</strong> be considered invalid unless completed within 10 minutes. Verifiers <strong>SHALL</strong> accept a given authentication secret as valid only once during the validity period to provide replay resistance, as described in <a href="/800-63-4/sp800-63b/authenticators/#replay">Sec. 3.2.7</a>.</p>
+
+<p>The verifier <strong>SHALL</strong> generate random authentication secrets that are at least six decimal digits (or equivalent) in length using an approved random bit generator as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a>. If the authentication secret is less than 64 bits long, the verifier <strong>SHALL</strong> implement a rate-limiting mechanism that effectively limits the total number of consecutive failed authentication attempts that can be made on the subscriber account as described in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a>. Generating a new authentication secret <strong>SHALL NOT</strong> reset the failed authentication count.</p>
+
+<p>Out-of-band verifiers that send a push notification to a subscriber device <strong>SHOULD</strong> implement a reasonable limit on the rate or total number of push notifications that will be sent since the last successful authentication.</p>
+<h4 id="pstnOOB" data-section="3">
+  
+  
+    Authentication Using the Public Switched Telephone Network <a href="#pstnOOB" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Use of the PSTN for out-of-band verification is restricted as described in this section and <a href="/800-63-4/sp800-63b/authenticators/#restricted">Sec. 3.2.9</a>. Setting or changing the pre-registered telephone number is considered to be the binding of a new authenticator and <strong>SHALL</strong> only occur as described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>.</p>
+
+<p>Some subscribers may be unable to use PSTN to deliver out-of-band authentication secrets in areas with limited telephone coverage (particularly without mobile phone service). Accordingly, verifiers <strong>SHALL</strong> ensure that alternative authenticator types are available to all subscribers and <strong>SHOULD</strong> remind subscribers of this limitation of PSTN out-of-band authenticators before binding one or more devices controlled by the subscriber.</p>
+
+<p>Verifiers <strong>SHOULD</strong> consider risk indicators (e.g., device swap, SIM change, number porting, or other abnormal behavior) before using the PSTN to deliver an out-of-band authentication secret.</p>
+
+<blockquote>
+  <p>Consistent with the restriction of authenticators in <a href="/800-63-4/sp800-63b/authenticators/#restricted">Sec. 3.2.9</a>, NIST may adjust the restricted status of out-of-band authentication using the PSTN based on the evolution of the threat landscape and the technical operation of the PSTN.</p>
+</blockquote>
+<h4 id="mfooba" data-section="3">
+  
+  
+    Multi-Factor Out-of-Band Authenticators <a href="#mfooba" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Multi-factor out-of-band authenticators operate similarly to single-factor out-of-band authenticators (see <a href="/800-63-4/sp800-63b/authenticators/#ooba">Sec. 3.1.3.1</a>). However, they require the presentation and verification of an activation factor (i.e., a password or a biometric characteristic) before allowing the claimant to complete the authentication transaction (i.e., before accessing or entering the authentication secret as appropriate for the authentication flow being used). Each use of the authenticator <strong>SHALL</strong> require the presentation of the activation factor.</p>
+
+<p>Authenticator activation secrets <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10">Sec. 3.2.10</a>. A biometric activation factor <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Sec. 3.2.3</a>, including limits on the number of consecutive authentication failures. The password or biometric sample used for activation and any biometric data derived from the biometric sample (e.g., a probe produced through signal processing) <strong>SHALL</strong> be zeroized (erased) immediately after an authentication operation.</p>
+<h3 id="singlefactorOTP" data-section="3">
+  
+  
+    Single-Factor OTP <a href="#singlefactorOTP" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p class="authenticator-image">A single-factor OTP generates one-time passwords (OTPs). This category includes hardware devices and software-based OTP generators that are installed on devices such as mobile phones. These authenticators have an embedded secret that is used as the seed for generating OTPs and do not require activation through a second factor. The OTP is displayed on the authenticator and manually input for transmission to the verifier, thereby proving possession and control of the authenticator. A single-factor OTP authenticator is <em>something you have</em>.</p>
+
+<p>Single-factor OTPs are similar to look-up secret authenticators except that the secrets are cryptographically and independently generated by the authenticator and the verifier and compared by the verifier. The secret is computed based on a nonce that may be time-based or from a counter on the authenticator and verifier.</p>
+
+<p>OTP authentication is not phishing-resistant. <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> validation of OTP authenticators and verifiers is not required.</p>
+<h4 id="sfotpa" data-section="3">
+  
+  
+    Single-Factor OTP Authenticators <a href="#sfotpa" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Single-factor OTP authenticators and verifiers contain two persistent values: 1) a symmetric key that persists for the authenticator’s lifetime and 2) a nonce that is either changed each time the authenticator is used or is based on a real-time clock.</p>
+
+<p>The secret key and its algorithm <strong>SHALL</strong> provide at least the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (112 bits as of the date of this publication). The nonce <strong>SHALL</strong> be of sufficient length to ensure that it is unique for each operation of the authenticator over its lifetime. If a subscriber needs to change the device on which a software-based OTP authenticator resides, they <strong>SHOULD</strong> bind the authenticator application on the new device to their subscriber account, as described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>, and invalidate the authenticator application that will no longer be used.</p>
+
+<p>The authenticator output is obtained using an approved block cipher or hash function to securely combine the key and nonce. In coordination with the verifier, the authenticator <strong>MAY</strong> truncate its output to as few as six decimal digits or equivalent.</p>
+
+<p>If the nonce used to generate the authenticator output is based on a real-time clock, the nonce <strong>SHALL</strong> be changed at least once every two minutes.</p>
+<h4 id="single-factor-otp-verifiers" data-section="3">
+  
+  
+    Single-Factor OTP Verifiers <a href="#single-factor-otp-verifiers" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Single-factor OTP verifiers effectively duplicate the process of generating the OTP used by the authenticator. As such, the symmetric keys used by authenticators are also present in the verifier and <strong>SHALL</strong> be strongly protected against unauthorized disclosure by access controls that limit access to the keys to only those software components that require access.</p>
+
+<p>When binding a single-factor OTP authenticator to a subscriber account, the verifier or associated CSP <strong>SHALL</strong> use approved cryptography for key establishment to generate and exchange keys or to obtain the secrets required to duplicate the authenticator output.</p>
+
+<p>The verifier <strong>SHALL</strong> use approved encryption and an authenticated protected channel when collecting the OTP. Verifiers <strong>SHALL</strong> accept a given OTP only once while it is valid to provide replay resistance as described in <a href="/800-63-4/sp800-63b/authenticators/#replay">Sec. 3.2.7</a>. If a claimant’s authentication is denied due to the duplicate use of an OTP, verifiers <strong>MAY</strong> warn the claimant if an attacker has been able to authenticate in advance. Verifiers <strong>MAY</strong> also warn a subscriber in an existing session of the attempted duplicate use of an OTP.</p>
+
+<p>The verifier <strong>SHOULD</strong> implement or, if the authenticator output is less than 64 bits in length, <strong>SHALL</strong> implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account, as described in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a>.</p>
+<h3 id="multifactorOTP" data-section="3">
+  
+  
+    Multi-Factor OTPs <a href="#multifactorOTP" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p class="authenticator-image">A multi-factor OTP generates one-time passwords for authentication following the input of an activation factor. This includes hardware devices and software-based OTP generators that are installed on mobile phones and similar devices. The second authentication factor may be provided through an integral entry pad, an integral biometric (e.g., fingerprint) reader, or a direct computer interface (e.g., USB port). The OTP is displayed on the authenticator and manually input for transmission to the verifier. The multi-factor OTP authenticator is “something you have” activated by either “something you know” or “something you are.”</p>
+
+<p>OTP authentication is not phishing-resistant. <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> validation of OTP authenticators and verifiers is not required.</p>
+<h4 id="mfotpa" data-section="3">
+  
+  
+    Multi-Factor OTP Authenticators <a href="#mfotpa" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Multi-factor OTP authenticators operate similarly to single-factor OTP authenticators (see <a href="/800-63-4/sp800-63b/authenticators/#sfotpa">Sec. 3.1.4.1</a>), except they require the presentation and verification of either a password or a biometric characteristic to obtain the OTP from the authenticator. Each use of the authenticator <strong>SHALL</strong> require the input of the activation factor.</p>
+
+<p>In addition to activation information, multi-factor OTP authenticators and verifiers contain two persistent values: 1) a symmetric key that persists for the authenticator’s lifetime and 2) a nonce that is either changed each time the authenticator is used or based on a real-time clock.</p>
+
+<p>The secret key and its algorithm <strong>SHALL</strong> provide at least the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (112 bits as of the date of this publication). The nonce <strong>SHALL</strong> be of sufficient length to ensure that it is unique for each operation of the authenticator over its lifetime. If a subscriber needs to change the device on which a software-based OTP authenticator resides, they <strong>SHOULD</strong> bind the authenticator application on the new device to their subscriber account, as described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>, and invalidate the authenticator application that will no longer be used.</p>
+
+<p>The authenticator output is obtained using an approved block cipher or hash function to securely combine the key and nonce. In coordination with the verifier, the authenticator <strong>MAY</strong> truncate its output to as few as six decimal digits or equivalent.</p>
+
+<p>If the nonce used to generate the authenticator output is based on a real-time clock, the nonce <strong>SHALL</strong> be changed at least once every two minutes.</p>
+
+<p>Authenticator activation secrets <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10">Sec. 3.2.10</a>. A biometric activation factor <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Sec. 3.2.3</a>, including limits on the number of consecutive authentication failures. The unencrypted key and activation secret or biometric sample and any biometric data derived from the biometric sample (e.g., a probe produced through signal processing) <strong>SHALL</strong> be zeroized (erased) immediately after an OTP has been generated.</p>
+<h4 id="multi-factor-otp-verifiers" data-section="3">
+  
+  
+    Multi-Factor OTP Verifiers <a href="#multi-factor-otp-verifiers" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Multi-factor OTP verifiers effectively duplicate the process of generating the OTP used by the authenticator without requiring a second authentication factor. As such, the symmetric keys used by authenticators <strong>SHALL</strong> be strongly protected against unauthorized disclosure by access controls that limit access to the keys to only those software components that require access.</p>
+
+<p>When binding a multi-factor OTP authenticator to a subscriber account, the verifier or associated CSP <strong>SHALL</strong> use approved cryptography for key establishment to generate and exchange keys or to obtain the secrets required to duplicate the authenticator output.</p>
+
+<p>The verifier <strong>SHALL</strong> use approved encryption and an authenticated protected channel when collecting the OTP. Verifiers <strong>SHALL</strong> accept a given OTP only once while it is valid to provide replay resistance as described in <a href="/800-63-4/sp800-63b/authenticators/#replay">Sec. 3.2.7</a>. If a claimant’s authentication is denied due to the duplicate use of an OTP, verifiers <strong>MAY</strong> warn the claimant if an attacker has been able to authenticate in advance. Verifiers <strong>MAY</strong> also warn a subscriber in an existing session of the attempted duplicate use of an OTP.</p>
+
+<p>Time-based OTPs <a href="/800-63-4/sp800-63b/references/#ref-totp">[TOTP]</a> <strong>SHALL</strong> have a defined lifetime that is determined by the expected clock drift in either direction of the authenticator over its lifetime plus an allowance for network delay and user entry of the OTP.</p>
+
+<p>The verifier <strong>SHALL</strong> implement a rate-limiting mechanism that effectively limits the number of consecutive failed authentication attempts that can be made on the subscriber account, as required by <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10">Sec. 3.2.10</a>.</p>
+<h3 id="sfc" data-section="3">
+  
+  
+    Single-Factor Cryptographic Authentication <a href="#sfc" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p class="authenticator-image">Single-factor cryptographic authentication is accomplished by proving the possession and control of a cryptographic key via an authentication protocol. Depending on the strength of authentication required, the private or symmetric key may be stored in a manner that is accessible to the endpoint being authenticated or in a separate, directly connected processor or device from which the key cannot be exported. The authenticator output is highly dependent on the specific cryptographic protocol used but is generally some type of signed message. A single-factor cryptographic authenticator is “something you have.”</p>
+
+<p>Cryptographic authentication is phishing-resistant if it meets the additional requirements in <a href="/800-63-4/sp800-63b/authenticators/#verifimpers">Sec. 3.2.5</a>.</p>
+<h4 id="sfca" data-section="3">
+  
+  
+    Single-Factor Cryptographic Authenticators <a href="#sfca" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Single-factor cryptographic authenticators encapsulate one or more private or symmetric keys. The key <strong>SHOULD</strong> be stored in appropriate storage available to the authenticator (e.g., keychain storage), or if the key is to be non-exportable, it <strong>SHALL</strong> be stored in an isolated execution environment protected by hardware or in a separate processor with a controlled interface to the central processing unit of the user endpoint. If they are accessible to the endpoint being authenticated, the private or symmetric keys <strong>SHALL</strong> be strongly protected against unauthorized disclosure by using access controls that limit access to the key to only those software components that require access.</p>
+
+<p>External (i.e., non-embedded) cryptographic authenticators <strong>SHALL</strong> meet the requirements for connected authenticators in <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-11">Sec. 3.2.11</a>.</p>
+
+<p>As required by <a href="/800-63-4/sp800-63b/aal/#aal3req">Sec. 2.3.2</a>, single-factor cryptographic authenticators that are being used at AAL3 must meet the authentication intent requirements of <a href="/800-63-4/sp800-63b/authenticators/#intent">Sec. 3.2.8</a>.</p>
+<h4 id="sfcv" data-section="3">
+  
+  
+    Single-Factor Cryptographic Verifiers <a href="#sfcv" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Single-factor cryptographic verifiers generate a challenge nonce, send it to the corresponding authenticator, and use the authenticator output to verify possession of the authenticator. The authenticator output is highly dependent on the specific cryptographic authenticator and protocol used but is generally some type of signed message.</p>
+
+<p>The verifier has either a symmetric or an asymmetric public cryptographic key that corresponds to each authenticator. While both types of keys <strong>SHALL</strong> be protected against modification, symmetric keys <strong>SHALL</strong> additionally be protected against unauthorized disclosure by access controls that limit access to the key to only those software components that require access.</p>
+
+<p>The secret or symmetric key and its algorithm <strong>SHALL</strong> provide at least the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (112 bits as of the date of this publication). The challenge nonce <strong>SHALL</strong> be at least 64 bits in length and <strong>SHALL</strong> either be unique over the authenticator’s lifetime or statistically unique (i.e., generated using an approved random bit generator, as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a>). The verification operation <strong>SHALL</strong> use approved cryptography.</p>
+<h3 id="mfc" data-section="3">
+  
+  
+    Multi-Factor Cryptographic Authentication <a href="#mfc" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p class="authenticator-image">Multi-factor cryptographic authentication uses an authentication protocol to prove possession and control of a cryptographic key that requires activation through a second authentication factor. Depending on the strength of authentication needed, the private or symmetric key may be stored in a manner accessible to the endpoint being authenticated or in a separate, directly connected processor or device from which the key cannot be exported. The authenticator output is highly dependent on the specific cryptographic protocol used but is generally some type of signed message. A multi-factor cryptographic authenticator is “something you have” and is activated by an activation factor representing either “something you know” or “something you are.”</p>
+
+<p>Cryptographic authentication is phishing-resistant if it meets the additional requirements in <a href="/800-63-4/sp800-63b/authenticators/#verifimpers">Sec. 3.2.5</a>.</p>
+<h4 id="mfca" data-section="3">
+  
+  
+    Multi-Factor Cryptographic Authenticators <a href="#mfca" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Multi-factor cryptographic authenticators encapsulate one or more private or symmetric keys that <strong>SHALL</strong> only be accessible through the presentation and verification of an activation factor (i.e., a password or a biometric characteristic). The key <strong>SHOULD</strong> be stored in appropriate storage available to the authenticator (e.g., keychain storage), or if the key is to be non-exportable, it <strong>SHALL</strong> be stored in an isolated execution environment protected by hardware or in a separate processor with a controlled interface to the central processing unit of the user endpoint. If accessible to the endpoint being authenticated, the key <strong>SHALL</strong> be strongly protected against unauthorized disclosure by using access controls that limit access to the key to only those software components that require access.</p>
+
+<p>Some cryptographic authenticators, referred to as “syncable authenticators,” can manage their private keys using a <em>sync fabric</em> (cloud provider). Additional requirements for using syncable authenticators are in <a href="/800-63-4/sp800-63b/syncable/#appB">Appendix B</a>.</p>
+
+<p>External (non-embedded) cryptographic authenticators <strong>SHALL</strong> meet the requirements for connected authenticators in <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-11">Sec. 3.2.11</a>.</p>
+
+<p>Each authentication operation that uses the authenticator <strong>SHALL</strong> require the activation factor to be input.</p>
+
+<p>Authenticator activation secrets <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10">Sec. 3.2.10</a>. A biometric activation factor <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Sec. 3.2.3</a>, including limits on the number of consecutive authentication failures.</p>
+
+<p>The activation secret or biometric sample and any biometric data derived from the biometric sample (e.g., a probe produced through signal processing) <strong>SHALL</strong> be zeroized (erased) after an authentication transaction.</p>
+<h4 id="multi-factor-cryptographic-verifiers" data-section="3">
+  
+  
+    Multi-Factor Cryptographic Verifiers <a href="#multi-factor-cryptographic-verifiers" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>The requirements for a multi-factor cryptographic verifier are identical to those for a single-factor cryptographic verifier, as described in <a href="/800-63-4/sp800-63b/authenticators/#sfcv">Sec. 3.1.6.2</a>. Verification of the output from a multi-factor cryptographic authenticator proves that the activation factor was used.</p>
+<h4 id="usage-with-subscriber-controlled-wallets" data-section="3">
+  
+  
+    Usage With Subscriber-Controlled Wallets <a href="#usage-with-subscriber-controlled-wallets" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>A special-case usage of multi-factor cryptographic authentication is with subscriber-controlled wallets, described in <a href="/800-63-4/sp800-63c/Wallets/#wallet" latex-href="#ref-SP800-63C">Sec. 5 of [SP800-63C]</a>. After the claimant first unlocks the wallet using an activation factor, the authentication process uses a federation protocol, as detailed in <a href="../_sp800-63c/sec1_introduction.md" latex-href="#ref-SP800-63C">[SP800-63C]</a>. The assertion contents and presentation requirements of the federation protocol provide the security characteristics required of cryptographic authenticators. As such, subscriber-controlled wallets can be considered multi-factor authenticators through the activation factor and the presentation and validation of an assertion generated by the wallet.</p>
+
+<p>Access to the private key <strong>SHALL</strong> require an activation factor. Authenticator activation secrets <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10">Sec. 3.2.10</a>. Biometric activation factors <strong>SHALL</strong> meet the requirements of <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Sec. 3.2.3</a>, including limits on the number of consecutive authentication failures. The password or biometric sample used for activation and any biometric data derived from the biometric sample <strong>SHALL</strong> be zeroized (erased) immediately after an authentication transaction.</p>
+
+<p>Authentication processes using subscriber-controlled wallets <strong>SHALL</strong> be used with a federation process as detailed in <a href="/800-63-4/sp800-63c/Wallets/#wallet" latex-href="#ref-SP800-63C">Sec. 5 of [SP800-63C]</a>. Signed audience-restricted assertions generated by subscriber-controlled wallets are considered phishing-resistant because they prevent an assertion presented to an impostor RP from being used by the legitimate one. Assertions that lack a valid signature from the wallet or an audience restriction <strong>SHALL NOT</strong> be considered phishing-resistant.</p>
+<h4 id="syncable-authenticators" data-section="3">
+  
+  
+    Syncable Authenticators <a href="#syncable-authenticators" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Some multifactor cryptographic authenticators allow the subscriber to copy (clone) the authentication secret to additional devices, usually via a sync fabric. This eases the burden for subscribers who want to use additional devices to authenticate. Specific requirements for syncable authenticators and the sync fabric are given in <a href="/800-63-4/sp800-63b/syncable/#appB">Appendix B</a>.</p>
+<h2 id="general-authenticator-requirements" data-section="3">
+  
+  
+    General Authenticator Requirements <a href="#general-authenticator-requirements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The following requirements apply to all types of authentication.</p>
+<h3 id="physical-authenticators" data-section="3">
+  
+  
+    Physical Authenticators <a href="#physical-authenticators" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>CSPs <strong>SHALL</strong> provide subscriber instructions for appropriately protecting the authenticator against theft or loss. The CSP <strong>SHALL</strong> provide a mechanism to invalidate<sup id="fnref:inval" role="doc-noteref"><a href="#fn:inval" class="footnote">1</a></sup> the authenticator immediately upon notification from a subscriber that the authenticator’s loss, theft, or compromise is suspected.</p>
+
+<p>Possession and control of a physical authenticator are based on proof of possession of a secret associated with the authenticator. When an embedded secret (typically a certificate and associated private key) is in the endpoint, its “device identity” can be considered a physical authenticator. However, this requires a secure authentication protocol that is appropriate for the AAL being authenticated. Browser cookies do not satisfy this requirement except at AAL1 or as short-term secrets for session maintenance (not authentication) as described in <a href="/800-63-4/sp800-63b/session/#sesscookies">Sec. 5.1.1</a>.</p>
+<h3 id="throttle" data-section="3">
+  
+  
+    Rate Limiting (Throttling) <a href="#throttle" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>When required by the authenticator type descriptions in <a href="/800-63-4/sp800-63b/authenticators/#reqauthtype">Sec. 3.1</a>, the verifier <strong>SHALL</strong> implement controls to protect against online guessing attacks. Unless otherwise specified in the description of a given authenticator, the verifier <strong>SHALL</strong> limit consecutive failed authentication attempts using one or more specific authenticators on a single subscriber account to no more than 100.</p>
+
+<blockquote>
+  <p>The limit of 100 attempts is an upper bound; agencies <strong>MAY</strong> impose lower limits. The limit of 100 was chosen to balance the likelihood of a correct guess (e.g., 100 attempts against a six-digit decimal OTP authenticator output) versus the potential need for account recovery when the limit is exceeded.</p>
+</blockquote>
+
+<p>Additional techniques <strong>MAY</strong> be used to reduce the likelihood that an attacker will lock the legitimate claimant out due to rate limiting. These include:</p>
+
+<ul>
+  <li>
+    <p>Requiring the claimant to complete a bot-detection and mitigation challenge before attempting authentication</p>
+  </li>
+  <li>
+    <p>Requiring the claimant to wait after a failed attempt for a period of time that increases as the subscriber account approaches its maximum allowance for consecutive failed attempts (e.g., 30 seconds up to an hour)</p>
+  </li>
+  <li>
+    <p>Accepting only authentication requests from IP addresses from which the subscriber has been successfully authenticated before</p>
+  </li>
+  <li>
+    <p>Leveraging other risk-based or adaptive authentication techniques to identify user behavior that falls within or outside typical norms (e.g., the use of the claimant’s IP address, geolocation, timing of request patterns, or browser metadata)</p>
+  </li>
+</ul>
+
+<p>When the subscriber successfully authenticates, the verifier <strong>SHOULD</strong> disregard any previous failed attempts for the authenticators used in the successful authentication.</p>
+
+<p>Following successful authentication at a given AAL, the verifier <strong>SHOULD</strong> reset the retry count of an authenticator that has been locked out due to excessive retries. If this is provided, the maximum AAL of the authenticator being reset <strong>SHALL</strong> not exceed the AAL of the session from which it is being reset. If the subscriber cannot authenticate at the required AAL, the account recovery procedures in <a href="/800-63-4/sp800-63b/events/#recovery">Sec. 4.2</a> <strong>SHALL</strong> be used.</p>
+<h3 id="biometric_use" data-section="3">
+  
+  
+    Use of Biometrics <a href="#biometric_use" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The use of biometrics (i.e., something you are) in authentication includes both the measurement of physical characteristics (e.g., fingerprint, iris, facial characteristics) and behavioral characteristics (e.g., typing cadence). Both classes are considered biometric modalities, although modalities may differ in the extent to which they establish authentication intent as described in <a href="/800-63-4/sp800-63b/authenticators/#intent">Sec. 3.2.8</a>.</p>
+
+<p>For a variety of reasons, this document supports only a limited use of biometrics for authentication. These reasons include:</p>
+
+<ul>
+  <li>The biometric false match rate (FMR) does not provide sufficient confidence in the subscriber’s authentication by itself. In addition, FMR does not account for spoofing attacks.</li>
+  <li>Biometric comparison is probabilistic, whereas the other authentication factors are deterministic.</li>
+  <li>Biometric template protection schemes provide a method for revoking biometric characteristics comparable to other authentication factors (e.g., PKI certificates and passwords). However, the availability of such solutions is limited.</li>
+  <li>Biometric characteristics do not constitute secrets. They can often be obtained online or, in the case of a facial image, by taking a picture of someone with or without their knowledge. Latent fingerprints can be lifted from objects someone touches, and iris patterns can be captured with high-resolution images. While presentation attack detection (PAD) technologies can mitigate the risk of these types of attacks, additional trust in the sensor or biometric processing is required to ensure that PAD is operating in accordance with the needs of the CSP and the subscriber.</li>
+</ul>
+
+<p>Therefore, the limited use of biometrics for authentication is supported with the following requirements and guidelines.</p>
+
+<p>Biometrics <strong>SHALL</strong> be used only as part of multi-factor authentication with a physical authenticator (i.e., “something you have”). The biometric characteristic <strong>SHALL</strong> be presented and compared for each authentication operation. An alternative non-biometric authentication option <strong>SHALL</strong> always be provided to the subscriber. Biometric data <strong>SHALL</strong> be treated and secured as sensitive PII.</p>
+
+<p>The biometric system <strong>SHALL</strong> operate with an FMR <a href="/800-63-4/sp800-63b/references/#ref-ISOIEC2382-37">[ISO/IEC2382-37]</a> of one in 10000 or better. This FMR <strong>SHALL</strong> be achieved under the conditions of a conformant attack (i.e., zero-effort impostor attempt) as defined in <a href="/800-63-4/sp800-63b/references/#ref-ISOIEC30107-1">[ISO/IEC30107-1]</a>. The biometric system <strong>SHOULD</strong> demonstrate a false non-match rate (FNMR) of less than 5 %. Biometric performance <strong>SHALL</strong> be tested in accordance with <a href="/800-63-4/sp800-63b/references/#ref-ISOIEC19795-1">[ISO/IEC19795-1]</a>.</p>
+
+<p>Biometric authentication technologies <strong>SHALL</strong> provide similar performance for subscribers of different demographic types (e.g., racial background, gender, ethnicity).</p>
+
+<p>The biometric system <strong>SHOULD</strong> implement PAD. Testing the biometric system for deployment <strong>SHOULD</strong> demonstrate an impostor attack presentation accept rate (IAPAR) of less than 0.15. Presentation attack resistance <strong>SHALL</strong> be tested in accordance with Clause 13 of <a href="/800-63-4/sp800-63b/references/#ref-ISOIEC30107-3">[ISO/IEC30107-3]</a>. The PAD decision <strong>MAY</strong> be made either locally on the claimant’s device or by a central verifier.</p>
+
+<p>The biometric system <strong>SHALL</strong> allow no more than five consecutive failed authentication attempts or 10 consecutive failed attempts if PAD is implemented and meets the above requirements. Once that limit has been reached, the biometric authenticator <strong>SHALL</strong> impose a delay of at least 30 seconds before each subsequent attempt, with an overall limit of no more than 50 consecutive failed authentication attempts or 100 if PAD is implemented due to the mitigation of presentation attacks. Once the overall limit is reached, the biometric system <strong>SHALL</strong> disable biometric user authentication and offer another factor (e.g., a different biometric modality or an activation secret if it is not a required factor) if such an alternative method is already available. These limits are upper bounds, and agencies <strong>MAY</strong> make risk-based decisions to impose lower limits.</p>
+
+<p>The verifier <strong>SHOULD</strong> determine the performance and integrity of the sensor and its associated endpoint. Acceptable methods for making this determination include but are not limited to:</p>
+
+<ul>
+  <li>Use of a known sensor, as determined by sensor authentication</li>
+  <li>First- or third-party testing against biometric performance standards</li>
+  <li>Runtime interrogation of signed metadata (e.g., attestation), as described in <a href="/800-63-4/sp800-63b/authenticators/#attestation">Sec. 3.2.4</a></li>
+</ul>
+
+<p>Biometric comparison can be performed locally on a device being used by the claimant or at a central verifier. Since the potential for attacks on a larger scale is greater at central verifiers, comparison <strong>SHOULD</strong> be performed locally.</p>
+
+<p>The presentation of a biometric factor for authenticator activation <strong>SHALL</strong> be a separate operation from unlocking the host device (e.g., smartphone). However, the same activation factor used to unlock the host device <strong>MAY</strong> be used in the authentication operation. Agencies <strong>MAY</strong> lower this requirement for authenticators that are managed by or on behalf of the CSP (e.g., via mobile device management) and constrained to have short agency-determined inactivity timeouts and biometric systems that meet the above requirements.</p>
+
+<p>If the comparison is performed centrally:</p>
+
+<ul>
+  <li>The sensor or endpoint <strong>SHALL</strong> be authenticated before capturing the biometric sample from the claimant. The verifier <strong>MAY</strong> limit the use of the centrally stored biometric template to particular sensors or sensor classes (e.g., sensor manufacturers or models).</li>
+  <li>Appropriate controls (e.g., encryption and access controls) for sensitive PII <strong>SHALL</strong> be implemented.</li>
+  <li>An authenticated protected channel between the sensor (or an endpoint containing a sensor that resists sensor replacement) and the verifier <strong>SHALL</strong> be established. All transmission of biometric information <strong>SHALL</strong> be conducted over that authenticated protected channel.</li>
+</ul>
+
+<p>Biometric samples collected in the authentication process <strong>MAY</strong> be used to train comparison algorithms (e.g., updating templates to address changes in subscriber characteristics) or — with subscriber consent — for other research purposes. Biometric samples and any biometric data derived from the biometric sample <strong>SHALL</strong> be zeroized (erased) immediately after any training or research data has been derived.</p>
+<h3 id="attestation" data-section="3">
+  
+  
+    Attestation <a href="#attestation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The CSP needs to have a reliable basis for evaluating the characteristics of the authenticator, such as the inclusion of a signed attestation. An attestation is information conveyed to the CSP, generally when an authenticator is bound, regarding a connected authenticator or the endpoint involved in an authentication operation. Information conveyed by attestation <strong>MAY</strong> include but is not limited to:</p>
+
+<ul>
+  <li>The provenance (e.g., manufacturer or supplier certification), health, and integrity of the authenticator and endpoint</li>
+  <li>Security features of the authenticator</li>
+  <li>Security and performance characteristics of biometric sensors</li>
+  <li>Sensor modality</li>
+</ul>
+
+<p>Attestations <strong>SHALL</strong> be signed using a digital signature that provides at least the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (112 bits as of the date of this publication).</p>
+
+<p>Verifiers in federal enterprise systems<sup id="fnref:ent" role="doc-noteref"><a href="#fn:ent" class="footnote">2</a></sup> <strong>SHOULD</strong> use attestation features to verify the capabilities and source of authenticators. In other applications, attestation information <strong>MAY</strong> be used as part of a verifier’s risk-based authentication decisions.</p>
+<h3 id="verifimpers" data-section="3">
+  
+  
+    Phishing (Verifier Impersonation) Resistance <a href="#verifimpers" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Phishing attacks, previously referred to in SP 800-63B as “verifier impersonation,” are attempts by fraudulent verifiers and RPs to fool an unwary claimant into presenting an authenticator to an impostor. In some prior versions of SP 800-63, protocols resistant to phishing attacks were also referred to as “strongly MitM-resistant.”</p>
+
+<p>The term <em>phishing</em> is widely used to describe a variety of similar attacks. In this document, phishing resistance is the ability of the authentication protocol to prevent the disclosure of authentication secrets and valid authenticator outputs to an impostor verifier without relying on the vigilance of the claimant. How the claimant is directed to the impostor verifier is not relevant. For example, regardless of whether the claimant was directed there via search engine optimization or prompted by email, it is considered to be a phishing attack.</p>
+
+<p>Approved cryptographic algorithms <strong>SHALL</strong> be used to establish phishing resistance where required. Keys used for this purpose <strong>SHALL</strong> provide at least the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (112 bits as of the date of this publication).</p>
+
+<p>Phishing resistance requires single- or multi-factor cryptographic authentication. Authenticators that involve the manual entry of an authenticator output (e.g., out-of-band and OTP authenticators) are not phishing-resistant because the manual entry does not bind the authenticator output to the specific session being authenticated. For example, an impostor verifier could relay an authenticator output to the verifier and successfully authenticate.</p>
+
+<p>Two methods of phishing resistance are recognized: channel binding and verifier name binding. Channel binding is considered more secure than verifier name binding because it is not vulnerable to the misissuance or misappropriation of verifier certificates, but both methods satisfy the requirements for phishing resistance.</p>
+<h4 id="channel-binding" data-section="3">
+  
+  
+    Channel Binding <a href="#channel-binding" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>An authentication protocol with channel binding <strong>SHALL</strong> be used to establish an authenticated protected channel with the verifier. The protocol <strong>SHALL</strong> then strongly and irreversibly bind a channel identifier negotiated in establishing the authenticated protected channel to the authenticator output (e.g., by signing the two values together using a private key controlled by the claimant for which the public key is known to the verifier). The verifier <strong>SHALL</strong> validate the signature or other information used to prove phishing resistance. This prevents an impostor verifier — even one that has obtained a certificate representing the actual verifier — from successfully relaying that authentication on a different authenticated protected channel.</p>
+
+<p>An example of a phishing-resistant authentication protocol that uses channel binding is client-authenticated TLS <a href="/800-63-4/sp800-63b/references/#ref-tls">[TLS]</a> because the client signs the authenticator output along with earlier messages from the protocol that are unique to the particular TLS connection being negotiated.</p>
+<h4 id="verifier-name-binding" data-section="3">
+  
+  
+    Verifier Name Binding <a href="#verifier-name-binding" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>An authentication protocol with verifier name binding <strong>SHALL</strong> be used to establish an authenticated protected channel with the verifier. The protocol <strong>SHALL</strong> then generate an authenticator output that is cryptographically bound to a verifier identifier that is authenticated as part of the protocol. In the case of domain name system (DNS) identifiers, the verifier identifier <strong>SHALL</strong> be either the authenticated hostname of the verifier or a parent domain that is at least one level below the public suffix <a href="/800-63-4/sp800-63b/references/#ref-psl">[PSL]</a> associated with that hostname. The binding <strong>MAY</strong> be established by choosing an associated authenticator secret, deriving an authenticator secret using the verifier identifier, cryptographically signing the authenticator output with the verifier identifier, or using similar cryptographically secure means.</p>
+
+<p>W3C WebAuthn <a href="/800-63-4/sp800-63b/references/#ref-WebAuthn">[WebAuthn]</a>, which is used by authenticators that implement the FIDO2 specifications <a href="/800-63-4/sp800-63b/references/#ref-FIDO2">[FIDO2]</a>, is an example of a standard that provides phishing resistance through verifier name binding.</p>
+<h3 id="csp-verifier" data-section="3">
+  
+  
+    Verifier-CSP Communications <a href="#csp-verifier" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>If the verifier and CSP are separate entities (as shown by the dotted line in <a href="/800-63-4/sp800-63/model/#fig-3" latex-href="#ref-SP800-63">Fig. 3 of [SP800-63]</a>), communications between the verifier and CSP <strong>SHALL</strong> occur through a mutually authenticated secure channel (e.g., a client-authenticated TLS connection) using approved cryptography.</p>
+<h3 id="replay" data-section="3">
+  
+  
+    Replay Resistance <a href="#replay" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>An authentication process resists replay attacks if it is impractical to achieve a successful authentication by recording and replaying a previous authentication message. Replay resistance is in addition to the replay-resistant nature of authenticated protected channel protocols since the output could be stolen before entry into the protected channel. Protocols that use nonces or challenges to prove the “freshness” of the transaction are resistant to replay attacks since the verifier will easily detect when old protocol messages are replayed because they will not contain the appropriate nonces or timeliness data.</p>
+
+<p>Examples of replay-resistant authenticators include OTP authenticators, cryptographic authenticators, and look-up secrets.</p>
+
+<p>In contrast, passwords are not considered replay-resistant because the authenticator output — the secret itself — is provided for each authentication.</p>
+<h3 id="intent" data-section="3">
+  
+  
+    Authentication Intent <a href="#intent" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>An authentication process demonstrates intent if it requires the claimant to respond explicitly to each authentication or reauthentication request. The goal of authentication intent is to make it more difficult for authenticators (e.g., multi-factor cryptographic authenticators) to be used without the claimant’s knowledge, such as by malware on the endpoint. The authenticator itself <strong>SHALL</strong> establish authentication intent, although multi-factor cryptographic authenticators <strong>MAY</strong> establish intent by reentry of the activation factor for the authenticator.</p>
+
+<p>Authentication intent <strong>MAY</strong> be established in several ways. Authentication processes that require the claimant’s intervention can be used to prove intent (e.g., a claimant entering an authenticator output from an OTP authenticator). Cryptographic authenticators that require user action for each authentication or reauthentication operation can also be used to establish intent (e.g., by pushing a button or reinsertion).</p>
+
+<p>The presentation of biometric characteristics does not always establish authentication intent. For example, using a front-facing camera on a mobile phone to capture a face biometric does not constitute intent, as it can be reasonably expected to capture a face image while the device is used for other non-authentication purposes. In these scenarios, an explicit mechanism (e.g., tapping a software or physical button) <strong>SHALL</strong> be provided to establish authentication intent.</p>
+<h3 id="restricted" data-section="3">
+  
+  
+    Restricted Authenticators <a href="#restricted" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>As threats evolve, authenticators’ ability to resist attacks typically degrades. Conversely, the performance of some authenticators may improve, such as when changes to their underlying standards increase their ability to resist particular attacks.</p>
+
+<p>To account for these changes in authenticator performance, NIST places additional restrictions on authenticator types or specific classes or instantiations of an authenticator type. Although they represent a less secure approach to multi-factor authentication, <em>restricted authenticators</em> remain necessary for some government-to-public applications.</p>
+
+<p>The acceptance of a restricted authenticator requires the implementing organization to assess, understand, and accept the risks associated with that authenticator and acknowledge that risks will likely increase over time. It is the RP’s responsibility to determine the level of acceptable risk for their systems and associated data, to define any methods for mitigating excessive risks, and to communicate those determinations to the verifier. If the RP determines that the risk to any party is unacceptable, the restricted authenticator <strong>SHALL NOT</strong> be used, and an alternative authenticator type <strong>SHALL</strong> be used.</p>
+
+<p>Furthermore, the risk of an authentication error is typically borne by multiple parties, including the implementing organization, organizations that rely on the authentication decision, and the subscriber. Because the subscriber may be exposed to additional risks when an organization accepts a restricted authenticator and the subscriber may have a limited understanding of and ability to control that risk, the CSP <strong>SHALL</strong> do all of the following:</p>
+
+<ol>
+  <li>
+    <p>Offer subscribers at least one alternative authenticator that is not restricted and can be used to authenticate at the required AAL</p>
+  </li>
+  <li>
+    <p>Provide subscribers with meaningful notice regarding the restricted authenticator’s security risks and the availability of unrestricted alternatives</p>
+  </li>
+  <li>
+    <p>Address any additional risks to subscribers and RPs in its risk assessment</p>
+  </li>
+  <li>
+    <p>Develop a migration plan for the possibility that the restricted authenticator is no longer acceptable in the future and include this migration plan in its Digital Identity Acceptance Statement (see <a href="/800-63-4/sp800-63/dirm/#IDacceptStmt" latex-href="#ref-SP800-63">Sec. 3.4.4 of [SP800-63]</a>)</p>
+  </li>
+</ol>
+<h3 id="s-5-2-10" data-section="3">
+  
+  
+    Activation Secrets <a href="#s-5-2-10" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>A password used locally as an activation factor for a multi-factor authenticator is referred to as an <em>activation secret</em>. An activation secret is used to obtain access to a stored authentication key. In all cases, the activation secret <strong>SHALL</strong> remain within the authenticator and its associated user endpoint.</p>
+
+<p>Authenticators that use activation secrets <strong>SHALL</strong> require the secrets to be at least four characters in length and <strong>SHOULD</strong> require the secrets to be at least six characters in length. Activation secrets <strong>MAY</strong> be entirely numeric (i.e., a PIN). If alphanumeric values are permitted, all printing ASCII <a href="/800-63-4/sp800-63b/references/#ref-RFC20">[RFC20]</a> characters and the space character, <strong>SHOULD</strong> be allowed. Unicode <a href="/800-63-4/sp800-63b/references/#ref-ISOIEC10646">[ISO/ISC 10646]</a> characters <strong>SHOULD</strong> also be permitted in alphanumeric secrets. The authenticator or its management tools <strong>SHOULD</strong> implement a blocklist to discourage users from selecting commonly used activation secrets (e.g., 123456).</p>
+
+<p>The authenticator or verifier <strong>SHALL</strong> implement a retry-limiting mechanism that limits the number of consecutive failed activation attempts using the authenticator to no more than 10. If an incorrect activation secret entry causes the authenticator to provide an invalid output to the central verifier, the verifier <strong>MAY</strong> implement this retry-limiting mechanism. Otherwise, retry limiting <strong>SHALL</strong> be implemented in the authenticator. Once the limit of attempts is reached, the authenticator <strong>SHALL</strong> be disabled, and a different authenticator <strong>SHALL</strong> be required for authentication.</p>
+
+<p>For authenticators that are usable at AAL3, verification of activation secrets <strong>SHALL</strong> be performed in a hardware-protected environment (e.g., a secure element, TPM, or TEE). At AAL2, if a hardware-protected environment is not used, the authenticator <strong>SHALL</strong> use the activation secret to derive a key used to decrypt the authentication key.</p>
+
+<p>Submitting the activation factor <strong>SHALL</strong> be a separate operation from unlocking the host device (e.g., smartphone). However, the same activation factor used to unlock the host device <strong>MAY</strong> be used in the authentication operation. Agencies <strong>MAY</strong> lower this requirement for authenticators and that are managed by or on behalf of the CSP (e.g., via mobile device management) that are constrained to have short agency-determined inactivity timeouts and device activation factors that meet the corresponding requirements in this section.</p>
+<h3 id="s-5-2-11" data-section="3">
+  
+  
+    Connected Authenticators <a href="#s-5-2-11" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Cryptographic authenticators require a trustworthy connection between the authenticator and the endpoint being authenticated that provides resistance to eavesdropping, injection, and relay attacks. This connection <strong>SHALL</strong> be made using a wired connection (e.g., USB or direct connection with a smartcard), a wireless technology, or a hybrid of those technologies, including network connections.</p>
+
+<p>Approved cryptography <strong>SHALL</strong> be used for all cases in which cryptographic operations are required. All communication of authentication data between authenticators and endpoints <strong>SHALL</strong> occur directly between those devices or through an authenticated protected channel between the authenticator and endpoint.</p>
+<h4 id="wired-connections" data-section="3">
+  
+  
+    Wired Connections <a href="#wired-connections" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Wired connections, including those with embedded authenticators, <strong>MAY</strong> be assumed to be trustworthy because their attack surface is minimal. Claimants <strong>SHOULD</strong> be advised to use trusted hardware (e.g., cables, adapters, etc.) to ensure that they have not been compromised.</p>
+<h4 id="wireless-and-hybrid-connections" data-section="3">
+  
+  
+    Wireless and Hybrid Connections <a href="#wireless-and-hybrid-connections" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Wireless and network-based authenticator connections are potentially vulnerable to threats, including eavesdropping, injection, and relay attacks. The potential for such attacks on wireless connections depends on the technology’s effective range. To minimize the attack surface for threats to the authenticator-endpoint connection, the authentication process <strong>SHALL</strong> require physical proximity between the authenticator and endpoint by establishing a wireless connection with a range of no more than 200 meters.</p>
+
+<p>Wireless and hybrid connections <strong>SHALL</strong> establish a key for encrypted communication between the authenticator and endpoint in one of the following ways:</p>
+
+<ol>
+  <li>
+    <p>Through a temporary wired connection between the devices.</p>
+  </li>
+  <li>
+    <p>Through an association process (similar to a pairing process but not requiring a persistent relationship between devices) to establish a key for encrypted communication between the authenticator and endpoint. The association process <strong>SHALL</strong> employ a pairing code<sup id="fnref:pcode" role="doc-noteref"><a href="#fn:pcode" class="footnote">3</a></sup> or other shared secret between the devices. Either the authenticator or endpoint <strong>SHALL</strong> have a pairing code that <strong>MAY</strong> be printed on the device. The pairing code <strong>SHALL</strong> be at least six decimal digits (or equivalent) in length. It <strong>SHALL</strong> be conveyed between the devices by manual entry or using a QR code or similar representation that is optically communicated.</p>
+  </li>
+</ol>
+
+<p>When using a wireless technology with an effective range of less than 1 meter (e.g., NFC), any activation secret transmitted from the endpoint to the authenticator <strong>SHALL</strong> be encrypted using a key established between the devices. An authenticated connection <strong>SHOULD</strong> be used. A pairing code <strong>SHALL</strong> be used if the authenticator is configured to require authenticated pairing.</p>
+
+<blockquote>
+  <p>Encrypting only the activation secret and not the entire authentication transaction may expose sensitive information, such as the identity of the RP, although this would require the attacker to be very close to the subscriber. Special care should be taken with authenticators that contain PII and that do not require authenticated pairing. Encryption <strong>SHOULD</strong> be used to protect that information against “skimming” and eavesdropping attacks.</p>
+</blockquote>
+
+<p>Wireless technologies with an effective range of 1 meter or more (e.g., Bluetooth LE) and network connections <strong>SHALL</strong> use an authenticated encrypted connection between the authenticator and endpoint. The entire authentication transaction <strong>SHALL</strong> be encrypted. Examples of this include the pairing code used with the virtual contact interface specified in <a href="/800-63-4/sp800-63b/references/#ref-SP800-73">[SP800-73]</a> and the hybrid transport specified by the <a href="/800-63-4/sp800-63b/references/#ref-ctap2.2">[CTAP2.2]</a> protocol.</p>
+
+<p>The key established by the association process may be either temporary (i.e., valid for a limited number of transactions or time-limited) or persistent. A mechanism for endpoints to remove persistent keys <strong>SHALL</strong> be provided.</p>
+<h3 id="randomness" data-section="3">
+  
+  
+    Random Values <a href="#randomness" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Random values are extensively used in authentication processes, such as nonces and authentication secrets. Unless otherwise specified, random values that reference this section <strong>SHALL</strong> be generated by an approved random bit generator <a href="/800-63-4/sp800-63b/references/#ref-rbg">[RBG]</a><sup id="fnref:random" role="doc-noteref"><a href="#fn:random" class="footnote">4</a></sup> that provides at least the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (112 bits as of the date of this publication).</p>
+<h3 id="export" data-section="3">
+  
+  
+    Exportability <a href="#export" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Exportability is the ability of an authenticator to share its authentication secret (either a private or symmetric key) with another endpoint or authenticator. Generally, endpoints with access to the authentication secret are considered exportable since software (perhaps malware) on the endpoint could access and leak the authentication secret. Non-exportable authenticators are considered more secure, and accordingly, a non-exportable cryptographic authenticator is required at AAL3. Syncable authenticators are inherently exportable (see <a href="/800-63-4/sp800-63b/syncable/#appB">Appendix B</a>).</p>
+
+<p>To be considered non-exportable, an authenticator <strong>SHALL</strong> either be a separate piece of hardware or an embedded processor or execution environment (e.g., secure element, TEE, or trusted platform module). These hardware authenticators and embedded processors are separate from a host processor, such as the CPU on a laptop or mobile device. A non-exportable authenticator <strong>SHALL</strong> be designed to prohibit the export of the authentication secret to the host processor and <strong>SHALL NOT</strong> be capable of being reprogrammed by the host processor to allow the secret to be extracted. The authenticator is subject to applicable <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> requirements of the AAL at which the authenticator is being used, including applicable tamper resistance requirements.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:inval" role="doc-endnote">
+      <p>Invalidation can take several forms, including revocation of a PKI-based authenticator and removal from the subscriber account. <a href="#fnref:inval" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:ent" role="doc-endnote">
+      <p>Federal enterprise systems include those considered in scope for PIV guidance, such as government contractors, government employees, and mission partners. It does not include government-to-consumer or public-facing use cases. <a href="#fnref:ent" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:pcode" role="doc-endnote">
+      <p>As used in this section, the term <em>pairing code</em> does not imply that a persistent pairing process (e.g., Bluetooth) is necessarily used. <a href="#fnref:pcode" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:random" role="doc-endnote">
+      <p>Detailed information on generating random values may be found in the NIST SP 800-90 document suite comprising <a href="../references/#ref-SP800-90A">[SP800-90A]</a>, <a href="../references/#ref-SP800-90B">[SP800-90B]</a>, and <a href="../references/#ref-SP800-90C">[SP800-90C]</a>. <a href="#fnref:random" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

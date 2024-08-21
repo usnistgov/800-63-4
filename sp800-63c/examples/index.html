@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63c/examples/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Examples</title>
+    <meta property="og:title" content="Examples"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/fal/"><span class="section">2</span>FAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/Federation/"><span class="section">3</span>Federation</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/GenIdP/"><span class="section">4</span>General-Purpose IdP</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/Wallets/"><span class="section">5</span>Wallets</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63c/examples/"><span class="section">10</span>Examples</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abbreviations/"><span class="section">A</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/glossary/"><span class="section">B</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/changelog/"><span class="section">C</span>Changelog</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="examples" data-section="10">
+  
+  
+    Examples <a href="#examples" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is informative.</em></p>
+
+<p>This appendix contains several example scenarios of federation used in conjunction with the requirements in these guidelines.</p>
+
+<p>The scenarios in this section are for illustrative purposes and do not convey additional requirements beyond those imposed by these guidelines.</p>
+<h2 id="mapping-fals-to-common-federation-protocols" data-section="10">
+  
+  
+    Mapping FALs to Common Federation Protocols <a href="#mapping-fals-to-common-federation-protocols" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Of protocols commonly in use today, OpenID Connect <a href="/800-63-4/sp800-63c/references/#ref-OIDC">[OIDC]</a> and SAML <a href="/800-63-4/sp800-63c/references/#ref-SAML">[SAML]</a> both provide a variety of capabilities that can be leveraged to reach the requirements at different FALs. <a href="/800-63-4/sp800-63c/examples/#table-5">Table 5</a> provides examples of specific options in these protocols that could be deployed to reach a given FAL. It’s important to note that these guidelines do not represent a normative mapping to the given FALs and the entirety of the federation process has to be considered when establishing an FAL. Additionally, each FAL could be reached by processes, deployments, and procedures that are not listed in this table.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63c/examples/#table-5" name="table-5">Table 5. FAL Protocol Examples</a></p>
+
+<table latex-table="5" latex-caption="FAL Protocol Examples" latex-columns="p@0.10\textwidth,p@0.42\textwidth,p@0.42\textwidth">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>OIDC</th>
+      <th>SAML</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FAL1</td>
+      <td>All core flows in <a href="/800-63-4/sp800-63c/references/#ref-OIDC">[OIDC]</a> (Authorization Code, Implicit, and Hybrid) can all be configured to require signing of the assertion (the ID Token) using JSON Web Signatures. Assertions are presented in a variety of front and back channel methods. Each of these flows can be built using both static and dynamic client registration. Profiles such as <a href="/800-63-4/sp800-63c/references/#ref-OIDC-basic">[OIDC-Basic]</a> and <a href="/800-63-4/sp800-63c/references/#ref-OIDC-implicit">[OIDC-Implicit]</a> can provide additional guidance for interoperable deployments.</td>
+      <td>The <a href="/800-63-4/sp800-63c/references/#ref-SAML-WebSSO">[SAML-WebSSO]</a> profile allows for the signing of assertions using XML D-Sig and presentation of the assertion using the front channel. SAML deployments are generally set up with a static registration, sometimes managed through a federation authority, which can meet the requirements at this FAL and above.</td>
+    </tr>
+    <tr>
+      <td>FAL2</td>
+      <td>Flows that present the ID Token in the back channel (such as Authorization Code and Hybrid) can provide a level of injection protection.</td>
+      <td>The Artifact Binding of SAML defined in <a href="/800-63-4/sp800-63c/references/#ref-SAML-bindings">[SAML-Bindings]</a> allows for a back-channel presentation of SAML assertions that can provide a level of injection protection.</td>
+    </tr>
+    <tr>
+      <td>FAL3</td>
+      <td>The ID Token can include the claims necessary for Holder-of-Key and Bound Authenticator assertion presentations, though to date there are not industry standard profiles for doing so.</td>
+      <td>The SAML Holder-of-Key profile can fit the assertion requirements at this level, if combined with other deployment choices.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For OpenID Connect in particular, it is common practice to give access to both an identity API (the UserInfo Endpoint) as well as additional APIs. While the security of API access is outside the scope of these guidelines (which are concerned with the identity assertion primarily), it is sensible for an OpenID Connect implementation to want to increase the security of all API calls in tandem with the FAL. For example, in addition to requiring a Holder-of-Key assertion at FAL3, which requires verification of a subscriber-held key, an OpenID Connect system might also require sender-constrained access tokens for API access, which require the verification of a key held by the RP for each API call.</p>
+<h2 id="direct-connection-to-an-agencys-idp" data-section="10">
+  
+  
+    Direct Connection to an Agency’s IdP <a href="#direct-connection-to-an-agencys-idp" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Agency A, which issues and manages subscriber accounts, sets up and operates an OpenID Connect IdP in order to make these subscriber accounts available online through a federation process.</p>
+
+<p>The RP enters into a pairwise trust agreement with the IdP to accept assertions for subscribers from Agency A. The RP declares the set of attributes that it needs from the IdP as part of this agreement. The trust agreement stipulates that the subscriber is the authorized party for determining the release of attributes in the federation transaction.</p>
+
+<p>The IdP generates a federated identifier for the subscriber account by taking the unique internal identifier for the subscriber account (such as an employee record number) and passing it through a one-way cryptographic function to create a unique identifier for the subscriber account. Such an identifier does not allow an RP to calculate the internal identifier but will be stable across attribute changes.</p>
+
+<p>Per the terms of the trust agreement, the subscriber is prompted by the IdP the first time they log on to the RP. The IdP asks for the subscriber’s consent at runtime to share their attributes with the RP, displaying to the subscriber the RP’s requested uses for these attributes on the consent screen. The IdP also prompts the subscriber to allow the IdP to remember this consent decision. This stored decision causes the IdP to act on the stored consent in a future request and not prompt the subscriber if the same RP requests the same attributes.</p>
+
+<p>The assertion, formatted as an OpenID Connect ID Token, contains the minimum set of attributes to facilitate the federated log in. Apart from the federated identifier, the assertion contains no identifying information about the subscriber. In addition to the assertion, the RP is given an OAuth 2.0 access token that allows the RP to access the identity API hosted by the IdP, the OpenID Connect UserInfo Endpoint. The RP can choose to call this API to get additional attributes as needed, such as the first time the subscriber uses the RP. Since this RP follows a just-in-time provisioning model, when the RP sees the subscriber’s federated identifier for the first time, the RP creates an RP subscriber account for that federated identifier and calls the identity API to populate the RP subscriber account with the subscriber’s attributes. For future authentications with this subscriber, the RP can decide if its cache of attributes is reasonably recent enough or if it should be refreshed by calling the identity API.</p>
+<h2 id="multilateral-federation-network" data-section="10">
+  
+  
+    Multilateral Federation Network <a href="#multilateral-federation-network" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Agencies A, B, and C each have an IdP running OpenID Connect for their subscriber accounts. All three agencies join a multilateral federation run by an independent agency set up to provide inter-agency connections. The federation authority independently verifies that each IdP represents the agency in question. The federation authority publishes the discovery records of the IdPs for all agencies that are part of the multilateral federation. This publication allows RPs within the federation to discover which IdP is to be used to access accounts for a given agency under the rules of the federation agreement.</p>
+
+<p>RPs X and Y wish to allow logins from agencies A, B, and C, and the RPs declare their intent and a list of required attributes to the federation authority. The federation authority assesses both RP requests and adds them to the multilateral federation’s trust agreement. This allows both RPs to register at each of the three separate IdPs as needed for each agency.</p>
+
+<p>Both RPs interface directly with each of the three IdPs and not through a federation proxy. When a new IdP or RP is added to the multilateral federation agreement, the existing IdPs and RPs are notified of the new component and its parameters.</p>
+
+<p>The IdPs and RPs establish a shared signaling channel under the auspices of the federation authority. This allows any IdP and any RP to report suspicious or malicious behavior that involves a specific account to the rest of the members under the federation authority.</p>
+<h2 id="issuance-of-a-credential-to-a-digital-wallet" data-section="10">
+  
+  
+    Issuance of a Credential to a Digital Wallet <a href="#issuance-of-a-credential-to-a-digital-wallet" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Agency B makes its subscriber accounts available for federation through the use of digital wallet technology. The agency’s agreement for issuing credentials into wallets is facilitated by a federation authority that is set up to manage digital wallets across the federal government. The federation authority establishes the identity of the CSP for each agency under the multilateral agreement, and it ensures that only the CSP for Agency B can onboard subscriber-controlled wallets for Agency B within the multilateral trust agreement.</p>
+
+<p>A subscriber has a digital wallet running on their device that they want to use with their subscriber account from Agency B. Within these guidelines, the digital subscriber-controlled wallet needs to be onboarded by the CSP before it can act as an IdP. To begin this process, the subscriber directs their digital wallet software to Agency B’s CSP. The subscriber uses a biometric factor to activate their digital wallet, and the digital wallet makes an onboarding request to the CSP for the subscriber account. This onboarding request includes proof of a key held by the digital wallet. The CSP verifies the wallet’s proof and processes any additional attestations from the wallet device.</p>
+
+<p>The subscriber authenticates to the CSP during the onboarding process. The CSP prompts the subscriber with the terms of the trust agreement from the federation authority, and asks the subscriber to confirm that they wish to issue an identity to the digital wallet in question. The subscriber is informed of the sets of attributes that are made available to the wallet.</p>
+
+<p>The CSP creates an attribute bundle that includes the subscriber’s attributes as well as a reference to the digital wallet’s key. The CSP signs this attribute bundle with its own key and returns the bundle to the digital wallet.</p>
+
+<p>When the subscriber needs to authenticate to an RP, the RP sends a query to the subscriber’s wallet for a credential that fits the RP’s needs. The RP has a trust agreement with the same federation authority, agreeing to trust identities issued under the multilateral trust agreement’s rules. The digital wallet, acting as an IdP, identifies that the RP’s request can be fulfilled by the attribute bundle issued from Agency B’s CSP. The digital wallet prompts the subscriber to activate the IdP function of the digital wallet software using a local biometric factor. The digital wallet prompts the subscriber to confirm that they want to present the requested attributes to the RP in question. When the subscriber accepts, the IdP function of the digital wallet creates an assertion for the RP that is signed with the digital wallet’s keys. The assertion includes the attribute bundle from the CSP, which itself is covered by the signature from the IdP function. The IdP delivers the assertion to the RP.</p>
+
+<p>The RP receives the signed assertion and validates the signature of the attribute bundle from the CSP, using the CSP’s keys identified by the federation authority. The RP then validates the signature of the assertion using the key identified in the assertion. When these checks pass successfully, the RP creates an RP subscriber account to represent the subscriber at the RP, based on the information in the assertion.</p>
+<h2 id="enterprise-sso" data-section="10">
+  
+  
+    Enterprise Application Single-Sign-On <a href="#enterprise-sso" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>For enterprise applications, it is a common pattern for the organization to make the application available to all potential subscribers within the agency, through the use of an allowlist and pre-provisioned accounts.</p>
+
+<p>In this scenario, Agency E establishes a pairwise agreement with an RP to provide an enterprise-class service to all employees of Agency E through the agency’s OpenID Connect IdP. As part of this trust agreement, the IdP allows access to a SCIM-based provisioning API for the RP. The IdP creates a federated identifier for each subscriber account and uses the provisioning API to push the federated identifiers and their associated attributes to the RP. In this way, the RP can pre-provision an RP subscriber account for every subscriber in the IdP’s system, allowing the RP to offer functions like access rights, data sharing, and messaging to all accounts on the system, whether or not a specific account has logged in to the RP yet.</p>
+
+<p>Under the terms of the trust agreement, the RP is placed on an allowlist with the IdP. The allowlist entry states that:</p>
+
+<ul>
+  <li>The subscriber has an active subscriber account at Agency E</li>
+  <li>The subscriber has authenticated with the IdP at AAL2 or greater</li>
+  <li>The RP is allowed to request only the federated identifier and basic authentication event information, since all other necessary attributes will be available through the provisioning API</li>
+  <li>The federation transaction is at FAL2</li>
+</ul>
+
+<p>Consequently, subscribers are not prompted for consent at runtime because the agency consented to use the service on behalf of all accounts at the time the RP was onboarded. This gives subscribers a seamless single sign-on experience, even though a federation protocol is being used across security domain boundaries. Since the IdP does not use any runtime decisions, any deviation from the allowlist parameters causes the federation transaction to fail.</p>
+
+<p>The RP subscriber accounts are synchronized using the provisioning API. When a new subscriber account is created, modified, or deleted at the IdP, the IdP updates the status of the RP subscriber account using the provisioning API. This allows the RP to always have an up-to-date status for each subscriber account. For example, when the subscriber account is terminated at the IdP, the provisioning API signals to the RP that the corresponding RP subscriber account is to be terminated immediately. The RP removes all locally cached attributes for the account in question, except for the identifiers and references in audit and access logs.</p>
+<h2 id="fal3-smart-card" data-section="10">
+  
+  
+    FAL3 With a Smart Card <a href="#fal3-smart-card" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>A subscriber has a cryptographic authenticator on a smart card. The certificate on this smart card can be verified independently by both the IdP and RP thanks to the use of a shared PKI system stipulated by the trust agreement. This type of authenticator can be used in a holder-of-key assertion at FAL3.</p>
+
+<p>The subscriber starts the federation process and authenticates to the IdP using their authenticator. The IdP creates an assertion that includes a flag indicating that the assertion is intended for use at FAL3. The assertion also contains the certificate common name (CN) and thumbprint of the certificate to be used as a bound authenticator.</p>
+
+<p>When the RP receives the assertion, the RP processes the assertion as usual and sees the FAL3 flag and the certificate attributes. The subscriber authenticates to the RP using their authenticator, and the RP verifies that the certificate presented by the subscriber matches the certificate in the assertion from the IdP. When these match, the RP creates a secure session with the subscriber at FAL3.</p>
+<h2 id="fal3-nonpki" data-section="10">
+  
+  
+    FAL3 With a non-PKI Authenticator <a href="#fal3-nonpki" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>A subscriber has a hardware cryptographic authenticator that speaks the WebAuthn protocol. This authenticator is not tied to any PKI system, and in fact the authenticator device presents completely different and unlinked keys to both the IdP and RP during its normal authentication process. This kind of authenticator can still be used at FAL3 if the RP manages the bound authenticator.</p>
+
+<p>In this example, when the subscriber uses this authentication device at the IdP, it presents proof of Key1. When the subscriber uses the same device at the RP, it presents proof of Key2. These are logically two separate authenticators, but from the perspective of the subscriber, they are using the same device in multiple places.</p>
+
+<p>To start a federation transaction, the subscriber authenticates to the IdP using Key1. The IdP then creates an assertion that is flagged as FAL3. Since the IdP has no visibility into the existence and use of Key2, the assertion says that the subscriber is using a bound authenticator to reach FAL3. When the RP processes this assertion, the RP checks the RP subscriber account associated with the federated identifier in the assertion to find an RP bound authenticator for that account using Key2. The RP prompts the subscriber to authenticate using Key2. When that key is verified, the RP creates a secure session with the subscriber at FAL3.</p>
+<h2 id="fal3-with-referred-token-binding" data-section="10">
+  
+  
+    FAL3 With Referred Token Binding <a href="#fal3-with-referred-token-binding" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>A subscriber authenticates to their IdP using a certificate that is trusted by the IdP but not known to the RP, since the IdP and RP are not in a shared PKI environment. However, the IdP and RP support the referred token binding extension of TLS. When the subscriber presents their certificate to the IdP, the IdP creates an assertion with the CN and thumbprint of the subscriber’s certificate. Along with the assertion or assertion reference, the IdP returns token binding headers. When these headers are presented to the RP, the RP can use them to associate the contents of the assertion with the subscriber’s bound authenticator. The RP still has to verify the certificate, but the token binding allows the RP to do so without having to separately trust the certificate chain of the authenticator’s certificate.</p>
+<h2 id="ephemeral-federated-attribute-exchange" data-section="10">
+  
+  
+    Ephemeral Federated Attribute Exchange <a href="#ephemeral-federated-attribute-exchange" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>An RP needs to access a specific attribute for a subscriber, such as proof of age or affiliation with a known entity like a specific agency, without needing to know the identity of the subscriber. The RP requests only the derived attribute values that it needs in order to process its transaction, in this case a simple boolean of whether the subscriber is of age or is affiliated with the entity. The federation process creates an authenticated session between the RP and the subscriber. However, the RP uses an ephemeral provisioning mechanism, retaining only a record of the transaction and no further identifying attributes of the subscriber. The IdP provides a pairwise pseudonymous identifier to the RP. Since the IdP knows of the ephemeral nature of the RP subscriber account, the IdP can provide a distinct PPI to the RP on each request without affecting the subscriber’s usage of the RP. The IdP prompts the subscriber at runtime to release the derived attributes, preventing the RP from silently polling subscriber accounts against changes in information over time.</p>
+<h2 id="authorized-party-example" data-section="10">
+  
+  
+    Multiple Different Authorized Parties and Trust Agreements <a href="#authorized-party-example" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>As a subscriber uses services at multiple RPs, different trust agreements can come into play, and those agreements can have different requirements and experiences. In this scenario, the subscriber has an account through a single IdP which they use at three different RPs, each with a different kind of trust agreement and different requirements for consent and notification.</p>
+
+<dl>
+  <dt>Organizational Authorized Party:</dt>
+  <dd>An apriori trust agreement is established for an agency connecting to an enterprise service (the RP) to be made available to all subscribers at the agency. The authorized party for this trust agreement is the agency, and the IdP is configured with an allowlist entry for the RP with the set of common attributes requested by the RP for its use. When a subscriber logs in to the enterprise service, they are not prompted with any runtime decisions regarding the service, since the trust agreement establishes this connection as trusted. The details of this trust agreement are available to the subscriber from the IdP, including the list of attributes that are released to the RP and for what purpose.</dd>
+  <dt>Individual Authorized Party:</dt>
+  <dd>A separate a priori trust agreement is established by the agency for another service (a different RP), and this service is made available to all subscribers at the same agency. This trust agreement stipulates that the subscriber is the authorized party for release of attribute information to the RP. When logging in to the service, each subscriber is prompted for their consent to release their attributes to the RP. The prompt includes the context for the subscriber to make an appropriate security decision, including a link to the details of the trust agreement and a list of attributes being released and their purpose of use. The IdP allows the subscriber to save this consent decision so that when this subscriber logs in to this same RP in the future, the subscriber is not prompted again for their consent so long as the trust agreement and the request from the RP have not changed.</dd>
+  <dt>Subscriber-driven Service Access:</dt>
+  <dd>A subscriber-driven trust agreement is established when the subscriber goes to access an RP that is otherwise unknown by their IdP. The RP informs the subscriber about the uses of all attributes being requested from the IdP, and the IdP prompts the subscriber for consent to release their attributes to the RP. The IdP also warns the subscriber that the RP is unknown to the agency, and provides the subscriber with information received by the RP to help the subscriber make a secure decision.</dd>
+</dl>
+
+<p>All of these scenarios are involve the same subscriber account.</p>
+<h2 id="shared-ppi" data-section="10">
+  
+  
+    Shared Pairwise Pseudonymous Identifiers for Multiple RPs <a href="#shared-ppi" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>A group of three applications is deployed in support of a specific mission, giving collaboration, document storage, and calendar capabilities. Due to the nature of the separate applications, they are deployed as separate RPs, but all are bound to the same IdP using a common trust agreement. The trust agreement stipulates that the three RPs are to be issued a shared PPI, so that the applications can coordinate individual subscriber accounts with each other but not with any other applications in the deployed environment. The IdP uses an algorithm to generate a shared PPI that incorporates a randomized identifier for the set of applications as well as a unique identifier for each subscriber accounts. As a result, all three RPs get the same PPI for each subscriber, but no other RP is issued that same identifier.</p>
+<h2 id="rp-auth" data-section="10">
+  
+  
+    RP Authentication to an IdP <a href="#rp-auth" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>A federation transaction typically takes place over multiple network calls. Throughout this process, it is important for the IdP and RP to know that they are talking to the same party that they were in a previous step, and ultimately to the party that they expect to be in the transaction with in the first place.</p>
+
+<p>Different techniques exist that provide different degrees of assurance, depending on the federation protocol in use and the needs of the system. For example, the Authorization Code Flow of <a href="/800-63-4/sp800-63c/references/#ref-OIDC">[OIDC]</a> allows the RP to register a shared secret or private key with the IdP prior to the transaction, allowing the IdP to strongly authenticate the RP’s request in the back channel to retrieve the assertion. In addition, the Proof Key for Code Exchange protocol in <a href="/800-63-4/sp800-63c/references/#ref-RFC7636">[RFC7636]</a> allows the RP to dynamically create an unguessable secret that is transmitted in hashed form in the front channel and then transmitted in full in the back channel along with the assertion reference. These techniques can of course be combined for even greater assurance.</p>
+
+<p>Federation authorities can also facilitate the authentication process. If the RP registers its public key and identifier with the federation authority, the IdP needs only to retrieve the appropriate keys from the federation authority instead of requiring the RP to register itself ahead of time.</p>
+
+<p>Technical profiles of specific federation protocols are out of scope of these guidelines, but high security profiles such as <a href="/800-63-4/sp800-63c/references/#ref-FAPI">[FAPI]</a> provide extensive guidelines for implementers to deploy secure federation protocols.</p>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

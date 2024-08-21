@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63a/proofing/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Identity Proofing Overview</title>
+    <meta property="og:title" content="Identity Proofing Overview"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63a/proofing/"><span class="section">2</span>Proofing</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial-general/"><span class="section">3</span>General IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial/"><span class="section">4</span>IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/accounts/"><span class="section">5</span>Accounts</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abbreviations/"><span class="section">B</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/glossary/"><span class="section">C</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/changelog/"><span class="section">D</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="ipv-section" data-section="2">
+  
+  
+    Identity Proofing Overview <a href="#ipv-section" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is normative.</em></p>
+
+<p>This section provides an overview of the identity proofing and enrollment process, as well as requirements to support the resolution, validation, and verification of the identity claimed by an applicant. It also provides guidelines on additional aspects of the identity proofing process.  These requirements are intended to ensure that the claimed identity exists in the real world and that the applicant is the individual associated with that identity.</p>
+
+<p>Additionally, these guidelines provide for multiple methods by which resolution, validation, and verification can be accomplished, as well as providing the multiple types of identity evidence that support the identity proofing process. CSPs and organizations <strong>SHALL</strong> provide options when implementing their identity proofing services and processes to promote access for applicants with different means, capabilities, and technology access. These options <strong>SHOULD</strong> include accepting multiple types and combinations of identity evidence; supporting multiple data validation sources; enabling multiple methods for verifying identity; providing multiple channels for engagement (e.g., onsite, remote); and offering assistance mechanisms for applicants (e.g., applicant references).</p>
+
+<p>CSPs <strong>SHALL</strong> evaluate the risks associated with each identity proofing option offered (e.g., identity proofing types, validation sources, assistance mechanisms) and implement mitigating fraud controls, as appropriate. At a minimum, CSPs <strong>SHALL</strong> design each option such that, in aggregate, the options provide comparable assurance.</p>
+<h2 id="identity-proofing-and-enrollment" data-section="2">
+  
+  
+    Identity Proofing and Enrollment <a href="#identity-proofing-and-enrollment" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The objective of identity proofing is to ensure that, to a stated level of certainty, the applicant involved in the identity proofing process is who they claim to be. This document presents a three-step process for CSPs to identity proof applicants at designated assurance levels. The first step, identity resolution, consists of collecting appropriate identity evidence and attribute information to determine that the applicant is a unique identity in the population served by the CSP and is a real-life person. The second step, identity validation, validates the genuineness, accuracy, and validity of the evidence and attribute information collected in the first step. The third step, identity verification, confirms that the applicant presenting the identity evidence is the same individual to whom the validated evidence was issued and with whom the validated attributes are associated. In most cases, upon successfully identity proofing an applicant to the designated IAL, the CSP establishes a unique subscriber account for the applicant (now a subscriber in the identity service), which allows one or more authenticators to be bound to the proven identity in the account.</p>
+
+<p>Identity proofing can be part of an organization’s business processes that support the determination of suitability or entitlement to a benefit or service. While these guidelines provide guidance for appropriate levels of identity assurance, suitability and eligibility determinations for benefits or services are distinct business process decisions from these identity proofing processes and are outside the scope of these guidelines.</p>
+<h3 id="process-flow" data-section="2">
+  
+  
+    Process Flow <a href="#process-flow" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p><em>This subsection is informative.</em></p>
+
+<p><a href="/800-63-4/sp800-63a/proofing/#fig-1">Figure 1</a> provides an illustrative example of the three-step identity proofing process.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/proofing/#fig-1" name="fig-1">Fig. 1. Identity Proofing Process</a></p>
+
+<p><img src="/800-63-4/sp800-63a/images/ProofingProcess.png" alt="Illustration of steps in identity proofing and enrollment" title="Identity Proofing Process" latex-src="ProofingProcess.pdf" latex-fig="1" latex-place="h" /></p>
+
+<p>The following steps present a common workflow example for IAL2 remote identity proofing, which is intended to illustrate the workflow steps for this example. These steps are not intended to represent a normative processing workflow model.</p>
+
+<ol>
+  <li>
+    <p><strong>Resolution</strong></p>
+
+    <ul>
+      <li>The CSP captures one or more pieces of identity evidence, such as a driver’s license, mobile driver’s license, or passport.</li>
+      <li>The CSP collects any additional attributes, as needed, from the applicant to supplement those contained on the presented identity evidence.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Validation</strong></p>
+
+    <ul>
+      <li>The CSP confirms the presented evidence is authentic, accurate, and valid (e.g., not revoked).</li>
+      <li>The CSP validates the attributes obtained in step 1 by checking them against authoritative or credible validation sources.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Verification</strong></p>
+
+    <ul>
+      <li>The CSP employs one of the IAL2 Verifcation Pathways to confirm the applicant is the genuine owner of the presented identity evidence.</li>
+    </ul>
+
+    <p><strong>Enrollment</strong></p>
+
+    <p>Upon the successful completion of the three identity proofing steps, a notification of proofing is sent to a validated address, and the applicant can be enrolled into a subscriber account with the CSP, as described in Section 5. A subscriber account includes at least one validated address (e.g., phone number, mailing address) that can be used to communicate with the subscriber about their account. Additionally, one or more authenticators are bound to the proven identity in the subscriber account.</p>
+  </li>
+</ol>
+<h3 id="ProofingRoles" data-section="2">
+  
+  
+    Identity Proofing Roles <a href="#ProofingRoles" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>To support the delivery of identity proofing that meets the various needs of applicants and risk scenarios, different individuals would be expected to play different roles within the proofing process. To support the consistent implementation of these guidelines, the following identity proofing roles are defined:</p>
+
+<ol>
+  <li><strong>Proofing Agent</strong> - An agent of the CSP who is trained to attend identity proofing sessions, either onsite or remotely, and make limited, risk-based decisions – such as visually inspecting identity evidence and making a determination that the evidence has not been altered.</li>
+  <li><strong>Trusted Referee</strong> - An agent of the CSP who is trained to make risk-based decisions regarding an applicant’s identity proofing case when that applicant is unable to meet expected requirements of a defined IAL proofing process. Unlike a Proofing Agent (although a trusted referee may also fulfill this role), the level of training is expected to be more substantial to include training to detect deception and signs of social engineering, in addition to the ability to support validation and verification through physical inspection of the evidence and visual comparison of the applicant to a reference facial image. Requirements for trusted referees are contained in <a href="/800-63-4/sp800-63a/ial-general/#TRs">Sec. 3.1.13.1</a>.
+    <blockquote>
+      <p><strong>Note:</strong> Trusted referees differ from proofing agents in that trusted referees receive additional training and resources to support exception handling scenarios, including when applicants do not possess the required identity evidence or the attributes on the evidence do not all match the claimed identity (e.g., due to a recent name or address change).</p>
+    </blockquote>
+  </li>
+  <li><strong>Applicant Reference</strong> - A representative of the applicant who can vouch for the identity of the applicant, specific attributes related to the applicant, or conditions relative to the context of the individual (e.g., emergency status, homelessness). This individual does not act on behalf of the applicant in the identity proofing process but is a resource that can be called on to support claims of identity. Requirements for applicant references are contained in <a href="/800-63-4/sp800-63a/ial-general/#ARs">Sec. 3.1.13.3</a>.</li>
+  <li><strong>Process Assistants</strong> - An individual who provides support for the proofing process but does not support decision making or risk-based evaluation (e.g., translation, transcription, or accessibility support). Process assistants may be provided by the CSP or the applicant.</li>
+</ol>
+
+<p>CSPs <strong>SHALL</strong> identify which of above roles are applicable to their identity service and <strong>SHALL</strong> provide training and support resources consistent with the requirements and expectations provided in <a href="/800-63-4/sp800-63a/ial-general/#ial-general">Sec. 3</a>.</p>
+<h3 id="ProofingTypes" data-section="2">
+  
+  
+    Identity Proofing Types <a href="#ProofingTypes" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The ability to provide resolution, validation, and verification as part of an identity proofing process is delivered through a combination of technologies, communication channels, and identity proofing roles to support the diverse users, communities, and relying parties CSPs serve. The types of proofing can be categorized based on two specific factors – whether they are attended and where they take place.</p>
+
+<ol>
+  <li><strong>Remote Unattended Identity Proofing</strong> – Identity proofing conducted where the resolution, validation, and verification processes are completely automated and interaction with a proofing agent is not required.  The location and devices used in the proofing process are not controlled by the CSP.</li>
+  <li><strong>Remote Attended Identity Proofing</strong> – Identity proofing conducted where the applicant completes resolution, validation, and verification steps through a secure video session with a proofing agent. The location and devices used in the proofing process are not controlled by the CSP.</li>
+  <li><strong>Onsite Unattended Identity Proofing</strong> -  Identity proofing conducted where an individual interacts with a controlled workstation or kiosk, but interaction with a proofing agent is not required. The process is fully automated, but at a physical location and on devices approved by the CSP.</li>
+  <li><strong>Onsite Attended Identity Proofing</strong> - Identity proofing conducted in a physical setting where the applicant completes the entire identity proofing process - to include resolution, validation, and verification – in the presence of a proofing agent. The proofing agent may be co-located with the user or interact with the user via a kiosk or device. The physical location and devices are all approved by the CSP.</li>
+</ol>
+
+<p>Requirements at each assurance level are structured to allow CSPs to implement different combinations of proofing types to meet the requirements of different assurance levels (as appropriate). CSPs that offer IAL1 &amp; IAL2 services <strong>SHALL</strong> provide a Remote Unattended identity proofing process and <strong>SHALL</strong> offer at-least one attended identity proofing process option. CSPs that offer IAL1 &amp; IAL2 services <strong>SHOULD</strong> support identity proofing processes that allow for the applicant to transition between proofing types in the event an applicant is unsuccessful with one type (e.g., allow an applicant who fails remote unattended to transition to remote attended).</p>
+<h2 id="CoreAttributes" data-section="2">
+  
+  
+    Core Attributes <a href="#CoreAttributes" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The identity proofing process involves the presentation and validation of the minimum attributes necessary to accomplish identity proofing - this includes what is needed to complete resolution, validation, and verification. While the necessary core attributes for a given use case will change based on the nature of the community being served, the following attributes <strong>SHOULD</strong> be collected by CSPs to support the proofing process:</p>
+
+<ul>
+  <li><strong>First Name</strong>: The applicant’s given name.</li>
+  <li><strong>Middle Name or Initial</strong>: The applicant’s middle name or initial if available.</li>
+  <li><strong>Last Name</strong>: The applicant’s last name or family name as appropriate.</li>
+  <li><strong>Government Identifier</strong>: A unique identifier which is associated with the applicant in government records (e.g., SSN, TIN, Driver’s License #).</li>
+  <li><strong>Physical Address</strong>: A physical address to which the applicant can receive communications related to the proofing process; or a <strong>Digital Address</strong>: A digital address (e.g., phone or email) to which the applicant can receive communications related to the proofing process.</li>
+</ul>
+
+<p>Additional attributes may be added to these as required by the CSP and RP. The CSP and RP <strong>SHALL</strong> document all core attributes in trust agreements and practice statements. Following a privacy risk assessment, a CSP <strong>MAY</strong> request additional attributes that are not required to complete identity proofing, but that may support other RP business processes. See <a href="/800-63-4/sp800-63a/ial-general/#PrivacyReqs">Sec. 3.1.3</a> for details on privacy requirements for requesting additional attributes.</p>
+<h2 id="resolve" data-section="2">
+  
+  
+    Identity Resolution <a href="#resolve" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The goal of identity resolution is to use the smallest possible set of attributes to uniquely and accurately distinguish an individual within a given population or context. This step involves comparing an applicant’s collected attributes to those stored in records for users served by the CSP. While identity resolution is the starting point in the overall identity proofing process, to include the initial detection of potential fraud, it in no way represents a complete and successful identity proofing process.</p>
+<h2 id="evidence-collection" data-section="2">
+  
+  
+    Identity Validation and Identity Evidence Collection <a href="#evidence-collection" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The goal of identity validation is to collect the most appropriate identity evidence from the applicant and determine that it is genuine (not altered or forged), accurate (the pertinent data is correct, current, and related to the applicant), and valid.</p>
+
+<blockquote>
+  <p><strong>Note:</strong> This document uses the term “valid” rather than expired in recognition that evidence can remain a useful means to prove identity, even if it is expired or was issued outside a determined timeframe.</p>
+</blockquote>
+
+<p>Identity evidence collection supports the identity validation process and consists of two steps: 1) the presentation of identity evidence by the identity proofing applicant to the CSP and 2) the determination by the CSP that the presented evidence meets the applicable strength requirements.</p>
+<h3 id="evidence-strength" data-section="2">
+  
+  
+    Evidence Strength Requirements <a href="#evidence-strength" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>This section defines the requirements for identity evidence at each strength. The strength of a piece of identity evidence is determined by:</p>
+
+<ol>
+  <li>The issuing rigor,</li>
+  <li>The ability to provide confidence in validation, including accuracy and authenticity checks, and</li>
+  <li>The ability to provide confidence in the verification of the applicant presenting the evidence.</li>
+</ol>
+
+<p><a href="/800-63-4/sp800-63a/evidence/#EvidenceExamples">Appendix A</a> of this document provides a non-exhaustive list of possible evidence types, grouped by strength.</p>
+<h4 id="fair-evidence-requirements" data-section="2">
+  
+  
+    Fair Evidence Requirements <a href="#fair-evidence-requirements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>To be considered FAIR, identity evidence <strong>SHALL</strong> meet <em>all</em> the following requirements:</p>
+
+<ol>
+  <li>The issuing source of the evidence confirmed the claimed identity through a process designed to enable it to form a belief that it knows the real-life identity of the person. For example, evidence issued by financial institutions that have customer identity verification obligations under the Customer Identification Program (CIP) Rule implementing Section 326 of the USA PATRIOT Act of 2001, or that have obligations to establish an Identity Theft Prevention Program under the Red Flags Rule and Guidelines, implemented under Sec. 114 of the Fair and Accurate Credit Transaction Act of 2003 (FACT Act).</li>
+</ol>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+
+<ol>
+  <li>It is likely that the evidence-issuing process would result in the delivery of the evidence to the person to whom it relates, such as delivery to a postal address.</li>
+  <li>The evidence contains the name of the claimed identity.</li>
+  <li>The evidence contains at least one reference number, a facial portrait, or sufficient attributes to uniquely identify the person to whom it relates.</li>
+  <li>The evidence contains physical (e.g., security printing, optically variable features, holograms) or digital security features that make it difficult to reproduce.</li>
+  <li>The information on the evidence is able to be validated by an authoritative or credible source.</li>
+  <li>The evidence is able to be verified through an approved method, as provided in <a href="/800-63-4/sp800-63a/proofing/#validation-methods">Sec. 2.4.2.2</a>.</li>
+</ol>
+<h4 id="strong-evidence-requirements" data-section="2">
+  
+  
+    Strong Evidence Requirements <a href="#strong-evidence-requirements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>In order to be considered STRONG, identity evidence <strong>SHALL</strong> meet <em>all</em> the following requirements:</p>
+
+<ol>
+  <li>The issuing source of the evidence confirmed the claimed identity by following written procedures designed to enable it to have high confidence that it knows the real-life identity of the subject. Additionally, these procedures are subject to recurring oversight by regulatory or publicly accountable institutions, such as states, the federal government, and some regulated industries.  Such procedures would include, but not be limited to, identity proofing at IAL2 or above.</li>
+  <li>It is likely that the evidence-issuing process would result in the delivery of the evidence to the person to whom it relates, such as delivery to a postal address.</li>
+  <li>The evidence contains the name of the claimed identity.</li>
+  <li>The evidence contains a reference number or other attributes that uniquely identify the person to whom it relates.</li>
+  <li>The evidence contains a facial portrait or other biometric characteristic of the person to whom it relates.</li>
+  <li>The evidence includes physical security features or digital security features that make it difficult to copy or reproduce.</li>
+  <li>The information on the evidence is able to be validated by an authoritative or credible source.</li>
+  <li>The evidence is able to be validated through an approved method, as provided in <a href="/800-63-4/sp800-63a/proofing/#validation-methods">Sec. 2.4.2.2</a>.</li>
+</ol>
+<h4 id="superior-evidence-requirements" data-section="2">
+  
+  
+    Superior Evidence Requirements <a href="#superior-evidence-requirements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>In order to be considered SUPERIOR, identity evidence <strong>SHALL</strong> meet <em>all</em> the following requirements:</p>
+
+<ol>
+  <li>The issuing source of the evidence confirmed the claimed identity by following written procedures designed to enable it to have high confidence that the source knows the real-life identity of the subject. Additionally, these procedures are subject to recurring oversight by regulatory or publicly accountable institutions, such as states and the federal government, and some regulated industries.  Such procedures would include, but not be limited to, identity proofing at IAL2 or above.</li>
+  <li>The identity evidence contains attributes and data objects that are cryptographically protected and can be validated through verification of a digital signature applied by the issuing source.</li>
+  <li>The issuing source had the subject participate in an attended enrollment and identity proofing process that confirmed their physical existence.</li>
+  <li>It is likely that the evidence-issuing process would result in the delivery of the evidence to the person to whom it relates, such as delivery to a postal address.</li>
+  <li>The evidence contains the name of the claimed identity.</li>
+  <li>The evidence contains at least one reference number that uniquely identifies the person to whom it relates.</li>
+  <li>The evidence contains a facial portrait or other biometric characteristic of the person to whom it relates.</li>
+  <li>If the evidence is physical, then evidence includes security features that make it difficult to copy or reproduce.</li>
+  <li>The evidence is able to be verified through an approved method, as provided in <a href="/800-63-4/sp800-63a/proofing/#validation-methods">Sec. 2.4.2.2</a>.</li>
+</ol>
+<h3 id="identity-evidence-and-attribute-validation" data-section="2">
+  
+  
+    Identity Evidence and Attribute Validation <a href="#identity-evidence-and-attribute-validation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Identity evidence validation involves examining the presented evidence to confirm it is authentic (not forged or altered), accurate (the information on the evidence is correct), and valid (unexpired or within the CSP’s defined timeframe for issuance or expiration). Attribute validation involves confirming the accuracy of the core attributes, whether obtained from presented evidence or self-asserted. The following subsections provide the acceptable methods for evidence and attribute validation.</p>
+<h4 id="validation" data-section="2">
+  
+  
+    Evidence Validation <a href="#validation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>The CSP <strong>SHALL</strong> validate the authenticity, accuracy, and validity of presented evidence by confirming:</p>
+
+<ul>
+  <li>The evidence is in the correct format and includes complete information for the identity evidence type;</li>
+  <li>The evidence is not counterfeit and that it has not been tampered with;</li>
+  <li>Any security features; and</li>
+  <li>The information on the evidence is accurate.</li>
+</ul>
+<h4 id="validation-methods" data-section="2">
+  
+  
+    Evidence Validation Methods <a href="#validation-methods" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>Acceptable methods for validating presented evidence include:</p>
+
+<ul>
+  <li>Visual and tactile inspection by trained personnel for onsite identity proofing;</li>
+  <li>Visual inspection by trained personnel for remote identity proofing;</li>
+  <li>Automated document validation processes using appropriate technologies; and</li>
+  <li>Cryptographic verification of the source and integrity of digital evidence, or attribute data objects.</li>
+</ul>
+<h4 id="attribute-validation" data-section="2">
+  
+  
+    Attribute Validation <a href="#attribute-validation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>The CSP <strong>SHALL</strong> validate all core attributes, as described in <a href="/800-63-4/sp800-63a/proofing/#CoreAttributes">Sec. 2.2</a>, whether obtained from identity evidence or self-asserted by the applicant, with an authoritative or credible source, as in <a href="/800-63-4/sp800-63a/proofing/#ValidSources">Sec. 2.4.2.4</a>.</p>
+<h4 id="ValidSources" data-section="2">
+  
+  
+    Validation Sources <a href="#ValidSources" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h4>
+    
+
+<p>The CSP <strong>SHALL</strong> use authoritative or credible sources that meet the following criteria.</p>
+
+<p>An authoritative source is the issuing source of identity evidence or attributes, or has direct access to the information maintained by issuing sources, such as state DMVs for driver’s license data and the Social Security Administration for Social Security Cards and Social Security Numbers. An authoritative source may also be one that provides or enables direct access to issuing sources of evidence or attributes, such as the American Association of Motor Vehicle Administrators’ Driver’s License Data Verification (DLDV) Service.</p>
+
+<p>A credible source is an entity that can provide or validate the accuracy of identity evidence and attribute information. In addition to being subject to regulatory oversight (such as the Fair Credit Reporting Act (FCRA)), a credible source has access to attribute information that can be traced to an authoritative source, or maintains identity attribute information obtained from multiple sources that is correlated for accuracy, consistency, and currency. Examples of credible sources are credit bureaus that are subject to the FCRA.</p>
+<h2 id="identity-verification" data-section="2">
+  
+  
+    Identity Verification <a href="#identity-verification" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The goal of identity verification is to establish, to a specified level of confidence, the linkage between the claimed validated identity and the real-life applicant engaged in the identity proofing process. In other words, verification provides assurance that the applicant presenting the evidence is the rightful owner of that evidence.</p>
+<h3 id="verification" data-section="2">
+  
+  
+    Identity Verification Methods <a href="#verification" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The CSP <strong>SHALL</strong> verify the linkage of the claimed identity to the applicant engaged in the identity proofing process through one or more of the following methods. <a href="/800-63-4/sp800-63a/ial/#ial-section">Section 4</a> provides acceptable verification methods at each IAL.</p>
+
+<ul>
+  <li><strong>Confirmation Code Veriﬁcation.</strong> The individual is able to demonstrate control of a piece of identity evidence through the return of a confirmation code, consistent with the requirements speciﬁed in <a href="3_ialgen#ConfirmCodes">Sec. 3.1.8</a>.</li>
+  <li><strong>Authentication and Federation Protocols.</strong> The individual is able to demonstrate control of a digital account (e.g., online bank account) or signed digital assertion (e.g., veriﬁable credentials) through the use of authentication or federation protocols. This may be done in person, through presentation of the credential to a device or reader, but can also be done during remote identity prooﬁng sessions.</li>
+  <li><strong>Micro Transaction.</strong> An individual is able to demonstrate control of a piece of evidence by returning a value based on a micro transaction made between the CSP and the issuing source of the evidence (e.g., bank account).</li>
+  <li><strong>Onsite-In-person (Attended) visual facial image comparison.</strong> The proofing agent and applicant interact for the identity prooﬁng event. The proofing agent performs a visual comparison of the facial portrait presented on identity evidence to the face of the applicant engaged in the identity prooﬁng event.</li>
+  <li><strong>Remote (Attended or Unattended) visual facial image comparison.</strong> The proofing agent performs a visual comparison of the facial portrait presented on identity evidence, or stored by the issuing source, to the facial image of the applicant engaged in the identity prooﬁng event. The proofing agent may interact directly with the applicant during some or all of the identity prooﬁng event (attended) or may conduct the comparison at a later time (unattended) using a captured video or photograph and the uploaded copy of the evidence. If the comparison is performed at a later time, steps are taken to ensure the captured video or photograph was taken from the live applicant present during the identity prooﬁng event.</li>
+  <li><strong>Automated (Unattended) biometric comparison.</strong> Automated biometric comparison, such as facial recognition or other fully automated algorithm-driven biometric comparison, <strong>MAY</strong> be performed for onsite or remote identity proofing events. The facial image or other biometric characteristic (e.g., fingerprints, palm prints, iris and retina patterns, voiceprints, or vein patterns) on the identity evidence, or stored in authoritative records, is compared to the facial image in a photograph of the live applicant or other biometric live sample collected from the applicant during the identity proofing event.</li>
+</ul>
+
+<p>Knowledge-based verification (KBV) or knowledge-based authentication <strong>SHALL NOT</strong> be used for identity verification.</p>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

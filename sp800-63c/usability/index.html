@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63c/usability/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Usability</title>
+    <meta property="og:title" content="Usability"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/fal/"><span class="section">2</span>FAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/Federation/"><span class="section">3</span>Federation</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/GenIdP/"><span class="section">4</span>General-Purpose IdP</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/Wallets/"><span class="section">5</span>Wallets</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63c/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">10</span>Examples</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/abbreviations/"><span class="section">A</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/glossary/"><span class="section">B</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63c/changelog/"><span class="section">C</span>Changelog</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="usability" data-section="8">
+  
+  
+    Usability Considerations <a href="#usability" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is informative.</em></p>
+
+<blockquote>
+  <p>In order to align with the standard terminology of user-centered design and usability, the term “user” is used throughout this section to refer to the human party. In most cases, the user in question will be the subject (in the role of applicant, claimant, or subscriber) as described elsewhere in these guidelines.</p>
+</blockquote>
+
+<p><em>Ergonomic of Human-System Interaction — Part 11: Usability: Definitions and Concepts</em> <a href="/800-63-4/sp800-63c/references/#ref-ISOIEC9241">[ISO/IEC9241-11]</a> defines usability as the “extent to which a system, product or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use.” This definition focuses on users, goals, and context of use as key elements necessary for achieving effectiveness, efficiency and satisfaction. A holistic approach considering these key elements is necessary to achieve usability.</p>
+
+<p>From the usability perspective, one of the major potential benefits of federated identity systems is to address the problem of user fatigue associated with managing multiple authenticators. While this has historically been a problem with usernames and passwords, the increasing need for users to manage many authenticators — whether physical or digital — presents a usability challenge.</p>
+
+<p>As stated in <a href="/800-63-4/sp800-63a/usability/#sec9" latex-href="#ref-SP800-63A">Sec. 8 of [SP800-63A]</a> and <a href="/800-63-4/sp800-63b/usability/#sec10" latex-href="#ref-SP800-63B">Sec. 8 of [SP800-63B]</a>, overall user experience is critical to the success of digital identity systems. This is especially true for federated identity systems, as federation is a less familiar user interaction paradigm for many users. Users’ prior authentication experiences may influence their expectations.</p>
+
+<p>The overall user experience with federated identity systems should be as smooth and easy as possible. This can be accomplished by following usability standards (such as the ISO 25060 series of standards) and established best practices for user interaction design.</p>
+
+<p>Guidelines and considerations are described from the users’ perspective.</p>
+
+<p>Section 508 of the Rehabilitation Act of 1973 <a href="/800-63-4/sp800-63c/references/#ref-Section508">[Section508]</a> was enacted to eliminate barriers in information technology and require federal agencies to make electronic and information technology accessible to people with disabilities. While these guidelines do not directly assert requirements from Section 508, identity service providers are expected to comply with Section 508 provisions. Beyond compliance with Section 508, Federal Agencies and their service providers are generally expected to design services and systems with the experiences of people with disabilities in mind to ensure that accessibility is prioritized throughout identity system lifecycles.</p>
+<h2 id="general-usability-considerations" data-section="8">
+  
+  
+    General Usability Considerations <a href="#general-usability-considerations" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>Federated identity systems should:</p>
+
+<ul>
+  <li>Minimize user burden (e.g., frustration, learning curve)
+    <ul>
+      <li>Minimize the number of user actions required.</li>
+      <li>Allow users to quickly and easily select among multiple subscriber accounts with a single IdP. For example, approaches such as <a href="https://openid.net/wg/ac/">Account Chooser</a> allow users to select from a list of subscriber accounts they have accessed in the recent past, rather than start the federation process by selecting their IdP from a list of potential IdPs.</li>
+      <li>Balance minimizing user burden with the need to provide sufficient information to enable users to make informed decisions.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Minimize the use of unfamiliar technical jargon and details (e.g., users do not need to know the terms IdP and RP if the basic concepts are clearly explained).</p>
+  </li>
+  <li>
+    <p>Strive for a consistent and integrated user experience across the IdP and RP.</p>
+  </li>
+  <li>
+    <p>Help users establish an understanding of identity by providing resources to users such as graphics, illustrations, FAQs, tutorials and examples. Resources  should explain how users’ information is treated and how transacting parties (e.g., RPs, IdPs, and brokers) relate to each other.</p>
+  </li>
+  <li>
+    <p>Provide clear, honest, and meaningful communications to users (i.e., communications should be explicit and easy to understand).</p>
+  </li>
+  <li>
+    <p>Provide users online services independent of location and device.</p>
+  </li>
+  <li>
+    <p>Make trust relationships explicit to users to facilitate informed trust decisions. Trust relationships are often dynamic and context dependent. Users may be more likely to trust some IdPs and RPs with certain attributes or transactions more than others. For example, users may be more hesitant to use federated identity systems on websites that contain valuable personal information (such as financial or health). Depending on the perceived sensitivity of users’ personal information, users may be less comfortable with commercial as IdPs since people often have concerns about advertising and data-usage of such companies. Conversely, some may have more confidence in the commercial IdPs than government IdPs based on their historical interactions with government services. Either way, it is critical to be clear to end-users on the entities involved in a federation transaction and, ideally, provide options that support the broadest set of stakeholder perceptions possible.</p>
+  </li>
+  <li>
+    <p>Follow the usability considerations specified in <a href="/800-63-4/sp800-63a/usability/#sec9" latex-href="#ref-SP800-63A">[SP800-63A] Sec. 8</a> for any user-facing information.</p>
+  </li>
+  <li>
+    <p>Clearly communicate how and where to acquire technical assistance. For example, provide users with information such as a link to an online self-service feature, chat sessions or a phone number for help desk support. Avoid redirecting users back and forth among transacting parties (e.g., RPs, IdPs, and brokers) to receive technical assistance.</p>
+  </li>
+  <li>Perform integrative and continuous usability evaluations with representative users and realistic tasks in an appropriate context to ensure success of federated identity systems from the users’ perspectives.</li>
+</ul>
+<h2 id="specific-usability-considerations" data-section="8">
+  
+  
+    Specific Usability Considerations <a href="#specific-usability-considerations" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>This section addresses the specific usability considerations that have been identified with federated identity systems. This section does not attempt to present exhaustive coverage of all usability factors related to federated identity systems. Rather, it is focused on the larger, more pervasive themes in the usability literature, primarily users’ perspectives on identity, user adoption, trust, and perceptions of federated identity space. In some cases, implementation examples are provided. However, specific solutions are not prescribed. The implementations mentioned are examples to encourage innovative technological approaches to address specific usability needs. See standards for system design and coding, specifications, APIs, and current best practices (such as OpenID and OAuth) for additional examples. Implementations are sensitive to many factors that prevent a one-size-fits-all solution.</p>
+<h3 id="user-perspectives-on-online-identity" data-section="8">
+  
+  
+    User Perspectives on Online Identity <a href="#user-perspectives-on-online-identity" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Even when users are familiar with federated identity systems, there are different approaches to federated identity (especially in terms of privacy and the sharing of information) that make it necessary to establish reliable expectations for how users’ data are treated. Users and implementers have different concepts of identity. Users think of identity as logging in and gaining access to their own private space. Implementers think of identity in terms of authenticators and assertions, assurance levels, and the necessary set of identity attributes to provide a service. Given this disconnect between users’ and implementers’ concepts of identity, it is essential to help users form an accurate concept of identity as it applies to federated identity systems. A good model of identity provides users a foundation for understanding the benefits and risks of federated systems and encourage user adoption and trust of these systems.</p>
+
+<p>To minimize the personal information collected and protect privacy, IdPs ought to provide users with pseudonymous options for providing data to RPs, where possible, and inform users of the benefits and drawbacks of pseudonymous identification.
+Likewise, RPs ought to request pseudonymous options for users when pseudonymity is possible for the RP’s policy. Both IdPs and RPs need to seek to minimize unnecessary data transmission and inform users of which information is transmitted and for what purpose.</p>
+
+<p>Many properties of identity have implications for how users manage identities, both within and among federations. Just as users manage multiple identities based on context outside of cyberspace, users must learn to manage their identity in a federated environment. Therefore, it must be clear to users how identity and context are used. The following factors should be considered:</p>
+
+<ul>
+  <li>
+    <p>Provide users the requisite context and scope in order to distinguish among different user roles. For example, whether the user is acting on their own behalf or on behalf of another, such as their employer.</p>
+  </li>
+  <li>
+    <p>Provide users unique, meaningful, and descriptive identifiers to distinguish among entities such as IdPs, RPs, and accounts. Any such user-facing identifiers are likely to be in addition to identifiers used by the underlying protocols, which are not normally exposed to the user.</p>
+  </li>
+  <li>
+    <p>Provide users with information on data ownership and those authorized to make changes. Identities, and the data associated with them, can sometimes be updated and changed by multiple actors. For example, some healthcare data is updated and owned by the patient, while some data is only updated by a hospital or doctor’s practice.</p>
+  </li>
+  <li>
+    <p>Provide users with the ability to easily verify, view, and update attributes. Identities and user roles are dynamic and not static; they change over time (e.g., age, health, and financial data). The ability to update attributes or make attribute release decisions may or may not be offered at the same time. Ensure the process for how users can change attributes is well known, documented, and easy to perform.</p>
+  </li>
+  <li>
+    <p>Provide users means for updating data, even if the associated subscriber account or RP subscriber account no longer exists. Consider applicable audit, legal, or policy constraints for needs to track updated data.</p>
+  </li>
+  <li>
+    <p>Provide users means to delete their identities completely, removing all information about themselves, including transaction history. Consider applicable audit, legal, or policy constraints that may preclude such action. In certain cases, full deactivation is more appropriate than deletion.</p>
+  </li>
+  <li>
+    <p>Provide users with clear, easy-to-find, site/application data retention policy information.</p>
+  </li>
+  <li>
+    <p>Provide users with appropriate anonymity and pseudonymity options, and the ability to switch among such identity options as desired, in accordance with an organization’s data access policies.</p>
+  </li>
+  <li>
+    <p>Provide a means for users to manage each IdP to RP connection, including complete separation as well as the removal of RP access to one or more attributes.</p>
+  </li>
+</ul>
+<h3 id="user-perspectives-of-trust-and-benefits" data-section="8">
+  
+  
+    User Perspectives of Trust and Benefits <a href="#user-perspectives-of-trust-and-benefits" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Many factors can influence user adoption of federated identity systems. As with any technology, users may value some factors more than others. Users often weigh perceived benefits versus risks before making technology adoption decisions. It is critical that IdPs and RPs provide users with sufficient information to enable them to make informed decisions. The concepts of trust and tiers of trust — fundamental principles in federated identity systems — can drive user adoption. Finally, a positive user experience may also result in increased user demand for federation, triggering increased adoption by RPs.</p>
+
+<p>This sub-section is focused primarily on user trust and user perceptions of benefits versus risks.</p>
+
+<p>To encourage user adoption, IdPs and RPs need to establish and build trust with users and provide them with an understanding of the benefits and risks of adoption. The following factors should be considered:</p>
+
+<ul>
+  <li>
+    <p>Allow users to control their information disclosure and provide explicit consent through the appropriate use of interactive user interfaces and notifications (see <a href="/800-63-4/sp800-63c/privacy/#notice">Sec. 7.2</a>). Considerations such as balancing the content, size, and frequency of notifications as well as tailoring notifications to specific communities are necessary to avoid thoughtless user click-through.</p>
+  </li>
+  <li>For attribute sharing, consider the following:
+    <ul>
+      <li>Provide a means for users to verify those attributes and attribute values that will be shared. Follow good security practices (see <a href="/800-63-4/sp800-63c/Federation/#protecting-information">Sec. 3.10.2</a> and <a href="/800-63-4/sp800-63c/security/#security">Sec. 6</a>).</li>
+      <li>Enable users to consent to a partial list of attributes, rather than an all-or-nothing approach. Allow users some degree of online access, even if the user does not consent to share all information.</li>
+      <li>Allow users to update their consent to their list of shared attributes.</li>
+      <li>Minimize unnecessary information presented to users. For example, do not display system generated attributes (such as pairwise pseudonymous identifiers) even if they are shared with the RP as part of the authentication response.</li>
+      <li>Minimize user steps and navigation. For example, build attribute consent into the protocols so they’re not a feature external to the federation transaction. Examples can be found in standards such as OAuth or OpenID Connect.</li>
+      <li>Provide effective redress methods such that a user can recover from invalid attribute information claimed by the IdP or collected by the RP. See <a href="../_sp80063/3_DIRM.md#redress" latex-href="#ref-SP800-63">Sec 3.6 of [SP800-63]</a> for more requirements on providing redress.</li>
+      <li>Minimize the number of times a user is required to consent to attribute sharing. Limiting the frequency of consent requests avoids user frustration from multiple requests to share the same attribute.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Collect information for constrained usage only and minimize information disclosure (see <a href="/800-63-4/sp800-63c/privacy/#minimization">Sec. 7.3</a>). User trust is eroded by unnecessary and superfluous information collection and disclosure or user tracking without explicit user consent. For example, only request attributes from the user that are relevant to the current transaction, not for all possible transactions a user may or may not access at the RP.</p>
+  </li>
+  <li>Clearly and honestly communicate potential benefits and risks of using federated identity to users. Benefits that users value include time savings, ease of use, reduced number of passwords to manage, and increased convenience.</li>
+</ul>
+
+<p>User concern over risk can negatively influence willingness to adopt federated identity systems. Users may have trust concerns, privacy concerns, security concerns, and single-point-of-failure concerns. For example, users may be fearful of losing access to multiple RPs if a single IdP is unavailable, either temporarily or permanently. Additionally, users may be concerned or confused about learning a new authentication process. In order to foster the adoption of federated identity systems, the perceived benefits must outweigh the perceived risks.</p>
+<h3 id="user-mental-models-and-beliefs" data-section="8">
+  
+  
+    User Mental Models and Beliefs <a href="#user-mental-models-and-beliefs" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Users’ beliefs and perceptions predispose them to expect certain results and to behave in certain ways. Such beliefs, perceptions, and predispositions are referred to in the social sciences as mental models. For example, people have a mental model of dining out that guides their behavior and expectations at each establishment, such as fast food restaurants, cafeterias, and more formal restaurants. Thus, it is not necessary to be familiar with every establishment to understand how to interact appropriately at each one.</p>
+
+<p>Assisting users in establishing good and complete mental models of federation allows users to generalize beyond a single specific implementation. If federated identity systems are not designed from users’ perspectives, users may form incorrect or incomplete mental models that impact their willingness to adopt these systems. The following factors should be considered:</p>
+
+<ul>
+  <li>Clearly explain the working relationship and information flow among the transacting parties (e.g., RPs, IdPs, and proxies) to avoid user misconceptions. Use the actual names of the entities in the explanation rather than using the generic terms IdPs and RPs.
+    <ul>
+      <li>Provide prominent visual cues and information so that users understand why seemingly unrelated entities have a working relationship. For example, users may be concerned with mixing online personal activities with government services due to a lack of understanding of the information flow in federated identity systems.</li>
+      <li>Provide prominent visual cues and information to users about redirection when an RP needs to redirect control from their site to an IdP. For example, display RP branding within the IdP user interface to inform users when they are logging in with their IdP for access to the destination RP.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Provide users with clear and usable ways (e.g., visual assurance) to determine the authenticity of the transacting  parties (e.g., RPs, IdPs, and proxies). This will also help to alleviate user concern over leaving one domain for another, especially if the root domain changes (e.g., .gov to .com). For example, display the URL of the IdP so that the user can verify that they are not being phished by a malicious site.</p>
+  </li>
+  <li>Provide users with clear information, including visual cues, regarding logins and logouts. Depending on the implementation, logging into an RP with a federated account can create long-running sessions for the user at both the IdP and RP. Users may not realize that ending their session with the RP will not necessarily end their session with the IdP; users will need to explicitly “log out” of the IdP. Users require clear information to remind them if explicit logouts are required to end their IdP sessions. Both the IdP and RP could also have automated logout features, based on time since authentication or an activity timeout. Users require clear information about when their session might end without any action on their part, in order to avoid frustration, lost work, or insecure workarounds like copying data out of a secure site in order to avoid an unexpected session timeout.</li>
+</ul>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

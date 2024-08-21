@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63a/evidence/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Identity Evidence Examples</title>
+    <meta property="og:title" content="Identity Evidence Examples"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/proofing/"><span class="section">2</span>Proofing</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial-general/"><span class="section">3</span>General IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial/"><span class="section">4</span>IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/accounts/"><span class="section">5</span>Accounts</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abbreviations/"><span class="section">B</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/glossary/"><span class="section">C</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/changelog/"><span class="section">D</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="EvidenceExamples" data-section="A">
+  
+  
+    Identity Evidence Examples by Strength <a href="#EvidenceExamples" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This appendix is informative.</em></p>
+
+<p>This appendix provides a non-exhaustive list of types of identity evidence, grouped by strength.</p>
+<h2 id="fair-evidence-examples" data-section="A">
+  
+  
+    Fair Evidence Examples <a href="#fair-evidence-examples" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A1" name="table-A1">Table 4. Fair Evidence Examples</a></p>
+
+<table latex-table="4" latex-caption="Fair Evidence Examples" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.20\textwidth,p@0.20\textwidth,p@0.30\textwidth">
+  <thead>
+    <tr>
+      <th>Evidence</th>
+      <th>Proofing</th>
+      <th>Validation</th>
+      <th>Verification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Financial Account</td>
+      <td>KYC/CIP requirements</td>
+      <td>Confirm signature on assertion is from intended origin.</td>
+      <td>*Demonstrated possession via an AAL2 authentication event and FAL 2 federated assertion. *User input of a micro deposit event of sufficient entropy.</td>
+    </tr>
+    <tr>
+      <td>Phone Account</td>
+      <td>Established and documented account opening practices.</td>
+      <td>*Confirm presence of user account with MNO. *Confirm signature on assertion is from intended origin.</td>
+      <td>*Demonstrated possession through enrollment code. *Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion.</td>
+    </tr>
+    <tr>
+      <td>Student ID Card</td>
+      <td>Student registration and enrollment practices.</td>
+      <td>*Confirm signature on assertion is from intended origin; or  *Confirm physical security features and evaluate for tampering.</td>
+      <td>*Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion. *Physical comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+    </tr>
+    <tr>
+      <td>Corporate ID Card</td>
+      <td>Onboarding and background screening practices.</td>
+      <td>*Confirm signature on assertion is from intended origin; or *Confirm physical security features and evaluate for tampering.</td>
+      <td>*Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion. *Physical comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+    </tr>
+    <tr>
+      <td>Veteran Health ID card</td>
+      <td>VA identity verification, issuance and eligibility process</td>
+      <td>*Confirm signature on assertion is from intended origin; or *Confirm physical security features and evaluate for tampering</td>
+      <td>*Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion. *Physical comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+    </tr>
+    <tr>
+      <td>Credit or Debit Card</td>
+      <td>KYC/CIP Account Opening Practices.</td>
+      <td>*Confirm physical security features, physical signature.</td>
+      <td>*Demonstrated ability to authenticate to the card using a PIN or other activation factor (if available). *Physical inspection of the card. Must be presented with other evidence containing a photo.</td>
+    </tr>
+    <tr>
+      <td>Snap Card</td>
+      <td>State defined eligibility and enrollment requirements.</td>
+      <td>Confirm physical security features, physical signature</td>
+      <td>*Visual inspection of the card. Must be presented with other evidence containing a photo (if there is no image on the card).</td>
+    </tr>
+    <tr>
+      <td>Social Security Card</td>
+      <td>SSN application process.</td>
+      <td>*Confirm physical security features, inspect for tampering.</td>
+      <td>*Visual inspection of the card. Must be presented with other evidence containing a photo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+<h2 id="strong-evidence-examples" data-section="A">
+  
+  
+    Strong Evidence Examples <a href="#strong-evidence-examples" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A2" name="table-A2">Table 5. Strong Evidence Examples</a></p>
+
+<table latex-table="5" latex-caption="Strong Evidence Examples" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.20\textwidth,p@0.20\textwidth,p@0.30\textwidth">
+  <thead>
+    <tr>
+      <th>Evidence</th>
+      <th>Proofing</th>
+      <th>Validation</th>
+      <th>Verification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Driver’s License or State ID</td>
+      <td>State issuance processes, REAL ID Act</td>
+      <td>Confirm physical security features through inspection.</td>
+      <td>*Physical comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+    </tr>
+    <tr>
+      <td>Permanent Resident Card (issued prior to May 11, 2010)</td>
+      <td>DHS issuance and eligibility process</td>
+      <td>*Confirm physical security features through inspection.</td>
+      <td>*Physical comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+    </tr>
+    <tr>
+      <td>U.S. Uniformed Services Privilege and Identification Card</td>
+      <td>DoD issuance and eligibility processes</td>
+      <td>*Confirm physical security features through inspection.</td>
+      <td>*Visual comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+    </tr>
+    <tr>
+      <td>Native American Tribal Photo Identification Card</td>
+      <td>Local issuance and eligibility processes</td>
+      <td>*Confirm physical security features through inspection.</td>
+      <td>*Visual comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+    </tr>
+    <tr>
+      <td>Veteran Health ID Card (VHIC)</td>
+      <td>VA identity verification, issuance and eligibility process</td>
+      <td>*Confirm physical security features and evaluate for tampering</td>
+      <td>*Visual comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+<h2 id="superior-evidence-examples" data-section="A">
+  
+  
+    Superior Evidence Examples <a href="#superior-evidence-examples" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A3" name="table-A3">Table 6. Superior Evidence Examples</a></p>
+
+<table latex-table="6" latex-caption="Superior Evidence Examples" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.20\textwidth,p@0.20\textwidth,p@0.30\textwidth">
+  <thead>
+    <tr>
+      <th>Evidence</th>
+      <th>Proofing</th>
+      <th>Validation</th>
+      <th>Verification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Personal Identity Verification (PIV) Card</td>
+      <td>FIPS 201-3 identity verification and issuance processes</td>
+      <td>Validation of stored PKI Certificate, CRL check if available</td>
+      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B. *Biometric comparison to image stored on ID or biometric stored on ID. *Visual comparison of image on ID.</td>
+    </tr>
+    <tr>
+      <td>Personal Identity Verification-Interoperable (PIV-I) Card</td>
+      <td>FIPS 201-3 identity verification and issuance processes</td>
+      <td>Validation of stored PKI Certificate, CRL check if available</td>
+      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B. *Biometric comparison to image stored on ID or biometric stored on ID. *Visual comparison of image on ID.</td>
+    </tr>
+    <tr>
+      <td>Common Access Card (CAC)</td>
+      <td>DoD identity verification and issuance process</td>
+      <td>Validation of stored PKI Certificate, CRL check if available</td>
+      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B. *Biometric comparison to image stored on ID or biometric stored on ID. *Visual comparison of image on ID.</td>
+    </tr>
+    <tr>
+      <td>US Passport</td>
+      <td>State Department passport issuance process</td>
+      <td>Validation of stored PKI certificate, CRL check if available.</td>
+      <td>*Visual comparison of image on ID on stored in ID. *Biometric comparison to image on ID or stored in ID. *Biometric comparison to issuing source records.</td>
+    </tr>
+    <tr>
+      <td>International e-Passports Passports</td>
+      <td>ICAO compliant and/or State Department approved</td>
+      <td>Validation of stored PKI certificate, CRL check if available.</td>
+      <td>*Visual comparison of image on ID on stored in ID. *Biometric comparison to image on ID or stored in ID. *Biometric comparison to issuing source records.</td>
+    </tr>
+    <tr>
+      <td>Mobile Driver’s License (MDL)</td>
+      <td>State Issuance processes, AAMVA guidance, and Real ID Act</td>
+      <td>Validation of Mobile Security Object, revocation check if available</td>
+      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B.</td>
+    </tr>
+    <tr>
+      <td>Digital Permanent Resident Card (Verifiable Credential)</td>
+      <td>DHS issuance and eligibility process</td>
+      <td>Validation of stored verifiable credential, revocation check if available</td>
+      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B.</td>
+    </tr>
+    <tr>
+      <td>European Digital Identity Wallet (EUDI Wallet) Personal Identification (PID) Element</td>
+      <td>EC defined identity verification and issuance process; qualified issuer certified</td>
+      <td>Validation of stored verifiable credential or Mobile Security Object, revocation check if available</td>
+      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>

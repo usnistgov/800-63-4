@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="canonical" href="/800-63-4/sp800-63a/accounts/">
+
+    <!-- Google Analytics -->
+    <!--<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=mml&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> -->
+    <!-- DAP Analytics -->
+    <script type="text/javascript" id="_fed_an_ua_tag"
+            src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+	<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+	<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript"></script>
+	<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+	<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/800-63-4/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTStyle.css">
+    <link rel="stylesheet" href="/800-63-4/static/css/NISTPages.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <title>Subscriber Accounts</title>
+    <meta property="og:title" content="Subscriber Accounts"/>
+    
+
+    
+    <meta name="description" content="NIST Special Publication 800-63 Digital Identity Guidelines">
+    <meta property="og:description" content="NIST Special Publication 800-63 Digital Identity Guidelines"/>
+    
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-left" role="navigation">
+	<ul class="nav navbar-nav">
+      <li id="search-box">
+        <input type="text" id="search-input" placeholder="Search..." onFocus="loadSearch()">
+        <ul id="results-container"></ul>
+      </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/">Home</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63/introduction/">SP 800-63</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="active">
+          
+              <a href="/800-63-4/sp800-63a/introduction/">SP 800-63A</a>
+          
+          
+          
+        
+            
+            
+            
+            <ul class="subnav">
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abstract/">Abstract</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/introduction/"><span class="section">1</span>Introduction</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/proofing/"><span class="section">2</span>Proofing</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial-general/"><span class="section">3</span>General IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/ial/"><span class="section">4</span>IAL</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class="active"><a href="/800-63-4/sp800-63a/accounts/"><span class="section">5</span>Accounts</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/security/"><span class="section">6</span>Security</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/privacy/"><span class="section">7</span>Privacy</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/references/">References</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/abbreviations/"><span class="section">B</span>Abbreviations</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/glossary/"><span class="section">C</span>Glossary</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/changelog/"><span class="section">D</span>Change Log</a></li>
+                
+              
+              
+
+            
+          
+            </ul>
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63b/introduction/">SP 800-63B</a>
+          
+          
+          
+          
+          
+        </li>
+      
+        
+        
+        
+        <li class="">
+          
+              <a href="/800-63-4/sp800-63c/introduction/">SP 800-63C</a>
+          
+          
+          
+          
+          
+        </li>
+      
+      
+      
+  </ul>
+
+</nav>
+
+
+<div class="page-switch">
+
+View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b>multiple pages</b>.
+
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+
+
+  
+
+  
+
+<h1 id="accounts" data-section="5">
+  
+  
+    Subscriber Accounts <a href="#accounts" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h1>
+    
+
+<p><em>This section is normative.</em></p>
+<h2 id="subscriber-accounts" data-section="5">
+  
+  
+    Subscriber Accounts <a href="#subscriber-accounts" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The CSP <strong>SHALL</strong> establish and maintain a unique subscriber account for each active subscriber in the CSP identity system from the time of enrollment to the time of account closure. The CSP establishes a subscriber account to record each subscriber as a unique identity within its identity service and to maintain a record of all authenticators associated with that account.</p>
+
+<p>The CSP <strong>SHALL</strong> assign a unique identifier to each subscriber account. The identifier <strong>SHOULD</strong> be randomly generated by the CSP system and of sufficient length and entropy to ensure uniqueness within its user population and to support federation with RPs, where applicable. The identifier <strong>MAY</strong> be used as a subject identifier in the generation of assertions, consistent with <a href="/800-63-4/sp800-63a/references/#ref-SP800-63C" latex-href="#ref-SP800-63C">[SP800-63C]</a>.</p>
+
+<p>At a minimum, the CSP <strong>SHALL</strong> include the following information in each subscriber account:</p>
+
+<ul>
+  <li>The unique identifier associated with the subscriber account</li>
+  <li>Any subject identifiers established for the subscriber, including any RP specific subject identifiers</li>
+  <li>A record of the identity proofing steps completed for the subscriber, including:
+    <ul>
+      <li>The type and issuer of identity evidence</li>
+      <li>The type of proofing (Remote Unattended, Remote Attended, Onsite Attended, Onsite Unattended)</li>
+      <li>The validation and verification methods used</li>
+      <li>The use of a trusted referee or other exception handling process</li>
+      <li>The use of an applicant reference, including a unique identifier for the applicant reference</li>
+    </ul>
+  </li>
+  <li>Maximum IAL successfully achieved for the identity proofing of the subscriber</li>
+  <li>Records of any applicant consent agreements related to the collection and processing of information about the applicant, including biometrics, throughout the subscriber account lifecycle</li>
+  <li>All authenticators currently bound to the subscriber account, whether registered at enrollment or subsequent to enrollment</li>
+  <li>Attributes that were validated during the identity proofing process or in subsequent transactions to support RP access</li>
+</ul>
+<h2 id="subscriber-account-access" data-section="5">
+  
+  
+    Subscriber Account Access <a href="#subscriber-account-access" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The CSP <strong>SHALL</strong> provide the capability for subscribers to authenticate and access information in their subscriber account.</p>
+
+<p>For subscriber accounts that contain PII, this capability <strong>SHALL</strong> be accomplished through AAL2 or AAL3 authentication processes using authenticators registered to the subscriber account.</p>
+<h2 id="subscriber-account-maintenance-and-updates" data-section="5">
+  
+  
+    Subscriber Account Maintenance and Updates <a href="#subscriber-account-maintenance-and-updates" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The CSP <strong>SHALL</strong> provide the capability for a subscriber to request the CSP to update information contained in their subscriber account. The CSP <strong>MAY</strong> provide a mechanism for subscribers to update any non-core attributes directly.</p>
+
+<p>The CSP <strong>SHALL</strong> validate any changes to core attribute information maintained in the subscriber account.</p>
+
+<p>The CSP <strong>SHALL</strong> provide notice to the subscriber of any updates made to information in the subscriber account.</p>
+
+<p>The CSP <strong>SHALL</strong> provide the capability for the subscriber to report any unauthorized access or potential compromise to information in their subscriber account.</p>
+<h2 id="subscriber-account-suspension-or-termination" data-section="5">
+  
+  
+    Subscriber Account Suspension or Termination <a href="#subscriber-account-suspension-or-termination" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The CSP <strong>SHALL</strong> promptly suspend or terminate the subscriber account when one of the following occurs:</p>
+
+<ul>
+  <li>The subscriber elects to terminate their subscriber account with the CSP.</li>
+  <li>The CSP determines that the subscriber account has been compromised.</li>
+  <li>The CSP determines that the subscriber has violated the policies or rules for participation in the CSP identity service.</li>
+  <li>The CSP determines that the subscriber account is inactive in accordance with the policies or rules established by the CSP.</li>
+  <li>The CSP receives notification of a subscriber’s death from an authoritative source.</li>
+  <li>The CSP receives a legal instrument from a court to terminate a subscriber’s account.</li>
+  <li>The CSP ceases identity system and services operations.</li>
+</ul>
+
+<p>The CSP <strong>SHALL</strong> provide notification to the subscriber that their subscriber account has been suspended or terminated. Such notices <strong>SHALL</strong> include information about why the account was suspended or terminated, reactivation or renewal options, and any options for redress if the subscriber thinks the account was suspended or terminated in error.</p>
+
+<p>The CSP <strong>SHALL</strong> delete any personal or sensitive information from the subscriber account records following account termination in accordance with the record retention and disposal requirements, as documented in its practices statement <a href="/800-63-4/sp800-63a/ial-general/#DocRecReqs">Sec. 3.1.1</a>.</p>
+
+
+  
+
+
+
+  </div>
+</div>
+<footer role="contentInfo" class="site-footer">
+  <div class="section-container">
+    <div class="section-content">
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+    function loadSearch() {
+        var sjs = SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/800-63-4/search.json'
+        });
+    }
+    $(function() {
+      
+      // highlight normative language by adding classes
+      $('strong').filter(':contains("SHALL"), :contains("SHALL NOT"), :contains("SHOULD"), :contains("SHOULD NOT"), :contains("MAY"), :contains("NEED NOT"), :contains("CAN"), :contains("CANNOT"), :contains("CAPITALS")').each(function(i, el) {
+        var $el;
+        $el = $(el);
+        $el.addClass('normative');
+      });
+      // highlight the target
+      $('a:target').parent().addClass('target');
+      $(':target').addClass('target');
+      $(window).on('hashchange', function(e) {
+        $('.target').removeClass('target');
+        $('a:target').parent().addClass('target');
+        $(':target').addClass('target');
+      });
+    });
+</script>
+
+
+</body>
+</html>
