@@ -3,7 +3,7 @@ layout: default
 title: Identity Proofing Requirements
 navOrder: 4
 navTitle: General IAL
-permalink: /sp800-63a/ial/
+permalink: /sp800-63a/ial-general/
 anchor: ial-general
 section: 3
 ---
