@@ -114,20 +114,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
                 
               
@@ -240,21 +226,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63a/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -283,6 +255,20 @@
                 
                 
                     <li class=""><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/training/"><span class="section">B</span>Training</a></li>
                 
               
               
@@ -406,7 +392,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h2>
     
 
-<p>Identity proofing processes at IAL1 allow for a range of acceptable techniques in order to detect the fraudulent claims to identities by malicious actors, while facilitating user adoption, minimizing the rejection of legitimate users, and reducing application departures. The use of biometric matching, such as the automated comparison of a facial portrait to supplied evidence, at IAL1 is optional, providing pathways to proofing and enrollment where such collection may not be viable.</p>
+<p>Identity proofing processes at IAL1 allow for a range of acceptable techniques to detect fraudulent claims to identities by malicious actors while facilitating user adoption, minimizing the rejection of legitimate users, and reducing application departures. The use of biometric matching (e.g., automated comparison of the applicant’s facial image to a facial portrait on supplied evidence) is optional at IAL1.</p>
 <h3 id="proofing-types" data-section="4">
   
   
@@ -417,10 +403,8 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <ol>
-  <li>IAL1 Identity Proofing <strong>MAY</strong> be delivered through any proofing type, as described in <a href="/800-63-4/sp800-63a/proofing/#ProofingTypes">Sec. 2.1.3</a>.</li>
-  <li>CSPs <strong>SHALL</strong> offer Unattended Remote identity proofing as an option.</li>
-  <li>CSPs <strong>SHALL</strong> offer at least one method of Attended (Remote or Onsite) identity proofing as an option.</li>
-  <li>CSPs MAY combine proofing types and their stated requirements to create hybrid processes. For example, a CSP might leverage remote unattended identity proofing validation processes in advance of a remote attended session where verification will take place. Where such steps are combined, CSPs SHALL document their processes in alignment of requirements of each proofing type that is applied.</li>
+  <li>IAL1 identity proofing <strong>MAY</strong> be delivered through any proofing type, as described in <a href="/800-63-4/sp800-63a/proofing/#ProofingTypes">Sec. 2.1.3</a>.</li>
+  <li>CSPs <strong>MAY</strong> combine proofing types and their stated requirements to create hybrid processes. For example, a CSP might leverage remote unattended identity proofing validation processes in advance of a remote attended session where the verification will take place. If such steps are combined, CSPs <strong>SHALL</strong> document their hybrid process and state how the applicable requirements for each of the employed proofing types are met.</li>
 </ol>
 <h3 id="ial1-evidence-collection" data-section="4">
   
@@ -431,13 +415,17 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>For each identity proofing type, the CSP <strong>SHALL</strong> collect the following:</p>
+<p>For identity proofing at IAL1, the CSP <strong>SHALL</strong> collect:</p>
 
 <ol>
-  <li>One piece of FAIR evidence or better (i.e., STRONG, SUPERIOR) evidence</li>
+  <li>One piece of:
+    <ul>
+      <li>FAIR evidence that can be digitally validated or that includes a facial portrait or other biometric or</li>
+      <li>STRONG evidence or</li>
+      <li>SUPERIOR evidence.</li>
+    </ul>
+  </li>
 </ol>
-
-<p>For onsite attended identity proofing at IAL1, organizations <strong>SHOULD</strong> prioritize the use of evidence (FAIR or STRONG) that contains a facial portrait, which can be used for verification purposes. While forms of evidence that do not contain a facial portrait <strong>MAY</strong> be used for such sessions, the associated verification requirements (e.g., returning a confirmation code) may result in additional burden on applicants.</p>
 <h3 id="ial1-attribute-collection" data-section="4">
   
   
@@ -447,7 +435,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>The CSP <strong>SHALL</strong> collect all Core Attributes. Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all the attributes that the CSP considers core attributes, it <strong>MAY</strong> collect attributes that are self-asserted by the applicant.</p>
+<p>The CSP <strong>SHALL</strong> collect all core attributes, including at least one government identifier. Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all of the attributes that the CSP considers to be core attributes, it <strong>MAY</strong> collect attributes that are self-asserted by the applicant.</p>
 <h3 id="ial1-evidence-validation" data-section="4">
   
   
@@ -457,14 +445,14 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>Each piece of evidence presented <strong>SHALL</strong> be validated using one of the following techniques:</p>
+<p>Each piece of evidence presented <strong>SHALL</strong> be validated using one of the following methods:</p>
 
-<ol>
-  <li>Confirming the authenticity of digital evidence through interrogation of digital security features (e.g., signatures on assertions or data).</li>
-  <li>Confirming the authenticity of physical evidence using automated scanning technology able to detect physical security features.</li>
-  <li>Confirming the integrity of physical security features of presented evidence through visual inspection by a proofing agent using real-time or asynchronous processes (e.g., offline manual review).</li>
-  <li>Confirming the integrity of physical security features through physical and tactile inspection of security features by a proofing agent at an onsite location.</li>
-</ol>
+<ul>
+  <li>Confirming the authenticity of digital evidence by interrogating the digital security features (e.g., signatures on assertions or data)</li>
+  <li>Confirming the authenticity of physical evidence using automated scanning technology that can detect physical security features, as described in <a href="/800-63-4/sp800-63a/ial-general/#DigInject">Sec. 3.14</a></li>
+  <li>Confirming the integrity of physical security features on presented evidence through visual inspection by a proofing agent using real-time or asynchronous processes (e.g., offline manual review)</li>
+  <li>Confirming the integrity of physical security features through physical and tactile inspection by a proofing agent at an on-site location</li>
+</ul>
 <h3 id="ial1-attribute-validation" data-section="4">
   
   
@@ -476,8 +464,8 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 
 <ol>
   <li>The CSP <strong>SHALL</strong> validate all core attributes and the government identifier against an authoritative or credible source to determine accuracy.</li>
-  <li>CSPs <strong>SHOULD</strong> correlate the data on evidence, self-asserted, and as presented by credible and authoritative sources for consistency.</li>
-  <li>CSPs <strong>SHOULD</strong> validate the reference numbers of presented identity evidence if available.</li>
+  <li>CSPs <strong>SHOULD</strong> evaluate attributes obtained from different sources (e.g., presented evidence, self-asserted, authoritative or credible sources) for consistency.</li>
+  <li>CSPs <strong>SHOULD</strong> validate any reference numbers on the presented identity evidence, if available.</li>
 </ol>
 <h3 id="ial1-verification" data-section="4">
   
@@ -488,99 +476,89 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>The CSP <strong>SHALL</strong> verify the applicant’s ownership of one piece of evidence using one of the following processes:</p>
+<p>The CSP <strong>SHALL</strong> verify the applicant’s ownership of one piece of evidence using one of the following methods:</p>
 
-<ol>
-  <li>Confirming the applicant’s ability to return a confirmation code delivered to a validated address associated with the evidence;</li>
-  <li>Confirming the applicant’s ability to return a micro-transaction value delivered to a validated financial or similar account;</li>
-  <li>Confirming the applicant’s ability to successfully complete an authentication and federation protocol equivalent to AAL2/FAL2, or higher, to access an account related to the identity evidence;</li>
-  <li>Comparing the applicant’s facial image to a facial portrait on evidence via an automated comparison.</li>
-  <li>Visually comparing the applicant’s facial image to a facial portrait on evidence, or in records associated with the evidence, during either an onsite attended session (in-person with a proofing agent), a remote attended session (live video with a proofing agent), or an asynchronous process (i.e., visual comparison made by a proofing agent at a different time).</li>
-  <li>Comparing a stored biometric on identity evidence, or in authoritative records related to the evidence, to a sample provided by the applicant.</li>
-</ol>
-<h3 id="remote-attended-requirements" data-section="4">
+<ul>
+  <li>Confirming the applicant’s ability to return a confirmation code delivered to a validated address associated with the evidence</li>
+  <li>Confirming the applicant’s ability to return a microtransaction value delivered to a validated financial or similar account</li>
+  <li>Confirming the applicant’s ability to successfully complete an authentication and federation protocol equivalent to AAL2/FAL2 or higher to access an account related to the identity evidence</li>
+  <li>Comparing the applicant’s facial image to a facial portrait on evidence via an automated comparison</li>
+  <li>Visually comparing the applicant’s facial image to a facial portrait on evidence or in records associated with the evidence during an on-site attended session (i.e., in-person with a proofing agent), a remote attended session (i.e., live video with a proofing agent), or an asynchronous process (i.e., visual comparison made by a proofing agent at a different time). If the comparison is performed asynchronously at a later time, the CSP <strong>SHALL</strong> implement PAD and passive or active document presence checks to increase confidence that both the live applicant and physical documents are present during the submission or capture event.</li>
+  <li>Using automated means to compare a facial image represented on or stored in the identity evidence or in records associated with the evidence to a live sample provided by the applicant</li>
+</ul>
+<h3 id="remote-unattended-requirements" data-section="4">
   
   
-    Remote Attended Requirements <a href="#remote-attended-requirements" class="header-link"><i class="fa fa-link"></i></a>
+    Remote Unattended Requirements <a href="#remote-unattended-requirements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>There are no additional requirements for remote unattended identity proofing beyond the requirements specified in Sec. 2, 3, and 4.</p>
+<h3 id="IAL1RemoteAttended" data-section="4">
+  
+  
+    Remote Attended Requirements <a href="#IAL1RemoteAttended" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h3>
     
 
 <ol>
-  <li>All video sessions <strong>SHALL</strong> take place using a service that allows for the exchange of information over an authenticated protected channel.</li>
   <li>During the video session, the applicant <strong>SHALL</strong> remain in view of the proofing agent during each step of the proofing process.</li>
-  <li>The video quality <strong>SHALL</strong> be sufficient to support the necessary steps in the validation and verification processes, such as inspecting evidence and making visual comparisons of the user to the evidence.</li>
-  <li>The proofing agent <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the recorded session.</li>
-  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.1.3.1</a>. If the CSP records session, the following further requirements apply:
-    <ol>
-      <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
-      <li>The CSP <strong>SHALL</strong> gain consent from the applicant to prior to initiating a recorded session.</li>
-      <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
-    </ol>
-  </li>
-  <li>The CSP <strong>SHOULD</strong> introduce challenges and response features into their video sessions that are randomized or periodically changed to deter deep fakes and pre-recorded materials from being used to defeat the proofing process. These MAY be shifting questions, changes to the orders of sessions, or physical cues that would be hard for attackers to predict.</li>
-  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to flag events for potential fraud.</li>
-</ol>
-<h3 id="onsite-attended-requirements" data-section="4">
-  
-  
-    Onsite Attended Requirements <a href="#onsite-attended-requirements" class="header-link"><i class="fa fa-link"></i></a>
-  
-  
-</h3>
-    
-
-<ol>
-  <li>The CSP <strong>SHALL</strong> provide a physical setting in which onsite identity proofing sessions are conducted.</li>
-  <li>The CSP <strong>SHALL</strong> ensure all information systems and technology leveraged by proofing agents and trusted referees are protected consistent with FISMA Moderate or comparable levels of controls.</li>
-  <li>CSP proofing agents <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the onsite session.</li>
-  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.1.3.1</a>. If the CSP records session, the following further requirements apply:
+  <li>The video quality <strong>SHALL</strong> be sufficient to support the necessary steps in the validation and verification processes, such as inspecting evidence and comparing the applicant to the evidence.</li>
+  <li>The proofing agent <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the session.</li>
+  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.3.1</a>. If the CSP records a video session, the following further requirements apply:
     <ol>
       <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
       <li>The CSP <strong>SHALL</strong> gain consent from the applicant prior to initiating a recorded session.</li>
       <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
     </ol>
   </li>
-  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to safely flag events for potential fraud.</li>
+  <li>The CSP <strong>SHALL</strong> implement injection protection and modified media controls, as defined in <a href="/800-63-4/sp800-63a/ial-general/#DigInject">Sec. 3.14</a>.</li>
+  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to flag events for potential fraud.</li>
 </ol>
-<h3 id="onsite-unattended-requirements-devices--kiosks" data-section="4">
+<h3 id="IAL1OnsiteAttended" data-section="4">
   
   
-    Onsite Unattended Requirements (Devices &amp; Kiosks) <a href="#onsite-unattended-requirements-devices--kiosks" class="header-link"><i class="fa fa-link"></i></a>
+    On-Site Attended Requirements <a href="#IAL1OnsiteAttended" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h3>
     
 
 <ol>
-  <li>All devices <strong>SHALL</strong> be safeguarded from tampering through either observation by CSP representatives or through physical and digital tamper prevention features.</li>
-  <li>All devices <strong>SHALL</strong> be protected by appropriate baseline security features comparable to FISMA Moderate controls – including Malware Protection, Admin Specific Access Controls, and Software Update processes.</li>
-  <li>All devices <strong>SHALL</strong> be inspected periodically by trained technicians to deter tampering, modification, or damage.</li>
-</ol>
-<h3 id="initial-authenticator-binding" data-section="4">
-  
-  
-    Initial Authenticator Binding <a href="#initial-authenticator-binding" class="header-link"><i class="fa fa-link"></i></a>
-  
-  
-</h3>
-    
-
-<p>Upon the successful completion of the identity proofing process, a unique subscriber account is established and maintained for the applicant (now subscriber) in the CSP’s identity system. One or more authenticators can be associated (bound) to the subscriber’s account, either at the time of identity proofing or at a later time. See <a href="/800-63-4/sp800-63a/accounts/#accounts">Sec. 5</a> for more information about subscriber accounts.</p>
-
-<ol>
-  <li>The CSP <strong>SHALL</strong> provide the ability for the applicant to bind an authenticator using one of the following methods:
+  <li>The CSP <strong>SHALL</strong> provide a physical setting in which on-site identity proofing sessions are conducted.</li>
+  <li>All devices <strong>SHALL</strong> be protected by appropriate baseline security features comparable to FISMA moderate controls, including malware protection, administrator-specific access controls, and software update processes.</li>
+  <li>CSP proofing agents <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the on-site session.</li>
+  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.3.1</a>. If the CSP records a video session, the following additional requirements apply:
     <ol>
-      <li>The remote enrollment of a subscriber-provided authenticator, consistent with the requirements for the authenticator type as defined in <a href="/800-63-4/sp800-63b/events/#bind-subscriber-authenticator" latex-href="#ref-SP800-63B">Sec. 4.1.3 of [SP800-63B]</a>.</li>
-      <li>Distribution of a physical authenticator to a validated address of record.</li>
-      <li>Distribution or onsite enrollment of an authenticator.</li>
+      <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> gain consent from the applicant prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
     </ol>
   </li>
-  <li>Where authenticators are bound outside of a single protected session with the user, the CSP <strong>SHALL</strong> confirm the presence of the intended subscriber through one of the following methods:
+  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to covertly flag events for potential fraud.</li>
+</ol>
+<h3 id="on-site-unattended-requirements" data-section="4">
+  
+  
+    On-Site Unattended Requirements <a href="#on-site-unattended-requirements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<ol>
+  <li>All devices <strong>SHALL</strong> be safeguarded from tampering through observation by CSP representatives and/or physical and digital tamper prevention features.</li>
+  <li>All devices <strong>SHALL</strong> be protected by appropriate baseline security features comparable to FISMA moderate controls, including malware protection, administrator-specific access controls, and software update processes.</li>
+  <li>All devices <strong>SHALL</strong> be inspected periodically by trained technicians to deter tampering, modification, or damage.</li>
+  <li>CSPs <strong>MAY</strong> record and maintain video recordings of on-site unattended identity proofing sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.3.1</a>. If the CSP records a video session, the following additional requirements apply:
     <ol>
-      <li>Return of an confirmation code, or</li>
-      <li>Comparison against a biometric collected at the time of proofing.</li>
+      <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> gain consent from the applicant prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
     </ol>
   </li>
 </ol>
@@ -593,7 +571,33 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>Upon the successful completion of identity proofing at IAL1, the CSP <strong>SHALL</strong> send a notification of proofing to a validated address for the applicant, as specified in <a href="/800-63-4/sp800-63a/ial-general/#ProofingNotifs">Sec. 3.1.10</a>.</p>
+<p>Upon the successful completion of identity proofing at IAL1, the CSP <strong>SHALL</strong> send a notification of proofing to a validated address for the applicant, as specified in <a href="/800-63-4/sp800-63a/ial-general/#ProofingNotifs">Sec. 3.10</a>.</p>
+<h3 id="initial-authenticator-binding" data-section="4">
+  
+  
+    Initial Authenticator Binding <a href="#initial-authenticator-binding" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Once a unique subscriber account is established for the applicant (now subscriber) in the CSP’s identity system, one or more authenticators can be associated (i.e., bound) to the subscriber’s account. To minimize the need for account recovery, CSPs <strong>SHOULD</strong> encourage subscribers to bind at least two separate means of authentication. See <a href="/800-63-4/sp800-63a/accounts/#accounts">Sec. 5</a> for more information about subscriber accounts and <a href="/800-63-4/sp800-63b/events/#bind-subscriber-authenticator" latex-href="#ref-SP800-63B">Sec. 4.1.2.1 of [SP800-63B]</a> for more information on binding authenticators.</p>
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> provide the ability for the applicant to bind an authenticator using one of the following methods:
+    <ol>
+      <li>Remote enrollment of a subscriber-provided authenticator consistent with the requirements for the authenticator type, as defined in <a href="/800-63-4/sp800-63b/events/#bind-subscriber-authenticator" latex-href="#ref-SP800-63B">Sec. 4.1.3 of [SP800-63B]</a></li>
+      <li>Distribution of a physical authenticator to a validated address</li>
+      <li>Distribution or on-site enrollment of an authenticator</li>
+    </ol>
+  </li>
+  <li>If authenticators are bound outside of a single protected session with the user, the CSP <strong>SHALL</strong> confirm the presence of the intended subscriber through one of the following methods:
+    <ol>
+      <li>Return of a continuation code</li>
+      <li>Comparison against a biometric collected at the time of proofing</li>
+    </ol>
+  </li>
+</ol>
 <h2 id="IAL2" data-section="4">
   
   
@@ -603,7 +607,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h2>
     
 
-<p>IAL2 identity proofing includes additional evidence, validation, and verification requirements in order to provide increased mitigation against impersonation attacks and other identity proofing errors relative to IAL1. IAL2 can be achieved through a number of different types of proofing (e.g., remote unattended, remote attended, etc.) and identity verification at IAL2 can be accomplished with or without the use of biometrics. To provide clear options to achieving IAL2, this section presents three different pathways to achieving alignment with IAL2 outcomes and requirements: IAL2 Verification - Non-Biometric Pathway; IAL2 Verification - Biometric Pathway; and IAL2 Verification - Digital Evidence Pathway. These different options do not imply different security or assurance outcomes; instead they present requirements in a manner that allows for clear selection of non-biometric methods that can be used to achieve IAL2.</p>
+<p>IAL2 identity proofing includes additional evidence, validation, and verification requirements to better mitigate impersonation attacks and other identity proofing errors relative to IAL1. IAL2 can be achieved through different types of identity proofing (e.g., remote unattended, remote attended), and identity verification at IAL2 can be accomplished with or without the use of biometrics. This section presents three different pathways to align with IAL2 outcomes and requirements: IAL2 Verification — Non-Biometric Pathway, IAL2 Verification — Biometric Pathway, and IAL2 Verification — Digital Evidence Pathway.</p>
 <h3 id="proofing-types-1" data-section="4">
   
   
@@ -614,10 +618,8 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <ol>
-  <li>Identity proofing at IAL2 <strong>MAY</strong> be delivered through any proofing type, as described in <a href="/800-63-4/sp800-63a/proofing/#ProofingTypes">Sec. 2.1.3</a>.</li>
-  <li>CSPs <strong>SHALL</strong> offer Unattended Remote identity proofing as an option.</li>
-  <li>CSPs <strong>SHALL</strong> offer at least one method of Attended (Remote or Onsite) identity proofing as an option.</li>
-  <li>CSPs <strong>MAY</strong> combine elements of different proofing types to create hybrid processes. For example, a CSP might leverage remote unattended identity proofing validation processes in advance of a remote attended session where verification will take place. If a CSP employs a hybrid process, it <strong>SHALL</strong> document how the process satisfies the requirements associated with the associated proofing types.</li>
+  <li>IAL2 identity proofing <strong>MAY</strong> be delivered through any identity proofing type, as described in <a href="/800-63-4/sp800-63a/proofing/#ProofingTypes">Sec. 2.1.3</a>.</li>
+  <li>CSPs <strong>MAY</strong> combine identity proofing types and their stated requirements to create hybrid processes. For example, a CSP might leverage remote unattended identity proofing validation processes in advance of a remote attended session where the verification will take place. If such steps are combined, CSPs <strong>SHALL</strong> document their hybrid process and state how the applicable requirements for each of the employed proofing types are met.</li>
 </ol>
 <h3 id="ial2-evidence-collection" data-section="4">
   
@@ -628,11 +630,12 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>For all types of proofing the CSP <strong>SHALL</strong> collect:</p>
+<p>For identity proofing at IAL2, the CSP <strong>SHALL</strong> collect:</p>
 
 <ol>
-  <li>One piece of FAIR Evidence and one piece of STRONG; or</li>
-  <li>One piece of SUPERIOR.</li>
+  <li>One piece of FAIR evidence and one piece of STRONG evidence or</li>
+  <li>Two pieces of STRONG evidence or</li>
+  <li>One piece of SUPERIOR evidence.</li>
 </ol>
 <h3 id="ial2-attribute-collection" data-section="4">
   
@@ -643,7 +646,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>Same as IAL1</p>
+<p>The CSP <strong>SHALL</strong> collect all core attributes, including at least one government identifier. Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all of the attributes that the CSP considers to be core attributes, it <strong>MAY</strong> collect attributes that are self-asserted by the applicant.</p>
 <h3 id="ial2-evidence-validation" data-section="4">
   
   
@@ -654,15 +657,15 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <ol>
-  <li>Each piece of FAIR or STRONG evidence presented <strong>SHALL</strong> be validated using one of the following techniques.
+  <li>Each piece of FAIR or STRONG evidence that is presented <strong>SHALL</strong> be validated using one of the following techniques:
     <ol>
-      <li>Confirming the authenticity of digital evidence through interrogation of digital security features (e.g., signatures on assertions or data).</li>
-      <li>Confirming the authenticity of physical evidence using automated scanning technology able to detect physical security features.</li>
-      <li>Confirming the integrity of physical security features of presented evidence through visual inspection by a proofing agent using real-time or asynchronous processes (e.g., offline manual review).</li>
-      <li>Confirming the integrity of physical security features through physical and tactile inspection of security features by a proofing agent at an onsite location.</li>
+      <li>Confirming the authenticity of the digital evidence by interrogating the digital security features (e.g., signatures on assertions or data)</li>
+      <li>Confirming the authenticity of the physical evidence using automated scanning technology that can detect physical security features</li>
+      <li>Confirming the integrity of any physical security features through a visual inspection by a proofing agent using a real-time or asynchronous process (e.g., offline manual review)</li>
+      <li>Confirming the integrity of any physical security features through physical and tactile inspection by a proofing agent at an on-site location</li>
     </ol>
   </li>
-  <li>Each Piece of SUPERIOR evidence <strong>SHALL</strong> be validated through cryptographic verification of the evidence contents and the issuing source, including digital signature verification and the validation of any trust chain back to a trust anchor. SUPERIOR evidence unable to be validated using cryptographic verification <strong>SHALL</strong> be considered STRONG evidence and validated consistent with the requirements above.</li>
+  <li>Each piece of SUPERIOR evidence <strong>SHALL</strong> be validated through the cryptographic verification of the evidence contents and the issuing source, including digital signature verification and the validation of any trust chain back to a trust anchor. Any piece of SUPERIOR evidence that cannot be validated using this method <strong>MAY</strong> be considered STRONG evidence if it can be validated by using one of the techniques provided above.</li>
 </ol>
 <h3 id="ial2-attribute-validation" data-section="4">
   
@@ -676,12 +679,12 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 <ol>
   <li>The CSP <strong>SHALL</strong> validate all core attributes by either:
     <ol>
-      <li>Comparing the government identifier and core attributes against an authoritative or credible source to determine accuracy; or</li>
-      <li>Validating the accuracy of digitally signed attributes contained on SUPERIOR evidence through the public key of the issuing source.</li>
+      <li>Comparing the government identifier and other core attributes against an authoritative or credible source to determine accuracy</li>
+      <li>Validating the accuracy of digitally signed attributes that are contained on SUPERIOR evidence through the public key of the issuing source</li>
     </ol>
   </li>
-  <li>CSPs <strong>SHOULD</strong> correlate the attributes collected from evidence, self-assertion, and as presented by credible and authoritative sources for consistency.</li>
-  <li>CSPs <strong>SHOULD</strong> validate the reference numbers of presented identity evidence if available.</li>
+  <li>CSPs <strong>SHOULD</strong> evaluate attributes obtained from different sources (e.g., presented evidence, self-asserted, authoritative or credible sources) for consistency.</li>
+  <li>CSPs <strong>SHOULD</strong> validate any reference numbers on the presented identity evidence, if available.</li>
 </ol>
 <h3 id="ial2-verification" data-section="4">
   
@@ -693,120 +696,161 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <p>Verification pathways <strong>SHOULD</strong> be implemented consistent with relevant policy and be responsive to the use cases, populations, and threat environment of the online service being protected. CSPs <strong>SHOULD</strong> deploy more than one pathway to IAL2 verification and <strong>MAY</strong> combine pathways in order to achieve desired outcomes.</p>
-<h4 id="ial2-verification---non-biometric-pathway" data-section="4">
+
+<p>CSPs that offer multiple verification pathways <strong>SHALL</strong> record in the subscriber record which pathways were followed to achieve IAL2 and <strong>SHALL</strong> make that information available to RPs in the assertion, API, or as part of their trust agreement.  When the Non-Biometric Pathway is used, the CSP <strong>SHALL</strong> additionally record whether a mailed confirmation code or a visual comparison of the applicant against evidence was used for verification.</p>
+<h4 id="ial2-verification--non-biometric-pathway" data-section="4">
   
   
-    IAL2 Verification - Non-Biometric Pathway <a href="#ial2-verification---non-biometric-pathway" class="header-link"><i class="fa fa-link"></i></a>
+    IAL2 Verification — Non-Biometric Pathway <a href="#ial2-verification--non-biometric-pathway" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h4>
     
 
-<p>The IAL2 Non-Biometric Pathway provides verification methods that do not use automated comparison of biometric samples provided by the applicant. Non-biometric processes will often still include biometric data being collected and verified - for example, through a visual comparison performed by a proofing agent and images contained on identity evidence - but comparisons are not done through automated means. Additional verification methods that may not require the use of automated biometric comparison are also included in the IAL2 Verification - Digital Evidence Pathway requirements specified in <a href="/800-63-4/sp800-63a/ial/#dig-evidence-pathway">Sec. 4.2.6.2</a>.</p>
+<p>The IAL2 Non-Biometric Pathway provides verification methods that do not use an automated comparison of biometric samples provided by the applicant. This pathway can still involve the collection and verification of biometric data (e.g., visual comparison to a facial image contained on identity evidence performed by a proofing agent), but such comparisons are done through manual rather than automated means. Additional verification methods that do not require the use of automated biometric comparison are also included in the Digital Evidence Pathway requirements specified in <a href="/800-63-4/sp800-63a/ial/#dig-evidence-pathway">Sec. 4.2.6.2</a>. If provided as an option at IAL2, CSPs <strong>SHALL</strong> communicate their use of the Non-Biometric Pathway to all RPs that use their identity service.</p>
 
 <ol>
-  <li>The CSP <strong>SHALL</strong> verify the applicant’s ownership of all presented identity evidence.</li>
+  <li>For remote attended, remote unattended, and on-site unattended identity proofing, the CSP <strong>SHALL</strong> verify the applicant’s ownership of all pieces of presented identity evidence. For on-site attended identity proofing, the CSP <strong>SHALL</strong> verify the applicant’s ownership of the strongest piece of presented identity evidence.</li>
   <li>Approved non-biometric methods for verifying FAIR evidence at IAL2 include:
     <ol>
-      <li>Confirming the applicant’s ability to return a confirmation code delivered to a validated address associated with the evidence (e.g., postal address, email address, phone number)</li>
-      <li>Visually comparing the applicant’s facial image to a facial portrait on evidence, or in records associated with the evidence, during either an onsite attended session (in-person with a proofing agent), a remote attended session (live video with a proofing agent), or an asynchronous process (i.e., visual comparison made by a proofing agent at a different time)</li>
+      <li>Confirming the applicant’s ability to return a confirmation code delivered to a validated address associated with the evidence (e.g., postal address, phone number)</li>
+      <li>Visually comparing the applicant’s facial image to a facial portrait on the presented evidence (e.g., student or employee ID card) or in records associated with the evidence during an on-site attended session (i.e., in-person with a proofing agent), a remote attended session (i.e., live video with a proofing agent), or an asynchronous process (i.e., visual comparison made by a proofing agent at a different time)</li>
     </ol>
   </li>
   <li>Approved non-biometric methods for verifying STRONG and SUPERIOR evidence at IAL2 include:
     <ol>
-      <li>Confirming the applicant’s ability to return a confirmation code delivered to a physical address (i.e., postal address) that was obtained from the evidence and was validated with an authoritative source</li>
-      <li>Visually comparing the applicant’s facial image to a facial portrait on evidence, or in records associated with the evidence, during either an onsite attended session (in-person with a proofing agent), a remote attended session (live video with a proofing agent), or an asynchronous process (i.e., visual comparison made by a proofing agent at a different time)</li>
+      <li>Confirming the applicant’s ability to return a confirmation code delivered to a physical address (i.e., postal address) that was obtained from the evidence and validated with an authoritative source</li>
+      <li>Visually comparing the applicant’s facial image to a facial portrait on the presented evidence or in records associated with the evidence during an on-site attended session (i.e., in-person with a proofing agent), a remote attended session (i.e., live video with a proofing agent), or an asynchronous process (i.e., visual comparison made by a proofing agent at a different time). If the comparison is performed asynchronously at a later time, the CSP <strong>SHALL</strong> implement PAD and passive or active document presence checks to increase confidence that both the live applicant and physical documents are present during the captured identity proofing event.</li>
     </ol>
   </li>
 </ol>
 
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
+<blockquote>
+  <p>Delivering a confirmation code to a physical address combined with the requirement to validate the address with an authoritative source provides reasonable deterrence against scaled, high-volume attacks on identity proofing processes and substantially impacts the time-to-value for attackers. For this reason, mailed confirmation codes are a viable option for identity proofing at IAL2 when biometrics or visual comparisons fail or alternative means are required (e.g., due to a subscriber’s limited access to technology or services). Such delivery methods remain vulnerable to interception by close associates and family members and to other schemes (e.g., mail-forwarding fraud). Organizations that assess a high likelihood and impact of such attacks should offer other methods of verification or apply additional mitigating controls.</p>
+</blockquote>
 <h4 id="dig-evidence-pathway" data-section="4">
   
   
-    IAL2 Verification - Digital Evidence Pathway <a href="#dig-evidence-pathway" class="header-link"><i class="fa fa-link"></i></a>
+    IAL2 Verification — Digital Evidence Pathway <a href="#dig-evidence-pathway" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h4>
     
 
-<p>The IAL2 Digital Evidence Pathway provides a means of allowing individuals to make use of digital forms of evidence, such as digital credentials (sometimes referred to as <em>digital identity documents</em>) or digital accounts as part of the verification process. This pathway achieves verification by confirming the individual’s ability to access evidence through digital means.</p>
+<p>The IAL2 Digital Evidence Pathway allows individuals to use digital forms of evidence as part of the verification process, such as digital credentials (sometimes referred to as <em>digital identity documents</em>) or digital accounts.</p>
 
 <ol>
-  <li>The CSP <strong>SHALL</strong> verify the applicant’s ownership of all pieces of presented identity evidence.</li>
+  <li>For remote attended, remote unattended, and on-site unattended identity proofing, the CSP <strong>SHALL</strong> verify the applicant’s ownership of all pieces of presented identity evidence. For on-site attended identity proofing, the CSP <strong>SHALL</strong> verify the applicant’s ownership of the strongest piece of presented identity evidence.</li>
   <li>Approved digital evidence verification methods for FAIR evidence at IAL2 include:
     <ol>
-      <li>Confirming the applicant’s ability to return a micro-transaction value delivered to a validated account (e.g., a checking account)</li>
-      <li>Confirming the applicant’s ability to return a confirmation code delivered to a validated digital address associated with the digital evidence (e.g., MNO/Phone account)</li>
+      <li>Confirming the applicant’s ability to return a microtransaction value delivered to a validated account (e.g., checking account owned by the applicant that has been validated by an authoritative or credible source)</li>
+      <li>Confirming the applicant’s ability to return a confirmation code delivered to a validated digital address associated with the digital evidence (e.g., MNO/phone account)</li>
       <li>Confirming the applicant’s ability to successfully complete an authentication and federation protocol equivalent to AAL2/FAL2 to access an account related to the identity evidence</li>
     </ol>
   </li>
-  <li>Approved digital evidence verification methods for STRONG evidence at IAL2 include:
-    <ol>
-      <li>Confirming the applicant’s ability to successfully complete an authentication and federation protocol equivalent to AAL2/FAL2, or higher, to access an account related to the identity evidence</li>
-    </ol>
-  </li>
-  <li>Approved digital evidence verification methods for SUPERIOR evidence at IAL2 include:
-    <ol>
-      <li>Confirming the applicant’s ability to successfully complete an authentication and federation protocol equivalent to AAL3/FAL2, or higher, to access an account related to the identity evidence</li>
-    </ol>
-  </li>
+  <li>Approved digital evidence verification methods for STRONG evidence at IAL2 involve confirming the applicant’s ability to successfully complete an authentication and federation protocol equivalent to AAL2/FAL2 or higher to access an account related to the identity evidence.</li>
+  <li>Approved digital evidence verification methods for SUPERIOR evidence at IAL2 include confirming the applicant’s possession of the evidence through the use of a local activation factor and the presentation of a cryptographically verifiable attribute bundle.</li>
 </ol>
-<h4 id="ial2-verification---biometric-pathway" data-section="4">
+
+<blockquote>
+  <p>This verification method is viable for SUPERIOR evidence that allows for local authentication events, such as subscriber-controlled wallets and PKI credentials on smart cards. SUPERIOR evidence that does not support these functions (e.g., ePassports) can still be used but must be verified through one of the other pathways.</p>
+</blockquote>
+<h4 id="ial2-verification--biometric-pathway" data-section="4">
   
   
-    IAL2 Verification - Biometric Pathway <a href="#ial2-verification---biometric-pathway" class="header-link"><i class="fa fa-link"></i></a>
+    IAL2 Verification — Biometric Pathway <a href="#ial2-verification--biometric-pathway" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h4>
     
 
-<p>The IAL2 Biometric Pathway provides verification methods that support automated comparison of biometric samples provided by the applicant.</p>
+<p>The IAL2 Biometric Pathway supports the automated comparison of biometric samples provided by the applicant.</p>
 
 <ol>
-  <li>The CSP <strong>SHALL</strong> verify the applicant’s ownership of all pieces of presented identity evidence.</li>
-  <li>Approved biometric methods for verifying FAIR evidence at IAL2 include:
+  <li>For remote attended, remote unattended, and on-site unattended identity proofing, the CSP <strong>SHALL</strong> verify the applicant’s ownership of all pieces of presented identity evidence. For on-site attended identity proofing, the CSP <strong>SHALL</strong> verify the applicant’s ownership of the strongest piece of presented identity evidence.</li>
+  <li>Approved methods for verifying FAIR, STRONG, and SUPERIOR evidence for use in the IAL2 Biometric Pathway include:
     <ol>
-      <li>Comparing the applicant’s facial image to a facial portrait on evidence via an automated comparison</li>
-    </ol>
-  </li>
-  <li>Approved methods for verifying STRONG and SUPERIOR evidence for use in the IAL2 Biometric Pathway include:
-    <ol>
-      <li>Comparing the applicant’s facial image to a facial portrait on evidence via an automated comparison</li>
-      <li>Comparing, via automated means, a non-facial portrait biometric stored on identity evidence, or in-records associated with the evidence, to a live sample provided by the applicant</li>
+      <li>Using automated means to compare a facial image represented on or stored in the identity evidence or in records associated with the evidence to a live sample provided by the applicant</li>
+      <li>Using automated means to compare a biometric characteristic other than a facial image stored on the identity evidence or in records associated with the evidence to a live sample provided by the applicant</li>
     </ol>
   </li>
 </ol>
-<h3 id="remote-attended-requirements-1" data-section="4">
+<h3 id="remote-unattended-requirements-1" data-section="4">
   
   
-    Remote Attended Requirements <a href="#remote-attended-requirements-1" class="header-link"><i class="fa fa-link"></i></a>
-  
-  
-</h3>
-    
-
-<p>Same as IAL1.</p>
-<h3 id="onsite-attended-requirements-1" data-section="4">
-  
-  
-    Onsite Attended Requirements <a href="#onsite-attended-requirements-1" class="header-link"><i class="fa fa-link"></i></a>
-  
-  
-</h3>
-    
-<p>Same as IAL1.</p>
-<h3 id="onsite-unattended-requirements-devices--kiosks-1" data-section="4">
-  
-  
-    Onsite Unattended Requirements (Devices &amp; Kiosks) <a href="#onsite-unattended-requirements-devices--kiosks-1" class="header-link"><i class="fa fa-link"></i></a>
+    Remote Unattended Requirements <a href="#remote-unattended-requirements-1" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h3>
     
 
-<p>Same as IAL1.</p>
+<p>There are no additional requirements for remote unattended identity proofing beyond the requirements specified in Sec. 2, 3, and 4.</p>
+<h3 id="remote-attended-requirements" data-section="4">
+  
+  
+    Remote Attended Requirements <a href="#remote-attended-requirements" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<ol>
+  <li>During the video session, the applicant <strong>SHALL</strong> remain in view of the proofing agent during each step of the proofing process.</li>
+  <li>The video quality <strong>SHALL</strong> be sufficient to support the necessary steps in the validation and verification processes, such as inspecting evidence and comparing the user to the evidence.</li>
+  <li>The proofing agent <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the recorded session.</li>
+  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.3.1</a>. If the CSP records a video session, the following further requirements apply:
+    <ol>
+      <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> gain consent from the applicant prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
+    </ol>
+  </li>
+  <li>The CSP <strong>SHALL</strong> implement injection protection and modified media controls, as defined in <a href="/800-63-4/sp800-63a/ial-general/#DigInject">Sec. 3.14</a>.</li>
+  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to flag events for potential fraud.</li>
+</ol>
+<h3 id="IAL2OnsiteAttended" data-section="4">
+  
+  
+    On-Site Attended Requirements <a href="#IAL2OnsiteAttended" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> provide a physical setting in which on-site identity proofing sessions are conducted.</li>
+  <li>All devices <strong>SHALL</strong> be protected by appropriate baseline security features comparable to FISMA moderate controls, including malware protection, administrator-specific access controls, and software update processes.</li>
+  <li>CSP proofing agents <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the on-site session.</li>
+  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.3.1</a>. If the CSP records a video session, the following additional requirements apply:
+    <ol>
+      <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> gain consent from the applicant prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
+    </ol>
+  </li>
+  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to safely flag events for potential fraud.</li>
+</ol>
+<h3 id="on-site-unattended-requirements-1" data-section="4">
+  
+  
+    On-Site Unattended Requirements <a href="#on-site-unattended-requirements-1" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<ol>
+  <li>All devices <strong>SHALL</strong> be safeguarded from tampering through observation by CSP representatives and/or physical and digital tamper prevention features.</li>
+  <li>All devices <strong>SHALL</strong> be protected by appropriate baseline security features comparable to FISMA moderate controls, including malware protection, administrator-specific access controls, and software update processes.</li>
+  <li>All devices <strong>SHALL</strong> be inspected periodically by trained technicians to deter tampering, modification, or damage.</li>
+  <li>CSPs <strong>MAY</strong> record and maintain video recordings of on-site unattended identity proofing sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="3_ialgen#PrivRiskAssess">Sec. 3.3.1</a>. If the CSP records a video session, the following additional requirements apply:
+    <ol>
+      <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> gain consent from the applicant prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
+    </ol>
+  </li>
+</ol>
 <h3 id="notification-of-proofing-1" data-section="4">
   
   
@@ -816,7 +860,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>Same as IAL1.</p>
+<p>Upon the successful completion of identity proofing at IAL2, the CSP <strong>SHALL</strong> send a notification of proofing to a validated address for the applicant, as specified in <a href="/800-63-4/sp800-63a/ial-general/#ProofingNotifs">Sec. 3.10</a>. CSPs <strong>SHOULD</strong> send the notification of proofing to the applicant’s postal address.</p>
 <h3 id="initial-authenticator-binding-1" data-section="4">
   
   
@@ -826,7 +870,23 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>Same as IAL 1.</p>
+<p>Once a unique subscriber account is established for the applicant (now subscriber) in the CSP’s identity system, one or more authenticators can be associated (i.e., bound) to the subscriber’s account. To minimize the need for account recovery, CSPs <strong>SHOULD</strong> encourage subscribers to bind at least two separate means of authentication. See <a href="/800-63-4/sp800-63a/accounts/#accounts">Sec. 5</a> for more information about subscriber accounts and <a href="/800-63-4/sp800-63b/events/#bind-subscriber-authenticator" latex-href="#ref-SP800-63B">Sec. 4.1.2.1 of [SP800-63B]</a> for more information on binding authenticators.</p>
+
+<ol>
+  <li>The CSP <strong>SHALL</strong> provide the ability for the applicant to bind an authenticator using one of the following methods:
+    <ol>
+      <li>Remote enrollment of a subscriber-provided authenticator consistent with the requirements for the authenticator type, as defined in <a href="/800-63-4/sp800-63b/events/#bind-subscriber-authenticator" latex-href="#ref-SP800-63B">Sec. 4.1.3 of [SP800-63B]</a></li>
+      <li>Distribution of a physical authenticator to a validated address</li>
+      <li>Distribution or on-site enrollment of an authenticator</li>
+    </ol>
+  </li>
+  <li>If authenticators are bound outside of a single protected session with the user, the CSP <strong>SHALL</strong> confirm the presence of the intended subscriber through one of the following methods:
+    <ol>
+      <li>Return of a continuation code</li>
+      <li>Comparison against a biometric collected at the time of proofing</li>
+    </ol>
+  </li>
+</ol>
 <h2 id="IAL3" data-section="4">
   
   
@@ -836,7 +896,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h2>
     
 
-<p>IAL3 adds additional rigor to the steps required at IAL2 and is subject to additional and specific processes (including the use of biometric information comparison, collection, and retention) to further protect the identity and RP from impersonation and other forms of identity fraud. In addition, identity proofing at IAL3 must be attended by a CSP proofing agent, as described in <a href="/800-63-4/sp800-63a/proofing/#ProofingRoles">Sec. 2.1.2</a>.</p>
+<p>IAL3 adds additional rigor to the steps required at IAL2 and is subject to additional and specific processes, including the use of biometric information comparison, collection, and retention, to further protect the identity and RP from impersonation and other forms of identity fraud. In addition, identity proofing at IAL3 is performed onsite and attended by a proofing agent, as described in <a href="/800-63-4/sp800-63a/proofing/#ProofingRoles">Sec. 2.1.2</a>.</p>
 <h3 id="proofing-types-2" data-section="4">
   
   
@@ -846,7 +906,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>IAL 3 Identity Proofing <strong>SHALL</strong> only be delivered as Onsite Attended. The Proofing Agent <strong>MAY</strong> be collocated or attend the proofing session remotely via a CSP controlled kiosk or device.</p>
+<p>IAL3 identity proofing <strong>SHALL</strong> only be delivered as on-site attended. The proofing agent <strong>MAY</strong> be co-located with the applicant or attend the identity proofing session via a CSP-controlled kiosk or device.</p>
 <h3 id="ial3-evidence-collection" data-section="4">
   
   
@@ -856,13 +916,12 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
+<p>For identity proofing at IAL3, the CSP <strong>SHALL</strong> collect:</p>
+
 <ol>
-  <li>For all types of IAL 3 identity proofing the CSP <strong>SHALL</strong> collect either:
-    <ol>
-      <li>One piece of STRONG and one piece of FAIR (or better), or</li>
-      <li>One piece of SUPERIOR</li>
-    </ol>
-  </li>
+  <li>One piece of FAIR evidence and one piece of STRONG evidence or</li>
+  <li>Two pieces of STRONG evidence or</li>
+  <li>One piece of SUPERIOR evidence.</li>
 </ol>
 <h3 id="ial3-attribute-collection" data-section="4">
   
@@ -874,8 +933,8 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <ol>
-  <li>The CSP <strong>SHALL</strong> collect all core attributes. Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all the attributes that the CSP considers core attributes, it <strong>MAY</strong> collect attributes that are self-asserted by the applicant.</li>
-  <li>The CSP <strong>SHALL</strong> collect and retain a biometric sample from the applicant during the identity proofing process to support account recovery, non-repudiation, and establish a high level of confidence that the same participant is present in the proofing and issuance processes (if done separately). CSPs <strong>MAY</strong> choose to periodically re-enroll user biometrics based on the modalities they use and the likelihood that subscriber accounts will persist long enough to warrant such a refresh.</li>
+  <li>The CSP <strong>SHALL</strong> collect all core attributes, including at least one government identifier. Validated evidence is the preferred source of identity attributes. If the presented identity evidence does not provide all of the attributes that a CSP considers to be core attributes, the CSP <strong>MAY</strong> collect attributes that are self-asserted by the applicant.</li>
+  <li>The CSP <strong>SHALL</strong> collect and retain a biometric sample from the applicant during the identity proofing process to support account recovery and non-repudiation and to establish a high level of confidence that the same participant is present in the proofing and issuance processes, if done separately. CSPs <strong>MAY</strong> choose to periodically re-enroll user biometrics based on the modalities they use and the likelihood that subscriber accounts will persist long enough to warrant such a refresh.</li>
 </ol>
 <h3 id="ial3-evidence-validation" data-section="4">
   
@@ -887,15 +946,15 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <ol>
-  <li>Each piece of FAIR or STRONG evidence presented <strong>SHALL</strong> be validated using one of the following techniques.
+  <li>Each piece of FAIR or STRONG evidence that is presented <strong>SHALL</strong> be validated using one of the following techniques:
     <ol>
-      <li>Confirming the authenticity of digital evidence through interrogation of digital security features (e.g., signatures on assertions or data).</li>
-      <li>Confirming the authenticity of physical evidence using automated scanning technology able to detect physical security features.</li>
-      <li>Confirming the integrity of physical security features of presented evidence through physical inspection by a proofing agent using real-time or asynchronous processes (e.g., offline manual review).</li>
-      <li>Confirming the integrity of physical security features through physical and tactile inspection of security features by a proofing agent at an onsite location.</li>
+      <li>Confirming the authenticity of the digital evidence by interrogating the digital security features (e.g., signatures on assertions or data)</li>
+      <li>Confirming the authenticity of the physical evidence using automated scanning technology that can detect physical security features</li>
+      <li>Confirming the integrity of any physical security features through a visual inspection by a proofing agent using a real-time or asynchronous process (e.g., offline manual review)</li>
+      <li>Confirming the integrity of any physical security features through physical and tactile inspection by a proofing agent at an on-site location</li>
     </ol>
   </li>
-  <li>Each Piece of SUPERIOR evidence <strong>SHALL</strong> be validated through cryptographic verification of the evidence contents and the issuing source, including digital signature verification and the validation of any trust chain back to a trust anchor.</li>
+  <li>Each piece of SUPERIOR evidence <strong>SHALL</strong> be validated through the cryptographic verification of the evidence contents and the issuing source, including digital signature verification and the validation of any trust chain back to a trust anchor. Any piece of SUPERIOR evidence that cannot be validated using this method <strong>MAY</strong> be considered STRONG evidence if it can be validated by using one of the techniques provided above.</li>
 </ol>
 <h3 id="ial3-attribute-validation" data-section="4">
   
@@ -909,12 +968,12 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 <ol>
   <li>The CSP <strong>SHALL</strong> validate all core attributes by either:
     <ol>
-      <li>Comparing the core attributes against an authoritative or credible source to determine accuracy; or</li>
-      <li>Validating the accuracy of digitally signed attributes contained on SUPERIOR evidence through the public key of the issuing source.</li>
+      <li>Comparing the government identifier and other core attributes against an authoritative or credible source to determine accuracy or</li>
+      <li>Validating the accuracy of digitally signed attributes that are contained on SUPERIOR evidence through the public key of the issuing source</li>
     </ol>
   </li>
-  <li>CSPs <strong>SHOULD</strong> correlate the attributes collected from evidence, self-assertion, and as presented by credible and authoritative sources for consistency.</li>
-  <li>CSPs <strong>SHOULD</strong> validate the reference numbers of presented identity evidence if available.</li>
+  <li>CSPs <strong>SHOULD</strong> evaluate attributes obtained from different sources (e.g., presented evidence, self-asserted, authoritative or credible sources) for consistency.</li>
+  <li>CSPs <strong>SHOULD</strong> validate any reference numbers on the presented identity evidence, if available.</li>
 </ol>
 <h3 id="ial3-verification" data-section="4">
   
@@ -926,61 +985,59 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <ol>
-  <li>The CSP <strong>SHALL</strong> verify the applicants ownership of the strongest piece of evidence (STRONG or SUPERIOR) by one of the following methods:
+  <li>The CSP <strong>SHALL</strong> verify the applicant’s ownership of the strongest piece of evidence (STRONG or SUPERIOR) by one of the following methods:
     <ol>
-      <li>Confirming the applicant’s ability to successfully authenticate to a physical device or application (for example a mobile driver’s license) and comparing a digitally protected and transmitted facial portrait to the applicant.</li>
-      <li>Comparing the applicant’s facial image to the facial portrait on evidence via an automated comparison.</li>
-      <li>Visually comparing the applicant’s facial image to the facial portrait on evidence, either during an onsite attended session or a remote attended session (live video).</li>
-      <li>Comparing a stored biometric on identity evidence, or in authoritative records associated with the evidence, to a sample provided by the applicant.</li>
+      <li>Confirming the applicant’s ability to successfully authenticate to a physical device or application (e.g., a mobile driver’s license) and comparing a digitally protected and transmitted facial portrait to the applicant</li>
+      <li>Comparing the applicant’s facial image to the facial portrait on the presented evidence via an automated comparison</li>
+      <li>Visually comparing the applicant’s facial image to the facial portrait on the presented evidence during an on-site attended session or a remote attended session</li>
+      <li>Performing an automated comparison of a stored biometric on the identity evidence or in the authoritative records associated with the evidence to a sample provided by the applicant</li>
     </ol>
   </li>
 </ol>
-<h3 id="onsite-attended-requirements-locally-attended" data-section="4">
+<h3 id="LocallyAttended" data-section="4">
   
   
-    Onsite Attended Requirements (Locally Attended) <a href="#onsite-attended-requirements-locally-attended" class="header-link"><i class="fa fa-link"></i></a>
+    On-Site Attended Requirements — Colocated Agent <a href="#LocallyAttended" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h3>
     
 
 <ol>
-  <li>The CSP <strong>SHALL</strong> provide a secure, physical setting in which onsite identity proofing sessions are conducted.</li>
+  <li>The CSP <strong>SHALL</strong> provide a secure, physical setting in which on-site identity proofing sessions are conducted.</li>
   <li>The CSP <strong>SHALL</strong> provide sensors and capture devices for the collection of biometrics from the applicant.</li>
-  <li>The CSP <strong>SHALL</strong> have the proofing agent view the source of the collected biometric for the presence of any non-natural materials.</li>
+  <li>The CSP <strong>SHALL</strong> have the proofing agent view the source of the collected biometric for the presence of any non-natural materials (e.g., putty, glue).</li>
   <li>The CSP <strong>SHALL</strong> have the proofing agent collect the biometric samples in such a way that ensures the sample was collected from the applicant and no other source.</li>
-  <li>The CSP <strong>SHALL</strong> ensure all information systems and technology leveraged by proofing agents and trusted referees are protected consistent with FISMA Moderate or comparable levels of controls to include physical controls for the proofing facility.</li>
-  <li>CSP proofing agents <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the onsite session.</li>
-  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="/800-63-4/sp800-63a/ial-general/#PrivRiskAssess">Sec. 3.1.3.1</a>. If the CSP records session, the following further requirements apply:
+  <li>The CSP <strong>SHALL</strong> ensure that all information systems and technology leveraged by proofing agents and trusted referees are protected consistent with at least FISMA moderate or comparable levels of controls, including physical controls for the proofing facility.</li>
+  <li>CSP proofing agents <strong>SHALL</strong> be trained to identify signs of manipulation, coercion, or social engineering occurring during the on-site session.</li>
+  <li>CSPs <strong>MAY</strong> record and maintain video sessions for fraud prevention and prosecution purposes pursuant to a privacy risk assessment, as defined in <a href="/800-63-4/sp800-63a/ial-general/#PrivRiskAssess">Sec. 3.3.1</a>. If the CSP records a session, the following additional requirements apply:
     <ol>
       <li>The CSP <strong>SHALL</strong> notify the applicant of the recording prior to initiating a recorded session.</li>
-      <li>The CSP <strong>SHALL</strong> gain consent from the applicant to prior to initiating a recorded session.</li>
+      <li>The CSP <strong>SHALL</strong> gain consent from the applicant prior to initiating a recorded session.</li>
       <li>The CSP <strong>SHALL</strong> publish their retention schedule and deletion processes for all video records.</li>
     </ol>
   </li>
-  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to safely flag events for potential fraud.</li>
+  <li>The CSP <strong>SHALL</strong> provide proofing agents with a method or mechanism to discretely flag events or actions as potential fraud.</li>
 </ol>
-<h3 id="onsite-attended-requirements-remotely-attended---formerly-supervised-remote-identity-proofing" data-section="4">
+<h3 id="on-site-attended-requirements--kiosk-based" data-section="4">
   
   
-    Onsite Attended Requirements (Remotely Attended - Formerly Supervised Remote Identity Proofing) <a href="#onsite-attended-requirements-remotely-attended---formerly-supervised-remote-identity-proofing" class="header-link"><i class="fa fa-link"></i></a>
+    On-Site Attended Requirements — Kiosk-Based <a href="#on-site-attended-requirements--kiosk-based" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h3>
     
 
+<p>The CSP <strong>MAY</strong> offer a remote means of interacting with a proofing agent whereby the agent and the applicant are not co-located (i.e., in the same room). For example, applicants might interact with a CSP-controlled kiosk with the proofing agent participating remotely in the session over video. In such cases, the following requirements apply in addition to those provided for the on-site attended identity proofing in <a href="/800-63-4/sp800-63a/ial/#LocallyAttended">Sec. 4.3.7</a>. In previous versions of this document, this approach was referred to as <em>Supervised Remote Identity Proofing</em> (SRIP).</p>
+
 <ol>
-  <li>The CSP <strong>MAY</strong> offer a remote means of interacting with a proofing agent whereby the agent and the applicant do not have to be at the same facility. In this scenario, the following requirements apply:
-    <ol>
-      <li>The CSP <strong>SHALL</strong> monitor the entire identity proofing session through a high-resolution video transmission with the applicant.</li>
-      <li>The CSP <strong>SHALL</strong> have a live proofing agent participate remotely with the applicant for the evidence collection, evidence validation, and verification steps of the identity proofing process. Data entry of attributes for resolution and enrollment <strong>MAY</strong> be done without the presence of a live proofing agent.</li>
-      <li>The CSP <strong>SHALL</strong> require all actions taken by the applicant during the evidence collection, evidence validation, and verification steps to be clearly visible to the remote proofing agent.</li>
-      <li>The CSP <strong>SHALL</strong> require that all digital validation and verification of evidence (e.g., via chip or wireless technologies) be performed by integrated scanners and sensors (e.g., embedded fingerprint reader).</li>
-      <li>All devices used to support interaction between the proofing agent and the applicant<strong>SHALL</strong> be safeguarded from tampering through observation by CSP representatives or monitoring devices (e.g., cameras) and through physical and digital tamper prevention features.</li>
-      <li>All devices used to support interaction between the proofing agent and the applicant <strong>SHALL</strong> be protected by appropriate baseline security features comparable to FISMA Moderate controls, including malware protection, admin-specific access controls, and software update processes.</li>
-      <li>All devices used to support interaction between the proofing agent and the applicant <strong>SHALL</strong> be inspected periodically by trained technicians to deter tampering, modification, or damage.</li>
-    </ol>
-  </li>
+  <li>The CSP <strong>SHALL</strong> monitor the entire identity proofing session through a high-resolution video transmission with the applicant.</li>
+  <li>The CSP <strong>SHALL</strong> have a live proofing agent participate remotely with the applicant for the evidence collection, evidence validation, and verification steps of the identity proofing process. Data entry of attributes for resolution and enrollment <strong>MAY</strong> be done without the presence of a live proofing agent.</li>
+  <li>The CSP <strong>SHALL</strong> require all actions taken by the applicant during the evidence collection, evidence validation, and verification steps to be clearly visible to the remote proofing agent.</li>
+  <li>The CSP <strong>SHALL</strong> require that all digital validation and verification of evidence (e.g., via chip or wireless technologies) be performed by integrated scanners and sensors (e.g., embedded fingerprint reader).</li>
+  <li>All devices used to support interaction between the proofing agent and the applicant<strong>SHALL</strong> be safeguarded from tampering through observation by CSP representatives or monitoring devices (e.g., cameras) and through physical and digital tamper prevention features.</li>
+  <li>All devices used to support interaction between the proofing agent and the applicant <strong>SHALL</strong> be protected by appropriate baseline security features that are comparable to at least FISMA moderate controls, including malware protection, administrator-specific access controls, and software update processes.</li>
+  <li>All devices used to support interaction between the proofing agent and the applicant <strong>SHALL</strong> be inspected periodically by trained technicians to deter tampering, modification, or damage.</li>
 </ol>
 <h3 id="notification-of-proofing-2" data-section="4">
   
@@ -991,7 +1048,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h3>
     
 
-<p>Same as IAL1.</p>
+<p>Upon the successful completion of identity proofing at IAL3, the CSP <strong>SHALL</strong> send a notification of proofing to a validated address for the applicant, as specified in <a href="/800-63-4/sp800-63a/ial-general/#ProofingNotifs">Sec. 3.10</a>. CSPs <strong>SHOULD</strong> send the notification of proofing to the applicant’s postal address.</p>
 <h3 id="initial-authenticator-binding-2" data-section="4">
   
   
@@ -1002,13 +1059,9 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     
 
 <ol>
-  <li>The CSP <strong>SHALL</strong> distribute or enroll the applicant’s initial authenticator during an onsite attended interaction with a proofing agent.</li>
-  <li>If the CSP distributes or enrolls the initial authenticator outside of a single, protected session with the user, the CSP <strong>SHALL</strong> compare a biometric sample collected from the applicant to the one collected at the time of proofing, prior to issuance of the authenticator.</li>
-  <li>The CSP <strong>MAY</strong> request that the applicant bring the identity evidence used during the proofing process to the issuance event to further strengthen the process of binding the authenticators to the applicant.</li>
+  <li>The CSP <strong>SHALL</strong> distribute or enroll the subscriber’s initial authenticator during an on-site attended interaction with a proofing agent.</li>
+  <li>If the CSP distributes or enrolls the initial authenticator outside of a single authenticated protected session with the subscriber, the CSP <strong>SHALL</strong> compare a biometric sample collected from the subscriber to the one collected at the time of proofing prior to registration of the authenticator and <strong>MAY</strong> request that the subscriber bring the identity evidence used during the proofing process to further strengthen the process of binding the authenticator to the subscriber.</li>
 </ol>
-
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
 <h2 id="summary" data-section="4">
   
   
@@ -1017,13 +1070,14 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   
 </h2>
     
-<p><a href="/800-63-4/sp800-63a/ial/#table-1">Table 1</a> summarizes the requirements for each of the identity assurance levels:</p>
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63a/ial/#table-1" name="table-1">Table 1. IAL Requirements Summary</a></p>
+<p><a href="/800-63-4/sp800-63a/ial/#table-1">Table 1</a> summarizes the requirements for each of the identity assurance levels.</p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/ial/#table-1" name="table-1">Table 1. IAL requirements summary</a></p>
 
 <p></p>
 
-<table latex-table="1" latex-caption="IAL Requirements Summary" latex-columns="p@0.15\textwidth,p@0.25\textwidth,p@0.25\textwidth,p@0.25\textwidth">
+<table latex-table="1" latex-caption="IAL Requirements Summary" latex-longtable="true" latex-columns="p@0.15\textwidth,p@0.25\textwidth,p@0.25\textwidth,p@0.25\textwidth">
   <thead>
     <tr>
       <th style="text-align: left">Process</th>
@@ -1034,40 +1088,40 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">Proofing Types</td>
-      <td style="text-align: left">Remote Unattended <br /> Remote Attended <br /> Onsite Unattended <br /> Onsite Attended</td>
+      <td style="text-align: left"><strong>Proofing Types</strong></td>
+      <td style="text-align: left">Remote Unattended <br /> Remote Attended <br /> On-Site Unattended <br /> On-Site Attended</td>
       <td style="text-align: left">Same as IAL1</td>
-      <td style="text-align: left">Onsite Attended</td>
+      <td style="text-align: left">On-Site Attended</td>
     </tr>
     <tr>
-      <td style="text-align: left">Evidence Collection</td>
-      <td style="text-align: left"><em>Unattended:</em> <br /> –1 FAIR or <br /> –1 STRONG <br /> <em>Attended:</em> <br /> –1 FAIR w/ image or <br /> –1 STRONG</td>
-      <td style="text-align: left"><em>For all proofing types:</em> <br /> –1 FAIR and 1 STRONG or <br /> –1 SUPERIOR</td>
-      <td style="text-align: left">–1 STRONG + 1 FAIR or <br /> –1 SUPERIOR</td>
+      <td style="text-align: left"><strong>Evidence Collection</strong></td>
+      <td style="text-align: left"><em>Attended:</em> <br /> • 1 FAIR, or <br /> • 1 STRONG, or <br /> • 1 SUPERIOR <br /> <em>Unattended:</em> <br /> • 1 FAIR, or <br /> • 1 STRONG, or <br /> • 1 SUPERIOR</td>
+      <td style="text-align: left"><em>For all proofing types:</em> <br /> • 1 FAIR + 1 STRONG, or <br /> • 2 STRONG, or <br /> • 1 SUPERIOR</td>
+      <td style="text-align: left"><em>For all proofing types:</em> <br /> • 1 FAIR + 1 STRONG, or <br /> • 2 STRONG, or <br /> • 1 SUPERIOR</td>
     </tr>
     <tr>
-      <td style="text-align: left">Attribute Collection</td>
+      <td style="text-align: left"><strong>Attribute Collection</strong></td>
       <td style="text-align: left">All Core Attributes</td>
       <td style="text-align: left">All Core Attributes</td>
       <td style="text-align: left">All Core Attributes + Biometric Sample</td>
     </tr>
     <tr>
-      <td style="text-align: left">Evidence Validation</td>
-      <td style="text-align: left"><em>Physical Evidence:</em> <br /> –automated doc auth. <br /> –visual inspection <br /> <em>Digital Evidence:</em> <br /> –interrogation of digital security features</td>
-      <td style="text-align: left"><em>Physical Evidence:</em><br /> –automated doc. auth. <br /> –visual inspection <br /> –physical/tactile inspection <br /> <em>Digital Evidence:</em>  <br /> –interrogation of digital security features <br /> <em>SUPERIOR Evidence:</em>  <br /> –Dig. sig. verification</td>
-      <td style="text-align: left"><em>Physical Evidence:</em> <br /> –automated doc. auth. <br /> –physical inspection <br /> –physical/tactile inspection <br /> <em>Digital Evidence:</em> <br /> –interrogation of digital security features <br /> <em>SUPERIOR Evidence:</em><br /> –Dig. sig. verification</td>
+      <td style="text-align: left"><strong>Evidence Validation</strong></td>
+      <td style="text-align: left"><em>Physical Evidence:</em> <br /> • Automated document authentication <br /> • Visual inspection <br /> • Physical/tactile inspection <br /> <em>Digital Evidence:</em> <br /> • Interrogation of digital security features</td>
+      <td style="text-align: left">Same as IAL1, plus:<br /> <em>SUPERIOR Evidence:</em><br /> • Digital signature verification</td>
+      <td style="text-align: left">Same as IAL2</td>
     </tr>
     <tr>
-      <td style="text-align: left">Attribute Validation</td>
-      <td style="text-align: left">Confirmation of core attributes against authoritative or credible sources.</td>
-      <td style="text-align: left">Confirmation of core attributes against authoritative or credible sources. <br /> Confirmation of digitally signed attributes through signature verification.</td>
-      <td style="text-align: left"><br /> Confirmation of core attributes against authoritative or credible sources. <br /> Confirmation of digitally signed attributes through digital signature verification.</td>
+      <td style="text-align: left"><strong>Attribute Validation</strong></td>
+      <td style="text-align: left">• Confirmation of core attributes against authoritative or credible sources <br /> • Confirmation of digitally signed attributes through digital signature verification</td>
+      <td style="text-align: left">Same as IAL1</td>
+      <td style="text-align: left">Same as IAL2</td>
     </tr>
     <tr>
-      <td style="text-align: left">Verification</td>
-      <td style="text-align: left">Verify applicant’s ownership of either the FAIR evidence or the STRONG evidence per 4.1.6</td>
-      <td style="text-align: left">Verify applicant’s ownership of all presented evidence using methods provided in 4.2.6</td>
-      <td style="text-align: left">Verify applicant’s ownership of all presented evidence using methods provided in 4.3.6</td>
+      <td style="text-align: left"><strong>Verification</strong></td>
+      <td style="text-align: left">Verify applicant’s ownership of the FAIR, STRONG, or SUPERIOR evidence per <a href="/800-63-4/sp800-63a/ial/#ial1-verification">4.1.6</a></td>
+      <td style="text-align: left">Verify applicant’s ownership of all presented evidence using methods provided in <a href="/800-63-4/sp800-63a/ial/#ial2-verification">4.2.6</a></td>
+      <td style="text-align: left">Verify applicant’s ownership of all presented evidence using methods provided in <a href="/800-63-4/sp800-63a/ial/#ial3-verification">4.3.6</a></td>
     </tr>
   </tbody>
 </table>

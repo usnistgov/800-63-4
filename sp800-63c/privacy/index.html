@@ -140,20 +140,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63c/preface/">Preface</a></li>
                 
               
@@ -266,7 +252,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/usability/"><span class="section">8</span>Usability</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63c/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -280,21 +266,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/equity/"><span class="section">9</span>Equity</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">10</span>Examples</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">9</span>Examples</a></li>
                 
               
               
@@ -406,19 +378,21 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>Federation offers numerous benefits to RPs and subscribers, but it requires subscribers to have trust in the federation participants. <a href="/800-63-4/sp800-63c/Federation/#common">Sec. 3</a> and <a href="/800-63-4/sp800-63c/Federation/#ppi">Sec. 3.3.1</a> cover a number of technical requirements, the objective of which is to minimize privacy risks arising from increased capabilities to track and profile subscribers. For example, a subscriber using the same IdP to authenticate to multiple RPs allows the IdP to build a profile of subscriber transactions that would not have existed absent federation. The availability of such data makes it vulnerable to uses that may not be anticipated or desired by the subscriber and may inhibit subscriber adoption of federated services.</p>
+<p>Federation offers numerous benefits to RPs and subscribers, but it requires subscribers to have trust in the federation participants. <a href="/800-63-4/sp800-63c/Federation/#common">Section 3</a> and <a href="/800-63-4/sp800-63c/Federation/#ppi">Sec. 3.4.1</a> cover a number of technical requirements whose objective is to minimize privacy risks that arise from increased capabilities to track and profile subscribers. For example, a subscriber using the same IdP to authenticate to multiple RPs allows the IdP to build a profile of subscriber transactions that would not have existed absent federation. The availability of such data makes it vulnerable to uses that may not be anticipated or desired by the subscriber and may inhibit subscriber adoption of federated services.</p>
 
-<p><a href="/800-63-4/sp800-63c/Federation/#privacy-reqs">Section 3.9</a> requires IdPs to use measures to maintain the objectives of predictability (enabling reliable assumptions by individuals, owners, and operators about PII and its processing by an information system) and manageability (providing the capability for granular administration of PII, including alteration, deletion, and selective disclosure) commensurate with privacy risks that can arise from the processing of attributes for purposes other than those listed in <a href="/800-63-4/sp800-63c/Federation/#transmit-subscriber-info">Sec. 3.9.1</a>.</p>
+<p><a href="/800-63-4/sp800-63c/Federation/#privacy-reqs">Section 3.10</a> requires IdPs to use measures to maintain the objectives of predictability (i.e., enabling reliable assumptions by individuals, owners, and operators about personal information and its processing by an information system) and manageability (i.e., enabling the granular administration of personal information, including alteration, deletion, and selective disclosure) commensurate with privacy risks that can arise from the processing of attributes for purposes other than those listed in <a href="/800-63-4/sp800-63c/Federation/#transmit-subscriber-info">Sec. 3.10.1</a>.</p>
 
-<p>IdPs may have various business purposes for processing attributes, including providing non-identity services to subscribers. However, processing attributes for different purposes from the original collection purpose can create privacy risks when individuals are not expecting or comfortable with the additional processing. IdPs can determine appropriate measures commensurate with the privacy risk arising from the additional processing. For example, absent applicable law, regulation, or policy, it may not be necessary to get consent when processing attributes to provide non-identity services requested by subscribers, although notices may help subscribers maintain reliable assumptions about the processing (e.g., predictability). Other processing of attributes may carry different privacy risks that call for obtaining consent or allowing subscribers more control over the use or disclosure of specific attributes (manageability). Subscriber consent needs to be meaningful; therefore, when IdPs do use consent measures, they cannot make acceptance by the subscriber of additional uses a condition of providing the identity service.</p>
+<p>IdPs may have various business purposes for processing attributes, including providing non-identity services to subscribers. However, processing attributes for different purposes from the original collection purpose can create privacy risks when individuals do not expect or are not comfortable with the additional processing. IdPs can determine appropriate measures commensurate with the privacy risks that arise from the additional processing. For example, absent applicable laws, regulations, or policies, it may not be necessary to obtain consent when processing attributes to provide non-identity services requested by subscribers, although notices may help subscribers maintain reliable assumptions about the processing (i.e., predictability). Other processing of attributes may carry different privacy risks that call for obtaining consent or allowing subscribers more control over the use or disclosure of specific attributes (i.e., manageability). Subscriber consent needs to be meaningful. Therefore, when IdPs do use consent measures, they cannot make acceptance by the subscriber of additional uses a condition of providing the identity service.</p>
 
-<p>When holder-of-key assertions are used at FAL3, the same authenticator is usually used at both the IdP and RP. With authenticators that can fulfill this technical requirement, it is likely that the same authenticator would further be used at multiple RPs. Furthermore, an unrelated RP could use the same authenticator for direct authentication. All such RPs would potentially be able to collude and disclose the use of the same authenticator across all parties in order to effect tracking of the subscriber through the network. This is true even if per-provider identifiers are used, as the bound authenticator is recognizable apart from the assertion. Additionally, many authenticators suitable for holder-of-key assertions contain identity attributes which are sent apart from the assertion or an identity API. These additional attributes have to be covered by the privacy risk assessment.</p>
+<p>Consult the SAOP if there are questions about whether the proposed processing falls outside of the scope of the permitted processing or the appropriate privacy risk mitigation measures.</p>
 
-<p>Consult the SAOP if there are questions about whether the proposed processing falls outside the scope of the permitted processing or the appropriate privacy risk mitigation measures.</p>
+<p>When holder-of-key assertions are used at FAL3, the same authenticator is usually used at both the IdP and RP. With authenticators that can fulfill this technical requirement, it is likely that the same authenticator would further be used at multiple RPs. Furthermore, an unrelated RP could use the same authenticator for direct authentication. All such RPs would potentially be able to collude and disclose the use of the same authenticator across all parties in order to track the subscriber through the network. This is true even if per-provider identifiers are used, as the authenticator could be recognizable apart from the assertion. Additionally, many authenticators that are suitable for holder-of-key assertions contain identity attributes that are sent as part of the authenticator output separately from the assertion or an identity API. These additional attributes have to be covered by the privacy risk assessment, even if they are not in the federation protocol.</p>
 
-<p><a href="/800-63-4/sp800-63c/Federation/#privacy-reqs">Section 3.9</a> also encourages the use of technical measures to provide disassociability (enabling the processing of PII or events without association to individuals or devices beyond the operational requirements of the system) and prevent subscriber activity tracking and profiling <a href="/800-63-4/sp800-63c/references/#ref-NISTIR8062">[NISTIR8062]</a>. Technical measures, such as those outlined in <a href="/800-63-4/sp800-63c/Federation/#proxied">Sec. 3.2.3</a> for proxied federation and <a href="/800-63-4/sp800-63c/Federation/#ppi">Sec. 3.3.1</a> for pairwise pseudonymous identifiers, can increase the effectiveness of policies by making it more difficult to track or profile subscribers beyond operational requirements. However, even these measures have their limitations and tracking can still occur based on subscriber attributes, statistical demographics, and other kinds of information shared between the IdP and RP.</p>
+<p><a href="/800-63-4/sp800-63c/Federation/#privacy-reqs">Section 3.10</a> also encourages the use of technical measures to provide disassociability (i.e., enabling the processing of personal information or events without association to individuals or devices beyond the operational requirements of the system) and prevent subscriber activity tracking and profiling <a href="/800-63-4/sp800-63c/references/#ref-NISTIR8062">[NISTIR8062]</a>. Technical measures, such as those outlined in <a href="/800-63-4/sp800-63c/Federation/#proxied">Sec. 3.3.3</a> for proxied federation and <a href="/800-63-4/sp800-63c/Federation/#ppi">Sec. 3.4.1</a> for pairwise pseudonymous identifiers, can increase the effectiveness of policies by making it more difficult to track or profile subscribers beyond operational requirements. However, even these measures have their limitations, and tracking can still occur based on subscriber attributes, statistical demographics, and other kinds of information shared between the IdP and RP.</p>
 
-<p>In some use cases, especially at higher xALs, tracking the real-world identity of the subscriber is expected as a means of securing the system. It is the responsibility of the IdP and RP to inform and educate the subscriber about which pieces of information are transmitted, and allow the subscriber to review this information.</p>
+<p>Since attribute bundles are traceable to the issuing CSP, using this technology makes it possible to track subscribers across different wallets and RPs based on where their attributes are issued from. By grouping attribute bundle issuers into a single issuing authority, the risks of divulging the attribute source are lessened at the cost of obscuring the ultimate source of the attributes to the RP. Techniques such as zero-knowledge proofs and one-time-use attribute bundles can further enhance the privacy of attribute bundles.</p>
+
+<p>In some use cases, such as enterprise systems or services susceptible to fraud, tracking the real-world identity of the subscriber is expected as a means of securing the system, especially at higher IALs. It is the responsibility of the IdP and RP to inform and educate the subscriber about which pieces of information are transmitted and to allow the subscriber to review this information.</p>
 <h2 id="notice" data-section="7">
   
   
@@ -428,13 +402,13 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>To build subscriber trust in federation, subscribers need to be able to develop reliable assumptions about how their information is being processed. For instance, it can be helpful for subscribers to understand what information will be transmitted, which attributes for the transaction are required versus optional, and to have the ability to decide whether to transmit optional attributes to the RP. Accordingly, <a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Sec. 3.4</a> requires that positive confirmation be obtained from the authorized party before any attributes about the subscriber are transmitted to any RP.</p>
+<p>To build subscriber trust in federation, subscribers need to be able to develop reliable assumptions about how their information is being processed. For instance, it can be helpful for subscribers to understand what information will be transmitted and which attributes for the transaction are required versus optional, and for subscribers to have the ability to decide whether to transmit optional attributes to the RP. Accordingly, <a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Sec. 3.5</a> requires that positive confirmation be obtained from the authorized party before any attributes about the subscriber are transmitted to any RP.</p>
 
-<p>In determining when a set of RPs should share a shared pairwise pseudonymous identifier as in <a href="/800-63-4/sp800-63c/Federation/#ppi-shared">Sec. 3.3.1.3</a>, the trust agreement considers the subscriber’s understanding of such a grouping of RPs and provides a means for effective notice to the subscriber in assisting such understanding. An effective notice will take into account user experience design standards and research, as well as an assessment of privacy risks that may arise from the information processing. There are various factors to be considered, including the reliability of the assumptions subscribers may have about the processing and the role of different entities involved in federation. However, a link to a complex, legalistic privacy policy or general terms and conditions that a substantial number of subscribers do not read or understand is never an effective notice.</p>
+<p>In determining when a set of RPs should share a shared pairwise pseudonymous identifier (see <a href="/800-63-4/sp800-63c/Federation/#ppi-shared">Sec. 3.4.1.3</a>), the trust agreement considers the subscriber’s understanding of such a grouping of RPs and provides a means for effective notice to the subscriber in assisting such understanding. An effective notice will consider user experience design standards and research, as well as an assessment of privacy risks that may arise from the information processing. There are various factors to be considered, including the reliability of the assumptions that subscribers may have about the processing and the roles of different entities involved in federation. However, a link to a complex, legalistic privacy policy or general terms and conditions that a substantial number of subscribers do not read or understand is never an effective notice.</p>
 
-<p><a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Sec. 3.4</a> does not specify which party should provide the notice. In some cases, a party in a federation may not have a direct connection to the subscriber in order to provide notice and obtain consent. Although multiple parties may elect to provide notice, it is permissible for parties to determine in advance, either contractually or through trust framework policies, which party will provide the notice and obtain confirmation, as long as the determination is being based upon factors that center on enabling the subscriber to pay attention to the notice and make an informed choice.</p>
+<p><a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Section 3.5</a> does not specify which party should provide the notice. In some cases, a party in a federation may not have a direct connection to the subscriber in order to provide notice and obtain consent. Although multiple parties may elect to provide notice, parties can use contracts or trust framework policies to determine in advance which party will provide the notice and obtain confirmation if that determination is based upon factors that center on enabling the subscriber to read the notice and make an informed choice.</p>
 
-<p>The IdP is required to inform subscribers of all RPs that might access the subscriber’s attributes. If an RP is on an IdP’s allowlist as described in <a href="/800-63-4/sp800-63c/GenIdP/#idp-allowlist">Sec. 4.6.1.1</a>, the subscriber will not be prompted at runtime to consent to the release of their attributes. This single-sign-on scenario allows for a more seamless login experience for the subscriber, who might not even realize they are participating in a federation transaction. The IdP makes its list of allowlisted RPs available to the subscriber as part of the terms of the trust agreement. This information allows the subscriber to see which RPs might have access to their attributes, under what circumstances, and for what purposes.</p>
+<p>The IdP is required to inform subscribers of all RPs that might access the subscriber’s attributes. If an RP is on an IdP’s allowlist (see <a href="/800-63-4/sp800-63c/GenIdP/#idp-allowlist">Sec. 4.6.1.1</a>), the subscriber will not be prompted at runtime to consent to the release of their attributes. This single sign-on scenario allows for a more seamless login experience for the subscriber, who might not even realize they are participating in a federation transaction. The IdP makes its list of allowlisted RPs available to the subscriber as part of the terms of the trust agreement. This information allows the subscriber to see which RPs might have access to their attributes, under what circumstances, and for what purposes.</p>
 
 <p>If a subscriber’s runtime decisions at the IdP were stored in the subscriber account by the IdP to facilitate future transactions, the IdP also needs to allow the subscriber to view and revoke any RPs that were previously approved during a runtime decision. This list includes information on which attributes were approved and when the approval was recorded. Similarly, if a subscriber’s runtime decisions at the RP are stored in some fashion, the RP also needs to allow the subscriber to view and revoke any IdPs that were approved during a runtime decision.</p>
 <h2 id="minimization" data-section="7">
@@ -446,7 +420,12 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>Federation enables the data exposed to an RP to be minimized, which can yield privacy protections for subscribers. Although an IdP may collect additional attributes beyond what the RP requires for its use case, only those attributes that were explicitly requested by the RP are to be transmitted by the IdP. In some instances, an RP does not require a full value of an attribute. For example, an RP may need to know whether the subscriber is over 13 years old, but has no need for the full date of birth. To minimize collection of potentially sensitive PII, the RP may request a derived attribute value (e.g., Question: Is the subscriber over 13 years old? Response: Y/N or Pass/Fail). This minimizes the RP’s collection of potentially sensitive and unnecessary PII. Accordingly, <a href="/800-63-4/sp800-63c/Federation/#protecting-information">Sec. 3.10.2</a> recommends the RP to, where feasible, request derived attribute values rather than full attribute values. To support this RP requirement IdPs are, in turn, required to support a derived attribute value.</p>
+<p>Federation enables the data exposed to an RP to be minimized, which can yield privacy protections for subscribers. RPs need to request only the minimal information that they need in order to function instead of all information that is available in the subscriber account. Although an IdP may collect additional attributes beyond what the RP requires for its use case, IdPs are to only transmit those attributes that were explicitly requested by the RP.</p>
+
+<p>In some instances, an RP’s function does not require the full value of an attribute. For example, an RP may need to know whether the subscriber is over 13 years old but not the full date of birth. To minimize the collection of potentially sensitive personal information, the RP may request a derived attribute value (e.g., Question: Is the subscriber over 13 years old? Response: Y/N or Pass/Fail). This minimizes the RP’s collection of potentially sensitive and unnecessary personal information. Accordingly, <a href="/800-63-4/sp800-63c/Federation/#protecting-information">Sec. 3.11.2</a> recommends the RP to request derived attribute values rather than full attribute values, where feasible. To support this RP requirement, IdPs ought to support a derived attribute value, where feasible.</p>
+
+<p>To minimize the personal information collected and protect privacy, IdPs ought to give users with pseudonymous options for providing data to RPs, where possible.
+Likewise, RPs ought to request pseudonymous options for users when pseudonymity is possible for the RP’s policy. Both IdPs and RPs need to seek to minimize unnecessary data transmission.</p>
 <h2 id="agency-privacy" data-section="7">
   
   
@@ -456,11 +435,11 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p><a href="/800-63-4/sp800-63c/Federation/#privacy-reqs">Section 3.9</a> identifies agency requirements to consult their SAOP to determine privacy compliance requirements. It is critical to involve the agency’s SAOP in the earliest stages of digital authentication system development to assess and mitigate privacy risks and advise the agency on compliance obligations such as whether the federation triggers the Privacy Act of 1974 or the E-Government Act of 2002 requirement to conduct a PIA. For example, if the agency is serving as an IdP in a federation, it is likely that the Privacy Act requirements will be triggered and require coverage by either a new or existing Privacy Act System of Records Notice since credentials would be maintained at the IdP on behalf of any RP it federates with. If, however, the agency is an RP and using a third-party IdP, digital authentication may not trigger the requirements of the Privacy Act, depending on what data passed from the RP is maintained by the agency at the RP (in such instances the agency may have a broader programmatic SORN that covers such data).</p>
+<p><a href="/800-63-4/sp800-63c/Federation/#privacy-reqs">Section 3.10</a> identifies agency requirements to consult their SAOP to determine privacy compliance requirements. It is critical to involve the agency’s SAOP in the earliest stages of digital authentication system development to assess and mitigate privacy risks and advise the agency on compliance obligations, such as whether the federation triggers the Privacy Act of 1974 <a href="/800-63-4/sp800-63c/references/#ref-PrivacyAct">[PrivacyAct]</a> or the E-Government Act of 2002 <a href="/800-63-4/sp800-63c/references/#ref-E-Gov">[E-Gov]</a> requirement to conduct a PIA. For example, if the agency is serving as an IdP in a federation, Privacy Act requirements will likely be triggered and require coverage by either a new or existing Privacy Act SORN since credentials would be maintained at the IdP on behalf of any RP with which it federates. However, if the agency is an RP that uses a third-party IdP, digital authentication may not trigger the requirements of the Privacy Act, depending on what data passed from the RP is maintained by the agency at the RP. In such instances, the agency may have a broader programmatic SORN that covers such data.</p>
 
-<p>The SAOP can similarly assist the agency in determining whether a PIA is required. These considerations should not be read as a requirement to develop a Privacy Act SORN or PIA for use of a federated credential alone. In many cases it will make the most sense to draft a PIA and SORN that encompasses the entire digital authentication process or includes the digital authentication process as part of a larger programmatic PIA that discusses the program or benefit the agency is establishing online access.</p>
+<p>The SAOP can similarly assist the agency in determining whether a PIA is required. These considerations should not be read as a requirement to develop a Privacy Act SORN or PIA for the use of a federated transaction alone. In many cases, it will make the most sense to draft a PIA and SORN that encompass the entire digital authentication process or include the digital authentication process as part of a larger programmatic PIA that discusses the program or benefit the agency is establishing online access.</p>
 
-<p>Due to the many components of digital authentication, it is important for the SAOP to have an awareness and understanding of each individual component. For example, other privacy artifacts may be applicable to an agency offering or using federated IdP or RP services, such as Data Use Agreements, Computer Matching Agreements, etc. The SAOP can assist the agency in determining what additional requirements apply. Moreover, a thorough understanding of the individual components of digital authentication will enable the SAOP to thoroughly assess and mitigate privacy risks either through compliance processes or by other means.</p>
+<p>Due to the many components of digital authentication, it is important for the SAOP to be aware of and understand each individual component. For example, other privacy artifacts may be applicable to an agency that offers or uses federated IdP or RP services (e.g., Data Use Agreements, Computer Matching Agreements). The SAOP can assist the agency in determining what additional requirements apply. Moreover, a thorough understanding of the individual components of digital authentication will enable the SAOP to properly assess and mitigate privacy risks, either through compliance processes or by other means.</p>
 <h2 id="blinding" data-section="7">
   
   
@@ -470,29 +449,31 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>While some proxy structures — typically those that exist primarily to simplify integration — may not offer additional subscriber privacy protection, others offer varying levels of privacy to the subscriber through a range of blinding technologies. Privacy policies may dictate appropriate use of the subscriber attributes and authentication transaction data (e.g., identities of the ultimate IdP and RP) by the IdP, RP, and the federation proxy.</p>
+<p>While some proxy structures — typically those that exist primarily to simplify integration — may not offer additional subscriber privacy protection, others offer varying levels of privacy to the subscriber through a range of blinding technologies. Privacy policies may dictate the appropriate use of subscriber attributes and authentication transaction data (e.g., identities of the ultimate IdP and RP) by the IdP, RP, and the federation proxy.</p>
 
-<p>Technical means such as blinding can increase effectiveness of these policies by making the data more difficult to obtain. A proxy-based system has three parties, and the proxy can be used to hide information from one or more of the parties, including itself. In a double-blind proxy, the IdP and RP do not know each other’s identities, and their relationship is only with the proxy. In a triple-blind proxy, the proxy additionally does not have insight into the data being passed through it. As the level of blinding increases, the technical and operational implementation complexity may increase. Since proxies need to map transactions to the appropriate parties on either side as well as manage the keys for all parties in the transaction, fully triple-blind proxies are very difficult to implement in practice.</p>
+<p>Blinding can also increase the effectiveness of these policies by making the data more difficult to obtain. A proxy-based system has three parties, and the proxy can be used to hide information from one or more of the parties, including itself. In a double-blind proxy, the IdP and RP do not know each other’s identities, and their relationship is only with the proxy. In a triple-blind proxy, the proxy does not have insight into the data being passed through it. As the level of blinding increases, the technical and operational implementation complexity may also increase. Since proxies need to map transactions to the appropriate parties on either side and manage the cryptographic keys for all parties in the transaction, fully triple-blind proxies are very difficult to implement in practice.</p>
 
-<p>Even with the use of blinding technologies, a blinded party may still infer protected subscriber information through released attribute data or metadata, such as by analysis of timestamps, attribute bundle sizes, or attribute signer information. The IdP could consider additional privacy-enhancing approaches to reduce the risk of revealing identifying information of the entities participating in the federation.</p>
+<p>Even with the use of blinding technologies, a blinded party may still infer protected subscriber information through released attribute data or metadata (e.g., by analyzing timestamps, attribute bundle sizes, or attribute signer information). The IdP could consider additional privacy-enhancing approaches to reduce the risk of revealing identifying information about the entities participating in the federation.</p>
 
-<p>The following table illustrates a spectrum of blinding implementations used in proxied federation. This table is intended to be illustrative, and is neither comprehensive nor technology-specific.</p>
+<p><a href="/800-63-4/sp800-63c/privacy/#table-5">Table 5</a> shows a spectrum of blinding implementations used in proxied federation. This table is intended to be illustrative and is neither comprehensive nor technology-specific.</p>
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63c/privacy/#table-4" name="table-4">Table 4. Proxy Characteristics</a></p>
+<p></p>
 
-<table latex-table="4" latex-caption="Proxy Characteristics" latex-columns="p@0.20\textwidth,p@0.17\textwidth,p@0.17\textwidth,p@0.25\textwidth,p@0.20\textwidth">
+<p latex-ignore="true"><a href="/800-63-4/sp800-63c/privacy/#table-5" name="table-5">Table 5. Proxy characteristics</a></p>
+
+<table latex-table="5" latex-caption="Proxy characteristics" latex-columns="p@0.20\textwidth,p@0.10\textwidth,p@0.10\textwidth,p@0.20\textwidth,p@0.20\textwidth">
   <thead>
     <tr>
       <th>Proxy Type</th>
       <th style="text-align: center">RP knows IdP</th>
       <th style="text-align: center">IdP knows RP</th>
-      <th style="text-align: center">Proxy can track subscriptions between RP and IdP</th>
+      <th style="text-align: center">Proxy can track between RP &amp; IdP</th>
       <th style="text-align: center">Proxy can see attributes of Subscriber</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Non-Blinding Proxy with Attributes</td>
+      <td>Non-Blinding Proxy With Attributes</td>
       <td style="text-align: center">Yes</td>
       <td style="text-align: center">Yes</td>
       <td style="text-align: center">Yes</td>
@@ -506,7 +487,7 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
       <td style="text-align: center">N/A</td>
     </tr>
     <tr>
-      <td>Double Blind Proxy with Attributes</td>
+      <td>Double Blind Proxy With Attributes</td>
       <td style="text-align: center">No</td>
       <td style="text-align: center">No</td>
       <td style="text-align: center">Yes</td>
@@ -520,7 +501,7 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
       <td style="text-align: center">N/A</td>
     </tr>
     <tr>
-      <td>Triple Blind Proxy with or without Attributes</td>
+      <td>Triple Blind Proxy With or Without Attributes</td>
       <td style="text-align: center">No</td>
       <td style="text-align: center">No</td>
       <td style="text-align: center">No</td>
@@ -528,6 +509,8 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
     </tr>
   </tbody>
 </table>
+
+<p></p>
 
 
   

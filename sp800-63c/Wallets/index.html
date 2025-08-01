@@ -140,20 +140,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63c/preface/">Preface</a></li>
                 
               
@@ -266,7 +252,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/usability/"><span class="section">8</span>Usability</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63c/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -280,21 +266,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/equity/"><span class="section">9</span>Equity</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">10</span>Examples</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">9</span>Examples</a></li>
                 
               
               
@@ -398,28 +370,52 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 
 <p><em>This section is normative.</em></p>
 
-<p>When the IdP runs on a device controlled by the subscriber, whether as a digital wallet or as a self-issued identity provider, the IdP is known as a <em>subscriber-controlled wallet</em> and the following requirements apply.</p>
-
-<p>Subscriber-controlled wallets <strong>SHALL</strong> require the presentation of an activation factor in order to perform any actions requiring the use of the wallet’s signing key, including onboarding of the wallet and release of attributes to an RP.</p>
-<h2 id="wallet-activation" data-section="5">
+<p>A subscriber-controlled wallet is an IdP for which the CSP makes the attributes of the subscriber account available through the issuance of attribute bundles, as described in <a href="/800-63-4/sp800-63c/Wallets/#scidp-provisioning">Sec. 5.1</a>. The subscriber activates the wallet using an activation factor or authenticator, as described in <a href="/800-63-4/sp800-63c/Wallets/#wallet-activation">Sec. 5.4</a>. Usually, the subscriber-controlled wallet runs on a device that is controlled by the subscriber and represents only a single subscriber. However, wallets can also be hosted on remote systems in a deployment pattern that is sometimes known as a <em>cloud wallet</em>.</p>
+<h2 id="scidp-provisioning" data-section="5">
   
   
-    Wallet Activation <a href="#wallet-activation" class="header-link"><i class="fa fa-link"></i></a>
+    Issuing Attribute Bundles to the Subscriber-Controlled Wallet <a href="#scidp-provisioning" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h2>
     
 
-<p>The subscriber-controlled wallet <strong>SHALL</strong> require presentation of an activation factor from the subscriber for the following actions:</p>
+<p>When the CSP issues attribute bundles to the subscriber-controlled wallet, the process <strong>SHALL</strong> include the following steps:</p>
+
+<ol>
+  <li>The subscriber proves their identity to the CSP’s issuance functionality using the CSP’s identity proofing process or by authenticating to the subscriber account.</li>
+  <li>The subscriber activates the wallet using an activation factor, which might entail authenticating to a hosted wallet service.</li>
+  <li>The wallet generates or chooses a signing key and corresponding verification key. The wallet proves possession of its signing key to the CSP.</li>
+  <li>The CSP creates one or more attribute bundles that include subscriber attributes and the wallet’s verification key (or a reference to that key).</li>
+  <li>The wallet stores the attribute bundle for later presentation to RPs.</li>
+</ol>
+
+<p>The subscriber-controlled wallet <strong>MAY</strong> generate and use a different signing key and verification key for each issuance request with the CSP.</p>
+
+<p>The CSP <strong>SHALL</strong> create a unique attribute bundle for each requesting wallet and <strong>SHOULD</strong> create a unique attribute bundle for each request from an individual wallet.</p>
+
+<p>Many subscriber-controlled wallets can carry attribute bundles from multiple CSPs simultaneously. The simultaneous presentation of attribute bundles from multiple CSPs in a single assertion is possible with some technologies. When this occurs, the assertion of multiple attribute bundles <strong>SHALL</strong> conform to the assertion requirements in this guideline.</p>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+<h3 id="invalidate-attribute-bundle" data-section="5">
+  
+  
+    Invalidating Attribute Bundles for the Subscriber-Controlled Wallet <a href="#invalidate-attribute-bundle" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The CSP <strong>SHALL</strong> provide a means of invalidating attribute bundles that are issued to a subscriber-controlled wallet. This process is used when:</p>
 
 <ul>
-  <li>Providing proof of the signing key to the CSP during the provisioning process</li>
-  <li>Signing the assertion for presentation to the RP</li>
+  <li>The subscriber account is terminated, thereby rendering downstream federation actions invalid;</li>
+  <li>The wallet needs to be terminated due to the device being lost, stolen, or compromised; or</li>
+  <li>The attribute bundle is disclosed to an attacker or otherwise compromised.</li>
 </ul>
 
-<p>The subscriber-controlled wallet <strong>SHOULD</strong> require presentation of an activation factor before any other operations that involve use of the wallet’s signing keys. The wallet <strong>MAY</strong> request reissuance of previously-issued attribute bundles without requiring subscriber involvement.</p>
-
-<p>Submission of the activation factor <strong>SHALL</strong> be a separate operation from the unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device <strong>MAY</strong> be used in the activation operation. Agencies <strong>MAY</strong> relax this requirement for subscriber-controlled wallets managed by or on behalf of the CSP (e.g., via mobile device management) that are constrained to have short (agency-determined) inactivity timeouts and device activation factors meeting the above requirements. Additional discussion of activation factors for authenticators is found in <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10" latex-href="#ref-SP800-63B">Sec. 3.2.10 of [SP800-63B]</a>.</p>
+<p>To accomplish this, the CSP <strong>SHOULD</strong> issue attribute bundles with a limited time validity window. The CSP <strong>SHOULD</strong> provide a means to independently verify the status of attribute bundles (i.e., whether a specific bundle has been revoked by the CSP). If such a service is offered, the service <strong>SHALL</strong> be deployed in a privacy-preserving way such that the CSP is not alerted to the use of a specific attribute bundle at a specific RP.</p>
 <h2 id="federation-transaction" data-section="5">
   
   
@@ -431,100 +427,169 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 
 <p>A federation transaction with a subscriber-controlled wallet establishes the subscriber’s device as an IdP for the subscriber account and creates an authenticated session for the subscriber at the RP. The process is shown in <a href="/800-63-4/sp800-63c/Wallets/#fig-13">Fig. 13</a>.</p>
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63c/Wallets/#fig-1" name="fig-13">Fig. 13. Federation with a Subscriber-Controlled Wallet</a></p>
+<p latex-ignore="true"><a href="/800-63-4/sp800-63c/Wallets/#fig-1" name="fig-13">Fig. 13. Federation with a subscriber-controlled wallet</a></p>
 
-<p><img src="/800-63-4/sp800-63c/images/subscriberidp.png" alt="Overview diagram of federated authentication process using a subscriber-controlled wallet." title="Subscriber-Controlled Wallet" latex-src="subscriberidp.pdf" latex-fig="13" latex-place="p" /></p>
+<p><img src="/800-63-4/sp800-63c/images/subscriberidp.png" alt="Overview diagram of federated authentication process using a subscriber-controlled wallet." title="Federation with a subscriber-controlled wallet" latex-src="subscriberidp.pdf" latex-fig="13" latex-place="p" /></p>
 
 <p>A federation transaction with a subscriber-controlled wallet takes place over several steps:</p>
 
 <ol>
-  <li>The CSP identity proofs the subscriber and creates a subscriber account.</li>
-  <li>The CSP provisions the wallet to the subscriber account, which includes the subscriber verifying an authenticator in their subscriber account.</li>
-  <li>The wallet receives a signed attribute bundle from the CSP, allowing the wallet to act as an IdP.</li>
-  <li>The RP requests a federated authentication from the wallet, usually through subscriber action.</li>
-  <li>The subscriber activates the wallet through an authentication factor.</li>
-  <li>The wallet creates an assertion based on the attribute bundles available to the wallet.</li>
+  <li>The CSP identity-proofs the subscriber and creates a subscriber account.</li>
+  <li>The CSP issues attribute bundles from the subscriber account to the wallet in a process that includes the subscriber verifying an authenticator in their subscriber account or completing an abbreviated proofing process (e.g., using a biometric captured at proofing to verify identity).</li>
+  <li>The wallet receives a signed attribute bundle from the CSP that allows the wallet to act as an IdP.</li>
+  <li>The RP requests a federated authentication transaction from the wallet, usually through subscriber action.</li>
+  <li>The subscriber activates the wallet through an activation factor. In the case of a hosted wallet, this is an authentication to the wallet service.</li>
+  <li>The wallet creates an assertion based on the RP request, subscriber actions, and attribute bundles that are available to the wallet.</li>
   <li>The wallet presents the assertion to the RP.</li>
-  <li>The RP validates the assertion.</li>
-  <li>The RP creates an authenticated session for the subscriber.</li>
+  <li>The RP validates the assertion and creates an authenticated session for the subscriber. This process includes validating the attribute bundle from the CSP.</li>
 </ol>
-<h2 id="trust-agreements" data-section="5">
+<h2 id="wallet-trust-agreements" data-section="5">
   
   
-    Trust Agreements <a href="#trust-agreements" class="header-link"><i class="fa fa-link"></i></a>
-  
-  
-</h2>
-    
-
-<p>The trust agreement for a transaction involving a subscriber-controlled wallet <strong>SHALL</strong> be established between the RP and the CSP. The trust agreement <strong>MAY</strong> be facilitated through use of a federation authority, as described in <a href="/800-63-4/sp800-63c/Federation/#authorities">Sec. 3.4.2</a>.</p>
-
-<p>In most cases, the RP does not have a direct trust relationship with the wallet (acting as IdP), but instead trusts the wallet transitively through the wallet’s established relationship with the CSP. This relationship can be verified by the means of attribute bundles, as described in <a href="/800-63-4/sp800-63c/Federation/#attribute-bundles">Sec. 3.11.1</a>. Even though the wallet is not usually involved in the process of establishing the trust agreement, the trust agreement between the RP and CSP can still be accomplished in either an a priori or subscriber-driven fashion.</p>
-
-<p>The trust agreement <strong>SHALL</strong> include the following</p>
-
-<ul>
-  <li>The set of subscriber attributes the CSP makes available to wallets in attribute bundles</li>
-  <li>The set of subscriber attributes the wallet can make available to the RP</li>
-  <li>The population of subscriber accounts that the CSP can represent</li>
-  <li>The xALs available from the wallet</li>
-</ul>
-
-<p>The release of subscriber attributes <strong>SHALL</strong> be managed using a runtime decision managed by the wallet, as described in <a href="/800-63-4/sp800-63c/GenIdP/#idp-runtime-decision">Sec. 4.6.1.3</a>. The authorized party <strong>SHALL</strong> be the subscriber.</p>
-
-<p>The following terms <strong>SHALL</strong> be disclosed to the subscriber during the runtime decision:</p>
-
-<ul>
-  <li>The set of subscriber attributes that the RP will request (a subset of the attributes made available)</li>
-  <li>The purpose for each attribute requested by the RP</li>
-  <li>The xALs required by the RP</li>
-</ul>
-
-<p>Note that all information disclosed to the subscriber needs to be conveyed in a manner that is understandable and actionable, as discussed in <a href="/800-63-4/sp800-63c/usability/#usability">Sec. 8</a>.</p>
-
-<p>If FAL3 is allowed within the trust agreement and authenticators other than the wallet itself are allowed for use at FAL3, the trust agreement <strong>SHALL</strong> stipulate the following terms regarding holder-of-key assertions and bound authenticators (see <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec. 3.14</a> and <a href="/800-63-4/sp800-63c/Federation/#bound-authn">Sec. 3.15</a>):</p>
-
-<ul>
-  <li>Whether the wallet’s presentation is considered sufficient for holder-of-key assertion requirements</li>
-  <li>The means by which non-wallet holder-of-key assertions can be verified by the RP (such as a common trusted PKI system)</li>
-  <li>The means by which the RP can associate non-wallet holder-of-key assertions with specific RP subscriber accounts (such as attribute-based account resolution or pre-provisioning)</li>
-  <li>Whether bound authenticators are supplied by the RP or by the subscriber</li>
-  <li>Documentation of the binding ceremony used for any subscriber-provided bound authenticators</li>
-</ul>
-<h2 id="scidp-provisioning" data-section="5">
-  
-  
-    Provisioning the Subscriber-Controlled Wallet <a href="#scidp-provisioning" class="header-link"><i class="fa fa-link"></i></a>
+    Trust Agreements <a href="#wallet-trust-agreements" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h2>
     
 
-<p>When the CSP provisions the subscriber-controlled wallet, the process <strong>SHALL</strong> include the following steps:</p>
+<p>Due to the architectures and design of subscriber-controlled wallets, the trust agreements that support federated transactions are less direct than with general-purpose IdPs. To maintain privacy outcomes and prevent the tracking of user transactions, CSPs and RPs do not typically have direct communication with each other. The following requirements apply to all subscriber-controlled wallet scenarios:</p>
 
 <ol>
-  <li>The subscriber authenticates to the CSP’s provisioning system using one or more authenticators bound to the subscriber account.</li>
-  <li>The subscriber activates the wallet using an activation factor.</li>
-  <li>The wallet proves possession of its signing key to the CSP.</li>
-  <li>The CSP creates one or more attribute bundles that include subscriber attributes and the wallet’s signing key (or a reference to that key).</li>
-  <li>The wallet stores the attribute bundle for later presentation to RPs.</li>
+  <li>The release of subscriber attributes <strong>SHALL</strong> be managed using a runtime decision managed by the wallet, as described in <a href="/800-63-4/sp800-63c/GenIdP/#idp-runtime-decision">Sec. 4.6.1.3</a>.</li>
+  <li>The authorized party <strong>SHALL</strong> be the subscriber.</li>
+  <li>The following terms <strong>SHALL</strong> be disclosed to the subscriber during the runtime decision:
+    <ul>
+      <li>The set of subscriber attributes, derived attributes, and attribute bundles that the RP will request (a subset of the attributes made available)</li>
+      <li>The purpose of each attribute requested by the RP</li>
+    </ul>
+  </li>
 </ol>
 
-<p>The subscriber-controlled wallet <strong>MAY</strong> generate and use a different signing key for each provisioning request with the CSP.</p>
+<p>The xALs required by the RP <strong>MAY</strong> also be disclosed to the subscriber at runtime.</p>
 
-<p>The CSP <strong>SHALL</strong> create a unique attribute bundle for each requesting wallet.</p>
-<h3 id="deprovisioning-the-subscriber-controlled-wallet" data-section="5">
+<p>All of the information that is disclosed to the subscriber needs to be conveyed in a manner that is understandable and actionable, as discussed in <a href="/800-63-4/sp800-63c/customer/#usability">Sec. 8</a>.</p>
+<h3 id="csps-and-rps" data-section="5">
   
   
-    Deprovisioning the Subscriber-Controlled Wallet <a href="#deprovisioning-the-subscriber-controlled-wallet" class="header-link"><i class="fa fa-link"></i></a>
+    CSPs and RPs <a href="#csps-and-rps" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h3>
     
 
-<p>The CSP <strong>SHALL</strong> provide a means of deprovisioning a subscriber-controlled wallet. The deprovisioning process is used when the subscriber account is terminated, thereby rendering downstream federation actions invalid, or when the wallet needs to be terminated due to the device being lost, stolen, or compromised.</p>
+<p>Trust between the CSP and RP in subscriber-controlled wallet scenarios will not typically be bidirectional. In the general case, the RP trusts the CSP as the source of attribute bundles that are presented by subscriber-controlled wallets during a federation transaction, while the CSP is not expected to have direct knowledge of the RP. This trust relationship between the RP and CSP <strong>MAY</strong> be facilitated by a federation authority (see <a href="/800-63-4/sp800-63c/Federation/#authorities">Sec. 3.5.2</a>) that defines overarching trust agreements between members of an ecosystem representing RPs, CSPs, and subscriber-controlled wallets. Such trust agreements <strong>SHALL</strong> contain:</p>
 
-<p>To accomplish this, the CSP <strong>SHALL</strong> issue attribute bundles with a limited time validity window, <strong>SHALL</strong> issue attribute bundles specific to each wallet. The CSP <strong>SHOULD</strong> provide a means to independently verify the status of attribute bundles (i.e., whether a specific bundle has been revoked by the CSP). If such a service is offered, the service <strong>SHALL</strong> be deployed in a privacy-preserving way such that the CSP is not alerted to the use of a specific attribute bundle at a specific RP.</p>
+<ul>
+  <li>The set of subscriber attributes and derived attributes that the CSP makes available to wallets in attribute bundles</li>
+  <li>The set of subscriber attributes and derived attributes that the wallet can make available to the RP</li>
+  <li>The population of subscriber accounts that the CSP can represent</li>
+  <li>The IALs or issuance processes of subscriber accounts that are associated with the attribute bundles from the CSP</li>
+  <li>The issuance process related to CSP attribute bundles</li>
+  <li>The FALs supported by subscriber-controlled wallets</li>
+  <li>The allowable purposes for each attribute RPs may request</li>
+  <li>Expectations of RPs for the protection and management of subscriber data provided through attribute bundles</li>
+</ul>
+
+<p>Trust <strong>MAY</strong> also be established unilaterally by RP evaluation of publicly available information about CSPs and their processes for issuing attribute bundles. To facilitate this, CSPs <strong>SHALL</strong> publish the following information to a trusted location for RPs to evaluate:</p>
+
+<ul>
+  <li>The set of subscriber attributes and derived attributes that the CSP makes available to wallets in attribute bundles</li>
+  <li>The set of subscriber attributes and derived attributes that the wallet can make available to the RP</li>
+  <li>The population of subscriber accounts that the CSP can represent</li>
+  <li>The IALs or issuance processes of subscriber accounts associated with the attribute bundles from the CSP</li>
+</ul>
+
+<p>This information <strong>MAY</strong> be made available by a trusted third party, such as a federation authority that assesses and evaluates CSP attribute bundle issuance and makes CSP features available through a discovery service.</p>
+
+<p>Trust between RPs and CSPs <strong>MAY</strong> be accomplished in either a pre-established (see <a href="/800-63-4/sp800-63c/GenIdP/#pre-established-trust-agreements">Sec. 4.3.1</a>) or subscriber-driven fashion (see <a href="/800-63-4/sp800-63c/GenIdP/#subscriber-driven-trust-agreements">Sec. 4.3.2</a>). For example, an RP could be statically configured to accept attribute bundles from only a specific set of CSPs for its purposes, or the RP could alternatively accept attribute bundles from any CSP by prompting the subscriber for consent at runtime. This trust relationship could also be made more explicit by the RP being provided a means of verifying CSP-approved subscriber-controlled wallet identifiers beyond the verification of the attribute bundle, such as a discovery service provided through a federation authority.</p>
+<h3 id="csps-and-subscriber-controlled-wallets" data-section="5">
+  
+  
+    CSPs and Subscriber-Controlled Wallets <a href="#csps-and-subscriber-controlled-wallets" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The trust relationship between the CSP and the subscriber-controlled wallets will always be direct in nature. As such, there <strong>SHALL</strong> be a trust agreement between the CSP and the subscriber-controlled wallets into which they issue attribute bundles. At a minimum, this trust agreement <strong>SHALL</strong> include the following:</p>
+
+<ul>
+  <li>The set of subscriber attributes and derived attributes that the CSP makes available to wallets in attribute bundles</li>
+  <li>The set of subscriber attributes and derived attributes that the wallet can make available to the RP</li>
+  <li>Any processes the subscriber-controlled wallet needs to implement to support the issuance of attribute bundles (e.g., PAD, data collection, risk scoring)</li>
+  <li>Data storage and security practices for the wallet service</li>
+  <li>The activation factors or AALs that subscribers use to access the wallet service prior to the generation of any assertion</li>
+  <li>The FALs supported by subscriber-controlled wallets</li>
+  <li>The allowable purposes or any restrictions that the wallets need to enforce related to the release of attributes to RPs</li>
+</ul>
+<h3 id="rps-and-subscriber-controlled-wallets" data-section="5">
+  
+  
+    RPs and Subscriber-Controlled Wallets <a href="#rps-and-subscriber-controlled-wallets" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>The primary extension of trust in a subscriber-controlled wallet scenario is through the RP’s evaluation of the attribute bundles and their issuance process by the CSP. However, wallets play an important role in the degree to which RPs trust the information being presented to them in assertions that contain attribute bundles signed by the CSP.</p>
+
+<p>Information about the features and capabilities of a subscriber-controlled wallet can help inform the degree to which RPs trust a given transaction. This information can demonstrate confidence that the subscriber presenting an attribute bundle is the individual represented by that attribute bundle. For example, information about how the wallet locally authenticates the subscriber, protects verification keys, and enforces trust agreement requirements indicated by the CSP or RP all support improved RP federation and access decisions. As such, subscriber-controlled wallets <strong>SHALL</strong> disclose to RPs:</p>
+
+<ul>
+  <li>Activation or authentication methods they use to authenticate subscribers prior to presentation of an assertion,</li>
+  <li>Security features of how the wallet protects the attribute bundles,</li>
+  <li>Key management information, and</li>
+  <li>Indications of the integrity of the subscriber-controlled wallet’s software.</li>
+</ul>
+
+<p>This information <strong>MAY</strong> be provided at runtime or through discovery mechanisms for wallet metadata. For more on this topic, see <a href="/800-63-4/sp800-63c/Wallets/#assertion-contents">Sec. 5.8</a>.</p>
+<h3 id="fal3-for-subscriber-controlled-wallets" data-section="5">
+  
+  
+    FAL3 for Subscriber-Controlled Wallets <a href="#fal3-for-subscriber-controlled-wallets" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Since assertions from a subscriber-controlled wallet always contain a reference to one of the wallet’s verification keys inside the signed attribute bundle from the CSP, subscriber-controlled wallets that run on a subscriber-controlled device are capable of issuing holder-of-key assertions if all of the requirements for holder-of-key assertions are met (see <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec. 3.15</a>). These assertions <strong>MAY</strong> be used to reach FAL3 if all requirements for FAL3 are met (see <a href="/800-63-4/sp800-63c/fal/#fal3">Sec. 2.4</a>).</p>
+
+<p>The verification keys of a subscriber-controlled wallet on a hosted service do not meet the requirements for holder-of-key assertions on their own since the subscriber is not in control of the key material as they would be on a subscriber-controlled device. To reach FAL3, federation transactions with a subscriber-controlled wallet on a hosted service <strong>SHALL</strong> use either a holder-of-key assertion (see <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec. 3.15</a>) or a bound authenticator (see <a href="/800-63-4/sp800-63c/Federation/#bound-authn">Sec. 3.16</a>). All requirements for FAL3 in <a href="/800-63-4/sp800-63c/fal/#fal3">Sec. 2.4</a> <strong>SHALL</strong> be met. For example, a holder-of-key assertion from a subscriber-controlled wallet on a hosted service could include the verification key of an authenticator separate from the wallet verification key. The subscriber would present this additional authenticator to the RP along with the wallet’s assertion.</p>
+<h2 id="wallet-activation" data-section="5">
+  
+  
+    Wallet Activation <a href="#wallet-activation" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h2>
+    
+
+<p>The subscriber-controlled wallet <strong>SHALL</strong> require the presentation of an activation factor from the subscriber for the following actions that result in the creation of a signed artifact from the wallet’s signing keys:</p>
+
+<ul>
+  <li>Providing proof of possession of the wallet’s signing key to the CSP during the issuance process</li>
+  <li>Signing the assertion for presentation to the RP</li>
+</ul>
+
+<p>The subscriber-controlled wallet <strong>SHOULD</strong> require the presentation of an activation factor before any other operations that result in the creation of a signed artifact from the wallet’s signing keys. For example, using the wallet as an authenticator at AAL2 or above requires the presentation of an activation factor as per <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10" latex-href="#ref-SP800-63B">Sec. 3.2.10 of [SP800-63B]</a>.</p>
+
+<p>The wallet <strong>MAY</strong> request the reissuance of previously issued attribute bundles from the same CSP without requiring subscriber involvement.</p>
+
+<p>For subscriber-controlled wallets that run on a device that the subscriber controls, the submission of the activation factor <strong>SHALL</strong> be a separate operation from the unlocking of the host device (e.g., smartphone), although the same activation factor used to unlock the host device <strong>MAY</strong> be used in the activation operation. Organizations <strong>MAY</strong> relax this requirement for subscriber-controlled wallets managed by or on behalf of the CSP (e.g., via mobile device management) and that are constrained to have short, organization-determined inactivity timeouts and device activation factors that meet the above requirements. Additional discussion of activation factors for authenticators is found in <a href="/800-63-4/sp800-63b/authenticators/#s-5-2-10" latex-href="#ref-SP800-63B">Sec. 3.2.10 of [SP800-63B]</a>.</p>
+
+<p>For subscriber-controlled wallets that are hosted on a remote service, activation of the wallet is performed using an authenticator that is registered to the wallet service. This authenticator <strong>MAY</strong> be separate from those bound to the subscriber account at the CSP.</p>
+<h3 id="wallet-key-storage" data-section="5">
+  
+  
+    Key Storage <a href="#wallet-key-storage" class="header-link"><i class="fa fa-link"></i></a>
+  
+  
+</h3>
+    
+
+<p>Keys used for signing assertions <strong>SHALL NOT</strong> be synced or shared across devices, and wallet implementations <strong>SHOULD</strong> use non-exportable key storage, as discussed in <a href="/800-63-4/sp800-63c/Federation/#key-storage">Sec. 3.6.2</a>.</p>
+
+<p>If the wallet’s signing key is used as a holder-of-key authenticator for FAL3, the key <strong>SHALL</strong> be stored in non-exportable key storage, as discussed in <a href="/800-63-4/sp800-63c/Federation/#key-storage">Sec. 3.6.2</a>.</p>
 <h2 id="discovery-and-registration" data-section="5">
   
   
@@ -534,11 +599,13 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>To perform a federation transaction with a subscriber-controlled wallet, the RP <strong>SHALL</strong> first determine the attribute bundle singing public key of the CSP through a secure process as stated by the trust agreement. In some systems, this is accomplished by retrieving the CSP’s attribute bundle signing public keys from a URL known to be controlled by the CSP. In other systems, the RP is configured manually with the public key of the CSP before being deployed.</p>
+<p>To perform a federation transaction with a subscriber-controlled wallet, the RP <strong>SHALL</strong> first determine the attribute bundle verification key of the CSP through a secure process as stated by the trust agreement. In some systems, this is accomplished by retrieving the CSP’s attribute bundle verification keys from a URL that is known to be controlled by the CSP. In other systems, the RP is configured manually with the verification keys of the CSP before being deployed. In systems governed by multi-lateral trust agreements, this process can be facilitated by a third-party discovery and registration service, such as one provided by a federation authority.</p>
 
-<p>The RP learns the identifier and assertion signing public keys of the subscriber-controlled wallet as part of the attribute bundle signed by the CSP, presented in the federation transaction. The RP trusts the CSP’s onboarding process of the wallet to provide assurance that the public key being presented can be trusted to present the attribute bundle in question.</p>
+<p>The signed attribute bundle includes the CSP that issued the bundle and one or more verification keys that are associated with the subscriber-controlled wallet. Since the RP trusts the CSP’s process of issuing attribute bundles to subscriber-controlled wallets, the RP can trust the presentation of those bundles that are made using proof of one of the subscriber-controlled wallet’s signing keys.</p>
 
-<p>The RP also needs to register with the subscriber-controlled wallet. In most cases, this is expected to be a dynamic process in which the RP introduces its properties during the federation transaction. The nature of a subscriber-controlled wallet makes it difficult for any specific RP to pre-register with an instance of the wallet, but this use case can be facilitated through the use of a trusted third party stipulated in the trust agreement. For example, an ecosystem has a centralized service for managing discovery and registration. When an RP joins the ecosystem, it registers itself with the trusted service, downloads the CSP’s public keys, and receives an identifier to use with wallets. When the wallet is onboarded by the CSP, the wallet is informed where it can find the list of valid RP identifiers within the ecosystem. When the RP connects to the wallet, the wallet can verify the RP’s identifier without the RP having to register itself directly with the wallet. Likewise, the RP can verify the wallet’s signing keys by the fact they are presented in an attribute bundle signed by the CSP’s public key, which had in turn been retrieved from the trusted third party.</p>
+<p>In many cases, the process of the RP registering with the subscriber-controlled wallet is expected to be a dynamic process in which the RP exchanges its keys and metadata with the IdP during the federation transaction. The nature of a subscriber-controlled wallet makes it difficult for any specific RP to pre-register with an instance of the wallet, but this can be facilitated through the use of a trusted third party that is stipulated in the trust agreement.</p>
+
+<p>Parties that seek to federate <strong>MAY</strong> use a trusted third party to facilitate the discovery and registration processes if that trusted third party is identified in the trust agreement. For example, consider an ecosystem has a centralized service for managing discovery and registration. When an RP joins the ecosystem, it registers itself with the trusted service, downloads the CSP’s verification keys, and receives an identifier to use with wallets. When the CSP issues attribute bundles to the subscriber-controlled wallet, the subscriber-controlled wallet is informed where it can find the list of valid RP identifiers within the ecosystem. When the RP connects to the wallet, the wallet can verify the RP’s identifier without the RP having to register itself directly with the wallet. Likewise, the RP can trust the wallet’s verification keys by verifying the CSP’s signature over the wallet’s verification keys or identifier.</p>
 <h2 id="authentication-and-attribute-disclosure" data-section="5">
   
   
@@ -548,11 +615,13 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>The decision of whether a federated authentication can occur or attributes may be passed <strong>SHALL</strong> be determined by the subscriber, acting in the role of the authorized party.</p>
+<p>The decision of whether a federation transaction proceeds and, therefore, an assertion is issued and attributes are released to the RP <strong>SHALL</strong> be determined by the subscriber acting in the role of the authorized party. The decision <strong>MAY</strong> be augmented by the use of allowlists and blocklists to allow the wallet to help the subscriber make a decision based on configured policies and trust agreements. The subscriber-controlled wallet <strong>MAY</strong> remember the subscriber’s decision to allow for future actions at the same RP without separate authorization from the subscriber. The use of a stored authorization decision does not supersede the requirement for wallet activation, as discussed in <a href="/800-63-4/sp800-63c/Wallets/#wallet-activation">Sec. 5.4</a>.</p>
+
+<p>The subscriber-controlled wallet <strong>MAY</strong> provide a mechanism to remember a disclosure decision by the authorized party (i.e., the subscriber) to apply to future requests from the same RP. If such a mechanism is provided, the subscriber-controlled wallet <strong>SHALL</strong> disclose to the authorized party that the storage mechanism is in use and <strong>SHALL</strong> allow the authorized party to revoke such remembered access at a future time.</p>
 
 <p>The subscriber-controlled wallet <strong>SHOULD</strong> provide a means to selectively disclose a subset of the attributes in the attribute bundle from the CSP.</p>
 
-<p>The CSP <strong>SHALL</strong> provide effective mechanisms for redress of subscriber complaints or problems (e.g., subscriber identifies an inaccurate attribute value, or the need to deprovision a subscriber-controlled wallet). See <a href="/800-63-4/sp800-63c/Federation/#redress">Sec. 3.4.3</a> for additional requirements and considerations for redress mechanisms.</p>
+<p>The CSP <strong>SHALL</strong> provide secure and effective means of redress of subscriber complaints or problems (e.g., subscriber identifies an inaccurate attribute value, the need to invalidate attribute bundles that were previously issued to a subscriber-controlled wallet). See <a href="/800-63-4/sp800-63c/Federation/#redress">Sec. 3.5.3</a> for additional requirements and considerations for redress mechanisms.</p>
 <h2 id="assertion-requests" data-section="5">
   
   
@@ -562,15 +631,15 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>When the federation transactions are initiated by the RP, the RP’s request for an assertion <strong>SHALL</strong> contain:</p>
+<p>When federation transactions are initiated by the RP, the RP’s request for an assertion <strong>SHALL</strong> contain:</p>
 
 <ol>
   <li>An identifier for the RP</li>
   <li>A cryptographic nonce</li>
-  <li>The set of identity attributes requested by the RP and their purpose of use at the RP</li>
+  <li>The set of identity attributes, derived attributes, and attribute bundles requested by the RP and their purpose of use at the RP</li>
 </ol>
 
-<p>Note that federation transactions are always initiated by the RP at FAL2 or higher.</p>
+<p>When federation transactions are initiated by the IdP (at FAL1), these requirements do not apply. Federation transactions are always initiated by the RP at FAL2 or higher.</p>
 <h2 id="assertion-contents" data-section="5">
   
   
@@ -584,46 +653,65 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 
 <ol>
   <li>A signed attribute bundle from the CSP.</li>
-  <li>Subject identifier: An identifier for the party to which the assertion applies (i.e., the subscriber).</li>
-  <li>Issuer identifier: An identifier for the issuer of the assertion (i.e., the subscriber-controlled wallet).</li>
-  <li>Audience identifier: An identifier for the party intended to consume the assertion (i.e., the RP).</li>
-  <li>Issuance time: A timestamp indicating when the wallet issued the assertion.</li>
+  <li>Audience identifier: An identifier for the party that is intended to consume the assertion (i.e., the RP).</li>
+  <li>Issuance time: A timestamp that indicates when the wallet issued the assertion.</li>
   <li>Validity time window: A period of time outside of which the assertion <strong>SHALL NOT</strong> be accepted as valid by the RP for the purposes of authenticating the subscriber and starting an authenticated session at the RP. This is usually communicated by means of an expiration timestamp for the assertion in addition to the issuance timestamp.</li>
-  <li>Assertion identifier: A value uniquely identifying this assertion, used to prevent attackers from replaying prior assertions.</li>
-  <li>Authentication time: A timestamp indicating when the subscriber last used the wallet’s activation factor.</li>
-  <li>Nonce: A cryptographic nonce, if one is provided by the RP.</li>
-  <li>Signature: Digital signature using asymmetric cryptography, covering the entire assertion.</li>
+  <li>Assertion identifier: A value that uniquely identifies this assertion and is used to prevent attackers from replaying prior assertions. For example, this can be a unique nonce generated by the wallet and included in the assertion.</li>
+  <li>Signature: A digital signature that uses asymmetric cryptography and covers the entire assertion.</li>
 </ol>
 
-<p>All assertions <strong>SHALL</strong> contain sufficient information to determine the following aspects of the federation transaction:</p>
+<p>Assertions <strong>MAY</strong> contain:</p>
 
 <ol>
-  <li>The IAL of the subscriber account being represented in the assertion, or an indication that no IAL is asserted.</li>
-  <li>The wallet’s intended FAL of the federation process represented by the assertion.</li>
+  <li>Subject identifier: An identifier for the party to which the assertion applies (i.e., the subscriber)</li>
+  <li>Issuer identifier: An identifier for the issuer of the assertion (i.e., the subscriber-controlled wallet)</li>
+</ol>
+
+<p>The following aspects of the federation transaction <strong>SHALL</strong> be provided through information contained in the assertion contents or the applicable trust agreement:</p>
+
+<ol>
+  <li>The IAL of the subscriber account being represented in the assertion, an indication of the issuance processes, or an indication that no IAL is asserted</li>
+  <li>The nature of the activation method used to activate the wallet.</li>
+  <li>The wallet’s intended FAL of the federation process that is represented by the assertion</li>
+</ol>
+
+<p>If a subscriber-controlled wallet is hosted as a remote service, the AAL of the subscriber’s current session at the hosted wallet service <strong>SHALL</strong> be provided through information contained in the assertion contents or the applicable trust agreement. In this case, the assertion <strong>SHOULD</strong> contain additional information about the authentication method used at the IdP, if available (e.g., whether the authenticator used is phishing-resistant). Some technologies that can carry this information include Vectors of Trust <a href="/800-63-4/sp800-63c/references/#ref-RFC8485">[RFC8485]</a> or authentication class references in <a href="/800-63-4/sp800-63c/references/#ref-OIDC">[OIDC]</a> and <a href="/800-63-4/sp800-63c/references/#ref-SAML">[SAML]</a>.</p>
+
+<p>At FAL2 and above, the assertion <strong>SHALL</strong> include:</p>
+
+<ol>
+  <li>Nonce: A cryptographic nonce from the RP’s federation request</li>
 </ol>
 
 <p>At FAL3, the assertion <strong>SHALL</strong> include one of the following:</p>
 
 <ul>
   <li>The public key, key identifier, or other identifier for a holder-of-key assertion. This <strong>MAY</strong> be the same key that the subscriber-controlled wallet uses to sign the assertion.</li>
-  <li>An indicator that verification of a bound authenticator is required to process this assertion.</li>
+  <li>An indicator that the verification of a bound authenticator is required to process this assertion.</li>
 </ul>
+
+<p>Assertions <strong>SHALL NOT</strong> contain subscriber authentication secrets (e.g., passwords).</p>
 
 <p>The signed attribute bundle from the CSP <strong>SHALL</strong> contain:</p>
 
 <ol>
-  <li>A public key or key identifier for the key used by the subscriber-controlled wallet to sign the assertion</li>
-  <li>Issuance time: A timestamp indicating when the CSP issued the attribute bundle.</li>
-  <li>Validity time window: A period of time outside of which the attribute bundle <strong>SHALL NOT</strong> be accepted as valid by the RP for the purposes of authenticating the subscriber and starting an authenticated session at the RP. This is usually communicated by means of an expiration timestamp for the assertion in addition to the issuance timestamp.</li>
-  <li>IAL: Indicator of the IAL of the subscriber account being represented in the attribute bundle, or an indication that no IAL is asserted.</li>
-  <li>Signature: Digital signature using asymmetric cryptography, covering the entire attribute bundle.</li>
+  <li>Keys: A verification key or key identifier for the key used by the subscriber-controlled wallet to sign assertions</li>
+  <li>Issuer identifier: An identifier for the issuer of the attribute bundle (i.e., the CSP)</li>
+  <li>Issuance time: A timestamp that indicates when the CSP issued the attribute bundle</li>
+  <li>IAL: Indicator of the IAL of the subscriber account being represented in the attribute bundle or an indication that no IAL is asserted</li>
+  <li>Signature: A digital signature that uses asymmetric cryptography and covers the entire attribute bundle</li>
+  <li>Attribute values and derived attribute values: Information about the subscriber</li>
 </ol>
 
-<p>Additional identity attributes and derived attribute values <strong>MAY</strong> be included in the attribute bundle. These attributes <strong>SHOULD</strong> be made available using a selective disclosure method, whereby the subscriber can, through their wallet software, determine which parts of the bundle to disclose to the RP.</p>
+<p>If the RP subscriber account does not use an ephemeral provisioning process (see <a href="/800-63-4/sp800-63c/GenIdP/#provisioning-api">Sec. 4.6.5</a>) or an account resolution process (see <a href="/800-63-4/sp800-63c/Federation/#account-resolution">Sec. 3.8.2</a>), the subscriber <strong>SHALL</strong> be identified in the assertion using a federated identifier (see <a href="/800-63-4/sp800-63c/Federation/#federated-identifier">Sec. 3.4</a>). The issuer identifier <strong>SHALL</strong> be of the CSP that issued the signed attribute bundle, and the subject identifier <strong>SHALL</strong> be contained in the signed attribute bundle and processed in the namespace of the CSP that issued the attribute bundle.</p>
 
-<p>Identity attributes in the assertion but outside of a signed attribute bundle <strong>SHALL</strong> be considered self-asserted. The RP <strong>MAY</strong> validate these additional attributes out of band.</p>
+<p>The signed attribute bundle from the CSP <strong>SHOULD</strong> contain a validity time window, which is defined as a period of time outside of which the attribute bundle <strong>SHALL NOT</strong> be accepted as valid by the RP for the purposes of authenticating the subscriber and starting an authenticated session at the RP. This is usually communicated by means of an expiration timestamp for the attribute bundle in addition to the issuance timestamp.</p>
 
-<p>Subscriber-controlled wallets <strong>SHOULD</strong> use non-exportable key storage as discussed in <a href="/800-63-4/sp800-63c/Federation/#key-storage">Sec. 3.5.2</a>.</p>
+<p>The signed attribute bundle from the CSP <strong>MAY</strong> contain additional information about the subscriber account, such as the set of controls used to determine the IAL.</p>
+
+<p>Additional identity attributes and derived attribute values <strong>MAY</strong> be included in the attribute bundle. These attributes <strong>SHALL</strong> be made available to the RP using a selective disclosure method if such a method is made available by the underlying attribute bundle. In selective disclosure, a subset of attributes is revealed rather than the entire set. This may be driven by a minimum set required to complete a transaction as defined by the RP or through selection by the subscriber at runtime.</p>
+
+<p>Identity attributes that are in the assertion but outside of a signed attribute bundle <strong>SHALL</strong> be considered self-asserted. The RP <strong>MAY</strong> validate these additional attributes using its own validation process.</p>
 <h2 id="assertion-presentation" data-section="5">
   
   
@@ -635,13 +723,13 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 
 <p>Assertions <strong>SHALL</strong> be presented to the RP through an authenticated protected channel.</p>
 
-<p>The presentation <strong>SHALL</strong> include the cryptographic nonce from the RP’s request, if present. The RP <strong>SHALL</strong> verify the nonce in accordance with the federation protocol.</p>
+<p>The presentation <strong>SHALL</strong> include the cryptographic nonce from the RP’s request, if present (this is required at FAL2 and above). The RP <strong>SHALL</strong> verify the nonce in accordance with the federation protocol.</p>
 
-<p>If the assertion contains PII, and the presentation mechanism passes the assertion through a component other than the wallet or RP, the assertion <strong>SHOULD</strong> be encrypted.</p>
+<p>If the presentation mechanism passes the assertion through a component other than the wallet or RP, personal information in the assertion <strong>SHOULD</strong> be encrypted by the wallet using the RP’s encryption key, as discussed in <a href="/800-63-4/sp800-63c/Federation/#encrypted-assertion">Sec. 3.13.3</a>.</p>
 
-<p>The RP <strong>SHALL</strong> protect itself against injection of manufactured or captured assertions by the use of cross-site scripting protection, rejecting assertions outside of the correct stage of a federation transaction, or other accepted techniques discussed in <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.10.1</a>. When possible, the IdP <strong>SHOULD</strong> use platform APIs instead of HTTP redirects when delivering an assertion to the RP.</p>
+<p>To enhance privacy, the presentation mechanism <strong>SHOULD</strong> provide features to enable unlinkability of the subscriber and their information at different RPs.</p>
 
-<p>Since assertions from a subscriber-controlled wallet always contain a reference to the wallet’s signing key inside the signed attribute bundle from the CSP, assertions from subscriber-controlled wallets <strong>MAY</strong> be used as holder-of-key assertions to reach FAL3, as long as all other requirements in these guidelines are met. For additional requirements for holder-of-key assertions, see <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec. 3.14</a>.</p>
+<p>The RP <strong>SHALL</strong> protect itself against the injection of manufactured or captured assertions by using XSS and CSRF protection, rejecting assertions outside of the correct stage of a federation transaction, or other accepted techniques discussed in <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.11.1</a>. When possible, subscriber-controlled wallets that run on a subscriber-controlled device <strong>SHOULD</strong> use platform APIs instead of HTTP redirects when delivering an assertion to the RP.</p>
 <h2 id="assertion-validation" data-section="5">
   
   
@@ -651,19 +739,21 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>The RP <strong>SHALL</strong> validate the signature on all signed attribute bundles in the assertion, using the cryptographic key from the CSP issuing the signed attribute bundle. The RP <strong>SHALL</strong> validate the signature of the assertion using the identified cryptographic key in the signed attribute bundle.</p>
+<p>The RP <strong>SHALL</strong> validate the signature on all signed attribute bundles in the assertion using the verification key from the CSP that issued the signed attribute bundle. The RP <strong>SHALL</strong> validate the signature of the assertion using the verification key of the subscriber-controlled wallet contained in the signed attribute bundle.</p>
 
 <p>The RP <strong>SHALL</strong> validate the assertion by checking that all the following are true:</p>
 
-<ul>
-  <li><em>Issuer verification</em>: ensuring that the assertion was issued by the wallet the RP expects it to be from.</li>
-  <li><em>Time validation</em>: ensuring that the expiration and issue times are within acceptable limits of the current timestamp.</li>
-  <li><em>Audience restriction</em>: ensuring that this RP is the intended recipient of the assertion.</li>
-  <li><em>Nonce</em>: ensuring that the cryptographic nonce included in the RP’s request is included in the presentation.</li>
-  <li><em>Transaction terms</em>: ensuring that the IAL, AAL, and FAL represented by the assertion are allowable under the applicable trust agreement.</li>
-</ul>
+<ol>
+  <li><em>Bundle verification</em>: Ensure that the bundle was issued to the wallet that is presenting the assertion to the RP.</li>
+  <li><em>Issuer verification</em>: If a specific wallet was requested by the RP, ensure that the assertion was issued by the requested wallet.</li>
+  <li><em>Time validation</em>: Ensure that the validity time window is within acceptable limits of the current timestamp.</li>
+  <li><em>Audience restriction</em>: Ensure that this RP is the intended recipient of the assertion.</li>
+  <li><em>Nonce</em>: Ensure that the cryptographic nonce included in the RP’s request is also included in the presentation.</li>
+  <li><em>Transaction terms</em>: Ensure that the IAL, AAL, and FAL represented by the assertion are allowable under the applicable trust agreement and are suitable for the RP’s needs.</li>
+  <li><em>Assertion identifier</em>: Ensure that the assertion has not been replayed within its validity time window at this RP by validating a transaction specific assertion identifier, such as a wallet-provided nonce.</li>
+</ol>
 
-<p>Additionally, the issuer <strong>MAY</strong> make available an online mechanism to determine the validity of a given attribute bundle, such as a status list queryable by the RP.</p>
+<p>Additionally, if a mechanism for invalidating attribute bundles is provided by the CSP, the RP <strong>SHOULD</strong> use this mechanism to determine whether the attribute bundle has been invalidated by the CSP since its issuance, as discussed in <a href="/800-63-4/sp800-63c/Wallets/#invalidate-attribute-bundle">Sec. 5.1.1</a>. This validation mechanism is particularly suited for attribute bundles with long or indeterminate lifetimes, since proactive invalidation by the CSP could occur long before expiration of the attribute bundle.</p>
 <h2 id="rp-subscriber-accounts" data-section="5">
   
   
@@ -673,9 +763,11 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>RP subscriber accounts <strong>SHALL</strong> be managed using a just-in-time or ephemeral provisioning model only (see <a href="/800-63-4/sp800-63c/GenIdP/#provisioning">Sec. 4.6.3</a>). In each of these cases, the RP creates the RP subscriber account and associates it with the federated identifier only after successful validation of the assertion from the wallet.</p>
+<p>Due to expected architectures and trust agreements for subscriber-controlled wallets, it is likely that RP subscriber accounts will be managed with a just-in-time or ephemeral provisioning model (see <a href="/800-63-4/sp800-63c/GenIdP/#provisioning">Sec. 4.6.3</a>). In each of these cases, the RP creates the RP subscriber account and associates it with the federated identifier (if available) after the successful validation of the assertion from the wallet. A pre-provisioning model could also be used, such as when the RP has an established account linking process (see <a href="/800-63-4/sp800-63c/Federation/#account-linking">Sec. 3.8.1</a>) that would allow linking of a wallet-based identity to an existing account using a known unique attribute or set of attributes.</p>
 
-<p>The RP <strong>SHALL</strong> disclose its practices for management of subscriber information as part of the trust agreement. The RP <strong>SHALL</strong> provide effective means of redress to the subscriber for correcting and removing information from the RP subscriber account. See <a href="/800-63-4/sp800-63c/Federation/#redress">Sec. 3.4.3</a> for additional requirements and considerations for redress mechanisms.</p>
+<p>For many RPs that use wallet-based attribute bundles, the RP will use an account resolution process to link the information in the attribute bundle to a set of functionality at the RP, as discussed in <a href="/800-63-4/sp800-63c/Federation/#account-resolution">Sec. 3.8.2</a>. If the RP subscriber account is not ephemeral and a federated identifier is present, the RP <strong>SHOULD</strong> associate the federated identifier presented by the subscriber-controlled wallet with the RP subscriber account and use the federated identifier for future federated transactions with the same subscriber. If a federated identifier is not present (e.g., in the case of mDL), the RP will need to request the necessary attributes to resolve the subscriber to the RP subscriber account for each federated transaction. This attribute set <strong>SHALL</strong> be the minumum necessary to achieve accurate resolution. Linking to multiple federated identifiers <strong>SHALL</strong> be managed as discussed in <a href="/800-63-4/sp800-63c/Federation/#account-linking">Sec. 3.8.1</a>.</p>
+
+<p>The RP <strong>SHALL</strong> disclose its practices for managing subscriber information as part of the trust agreement. The RP <strong>SHALL</strong> provide effective means of redress to the subscriber for correcting information in the RP subscriber account. See <a href="/800-63-4/sp800-63c/Federation/#redress">Sec. 3.5.3</a> for additional requirements and considerations for redress mechanisms.</p>
 
 
   

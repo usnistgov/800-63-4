@@ -127,20 +127,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63b/preface/">Preface</a></li>
                 
               
@@ -253,21 +239,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/usability/"><span class="section">8</span>Usability</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63b/equity/"><span class="section">9</span>Equity</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63b/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -424,30 +396,31 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 <h2 id="cloning" data-section="B">
   
   
-    Cloning of Authentication Keys <a href="#cloning" class="header-link"><i class="fa fa-link"></i></a>
+    Cloning Authentication Keys <a href="#cloning" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h2>
     
 
-<p>In some cases, the secret keys associated with multi-factor cryptographic authenticators (e.g., those based on the WebAuthn standard <a href="/800-63-4/sp800-63b/references/#ref-WebAuthn">[WebAuthn]</a>) may be stored in a sync fabric. This allows the keys to be backed up and transferred to other devices. The following requirements apply to keys managed in this manner:</p>
+<p>In some cases, authentication keys may be stored in a sync fabric (e.g., cloud storage). This allows the keys to be backed up and transferred to other devices. The following requirements apply to keys that are managed in this manner:</p>
 
 <ul>
   <li>All keys <strong>SHALL</strong> be generated using approved cryptography.</li>
-  <li>Private keys that are cloned or exported from a device <strong>SHALL</strong> only be stored in an encrypted form.</li>
-  <li>All authentication transactions <strong>SHALL</strong> perform private-key operations on the local device using cryptographic keys that are generated on-device or recovered from the sync fabric (e.g., in cloud storage).</li>
-  <li>Private keys stored in cloud-based accounts <strong>SHALL</strong> be protected by access control mechanisms such that only the authenticated user can access their private keys in the sync fabric.</li>
-  <li>User access to private keys in the sync fabric <strong>SHALL</strong> be protected by AAL2-equivalent MFA to preserve the integrity of the authentication protocols using the synced keys.</li>
+  <li>Authentication keys that are cloned or exported from a device to a sync fabric <strong>SHALL</strong> only be stored in an encrypted form using a key with the minimum security strength specified in the latest revision of <a href="/800-63-4/sp800-63b/references/#ref-SP800-131A">[SP800-131A]</a> (i.e., 112 bits as of the date of this publication). These keys <strong>SHOULD</strong> be encrypted using a method that employs a user-controlled secret.</li>
+  <li>All authentication transactions <strong>SHALL</strong> perform private-key operations on the local device using cryptographic keys that are generated on-device or recovered from the sync fabric.</li>
+  <li>Authentication keys stored in the sync fabric <strong>SHALL</strong> be protected by access control mechanisms such that only the authenticated user can access their authentication keys in the sync fabric.</li>
+  <li>User access to authentication keys in the sync fabric <strong>SHALL</strong> be protected by AAL2-equivalent MFA to preserve the integrity of the authentication protocols using the synced keys.</li>
   <li>These general requirements and any other agency-specific requirements for using syncable authenticators <strong>SHALL</strong> be documented and communicated, including on public-facing websites and digital service policies, where applicable.</li>
+  <li>Authenticators that enable the use of syncable authentication keys <strong>SHOULD</strong> provide a user interface (UI) that allows subscribers to view the services for which they have created a syncable authentication key, whether that key has been synced, and where that key has been synced. The UI <strong>SHALL NOT</strong> expose the authentication key itself.</li>
 </ul>
 
-<p>Additional requirements for federal enterprise<sup id="fnref:fed" role="doc-noteref"><a href="#fn:fed" class="footnote">1</a></sup> use of syncable authenticators:</p>
+<p>The following additional requirements apply to federal enterprise<sup id="fnref:fed" role="doc-noteref"><a href="#fn:fed" class="footnote">1</a></sup> use of syncable authenticators:</p>
 
 <ul>
-  <li>Federal enterprise private keys (i.e., federal keys) <strong>SHALL</strong> be stored in sync fabrics that have achieved FISMA Moderate protections or equivalent.</li>
-  <li>Devices (e.g., mobile phones, laptops, tablets) that generate, store, and sync authenticators containing federal enterprise private keys <strong>SHALL</strong> be protected by mobile device management software or other device configuration controls that prevent the syncing or sharing of keys to unauthorized devices or sync fabrics.</li>
-  <li>Access to the sync fabric <strong>SHALL</strong> be controlled by agency-managed accounts (e.g., a central identity and access management solution or platform-based managed account) to maintain enterprise control over the private key’s life cycle.</li>
-  <li>Authenticators that generate private keys <strong>SHOULD</strong> support attestation features that can be used to verify the capabilities and sources of the authenticator (e.g., enterprise attestation).</li>
+  <li>Federal enterprise authentication keys <strong>SHALL</strong> be stored in sync fabrics that have achieved Federal Information Security Modernization Act (FISMA) <a href="/800-63-4/sp800-63b/references/#ref-FISMA">[FISMA]</a> moderate protections or equivalent.</li>
+  <li>Devices (e.g., mobile phones, laptops, tablets) that generate, store, and sync authenticators containing federal enterprise authentication keys <strong>SHALL</strong> be protected by mobile device management software or other device configuration controls that prevent the syncing or sharing of keys to unauthorized devices or sync fabrics.</li>
+  <li>Access to the sync fabric <strong>SHALL</strong> be controlled by agency-managed accounts (e.g., a central identity and access management solution, platform-based managed account) to maintain federal enterprise control over the authentication key’s life cycle.</li>
+  <li>Authenticators that generate authentication keys <strong>SHOULD</strong> support attestation features that can be used to verify the capabilities and sources of the authenticator (e.g., enterprise attestation).</li>
 </ul>
 
 <p>These controls specifically support syncing and should be considered additive to the existing multi-factor cryptographic authenticator requirements and AAL2 requirements, including <a href="reference.md#ref-FIPS140">[FIPS140]</a> validation.</p>
@@ -464,28 +437,28 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>Many syncable authenticators are built upon W3C’s <a href="/800-63-4/sp800-63b/references/#ref-WebAuthn">[WebAuthn]</a> specification, which provides a common data structure, a challenge-response cryptographic protocol, and an API for leveraging public-key credentials. The specification is flexible and adaptive, meaning that not all deployments of WebAuthn credentials will meet the requirements of federal agencies for implementation.</p>
+<p>Many syncable authenticators are built on W3C’s <a href="/800-63-4/sp800-63b/references/#ref-WebAuthn">[WebAuthn]</a> specification, which provides a common data structure, a challenge-response cryptographic protocol, and an API for leveraging public-key credentials. The specification is flexible and adaptive, meaning that not all deployments of WebAuthn credentials will meet the requirements of federal agencies for implementation.</p>
 
-<p>The specification has a series of flags that the RP application can request from the authenticator to provide additional context for the authentication event and determine whether it meets the RP’s access policies. This section describes certain flags in the WebAuthn specification that federal agencies acting as RPs should understand and interrogate when building their syncable authenticator implementations to align with NIST AAL2 guidelines.</p>
+<p>The specification has a series of flags that the RP application can request from the authenticator to provide additional context for the authentication event and determine whether it meets the RP’s access policies. This section describes certain flags in the WebAuthn specification that federal agencies acting as RPs should understand and interrogate when building their syncable authenticator implementations to align with AAL2 guidelines.</p>
 
 <p>The following requirements apply to WebAuthn Level 3 flags:</p>
 
 <dl>
   <dt>User Present (UP)</dt>
-  <dd>The User Present flag indicates that a “presence” test was used to confirm that the user has interacted with the authenticator (e.g., tapping a hardware token inserted into a USB port). This supports authentication intent, as described in <a href="/800-63-4/sp800-63b/authenticators/#intent">Sec. 3.2.8</a>. Verifiers <strong>SHOULD</strong> confirm that the User Present flag has been set.</dd>
+  <dd>The User Present flag indicates that a “presence” test confirmed that the user has interacted with the authenticator (e.g., tapping a hardware token inserted into a USB port). This supports authentication intent, as described in <a href="/800-63-4/sp800-63b/authenticators/#intent">Sec. 3.2.8</a>. Verifiers <strong>SHOULD</strong> confirm that the User Present flag has been set.</dd>
   <dt>User Verified (UV)</dt>
   <dd>The User Verified flag indicates that the authenticator has locally authenticated the user using one of the available “user verification” methods. Verifiers <strong>SHALL</strong> indicate that UV is preferred and <strong>SHALL</strong> inspect responses to confirm the value of the UV flag. This indicates whether the authenticator can be treated as a multi-factor cryptographic authenticator. If the user is not verified, agencies <strong>SHALL</strong> treat the authenticator as a single-factor cryptographic authenticator. A further extension to the WebAuthn Level 3 specification (see Sec. 10.3 of <a href="/800-63-4/sp800-63b/references/#ref-WebAuthn">[WebAuthn]</a>) provides additional data on verification methods if agencies seek to gain context on the local authentication event.</dd>
   <dt>Backup Eligible</dt>
   <dd>The Backup Eligible flag indicates whether the authenticator can be synced to a different device (i.e., whether the key can be stored elsewhere). It is important to note that just because an authenticator <em>can</em> be synced does not mean that it <em>has</em> been synced. Verifiers <strong>MAY</strong> use this flag to establish policies that restrict the use of syncable authenticators. This flag is necessary to distinguish authenticators that are device-bound from those that may be cloned to more than one device.</dd>
   <dt>Backup State</dt>
-  <dd>The Backup State flag indicates whether an authenticator <em>has</em> been synced to a different device. Verifiers <strong>MAY</strong> use this flag to establish restrictions on authenticators that are synced to other devices. Agencies <strong>SHOULD NOT</strong> condition acceptance based on this flag for public-facing applications due to user experience concerns. This flag <strong>MAY</strong> be used for enterprise applications to support the restriction of syncable authenticators for specific applications.</dd>
+  <dd>The Backup State flag indicates whether an authenticator <em>has</em> been synced to a different device. Verifiers <strong>MAY</strong> use this flag to establish restrictions on authenticators that are synced to other devices. Agencies <strong>SHOULD NOT</strong> condition acceptance based on this flag for public-facing applications due to user experience concerns.</dd>
 </dl>
 
-<p>In addition to the flags specified above, agencies may wish to gain additional information on the origins and capabilities of the syncable authenticators that they choose to implement and accept. Within the context of FIDO2 WebAuthn, some authenticators support attestation features that can be used to determine the capabilities and manufacturers of specific authenticators. For enterprise use cases, agencies <strong>SHOULD</strong> implement attestation capabilities based on the functionality offered by their platform providers. This would take the form of an enterprise attestation in which the RP requests identifying information about the authenticator.</p>
+<p>In addition to the flags specified above, agencies may wish to gain additional information on the origins and capabilities of the syncable authenticators that they choose to implement and accept. Within the context of WebAuthn, some authenticators support attestation features that can be used to determine the capabilities and manufacturers of specific authenticators. For federal enterprise use cases, agencies <strong>SHOULD</strong> implement attestation capabilities based on the functionality offered by their platform providers. This would take the form of a manufacturer attestation in which the RP requests identifying information about the authenticator.</p>
 
-<p>Attestations <strong>SHOULD NOT</strong> block the use of syncable authenticators for broad public-facing applications. Due to their limited availability in consumer products, requiring their use is likely to divert users to less secure authentication options that are vulnerable to phishing (e.g., PSTN-based out-of-band authentication). While authentication transaction metadata, such as the User Verified flag indicating the use of a local activation factor, is available in WebAuthn responses, attestation can provide stronger assurance of the characteristics of the authenticator used in a transaction.  RPs <strong>MAY</strong> use attestation to determine the level of confidence they have in a syncable authenticator.</p>
+<p>The unavailability of attestations <strong>SHOULD NOT</strong> block the use of syncable authenticators for broad public-facing applications. Due to the limited availability of attestations in consumer products, requiring their use is likely to divert users to less secure authentication options that are vulnerable to phishing (e.g., PSTN-based out-of-band authentication). While authentication transaction metadata (e.g., the User Verified flag indicating the use of a local activation factor) is available in WebAuthn responses, attestation can provide stronger assurance of the characteristics of the authenticator used in a transaction.  RPs <strong>SHOULD</strong> use attestation to determine the level of confidence they have in a syncable authenticator when attestations are available.</p>
 
-<p>Even if the RP requests flag and attestation data, the authenticator may not return all of the requested information, or it may return information that is inconsistent with the expected response mandated for access to a resource. Agencies <strong>SHALL</strong> evaluate the use cases for syncable authenticators and determine the appropriate access policy decisions that they intend to make based on the returned information.</p>
+<p>When the RP receives flag and attestation data, the authenticator may provide information that is incomplete or inconsistent with access to a resource. Agencies <strong>SHALL</strong> evaluate the use cases for syncable authenticators and determine the appropriate access policy decisions that they intend to make based on the returned information.</p>
 <h2 id="sharing" data-section="B">
   
   
@@ -495,15 +468,15 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>Cybersecurity guidelines have historically cautioned against sharing authenticators between users, expecting different users to maintain their own unique authenticators. Despite this guidance, authenticator and password sharing occurs within some user groups and applications to allow individuals to share access to a digital account.</p>
+<p>Cybersecurity guidelines have historically cautioned against sharing authenticators between users. Rather, different users are expected to maintain their own unique authenticators. Despite this, authenticator and password sharing occurs within some user groups and applications to allow individuals to share access to a digital account.</p>
 
 <p>As indicated in <a href="/800-63-4/sp800-63b/syncable/#table-5">Table 5</a>, some syncable authenticator implementations have embraced this user behavior and established methods for sharing authentication keys between different users. Further, some implementations actively encourage sharing syncable authenticators as a convenient and more secure alternative to sharing passwords for common services.</p>
 
 <p>For enterprise use cases, concerns over sharing keys can be effectively mitigated using device management techniques that limit the ability for keys to be moved off of approved devices or sync fabrics. However, similar mitigations are not currently available for public-facing use cases, leaving RPs dependent on the sharing models adopted by syncable authenticator providers. Owners of public-facing applications should be aware of the risks associated with shared authenticators. When interacting with the public, agencies have limited visibility into which specific authenticators are being employed by their users and should assume that all syncable authenticators may be subject to sharing. While many sharing models have substantial controls that minimize risks (e.g., requiring close proximity between devices to allow sharing), other implementations are less restrictive.</p>
 
-<p>The risk of sharing posed by this new class of authenticators is not unique. It applies to all authenticator types, some of which are weaker than syncable authenticators. Any authenticator can be shared by a user who is determined to share it. Users can actively share passwords, OTPs, out-of-band authenticators, and even push authentication events that allow a designee (whether formal or not) to authenticate on behalf of an end user.</p>
+<p>The risk of sharing posed by this new class of authenticators is not unique. It applies to all authenticator types, some of which are weaker than syncable authenticators. Any authenticator can be shared by a user who is determined to share it. Users can actively share passwords, OTPs, out-of-band authenticators, and even push-based authentication events that allow a designee (whether formal or not) to authenticate on behalf of an end user.</p>
 
-<p>Agencies determine which authenticators they will accept for their applications based on the specific risks, threats, and usability considerations they face. Syncable authenticators may be offered as a new option for applications that seek to implement up to AAL2. The trade-offs of this technology should be well-balanced based on their expected outcomes for security, privacy, equity, and usability.</p>
+<p>Agencies determine which authenticators they will accept for their applications based on the specific risks, threats, and usability considerations they face. Syncable authenticators may be offered as a new option for applications that seek to implement up to AAL2. The trade-offs of this technology should be balanced with expected outcomes for security, privacy, and user experience.</p>
 <h2 id="example" data-section="B">
   
   
@@ -513,18 +486,22 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>A common use of syncable authenticators is in an AAL2 authentication transaction. The following items summarize how WebAuthn syncable authenticators satisfy various aspects of AAL2 requirements:</p>
+<p>A common use of syncable authenticators is in an AAL2 authentication transaction. The following items summarize how WebAuthn syncable authenticators satisfy aspects of AAL2 requirements:</p>
 
 <dl>
-  <dt>Phishing resistance (recommended; required for federal enterprise)</dt>
+  <dt>Phishing resistance (recommended, required for federal enterprise)</dt>
   <dd><strong>Achieved</strong>: Properly configured syncable authenticators create a unique public or private key pair whose use is constrained to the domain in which it was created (i.e., the key can only be used with a specific website or RP). This prevents a falsified web page from being able to capture and reuse an authenticator output.</dd>
   <dt>Replay resistance (required)</dt>
   <dd><strong>Achieved</strong>: Syncable authenticators prevent replay resistance (i.e., prevention of reuse in future transactions) through a random nonce that is incorporated into each authentication transaction.</dd>
   <dt>Authentication intent (required)</dt>
-  <dd><strong>Achieved</strong>: Syncable authenticators require users to input an activation secret to initiate the cryptographic authentication protocol. This serves as authentication intent, as the event cannot proceed without the user’s active participation.</dd>
+  <dd><strong>Achieved</strong>: Syncable authenticators require users to present an activation factor (i.e., activation secret, biometric characteristic) to initiate the cryptographic authentication protocol. This serves as authentication intent, as the event cannot proceed without the user’s active participation.</dd>
   <dt>Multi-factor (required)</dt>
-  <dd><strong>Achieved</strong>: The user verified (UV) flag value indicates whether a local authentication mechanism (i.e., an activation factor) was used to complete the transaction. Without user verification, the verifier prompts for an additional authentication factor as part of the transaction.</dd>
+  <dd><strong>Achieved</strong>: The User Verified flag value indicates whether a local authentication mechanism (i.e., an activation factor) was used to complete the transaction. Without user verification, the verifier prompts for an additional authentication factor as part of the transaction.</dd>
 </dl>
+
+<p>If the subscriber provides their own authenticator, the verifier may have limited visibility into the features and capabilities of the sync fabric and the devices to which the user may sync their authentication keys. In this scenario, the verifier <strong>SHOULD</strong> leverage additional risk indicators or trust signals that may be available from the transaction, device, or sync fabric to increase confidence in the authentication event.</p>
+
+<p>Syncable authenticators are not unique in this respect. Any subscriber-provided authenticator is subject to the same risks as syncable authenticators, including OTP authenticators and nearly all out-of-band authenticators. It is important for CSPs and IdPs to assess each type of authenticator that they offer at each assurance level and determine which are acceptable based on their users and transaction types.</p>
 <h2 id="security-considerations" data-section="B">
   
   
@@ -534,14 +511,11 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>Syncable authenticators present distinct threats and challenges that agencies should evaluate before implementation or deployment, as shown in <a href="B_syncable#table-4">Table 4</a>.</p>
+<p>Syncable authenticators present distinct threats and challenges that agencies should evaluate before implementation or deployment, as shown in <a href="B_syncable#table-5">Table 5</a>.</p>
 
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
+<p latex-ignore="true"><a href="/800-63-4/sp800-63b/syncable/#table-5" name="table-5">Table 5. Syncable authenticator threats, challenges, and mitigations</a></p>
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63b/syncable/#table-4" name="table-4">Table 4. Syncable authenticator threats, challenges, and mitigations</a></p>
-
-<table latex-table="4" latex-caption="Syncable Authenticator Threats, Challenges, and Mitigations" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.35\textwidth,p@0.35\textwidth">
+<table latex-table="5" latex-caption="Syncable authenticator threats, challenges, and mitigations" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.35\textwidth,p@0.35\textwidth">
   <thead>
     <tr>
       <th>Threat or Challenge</th>
@@ -552,13 +526,8 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
   <tbody>
     <tr>
       <td><strong>Unauthorized key use or loss of control</strong></td>
-      <td>Some syncable authenticator deployments support sharing private keys to devices that belong to other users who can then misuse the key</td>
+      <td>Some syncable authenticator deployments support sharing authentication keys to devices that belong to other users who can then misuse the key.</td>
       <td>Enforce enterprise device management features or managed profiles that prevent synced keys from being shared.</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td>Notify users of key-sharing events through all available notification channels.</td>
     </tr>
     <tr>
       <td> </td>
@@ -578,12 +547,12 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
     <tr>
       <td> </td>
       <td> </td>
-      <td>Implement syncing fabric access controls that prevent anyone other than the authenticated user from accessing the private key.</td>
+      <td>Implement sync fabric access controls that prevent anyone other than the authenticated user from accessing the authentication key.</td>
     </tr>
     <tr>
       <td> </td>
       <td> </td>
-      <td>Evaluate cloud services for baseline security features (e.g., FISMA Moderate protections or comparable).</td>
+      <td>Evaluate cloud services for baseline security features (e.g., FISMA moderate protections or comparable).</td>
     </tr>
     <tr>
       <td> </td>
@@ -613,7 +582,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
     <tr>
       <td> </td>
       <td> </td>
-      <td>Use only as a derived authenticator in federal enterprise scenarios <a href="/800-63-4/sp800-63b/references/#ref-sp800-157">[SP800-157]</a>.</td>
+      <td>Only use synced keys as a derived authenticator in federal enterprise scenarios <a href="/800-63-4/sp800-63b/references/#ref-sp800-157">[SP800-157]</a>.</td>
     </tr>
     <tr>
       <td> </td>
@@ -627,7 +596,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
     </tr>
     <tr>
       <td><strong>Revocation</strong></td>
-      <td>Since syncable authenticators use RP-specific keys, the ability to centrally revoke access based on those keys is challenging. For example, with traditional PKI, CRLs can be used centrally to revoke access. A similar process is not available for syncable authenticators (or any FIDO WebAuthn-based credentials).</td>
+      <td>Since syncable authenticators use RP-specific keys, the ability to centrally revoke access based on those keys is challenging. For example, with traditional PKI, CRLs can be used centrally to revoke access. A similar process is not available for syncable authenticators or any FIDO WebAuthn-based credentials.</td>
       <td>Implement a central identity management (IDM) account for users to manage authenticators and remove them from the “home agency” account if they are compromised or expired.</td>
     </tr>
     <tr>
@@ -645,7 +614,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:fed" role="doc-endnote">
-      <p>With respect to these requirements, federal enterprise systems and keys include what would be considered in scope for PIV guidance, such as government contractors, government employees, and mission partners. It does not include government-to-consumer or public-facing use cases. <a href="#fnref:fed" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Federal enterprise systems include those considered in scope for PIV guidance, such as government contractors, government employees, and mission partners. It does not include government-to-consumer or public-facing use cases. <a href="#fnref:fed" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

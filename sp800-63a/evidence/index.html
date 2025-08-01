@@ -114,20 +114,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
                 
               
@@ -240,21 +226,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63a/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -283,6 +255,20 @@
                 
                 
                     <li class="active"><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/training/"><span class="section">B</span>Training</a></li>
                 
               
               
@@ -398,7 +384,7 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 
 <p><em>This appendix is informative.</em></p>
 
-<p>This appendix provides a non-exhaustive list of types of identity evidence, grouped by strength.</p>
+<p>This appendix provides a non-exhaustive list of types of identity evidence grouped by strength.</p>
 <h2 id="fair-evidence-examples" data-section="A">
   
   
@@ -408,7 +394,11 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h2>
     
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A1" name="table-A1">Table 4. Fair Evidence Examples</a></p>
+<p>The qualities and features of the different types of FAIR evidence vary based on how they are implemented. CSPs must evaluate and document the evidence types that it will accept based on the requirements provided in these guidelines.</p>
+
+<p></p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A1" name="table-A1">Table 4. Fair evidence examples</a></p>
 
 <table latex-table="4" latex-caption="Fair Evidence Examples" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.20\textwidth,p@0.20\textwidth,p@0.30\textwidth">
   <thead>
@@ -423,53 +413,43 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     <tr>
       <td>Financial Account</td>
       <td>KYC/CIP requirements</td>
-      <td>Confirm signature on assertion is from intended origin.</td>
-      <td>*Demonstrated possession via an AAL2 authentication event and FAL 2 federated assertion. *User input of a micro deposit event of sufficient entropy.</td>
+      <td>• Confirm signature on assertion is from intended origin</td>
+      <td>• Demonstrated possession via an AAL2 authentication event and an FAL2 federated assertion<br /> • User input of a microtransaction event of sufficient entropy</td>
     </tr>
     <tr>
       <td>Phone Account</td>
-      <td>Established and documented account opening practices.</td>
-      <td>*Confirm presence of user account with MNO. *Confirm signature on assertion is from intended origin.</td>
-      <td>*Demonstrated possession through enrollment code. *Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion.</td>
+      <td>Established and documented account opening practices</td>
+      <td>• Confirm presence of user account with MNO<br /> • Confirm signature on assertion is from expected source</td>
+      <td>• Demonstrated possession through enrollment code<br /> • Demonstrated possession via an AAL2 authentication event and an FAL2 federated assertion</td>
     </tr>
     <tr>
       <td>Student ID Card</td>
-      <td>Student registration and enrollment practices.</td>
-      <td>*Confirm signature on assertion is from intended origin; or  *Confirm physical security features and evaluate for tampering.</td>
-      <td>*Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion. *Physical comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+      <td>Student registration and enrollment practices</td>
+      <td>• Confirm signature on assertion is from expected source<br /> • Confirm physical security features and evaluate for tampering</td>
+      <td>• Demonstrated possession via an AAL2 authentication event and an FAL2 federated assertion<br /> • Physical comparison to image on the ID<br /> • Biometric comparison to image on the ID</td>
     </tr>
     <tr>
       <td>Corporate ID Card</td>
-      <td>Onboarding and background screening practices.</td>
-      <td>*Confirm signature on assertion is from intended origin; or *Confirm physical security features and evaluate for tampering.</td>
-      <td>*Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion. *Physical comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+      <td>Onboarding and background screening practices</td>
+      <td>• Confirm signature on assertion is from expected source<br /> • Confirm physical security features and evaluate for tampering</td>
+      <td>• Demonstrated possession via an AAL2 authentication event and an FAL2 federated assertion<br /> • Physical comparison to image on the ID<br /> • Biometric comparison to image on the ID</td>
     </tr>
     <tr>
-      <td>Veteran Health ID card</td>
+      <td>Veteran ID card</td>
       <td>VA identity verification, issuance and eligibility process</td>
-      <td>*Confirm signature on assertion is from intended origin; or *Confirm physical security features and evaluate for tampering</td>
-      <td>*Demonstrated possession via and AAL2 authentication event and FAL2 federated assertion. *Physical comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+      <td>• Confirm signature on assertion is from expected source<br /> • Confirm physical security features and evaluate for tampering</td>
+      <td>• Demonstrated possession via an AAL2 authentication event and an FAL2 federated assertion<br /> • Physical comparison to image on the ID<br /> • Biometric comparison to image on the ID</td>
     </tr>
     <tr>
-      <td>Credit or Debit Card</td>
-      <td>KYC/CIP Account Opening Practices.</td>
-      <td>*Confirm physical security features, physical signature.</td>
-      <td>*Demonstrated ability to authenticate to the card using a PIN or other activation factor (if available). *Physical inspection of the card. Must be presented with other evidence containing a photo.</td>
-    </tr>
-    <tr>
-      <td>Snap Card</td>
-      <td>State defined eligibility and enrollment requirements.</td>
-      <td>Confirm physical security features, physical signature</td>
-      <td>*Visual inspection of the card. Must be presented with other evidence containing a photo (if there is no image on the card).</td>
-    </tr>
-    <tr>
-      <td>Social Security Card</td>
-      <td>SSN application process.</td>
-      <td>*Confirm physical security features, inspect for tampering.</td>
-      <td>*Visual inspection of the card. Must be presented with other evidence containing a photo.</td>
+      <td>SNAP Card with Facial Portrait</td>
+      <td>State defined eligibility and enrollment requirements</td>
+      <td>• Confirm signature on assertion is from expected source<br /> • Confirm physical security features and evaluate for tampering</td>
+      <td>• Visual inspection of the card<br /> • Physical or biometric comparison to image on the ID</td>
     </tr>
   </tbody>
 </table>
+
+<p></p>
 
 <div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
 </code></pre></div></div>
@@ -482,7 +462,9 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h2>
     
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A2" name="table-A2">Table 5. Strong Evidence Examples</a></p>
+<p></p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A2" name="table-A2">Table 5. Strong evidence examples</a></p>
 
 <table latex-table="5" latex-caption="Strong Evidence Examples" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.20\textwidth,p@0.20\textwidth,p@0.30\textwidth">
   <thead>
@@ -495,37 +477,45 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   </thead>
   <tbody>
     <tr>
-      <td>Driver’s License or State ID</td>
-      <td>State issuance processes, REAL ID Act</td>
-      <td>Confirm physical security features through inspection.</td>
-      <td>*Physical comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+      <td>Driver’s License or State ID (physical)</td>
+      <td>State issuance processes or the REAL ID Act</td>
+      <td>• Confirm physical security features through inspection</td>
+      <td>• Physical comparison of image on ID<br /> • Biometric comparison of the image on the ID<br /> • Biometric comparison to issuing source records</td>
     </tr>
     <tr>
       <td>Permanent Resident Card (issued prior to May 11, 2010)</td>
       <td>DHS issuance and eligibility process</td>
-      <td>*Confirm physical security features through inspection.</td>
-      <td>*Physical comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+      <td>• Confirm physical security features through inspection</td>
+      <td>• Physical comparison of image on ID<br /> • Biometric comparison of the image on the ID<br /> • Biometric comparison to issuing source records</td>
     </tr>
     <tr>
       <td>U.S. Uniformed Services Privilege and Identification Card</td>
       <td>DoD issuance and eligibility processes</td>
-      <td>*Confirm physical security features through inspection.</td>
-      <td>*Visual comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+      <td>• Confirm physical security features through inspection</td>
+      <td>• Visual comparison of image on ID<br /> • Biometric comparison of the image on the ID<br /> • Biometric comparison to issuing source records</td>
     </tr>
     <tr>
       <td>Native American Tribal Photo Identification Card</td>
       <td>Local issuance and eligibility processes</td>
-      <td>*Confirm physical security features through inspection.</td>
-      <td>*Visual comparison of image on ID. *Biometric Comparison of the image on the ID. *Biometric comparison to issuing source records.</td>
+      <td>• Confirm physical security features through inspection</td>
+      <td>• Visual comparison of image on ID<br /> • Biometric comparison of the image on the ID<br /> • Biometric comparison to issuing source records</td>
     </tr>
     <tr>
       <td>Veteran Health ID Card (VHIC)</td>
       <td>VA identity verification, issuance and eligibility process</td>
-      <td>*Confirm physical security features and evaluate for tampering</td>
-      <td>*Visual comparison to image on the ID. *Biometric Comparison to image on the ID.</td>
+      <td>• Confirm physical security features and evaluate for tampering</td>
+      <td>• Visual comparison to image on the ID<br /> • Biometric comparison to image on the ID</td>
+    </tr>
+    <tr>
+      <td>USCIS Security-Enhanced Travel Documents (I-571/I-327)</td>
+      <td>USCIS issuance and eligibility processes</td>
+      <td>• Confirm physical security features and evaluate for tampering</td>
+      <td>• Visual comparison to image on the ID<br /> • Biometric comparison to image on the ID</td>
     </tr>
   </tbody>
 </table>
+
+<p></p>
 
 <div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
 </code></pre></div></div>
@@ -538,7 +528,9 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
 </h2>
     
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A3" name="table-A3">Table 6. Superior Evidence Examples</a></p>
+<p></p>
+
+<p latex-ignore="true"><a href="/800-63-4/sp800-63a/evidence/#table-A3" name="table-A3">Table 6. Superior evidence examples</a></p>
 
 <table latex-table="6" latex-caption="Superior Evidence Examples" latex-longtable="true" latex-columns="p@0.20\textwidth,p@0.20\textwidth,p@0.20\textwidth,p@0.30\textwidth">
   <thead>
@@ -553,53 +545,61 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
     <tr>
       <td>Personal Identity Verification (PIV) Card</td>
       <td>FIPS 201-3 identity verification and issuance processes</td>
-      <td>Validation of stored PKI Certificate, CRL check if available</td>
-      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B. *Biometric comparison to image stored on ID or biometric stored on ID. *Visual comparison of image on ID.</td>
+      <td>• Validation of stored PKI certificate<br /> • Revocation check if available</td>
+      <td>• Authentication consistent with multi-factor cryptographic authenticators per SP 800-63B<br /> • Biometric comparison to image stored on ID or biometric stored on ID<br /> • Visual comparison of image on ID</td>
     </tr>
     <tr>
       <td>Personal Identity Verification-Interoperable (PIV-I) Card</td>
       <td>FIPS 201-3 identity verification and issuance processes</td>
-      <td>Validation of stored PKI Certificate, CRL check if available</td>
-      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B. *Biometric comparison to image stored on ID or biometric stored on ID. *Visual comparison of image on ID.</td>
+      <td>• Validation of stored PKI certificate<br /> • Revocation check if available</td>
+      <td>• Authentication consistent with multi-factor cryptographic authenticators per SP 800-63B<br /> • Biometric comparison to image or biometric stored on ID<br /> • Visual comparison of image on ID</td>
     </tr>
     <tr>
       <td>Common Access Card (CAC)</td>
       <td>DoD identity verification and issuance process</td>
-      <td>Validation of stored PKI Certificate, CRL check if available</td>
-      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B. *Biometric comparison to image stored on ID or biometric stored on ID. *Visual comparison of image on ID.</td>
+      <td>• Validation of stored PKI certificate<br /> • CRL check if available</td>
+      <td>• Authentication consistent with multi-factor cryptographic authenticators per SP 800-63B<br /> • Biometric comparison to image or biometric stored on ID<br /> • Visual comparison of image on ID</td>
     </tr>
     <tr>
       <td>US Passport</td>
       <td>State Department passport issuance process</td>
-      <td>Validation of stored PKI certificate, CRL check if available.</td>
-      <td>*Visual comparison of image on ID on stored in ID. *Biometric comparison to image on ID or stored in ID. *Biometric comparison to issuing source records.</td>
+      <td>• Validation of stored PKI certificate<br /> • Revocation check if available</td>
+      <td>• Visual comparison of image on ID on stored in ID<br /> • Biometric comparison to image stored on ID<br /> • Biometric comparisons to issuing source records</td>
     </tr>
     <tr>
-      <td>International e-Passports Passports</td>
-      <td>ICAO compliant and/or State Department approved</td>
-      <td>Validation of stored PKI certificate, CRL check if available.</td>
-      <td>*Visual comparison of image on ID on stored in ID. *Biometric comparison to image on ID or stored in ID. *Biometric comparison to issuing source records.</td>
+      <td>International e-Passports</td>
+      <td>ICAO-compliant and/or State Department-approved</td>
+      <td>• Validation of stored PKI certificate<br /> • Revocation check if available</td>
+      <td>• Visual comparison of image on ID on stored in ID<br /> • Biometric comparison to image on ID<br /> • Biometric comparisons to issuing source records</td>
     </tr>
     <tr>
       <td>Mobile Driver’s License (MDL)</td>
-      <td>State Issuance processes, AAMVA guidance, and Real ID Act</td>
-      <td>Validation of Mobile Security Object, revocation check if available</td>
-      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B.</td>
+      <td>State issuance processes, AAMVA guidance, or Real ID Act</td>
+      <td>• Validation of mobile security object<br /> • Revocation check if available</td>
+      <td>• Authentication consistent with multi-factor cryptographic authenticators per SP 800-63B</td>
     </tr>
     <tr>
       <td>Digital Permanent Resident Card (Verifiable Credential)</td>
       <td>DHS issuance and eligibility process</td>
-      <td>Validation of stored verifiable credential, revocation check if available</td>
-      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B.</td>
+      <td>• Validation of stored verifiable credential<br /> • Revocation check if available</td>
+      <td>• Authentication consistent with multi-factor cryptographic authenticators per SP 800-63B</td>
     </tr>
     <tr>
       <td>European Digital Identity Wallet (EUDI Wallet) Personal Identification (PID) Element</td>
       <td>EC defined identity verification and issuance process; qualified issuer certified</td>
-      <td>Validation of stored verifiable credential or Mobile Security Object, revocation check if available</td>
-      <td>*Authentication consistent with multi-factor cryptographic authenticators per NIST SP 800-63B.</td>
+      <td>• Validation of stored verifiable credential or mobile security object<br /> • Revocation check if available</td>
+      <td>• Authentication consistent with multi-factor cryptographic authenticators per SP 800-63B</td>
+    </tr>
+    <tr>
+      <td>Japan’s My Number Card</td>
+      <td>Japan’s defined identity verification and issuance process; qualified issuer certified</td>
+      <td>• Validation of stored verifiable credential<br /> • Revocation check if available</td>
+      <td>• Authentication consistent with multi-factor cryptographic authenticators per SP 800-63B</td>
     </tr>
   </tbody>
 </table>
+
+<p></p>
 
 
   

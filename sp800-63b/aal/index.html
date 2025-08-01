@@ -127,20 +127,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63b/preface/">Preface</a></li>
                 
               
@@ -253,21 +239,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/usability/"><span class="section">8</span>Usability</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63b/equity/"><span class="section">9</span>Equity</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63b/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -412,15 +384,13 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
 <p><em>This section is normative.</em></p>
 
-<p>To satisfy the requirements of a given AAL and be recognized as a subscriber, a claimant <strong>SHALL</strong> authenticate to an RP or IdP as described in <a href="/800-63-4/sp800-63c/introduction/#introduction" latex-href="#ref-SP800-63C">[SP800-63C]</a> with a process whose strength is equal to or greater than the requirements at that level. The authentication process results in an identifier that uniquely identifies the subscriber each time they authenticate to that RP. The identifier <strong>MAY</strong> be pseudonymous. Other attributes that identify the subscriber as a unique subject <strong>MAY</strong> also be provided.</p>
+<p>To satisfy the requirements of a given AAL and be recognized as a subscriber, a claimant <strong>SHALL</strong> authenticate to an RP (or IdP, as described in <a href="/800-63-4/sp800-63c/introduction/#introduction" latex-href="#ref-SP800-63C">[SP800-63C]</a>) with a process whose strength is equal to or greater than the requirements at that level. The authentication process results in an identifier that uniquely identifies the subscriber each time they authenticate to that RP. The identifier <strong>MAY</strong> be pseudonymous. Other attributes that identify the subscriber as a unique subject <strong>MAY</strong> also be provided. Detailed normative requirements for authenticators and verifiers at each AAL are provided in <a href="/800-63-4/sp800-63b/authenticators/#AAL_SEC5">Sec. 3</a>. See <a href="/800-63-4/sp800-63/dirm/#sec5" latex-href="#ref-SP800-63">[SP800-63] Sec. 3</a> for details on how to choose the most appropriate AAL.</p>
 
-<p>Detailed normative requirements for authenticators and verifiers at each AAL are provided in <a href="#AAL_SEC5">Sec. 3</a>. See <a href="/800-63-4/sp800-63/dirm/#sec5" latex-href="#ref-SP800-63">[SP800-63] Sec. 3</a> for details on how to choose the most appropriate AAL.</p>
+<p>Personal information collected during and after identity proofing (see <a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a>) <strong>MAY</strong> be made available to the subscriber by the digital identity service through the subscriber account. The release or online availability of any personal information by federal agencies requires multi-factor authentication in accordance with <a href="/800-63-4/sp800-63b/references/#ref-EO13681">[EO13681]</a>. Therefore, federal agencies <strong>SHALL</strong> select a minimum of AAL2 when personal information is made available online.</p>
 
-<p>Personal information collected during and after identity proofing (described in <a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a>) <strong>MAY</strong> be made available to the subscriber by the digital identity service through the subscriber account. The release or online availability of any personally identifiable information (PII) or other personal information by federal agencies requires multi-factor authentication in accordance with <a href="/800-63-4/sp800-63b/references/#ref-EO13681">[EO13681]</a>. Therefore, federal agencies <strong>SHALL</strong> select a minimum of AAL2 when PII or other personal information is made available online.</p>
+<p>At all AALs, indicators of potential fraud, including applicable indicators described in <a href="/800-63-4/sp800-63b/session/#monitoring">Sec. 5.3</a>, <strong>MAY</strong> be used to lower the risk of misauthentication. For example, authentication from an unexpected geolocation or IP address block (e.g., a cloud service) might prompt the use of additional risk-based controls. CSPs or verifiers <strong>SHALL</strong> assess their use of indicators of potential fraud for efficacy and to identify and mitigate potential negative impacts on their user populations. CSPs or verifiers <strong>SHALL</strong> include fraud indicators in the authentication privacy risk assessment. The use of potential fraud indicators prior to or during the authentication process does not impact or change the AAL of a transaction or substitute for an authentication factor.</p>
 
-<p>At all AALs, pre-authentication checks <strong>MAY</strong> be used to lower the risk of misauthentication. For example, authentication from an unexpected geolocation or IP address block (e.g., a cloud service) might prompt the use of additional risk-based controls. Where used, CSPs or verifiers <strong>SHALL</strong> assess their pre-authentication checks for efficacy and to identify and mitigate potential disparate impacts on their user populations. CSPs or verifiers <strong>SHALL</strong> include pre-authentication checks in the authentication privacy risk assessment. Pre-authentication checks do not impact or change the AAL of a transaction or substitute for an authentication factor.</p>
-
-<p>Throughout this document, <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> requirements are satisfied by the latest edition of FIPS 140. Legacy FIPS 140 certifications <strong>MAY</strong> also be used while still valid.</p>
+<p>Throughout this document, <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> requirements are satisfied by security technologies, products, and services that utilize implementations of cryptography validated by the Cryptography Module Validation Program <a href="/800-63-4/sp800-63b/references/#ref-CMVP">[CMVP]</a>. FIPS 140 requirements at a given AAL are often different for authenticators and verifiers, with more stringent requirements generally applying to verifiers. This is in recognition of the practical limitations on the certification of authenticators as well as the broader scope that is often associated with a security breach at a verifier.</p>
 <h2 id="authentication-assurance-level-1" data-section="2">
   
   
@@ -430,7 +400,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>AAL1 provides basic confidence that the claimant controls an authenticator bound to the subscriber account. AAL1 requires either single-factor or multi-factor authentication using a wide range of available authentication technologies. Verifiers <strong>SHOULD</strong> make multi-factor authentication options available at AAL1 and encourage their use. Successful authentication requires that the claimant prove possession and control of the authenticator through a secure authentication protocol.</p>
+<p>AAL1 provides basic confidence that the claimant controls an authenticator that is bound to the subscriber account. AAL1 requires either single-factor or multi-factor authentication using a wide range of available authentication technologies. Verifiers <strong>SHOULD</strong> make multi-factor authentication options available at AAL1 and encourage their use. Successful authentication requires that the claimant prove possession and control of the authenticator through a secure authentication protocol.</p>
 <h3 id="permitted-authenticator-types" data-section="2">
   
   
@@ -448,8 +418,8 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
   <li>Out-of-band device (<a href="/800-63-4/sp800-63b/authenticators/#out-of-band">Sec. 3.1.3</a>): A secret sent or received through a separate communication channel with the subscriber</li>
   <li>Single-factor one-time password (OTP) (<a href="/800-63-4/sp800-63b/authenticators/#singlefactorOTP">Sec. 3.1.4</a>): A one-time secret obtained from a device or application held by the subscriber</li>
   <li>Multi-factor OTP (<a href="/800-63-4/sp800-63b/authenticators/#multifactorOTP">Sec. 3.1.5</a>): A one-time secret obtained from a device or application held by the subscriber that requires activation by a second authentication factor</li>
-  <li>Single-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#sfc">Sec. 3.1.6</a>): Proof of possession and control via an authentication protocol of a cryptographic key held by the subscriber.</li>
-  <li>Multi-Factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#mfc">Sec. 3.1.7</a>): Proof of possession and control via an authentication protocol of a cryptographic key held by the subscriber that requires activation by a second authentication factor</li>
+  <li>Single-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#sfc">Sec. 3.1.6</a>): Proof of possession and control via an authentication protocol of a cryptographic key held by the subscriber</li>
+  <li>Multi-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#mfc">Sec. 3.1.7</a>): Proof of possession and control via an authentication protocol of a cryptographic key held by the subscriber that requires activation by a second authentication factor</li>
 </ul>
 <h3 id="aal1req" data-section="2">
   
@@ -462,7 +432,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
 <p>Authenticators used at AAL1 <strong>SHALL</strong> use <em>approved cryptography</em>. In other words, they must use approved algorithms, but the implementation need not be validated under <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a>.</p>
 
-<p>Communication between the claimant and verifier <strong>SHALL</strong> occur via one or more authenticated protected channels.</p>
+<p>Communication between the claimant and verifier <strong>SHALL</strong> occur via one or more <em>authenticated protected channels</em>.</p>
 
 <p>Cryptography used by verifiers operated by or on behalf of federal agencies at AAL1 <strong>SHALL</strong> be validated to meet the requirements of <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 1.</p>
 <h3 id="aal1reauth" data-section="2">
@@ -491,7 +461,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>AAL2 provides high confidence that the claimant controls one or more authenticators that are bound to the subscriber account. Proof of possession and control of two distinct authentication factors is required through the use of secure authentication protocols. Approved cryptographic techniques are required.</p>
+<p>AAL2 provides high confidence that the claimant controls one or more authenticators that are bound to the subscriber account. Proof of possession and control of two distinct authentication factors through the use of secure authentication protocols is required. Approved cryptographic techniques are required.</p>
 <h3 id="aal2types" data-section="2">
   
   
@@ -501,17 +471,17 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>At AAL2, authentication <strong>SHALL</strong> use either a multi-factor authenticator or a combination of two single-factor authenticators. A multi-factor authenticator requires two factors to execute a single authentication event, such as a cryptographically secure device with an integrated biometric sensor that is required to activate the device. Authenticator requirements are specified in <a href="/800-63-4/sp800-63b/authenticators/#AAL_SEC5">Sec. 3</a>.</p>
+<p>At AAL2, authentication <strong>SHALL</strong> use either a multi-factor authenticator or a combination of two separate authentication factors. A multi-factor authenticator requires two factors to execute a single authentication event, such as a cryptographically secure device with an integrated biometric sensor that is required to activate the device. Authenticator requirements are specified in <a href="/800-63-4/sp800-63b/authenticators/#AAL_SEC5">Sec. 3</a>.</p>
 
 <p>When a multi-factor authenticator is used, any of the following <strong>MAY</strong> be used:</p>
 
 <ul>
-  <li>Multi-factor Out-of-band authenticator (<a href="/800-63-4/sp800-63b/authenticators/#mfooba">Sec. 3.1.3.4</a>)</li>
+  <li>Multi-factor out-of-band authenticator (<a href="/800-63-4/sp800-63b/authenticators/#mfooba">Sec. 3.1.3.4</a>)</li>
   <li>Multi-factor OTP (<a href="/800-63-4/sp800-63b/authenticators/#multifactorOTP">Sec. 3.1.5</a>)</li>
   <li>Multi-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#mfc">Sec. 3.1.7</a>)</li>
 </ul>
 
-<p>When a combination of two single-factor authenticators is used, the combination <strong>SHALL</strong> include a password (<a href="/800-63-4/sp800-63b/authenticators/#password">Sec. 3.1.1</a>) and one <em>physical authenticator</em> (i.e., “something you have”) from the following list:</p>
+<p>When a combination of two single-factor authenticators is used, the combination <strong>SHALL</strong> include one <em>physical authenticator</em> (i.e., “something you have”) from the following list in conjunction with either a password (<a href="/800-63-4/sp800-63b/authenticators/#password">Sec. 3.1.1</a>) or a biometric comparison:</p>
 
 <ul>
   <li>Look-up secret (<a href="/800-63-4/sp800-63b/authenticators/#lookupsecrets">Sec. 3.1.2</a>)</li>
@@ -520,7 +490,9 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
   <li>Single-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#sfc">Sec. 3.1.6</a>)</li>
 </ul>
 
-<p>A biometric characteristic is not recognized as an authenticator by itself. When biometric authentication meets the requirements in <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Sec. 3.2.3</a>, a physical authenticator is authenticated along with the biometric. The physical authenticator then serves as “something you have,” while the biometric match serves as “something you are.” When a biometric comparison is used as an activation factor for a multi-factor authenticator, the authenticator itself serves as the physical authenticator.</p>
+<blockquote>
+  <p>A biometric characteristic is not recognized as an authenticator by itself. <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Section 3.2.3</a> requires a physical authenticator to be authenticated along with a biometric comparison. The physical authenticator then serves as “something you have,” while the biometric match serves as “something you are.” When a biometric comparison is used as an activation factor for a multi-factor authenticator, the authenticator itself serves as the physical authenticator. As noted in that section, local verification of biometric factors (i.e., the use of a multi-factor authenticator with a biometric comparison as an activation factor) is preferred over central biometric factor comparison.</p>
+</blockquote>
 <h3 id="aal2req" data-section="2">
   
   
@@ -534,11 +506,9 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
 <p>Communication between the claimant and verifier <strong>SHALL</strong> occur via one or more authenticated protected channels.</p>
 
-<p>Cryptography used by verifiers operated by or on behalf of federal agencies at AAL2 <strong>SHALL</strong> be validated to meet the requirements of <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 1.</p>
+<p>Cryptography used by verifiers operated by or on behalf of federal agencies at AAL2 <strong>SHALL</strong> be validated to meet the requirements of <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 1 unless otherwise specified.</p>
 
-<p>When a biometric factor is used in authentication at AAL2, the performance requirements stated in <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Sec. 3.2.3</a> <strong>SHALL</strong> be met, and the verifier <strong>SHALL</strong> determine that the biometric sensor and subsequent processing meet these requirements.</p>
-
-<p>Verifiers <strong>SHALL</strong> offer at least one phishing-resistant authentication option at AAL2, as described in <a href="/800-63-4/sp800-63b/authenticators/#verifimpers">Sec. 3.2.5</a>. Federal agencies <strong>SHALL</strong> require their staff, contractors, and partners to use phishing-resistant authentication to access federal information systems. In all cases, verifiers <strong>SHOULD</strong> encourage the use of phishing-resistant authentication at AAL2 whenever practical since phishing is a significant threat vector.</p>
+<p>Verifiers <strong>SHALL</strong> offer at least one phishing-resistant authentication option at AAL2, as described in <a href="/800-63-4/sp800-63b/authenticators/#verifimpers">Sec. 3.2.5</a>. Federal agencies <strong>SHALL</strong> require their staff, contractors, and partners to use phishing-resistant authentication to access federal information systems. In all cases, verifiers <strong>SHOULD</strong> encourage the use of phishing-resistant authentication at AAL2 whenever practical since phishing is a significant threat vector <a href="/800-63-4/sp800-63b/references/#ref-IC3">[IC3]</a>.</p>
 <h3 id="aal2reauth" data-section="2">
   
   
@@ -548,7 +518,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>Periodic reauthentication of subscriber sessions <strong>SHALL</strong> be performed as described in <a href="/800-63-4/sp800-63b/session/#sessionreauthn">Sec. 5.2</a>. A definite reauthentication overall timeout <strong>SHALL</strong> be established, which <strong>SHOULD</strong> be no more than 24 hours at AAL2. The inactivity timeout <strong>SHOULD</strong> be no more than 1 hour. When the inactivity timeout has occurred but the overall timeout has not yet occurred, the verifier <strong>MAY</strong> allow the subscriber to reauthenticate using only a successful password or biometric comparison in conjunction with the session secret.</p>
+<p>Periodic reauthentication of subscriber sessions <strong>SHALL</strong> be performed, as described in <a href="/800-63-4/sp800-63b/session/#sessionreauthn">Sec. 5.2</a>. A definite reauthentication overall timeout <strong>SHALL</strong> be established, which <strong>SHOULD</strong> be no more than 24 hours at AAL2. The inactivity timeout <strong>SHOULD</strong> be no more than 1 hour. When the inactivity timeout has occurred but the overall timeout has not yet occurred, the verifier <strong>MAY</strong> allow the subscriber to reauthenticate using only a successful password or biometric comparison in conjunction with the <em>session secret</em>, as described in <a href="/800-63-4/sp800-63b/session/#bindings">Sec. 5.1</a>.</p>
 <h2 id="aal3" data-section="2">
   
   
@@ -558,10 +528,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>AAL3 provides very high confidence that the claimant controls authenticators that are bound to the subscriber account. Authentication at AAL3 is based on the proof of possession of a key through the use of a cryptographic protocol along with either an activation factor or a password. AAL3 authentication requires the use of a hardware-based authenticator that provides phishing resistance. Approved cryptographic techniques are required.</p>
-
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
+<p>AAL3 provides very high confidence that the claimant controls authenticators that are bound to the subscriber account. Authentication at AAL3 is based on the proof of possession of a key through the use of a cryptographic protocol along with either an activation factor or a password. AAL3 authentication requires the use of a cryptographic authenticator with a non-exportable <em>private key</em> that provides phishing resistance. Approved cryptographic techniques are required.</p>
 <h3 id="aal3types" data-section="2">
   
   
@@ -575,8 +542,12 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
 <ul>
   <li>Multi-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#mfc">Sec. 3.1.7</a>)</li>
-  <li>Single-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#sfc">Sec. 3.1.6</a>) used in conjunction with a password (<a href="/800-63-4/sp800-63b/authenticators/#password">Sec. 3.1.1</a>)</li>
+  <li>Single-factor cryptographic authentication (<a href="/800-63-4/sp800-63b/authenticators/#sfc">Sec. 3.1.6</a>) used in conjunction with either a password (<a href="/800-63-4/sp800-63b/authenticators/#password">Sec. 3.1.1</a>) or a biometric comparison</li>
 </ul>
+
+<blockquote>
+  <p>A biometric characteristic is not recognized as an authenticator by itself. <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Section 3.2.3</a> requires a physical authenticator to be authenticated along with the biometric comparison. The physical authenticator then serves as “something you have,” while the biometric match serves as “something you are.” When a biometric comparison is used as an activation factor for a multi-factor authenticator, the authenticator itself serves as the physical authenticator. As noted in that section, local verification of biometric factors (i.e., the use of a multi-factor authenticator with a biometric comparison as an activation factor) is preferred over central biometric factor comparison.</p>
+</blockquote>
 <h3 id="aal3req" data-section="2">
   
   
@@ -586,15 +557,13 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>Authenticators used at AAL3 <strong>SHALL</strong> use approved cryptography. Communication between the claimant and verifier <strong>SHALL</strong> occur via one or more authenticated protected channels. The cryptographic authenticator used at AAL3 <strong>SHALL</strong> be hardware-based and <strong>SHALL</strong> provide phishing resistance, as described in <a href="/800-63-4/sp800-63b/authenticators/#verifimpers">Sec. 3.2.5</a>. The cryptographic authentication protocol <strong>SHALL</strong> be replay-resistant as described in <a href="/800-63-4/sp800-63b/authenticators/#replay">Sec. 3.2.7</a>. All authentication and reauthentication processes at AAL3 <strong>SHALL</strong> demonstrate authentication intent from at least one authenticator as described in <a href="/800-63-4/sp800-63b/authenticators/#intent">Sec. 3.2.8</a>.</p>
+<p>Authenticators used at AAL3 <strong>SHALL</strong> use approved cryptography. Communication between the claimant and verifier <strong>SHALL</strong> occur via one or more authenticated protected channels. The cryptographic authenticator used at AAL3 <strong>SHALL</strong> have a non-exportable private key and <strong>SHALL</strong> provide phishing resistance, as described in <a href="/800-63-4/sp800-63b/authenticators/#verifimpers">Sec. 3.2.5</a>. The cryptographic authentication protocol <strong>SHALL</strong> be replay-resistant, as described in <a href="/800-63-4/sp800-63b/authenticators/#replay">Sec. 3.2.7</a>. All authentication and reauthentication processes at AAL3 <strong>SHALL</strong> demonstrate authentication intent from at least one authenticator, as described in <a href="/800-63-4/sp800-63b/authenticators/#intent">Sec. 3.2.8</a>. Cryptographic authenticators used at AAL3 <strong>SHALL</strong> use public-key cryptography to protect the authentication secrets from compromise of the verifier.</p>
 
-<p>Multi-factor authenticators used at AAL3 <strong>SHALL</strong> be hardware cryptographic modules that are validated at <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 2 or higher overall with at least <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 3 physical security. Single-factor cryptographic authenticators used at AAL3 <strong>SHALL</strong> be validated at <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 1 or higher overall with at least <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 3 physical security. AAL3 protects the verifier from compromise through the use of public-key cryptography since the verifier does not possess the private key required to authenticate.</p>
+<p>Single-factor and multi-factor authenticators used at AAL3 <strong>SHALL</strong> be validated to meet the requirements of <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 1 or higher overall. As described in <a href="/800-63-4/sp800-63b/authenticators/#export">Sec. 3.2.12</a>, cryptographic authenticators used at AAL3 are required to provide a hardware-protected, isolated environment to prevent authentication keys from being leaked or extracted. Since <em>syncable authenticators</em> (described in <a href="/800-63-4/sp800-63b/syncable/#appB">Appendix B</a>) require the private key to be exportable, syncable authenticators <strong>SHALL NOT</strong> be used at AAL3.</p>
 
 <p>Cryptography used by verifiers at AAL3 <strong>SHALL</strong> be validated at <a href="/800-63-4/sp800-63b/references/#ref-FIPS140">[FIPS140]</a> Level 1 or higher.</p>
 
 <p>Hardware-based authenticators and verifiers at AAL3 <strong>SHOULD</strong> resist relevant side-channel (e.g., timing and power-consumption analysis) attacks.</p>
-
-<p>When a biometric factor is used in authentication at AAL3, the verifier <strong>SHALL</strong> determine that the biometric sensor and subsequent processing meet the performance requirements stated in <a href="/800-63-4/sp800-63b/authenticators/#biometric_use">Sec. 3.2.3</a>.</p>
 <h3 id="aal3reauth" data-section="2">
   
   
@@ -605,9 +574,6 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
     
 
 <p>Periodic reauthentication of subscriber sessions <strong>SHALL</strong> be performed, as described in <a href="/800-63-4/sp800-63b/session/#sessionreauthn">Sec. 5.2</a>. At AAL3, the overall timeout for reauthentication <strong>SHALL</strong> be no more than 12 hours. The inactivity timeout <strong>SHOULD</strong> be no more than 15 minutes. Unlike AAL2, AAL3 reauthentication requirements are the same as for initial authentication at AAL3.</p>
-
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
 <h2 id="general-requirements" data-section="2">
   
   
@@ -627,7 +593,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>The CSP <strong>SHALL</strong> employ appropriately tailored security controls from the moderate baseline security controls defined in <a href="/800-63-4/sp800-63b/references/#ref-SP800-53">[SP800-53]</a> or an equivalent federal (e.g., <a href="/800-63-4/sp800-63b/references/#ref-FEDRAMP">[FEDRAMP]</a>) or industry standard that the organization has chosen for the information systems, applications, and online services that these guidelines are used to protect. The CSP <strong>SHALL</strong> ensure that the minimum assurance-related controls for the appropriate system are satisfied.</p>
+<p>The verifier <strong>SHALL</strong> employ appropriately tailored security controls from the moderate baseline security controls defined in <a href="/800-63-4/sp800-63b/references/#ref-SP800-53">[SP800-53]</a> or an equivalent federal (e.g., <a href="/800-63-4/sp800-63b/references/#ref-FEDRAMP">[FEDRAMP]</a>) or industry standard that the organization has chosen for the information systems, applications, and online services that these guidelines are used to protect.</p>
 <h3 id="records-retention-policy" data-section="2">
   
   
@@ -637,7 +603,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>The CSP <strong>SHALL</strong> comply with its respective records retention policies in accordance with applicable laws, regulations, and policies, including any National Archives and Records Administration (NARA) records retention schedules that may apply. If the CSP opts to retain records in the absence of mandatory requirements, the CSP <strong>SHALL</strong> conduct a risk management process, including assessments of privacy and security risks, to determine how long records should be retained and <strong>SHALL</strong> inform the subscriber of that retention policy.</p>
+<p>The verifier <strong>SHALL</strong> comply with its respective records retention policies in accordance with applicable laws, regulations, and policies, including any National Archives and Records Administration (NARA) records retention schedules that may apply. If the verifier opts to retain records in the absence of mandatory requirements, the verifier or the CSP or IdP of which it is a part <strong>SHALL</strong> conduct a <em>risk management</em> process <a href="/800-63-4/sp800-63b/references/#ref-NIST-RMF">[NISTRMF]</a>, including assessments of privacy and security risks, to determine how long records should be retained and <strong>SHALL</strong> inform the subscriber of that retention policy.</p>
 <h3 id="aal_privacy" data-section="2">
   
   
@@ -647,17 +613,17 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>The CSP <strong>SHALL</strong> employ appropriately tailored privacy controls defined in <a href="/800-63-4/sp800-63b/references/#ref-SP800-53">[SP800-53]</a> or an equivalent industry standard.</p>
+<p>The verifier <strong>SHALL</strong> employ appropriately tailored privacy controls defined in <a href="/800-63-4/sp800-63b/references/#ref-SP800-53">[SP800-53]</a> or an equivalent industry standard.</p>
 
-<p>If CSPs process attributes for purposes other than identity service (i.e., identity proofing, authentication, or attribute assertions), related fraud mitigation, or compliance with laws or legal process, CSPs <strong>SHALL</strong> implement measures to maintain predictability and manageability commensurate with the privacy risks that arise from the additional processing. Examples of such measures include providing clear notice, obtaining subscriber consent, and enabling the selective use or disclosure of attributes. When CSPs use consent measures, CSPs <strong>SHALL NOT</strong> make consent for the additional processing a condition of the identity service.</p>
+<p>If CSPs or IdPs process attributes for purposes other than identity services (i.e., identity proofing, authentication, or attribute <em>assertions</em>), related fraud mitigation, or compliance with laws or legal processes, they <strong>SHALL</strong> implement measures to maintain predictability and manageability commensurate with the privacy risks that arise from the additional processing. Examples of such measures include providing clear notice, obtaining subscriber consent, and enabling the selective use or disclosure of attributes. When CSPs or IdPs use consent measures, they <strong>SHALL NOT</strong> make consent for the additional processing a condition of the identity service.</p>
 
-<p>Regardless of whether the CSP is an agency or private-sector provider, the following requirements apply to a federal agency that offers or uses the authentication service:</p>
+<p>Regardless of whether the CSP or IdP is an agency or private-sector provider, the following requirements apply to federal agencies that offer or use the authentication service:</p>
 
 <ol>
-  <li>The agency <strong>SHALL</strong> consult with their Senior Agency Official for Privacy (SAOP) and conduct an analysis to determine whether the collection of PII to issue or maintain authenticators triggers the requirements of the <em>Privacy Act of 1974</em> <a href="/800-63-4/sp800-63b/references/#ref-PrivacyAct">[PrivacyAct]</a> (see <a href="/800-63-4/sp800-63b/privacy/#agency-privacy">Sec. 7.4</a>).</li>
-  <li>The agency <strong>SHALL</strong> publish a System of Records Notice (SORN) to cover such collections, as applicable.</li>
-  <li>The agency <strong>SHALL</strong> consult with its SAOP and conduct an analysis to determine whether the collection of PII to issue or maintain authenticators triggers the requirements of the <em>E-Government Act of 2002</em> <a href="/800-63-4/sp800-63b/references/#ref-E-Gov">[E-Gov]</a>.</li>
-  <li>The agency <strong>SHALL</strong> publish a Privacy Impact Assessment (PIA) to cover such collection, as applicable.</li>
+  <li>The agency <strong>SHALL</strong> consult with their <em>Senior Agency Official for Privacy</em> (SAOP) and conduct an analysis to determine whether the collection of personal information to issue or maintain authenticators triggers the requirements of the <em>Privacy Act of 1974</em> <a href="/800-63-4/sp800-63b/references/#ref-PrivacyAct">[PrivacyAct]</a> (see <a href="/800-63-4/sp800-63b/privacy/#agency-privacy">Sec. 7.4</a>).</li>
+  <li>The agency <strong>SHALL</strong> publish a <em>System of Records Notice</em> (SORN) to cover such collections, as applicable.</li>
+  <li>The agency <strong>SHALL</strong> consult with its SAOP and conduct an analysis to determine whether the collection of personal information to issue or maintain authenticators triggers the requirements of the <em>E-Government Act of 2002</em> <a href="/800-63-4/sp800-63b/references/#ref-E-Gov">[E-Gov]</a>.</li>
+  <li>The agency <strong>SHALL</strong> publish a <em>Privacy Impact Assessment</em> (PIA) to cover such collection, as applicable.</li>
 </ol>
 <h3 id="redress-requirements" data-section="2">
   
@@ -668,7 +634,10 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>The CSP and verifier <strong>SHALL</strong> provide mechanisms for the redress of subscriber complaints and for problems that arise from subscriber authentication processes as described in <a href="../_sp800-63/sec5_DIRM.md#redress" latex-href="#ref-SP800-63">Sec. 5.6 of SP 800-63</a>. These mechanisms <strong>SHALL</strong> be easy for subscribers to find and use. The CSP <strong>SHALL</strong> assess the mechanisms for efficacy in resolving complaints or problems.</p>
+<p>The verifier and associated CSP or IdP <strong>SHALL</strong> provide mechanisms for the redress of subscriber complaints and problems that arise from subscriber authentication processes, as described in Sec. 5.6 of <a href="../_sp800-63/sec5_DIRM.md#redress" latex-href="#ref-SP800-63">[SP800-63]</a>. These mechanisms <strong>SHALL</strong> be easy for subscribers to find and use. The CSP or IdP <strong>SHALL</strong> assess the mechanisms for efficacy in resolving complaints or problems.</p>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
 <h2 id="summary-of-requirements" data-section="2">
   
   
@@ -678,11 +647,68 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p><a href="/800-63-4/sp800-63b/aal/#fig-1">Figure 1</a> provides a non-normative summary of the requirements for each of the AALs.</p>
+<p><a href="/800-63-4/sp800-63b/aal/#table-1">Table 1</a> provides a non-normative summary of the requirements for each of the AALs.</p>
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63b/aal/#fig-1" name="fig-1">Fig. 1. Summary of requirements by AAL</a></p>
+<p latex-ignore="true"><a href="/800-63-4/sp800-63b/aal/#table-1" name="table-1">Table 1. Summary of requirements by AAL</a></p>
 
-<p><img src="/800-63-4/sp800-63b/images/AAL-requirements.png" alt="Informative table summarizing requirements of each AAL" title="Summary of requirements by AAL" latex-src="AAL-requirements.pdf" latex-fig="1" latex-place="h" /></p>
+<p></p>
+
+<table latex-table="1" latex-caption="Summary of requirements by AAL" latex-columns="p@0.21\textwidth,p@0.22\textwidth,p@0.24\textwidth,p@0.22\textwidth">
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Requirement</strong></th>
+      <th style="text-align: left"><strong>AAL1</strong></th>
+      <th style="text-align: left"><strong>AAL2</strong></th>
+      <th style="text-align: left"><strong>AAL3</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Permitted Authenticator Types</strong></td>
+      <td style="text-align: left">* <em>Any AAL2 or AAL3 authenticator type</em> <br />* Password <br />* Look-up secret <br />* Out-of-band <br />* SF OTP <br />* SF cryptographic</td>
+      <td style="text-align: left">* MF cryptographic <br />* MF out-of-band <br />* MF OTP <br />* Password or biometric comparison plus: <br />  –SF cryptographic <br />  –Look-up secret <br />  –Out-of-band <br />  –SF OTP <br /></td>
+      <td style="text-align: left">* MF cryptographic <br />* SF cryptographic plus:<br />  –Password <br />  –Biometric comparison</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>FIPS 140 Validation</strong><br />(Government Verifiers and Authenticators)</td>
+      <td style="text-align: left"><strong>Verifiers</strong> <br />–Level 1</td>
+      <td style="text-align: left"><strong>Verifiers</strong> <br />–Level 1<br /><strong>Authenticators</strong> <br />–Level 1 overall</td>
+      <td style="text-align: left"><strong>Verifiers</strong> <br />–Level 1<br /><strong>Authenticators</strong> <br />–Level 1 overall</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reauthentication</strong><br />(recommended)</td>
+      <td style="text-align: left">30 days overall</td>
+      <td style="text-align: left">24 hours overall<br />1 hour inactivity<br />Single factor required</td>
+      <td style="text-align: left">12 hours overall<br />15 minutes inactivity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Phishing Resistance</strong></td>
+      <td style="text-align: left">Not required</td>
+      <td style="text-align: left">Recommended;<br />Must be available</td>
+      <td style="text-align: left">Required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Replay Resistance</strong></td>
+      <td style="text-align: left">Not required</td>
+      <td style="text-align: left">Required</td>
+      <td style="text-align: left">Required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Authentication Intent</strong></td>
+      <td style="text-align: left">Not required</td>
+      <td style="text-align: left">Recommended</td>
+      <td style="text-align: left">Required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Key Exportability</strong></td>
+      <td style="text-align: left">Permitted</td>
+      <td style="text-align: left">Permitted</td>
+      <td style="text-align: left">Prohibited</td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
 
 
   

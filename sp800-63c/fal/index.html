@@ -140,20 +140,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63c/preface/">Preface</a></li>
                 
               
@@ -266,7 +252,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/usability/"><span class="section">8</span>Usability</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63c/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -280,21 +266,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63c/equity/"><span class="section">9</span>Equity</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">10</span>Examples</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63c/examples/"><span class="section">9</span>Examples</a></li>
                 
               
               
@@ -398,28 +370,32 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 
 <p><em>This section is normative.</em></p>
 
-<p>This section defines <em>federation assurance levels</em> (FALs) and the requirements for securing federation transactions at each FAL. In order to fulfill the requirements for a a given FAL, the federation transaction <strong>SHALL</strong> meet or exceed all requirements listed for that FAL.</p>
+<p>This section defines <em>federation assurance levels</em> (FALs) and the requirements for securing federation transactions at each FAL. In order to fulfill the requirements for a given FAL, the federation transaction <strong>SHALL</strong> meet or exceed all requirements listed for that FAL.</p>
 
-<p>Each FAL is characterized by a set of requirements that increase the security and complexity as the FAL increases. These requirements are listed here and expanded in other sections of this document:</p>
+<p>Each FAL is characterized by a set of requirements that increase the security as the FAL increases. These requirements are listed here and expanded in other sections of this document:</p>
 
 <dl>
   <dt>Audience Restriction</dt>
-  <dd>The assertion presented in the federation protocol is targeted to a specific RP and the RP can confirm that it is the intended audience of the assertion.</dd>
-  <dt>Injection Protection</dt>
-  <dd>The RP is strongly protected from an attacker presenting an assertion in circumstances outside a current federation transaction request. (See <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.10.1</a> for details on injection protection.)</dd>
+  <dd>The assertion presented in the federation protocol targets a specific RP, and the RP can confirm that it is the intended audience of the assertion.</dd>
+  <dt>Replay Protection</dt>
+  <dd>The assertion presented in the federation protocol is protected from being presented more than once.</dd>
+  <dt>Assertion Injection Protection</dt>
+  <dd>
+    <p>The RP is strongly protected from an attacker completing a federated transaction and initiating an authenticated session with a forged, captured, or modified assertion (see <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.11.1</a>).</p>
+  </dd>
   <dt>Trust Agreement Establishment</dt>
-  <dd>The agreement to participate in a federation transaction for the purposes of creating an authenticated session for the subscriber at the RP. (See <a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Sec. 3.4</a> for details of the trust agreement.)</dd>
+  <dd>The rights and expectations of the parties in the federation transaction are established to support trust between those parties for the purposes of creating an authenticated session for the subscriber at the RP (see <a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Sec. 3.5</a>).</dd>
   <dt>Identifier and Key Establishment</dt>
-  <dd>The IdP and RP have exchanged identifiers and key material to allow for the verification of assertions and other artifacts during future federation transactions. (See <a href="/800-63-4/sp800-63c/Federation/#identifiers-keys">Sec. 3.5</a> for details of key establishment.)</dd>
+  <dd>The IdP and RP have exchanged identifiers and cryptographic key material to allow for the verification of assertions and other artifacts during future federation transactions (see <a href="/800-63-4/sp800-63c/Federation/#identifiers-keys">Sec. 3.6</a>).</dd>
   <dt>Presentation</dt>
   <dd>The assertion can be presented to the RP either on its own (as a bearer assertion) or in concert with an authenticator presented by the subscriber.</dd>
 </dl>
 
-<p><a href="/800-63-4/sp800-63c/fal/#table-1">Table 1</a> provides a non-normative summary of aspects for each FAL. Each successive level subsumes and fulfills all requirements of lower levels (e.g., a federation process at FAL3 can be accepted at FAL2 or FAL1 since FAL3 satisfies all the requirements of these lower levels). Combinations not found in <a href="/800-63-4/sp800-63c/fal/#table-1">Table 1</a> are possible, and agencies can choose to implement stronger protections in one or more areas of requirements at a given FAL.</p>
+<p><a href="/800-63-4/sp800-63c/fal/#table-1">Table 1</a> provides a non-normative summary of requirements for each FAL. Each successive level subsumes and fulfills all of the requirements of lower levels (e.g., a federation process at FAL3 can be accepted at FAL2 or FAL1 since FAL3 satisfies all of the requirements of these lower levels). Combinations not found in <a href="/800-63-4/sp800-63c/fal/#table-1">Table 1</a> are possible, and agencies can choose to implement stronger protections in one or more areas of requirements at a given FAL.</p>
 
-<p latex-ignore="true"><a href="/800-63-4/sp800-63c/fal/#table-1" name="table-1">Table 1. Federation Assertion Levels</a></p>
+<p latex-ignore="true"><a href="/800-63-4/sp800-63c/fal/#table-1" name="table-1">Table 1. Federation assurance levels</a></p>
 
-<table latex-table="1" latex-caption="Federation Assurance Levels">
+<table latex-table="1" latex-caption="Federation assurance levels" latex-columns="p@0.20\textwidth,p@0.22\textwidth,p@0.22\textwidth,p@0.22\textwidth">
   <thead>
     <tr>
       <th style="text-align: center">Requirement</th>
@@ -431,42 +407,44 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
   <tbody>
     <tr>
       <td style="text-align: center">Audience Restriction</td>
-      <td>Multiple RPs allowed per assertion, Single RP per assertion recommended</td>
+      <td>Multiple RPs allowed per assertion; single RP per assertion recommended</td>
       <td>Single RP per assertion</td>
       <td>Single RP per assertion</td>
     </tr>
     <tr>
-      <td style="text-align: center">Injection Protection</td>
+      <td style="text-align: center">Replay Protection</td>
+      <td>Required per RP</td>
+      <td>Required</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Assertion Injection Protection</td>
       <td>Recommended for all transactions</td>
       <td>Required; transaction begins at the RP</td>
       <td>Required; transaction begins at the RP</td>
     </tr>
     <tr>
       <td style="text-align: center">Trust Agreement Establishment</td>
-      <td>Subscriber-driven or A priori</td>
-      <td>A priori</td>
-      <td>A priori</td>
+      <td>Subscriber-driven or pre-established</td>
+      <td>Pre-established</td>
+      <td>Pre-established</td>
     </tr>
     <tr>
       <td style="text-align: center">Identifier and Key Establishment</td>
-      <td>Dynamic or Static</td>
-      <td>Dynamic or Static</td>
-      <td>Static</td>
+      <td>Dynamic or Manual</td>
+      <td>Dynamic or Manual</td>
+      <td>Manual</td>
     </tr>
     <tr>
       <td style="text-align: center">Presentation</td>
       <td>Bearer Assertion</td>
       <td>Bearer Assertion</td>
-      <td>Holder-of-Key Assertion or Bound Authenticator</td>
+      <td>Holder-of-key Assertion or bound authenticator</td>
     </tr>
   </tbody>
 </table>
 
-<p>While many different federation implementation options are possible, the FAL is intended to provide clear guidance representing increasingly secure deployment options. See <a href="/800-63-4/sp800-63/introduction/#introduction" latex-href="#ref-SP800-63">[SP800-63]</a> for details on how to choose the most appropriate FAL.</p>
-
-<blockquote>
-  <p>Note: In these guidelines, assertions, attribute bundles, and other elements of the federation protocol are protected by asymmetric digital signatures or symmetric MACs. When either asymmetric or symmetric cryptography is specifically required, the terms “sign” and “signature” will be qualified as appropriate to indicate the requirement. When either option is possible, the terms “sign” and “signature” are used without a qualifier.</p>
-</blockquote>
+<p>While many different federation implementation options are possible, the FAL is intended to provide clear guidance that represents increasingly secure deployment options. See <a href="/800-63-4/sp800-63/introduction/#introduction" latex-href="#ref-SP800-63">[SP800-63]</a> for details on how to choose the most appropriate FAL.</p>
 <h2 id="falcommon" data-section="2">
   
   
@@ -476,15 +454,15 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>At all FALs, all federation transactions <strong>SHALL</strong> comply with the requirements in <a href="/800-63-4/sp800-63c/Federation/#common">Sec. 3</a> to deliver an assertion to the RP and create an authenticated session at the RP. Examples of assertions used in federation protocols include the ID Token in OpenID Connect <a href="/800-63-4/sp800-63c/references/#ref-OIDC">[OIDC]</a> and the Security Assertion Markup Language <a href="/800-63-4/sp800-63c/references/#ref-SAML">[SAML]</a> Assertion format.</p>
-
-<p>At all FALs, the RP needs to trust the IdP to provide valid assertions representing the subscriber’s authentication event and <strong>SHALL</strong> validate the assertion.</p>
-
-<p>IdPs and RPs <strong>SHALL</strong> employ appropriately tailored security controls from the moderate baseline security controls defined in <a href="/800-63-4/sp800-63c/references/#ref-SP800-53">[SP800-53]</a> or an equivalent federal (e.g., <a href="/800-63-4/sp800-63c/references/#ref-FEDRAMP">[FEDRAMP]</a>) or industry standard that the organization has determined for the information systems, applications, and online services that these guidelines are used to protect. IdPs and RPs <strong>SHALL</strong> ensure that the minimum assurance-related controls for the appropriate systems, or equivalent, are satisfied. Additional security controls are discussed in <a href="/800-63-4/sp800-63c/Federation/#security-controls">Sec. 3.10</a>.</p>
-
 <p>If no FAL is specified by the trust agreement or federation transaction, the requirements of this section still apply.</p>
 
-<p>An IdP or RP can be capable of operating at multiple FALs simultaneously, depending on use case and needs. For example, an IdP could provide FAL3 federation transactions to a high-risk RP while providing FAL2 to an RP with a lower risk profile. Similarly, an RP could require FAL2 for normal actions but require the subscriber to re-authenticate with FAL3 for higher impact or more sensitive actions. This capability extends to other dimensions, as an IdP could simultaneously have access to subscriber accounts that have been proofed at any IAL and allow authentication at any AAL. However, an RP talking to that IdP could have restrictions on the lowest IAL and AAL it is willing to accept for access. As a consequence, it is imperative that the trust agreement establish the xALs allowed and required for different use cases.</p>
+<p>At all FALs, all federation transactions <strong>SHALL</strong> comply with the requirements in <a href="/800-63-4/sp800-63c/Federation/#common">Sec. 3</a> to deliver an assertion to the RP and create an authenticated session at the RP. Examples of assertions used in federation protocols include the ID Token in OpenID Connect <a href="/800-63-4/sp800-63c/references/#ref-OIDC">[OIDC]</a> and the Security Assertion Markup Language <a href="/800-63-4/sp800-63c/references/#ref-SAML">[SAML]</a> Assertion format.</p>
+
+<p>At all FALs, the RP <strong>SHALL</strong> validate the assertion from the IdP, since the RP needs to trust the IdP to provide valid assertions representing the subscriber’s authentication event.</p>
+
+<p>All parties in the federation <strong>SHALL</strong> employ security controls, as discussed in <a href="/800-63-4/sp800-63c/Federation/#security-controls">Sec. 3.11</a>.</p>
+
+<p>An IdP or RP can be capable of operating at multiple FALs simultaneously, depending on use case and needs. For example, an IdP could provide federation transactions at FAL3 to an RP that provides access to a set of high-risk functionality while simultaneously providing FAL2 to an RP with a lower risk profile. Similarly, an RP could require FAL2 for normal actions but require the subscriber to successfully complete an FAL3 federation transaction for higher impact or more sensitive actions at the RP. This capability extends to other dimensions, as an IdP could simultaneously have access to subscriber accounts that have been proofed at any IAL and allow authentication at any AAL. An RP talking to that IdP would normally have restrictions on the lowest IAL and AAL that it is willing to accept for access. As a consequence, trust agreements are required to establish the xALs allowed and required for different use cases (see <a href="/800-63-4/sp800-63c/fal/#request-xals">Sec. 2.5</a>).</p>
 <h2 id="fal1" data-section="2">
   
   
@@ -494,15 +472,17 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>FAL1 provides a basic level of protection for federation transactions, allowing for a wide range of use cases and deployment decisions.</p>
+<p>FAL1 provides a basic level of protection for federation transactions and allows for a wide range of use cases and deployment decisions.</p>
 
-<p>At FAL1, the IdP <strong>SHALL</strong> sign the assertion using approved cryptography. The RP <strong>SHALL</strong> validate the signature using the key associated with the expected IdP. The signature protects the integrity of the assertion contents and allows for the IdP to be verified as the source of the assertion.</p>
+<p>At FAL1, the federation protocol <strong>SHOULD</strong> apply assertion injection protection, as discussed in <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.11.1</a>. The federation transaction <strong>SHOULD</strong> be initiated by the RP.</p>
 
-<p>All assertions at FAL1 <strong>SHALL</strong> be audience-restricted to a specific RP or set of RPs, and the RP <strong>SHALL</strong> validate that it is one of the targeted RPs for the given assertion.</p>
+<p>At FAL1, the IdP <strong>SHALL</strong> sign the assertion using approved cryptography. The RP <strong>SHALL</strong> validate the signature using the verification key associated with the expected IdP. The signature protects the integrity of the assertion contents and allows for the IdP to be verified as the source of the assertion.</p>
 
-<p>At FAL1, the trust agreement <strong>MAY</strong> be established by the subscriber during the federation transaction. Note that at FAL1, it is still possible for the trust agreement to be established a priori by the RP and IdP.</p>
+<p>At FAL1, the assertion <strong>SHALL</strong> be audience-restricted to a specific RP or set of RPs, and the RP <strong>SHALL</strong> validate that it is one of the targeted RPs for the given assertion. Each RP in the audience <strong>SHALL</strong> enforce replay protection mechanisms in the assertion to ensure that the same assertion is not accepted by a given RP multiple times. An assertion with multiple audiences could be accepted by multiple RPs but only once by each RP.</p>
 
-<p>At FAL1, the federation protocol <strong>SHOULD</strong> apply injection protection as discussed in <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.10.1</a>. The federation transaction <strong>SHOULD</strong> be initiated by the RP.</p>
+<p>At FAL1, federated identifiers <strong>SHOULD NOT</strong> contain plaintext personal information, such as usernames, email addresses, employee numbers, etc.</p>
+
+<p>At FAL1, the trust agreement <strong>MAY</strong> be established by the subscriber during the federation transaction, as discussed in <a href="/800-63-4/sp800-63c/GenIdP/#subscriber-driven-trust-agreements">Sec. 4.3.2</a>. Alternatively, the trust agreement <strong>MAY</strong> be established prior to the federation transaction (i.e., a “pre-established” trust agreement), as discussed in <a href="/800-63-4/sp800-63c/GenIdP/#pre-established-trust-agreements">Sec. 4.3.1</a>.</p>
 <h2 id="fal2" data-section="2">
   
   
@@ -512,15 +492,17 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>FAL2 provides a high level of protection for federation transactions, providing protections against a variety of attacks against federated systems. All the requirements for FAL1 apply at FAL2 except where overridden by more specific or stringent requirements here.</p>
+<p>FAL2 provides a high level of protection for federation transactions by requiring additional protections against a variety of attacks on federated systems, including attempts to inject assertions into a federated transaction. All of the requirements for FAL1 apply at FAL2, except where overridden by more specific or stringent requirements here.</p>
 
-<p>At FAL2, the assertion <strong>SHALL</strong> be strongly protected from injection attacks, as discussed in <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.10.1</a>. The federation transaction <strong>SHALL</strong> be initiated by the RP.</p>
+<p>At FAL2, the assertion <strong>SHALL</strong> be strongly protected from assertion injection attacks, as discussed in <a href="/800-63-4/sp800-63c/Federation/#injection-protection">Sec. 3.11.1</a>. The federation transaction <strong>SHALL</strong> be initiated by the RP.</p>
 
-<p>At FAL2, the assertion <strong>SHALL</strong> audience restricted to a single RP.</p>
+<p>At FAL2, the assertion <strong>SHALL</strong> be audience restricted to a single RP. The RP <strong>SHALL</strong> enforce replay protection mechanisms in the assertion.</p>
 
-<p>At FAL2, an a priori trust agreement <strong>SHALL</strong> be established prior to the federation transaction taking place.</p>
+<p>At FAL2, federated identifiers <strong>SHALL NOT</strong> contain plaintext personal information, such as usernames, email addresses, employee numbers, etc.</p>
 
-<p>IdPs operated by or on behalf of federal agencies that present assertions at FAL2 or higher <strong>SHALL</strong> protect keys used for signing or encrypting those assertions with mechanisms validated at <a href="/800-63-4/sp800-63c/references/#ref-FIPS140">[FIPS140]</a> Level 1 or higher.</p>
+<p>At FAL2, a trust agreement <strong>SHALL</strong> be established prior to the federation transaction taking place (i.e., a “pre-established” trust agreement), as discussed in <a href="/800-63-4/sp800-63c/GenIdP/#pre-established-trust-agreements">Sec. 4.3.1</a>.</p>
+
+<p>IdPs operated by or on behalf of federal agencies that present assertions at FAL2 or higher <strong>SHALL</strong> protect signing keys that are used in the generation of assertions with mechanisms validated at <a href="/800-63-4/sp800-63c/references/#ref-FIPS140">[FIPS140]</a> Level 1 or higher.</p>
 <h2 id="fal3" data-section="2">
   
   
@@ -530,13 +512,14 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 </h2>
     
 
-<p>FAL3 provides a very high level of protection for federation transactions, establishing very high confidence that the subscriber asserted by the IdP is the subscriber present in the authenticated session. All the requirements at FAL1 and FAL2 apply at FAL3 except where overridden by more specific or stringent requirements here.</p>
+<p>FAL3 provides a very high level of protection for federation transactions and establishes very high confidence that the information communicated in the federation transaction matches what was established by the CSP and IdP. FAL3 also protects against the possibility of a compromised IdP by requiring additional authentication by the subscriber at the RP. All of the requirements at FAL1 and FAL2 apply at FAL3, except where overridden by more specific or stringent requirements here.</p>
 
-<p>At FAL3, the RP <strong>SHALL</strong> verify that the subscriber is in control of an authenticator in addition to the assertion. This authenticator is either identified in a holder-of-key assertion as described in <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec 3.14</a> or is a bound authenticator as described in <a href="/800-63-4/sp800-63c/Federation/#bound-authn">Sec. 3.15</a>.</p>
+<p>At FAL3, the RP <strong>SHALL</strong> verify that the subscriber is in control of an authenticator in addition to the assertion. This authenticator is either identified in a holder-of-key assertion (see <a href="/800-63-4/sp800-63c/Federation/#idp-managed-bound-authn">Sec. 3.15</a>) or is a bound authenticator (see <a href="/800-63-4/sp800-63c/Federation/#bound-authn">Sec. 3.16</a>).</p>
 
-<p>At FAL3, the trust agreement <strong>SHALL</strong> be established such that the IdP can identify and trust the RP to abide by all aspects of the trust agreement prior to any federation transaction taking place. To facilitate this, the key material used to authenticate the RP and IdP to each other is associated with the identifiers for the RP and IdP in a static fashion using a trusted mechanism. For example, a public key file representing the RP is uploaded to the IdP during a static registration process, and the RP downloads the IdP’s public key from a URL indicated in the trust agreement. Alternatively, the trust agreement can dictate that the RP and IdP can upload their respective public keys to a federation authority and then download each other’s keys from that same trusted authority.</p>
+<p>At FAL3, a trust agreement <strong>SHALL</strong> be established prior to the federation transaction taking place (i.e., a “pre-established” trust agreement), as discussed in <a href="/800-63-4/sp800-63c/GenIdP/#pre-established-trust-agreements">Sec. 4.3.1</a>.</p>
 
-<p>IdPs operated by or on behalf of federal agencies that present assertions at FAL3 <strong>SHALL</strong> protect keys used for signing or encrypting those assertions with mechanisms validated at <a href="/800-63-4/sp800-63c/references/#ref-FIPS140">[FIPS140]</a> Level 1 or higher.</p>
+<p>At FAL3, the identifiers for the CSP, IdP, and RP <strong>SHALL</strong> be established manually. Each identifier <strong>SHALL</strong> be uniquely associated with the verification keys for the party represented. Verification keys <strong>SHALL</strong> be transmitted through a trusted mechanism, which could be manual or automated, as indicated in the trust agreement.
+For example, a public-key certificate that represents the RP is uploaded to the IdP during a manual registration process. The RP is manually configured with a URL that it can use to download the IdP’s public key. Alternatively, the IdP and RP could each upload their respective public keys to a federation authority and then download each other’s keys from that same location. For a subscriber-controlled wallet, the RP could be manually configured with the URL that represents the CSP’s public key. The RP fetches this public key and uses it to validate the signature of the attribute bundle presented by the subscriber-controlled wallet. See <a href="/800-63-4/sp800-63c/Federation/#identifiers-keys">Sec. 3.6</a> for more information on the establishment, management, rotation, and revocation of keys and their association with identifiers.</p>
 <h2 id="request-xals" data-section="2">
   
   
@@ -548,7 +531,7 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
 
 <p>Since an IdP is capable of asserting the identities of many different subscribers with a variety of authenticators using a variety of federation parameters, the IAL, AAL, and FAL could vary across different federation transactions, even to the same RP.</p>
 
-<p>IdPs <strong>SHALL</strong> support a mechanism for RPs to specify a set of minimum acceptable xALs as part of the trust agreement and <strong>SHOULD</strong> support the RP specifying a more strict minimum set at runtime as part of the federation transaction. When an RP requests a particular xAL, the IdP <strong>SHOULD</strong> fulfill that request, if possible, and <strong>SHALL</strong> indicate the resulting xAL in the assertion. For example, if the subscriber has an active session that was authenticated at AAL1, but the RP has requested AAL2, the IdP needs to prompt the subscriber for AAL2 authentication to step up the security of the session at the IdP during the subscriber’s interaction at the IdP, if possible. The IdP sends the resulting AAL as part of the returned assertion, whether it is AAL1 (the step-up authentication was not met) or AAL2 (the step-up authentication was met successfully).</p>
+<p>IdPs <strong>SHALL</strong> support a mechanism for RPs to specify a set of minimum acceptable xALs as part of the trust agreement and <strong>SHOULD</strong> support the RP specifying a more strict minimum set at runtime as part of the federation transaction. When an RP requests a particular xAL, the IdP <strong>SHOULD</strong> fulfill that request, if possible, or  <strong>SHOULD</strong> fail the request if it cannot fulfil the RP’s requested xALs. The IdP <strong>SHALL</strong> always indicate the resulting xAL in the assertion, even if the request has not been met. For example, if the subscriber has an active session that was authenticated at AAL1, but the RP has requested AAL2, the IdP needs to prompt the subscriber for AAL2 authentication to increase the security of the session at the IdP during the subscriber’s interaction at the IdP, if possible. The IdP sends the resulting AAL as part of the returned assertion, whether it is AAL1 (i.e., the step-up authentication request was not met) or AAL2 (i.e., the step-up authentication request was met successfully).</p>
 
 <p>The IdP <strong>SHALL</strong> inform the RP of the following information for each federation transaction:</p>
 
@@ -558,15 +541,15 @@ View this document as: <a href="/800-63-4/sp800-63c.html">a single page</a> | <b
   <li>The FAL of the federation transaction</li>
 </ul>
 
-<p>The RP gets this xAL information from a combination of the terms of the trust agreement as described in <a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Sec. 3.4</a> and information included in the assertion as described in <a href="/800-63-4/sp800-63c/GenIdP/#assertions">Sec. 4.9</a> and <a href="/800-63-4/sp800-63c/Wallets/#assertion-contents">Sec. 5.8</a>. If the xAL is unchanging for all messages between the IdP and RP, the xAL information <strong>SHALL</strong> be included in the terms of the trust agreement between the IdP and RP. If the xAL could be within a range of possible values specified by the trust agreement, the xAL information <strong>SHALL</strong> be included as part of the assertion contents.</p>
+<p>The RP obtains this xAL information from a combination of the terms of the trust agreement (see <a href="/800-63-4/sp800-63c/Federation/#trust-agreement">Sec. 3.5</a>) and information included in the assertion (see <a href="/800-63-4/sp800-63c/GenIdP/#assertions">Sec. 4.9</a> and <a href="/800-63-4/sp800-63c/Wallets/#assertion-contents">Sec. 5.8</a>). If the xAL is unchanging for all messages between the IdP and RP (e.g., enterprise scenarios in which all subscribers are identity-proofed at the same IAL and use the same authenticator type), the xAL information <strong>SHALL</strong> be included in the terms of the trust agreement between the IdP and RP. If the xAL could be within a range of possible values specified by the trust agreement, then sufficient information <strong>SHALL</strong> be included as part of the assertion contents to allow the RP to determine the xALs.</p>
 
-<p>The IdP <strong>MAY</strong> indicate that no claim is made to the IAL or AAL for a given federation transaction. In such cases, no default value is assigned to the resulting xAL by the RP. That is to say, a federation transaction without an IAL declaration in either the trust agreement or the assertion is functionally considered to have “no IAL” and the RP cannot assume the account meets “IAL1”, the lowest numbered IAL described in this suite.</p>
+<p>The IdP <strong>MAY</strong> indicate that no claim is made to the IAL or AAL for a given federation transaction. In such cases, no default value is assigned to the resulting xAL by the RP. That is, a federation transaction without an IAL declaration in either the trust agreement or the assertion is functionally considered to have “no IAL” and the RP cannot assume the account meets “IAL1,” which is the lowest numbered IAL described in this suite.</p>
 
-<p>The RP <strong>SHALL</strong> determine the minimum IAL, AAL, and FAL it is willing to accept for access to any offered functionality. An RP <strong>MAY</strong> vary its functionality based on the IAL, AAL, and FAL of a specific federated authentication. For example, an RP can allow federation transactions at AAL2 for common functionality (e.g., viewing the status of a dam system) but require AAL3 be used for higher risk functionality (e.g., changing the flow rates of a dam system). Similarly, an RP could restrict management functionality to only certain subscriber accounts which have been identity proofed at IAL2, while allowing federation transactions from all subscriber accounts regardless of IAL.</p>
+<p>The RP <strong>SHALL</strong> determine the minimum IAL, AAL, and FAL that it is willing to accept for access to any offered functionality and assess all IdP assertions to ensure that these xALs have been met before granting access to protected resources. If IdP responses do not meet the requested parameters, the RP <strong>SHALL</strong> have a mechanism for addressing these requests (e.g., declining the request or routing the user to an exception handling process). The RP <strong>MAY</strong> vary its functionality based on the IAL, AAL, and FAL of a specific federated authentication. For example, an RP can allow federation transactions authenticated at AAL2 for common functionality (e.g., viewing the status of a dam system) but require AAL3 to be used for higher risk functionality (e.g., changing the flow rates of a dam system). Similarly, an RP could restrict high-risk functionality (e.g., accessing sensitive information) to only certain subscriber accounts that have been identity-proofed at IAL2 while allowing basic functionality for all subscriber accounts, regardless of IAL.</p>
 
-<p>In a federation process, only the IdP has direct access to the details of the subscriber account, which determines the applicable IAL, and the authentication event at the IdP, which determines the applicable AAL. Consequently, the IdP declares the IAL, AAL, and intended FAL for each federation transaction.</p>
+<p>In a federation process, the RP does not have direct access to the details of the subscriber account that have been provided to the IdP by the CSP, which details determine the IAL for the subscriber account. Additionally, since the RP does not participate in the authentication event or activation event at the IdP, the RP cannot determine the AAL. The RP sees many aspects of the federation transaction that determine the FAL, but the IdP also has its own responsibilities related to FAL, including signaling the IdP’s intended FAL of the federation transaction to the RP. Consequently, the IdP <strong>SHALL</strong> provide the RP with sufficient information to determine the IAL, AAL, and the IdP’s intended FAL for each federation transaction. This <strong>MAY</strong> be done in the assertions, through previous arrangement in the trust agreement, or a combination of both.</p>
 
-<p>The RP <strong>SHALL</strong> ensure that it meets its obligations in the federation transaction for the FAL declared in the assertion. For example, the RP needs to ensure the presentation method meets the injection protection requirements at FAL2 and above, and that the appropriate bound authenticator is presented at FAL3.</p>
+<p>The RP <strong>SHALL</strong> ensure that it meets its obligations in the federation transaction for the FAL declared in the transaction. For example, the RP needs to ensure that the presentation method meets the assertion injection protection requirements at FAL2 and above and that the appropriate holder-of-key proof or bound authenticator is presented at FAL3.</p>
 
 
   

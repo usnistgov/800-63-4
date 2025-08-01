@@ -127,20 +127,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63b/preface/">Preface</a></li>
                 
               
@@ -253,21 +239,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/usability/"><span class="section">8</span>Usability</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63b/equity/"><span class="section">9</span>Equity</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63b/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -433,9 +405,9 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
 <p>The SP 800-63 suite of guidelines refers to the <em>binding</em> rather than the issuance of authenticators to accommodate both options.</p>
 
-<p>Throughout the lifetime of a digital identity, CSPs <strong>SHALL</strong> maintain a record of all authenticators that are or have ever been bound to each subscriber account. The CSP <strong>SHALL</strong> determine the characteristics of the authenticator being bound (e.g., single-factor versus multi-factor, phishing-resistant or not) so that verifiers can assess compliance with the requirements at each AAL. This determination <strong>MAY</strong> be based on strong evidence (e.g., authenticator attestation), direct information from having issued the authenticator, or typical characteristics of authenticator implementations (e.g., whether a user verification bit is set).</p>
+<p>Throughout the lifetime of a digital identity, CSPs <strong>SHALL</strong> maintain a record of all authenticators that are bound to each subscriber account. The CSP <strong>SHALL</strong> determine the characteristics of the authenticator being bound (e.g., single-factor versus multi-factor, phishing-resistant or not) so that verifiers can assess compliance with the requirements at each AAL. This determination <strong>MAY</strong> be based on strong evidence (e.g., authenticator attestation), direct information from having issued the authenticator, or typical characteristics of authenticator implementations (e.g., whether a user verification bit is set by <a href="/800-63-4/sp800-63b/references/#ref-WebAuthn">[WebAuthn]</a>).</p>
 
-<p>The CSP <strong>SHALL</strong> also maintain other state information required to meet the authenticator verification requirements. For example, the throttling of authentication attempts described in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a> requires the CSP or verifier to maintain state information on recent failed authentication attempts, except for activation factors verified at the authenticator.</p>
+<p>The CSP <strong>SHALL</strong> also maintain other state information that is required to meet the authenticator verification requirements. For example, the throttling of authentication attempts described in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a> requires the CSP or verifier to maintain state information on recent failed authentication attempts, except for activation factors verified at the authenticator.</p>
 
 <p>The record created by the CSP <strong>SHALL</strong> contain the date and time of significant authenticator life cycle events (e.g., binding to the subscriber account, renewal, update, expiration). The record <strong>SHOULD</strong> include information about the source of the binding (e.g., IP address, device identifier) of any device associated with the event.</p>
 
@@ -469,17 +441,17 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
 <p>To minimize the need for account recovery, CSPs and verifiers <strong>SHOULD</strong> encourage subscribers to maintain at least two separate means of authentication. For example, a subscriber who usually uses an OTP authenticator as a physical authenticator <strong>MAY</strong> also be issued look-up secret authenticators or register a device for out-of-band authentication to be used if the physical authenticator is lost, stolen, or damaged. See <a href="/800-63-4/sp800-63b/events/#recovery">Sec. 4.2</a> for more information on replacing passwords.</p>
 
-<p>Accordingly, CSPs <strong>SHOULD</strong> permit the binding of multiple authenticators to a subscriber account. When any new authenticator is bound to a subscriber account, the CSP <strong>SHALL</strong> ensure that the process requires authentication at either the maximum AAL currently available in the subscriber account or the maximum AAL at which the new authenticator will be used, whichever is lower. For example, binding an authenticator that is suitable for use at AAL2 requires authentication at AAL2 unless the subscriber account currently has only AAL1 authentication capability. When an authenticator is added, the CSP <strong>SHALL</strong> notify the subscriber via a mechanism independent of the transaction binding the new authenticator, as described in <a href="/800-63-4/sp800-63b/events/#notification">Sec. 4.6</a>.</p>
-<h4 id="external-authenticator-binding" data-section="4">
+<p>Accordingly, CSPs <strong>SHALL</strong> permit the binding of multiple authenticators to a subscriber account. When any new authenticator is bound to a subscriber account, the CSP <strong>SHALL</strong> ensure that the process requires authentication at either the maximum AAL currently available in the subscriber account or the maximum AAL at which the new authenticator will be used, whichever is lower. For example, binding an authenticator that is suitable for use at AAL2 requires authentication at AAL2 unless the subscriber account currently has only AAL1 authentication capabilities. When an authenticator is added, the CSP <strong>SHALL</strong> notify the subscriber via a mechanism independent of the transaction binding the new authenticator, as described in <a href="/800-63-4/sp800-63b/events/#notification">Sec. 4.6</a>.</p>
+<h4 id="binding-across-endpoints" data-section="4">
   
   
-    External Authenticator Binding <a href="#external-authenticator-binding" class="header-link"><i class="fa fa-link"></i></a>
+    Binding Across Endpoints <a href="#binding-across-endpoints" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h4>
     
 
-<p><em>External authenticator binding</em> refers to binding an authenticator to a subscriber account when it is not connected to or embedded in the authenticated endpoint. This process is typically used when adding authenticators that are embedded in a new endpoint or when connectivity limitations prevent the newly bound authenticator from being connected to an authenticated endpoint.</p>
+<p>It may be necessary for a subscriber to bind an authenticator to a subscriber account using a device that is different from the authenticated endpoint (i.e., the endpoint for the session being authenticated). This process is typically used when adding authenticators that are embedded in a new endpoint or when connectivity limitations prevent the newly bound authenticator from being connected to an authenticated endpoint.</p>
 
 <p>The binding process <strong>SHALL</strong> proceed in one of the following ways:</p>
 
@@ -505,7 +477,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
     <p>The subscriber <strong>MAY</strong> be prompted to enter an identifier by which the CSP knows them on the endpoint associated with the new authenticator.</p>
   </li>
   <li>
-    <p>The CSP <strong>SHALL</strong> generate a <em>binding code</em> using an approved random bit generator as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a> and send it to either the new authenticator endpoint or the authenticated endpoint approving the binding. The binding code <strong>SHALL</strong> be at least 40 bits in length if used with an identifier entered in the previous step. Otherwise, a binding code of at least 112 bits in length <strong>SHALL</strong> be required.</p>
+    <p>The CSP <strong>SHALL</strong> generate a <em>binding code</em> using an approved random bit generator, as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a> and send it to either the new authenticator endpoint or the authenticated endpoint approving the binding. The binding code <strong>SHALL</strong> be at least 40 bits in length if it is used with an identifier that was entered in the previous step. Otherwise, a binding code of at least 112 bits in length <strong>SHALL</strong> be required.</p>
   </li>
   <li>
     <p>The subscriber <strong>SHALL</strong> transfer the binding code to the other endpoint. This transfer <strong>SHALL</strong> either be manual or via a local out-of-band method (e.g., QR code). The binding code <strong>SHALL NOT</strong> be communicated over any insecure channel (e.g., email).</p>
@@ -531,9 +503,13 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>A subscriber may already possess authenticators that are suitable for authentication at a particular AAL. For example, they may have a multi-factor authenticator from a social network provider, considered AAL2 without identity proofing, and would like to use that authenticator at an RP that requires IAL2. This would necessitate identity proofing at IAL2, perhaps by a different CSP, and binding authenticators at enrollment with that CSP.</p>
+<p>A subscriber may already possess authenticators that are suitable for authentication at a particular AAL. For example, the subscriber may have their own multi-factor authenticator and would like to use that authenticator at a verifier that requires AAL2.</p>
 
-<p>CSPs <strong>SHOULD</strong>, where practical, accommodate subscriber-provided authenticators to relieve the burden on the subscriber of managing many authenticators. The binding of these authenticators <strong>SHALL</strong> be done as described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>. If the authenticator strength is not self-evident (e.g., between single-factor and multi-factor authenticators of a given type), the CSP <strong>SHALL</strong> assume that the weaker authenticator has been used unless it can establish that the stronger authenticator is being used (e.g., by verification with the issuer or manufacturer of the authenticator).</p>
+<p>CSPs <strong>SHOULD</strong>, where practical, accommodate subscriber-provided authenticators to relieve the burden on the subscriber of managing many authenticators. The binding of these authenticators <strong>SHALL</strong> be done as described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>.</p>
+
+<p>As part of this process, CSPs will need to establish the capabilities and characteristics of the subscriber-provided authenticator that they wish to accept to determine its suitability for the use case and the intended AAL. The level of assurance that the CSP requires in the fidelity of these authenticator attributes <strong>MAY</strong> vary depending on the use case and threat environment. Some authenticators, such as those based on the WebAuthn standard <a href="/800-63-4/sp800-63b/references/#ref-WebAuthn">[WebAuthn]</a>, provide metadata about the authenticator during the binding or authentication process that can be used by the CSP to inform its decisions. This metadata, for example, could indicate whether an authenticator uses an activation factor to function as a multi-factor authenticator. Similarly, some subscriber-controlled wallets will also offer metadata about its functions, including information about the mechanisms used to unlock the wallet. CSPs <strong>SHOULD</strong> consider this metadata when choosing how to support a subscriber-provided authenticator. In many cases, such information will not be available, and CSPs <strong>SHOULD</strong> evaluate the characteristics of commercially available authenticators that are likely to be used by their subscribers and make determinations about what authenticators they will accept. The types of authenticators accepted by the CSP <strong>SHALL</strong> be documented in the CSP practice statement.</p>
+
+<p>In some high assurance use cases, CSPs may desire additional confidence in the attributes of the authenticators registered by their subscribers. Some authenticators support attestation features that can be used to determine the capabilities and manufacturers of specific authenticators. However, such attestation features are not widely available in authenticators that are likely to be used by public users. The lack of support for attestations <strong>SHOULD NOT</strong> block the use of authenticators for broad public-facing applications.</p>
 <h3 id="renewal" data-section="4">
   
   
@@ -543,7 +519,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>The subscriber <strong>SHOULD</strong> bind a new or updated authenticator before an existing authenticator’s expiration. The process for this <strong>SHOULD</strong> conform closely to the binding process for an additional authenticator described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>. The CSP <strong>MAY</strong> periodically take other actions (e.g., confirming contact addresses), either as a part of the renewal process or separately. Following the successful use of the replacement authenticator, the CSP <strong>SHOULD</strong> invalidate the expiring authenticator.</p>
+<p>The subscriber <strong>SHOULD</strong> bind a new or updated authenticator before an existing authenticator’s expiration. The process for this <strong>SHOULD</strong> conform closely to the binding process for an additional authenticator, as described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>. The CSP <strong>MAY</strong> periodically take other actions (e.g., confirming contact addresses) as a part of the renewal process or separately. Following the successful use of the replacement authenticator, the CSP <strong>SHOULD</strong> invalidate the expiring authenticator.</p>
 <h2 id="recovery" data-section="4">
   
   
@@ -553,12 +529,13 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p><em>Account recovery</em> is when a subscriber recovers from losing control of the authenticators necessary to authenticate at a desired AAL. This may be accomplished by repeating portions of the identity proofing process or by presenting one or more recovery codes, perhaps in conjunction with using an authenticator that is still available to the subscriber bound to their subscriber account. Once this is completed, the subscriber can bind one or more new authenticators to their subscriber account. An account recovery event always causes one or more notifications to be sent to the subscriber to aid in detecting the fraudulent use of account recovery.</p>
+<p><em>Account recovery</em> is when a subscriber recovers from losing control of the authenticators that are needed to authenticate at a desired AAL. This may be accomplished by repeating portions of the identity proofing process, using a prearranged recovery contact, or presenting one or more recovery codes, perhaps in conjunction with using an authenticator that is still available to the subscriber bound to their subscriber account. Once this is completed, the subscriber can bind one or more new authenticators to their subscriber account. An account recovery event always causes one or more notifications to be sent to the subscriber to help detect the fraudulent use of account recovery.</p>
 
-<p>Account recovery differs from authentication in several ways. Since account recovery is rarely expected to be invoked, it is generally less convenient than authentication and — depending on the situation and recovery methods offered by the CSP — may involve extended waiting times.</p>
+<p>Account recovery differs from authentication in several ways. Since account recovery is expected to be invoked infrequently, it is generally less convenient than authentication and — depending on the situation and recovery methods offered by the CSP — may involve extended waiting times.</p>
 
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
+<blockquote>
+  <p>Replacement of a forgotten password where the subscriber can authenticate with one or more other authenticators is considered to be the binding of a new authenticator (see Sec. <a href="/800-63-4/sp800-63b/events/#bindexisting">4.1.2.1</a>) rather than account recovery.</p>
+</blockquote>
 <h3 id="account-recovery-methods" data-section="4">
   
   
@@ -568,7 +545,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>Four general classes of account recovery methods are recognized. CSPs <strong>SHALL</strong> support one or more of the following:</p>
+<p>Four general classes of account recovery methods are recognized:</p>
 
 <ul>
   <li>Saved recovery codes</li>
@@ -577,7 +554,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
   <li>Repeated identity proofing</li>
 </ul>
 
-<p>In addition to these methods, the CSP <strong>MAY</strong> support an application-specific method (e.g., interaction with a CSP agent) to recover a subscriber account. The use of alternative methods <strong>SHALL</strong> be based on a risk analysis and documented by the CSP.</p>
+<p>CSPs <strong>SHALL</strong> support one or more of these and <strong>MAY</strong> support an application-specific method (e.g., interaction with a CSP agent) to recover a subscriber account. The use of alternative methods <strong>SHALL</strong> be based on a risk analysis and documented by the CSP.</p>
 <h4 id="savedrecovery" data-section="4">
   
   
@@ -587,35 +564,32 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h4>
     
 
-<p>At enrollment, a CSP that supports this recovery option <strong>SHOULD</strong> issue a recovery code to the subscriber. The recovery code <strong>SHALL</strong> include at least 64 bits from an approved random bit generator. The saved recovery code may be presented as numeric or alphanumeric (e.g., Base64) for manual entry or as a machine-readable optical label (e.g., QR code) that contains the recovery code. At any point following enrollment, the subscriber <strong>MAY</strong> request a replacement recovery code. The issuance of a replacement recovery code <strong>SHALL</strong> result in an account recovery notification, as described in <a href="#notification">Sec. 4.6</a>.</p>
+<p>At enrollment, a CSP that supports this recovery option <strong>SHOULD</strong> issue a recovery code to the subscriber. The recovery code <strong>SHALL</strong> include at least 64 bits from an approved random bit generator. The saved recovery code may be presented as numeric or a printable ASCII representation (e.g., Base64) for manual entry or as a machine-readable optical label (e.g., QR code) that contains the recovery code. At any point following enrollment, the subscriber <strong>MAY</strong> request a replacement recovery code. The issuance of a replacement recovery code <strong>SHALL</strong> result in an account recovery notification, as described in <a href="/800-63-4/sp800-63b/events/#notification">Sec. 4.6</a>.</p>
 
 <p>Saved recovery codes are intended to be maintained offline (e.g., printed or written down) and stored securely by the subscriber for future use. The verification of saved recovery codes <strong>SHALL</strong> be subject to the throttling requirements in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a>. Saved recovery codes <strong>SHALL</strong> be stored in the subscriber account in hashed form using an approved one-way function, as described in <a href="/800-63-4/sp800-63b/authenticators/#passwordver">Sec. 3.1.1.2</a>. Following the use of a saved recovery code, the CSP <strong>SHALL</strong> invalidate that recovery code and <strong>SHALL</strong> issue a new saved recovery code to the subscriber.</p>
-<h4 id="issued-recovery-codes" data-section="4">
+<h4 id="issuedrecovery" data-section="4">
   
   
-    Issued Recovery Codes <a href="#issued-recovery-codes" class="header-link"><i class="fa fa-link"></i></a>
+    Issued Recovery Codes <a href="#issuedrecovery" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h4>
     
 
-<p>CSPs that support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, or voice). When recovery is required, a recovery code will be sent to a claimant-chosen address. The issued recovery code <strong>SHALL</strong> include at least six decimal digits (or equivalent) from an approved random bit generator, as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a>). The issued recovery code may be presented as a numeric or alphanumeric (e.g., Base64) for manual entry, a secure (e.g., https) link with a representation of the confirmation code, or a machine-readable optical label (e.g., QR code) that contains the recovery code.</p>
-
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
+<p>CSPs that support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will be sent to a claimant-chosen address. The issued recovery code <strong>SHALL</strong> include at least six decimal digits (or equivalent) from an approved random bit generator, as described in <a href="/800-63-4/sp800-63b/authenticators/#randomness">Sec. 3.2.12</a>. The issued recovery code may be presented as a numeric or a printable ASCII representation (e.g., Base64) for manual entry, a secure (e.g., https) link with a representation of the recovery code, or a machine-readable optical label (e.g., QR code) that contains the recovery code.</p>
 
 <p>Issued recovery codes <strong>SHALL</strong> be valid for at most:</p>
 
 <ul>
-  <li>21 days when sent to a postal address within the contiguous United States,</li>
-  <li>30 days when sent to a postal address outside the contiguous United States,</li>
-  <li>10 minutes when sent via text messaging or voice, or</li>
-  <li>24 hours when sent to an email address.</li>
+  <li>21 days when sent to a postal address within the contiguous United States</li>
+  <li>30 days when sent to a postal address outside of the contiguous United States</li>
+  <li>10 minutes when sent via text message or voice</li>
+  <li>24 hours when sent to an email address</li>
 </ul>
 
 <p>The verification of issued recovery codes <strong>SHALL</strong> be subject to the throttling requirements in <a href="/800-63-4/sp800-63b/authenticators/#throttle">Sec. 3.2.2</a>.</p>
 
-<p>When establishing recovery addresses, the CSP <strong>SHALL</strong> send a confirmation code with the same characteristics as a recovery code to the newly established recovery address. The recovery address <strong>SHALL</strong> be established only after the subscriber successfully confirms it. CSPs <strong>SHALL</strong> allow the subscriber to establish at least two recovery addresses.</p>
+<p>When establishing recovery addresses other than those validated or verified as part of the identity proofing process, the address <strong>SHALL</strong> be verified. To verify an address, the CSP <strong>SHALL</strong> send a confirmation code with the same characteristics as a recovery code to the newly established recovery address. A recovery address <strong>SHALL</strong> be established only after the subscriber provides the correct confirmation code to the CSP. CSPs <strong>SHALL</strong> allow the subscriber to establish at least two recovery addresses.</p>
 <h4 id="recovery-contacts" data-section="4">
   
   
@@ -628,9 +602,11 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 <p>CSPs that support the use of recovery contacts <strong>SHALL</strong> allow the subscriber to specify one or more addresses of trusted associates to receive issued recovery codes. The requirements for recovery contacts are very similar to those for issued recovery codes with the following exceptions:</p>
 
 <ul>
-  <li>The validity time for recovery codes sent to recovery contacts <strong>MAY</strong> be extended by 24 hours (i.e., valid for no more than 24 hours and 10 minutes if sent via text messaging) to provide additional time for the recovery contact to communicate the recovery code to the subscriber.</li>
+  <li>The validity time for recovery codes sent to recovery contacts <strong>MAY</strong> be extended by 24 hours (e.g., valid for no more than 24 hours and 10 minutes if sent via text messaging) to provide additional time for the recovery contact to communicate the recovery code to the subscriber.</li>
   <li>Confirmation of the recovery code address <strong>MAY</strong> also be extended by 24 hours to allow the recovery contact to send the confirmation code to the subscriber for entry.</li>
 </ul>
+
+<p>If the CSP supports the use of recovery contacts, the CSP <strong>SHALL</strong> provide methods for subscribers to view and manage recovery contacts. CSPs <strong>SHOULD</strong> send a reminder annually to subscribers to review their list of recovery contacts.</p>
 <h4 id="repeated-identity-proofing" data-section="4">
   
   
@@ -640,7 +616,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h4>
     
 
-<p>When the subscriber account has been identity proofed at a minimum of IAL1, CSPs <strong>SHOULD</strong> support account recovery by repeating a portion of the identity proofing process. The CSP <strong>SHALL</strong> repeat the necessary steps of identity proofing consistent with the level of initial identity proofing and <strong>SHALL</strong> confirm that the claimant’s identity is consistent with the previously established account. If the CSP has retained a biometric sample from the user or a copy of the evidence used during the initial proofing and it is of sufficient quality and resolution, the CSP <strong>MAY</strong> repeat only the verification portion of the identity proofing process, as described in <a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a>.</p>
+<p>When the subscriber account has been identity-proofed at a minimum of <em>identity assurance level 1 (IAL1)</em>, CSPs <strong>SHOULD</strong> support account recovery by repeating a portion of the identity proofing process. The CSP <strong>SHALL</strong> repeat the necessary steps of identity proofing consistent with the level of initial identity proofing and <strong>SHALL</strong> confirm that the claimant’s identity is consistent with the previously established account. If the CSP has retained a biometric sample from the user or a copy of the evidence used during the initial proofing that is of sufficient quality and resolution, the CSP <strong>MAY</strong> repeat only the verification portion of the identity proofing process, as described in <a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a>.</p>
 <h3 id="recovery-requirements-by-ialaal" data-section="4">
   
   
@@ -650,17 +626,19 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>Different recovery methods apply depending on the IAL and the maximum AAL associated with the subscriber account.</p>
-<h4 id="recovery-at-aal1" data-section="4">
+<p>Different recovery methods apply, depending on the IAL and the maximum AAL associated with the subscriber account.</p>
+<h4 id="recovery-without-identity-proofing" data-section="4">
   
   
-    Recovery at AAL1 <a href="#recovery-at-aal1" class="header-link"><i class="fa fa-link"></i></a>
+    Recovery Without Identity Proofing <a href="#recovery-without-identity-proofing" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h4>
     
 
-<p>Since identity proofing requires issuing authenticators that are sufficient for multi-factor authentication to allow the subscriber to access personal information about themselves, subscriber accounts at AAL1 are without identity proofing, and therefore, repeated identity proofing is not possible. The CSP <strong>SHALL</strong> require the successful use of a saved recovery code, issued recovery code, or recovery contact.</p>
+<p>When subscribers have not been identity-proofed, a reproofing option is not available to support account recovery. The recovery of such subscriber accounts <strong>SHALL</strong> require the successful use of a saved recovery code, issued recovery code, or recovery contact.</p>
+
+<p>Since identity proofing requires issuing authenticators that are sufficient for multi-factor authentication to allow the subscriber to access personal information about themselves, subscriber accounts that can authenticate at a maximum of AAL1 are without identity proofing.</p>
 <h4 id="recovery-at-aal2" data-section="4">
   
   
@@ -673,9 +651,9 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 <p>To recover an account that can authenticate at a maximum of AAL2, the CSP <strong>SHALL</strong> require the subscriber to complete one of the following:</p>
 
 <ul>
-  <li>Two recovery codes obtained using different methods from the set (saved, issued, and recovery contacts)</li>
-  <li>One recovery code from the set (saved, issued, and recovery contacts) plus authentication with a single-factor authenticator bound to the subscriber account</li>
-  <li>Repeated identity proofing (provided that the subscriber account has been identity proofed)</li>
+  <li>Two recovery codes obtained using different methods from the set (i.e., saved, issued, and recovery contacts)</li>
+  <li>One recovery code from the set (i.e., saved, issued, and recovery contacts) plus authentication with a single-factor authenticator that is bound to the subscriber account</li>
+  <li>Repeated identity proofing (provided that the subscriber account has been identity-proofed)</li>
 </ul>
 <h4 id="recovery-at-aal3" data-section="4">
   
@@ -686,9 +664,9 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h4>
     
 
-<p>If an account that can authenticate at AAL3 has been identity proofed at IAL1 or IAL2, the requirements are the same as those for recovery at AAL2.</p>
+<p>If an account that can authenticate at AAL3 has been identity-proofed at IAL1 or IAL2, the requirements are the same as those for recovery at AAL2.</p>
 
-<p>If an account that can authenticate at AAL3 has been identity proofed at IAL3, the CSP <strong>SHALL</strong> successfully perform a successful biometric comparison against the biometric characteristic collected during the initial identity proofing session, in an onsite attended identity proofing session, as described in <a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a>. The CSP <strong>MAY</strong> also require the presentation of evidence used in the initial identity proofing process.</p>
+<p>If an account that can authenticate at AAL3 has been identity-proofed at IAL3, the CSP <strong>SHALL</strong> successfully perform a successful biometric comparison against the biometric characteristic collected during an initial on-site attended identity proofing session, as described in <a href="/800-63-4/sp800-63a/introduction/#introduction" latex-href="#ref-SP800-63A">[SP800-63A]</a>. The CSP <strong>MAY</strong> also require the presentation of the evidence used in the initial identity proofing process.</p>
 <h3 id="recoverynotification" data-section="4">
   
   
@@ -698,7 +676,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h3>
     
 
-<p>In all cases, account recovery <strong>SHALL</strong> cause a notification to be sent to the subscriber, as described in <a href="/800-63-4/sp800-63b/events/#notification">Sec. 4.6</a>.</p>
+<p>In all cases, account recovery <strong>SHALL</strong> cause a notification to be sent to the subscriber or their designee, as described in <a href="/800-63-4/sp800-63b/events/#notification">Sec. 4.6</a>.</p>
 <h2 id="loss-theft-damage-and-compromise" data-section="4">
   
   
@@ -708,13 +686,13 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>Compromised authenticators include those that have been lost, stolen, or subject to unauthorized duplication or that have activation factors that are no longer in the subscriber’s control. Generally, one must assume that a lost authenticator has been stolen or compromised by someone other than the legitimate holder of the authenticator. Damaged or malfunctioning authenticators are also considered compromised to guard against any possibility of the extraction of the authenticator’s secret. One notable exception is a password that has been forgotten without other indications of having been compromised, such as having been obtained by an attacker.</p>
+<p>Compromised authenticators include those that have been lost, stolen, or subject to unauthorized duplication or that have activation factors that are no longer in the subscriber’s control. Generally, one must assume that a lost authenticator has been stolen or compromised by someone other than the legitimate holder of the authenticator. Damaged or malfunctioning authenticators are also considered compromised to guard against any possibility of the extraction of the authenticator’s secret.</p>
 
 <p>The CSP <strong>SHALL</strong> suspend, invalidate, or destroy compromised authenticators from the subscriber’s account promptly following compromise detection. Organizations <strong>SHOULD</strong> establish time limits for this process.</p>
 
 <p>To facilitate the secure reporting of an authenticator’s loss, theft, damage, or compromise, the CSP <strong>SHOULD</strong> provide the subscriber with a method of authenticating using a backup or alternate authenticator. This backup authenticator <strong>SHALL</strong> be a password or a physical authenticator. Either could be used, but only one authentication factor is required to make this report. Alternatively, the subscriber <strong>MAY</strong> establish an authenticated protected channel for the CSP to verify the information collected during identity proofing. The CSP <strong>MAY</strong> choose to verify a contact address (i.e., the email address, telephone number, or postal address) and suspend or invalidate authenticators that are reported to have been compromised.</p>
 
-<p>CSPs <strong>MAY</strong> support the temporary suspension of authenticators that are suspected of possible compromise. If suspension is supported, it <strong>SHOULD</strong> be reversed if the subscriber successfully authenticates to the CSP using a valid (i.e., not suspended) authenticator and requests reactivation of the suspended authenticator. The CSP <strong>MAY</strong> set a time limit after which a suspended authenticator can no longer be reactivated.</p>
+<p>CSPs <strong>MAY</strong> support the temporary suspension of authenticators that are suspected of possible compromise. If suspension is supported, it <strong>SHOULD</strong> be reversed after the subscriber successfully authenticates to the CSP using a valid (i.e., not suspended) authenticator and requests reactivation of the suspended authenticator. The CSP <strong>MAY</strong> set a time limit after which a suspended authenticator can no longer be reactivated.</p>
 <h2 id="expiration" data-section="4">
   
   
@@ -724,9 +702,9 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>CSPs <strong>MAY</strong> issue authenticators that expire. If and when an authenticator expires, it <strong>SHALL NOT</strong> be usable for authentication. When an authentication is attempted using an expired authenticator, the CSP <strong>SHOULD</strong> indicate to the subscriber that the authentication failure is due to expiration rather than some other cause.</p>
+<p>CSPs <strong>MAY</strong> bind authenticators that expire to subscriber accounts. When an authenticator expires, it <strong>SHALL NOT</strong> be usable for authentication. When an authentication is attempted using an expired authenticator, the CSP <strong>SHOULD</strong> indicate to the subscriber that the authentication failure is due to expiration rather than some other cause.</p>
 
-<p>The CSP <strong>SHOULD</strong> retrieve any authenticator that contains personal information or provide for its zeroization (erasure) or destruction promptly following expiration.</p>
+<p>The CSP <strong>SHOULD</strong> retrieve any authenticator that contains personal information or provide for its erasure or destruction promptly following expiration.</p>
 
 <p>The replacement of expired authenticators <strong>SHALL</strong> conform to the binding process for an additional authenticator, as described in <a href="/800-63-4/sp800-63b/events/#post-enroll-bind">Sec. 4.1.2</a>.</p>
 <h2 id="invalidation" data-section="4">
@@ -740,9 +718,9 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
 <p>The invalidation of an authenticator (sometimes referred to as revocation or termination) is the removal of the binding between the authenticator and a subscriber account.</p>
 
-<p>CSPs <strong>SHALL</strong> promptly invalidate authenticators when a subscriber account ceases to exist (e.g., subscriber’s death, the discovery of a fraudulent subscriber) when requested by the subscriber, when the authenticator is compromised, or when the CSP determines that the subscriber no longer meets its eligibility requirements. The CSP <strong>SHALL</strong> make a risk-based determination of the authenticity of invalidation requests from the subscriber, noting that the consequences of not invalidating a compromised authenticator are usually more significant than the denial-of-service potential of invalidating one in error.</p>
+<p>CSPs <strong>SHALL</strong> promptly invalidate authenticators when a subscriber account ceases to exist (e.g., subscriber’s death, the discovery of a fraudulent subscriber), when requested by the subscriber, when the authenticator is compromised, or when the CSP determines that the subscriber no longer meets its eligibility requirements. The CSP <strong>SHALL</strong> make a risk-based determination of the authenticity of invalidation requests from the subscriber. The consequences of not invalidating a compromised authenticator are usually more significant than the denial-of-service potential of invalidating one in error.</p>
 
-<p>The CSP <strong>SHOULD</strong> retrieve any authenticator that contains personal information or provide for its zeroization (erasure) or destruction promptly following invalidation.</p>
+<p>The CSP <strong>SHOULD</strong> retrieve any authenticator that contains personal information or provide for its erasure or destruction promptly following invalidation. The CSP <strong>SHOULD</strong> notify the subscriber when an authenticator is invalidated, as described in <a href="/800-63-4/sp800-63b/events/#notification">Sec. 4.6</a>.</p>
 
 <p>Further requirements on the invalidation of PIV authenticators are found in <a href="/800-63-4/sp800-63b/references/#ref-FIPS201">[FIPS201]</a>.</p>
 <h2 id="notification" data-section="4">
@@ -754,19 +732,20 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>Certain subscriber account events, such as the binding of an authenticator and account recovery, require the subscriber to be independently notified. These notifications help the subscriber detect possible fraud associated with their subscriber account.</p>
+<p>Certain subscriber account events (e.g., the binding of an authenticator, account recovery) require the subscriber or someone designated by them to be independently notified. These notifications help the subscriber detect possible fraud associated with their subscriber account.</p>
 
-<p>Events that require notification <strong>SHALL</strong> cause a notification to be sent to the notification addresses stored in the subscriber account. Notification addresses may be a:</p>
+<p>Events that require notification <strong>SHALL</strong> cause a notification to be sent to the notification addresses stored in the subscriber account. Notification addresses may be any means by which the subscriber can be reliably contacted, such as:</p>
 
 <ul>
   <li>Postal address</li>
   <li>Email address</li>
-  <li>Address (e.g., telephone number) to which a text message or voice message is to be sent</li>
+  <li>Address (e.g., telephone number) to which a text message or voice message may be sent</li>
+  <li>Reference to the subscriber in a push notification service</li>
 </ul>
 
-<p>CSPs <strong>SHALL</strong> support at least two notification addresses per subscriber account, and at least one <strong>SHALL</strong> be validated during the identity proofing process. The CSP <strong>SHOULD</strong> allow subscribers with authentication at AAL2 or higher (or at AAL1 if that is the highest AAL available for the subscriber account) to update their notification addresses. The CSP <strong>SHOULD</strong> encourage the subscriber to maintain multiple notification addresses.</p>
+<p>CSPs <strong>SHALL</strong> support at least two notification addresses per subscriber account. For subscriber accounts that have undergone identity proofing, at least one address <strong>SHALL</strong> have been validated during the identity proofing process. The CSP <strong>SHOULD</strong> allow subscribers with authentication at AAL2 or higher (or at AAL1 if that is the highest AAL available for the subscriber account) to update their notification addresses. The CSP <strong>SHOULD</strong> encourage the subscriber to maintain multiple notification addresses to improve the likelihood of contacting them if a contact address changes.</p>
 
-<p>Notifications <strong>SHALL</strong> be sent to all notification addresses except postal addresses. However, notifications <strong>SHALL</strong> be sent to postal addresses if no other form of notification address is stored in the subscriber account or if the notification is for account recovery at AAL3.</p>
+<p>Notifications <strong>SHALL</strong> be sent to all notification addresses except postal addresses. However, notifications <strong>SHALL</strong> be sent to postal addresses if no other form of notification address is stored in the subscriber account or if the notification is for account recovery at AAL3. Account recovery notifications <strong>SHALL</strong> also be sent to a postal address if the only other notification address in the subscriber account is the address to which an issued recovery code was sent.</p>
 
 <p>The notification <strong>SHALL</strong> provide clear instructions, including contact information, in case the recipient repudiates the event associated with the notification.</p>
 

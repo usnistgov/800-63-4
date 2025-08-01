@@ -114,20 +114,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63a/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63a/preface/">Preface</a></li>
                 
               
@@ -240,21 +226,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63a/usability/"><span class="section">8</span>Usability</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63a/equity/"><span class="section">9</span>Equity</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63a/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -283,6 +255,20 @@
                 
                 
                     <li class=""><a href="/800-63-4/sp800-63a/evidence/"><span class="section">A</span>Evidence</a></li>
+                
+              
+              
+
+            
+              
+              
+              
+                
+                
+                
+                
+                
+                    <li class=""><a href="/800-63-4/sp800-63a/training/"><span class="section">B</span>Training</a></li>
                 
               
               
@@ -406,21 +392,23 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   <dt>applicant reference</dt>
   <dd>A representative of the <em>applicant</em> who can vouch for the identity of the applicant, specific <em>attributes</em> related to the applicant, or conditions relative to the context of the individual (e.g., emergency status, homelessness).</dd>
   <dt>approved cryptography</dt>
-  <dd>An encryption algorithm, <em>hash function</em>, random bit generator, or similar technique that is <em>Federal Information Processing Standard</em> (FIPS)-approved or NIST-recommended. Approved algorithms and techniques are either specified or adopted in a FIPS or NIST recommendation.</dd>
+  <dd>An encryption algorithm, <em>hash function</em>, random bit generator, or similar technique that is <em>Federal Information Processing Standards</em> (FIPS)-approved or NIST-recommended. Approved algorithms and techniques are either specified or adopted in a FIPS or NIST recommendation.</dd>
   <dt>assertion</dt>
-  <dd>A statement from an <em>IdP</em> to an <em>RP</em> that contains information about an authentication event for a subscriber. Assertions can also contain identity <em>attributes</em> for the subscriber.</dd>
+  <dd>A statement from an <em>IdP</em> to an <em>RP</em> that contains information about an authentication event for a <em>subscriber</em>. Assertions can also contain identity <em>attributes</em> for the subscriber in the form of attribute values, derived attribute values, and attribute bundles.</dd>
   <dt>attribute</dt>
-  <dd>A quality or characteristic ascribed to someone or something. An identity attribute is an attribute about the identity of a subscriber.</dd>
+  <dd>A quality or characteristic ascribed to someone or something. An identity attribute is an attribute about the identity of a <em>subscriber</em> (e.g., name, date of birth, address).</dd>
   <dt>attribute validation</dt>
-  <dd>The process or act of confirming that a set of attributes are accurate and associated with a real-life identity. See <em>validation</em>.</dd>
+  <dd>The process or act of confirming that a set of <em>attributes</em> are accurate and associated with a real-life identity. See <em>validation</em>.</dd>
   <dt>authenticate</dt>
   <dd>See <em>authentication</em>.</dd>
+  <dt>authenticated protected channel</dt>
+  <dd>An encrypted communication channel that uses <em>approved cryptography</em> in which the connection initiator (client) has <em>authenticated</em> the recipient (server). Authenticated protected channels are encrypted to provide confidentiality and protection against active intermediaries and are frequently used in the user <em>authentication</em> process. <em>Transport Layer Security</em> (TLS) and Datagram Transport Layer Security (DTLS) <a href="/800-63-4/sp800-63a/references/#ref-RFC9325">[RFC9325]</a> are examples of authenticated protected channels in which the certificate presented by the recipient is verified by the initiator. Unless otherwise specified, authenticated protected channels do not require the server to authenticate the client. Authentication of the server is often accomplished through a certificate chain that leads to a trusted root rather than individually with each server.</dd>
   <dt>authentication</dt>
-  <dd>The process by which a <em>claimant</em> proves possession and control of one or more <em>authenticators</em> bound to a <em>subscriber account</em> to demonstrate that they are the subscriber associated with that account.</dd>
-  <dt>Authentication Assurance Level (AAL)</dt>
-  <dd>A category that describes the strength of the authentication process.</dd>
+  <dd>The process by which a <em>claimant</em> proves possession and control of one or more <em>authenticators</em> bound to a <em>subscriber account</em> to demonstrate that they are the <em>subscriber</em> associated with that account.</dd>
+  <dt>authentication assurance level (AAL)</dt>
+  <dd>A category that describes the strength of the <em>authentication</em> process.</dd>
   <dt>authenticator</dt>
-  <dd>Something that the subscriber possesses and controls (e.g., a <em>cryptographic module</em> or <em>password</em>) and that is used to <em>authenticate</em> a <em>claimant’s</em> identity. See <em>authenticator type</em> and <em>multi-factor authenticator</em>.</dd>
+  <dd>Something that the <em>subscriber</em> possesses and controls (e.g., a <em>cryptographic module</em> or <em>password</em>) and that is used to <em>authenticate</em> a <em>claimant’s</em> identity. See <em>authenticator type</em> and <em>multi-factor authenticator</em>.</dd>
   <dt>authenticity</dt>
   <dd>The property that data originated from its purported source.</dd>
   <dt>authoritative source</dt>
@@ -428,19 +416,17 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   <dt>authorize</dt>
   <dd>A decision to grant access, typically automated by evaluating a <em>subject</em>’s <em>attributes</em>.</dd>
   <dt>biometric reference</dt>
-  <dd>One or more stored <em>biometric samples</em>, templates, or models attributed to an individual and used as the object of biometric comparison in a database, such as a facial image stored digitally on a passport, fingerprint minutiae template on a National ID card or Gaussian Mixture Model for speaker recognition.</dd>
+  <dd>One or more stored <em>biometric samples</em>, templates, or models attributed to an individual and used as the object of biometric comparison in a database, such as a facial image stored digitally on a passport, fingerprint minutiae template on a National ID card, or Gaussian Mixture Model for speaker recognition.</dd>
   <dt>biometric sample</dt>
   <dd>An analog or digital representation of biometric characteristics prior to biometric feature extraction, such as a record that contains a fingerprint image.</dd>
   <dt>biometrics</dt>
-  <dd>Automated recognition of individuals based on their biological or behavioral characteristics. Biological characteristics include but are not limited to fingerprints, palm prints, facial features, iris and retina patterns, voiceprints, and vein patterns. Behavioral characteristics include but are not limited to keystrokes, angle of holding a smart phone, screen pressure, typing speed, mouse or mobile phone movements, and gyroscope position.</dd>
+  <dd>Automated recognition of individuals based on their biological or behavioral characteristics. Biological characteristics include but are not limited to fingerprints, palm prints, facial features, iris and retina patterns, voice prints, and vein patterns. Behavioral characteristics include keystroke cadence, the angle of holding a smartphone, screen pressure, typing speed, mouse or mobile phone movements, and gyroscope position, among others.</dd>
   <dt>claimant</dt>
   <dd>A <em>subject</em> whose identity is to be verified using one or more <em>authentication protocols</em>.</dd>
-  <dt>claimed address</dt>
-  <dd>The physical location asserted by a <em>subject</em> where they can be reached. It includes the individual’s residential street address and may also include their mailing address.</dd>
   <dt>claimed identity</dt>
   <dd>An <em>applicant’s</em> declaration of unvalidated and unverified personal <em>attributes</em>.</dd>
   <dt>core attributes</dt>
-  <dd>The set of identity <em>attributes</em> that the <em>CSP</em> has determined and documented to be required for <em>identity proofing</em>.</dd>
+  <dd>The set of identity <em>attributes</em> that the <em>CSP</em> has determined and documented to be required for <em>identity proofing</em> and to provide services.</dd>
   <dt>credential service provider (CSP)</dt>
   <dd>A trusted entity whose functions include <em>identity proofing</em> <em>applicants</em> to the identity service and registering <em>authenticators</em> to <em>subscriber accounts</em>. A CSP may be an independent third party.</dd>
   <dt>credible source</dt>
@@ -448,72 +434,55 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   <dt>digital identity</dt>
   <dd>An <em>attribute</em> or set of attributes that uniquely describes a <em>subject</em> within a given context.</dd>
   <dt>digital signature</dt>
-  <dd>An <em>asymmetric key</em> operation in which the <em>private key</em> is used to digitally sign data and the <em>public key</em> is used to verify the signature. Digital signatures provide <em>authenticity</em> protection, integrity protection, and <em>non-repudiation</em> support but not confidentiality or <em>replay attack</em> protection.</dd>
+  <dd>An <em>asymmetric key</em> operation in which the <em>private key</em> is used to digitally sign data, and the <em>public key</em> is used to verify the signature. Digital signatures provide <em>authenticity</em> protection, integrity protection, and <em>non-repudiation</em> support but not confidentiality or <em>replay attack</em> protection.</dd>
   <dt>disassociability</dt>
-  <dd>Enabling the <em>processing</em> of PII or events without association to individuals or devices beyond the operational requirements of the system. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
-  <dt>electronic authentication (e-authentication)</dt>
-  <dd>See <em>digital authentication</em>.</dd>
+  <dd>Enabling the <em>processing</em> of <em>personal information</em> or events without association to individuals or devices beyond the operational requirements of the system. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
   <dt>enrollment</dt>
   <dd>The process through which a <em>CSP</em>/<em>IdP</em> provides a successfully identity-proofed <em>applicant</em> with a <em>subscriber account</em> and binds <em>authenticators</em> to grant persistent access.</dd>
   <dt>entropy</dt>
   <dd>The amount of uncertainty that an attacker faces to determine the value of a secret. Entropy is usually stated in bits. A value with <em>n</em> bits of entropy has the same degree of uncertainty as a uniformly distributed <em>n</em>-bit random value.</dd>
-  <dt>equity</dt>
-  <dd>The consistent and systematic fair, just, and impartial treatment of all individuals, including individuals who belong to underserved communities that have been denied such treatment, such as Black, Latino, and Indigenous and Native American persons, Asian Americans and Pacific Islanders, and other persons of color; members of religious minorities; lesbian, gay, bisexual, transgender, and queer (LGBTQ+) persons; persons with disabilities; persons who live in rural areas; and persons otherwise adversely affected by persistent poverty or inequality. <a href="/800-63-4/sp800-63a/references/#ref-EO13985">[EO13985]</a></dd>
-  <dt>Federal Information Processing Standard (FIPS)</dt>
-  <dd>Under the Information Technology Management Reform Act (Public Law 104-106), the Secretary of Commerce approves the standards and guidelines that the National Institute of Standards and Technology (NIST) develops for federal computer systems. NIST issues these standards and guidelines as Federal Information Processing Standards (FIPS) for government-wide use. NIST develops FIPS when there are compelling federal government requirements, such as for security and interoperability, and there are no acceptable industry standards or solutions. See background information for more details.
-
-    <p>FIPS documents are available online on the FIPS home page: <a href="https://www.nist.gov/itl/fips.cfm">https://www.nist.gov/itl/fips.cfm</a></p>
-  </dd>
+  <dt>Federal Information Processing Standards (FIPS)</dt>
+  <dd>Standards for adoption and use by federal departments and agencies that are developed by NIST, a part of the U.S. Department of Commerce. FIPS address topics in information technology to achieve common levels of quality, security, and interoperability. FIPS documents are available online on the FIPS home page: <a href="https://www.nist.gov/itl/fips.cfm">https://www.nist.gov/itl/fips.cfm</a>.</dd>
   <dt>federation</dt>
-  <dd>A process that allows for the conveyance of identity and authentication information across a set of <em>networked</em> systems.</dd>
-  <dt>Federation Assurance Level (FAL)</dt>
-  <dd>A category that describes the process used in a <em>federation transaction</em> to communicate authentication events and subscriber <em>attributes</em> to an <em>RP</em>.</dd>
-  <dt>hash function</dt>
-  <dd>A function that maps a bit string of arbitrary length to a fixed-length bit string. Approved hash functions satisfy the following properties:
-
-    <ol>
-      <li>
-        <p>One-way — It is computationally infeasible to find any input that maps to any pre-specified output.</p>
-      </li>
-      <li>
-        <p>Collision-resistant — It is computationally infeasible to find any two distinct inputs that map to the same output.</p>
-      </li>
-    </ol>
-  </dd>
+  <dd>A process that allows for the conveyance of identity and <em>authentication</em> information across a set of <em>networked</em> systems.</dd>
+  <dt>federation assurance level (FAL)</dt>
+  <dd>A category that describes the process used in a <em>federation transaction</em> to communicate <em>authentication</em> events and subscriber <em>attributes</em> to an <em>RP</em>.</dd>
   <dt>identifier</dt>
-  <dd>A data object that is associated with a single, unique entity (e.g., individual, device, or session) within a given context and is never assigned to any other entity within that context.</dd>
+  <dd>A data object that is associated with a single, unique entity (e.g., individual, device, or <em>session</em>) within a given context and is never assigned to any other entity within that context.</dd>
   <dt>identity</dt>
-  <dd>See <em>digital identity</em></dd>
-  <dt>Identity Assurance Level (IAL)</dt>
+  <dd>See <em>digital identity</em>.</dd>
+  <dt>identity assurance level (IAL)</dt>
   <dd>A category that conveys the degree of confidence that the <em>subject</em>’s <em>claimed identity</em> is their real identity.</dd>
+</dl>
+
+<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
+</code></pre></div></div>
+
+<dl>
   <dt>identity evidence</dt>
   <dd>Information or documentation that supports the real-world existence of the <em>claimed identity</em>. Identity evidence may be physical (e.g., a driver’s license) or digital (e.g., a mobile driver’s license or digital <em>assertion</em>). Evidence must support both <em>validation</em> (i.e., confirming <em>authenticity</em> and accuracy) and <em>verification</em> (i.e., confirming that the <em>applicant</em> is the true owner of the evidence).</dd>
   <dt>identity proofing</dt>
-  <dd>The processes used to collect, validate, and verify information about a <em>subject</em> in order to establish assurance in the subject’s <em>claimed identity</em>.</dd>
+  <dd>The processes used to collect, validate, and verify information about a <em>subject</em> to establish assurance in the subject’s <em>claimed identity</em>.</dd>
   <dt>identity provider (IdP)</dt>
-  <dd>The party in a <em>federation transaction</em> that creates an <em>assertion</em> for the subscriber and transmits the assertion to the <em>RP</em>.</dd>
+  <dd>The party in a <em>federation transaction</em> that creates an <em>assertion</em> for the <em>subscriber</em> and transmits the assertion to the <em>RP</em>.</dd>
   <dt>identity resolution</dt>
   <dd>The process of collecting information about an <em>applicant</em> to uniquely distinguish an individual within the context of the population that the <em>CSP</em> serves.</dd>
   <dt>identity verification</dt>
-  <dd>See <em>verification</em></dd>
+  <dd>See <em>verification</em>.</dd>
   <dt>injection attack</dt>
-  <dd>An attack in which an attacker supplies untrusted input to a program. In the context of federation, the attacker presents an untrusted <em>assertion</em> or <em>assertion reference</em> to the <em>RP</em> in order to create an <em>authenticated</em> <em>session</em> with the RP.</dd>
+  <dd>An attack in which an attacker supplies untrusted <em>biometric</em> information or media into a program or process. For example, this could include injecting a falsified image of <em>identity evidence</em>, a forged video of a user, or a morphed image to defeat evidence validation technology or biometric and visual comparisons for user verification.</dd>
   <dt>issuing source</dt>
   <dd>An authority responsible for the generation of data, digital evidence (i.e., <em>assertions</em>), or physical documents that can be used as <em>identity evidence</em>.</dd>
   <dt>knowledge-based verification (KBV)</dt>
-  <dd>A process of validating knowledge of personal or private information associated with an individual for the purpose of verifying the <em>claimed identity</em> of an <em>applicant</em>. KBV does not include collecting personal <em>attributes</em> for the purposes of <em>identity resolution</em>.</dd>
-  <dt>legal person</dt>
-  <dd>An individual, organization, or company with legal rights.</dd>
+  <dd>A process of validating the knowledge of personal or private information associated with an individual for the purpose of verifying the <em>claimed identity</em> of an <em>applicant</em>. KBV does not include collecting personal <em>attributes</em> for the purposes of <em>identity resolution</em>.</dd>
   <dt>manageability</dt>
-  <dd>Providing the capability for the granular administration of <em>personally identifiable information</em>, including alteration, deletion, and selective disclosure. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
+  <dd>Providing the capability for the granular administration of <em>personal information</em>, including alteration, deletion, and selective disclosure. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
   <dt>natural person</dt>
   <dd>A real-life human being, not synthetic or artificial.</dd>
   <dt>network</dt>
-  <dd>An open communications medium, typically the Internet, used to transport messages between the <em>claimant</em> and other parties. Unless otherwise stated, no assumptions are made about the network’s security; it is assumed to be open and subject to active (e.g., impersonation, <em>session</em> hijacking) and passive (e.g., eavesdropping) attacks at any point between the parties (e.g., claimant, <em>verifier</em>, <em>CSP</em>, <em>RP</em>).</dd>
+  <dd>An open communications medium, typically the internet, used to transport messages between the <em>claimant</em> and other parties. Unless otherwise stated, networks are assumed to be open and subject to active (e.g., impersonation, <em>session</em> hijacking) and passive (e.g., eavesdropping) attacks at any point between the parties (e.g., claimant, <em>verifier</em>, <em>CSP</em>, <em>RP</em>).</dd>
   <dt>non-repudiation</dt>
   <dd>The capability to protect against an individual falsely denying having performed a particular transaction.</dd>
-  <dt>offline attack</dt>
-  <dd>An attack in which the attacker obtains some data (typically by eavesdropping on an authentication transaction or by penetrating a system and stealing security files) that the attacker is able to analyze in a system of their own choosing.</dd>
   <dt>one-to-one (1:1) comparison</dt>
   <dd>The process in which a <em>biometric sample</em> from an individual is compared to a <em>biometric reference</em> to produce a comparison score.</dd>
   <dt>online attack</dt>
@@ -521,63 +490,84 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   <dt>online service</dt>
   <dd>A service that is accessed remotely via a <em>network</em>, typically the internet.</dd>
   <dt>personal information</dt>
-  <dd>See <em>personally identifiable information</em>.</dd>
-  <dt>personally identifiable information (PII)</dt>
-  <dd>Information that can be used to distinguish or trace an individual’s identity, either alone or when combined with other information that is linked or linkable to a specific individual. <a href="/800-63-4/sp800-63a/references/#ref-A-130">[A-130]</a></dd>
-  <dt>personally identifiable information processing</dt>
-  <dd>An operation or set of operations performed upon <em>personally identifiable information</em> that can include the collection, retention, logging, generation, transformation, use, disclosure, transfer, or disposal of personally identifiable information.</dd>
+  <dd>Information that can be used to distinguish or trace an individual’s identity, either alone or when combined with other information that is linked or linkable to a specific individual.</dd>
   <dt>practice statement</dt>
-  <dd>A formal statement of the practices followed by the parties to an authentication process (e.g., <em>CSP</em> or <em>verifier</em>). It usually describes the parties’ policies and practices and can become legally binding.</dd>
+  <dd>A formal statement of the practices followed by parties in an <em>authentication</em> process (e.g., <em>CSP</em> or <em>verifier</em>). It usually describes the parties’ policies and practices and can become legally binding.</dd>
   <dt>predictability</dt>
-  <dd>Enabling reliable assumptions by individuals, owners, and operators about PII and its <em>processing</em> by an information system. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
-  <dt>private key</dt>
-  <dd>In <em>asymmetric key</em> cryptography, the private key (i.e., a secret key) is a mathematical key used to create <em>digital signatures</em> and, depending on the algorithm, decrypt messages or files that are encrypted with the corresponding <em>public key</em>. In <em>symmetric key</em> cryptography, the same private key is used for both encryption and decryption.</dd>
-  <dt>processing</dt>
-  <dd>Operation or set of operations performed upon PII that can include, but is not limited to, the collection, retention, logging, generation, transformation, use, disclosure, transfer, and disposal of PII. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
+  <dd>Enabling reliable assumptions by individuals, owners, and operators about <em>personal information</em> and its <em>processing</em> by an information system. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
   <dt>presentation attack</dt>
   <dd>Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system.</dd>
   <dt>presentation attack detection (PAD)</dt>
-  <dd>Automated determination of a <em>presentation attack</em>. A subset of presentation attack determination methods, referred to as <em>liveness detection</em>, involves the measurement and analysis of anatomical characteristics or voluntary or involuntary reactions, to determine if a <em>biometric sample</em> is being captured from a living <em>subject</em> that is present at the point of capture.</dd>
+  <dd>Automated determination of a <em>presentation attack</em>. A subset of presentation attack determination methods (i.e., liveness detection) involves the measurement and analysis of anatomical characteristics or voluntary or involuntary reactions to determine whether a <em>biometric sample</em> is being captured from a living <em>subject</em> that is present at the point of capture.</dd>
+  <dt>Privacy Impact Assessment (PIA)</dt>
+  <dd>A method of analyzing how <em>personal information</em> is collected, used, shared, and maintained. PIAs are used to identify and mitigate privacy risks throughout the development life cycle of a program or system. They also help ensure that handling information conforms to legal, regulatory, and policy requirements regarding privacy.</dd>
+  <dt>private key</dt>
+  <dd>A cryptographic key used with a public-key cryptographic algorithm that is uniquely associated with an entity and is not made public. In an asymmetric-key (public-key) cryptosystem, the private key has a corresponding <em>public key</em>. Depending on the algorithm, the private key may be used to:
+
+    <ol>
+      <li>
+        <p>Compute the corresponding public key,</p>
+      </li>
+      <li>
+        <p>Compute a digital signature that may be verified by the corresponding public key,</p>
+      </li>
+      <li>
+        <p>Decrypt keys that were encrypted by the corresponding public key, or</p>
+      </li>
+      <li>
+        <p>Compute a shared secret during a key-agreement transaction.</p>
+      </li>
+    </ol>
+  </dd>
   <dt>process assistant</dt>
   <dd>An individual who provides support for the proofing process but does not support decision-making or risk-based evaluation (e.g., translation, transcription, or accessibility support).</dd>
+  <dt>processing</dt>
+  <dd>An operation or set of operations performed on <em>personal information</em> that can include, but is not limited to, the collection, retention, logging, generation, transformation, use, disclosure, transfer, or disposal of <em>personal information</em>. <a href="/800-63-4/sp800-63a/references/#ref-NISTIR8062">[NISTIR8062]</a></dd>
   <dt>proofing agent</dt>
-  <dd>An agent of the <em>CSP</em> who is trained to attend <em>identity proofing</em> <em>sessions</em> and can make limited risk-based decisions – such as physically inspecting <em>identity evidence</em> and making physical comparisons of the <em>applicant</em> to identity evidence.</dd>
-  <dt>Privacy Impact Assessment (PIA)</dt>
-  <dd>A method of analyzing how <em>personally identifiable information</em> (PII) is collected, used, shared, and maintained. PIAs are used to identify and mitigate privacy risks throughout the development lifecycle of a program or system. They also help ensure that handling information conforms to legal, regulatory, and policy requirements regarding privacy.</dd>
+  <dd>An agent of the <em>CSP</em> who is trained to attend <em>identity proofing</em> <em>sessions</em> and can make limited risk-based decisions, such as physically inspecting <em>identity evidence</em> and comparing the <em>applicant</em> to the identity evidence.</dd>
   <dt>pseudonym</dt>
   <dd>A name other than a legal name.</dd>
   <dt>pseudonymity</dt>
   <dd>The use of a <em>pseudonym</em> to identify a <em>subject</em>.</dd>
   <dt>pseudonymous identifier</dt>
-  <dd>A meaningless but unique <em>identifier</em> that does not allow the <em>RP</em> to infer anything regarding the subscriber but that does permit the RP to associate multiple interactions with a single subscriber.</dd>
+  <dd>A meaningless but unique <em>identifier</em> that does not allow the <em>RP</em> to infer anything regarding the <em>subscriber</em> but that does permit the RP to associate multiple interactions with a single subscriber.</dd>
   <dt>public key</dt>
-  <dd>The public part of an <em>asymmetric key</em> pair that is used to verify signatures or encrypt data.</dd>
-  <dt>public key certificate</dt>
-  <dd>A digital document issued and digitally signed by the <em>private key</em> of a certificate authority that binds an <em>identifier</em> to a subscriber’s <em>public key</em>. The certificate indicates that the subscriber identified in the certificate has sole control of and access to the private key. See also <a href="/800-63-4/sp800-63a/references/#ref-RFC5280">[RFC5280]</a>.</dd>
-  <dt>public key infrastructure (PKI)</dt>
-  <dd>A set of policies, processes, server platforms, software, and workstations used to administer certificates and public-_private key_ pairs, including the ability to issue, maintain, and revoke <em>public key certificates</em>.</dd>
+  <dd>A cryptographic key used with a public-key cryptographic algorithm that is uniquely associated with an entity and that may be made public. In an asymmetric-key (public-key) cryptosystem, the public key has a corresponding <em>private key</em>. The public key may be known by anyone and, depending on the algorithm, may be used to:
+
+    <ol>
+      <li>
+        <p>Verify a digital signature that was generated using the corresponding private key,</p>
+      </li>
+      <li>
+        <p>Encrypt keys that can be decrypted using the corresponding private key, or</p>
+      </li>
+      <li>
+        <p>Compute a shared secret during a key-agreement transaction.</p>
+      </li>
+    </ol>
+  </dd>
+  <dt>public-key certificate</dt>
+  <dd>A digital document issued and digitally signed by the <em>private key</em> of a certificate authority that binds an <em>identifier</em> to a subscriber’s <em>public key</em>. The certificate indicates that the <em>subscriber</em> identified in the certificate has sole control of and access to the <em>private key</em>. See also <a href="/800-63-4/sp800-63a/references/#ref-RFC5280">[RFC5280]</a>.</dd>
+  <dt>public-key infrastructure (PKI)</dt>
+  <dd>A set of policies, processes, server platforms, software, and workstations used to administer certificates and public-private key pairs, including the ability to issue, maintain, and revoke <em>public-key certificates</em>.</dd>
   <dt>registration</dt>
   <dd>See <em>enrollment</em>.</dd>
   <dt>relying party (RP)</dt>
-  <dd>An entity that relies upon a <em>verifier</em>’s <em>assertion</em> of a subscriber’s identity, typically to process a transaction or grant access to information or a system.</dd>
+  <dd>An entity that relies on a <em>verifier</em>’s <em>assertion</em> of a <em>subscriber</em>’s identity, typically to process a transaction or grant access to information or a system.</dd>
   <dt>remote</dt>
-  <dd>A process or transaction that is conducted through connected devices over a <em>network</em>, rather than in person.</dd>
+  <dd>A process or transaction that is conducted through connected devices over a <em>network</em> rather than in person.</dd>
   <dt>resolution</dt>
   <dd>See <em>identity resolution</em>.</dd>
   <dt>risk assessment</dt>
-  <dd>The process of identifying, estimating, and prioritizing risks to organizational operations (i.e., mission, functions, image, or reputation), organizational assets, individuals, and other organizations that result from the operation of a system. A risk assessment is part of <em>risk management</em>, incorporates threat and vulnerability analyses, and considers mitigations provided by security <em>controls</em> that are planned or in-place. It is synonymous with “risk analysis.”</dd>
+  <dd>The process of identifying, estimating, and prioritizing risks to organizational operations (i.e., mission, functions, image, reputation), organizational assets, individuals, and other organizations that result from the operation of a system. A risk assessment is part of <em>risk management</em>, incorporates threat and vulnerability analyses, and considers mitigations provided by security <em>controls</em> that are planned or in place. It is synonymous with “risk analysis.”</dd>
   <dt>risk management</dt>
-  <dd>The program and supporting processes that manage information security risk to organizational operations (including mission, functions, image, reputation), organizational assets, individuals, and other organizations and includes (i) establishing the context for risk-related activities, (ii) assessing risk, (iii) responding to risk once determined, and (iv) monitoring risk over time.</dd>
+  <dd>The program and supporting processes that manage information security risk to organizational operations (i.e., mission, functions, image, reputation), organizational assets, individuals, and other organizations and that include (i) establishing the context for risk-related activities, (ii) assessing risk, (iii) responding to risk once determined, and (iv) monitoring risk over time.</dd>
   <dt>RP subscriber account</dt>
   <dd>An account established and managed by the <em>RP</em> in a federated system based on the RP’s view of the <em>subscriber account</em> from the <em>IdP</em>. An RP subscriber account is associated with one or more <em>federated identifiers</em> and allows the subscriber to access the account through a <em>federation transaction</em> with the IdP.</dd>
   <dt>Senior Agency Official for Privacy (SAOP)</dt>
-  <dd>Person responsible for ensuring that an agency complies with privacy requirements and manages privacy risks. The SAOP is also responsible for ensuring that the agency considers the privacy impacts of all agency actions and policies that involve PII.</dd>
-</dl>
-
-<div latex-literal="true" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\clearpage
-</code></pre></div></div>
-
-<dl>
+  <dd>Person responsible for ensuring that an agency complies with privacy requirements, manages privacy risks, and considers the privacy impacts of all agency actions and policies that involve <em>personal information</em>.</dd>
+  <dt>session</dt>
+  <dd>A persistent interaction between a <em>subscriber</em> and an <em>endpoint</em>, either an <em>RP</em> or a <em>CSP</em>. A session begins with an authentication event and ends with a session termination event. A session is bound by the use of a session secret that the subscriber’s software (e.g., browser, application, OS) can present to the RP to prove association of the session with the authentication event.</dd>
   <dt>social engineering</dt>
   <dd>The act of deceiving an individual into revealing sensitive information, obtaining unauthorized access, or committing fraud by associating with the individual to gain confidence and trust.</dd>
   <dt>subject</dt>
@@ -585,29 +575,31 @@ View this document as: <a href="/800-63-4/sp800-63a.html">a single page</a> | <b
   <dt>subscriber</dt>
   <dd>An individual enrolled in the <em>CSP</em> identity service.</dd>
   <dt>subscriber account</dt>
-  <dd>An account established by the <em>CSP</em> containing information and <em>authenticators</em> registered for each subscriber enrolled in the CSP identity service.</dd>
+  <dd>An account established by the <em>CSP</em> for each <em>subscriber</em> enrolled in its identity service that contains information about the subscriber and a record of any <em>authenticators</em> registered to the subscriber.</dd>
   <dt>supplemental controls</dt>
-  <dd><em>Controls</em> that may be added, in addition to those specified in the organization’s tailored assurance level, in order to address specific threats or attacks.</dd>
+  <dd><em>Controls</em> that may be added to address specific threats or attacks in addition to those controls specified in the assurance levels in these guidelines.</dd>
   <dt>synthetic identity fraud</dt>
-  <dd>The use of a combination of <em>personally identifiable information</em> (PII) to fabricate a person or entity in order to commit a dishonest act for personal or financial gain.</dd>
+  <dd>The use of a combination of <em>personal information</em> to fabricate a person or entity to commit a dishonest act for personal or financial gain.</dd>
   <dt>system of record (SOR)</dt>
-  <dd>An SOR is a collection of records that contain information about individuals and are under the control of an agency. The records can be retrieved by the individual’s name or by an identifying number, symbol, or other <em>identifier</em>.</dd>
-  <dt>System of Record Notice (SORN)</dt>
-  <dd>A notice that federal agencies publish in the Federal Register to describe their systems of records.</dd>
+  <dd>A collection of records that contain information about individuals and are under the control of an agency. The records can be retrieved by the individual’s name, an identifying number, a symbol, or other <em>identifier</em>.</dd>
+  <dt>System of Records Notice (SORN)</dt>
+  <dd>A notice that federal agencies publish in the Federal Register to describe their <em>system of record</em>.</dd>
   <dt>transaction</dt>
-  <dd>See <em>digital transaction</em></dd>
+  <dd>See <em>digital transaction</em>.</dd>
   <dt>trust agreement</dt>
-  <dd>A set of conditions under which a <em>CSP</em>, <em>IdP</em>, and <em>RP</em> are allowed to participate in a <em>federation transaction</em> for the purposes of establishing an authentication <em>session</em> between the subscriber and the RP.</dd>
+  <dd>A set of conditions under which a <em>CSP</em>, <em>IdP</em>, and <em>RP</em> are allowed to participate in a <em>federation transaction</em> to establish an authentication <em>session</em> between the <em>subscriber</em> and the RP.</dd>
+  <dt>trust anchor</dt>
+  <dd>A public or <em>symmetric key</em> that is trusted because it is built directly into hardware or software or securely provisioned via out-of-band means rather than because it is vouched for by another trusted entity (e.g., in a <em>public-key</em> certificate). A trust anchor may have name or policy constraints that limit its scope.</dd>
   <dt>trusted referee</dt>
   <dd>An agent of the <em>CSP</em> who is trained to make risk-based decisions regarding an <em>applicant’s</em> <em>identity proofing</em> case when that applicant is unable to meet the expected requirements of a defined IAL proofing process.</dd>
   <dt>usability</dt>
   <dd>The extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use. <a href="/800-63-4/sp800-63a/references/#ref-ISOIEC9241">[ISO/IEC9241-11]</a></dd>
   <dt>validation</dt>
-  <dd>The process or act of checking and confirming that the evidence and <em>attributes</em> supplied by an <em>applicant</em> are authentic, accurate and associated with a real-life identity. Specifically, evidence validation is the process or act of checking that the presented evidence is authentic, current, and issued from an acceptable source. See also <em>attribute validation</em>.</dd>
+  <dd>The process or act of checking and confirming that the evidence and <em>attributes</em> supplied by an <em>applicant</em> are authentic, accurate, and associated with a real-life identity. See <em>attribute validation</em>.</dd>
   <dt>verification</dt>
-  <dd>The process or act of confirming that the <em>applicant</em> undergoing <em>identity proofing</em> holds the claimed real-life identity represented by the validated identity <em>attributes</em> and associated evidence. Synonymous with “identity verification.”</dd>
+  <dd>The process or act of confirming that the <em>applicant</em> undergoing <em>identity proofing</em> holds the claimed real-life identity represented by the validated identity <em>attributes</em> and associated evidence. Synonymous with <em>identity verification</em>.</dd>
   <dt>verifier</dt>
-  <dd>An entity that verifies the <em>claimant’s</em> identity by verifying the claimant’s possession and control of one or more <em>authenticators</em> using an <em>authentication protocol</em>. To do this, the verifier needs to confirm the binding of the authenticators with the <em>subscriber account</em> and check that the subscriber account is</dd>
+  <dd>An entity that confirms the <em>claimant’s</em> identity by verifying the claimant’s possession and control of one or more <em>authenticators</em> using an <em>authentication protocol</em>. To do this, the verifier needs to confirm the binding of the authenticators with the <em>subscriber account</em> and check that the subscriber account is active.</dd>
 </dl>
 
 

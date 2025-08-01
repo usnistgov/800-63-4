@@ -101,20 +101,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63/preface/">Preface</a></li>
                 
               
@@ -306,7 +292,7 @@ View this document as: <a href="/800-63-4/sp800-63.html">a single page</a> | <b>
 </h2>
     
 
-<p>NIST SP 800-63-1 updated NIST SP 800-63 to reflect current authenticator (then referred to as “token”) technologies and restructured it to provide a better understanding of the digital identity architectural model used here. Additional (minimum) technical requirements were specified for the CSP, protocols used to transport authentication information, and assertions if implemented within the digital identity model.</p>
+<p>SP 800-63-1 updated NIST SP 800-63 to reflect current authenticator (then referred to as “token”) technologies and restructured it to provide a better understanding of the digital identity architectural model used here. Additional (minimum) technical requirements were specified for the CSP, protocols used to transport authentication information, and assertions if implemented within the digital identity model.</p>
 <h2 id="sp-800-63-2" data-section="C">
   
   
@@ -316,7 +302,7 @@ View this document as: <a href="/800-63-4/sp800-63.html">a single page</a> | <b>
 </h2>
     
 
-<p>NIST SP 800-63-2 was a limited update of SP 800-63-1 and substantive changes were made only in Sec. 5, <em>Registration and Issuance Processes</em>. The substantive changes in the revised draft were intended to facilitate the use of professional credentials in the identity proofing process, and to reduce the need to send postal mail to an address of record to issue credentials for level 3 remote registration. Other changes to Sec. 5 were minor explanations and clarifications.</p>
+<p>SP 800-63-2 was a limited update of SP 800-63-1 and substantive changes were only made in Sec. 5, <em>Registration and Issuance Processes</em>. The significant changes were intended to facilitate the use of professional credentials in the identity proofing process and to reduce the need to send postal mail to an address of record to issue credentials for level 3 remote registration. Other changes to Sec. 5 were minor explanations and clarifications.</p>
 <h2 id="sp-800-63-3" data-section="C">
   
   
@@ -326,23 +312,23 @@ View this document as: <a href="/800-63-4/sp800-63.html">a single page</a> | <b>
 </h2>
     
 
-<p>NIST SP 800-63-3 is a substantial update and restructuring of SP 800-63-2. SP 800-63-3 introduces individual components of digital authentication assurance — AAL, IAL, and FAL — to support the growing need for independent treatment of authentication strength and confidence in an individual’s claimed identity (e.g., in strong pseudonymous authentication). A risk assessment methodology and its application to IAL, AAL, and FAL has been included in this guideline. It also moves the whole of digital identity guidance covered under SP 800-63 from a single document describing authentication to a suite of four documents (to separately address the individual components mentioned above) of which SP 800-63-3 is the top-level document.</p>
+<p>SP 800-63-3 was a substantially updated and restructured SP 800-63-2. It introduces individual components of digital authentication assurance (i.e., AAL, IAL, and FAL) to support the growing need for independent treatment of authentication strength and confidence in an individual’s claimed identity (e.g., in strong pseudonymous authentication). A risk assessment methodology and its application to IAL, AAL, and FAL were included in this guideline. It also moved the whole of digital identity guidance covered under SP 800-63 from a single document describing authentication to a suite of four documents (to separately address the individual components mentioned above) of which SP 800-63-3 is the top-level document.</p>
 
-<p>Other areas updated in 800-63-3 include:</p>
+<p>Other areas updated in SP 800-63-3 included:</p>
 
 <ul>
-  <li>Renamed to <em>Digital Identity Guidelines</em> to properly represent the scope includes identity proofing and federation, and to support expanding the scope to include device identity, or machine-to-machine authentication in future revisions.</li>
-  <li>Changed terminology, including the use of <em>authenticator</em> in place of <em>token</em> to avoid conflicting use of the word <em>token</em> in assertion technologies.</li>
-  <li>Updated authentication and assertion requirements to reflect advances in both security technology and threats.</li>
+  <li>Renamed to <em>Digital Identity Guidelines</em> to properly represent that the scope includes identity proofing and federation and to support expanding the scope to include device identity or machine-to-machine authentication in future revisions</li>
+  <li>Changed terminology, including the use of <em>authenticator</em> in place of <em>token</em> to avoid conflicting use of the word <em>token</em> in assertion technologies</li>
+  <li>Updated authentication and assertion requirements to reflect advances in both security technology and threats</li>
   <li>Added requirements on the storage of long-term secrets by verifiers.</li>
-  <li>Restructured identity proofing model.</li>
-  <li>Updated requirements regarding remote identity proofing.</li>
-  <li>Clarified the use of independent channels and devices as “something you have”.</li>
-  <li>Removed pre-registered knowledge tokens (authenticators), with the recognition that they are special cases of (often very weak) passwords.</li>
-  <li>Added requirements regarding account recovery in the event of loss or theft of an authenticator.</li>
-  <li>Removed email as a valid channel for out-of-band authenticators.</li>
-  <li>Expanded discussion of reauthentication and session management.</li>
-  <li>Expanded discussion of identity federation; restructuring of assertions in the context of federation.</li>
+  <li>Restructured identity proofing model</li>
+  <li>Updated requirements regarding remote identity proofing</li>
+  <li>Clarified the use of independent channels and devices as “something you have”</li>
+  <li>Removed pre-registered knowledge tokens (authenticators) with the recognition that they are special cases of (often very weak) passwords</li>
+  <li>Added requirements regarding account recovery in the event of loss or theft of an authenticator</li>
+  <li>Removed email as a valid channel for out-of-band authenticators</li>
+  <li>Expanded the discussion of reauthentication and session management</li>
+  <li>Expanded the discussion of identity federation and restructured assertions in the context of federation</li>
 </ul>
 <h2 id="sp-800-63-4" data-section="C">
   
@@ -353,18 +339,17 @@ View this document as: <a href="/800-63-4/sp800-63.html">a single page</a> | <b>
 </h2>
     
 
-<p>NIST SP 800-63-4 has substantial updates and re-organization from SP 800-63-3. Updates to 800-63-4 include:</p>
+<p>SP 800-63-4 substantially updates and reorganizes SP 800-63-3 including:</p>
 
 <ul>
-  <li>Expanded security and privacy considerations and added equity and usability considerations.</li>
-  <li>Updated digital identity models and added a user-controlled wallet federation model that addresses the increased attention and adoption of digital wallets and attribute bundles.</li>
-  <li>Expanded digital identity risk management process to include definition of the protected online services, user groups, and impacted entities.</li>
-  <li>A more descriptive introduction to establish the context of the DIRM process, the two dimensions of risk it addresses, and the intended outcomes. This context-setting step includes defining and understanding the online service that the organization is offering and intending to protect with identity systems.</li>
-  <li>Expanded digital identity risk management process to include definition of the protected online services, user groups, and impacted entities.</li>
-  <li>Updated digital identity risk management process for additional assessments for tailoring initial baseline control selections.</li>
-  <li>Added performance metrics for the continuous evaluation of digital identity systems.</li>
-  <li>Added a new subsection on redress processes and requirements.</li>
-  <li>Added a new Artificial Intelligence subsection to address the use of Artificial Intelligence in digital identity services.</li>
+  <li>Expanded security, privacy, and customer experience considerations</li>
+  <li>Updated digital identity models  and the addition of a user-controlled wallet federation model that addresses the increased attention and adoption of digital wallets and attribute bundles</li>
+  <li>Expanded digital identity risk management process that now defines protected online services, user groups, and impacted entities.</li>
+  <li>A more descriptive introduction to establish the context of the DIRM process, the two dimensions of risk that it addresses, and its intended outcomes, including defining and understanding the online service that the organization is offering and intending to protect with identity systems</li>
+  <li>Updated digital identity risk management process that allows for additional assessments to tailor initial baseline control selections</li>
+  <li>Added performance metrics for the continuous evaluation of digital identity systems</li>
+  <li>A new subsection on redress processes and requirements</li>
+  <li>A new subsection to address the use of AI and ML in digital identity services</li>
 </ul>
 
 

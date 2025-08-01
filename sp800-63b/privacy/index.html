@@ -127,20 +127,6 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/reviewers/">Reviewers</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
                     <li class=""><a href="/800-63-4/sp800-63b/preface/">Preface</a></li>
                 
               
@@ -253,21 +239,7 @@
                 
                 
                 
-                    <li class=""><a href="/800-63-4/sp800-63b/usability/"><span class="section">8</span>Usability</a></li>
-                
-              
-              
-
-            
-              
-              
-              
-                
-                
-                
-                
-                
-                    <li class=""><a href="/800-63-4/sp800-63b/equity/"><span class="section">9</span>Equity</a></li>
+                    <li class=""><a href="/800-63-4/sp800-63b/customer/"><span class="section">8</span>Customer Experience</a></li>
                 
               
               
@@ -401,16 +373,16 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 
   
 
-<h1 id="sec9" data-section="7">
+<h1 id="privacy" data-section="7">
   
   
-    Privacy Considerations <a href="#sec9" class="header-link"><i class="fa fa-link"></i></a>
+    Privacy Considerations <a href="#privacy" class="header-link"><i class="fa fa-link"></i></a>
   
   
 </h1>
     
 
-<p><em>These privacy considerations supplement the guidance in Sec. 4. This section is informative.</em></p>
+<p><em>This section is informative.</em></p>
 <h2 id="privacy-risk-assessment" data-section="7">
   
   
@@ -420,14 +392,14 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p>The authentication requirements in <a href="/800-63-4/sp800-63b/aal/#AAL_SEC4">Sec. 2</a> and the optional session monitoring guidelines in <a href="/800-63-4/sp800-63b/session/#monitoring">Sec. 5.3</a> require the CSP to conduct a privacy risk assessment for records retention. Such a privacy risk assessment would include:</p>
+<p>The authentication requirements in <a href="/800-63-4/sp800-63b/aal/#AAL_SEC4">Sec. 2</a> and the optional session monitoring guidelines in <a href="/800-63-4/sp800-63b/session/#monitoring">Sec. 5.3</a> require the CSP to conduct a privacy risk assessment for records retention. Such a privacy risk assessment would include evaluating:</p>
 
-<ol>
-  <li>The likelihood that the records retention could create a problem for the subscriber, such as invasiveness or unauthorized access to the information.</li>
-  <li>The impact if such a problem did occur.</li>
-</ol>
+<ul>
+  <li>The likelihood that the records retention could create a privacy problem for the subscriber, such as loss of trust</li>
+  <li>The impact if such a problem did occur</li>
+</ul>
 
-<p>CSPs should be able to reasonably justify any response to identified privacy risks, including accepting, mitigating, and sharing the risk. Subscriber consent is a form of sharing the risk. It is therefore only appropriate for use when a subscriber could reasonably be expected to have the capacity to assess and accept the shared risk.</p>
+<p>CSPs should be able to reasonably justify any response to identified privacy risks, including accepting, mitigating, and sharing the risk. Subscriber consent is a form of sharing the risk and is, therefore, only appropriate when a subscriber could reasonably be expected to have the capacity to assess and accept the shared risk.</p>
 <h2 id="privacy-controls" data-section="7">
   
   
@@ -447,11 +419,11 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p><a href="/800-63-4/sp800-63b/aal/#aal_privacy">Section 2.4.3</a> requires CSPs to maintain the objectives of predictability (enabling reliable assumptions by individuals, owners, and operators about PII and its processing by an information system) and manageability (i.e., providing the capability for the granular administration of PII, including alteration, deletion, and selective disclosure) commensurate with privacy risks that can arise from the processing of attributes for purposes other than identity proofing, authentication, authorization, or attribute assertion; related fraud mitigation; or to comply with law or legal process <a href="/800-63-4/sp800-63b/references/#ref-NISTIR8062">[NISTIR8062]</a>.</p>
+<p><a href="/800-63-4/sp800-63b/aal/#aal_privacy">Section 2.4.3</a> requires CSPs to maintain the objectives of predictability (i.e., enabling reliable assumptions by individuals, owners, and operators about personal information and its processing by an information system) and manageability (providing the capability for the granular administration of personal information, including alteration, deletion, and selective disclosure) commensurate with privacy risks that can arise from processing attributes for purposes other than identity proofing, authentication, authorization, attribute assertion, or related fraud mitigation or compliance with laws or legal processes <a href="/800-63-4/sp800-63b/references/#ref-NISTIR8062">[NISTIR8062]</a>.</p>
 
 <p>CSPs may have various business purposes for processing attributes, including providing non-identity services to subscribers. However, processing attributes for purposes other than those specified at collection can create privacy risks. CSPs can identify appropriate measures that are commensurate with the privacy risks that arise from additional processing. For example, absent applicable laws, regulations, or policies, obtaining consent may not be necessary when processing attributes to provide non-identity services requested by subscribers. However, notices may help subscribers maintain reliable assumptions about the processing (i.e., predictability). Other processing of attributes may carry different privacy risks that call for obtaining consent or allowing subscribers more control over the use or disclosure of specific attributes (i.e., manageability). Subscriber consent must be meaningful. Therefore, as stated in <a href="/800-63-4/sp800-63b/aal/#aal_privacy">Sec. 2.4.3</a>, when CSPs use consent measures, the subscriber’s acceptance of additional uses shall not be a condition of providing authentication services.</p>
 
-<p>Consult the agency SAOP if there are questions about whether the proposed processing falls outside of the scope of the permitted processing or appropriate privacy risk mitigation measures.</p>
+<p>Consult the SAOP if there are questions about whether the proposed processing falls outside of the scope of the permitted processing or appropriate privacy risk mitigation measures.</p>
 <h2 id="agency-privacy" data-section="7">
   
   
@@ -461,9 +433,7 @@ View this document as: <a href="/800-63-4/sp800-63b.html">a single page</a> | <b
 </h2>
     
 
-<p><a href="/800-63-4/sp800-63b/aal/#aal_privacy">Section 2.4.3</a> describes specific compliance obligations for federal CSPs. It is critical to involve the agency SAOP in the earliest stages of digital authentication system development to assess and mitigate privacy risks and advise the agency on compliance requirements, such as whether or not the collection of PII to issue or maintain authenticators triggers the <em>Privacy Act of 1974</em> <a href="/800-63-4/sp800-63b/references/#ref-PrivacyAct">[PrivacyAct]</a> or the <em>E-Government Act of 2002</em> <a href="/800-63-4/sp800-63b/references/#ref-E-Gov">[E-Gov]</a> requirement to conduct a PIA. For example, concerning the centralized maintenance of biometrics, Privacy Act requirements will likely be triggered and require coverage by a new or existing Privacy Act system of records notice due to the collection and maintenance of PII and any other attributes that are necessary for authentication. The SAOP can similarly assist the agency in determining whether a PIA is required.</p>
-
-<p>These considerations should not be read as a requirement to develop a Privacy Act SORN or PIA for authentication alone. In many instances, a PIA and SORN can encompass the entire digital identity process or include the digital authentication process as part of a larger programmatic PIA that discusses the online services or benefits that the agency is establishing.</p>
+<p><a href="/800-63-4/sp800-63b/aal/#aal_privacy">Section 2.4.3</a> describes specific compliance obligations for federal CSPs. It is critical to involve the SAOP in the earliest stages of digital authentication system development to assess and mitigate privacy risks and advise the agency on compliance requirements, such as whether or not the collection of personal information to issue or maintain authenticators triggers the <em>Privacy Act of 1974</em> <a href="/800-63-4/sp800-63b/references/#ref-PrivacyAct">[PrivacyAct]</a> or the <em>E-Government Act of 2002</em> <a href="/800-63-4/sp800-63b/references/#ref-E-Gov">[E-Gov]</a> requirement to conduct a PIA. For example, concerning the centralized maintenance of biometrics, Privacy Act requirements will likely be triggered and require coverage by a new or existing Privacy Act SORN due to the collection and maintenance of personal information and any other attributes that are necessary for authentication. The SAOP can similarly assist the agency in determining whether a PIA is required. These considerations should not be read as a requirement to develop a Privacy Act SORN or PIA for authentication alone. In many instances, a PIA and SORN can encompass the entire digital identity process or include the digital authentication process as part of a larger programmatic PIA that discusses the online services or benefits that the agency is establishing.</p>
 
 <p>Due to the many components of digital authentication, the SAOP needs to be aware of and understand each component. For example, other privacy artifacts may apply to an agency that offers or uses federated CSP or RP services (e.g., Data Use Agreements, Computer Matching Agreements). The SAOP can assist the agency in determining what additional requirements apply. Moreover, a thorough understanding of the individual components of digital authentication will enable the SAOP to assess and mitigate privacy risks through compliance processes or other means.</p>
 
